@@ -1,0 +1,10 @@
+label backcar1:
+    scene bg pfront
+    show bert sad:
+        xcenter .7
+    b "Hmm... This looks like... A prison."
+    hide bert sad
+    show bert happy:
+        xcenter .7
+    b "POGGERS!!!"
+    hide bert sad

@@ -1,0 +1,14 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/transcreens-inv.rpy", line 53: expected statement.
+    n("You can't see the tunnel from the front window until it's too late.")
+                                                                            ^
+
+File "game/transcreens-inv.rpy", line 55: expected statement.
+    n("I think that's everything to find in this room")
+                                                       ^
+
+Ren'Py Version: Ren'Py 7.4.2.1292
+Mon Mar  8 21:14:46 2021
