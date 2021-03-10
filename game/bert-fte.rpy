@@ -16,7 +16,7 @@ label bertHang:
     if fte_bert == 0:
         b "Man I'm really enjoying this pizza!"
         n "Uh... you're not eating anything right now."
-        b "It's so good! Deep dish with tons of meats."
+        b "It's so good! Deep dish with pineapple and pepperoni."
         n "Are you delirious? Should I get you some water or something?"
         b "Yeah, some water to wash down this pizza would be great!"
         n "...alright, I'll go get you some"
