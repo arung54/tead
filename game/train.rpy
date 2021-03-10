@@ -10,7 +10,7 @@ label go:
     scene bg trainmid
     show cydney ind
     with fade
-    o "Hey - wake up already."
+    o "Hey, wake up already."
     n "......."
     n "Where are we? How did we get here?"
     show cydney ind:
