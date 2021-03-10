@@ -128,7 +128,7 @@ define t = Character("Stella Cantoire", who_color= "#d4af37", callback=stellavoi
 define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice)
 define f = Character("Freddy Ogden", who_color= "76d352", image="frog ind", callback=fillvoice)
 define j = Character("Jenny Flowers", who_color= "e50548", callback=fillvoice)
-define o = Character("Cydney Palmer", who_color= "fbe55c", callback=fillvoice)
+define o = Character("Lauren Palmer", who_color= "fbe55c", callback=fillvoice)
 define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice)
 define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice)
 define z = Character("?????", who_color= "#FFFFFF", callback=fillvoice)
