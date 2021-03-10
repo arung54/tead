@@ -77,6 +77,7 @@ label go:
         n "{i}How did we get here?{/i}"
 
         "Maybe we got on board ourselves.":
+            n "Maybe we got on board ourselves."
             hide bert sad
             show drac ind
             d "I refuse to accept that."
@@ -88,6 +89,7 @@ label go:
             n "But how did they knock all of us out like that?"
 
         "We must have been moved here.":
+            n "We must have been moved here."
             hide bert sad
             show drac ind
             d "Yes, the culprit must have knocked us out and moved us here."
@@ -118,7 +120,7 @@ label go:
     hide cydney ind
     with dissolve
     show sam with dissolve
-    s "It's the only logical explaination."
+    s "It's the only logical explanation."
     s "Either way, I don't think it's worth spending any more time on."
     n "Right. We should start exploring the train."
     show sam:
@@ -171,20 +173,6 @@ label go:
     b "There might be food back there though, and we're going to need to eat. I'll look with you."
 
     hide bert happy with moveoutright
-    show frog sad
-    f "...Ribbit... This is scary..."
-    hide frog sad
-    show cydney ind
-    o "Hey it's ok! I'll stay with you, we can just sit here."
-    hide cydney ind
-    show frog sad
-    f "...Okay."
-    hide frog sad with moveoutleft
-    show cydney ind
-    o "Hehe, I used to baby sit in high school. I'll watch him."
-    n "Oh, thank you. I'm not great with kids."
-
-    hide cydney ind with moveoutleft
     show shahar ind
     h "Aye, I'll check the next car. To the front with me!"
     hide shahar ind with moveoutleft
@@ -290,7 +278,7 @@ label backcar1:
         xcenter .75
     s "It's probably only for custodians. Maybe they'd have the key?"
     s "Either way, there's nothing more for us back here."
-    m "Yeah, it's getting hard to breath back here as well."
+    m "Yeah, it's getting hard to breathe back here as well."
 
 label midcar2:
     scene bg trainmid with fade
@@ -673,11 +661,17 @@ label passwording:
     hide welcomescreenblank with dissolve
     n "{i}I can come back if I figure it out, but I don't want to take too long up here.{/i}"
 label midcar3:
+    play music "invest1.wav" volume .3
+
     scene bg trainmid with fade
+    $ showchibi("dan", "shahar", "stella")
     show jenny ind with dissolve
     j "Hey, Bert found some food behind the bar!"
     hide jenny ind
     show jenny happy
+    show behappy
+    bp "Epicchamp!"
+    hide behappy
     j "Hope you don't mind, we started eating without you."
     show jenny happy:
         linear .3 xcenter .75
@@ -725,11 +719,11 @@ label midcar3:
     show bert sad with moveinleft:
         xcenter .25
     b "There are 5 more chairs in this car, and then a bed and a bench in the caboose."
-    b "So that leaves... 2 people's bed's unaccounted for."
+    b "So that leaves... 2 people's beds unaccounted for."
     hide kaiser ind with moveoutright
     show drac ind with moveinright:
         xcenter .75
-    d "If I may add. Do not worry about my sleeping arrangements."
+    d "If I may add - Do not worry about my sleeping arrangements."
     d "This is no need."
     n "Why's that?"
     d "I simply do not sleep."
@@ -837,7 +831,7 @@ label midcar3:
     n "It's tracking how many people have checked the file directory {i}total.{/i}"
     i "It seems like it."
     hide welcomescreendir3 with dissolve
-    n "So we'll know if someone else get's this info from the computer."
+    n "So we'll know if someone else gets this info from the computer."
     n "Do you think the counter will go up if someone logs in with the password?"
     i "If someone logs in, they can probably reset or change the counter using \"user_counter.exe\"."
     i "So that might not be reliable..."
@@ -858,6 +852,89 @@ label midcar3:
     i "Yeah! I call the bed!"
     hide sid ind with dissolve
 label day2:
-    scene black with Fade(1.5,0,1)
-    blank "8 hours later."
-    blank "Im bert!!!!!!!! PISS FART"
+    scene black
+    pause 1
+    blank "The next morning..."
+    play music "rush.mp3" volume .3 fadein 1.0
+    scene bg trainback
+    $ showchibi("dan", "sid")
+    show sid happy with dissolve:
+        xcenter .5
+        linear .3 xcenter .75
+    i "'Morning Dan!"
+    n "Huh? Oh, Sid... What time is it?"
+    i "No idea, but the sun's up. I'm heading to the bar car to the others."
+    hide sid happy with moveoutright
+    $ showchibi("dan")
+    ni "That' kid's got a lot of energy, the sun's barely up."
+    blank "Dan walked to the back window."
+    show tracks with dissolve
+    ni "Damn... There really isn't anything out there..."
+    ni "It'd be a lot easier to be hopeful if there were {i}any{/i} signs of life."
+    ni "I might have to take this into my own hands..."
+    hide tracks with dissolve
+    ni "But for now, I should go meet the others."
+    show bg trainmid with fade
+    $ showchibi("dan", "bert", "catherine", "cydney", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
+    show catherine happy with dissolve:
+        xcenter .5
+        linear .3 xcenter .75
+    c "Gooooooood morning Dan! It's another gorgeous day on the Nowhere Express!"
+    show frog ind with moveinleft:
+        xcenter .25
+    f "Yeah! Gorgeous day!"
+    c "Come get your gourmet turkey sandwiches and half-sized cans of soda!"
+    f "Soda for breakfast! Wooo!"
+    n "How are you guys so peppy?"
+    f "Come on sesame, let's go play!"
+    ses "Merowwwwww!"
+    hide frog ind with moveoutleft
+    c "Nothing we can do but try to enjoy ourselves a little!"
+    hide catherine happy with moveoutleft
+    show sam with dissolve:
+        xcenter .5
+        linear .3 xcenter .75
+    s "She was up late with Freddy making sure he wasn't freaking out too much."
+    show bert happy with dissolve:
+        xcenter .25
+    b "It was pretty heartwarming, to be honest."
+    b "I'm glad we're all still staying optomistic."
+    b "We're gunna figure this out and get off this train!"
+    s "Agreed."
+    ni "..."
+    s "We should wait for everyone to wake up and have a meeting."
+    s "We've explored the train, but we need to figure out a plan."
+    b "Let's meet back here in 30 minutes! Break!"
+    hide bert happy
+    hide sam
+    with dissolve
+    play sound "beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    ni "I don't particularly want to talk to anyone, but..."
+    ni "I should mingle so I don't look suspicious."
+
+    show stella ind with dissolve
+    t "Oh? So you've got nobody better to chat with?"
+    b "Well, we should get to know each other."
+    t "Hmph. I don't {i}mind{/i} that, but don't get the wrong idea."
+    t "I'm not into younger men."
+    b "Oh, I didn't mean like th-"
+    hide stella ind
+    show stella happy
+    t "Okay, okay, you caught me, so I {i}am{/i} into younger men."
+    t "But we just met! Wine and wine me a little first, huh?"
+    b "Don't you mean wine and {i}dine{/i}?"
+    hide stella happy
+    show stella bigsmile
+    t "Deal!"
+    b "Wait, I-"
+    t "You're a sweetheart. It's a shame someone like you is stuck in a situation like this."
+    hide stella bigsmile
+    show stella happy
+    t "It's been fun chatting. We should spend some more time together soon."
+    hide stella happy with dissolve
+    bi "I - what?"

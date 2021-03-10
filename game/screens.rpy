@@ -145,6 +145,14 @@ style window:
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
+style bertbox:
+    xalign 0.5
+    xfill True
+    yalign gui.textbox_yalign
+    ysize gui.textbox_height
+
+    background Image("gui/textbox2.png", xalign=0.5, yalign=1.0)
+
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign

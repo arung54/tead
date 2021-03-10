@@ -1,4 +1,4 @@
-Mon Mar  8 21:16:15 2021
+Tue Mar  9 18:05:35 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
  
@@ -6,14 +6,14 @@ Ren'Py 7.4.2.1292
 Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.09s
-Loading save slot metadata. took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.56s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
 Set script version to: (7, 4, 2)
-Running init code took 0.04s
-Loading analysis data took 0.02s
+Running init code took 0.09s
+Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.04s
@@ -25,12 +25,12 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.03s
 Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.06s
+Prepare screens took 0.04s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.08s
@@ -463,8 +463,12 @@ Texture testing:
 Screen sizes: virtual=(1280, 720) physical=(1739, 978) drawable=(1739, 978)
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 0.857792854309s
+Total time until interface ready: 1.45317411423s
 controller: '030000004c050000cc09000000000000' 'PS4 Controller' 1L
-Screen sizes: virtual=(1280, 720) physical=(1920, 1017) drawable=(1920, 1017)
-Root FBO is: 0
-FBO Maximum Texture Size: 2048
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s

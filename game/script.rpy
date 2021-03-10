@@ -1,6 +1,15 @@
-﻿
+
 image splash = "tead.png"
 image darken = "welcomescreenblank.png"
+define danbox = Image("gui/textbox2.png", yalign=.5)
+define bertbox = Image("gui/textbox3.png", yalign=.5)
+image behappy = Image("bhappy.png", xcenter=.729, ycenter=.802)
+image tracks:
+    "tracks1.png"
+    pause .05
+    "tracks2.png"
+    pause .05
+    repeat
 
 ##############
 #Toggle Dev
@@ -103,7 +112,6 @@ init python:
             y += 50
         renpy.with_statement(Dissolve(1.0))
 
-
 ##################
 #Character Defines
 ##################
@@ -111,7 +119,9 @@ init python:
 define m = Character("Me?", callback=mevoice)
 define n = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF")
 define ni = Character("{i}Dan Scagnelli{/i}", callback=mevoice, what_italic=True, who_color = "FFFFFF") #Dan Internal, name and text italics
+define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
 define bi = Character("{i}Bert Kim{/i}", who_color= "#78AB46", callback=bertvoice, what_italics=True) #Bert Internal, name and text ite
+define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox)
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice)
 define s = Character("Sam Lee", who_color= "f3946a", image="sam", callback=samvoice)
 define t = Character("Stella Cantoire", who_color= "#d4af37", callback=stellavoice)
@@ -126,11 +136,6 @@ define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=fillvoice)
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice)
 define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
-
-###########
-#Start jump
-###########
-
 
 label start:
 
@@ -151,4 +156,8 @@ label start:
     $ fte_kais = 0
     $ train_evidence = [False, False, False, False, False, False]
 
-    jump midcar3
+###########
+#Start jump
+###########
+
+    jump day2
