@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 16: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation.
-    rotate 0
-    ^
+File "game/transcreens-inv.rpy", line 32: expected a keyword argument, colon, or end of line.
+    text xalign 1.0 yalign 0.5 "The computer used to navigate the train."
+                ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Fri Mar 12 20:09:14 2021
+Fri Mar 12 21:10:28 2021

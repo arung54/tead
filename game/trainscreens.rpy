@@ -1,6 +1,6 @@
 screen trainMap():
     imagemap:
-        ground "trainMAP.png"
+        ground "trainmapicon.png"
         hotspot(25, 19, 396, 278) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("frontCar", transition=Dissolve(0.3))]
         hotspot(22, 329, 450, 148) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("frontCar", transition=Dissolve(0.3))]
         hotspot(447, 20, 394, 276) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("midCar", transition=Dissolve(0.3))]
@@ -9,16 +9,16 @@ screen trainMap():
         hotspot(909, 320, 315, 157) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("backCar", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Hide("trainMap", transition=Dissolve(0.3))]
 
 screen frontCar():
     add "bg trainFRONT1.png"
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Show("trainMap", transition=Dissolve(0.3))]
     if ftecounter == 0:
         imagebutton:
@@ -31,14 +31,14 @@ screen midCar():
     add "bg trainMID.png"
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Show("trainMap", transition=Dissolve(0.3))]
 
 screen backCar():
     add "bg trainBACK.png"
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Show("trainMap", transition=Dissolve(0.3))]

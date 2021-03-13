@@ -1,12 +1,36 @@
 screen trainMapInv():
     imagemap:
-        ground "trainMAP.png"
+        ground "trainmapicon.png"
         hotspot(25, 19, 396, 278) action [Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
         hotspot(22, 329, 450, 148) action [Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
         hotspot(447, 20, 394, 276) action [Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
         hotspot(471, 327, 425, 147) action [Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
         hotspot(867, 21, 391, 280) action [Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
         hotspot(909, 320, 315, 157) action [Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
+
+style button_text:
+    color "#fff"
+
+screen trainEvidence():
+    vbox xalign 0.0 spacing 30:
+        if train_evidence[0]:
+            textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence[1]:
+            textbutton "The View From The Front" style "button_text" action SetVariable("currEvidence", 1)
+        else:
+            textbutton "-" style "button_text"
+
+    if currEvidence == 0:
+        image "computer.png" xalign 1.0 yalign 0.0
+        text "The computer used to navigate the train." xalign 1.0 yalign 0.5
+
+    if currEvidence == 1:
+        image "window.png" xalign 1.0 yalign 0.0
+        text "The tunnel wasn't visible from the window." xalign 1.0 yalign 0.5
+
 
 screen frontCarInv():
 
@@ -17,8 +41,8 @@ screen frontCarInv():
 
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Show("trainMap", transition=Dissolve(0.3)), Hide("frontCarInv")]
 
 
@@ -26,16 +50,16 @@ screen midCarInv():
     add "bg trainMID.png"
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Show("trainMap", transition=Dissolve(0.3)), Hide("midCarInv")]
 
 screen backCarInv():
     add "bg trainBACK.png"
     imagebutton:
         xalign 1.0
-        yalign 1.0
-        idle "map.png"
+        yalign 0.0
+        idle "mapicon.png"
         action [Show("trainMap", transition=Dissolve(0.3)), Hide("backCarInv")]
 
 label trainComputer:
