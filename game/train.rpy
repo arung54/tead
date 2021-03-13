@@ -864,6 +864,10 @@ label day2:
         xcenter .965
         ycenter .12
         zoom .3
+    show evidenceicon:
+        xcenter .91
+        ycenter .12
+        zoom .3
     show sid happy with dissolve:
         xcenter .5
         linear .3 xcenter .75
