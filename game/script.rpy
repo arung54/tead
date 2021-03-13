@@ -162,5 +162,5 @@ label start:
 #Start jump
 ###########
 
-    call screen trainEvidence
+    ##call screen trainEvidence
     jump day2
