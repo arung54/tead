@@ -1,22 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/train.rpy", line 673, in script
-    bp "Epicchamp!"
-Exception: Sayer 'bp' is not defined.
+  File "game/train.rpy", line 861, in script
+    show mapicon at halfsize, topright
+  File "game/train.rpy", line 861, in <module>
+    show mapicon at halfsize, topright
+NameError: name 'halfsize' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/train.rpy", line 673, in script
-    bp "Epicchamp!"
-  File "renpy/ast.py", line 680, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'bp' is not defined.
+  File "game/train.rpy", line 861, in script
+    show mapicon at halfsize, topright
+  File "renpy/ast.py", line 1191, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1150, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "renpy/python.py", line 2249, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2242, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/train.rpy", line 861, in <module>
+    show mapicon at halfsize, topright
+NameError: name 'halfsize' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.2.1292
 tead .1
-Tue Mar  9 18:03:10 2021
+Fri Mar 12 19:55:58 2021

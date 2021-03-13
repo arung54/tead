@@ -858,6 +858,12 @@ label day2:
     play music "rush.mp3" volume .3 fadein 1.0
     scene bg trainback
     $ showchibi("dan", "sid")
+    show chaptericon at topright:
+        zoom .4
+    show mapicon:
+        xcenter .965
+        ycenter .12
+        zoom .3
     show sid happy with dissolve:
         xcenter .5
         linear .3 xcenter .75
