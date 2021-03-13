@@ -142,22 +142,25 @@ label start:
 ##################
 #Free Time Counters
 ##################
-    $ ftecounter = 0
-    $ fte_bert = 0
-    $ fte_sam = 0
-    $ fte_stell = 0
-    $ fte_drac = 0
-    $ fte_fred = 0
-    $ fte_jenn = 0
-    $ fte_laur = 0
-    $ fte_sid = 0
-    $ fte_shah = 0
-    $ fte_cath = 0
-    $ fte_kais = 0
-    $ train_evidence = [False, False, False, False, False, False]
+    python:
+        ftecounter = 0
+        fte_bert = 0
+        fte_sam = 0
+        fte_stell = 0
+        fte_drac = 0
+        fte_fred = 0
+        fte_jenn = 0
+        fte_laur = 0
+        fte_sid = 0
+        fte_shah = 0
+        fte_cath = 0
+        fte_kais = 0
+        currEvidence = -1
+        train_evidence = [True, True, False, False, False, False]
 
 ###########
 #Start jump
 ###########
 
+    call screen trainEvidence
     jump day2
