@@ -900,6 +900,7 @@ label day2:
     ses "Merowwwwww!"
     hide frog ind with moveoutleft
     c "Nothing we can do but try to enjoy ourselves a little!"
+    hide catherine happy with moveoutleft
     show sam with dissolve:
         xcenter .5
         linear .3 xcenter .75
