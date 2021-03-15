@@ -1,24 +1,34 @@
+init:
+    image map:
+        "mapicon.png"
+        zoom 0.3
+
+screen trainPreview(img):
+    add img pos (25, 20)
+
 screen trainMap():
     imagemap:
-        ground "trainmapicon.png"
-        hotspot(25, 19, 396, 278) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("frontCar", transition=Dissolve(0.3))]
-        hotspot(22, 329, 450, 148) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("frontCar", transition=Dissolve(0.3))]
-        hotspot(447, 20, 394, 276) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("midCar", transition=Dissolve(0.3))]
-        hotspot(471, 327, 425, 147) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("midCar", transition=Dissolve(0.3))]
-        hotspot(867, 21, 391, 280) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("backCar", transition=Dissolve(0.3))]
-        hotspot(909, 320, 315, 157) action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Hide("trainMap"), Show("backCar", transition=Dissolve(0.3))]
-    imagebutton:
-        xalign 1.0
-        yalign 0.0
-        idle "mapicon.png"
-        action [Hide("trainMap", transition=Dissolve(0.3))]
+        ground "trainmapoverlay.png"
+        hotspot(0, 0, 119, 719) action [Hide("trainMap", transition=Dissolve(0.3))]
+        hotspot(182, 461, 330, 210):
+            action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Show("frontCar", transition=Dissolve(0.3)), Hide("trainMap")]
+            hovered ShowTransient("trainPreview", img="trainmapoverlay1.png")
+            unhovered Hide("trainPreview")
+        hotspot(542, 462, 330, 210):
+            action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Show("midCar", transition=Dissolve(0.3)), Hide("trainMap")]
+            hovered ShowTransient("trainPreview", img="trainmapoverlay2.png")
+            unhovered Hide("trainPreview")
+        hotspot(905, 460, 329, 211):
+            action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Show("backCar", transition=Dissolve(0.3)), Hide("trainMap")]
+            hovered ShowTransient("trainPreview", img="trainmapoverlay3.png")
+            unhovered Hide("trainPreview")
 
 screen frontCar():
     add "bg trainFRONT1.png"
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "mapicon.png"
+        idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
     if ftecounter == 0:
         imagebutton:
@@ -32,7 +42,7 @@ screen midCar():
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "mapicon.png"
+        idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
 
 screen backCar():
@@ -40,5 +50,5 @@ screen backCar():
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "mapicon.png"
+        idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
