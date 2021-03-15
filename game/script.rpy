@@ -156,11 +156,11 @@ label start:
         fte_cath = 0
         fte_kais = 0
         currEvidence = -1
-        train_evidence = [True, True, False, False, False, False]
+        train_evidence = [True, True]
 
 ###########
 #Start jump
 ###########
 
-    call screen frontCar
+    call screen trainEvidence
     jump day2
