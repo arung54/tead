@@ -9,7 +9,6 @@ screen trainPreview(img):
 screen trainMap():
     imagemap:
         ground "trainmapoverlay.png"
-        hotspot(0, 0, 119, 719) action [Hide("trainMap", transition=Dissolve(0.3))]
         hotspot(182, 461, 330, 210):
             action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Show("frontCar", transition=Dissolve(0.3)), Hide("trainMap")]
             hovered ShowTransient("trainPreview", img="trainmapoverlay1.png")
@@ -22,6 +21,9 @@ screen trainMap():
             action [Hide("frontCar"), Hide("midCar"), Hide("backCar"), Show("backCar", transition=Dissolve(0.3)), Hide("trainMap")]
             hovered ShowTransient("trainPreview", img="trainmapoverlay3.png")
             unhovered Hide("trainPreview")
+    imagemap:
+        idle "trainmapoverlayleft.png"
+        hotspot(0, 0, 119, 719) action [Hide("trainMap", transition=Dissolve(0.3))]
 
 screen frontCar():
     add "bg trainFRONT1.png"

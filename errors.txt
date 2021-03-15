@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/transcreens-inv.rpy", line 32: expected a keyword argument, colon, or end of line.
-    text xalign 1.0 yalign 0.5 "The computer used to navigate the train."
-                ^
+File "game/trainscreens.rpy", line 12: keyword argument u'ground' appears more than once in a imagemap statement.
+    ground "trainmapoverlayleft.png"
+          ^
 
 Ren'Py Version: Ren'Py 7.4.2.1292
-Fri Mar 12 21:10:28 2021
+Sun Mar 14 21:56:48 2021
