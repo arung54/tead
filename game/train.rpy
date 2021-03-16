@@ -3,26 +3,32 @@ label go:
     #jump frontcar1
     #show screen button_overlay
     scene black
-    n "{i}Was I... Dreaming?{/i}"
-    n "{i}I did tend to get nightmares in there...{/i}"
-    n "{i}...{/i}"
-    n "{i}Unless...{/i}"
+    ni "Was I... Dreaming?"
+    ni "It'd make sense..."
+    ni "I did tend to get nightmares in there..."
+    ni "..."
+    blank "Hey..."
+    ni "Huh?"
+    blank "HEY!!!"
     scene bg trainmid
     show cydney ind
     with fade
     o "Hey, wake up already."
-    n "......."
-    n "Where are we? How did we get here?"
+    o "How'd you manage to stay knocked out even longer than the kid?"
+    n "..."
+    n "Where are we now?"
     show cydney ind:
         xcenter .5
         linear 0.3 xcenter .75
     o "I mean, look around. Where do you think we are?"
     n "It's a... train car."
+    n "And we're {i}moving.{/i}"
     hide cydney ind with dissolve
     show sam
-    s "A {i}moving{/i} train car too. We're headed somewhere."
+    s "Yeah, we're going somewhere..."
+    s "...Or being taken somewhere."
     hide sam with dissolve
-    blank "I went to check the window."
+    blank "I looked out the window."
     image forest run:
         contains:
             "windowviewout.png"
@@ -33,26 +39,28 @@ label go:
     show windowview
     with fade
     n "Wow..."
-    n "There's... Nothing out there."
+    ni "There's... Nothing out there."
+    ni "Where are we? There are no landmarks anywhere."
     hide forest run
     hide windowview
     with fade
     show shahar ind with dissolve
-    h "Laddies, it feels like the room is moving!"
+    h "Laddies, it feels like the whole room is moving!"
     n "That's how trains work."
     n "Have you never been on a train before?"
     h "Blimey, you're right! We {i}are{/i} movin'!"
     hide shahar ind with moveoutright
     n "..."
     show catherine ind
-    c "Oh, Dan's finally awake? I think that's everyone then!"
+    c "Oh, Dan's finally awake?"
+    c "I think that's everyone who was in that scary room then."
     show catherine ind:
         xcenter .5
         linear 0.3 xcenter .75
     show drac ind:
         xcenter .25
     d "Yes. All 12 of us are here."
-    d "13 if you include your... Rodent."
+    d "13 if you include your cat."
     ses "Mrow!"
     n "..."
     hide catherine ind
@@ -102,13 +110,14 @@ label go:
     hide stella ind with dissolve
     show kaiser ind with dissolve
     k "It seems obvious enough, yes?"
+    n "You know how we got knocked out?"
     n "What do you mean?"
     show kaiser ind:
         xcenter .5
         linear 0.3 xcenter .75
     show cydney ind with moveinleft:
         xcenter .25
-    o "Kaiser's right... Think back to what the monitor told us."
+    o "Kaiser's probably right... Think back to what the monitor told us."
 
     ###FLASHBACK###
     show black
@@ -132,7 +141,7 @@ label go:
     b "He could stop the train for us."
     s "It's worth a shot."
     b "That's the spirit! Poggers!"
-    n "..."
+    ni "..."
     show sam:
         xcenter .75
         linear 0.3 xcenter .85
@@ -150,20 +159,22 @@ label go:
         linear .3 xcenter .75
     show cydney ind with moveinleft:
         xcenter .25
-    o "We can sit together, buddy. We can just hang out here."
+    o "We can sit together, buddy. We'll hang out here."
     f "{i}*sniffle*{/i} Okay miss."
     hide frog ind with moveoutright
     show cydney ind:
         linear .3 xcenter .5
-    o "I can watch him, I don't want a kid involved in... Whatever this is."
-    n "Oh, thanks. I'm not great with kids myself."
+    o "I can watch him, I used to babysit in highschool."
+    o "I don't want a kid involved in... Whatever this is."
+    n "That's probably smart. I'm not great with kids myself."
+    o "The rest of you better search every corner of this train though."
     hide cydney ind
 ###########################################
 ###############INVESTIGATE#################
 ###########################################
 
     show stella ind
-    t "I'll check behind the bar."
+    t "Great point - I'll check behind the bar."
 
     hide stella ind with moveoutright
     show bert sad
@@ -174,14 +185,14 @@ label go:
 
     hide bert happy with moveoutright
     show shahar ind
-    h "Aye, I'll check the next car. To the front with me!"
+    h "Aye, I'll check the next car up. To the front with me!"
     hide shahar ind with moveoutleft
     show sid ind
     i "I'll go with, the uh, pirate. Why is there a pirate here again?"
     hide sid ind with moveoutleft
     show jenny ind
-    j "We should probably find out where we're going."
-    j "I'm going straight to the front! Nobody try to stop me."
+    j "Hmm, I'm going to go with them too. We should probably try to stay in groups."
+    j "Plus, going to the front seems like the best way to find out where we're going."
     hide jenny ind with moveoutleft
     show catherine happy
     c "Alright Sesame, we're going exploring!"
@@ -190,6 +201,7 @@ label go:
 
     show sam
     s "Okay, the rest of us can check the next car back."
+    s "It looks like it's just the 3 of us."
     hide sam
     show drac ind
     d "Very well."
@@ -213,7 +225,8 @@ label go:
     n "With the, uh, vampire?"
     hide drac ind with moveoutleft
     s "Yeah. It'd be smarter of us to stay in groups of 3 or more."
-    n "Agreed. Let's go."
+    s "I'm wary of trusting anybody too much yet, especially after what the monitor said."
+    n "Alright. Let's go."
 
 label backcar1:
     scene black
@@ -304,13 +317,16 @@ label midcar2:
         linear 0.3 xcenter .75
     show bert sad:
         xcenter .25
-    b "Stella might be a little drunk. I tried to tell her not to..."
-    t "Anyone need a drink? There's a lot back there, just no ru-"
+    b "Hey, woah!"
+    b "Stella might be a little drunk. I tried to tell her not to drink, but..."
+    t "Anyone need a beer? There's a lot back th-"
     hide bert sad
     show sam with dissolve:
         xcenter .25
     s "I don't think you're taking this seriously enough."
     s "Plus, there are kids here. You really shouldn't be getting drunk."
+    t "You don't like alcohol?"
+    s "jkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
     t "Oh please, you twerps are no fun."
     hide stella drunk with moveoutright
     hide stellachibi with dissolve
