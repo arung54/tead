@@ -138,7 +138,6 @@ define gui.dialogue_width = 744
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.dialogue_text_xalign = 0.0
 
-
 ## Buttons #####################################################################
 ##
 ## These variables, along with the image files in gui/button, control aspects of

@@ -163,4 +163,4 @@ label start:
 ###########
 
     #call screen trainEvidence
-    jump go
+    jump midcar4

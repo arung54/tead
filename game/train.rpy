@@ -53,14 +53,14 @@ label go:
     n "..."
     show catherine ind
     c "Oh, Dan's finally awake?"
-    c "I think that's everyone who was in that scary room then."
+    c "It seems like everyone from that scary room is here."
     show catherine ind:
         xcenter .5
         linear 0.3 xcenter .75
     show drac ind:
         xcenter .25
     d "Yes. All 12 of us are here."
-    d "13 if you include your cat."
+    d "13 if you include the feline."
     ses "Mrow!"
     n "..."
     hide catherine ind
@@ -75,10 +75,15 @@ label go:
     hide sid ind
     show jenny ind
     j "Maybe we were on the train the whole time?"
-    hide jenny ind
-    show bert sad
+    show jenny ind:
+        linear .3 xcenter .75
+    show bert sad:
+        xcenter .25
     b "I don't think so... Those rooms were pretty wide."
     b "I don't think they could have fit in a train car."
+    hide jenny ind with moveoutright
+    show bert sad:
+        linear .3 xcenter .5
     b "Dan, what do you think?"
     n "Me? Hmm..."
     menu:
@@ -139,8 +144,10 @@ label go:
         xcenter .25
     b "Maybe we can find the conductor!"
     b "He could stop the train for us."
+    ni "That seems a little optomistic..."
     s "It's worth a shot."
     b "That's the spirit! Poggers!"
+    s "It's not like we're going to just sit around here."
     ni "..."
     show sam:
         xcenter .75
@@ -174,7 +181,7 @@ label go:
 ###########################################
 
     show stella ind
-    t "Great point - I'll check behind the bar."
+    t "Great point Lauren - I'll check behind the bar."
 
     hide stella ind with moveoutright
     show bert sad
@@ -213,7 +220,7 @@ label go:
             n "Alright."
 
         "No":
-            n "I might just stay here..."
+            n "Actually, I might just stay here."
     show sam with dissolve:
         xcenter .75
     s "Hey, Dan..."
@@ -326,7 +333,7 @@ label midcar2:
     s "I don't think you're taking this seriously enough."
     s "Plus, there are kids here. You really shouldn't be getting drunk."
     t "You don't like alcohol?"
-    s "jkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+    s "I don't think that's relevant."
     t "Oh please, you twerps are no fun."
     hide stella drunk with moveoutright
     hide stellachibi with dissolve
@@ -334,7 +341,7 @@ label midcar2:
         xcenter .25
         linear 0.3 xcenter .5
     s "I can already tell she's going to get on my nerves."
-    s "Oh, that should be the others."
+    s "Oh, the others are back."
     hide sam
     blank "The front train car door opened, and Shahar, Jenny, Sid, and Catherine walked in."
     show jennychibi:
@@ -367,7 +374,7 @@ label midcar2:
     hide drac ind with moveoutleft
     show sam with moveinleft:
         xcenter .25
-    s "What do you mean 'ironic?"
+    s "What do you mean 'ironic?'"
     s "What did you guys find up ahead?"
     hide sid ind with moveoutright
     show shahar ind with moveinright:
@@ -534,7 +541,7 @@ label frontcar2:
     show jenny happy:
         xcenter .75
     j "Hey it's ok Freddy! It's like an adventure."
-    j "Come on, let's go back to the other train car and sit down."
+    j "Come on, let's go back to the other train car and find something to play with."
     f "Okay."
     hide frog sad with moveoutbottom
     hide jenny happy
@@ -665,7 +672,7 @@ label passwording:
         if not password:
             password = "ERROR"
     play sound "beep.mp3"
-    n "{i}I don't think it was [password]...{/i}"
+    n "{i}I don't think the password is '[password]'...{/i}"
     menu:
         n "{i}Maybe I should try again...{/i}"
 
@@ -726,7 +733,7 @@ label midcar3:
     ##    xcenter .75
     k "Needlessly searching will do no good. We'll just exhaust ourselves."
     k "Maybe we should follow in Stella's footsteps here."
-    j "And pass out behind the bar?"
+    j "Get black out drunk and pass out on the floor?"
     k "Well, sleep. It is getting late, and we've been at it all day."
     k "Both Freddy and the Pirate guy have already fallen asleep over there."
     k "We should figure out the rest of the sleeping arrangements."
@@ -771,7 +778,7 @@ label midcar3:
     s "Sid, are you sure? If it's too dusty for you I can sleep back there."
     show sid ind:
         linear .3 xcenter .5
-    i "I'm used to sharing 1 bed with my whole family! This is an practically an upgrade!"
+    i "I'm used to sharing 1 bed with my whole family! This is a practically an upgrade!"
     hide sid ind with moveoutleft
     show sam:
         linear .3 xcenter .5
@@ -794,7 +801,7 @@ label midcar3:
     show sid happy
     i "Exciting!"
     i "I wish I could travel and live on cool trains like this."
-    n "Haha! You're still young, Sid, maybe you can one day."
+    n "Haha, you're still young, Sid, maybe you can one day."
     hide sid happy
     show sid ind
     i "What do you mean, young?"
@@ -844,7 +851,7 @@ label midcar3:
     show welcomescreendir3 with dissolve
     i "The users went up from 0 to 1."
     n "Wait, so the user counter isn't tracking how many people are currently logged in..."
-    n "It's tracking how many people have checked the file directory {i}total.{/i}"
+    n "It's tracking how many people have checked the file directory {i}total?{/i}"
     i "It seems like it."
     hide welcomescreendir3 with dissolve
     n "So we'll know if someone else gets this info from the computer."
@@ -892,7 +899,7 @@ label day2:
     i "No idea, but the sun's up. I'm heading to the bar car to the others."
     hide sid happy with moveoutright
     $ showchibi("dan")
-    ni "That' kid's got a lot of energy, the sun's barely up."
+    ni "That kid's got a lot of energy. It must be around 7AM."
     blank "Dan walked to the back window."
     show tracks with dissolve
     ni "Damn... There really isn't anything out there..."
@@ -942,7 +949,9 @@ label day2:
     hide freetime with dissolve
     ni "I don't particularly want to talk to anyone, but..."
     ni "I should mingle so I don't look suspicious."
-
+   #############
+   #FREE TIME ONE
+   #############
     show stella ind with dissolve
     t "Oh? So you've got nobody better to chat with?"
     b "Well, we should get to know each other."
@@ -964,3 +973,118 @@ label day2:
     t "It's been fun chatting. We should spend some more time together soon."
     hide stella happy with dissolve
     bi "I - what?"
+    scene black with fade
+    blank "30 minutes had passed, Dan went to meet the others in the bar car."
+label midcar4:
+    show bg trainmid with fade
+    $ showchibi("dan", "bert", "catherine", "cydney", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show bert sad with dissolve:
+        xcenter .5
+        linear .3 xcenter .75
+    b "Alright, I think everyone's here."
+    b "It's starting to seem like we've exhausted our resources."
+    b "I've searched every inch of this train and feel no closer to finding anything useful."
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "Or even an indication of where we're going."
+    k "I would feel much more secure if we knew our destination."
+    n "Yeah..."
+    hide bert sad with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "Ummm..."
+    j "I feel like we should address the elephant in the room..."
+    n "What do you mean?"
+    j "Well... Think back to that one message."
+    blank "MESSAGE ABOUT HOW amogus"
+    j "I think the implication is that whoever planned all this..."
+    j "Is one of us."
+    hide kaiser ind with moveoutleft
+    show cydney ind with moveinleft:
+        xcenter .25
+    o "Do you really think the person behind the messages is here right now?"
+    hide jenny ind with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "I'm worried that Jenny's right."
+    s "Otherwise, what's even the point of all this?"
+    n "Huh?"
+    s "Well, if this is some messed up game for them, they're probably here to watch."
+    s "I haven't seen a single camera on board, so if they wanted to enjoy it, that's probably the only way."
+    o "They're here to 'Enjoy it?' Sam, you sound a little hysterical..."
+    s "We've been kidnapped, basically twice now, and have zero information on what the hell's happening."
+    s "I'm stuck on a train with Dracula and a pirate and you're telling me I'm hysterical for being confused?"
+    o "..."
+    o "Fair enough."
+    o "What do you think we should do about it?"
+    hide sam with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "Sam's right! Shahar and Dracula are suspicious."
+    o "I don't think we should start throwing around accusations..."
+    hide cydney ind with moveoutleft
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "Aye, I'm a man of 'onor. What are ye worried about, bucko?"
+    i "It's the 21st century, why do you talk like that?"
+    i "Why do you have an eyepatch?"
+    hide sid ind
+    show stella bigsmile:
+        xcenter .75
+    t "Why do you have such chiseled abs?"
+    hide stella bigsmile
+    show sid ind:
+        xcenter .75
+    i "Shut up, Stella."
+    h "Aye. Ye see, me memory in't too good."
+    h "Last I remember, me and me hearties were three sheets to the wind, mindin' our own."
+    h "Next minute, I come to in the little crow's next wit' the rest of ye."
+    i "I..."
+    i "I don't really know what he just said."
+    hide shahar ind with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    d "I find it quite curious that {i}you{/i} called {i}me{/i} suspicious."
+    d "As such a little cutpurse yourself, that is."
+    show sid happy:
+        xcenter .75
+        linear .1 xcenter .78
+    i "Wh-what? Me? No way!"
+    d "Oh? I'm sure you'll be happy to empty your pockets then."
+    i "I-I-I can't."
+    d "Interesting."
+    hide sid happy with moveoutright
+    show drac ind:
+        linear .3 xcenter .5
+    d "What a silly coincidence, I put a whiskey shooter in my pocket earlier, but..."
+    d "It's just so happen to go missing earlier when Sid and I were alone together in the front car."
+    d "Regardless, I've been nothing but productive and friendly since we woke up here yesterday."
+    d "I'm sure you all believe me when I say I am just as dumbfounded as the rest of you."
+    hide drac ind with dissolve
+    show catherine ind with dissolve
+    c "Guys, I don't think this is very productive."
+    c "Throwing around accusations isn't going to get us anywhere."
+    c "Besides, I think I'm more worried about the other thing the screen said..."
+    blank "screen saying theyre all criminals"
+    c "Surely that can't be true, right?"
+    c "I mean, I know {i}I'm{/i} not a criminal, and I can't speak for the rest of you, but there are kids here..."
+    c "They can't have criminal records, right? Freddy's so nervous he won't even take off his hoodie."
+    show catherine ind:
+        linear .3 xcenter .75
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Well, on the other side of the coin..."
+    j "If Shahar really is a pirate, that's definitely criminal activity."
+    j "And Dracula did just prove that Sid was stealing, even if it is only small things..."
+    c "So, maybe some of us really are criminals..."
+    j "It appears that way..."
+    hide jenny with moveoutleft
+    show stella ind with moveinleft:
+        xcenter .25
+    t "Look, darling... If it helps clear things up, I should probably admit..."
+    t "As a wildly successful businesswoman - some might even say the René Laennec of our time - I've inevitably built up a... record."
+    c "You have a criminal record?"
+    t "I have nothing to hide."
+    t "You can't make an omelette without cracking a few eggs. I did what I had to do to get to the top."
+    t "Anyway. Do what you will with this information."
+    hide stella ind with moveoutleft

@@ -83,7 +83,7 @@ define config.intra_transition = dissolve
 
 ## A transition that is used after a game has been loaded.
 
-define config.after_load_transition = None
+define config.after_load_transition = dissolve
 
 
 ## Used when entering the main menu after the game has ended.
@@ -126,6 +126,7 @@ default preferences.text_cps = 80
 ## to 30 being the valid range.
 
 default preferences.afm_time = 15
+#default line_spacing = 20
 
 
 ## Save directory ##############################################################
