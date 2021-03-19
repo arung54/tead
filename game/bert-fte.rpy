@@ -16,11 +16,11 @@ label bertAsk0:
 label bertAsk1:
     scene bg trainMID
     show bert happy with dissolve
-    b "I hope "
+    b "Hey Dan! Want to chat some more?"
     blank "Should I talk to Bert?"
     menu:
         "Spend time with Bert":
-            b "Sure, I guess hanging out will get my mind off how hungry I am."
+            b "Cool! I'll try not to talk about food this time."
             jump bertHang
         "Maybe later":
             hide bert with dissolve
