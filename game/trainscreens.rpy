@@ -46,12 +46,22 @@ screen midCar():
             ypos 20
             idle "bertchibi.png"
             action [Hide("midCar"), Jump("bertAsk0")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "catherinechibi.png"
+            action [Hide("midCar"), Jump("cathAsk0")]
     if ftecounter == 1:
         imagebutton:
             xpos 20
             ypos 20
             idle "bertchibi.png"
             action [Hide("midCar"), Jump("bertAsk1")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "catherinechibi.png"
+            action [Hide("midCar"), Jump("cathAsk1")]
 
 screen backCar():
     add "bg trainBACK.png"

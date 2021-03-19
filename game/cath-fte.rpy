@@ -1,0 +1,35 @@
+
+label cathAsk0:
+    scene bg trainmid
+    show catherine happy with dissolve
+    c "Here you go Sesame! You can have the turkey from this sandwich."
+    ni "I should go talk to Bert."
+
+
+label cathAsk1:
+    scene bg trainmid
+    show catherine happy with dissolve
+    c "Hey Dan!"
+    blank "Should I talk to Catherine?"
+    menu:
+        "Spend time with Catherine":
+            c "Cool!"
+            jump cathHang
+        "Maybe later":
+            hide catherine with dissolve
+            call screen midCar
+
+label cathHang:
+    if fte_cath == -1:
+        c "Yo."
+        n "Sup."
+        scene black with fade
+        ni "After a somewhat pleasant conversation, we returned to mingling with the others."
+
+
+    $fte_cath += 1
+    $ftecounter += 1
+    hide catherine with dissolve
+
+    if ftecounter - 1 == 1:
+        call screen frontCar #replace w/ jump to after free time 2
