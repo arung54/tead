@@ -32,12 +32,6 @@ screen frontCar():
         yalign 0.0
         idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
-    if ftecounter == 0:
-        imagebutton:
-            xpos 20
-            ypos 20
-            idle "bertchibi.png"
-            action [Jump("bertAsk0")]
 
 screen midCar():
     add "bg trainMID.png"
@@ -46,6 +40,18 @@ screen midCar():
         yalign 0.0
         idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
+    if ftecounter == 0:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "bertchibi.png"
+            action [Jump("bertAsk0")]
+    if ftecounter == 0:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "bertchibi.png"
+            action [Jump("bertAsk1")]
 
 screen backCar():
     add "bg trainBACK.png"
