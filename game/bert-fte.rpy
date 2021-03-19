@@ -1,6 +1,6 @@
 
 label bertAsk0:
-    scene bg trainMID
+    scene bg trainmid
     show bert happy with dissolve
     b "Sandwiches aren't bad, but I really miss food from home..."
     blank "Should I talk to Bert?"
@@ -10,11 +10,11 @@ label bertAsk0:
             jump bertHang
         "Maybe later":
             hide bert with dissolve
-            call screen frontCar
+            call screen midCar
 
 
 label bertAsk1:
-    scene bg trainMID
+    scene bg trainmid
     show bert happy with dissolve
     b "Hey Dan! Want to chat some more?"
     blank "Should I talk to Bert?"
@@ -24,7 +24,7 @@ label bertAsk1:
             jump bertHang
         "Maybe later":
             hide bert with dissolve
-            call screen frontCar
+            call screen midCar
 
 label bertHang:
     if fte_bert == -2:
