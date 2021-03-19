@@ -1,5 +1,5 @@
 
-label cathAsk0:
+label sidAsk0:
     scene bg trainmid
     show catherine happy with dissolve
     c "Here you go Sesame! You can have the turkey from this sandwich."
