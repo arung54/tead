@@ -46,7 +46,7 @@ screen midCar():
             ypos 20
             idle "bertchibi.png"
             action [Hide("midCar"), Jump("bertAsk0")]
-    if ftecounter == 0:
+    if ftecounter == 1:
         imagebutton:
             xpos 20
             ypos 20

@@ -81,4 +81,4 @@ label bertHang:
     hide bert with dissolve
 
     if ftecounter - 1 == 0:
-        call screen frontCar
+        call screen frontCar #replace w/ jump to free time 2
