@@ -76,6 +76,9 @@ label bertHang:
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
 
+    if fte_bert == -1:
+        b ""
+
     $fte_bert += 1
     $ftecounter += 1
     hide bert with dissolve

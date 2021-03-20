@@ -4,6 +4,7 @@ label cathAsk0:
     show catherine happy with dissolve
     c "Here you go Sesame! You can have the turkey from this sandwich."
     ni "I should go talk to Bert."
+    call screen midCar
 
 
 label cathAsk1:
@@ -26,7 +27,7 @@ label cathHang:
         ses "Mrow!"
         c "Sesame says hi too!"
         n "Hey."
-        c "
+        c ""
 
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."

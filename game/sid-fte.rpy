@@ -4,6 +4,7 @@ label sidAsk0:
     show sid ind with dissolve
     i "I feel like I'm so close to getting this password...Focus, Sid, focus!"
     ni "I should go talk to Bert."
+    call screen midCar
 
 
 label sidAsk1:
