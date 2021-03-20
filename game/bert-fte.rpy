@@ -75,13 +75,61 @@ label bertHang:
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
-
     if fte_bert == -1:
-        b ""
+        n "Hey Bert, we talked about the food we'd eat when we get out."
+        n "But do you really think we're going to get out?"
+        show bert sad
+        b "Geez, that's a heavy question to start a conversation with."
+        n "Sorry, I'm not good at conversation."
+        b "Nah, it's fine. Just a bit of a ramp up from pizza."
+        b "But we... kill the mastermind, then we get out, right?"
+        ni "He hesitated before the word killed."
+        b "Imagine we work together to figure out who the mastermind is."
+        b "It'll require some hard honest conversations about ourselves, of course."
+        show bert happy
+        b "But we could maybe get out in just a few hours if we do!"
+        n "How would we be able to identify the mastermind in just a few hours of talking though?"
+        n "We don't know their motives for playing this game..."
+        n "We don't know how we ended up here..."
+        n "We don't even know where we are!"
+        show bert sad
+        b "You're not wrong."
+        b "But not all problems can be solved like a homework problem in a few minutes."
+        b "Unless the mastermind picked 12 arbitrary people, there has to be some answer"
+        b "We just have to work hard and work together to find it."
+        b "The alternative is we just sit around hoping things work out."
+        n "Surely it won't be that easy."
+        n "If I was running a game like this, I would do everything to disguise myself."
+        n "The person running this game has the ability to knock us out at will."
+        n "They commandeered this train all by themselves!"
+        n "There's no way they would be careless enough to let us find out who they are on day one."
+        b "...You're being kind of a bummer right now."
+        n "Huh?"
+        b "Being pessimistic isn't going to get us out of here."
+        b "If we just lay down and accept our fate, then our chances of getting out are smaller."
+        b "It feels like you're not looking for sympathy here."
+        b "So all you're doing is dragging me down with you."
+        n "...That's fair, I guess."
+        n "Earlier, you hesitated to say \"killed\""
+        b "...You're not very good at pivoting topics, are you?"
+        n "Like I said, not good at conversation."
+        b "Yeah, I don't like the word killed."
+        b "I have a... complicated relationship with murder and things like that."
+        b "But I don't really wanna talk about it."
+        ni "I think I have may have crossed some lines..."
+        b "..."
+        n "..."
+        n "I guess we should meet up with the others now."
+        b "Sure."
+        scene black with fade
+        ni "I guess I understand Bert better now. Not sure if we're closer, though."
 
     $fte_bert += 1
     $ftecounter += 1
     hide bert with dissolve
 
     if ftecounter - 1 == 0:
-        call screen frontCar #replace w/ jump to free time 2
+        call screen frontCar #replace w/ jump to FT2
+
+    if ftecounter - 1 == 1:
+        call screen frontCar #replace w/ jump to after FT2

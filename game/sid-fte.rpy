@@ -64,7 +64,7 @@ label sidHang:
         ni "I don't have many friends here, and that's okay."
         ni "I'm glad I can be a positive influence on Sid."
         scene black with fade
-        blank "I went back to see the others."
+        ni "I went back to see the others."
 
 
     if fte_sid == 0:
