@@ -4,7 +4,7 @@ label sidAsk0:
     show sid ind with dissolve
     i "I feel like I'm so close to getting this password...Focus, Sid, focus!"
     ni "I should go talk to Bert."
-    call screen midCar
+    call screen frontCar
 
 
 label sidAsk1:
@@ -14,7 +14,7 @@ label sidAsk1:
     blank "Should I talk to Sid?"
     menu:
         "Spend time with Sid":
-            s "Let's do it."
+            i "Let's do it."
             jump sidHang
         "Maybe later":
             hide sid ind with dissolve
@@ -63,10 +63,11 @@ label sidHang:
         hide sid ind with moveoutright
         ni "I don't have many friends here, and that's okay."
         ni "I'm glad I can be a positive influence on Sid."
-        blank "Dan went back to see the others."
+        scene black with fade
+        blank "I went back to see the others."
 
 
-    if fte_sid == -0:
+    if fte_sid == 0:
         i "It’s so strange not being with my family."
         b "It seems like you’re very close to them."
         i "Yeah. This is the first time I’ve ever been away from them."
@@ -95,7 +96,7 @@ label sidHang:
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
-    if fte_sid == -1:
+    if fte_sid == 1:
         i "Hey, Bert? I’ve been thinking…"
         i "Maybe you could teach me some things."
         b "Teaching you things? Like what?"

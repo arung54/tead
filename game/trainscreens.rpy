@@ -32,6 +32,18 @@ screen frontCar():
         yalign 0.0
         idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
+    if ftecounter == 0:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "sidchibi.png"
+            action [Hide("frontCar"), Jump("sidAsk0")]
+    if ftecounter == 1:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "sidchibi.png"
+            action [Hide("frontCar"), Jump("sidAsk1")]
 
 screen midCar():
     add "bg trainMID.png"
