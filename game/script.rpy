@@ -166,4 +166,4 @@ label start:
 ###########
 
     #call screen frontCar
-    jump midcar4
+    jump go

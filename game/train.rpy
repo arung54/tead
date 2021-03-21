@@ -3,6 +3,7 @@ label go:
     #jump frontcar1
     #show screen button_overlay
     scene black
+    play music "audio/rush.mp3"
     ni "Was I... Dreaming?"
     ni "It'd make sense..."
     ni "I did tend to get nightmares in there..."
@@ -72,8 +73,8 @@ label go:
     i "How did we even get here?"
     i "A minute ago we were trapped in that lab."
     n "That's a good question..."
-    hide sid ind
-    show jenny ind
+    hide sid ind with dissolve
+    show jenny ind with dissolve
     j "Maybe we were on the train the whole time?"
     show jenny ind:
         linear .3 xcenter .75
@@ -128,14 +129,15 @@ label go:
     show black
     n "flashback to part about chips in our brain, have to cooperate etc"
     hide black
-
-    n "You think the chips knocked us out somehow?"
+    o "As terrifying as that is, it seems like the only explaination..."
+    n "You really think the chips knocked us out somehow?"
     hide kaiser ind
     hide cydney ind
     with dissolve
     show sam with dissolve
     s "It's the only logical explanation."
     s "Either way, I don't think it's worth spending any more time on."
+    s "We're finally all awake, we should try to figure out what's going on."
     n "Right. We should start exploring the train."
     show sam:
         xcenter .5
@@ -159,6 +161,7 @@ label go:
     f "Wh-what should I do?"
     f "I'm just a frog..."
     s "I keep forgetting there's a kid here too..."
+    b "It's probably best if Freddy doesn't get involved."
     hide sam with moveoutright
     hide bert happy with moveoutleft
     show frog ind:
@@ -180,11 +183,13 @@ label go:
 ###############INVESTIGATE#################
 ###########################################
 
-    show stella ind
-    t "Great point Lauren - I'll check behind the bar."
+    show stella happy
+    t "Great point Lauren - the whiskey could be hiding anywhere."
+    t "I'll check behind the bar."
+
 
     hide stella ind with moveoutright
-    show bert sad
+    show bert sad with dissolve
     b "..."
     hide bert sad
     show bert happy
@@ -193,6 +198,7 @@ label go:
     hide bert happy with moveoutright
     show shahar ind
     h "Aye, I'll check the next car up. To the front with me!"
+    h "The captain aught to be at the bow!"
     hide shahar ind with moveoutleft
     show sid ind
     i "I'll go with, the uh, pirate. Why is there a pirate here again?"
@@ -200,10 +206,21 @@ label go:
     show jenny ind
     j "Hmm, I'm going to go with them too. We should probably try to stay in groups."
     j "Plus, going to the front seems like the best way to find out where we're going."
-    hide jenny ind with moveoutleft
+    show jenny ind:
+        linear .2 xcenter .6
+    show catherine ind with moveinleft:
+        xcenter .38
+    c "We're coming too!"
+    show jenny ind with hpunch
+    j "AHHHHH!"
+    j "Catherine, your dumb cat just bit me!"
     show catherine happy
-    c "Alright Sesame, we're going exploring!"
+    c "Oops! Sorry, that's just Sesame's way of saying he's excited!"
+    j "Ow..."
+    c "Hehe, sorry! Alright Sesame, we're going exploring!"
     ses "Moewwwwww!"
+    ni "..."
+    hide jenny ind with moveoutright
     hide catherine ind with moveoutleft
 
     show sam
@@ -242,18 +259,21 @@ label backcar1:
     show sam with dissolve:
         xcenter .5
         linear 0.3 xcenter .75
-    s "Hmmm... Seems awfully run down back here."
+    s "Hmmm... It seems awfully run down back here."
+    s "There's a little cot, a bench, a water tank..."
+    n "This must be where the train hands would sleep on long trips."
     hide sam
     show drac ind:
         xcenter .75
-    d "It is rather dusty. I'd bet nobody's used this car in decades."
-    n "I can barely breath back here, let's crack a window or something."
+    d "I'd bet nobody's used this car in decades, though."
+    d "There's dust coating nearly every surface."
+    n "Maybe we can open a window or something."
     hide drac ind
     show sam:
         xcenter .75
     s "It seems like the only window is on the back door."
     hide sam with dissolve
-    blank "Sam checked out the back window for just a moment."
+    blank "Sam checked out the back window."
     show sam:
         xcenter .75
     s "No such luck - it definitely isn't designed to be opened."
@@ -261,10 +281,10 @@ label backcar1:
     n "Wait, we're at the backmost car already?"
     hide sam
     blank "Dracula and I checked the window as well."
-    blank "Sure enough, the window was riveted on and there was no car behind us."
+    blank "Sure enough, the window was riveted on and there was nothing behind us."
     show sam:
         xcenter .75
-    s "The back door should open, but there's no platform to stand on. Let's wait for the others before doing that."
+    s "The back door might open, but there's no platform to stand on. Let's wait for the others before doing that."
     s "It doesn't seem like there is anything useful back here, unless you're looking for a stretcher."
     n "Well, we definitely won't be needing that."
     hide sam
@@ -298,7 +318,7 @@ label backcar1:
         xcenter .75
     s "It's probably only for custodians. Maybe they'd have the key?"
     s "Either way, there's nothing more for us back here."
-    m "Yeah, it's getting hard to breathe back here as well."
+    n "Yeah, we should go back to the bar car."
 
 label midcar2:
     scene bg trainmid with fade
@@ -871,7 +891,14 @@ label midcar3:
     show sid ind
     n "I'm with you. Let's stick together Sid."
     i "D-deal!"
-    n "For now though, let's hit the hay. We can figure out some plans in the morning."
+    play sound "audio/butt.mp3" volume .5
+    show bg trainback:
+        alpha .5
+    i "Huh?"
+    n "Hmm, someone must have hit the light switch."
+    n "We found all 3 light switches in the front car earlier."
+    i "That should make it a little easier to sleep."
+    n "Yeah, let's hit the hay. We can figure out some more plans in the morning."
     i "Yeah! I call the bed!"
     hide sid ind with dissolve
 label day2:
