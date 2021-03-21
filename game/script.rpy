@@ -20,6 +20,7 @@ define audio.jaws = "jaws.mp3"
 init python:
     config.developer = True
     config.debug_sound = True
+    renpy.music.register_channel("sfx")
 
 ##############
 #Voice Defines
@@ -30,49 +31,49 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/voi3.mp3", channel="voice")
+            renpy.sound.play("audio/voi3.mp3")
         elif event == "slow_done":
-            renpy.sound.stop(channel="voice")
+            renpy.sound.stop()
 init python:
     def fillvoice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/fill.mp3", channel="voice")
+            renpy.sound.play("audio/fill.mp3")
         elif event == "slow_done":
-            renpy.sound.stop(channel="voice")
+            renpy.sound.stop()
 init python:
     def mevoice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/voi.mp3", channel="voice")
+            renpy.sound.play("audio/voi.mp3")
         elif event == "slow_done":
-            renpy.sound.stop(channel="voice")
+            renpy.sound.stop()
 init python:
     def bertvoice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/voi4.mp3", channel="voice")
+            renpy.sound.play("audio/voi4.mp3")
         elif event == "slow_done":
-            renpy.sound.stop(channel="voice")
+            renpy.sound.stop()
 init python:
     def dracvoice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/pencil.mp3", channel="voice")
+            renpy.sound.play("audio/pencil.mp3")
         elif event == "slow_done":
-            renpy.sound.stop(channel="voice")
+            renpy.sound.stop()
 init python:
     def stellavoice(event, interact=True, **kwargs):
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/voi2.mp3", channel="voice")
+            renpy.sound.play("audio/voi2.mp3")
         elif event == "slow_done":
-            renpy.sound.stop(channel="voice")
+            renpy.sound.stop()
 
 ###########
 #Show Chibi

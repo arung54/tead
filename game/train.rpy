@@ -634,7 +634,7 @@ label frontcar2:
     n "We probably shouldn't try them haphazardl-"
     b "Let's try them!"
     blank "Bert flipped the first switch."
-    play sound "audio/butt.mp3"
+    play sfx "audio/butt.mp3"
     show bg trainfront1:
         alpha .3
     hide drac ind
@@ -647,7 +647,7 @@ label frontcar2:
     d "Interesting. It seems this car {i}does{/i} control the rest of the train."
     b "Yeah. I think the 3 light switches correspond to the 3 train cars."
     blank "Bert flipped the first switch back."
-    play sound "sound/butt.mp3"
+    play sfx "audio/butt.mp3"
     show bg trainfront1:
         alpha 1
     b "We're making progress already! Let's keep looking around."
@@ -691,7 +691,7 @@ label passwording:
 
         if not password:
             password = "ERROR"
-    play sound "audio/beep.mp3"
+    play sfx "audio/beep.mp3"
     n "{i}I don't think the password is '[password]'...{/i}"
     menu:
         n "{i}Maybe I should try again...{/i}"
@@ -891,7 +891,7 @@ label midcar3:
     show sid ind
     n "I'm with you. Let's stick together Sid."
     i "D-deal!"
-    play sound "audio/butt.mp3" volume .5
+    play sfx "audio/butt.mp3" volume .5
     show bg trainback:
         alpha .5
     i "Huh?"
@@ -968,7 +968,7 @@ label day2:
     hide bert happy
     hide sam
     with dissolve
-    play sound "audio/beep.mp3"
+    play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5
@@ -1077,7 +1077,7 @@ label midcar4:
     show sid happy:
         xcenter .75
         linear .1 xcenter .78
-    play sound "<from 0 to 1>audio/mildshock.mp3" volume .2
+    play sfx "<from 0 to 1>audio/mildshock.mp3" volume .2
     i "Wh-what? Me? No way!"
     d "Oh? I'm sure you'll be happy to empty your pockets then."
     i "I-I-I can't."
@@ -1158,7 +1158,7 @@ label midcar4:
     show scary with dissolve:
         alpha .2
     ni "Should... Should I speak up?"
-    play sound "<from 0 to 3>audio/jaws.mp3" volume .1
+    play sfx "<from 0 to 3>audio/jaws.mp3" volume .1
     show scary:
         linear .3 alpha .5
     ni "I... Don't think they'd understand."
