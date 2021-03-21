@@ -614,7 +614,7 @@ label frontcar2:
     n "We probably shouldn't try them haphazardl-"
     b "Let's try them!"
     blank "Bert flipped the first switch."
-    play sound "sound/butt.mp3"
+    play sound "audio/butt.mp3"
     show bg trainfront1:
         alpha .3
     hide drac ind
@@ -1094,7 +1094,18 @@ label midcar4:
     t "Look, darlings... If it helps clear things up, I should probably admit..."
     t "As a wildly successful businesswoman - some might even say the René Laennec of our time - I've inevitably built up a... reputation."
     t "I've done what I had to do to get to the top, and I've made many enemies along the way."
+    n "What do you mean, 'done what you had to do'?"
+    t "I tore down competition, I burned bridges, you name it."
+    t "My methods don't always see eye-to-eye with the law, but, c'est la vie."
+    ni "Is this lady for real?"
+    b "That... Definitely seems like a reason to have enemies."
+    t "It feels oddly freeing to not have my bodyguards and assistants around, saying:"
+    t "'Ms. Cantoire! Put down the vodka!' 'Ms. Cantoire, don't put your head out the limousine sunroof!'"
+    b "..."
+    n "..."
     t "Of course, I am not the mole. It'd be a waste of my time."
+    t "I have nothing to gain from... This."
+    t "I'm only telling you all this so that you're not surprised when my past inevitably comes up."
     t "And sadly, I have no insight on who it might be."
     hide stella ind with moveoutleft
     b "..."
@@ -1102,9 +1113,17 @@ label midcar4:
     show sam with moveinleft:
         xcenter .25
     s "If we're airing out our past, I can go next."
-    s "I used to sell drugs, mostly to upper-class business people and rich high schoolers."
-    s "I don't regret it - it was an easy way to make money."
-    s "But I definitely pissed some people off. I wouldn't be surprised if that's part of why I'm here."
+    s "I don't have quite the same pedigree, but..."
+    s "I used to sell drugs, mostly to upper-class business people and spoiled rich kids."
+    s "I'd like to say I don't regret it, but..."
+    s "The drugs weren't always safe."
+    b "Not safe? What do you mean?"
+    s "A lot of the stuff I moved was untested and highly experimental."
+    s "But those dumb suits didn't know that, so they bought it."
+    n "Did it ever end up killing anyone?"
+    s "Honestly? I don't even know."
+    s "That stuff's behind me, and it's hard to think about sometimes, so I try not to."
+    s "But I do know I at {i}least{/i} pissed some people off. I wouldn't be surprised if that's part of why I'm here."
     b "Hmmm... Well, we're getting somewhere."
     b "Any information we can gather is progress."
     b "Does anyone else have anything they want to bring up?"
