@@ -1050,7 +1050,7 @@ label midcar4:
     show sid happy:
         xcenter .75
         linear .1 xcenter .78
-    play sound "audio/mildshock.mp3"
+    play sound "audio\mildshock.mp3"
     i "Wh-what? Me? No way!"
     d "Oh? I'm sure you'll be happy to empty your pockets then."
     i "I-I-I can't."
@@ -1112,8 +1112,7 @@ label midcar4:
     show scary with dissolve:
         alpha .2
     ni "Should... Should I speak up?"
-    play sound "audio/jaws.mp3"
-    pause
+    play audio "audio/jaws.mp3"
     show scary:
         linear .3 alpha .5
     ni "I... Don't think they'd understand."
