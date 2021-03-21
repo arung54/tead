@@ -614,7 +614,7 @@ label frontcar2:
     n "We probably shouldn't try them haphazardl-"
     b "Let's try them!"
     blank "Bert flipped the first switch."
-    play sound "butt.mp3"
+    play sound "sound/butt.mp3"
     show bg trainfront1:
         alpha .3
     hide drac ind
@@ -627,7 +627,7 @@ label frontcar2:
     d "Interesting. It seems this car {i}does{/i} control the rest of the train."
     b "Yeah. I think the 3 light switches correspond to the 3 train cars."
     blank "Bert flipped the first switch back."
-    play sound "butt.mp3"
+    play sound "sound/butt.mp3"
     show bg trainfront1:
         alpha 1
     b "We're making progress already! Let's keep looking around."
@@ -671,7 +671,7 @@ label passwording:
 
         if not password:
             password = "ERROR"
-    play sound "beep.mp3"
+    play sound "audio/beep.mp3"
     n "{i}I don't think the password is '[password]'...{/i}"
     menu:
         n "{i}Maybe I should try again...{/i}"
@@ -684,7 +684,7 @@ label passwording:
     hide welcomescreenblank with dissolve
     n "{i}I can come back if I figure it out, but I don't want to take too long up here.{/i}"
 label midcar3:
-    play music "invest1.wav" volume .3
+    play music "audio/invest1.wav" volume .3
 
     scene bg trainmid with fade
     $ showchibi("dan", "shahar", "stella")
@@ -878,7 +878,7 @@ label day2:
     scene black
     pause 1
     blank "The next morning..."
-    play music "rush.mp3" volume .3 fadein 1.0
+    play music "audio/rush.mp3" volume .3 fadein 1.0
     scene bg trainback
     $ showchibi("dan", "sid")
     show chaptericon at topright:
@@ -941,7 +941,7 @@ label day2:
     hide bert happy
     hide sam
     with dissolve
-    play sound "beep.mp3"
+    play sound "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5
@@ -976,6 +976,7 @@ label day2:
     scene black with fade
     blank "30 minutes had passed, Dan went to meet the others in the bar car."
 label midcar4:
+    play music "audio/rush.mp3"
     show bg trainmid with fade
     $ showchibi("dan", "bert", "catherine", "cydney", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show bert sad with dissolve:
@@ -1049,6 +1050,7 @@ label midcar4:
     show sid happy:
         xcenter .75
         linear .1 xcenter .78
+    play sound "audio/mildshock.mp3"
     i "Wh-what? Me? No way!"
     d "Oh? I'm sure you'll be happy to empty your pockets then."
     i "I-I-I can't."
@@ -1064,27 +1066,62 @@ label midcar4:
     show catherine ind with dissolve
     c "Guys, I don't think this is very productive."
     c "Throwing around accusations isn't going to get us anywhere."
-    c "Besides, I think I'm more worried about the other thing the screen said..."
-    blank "screen saying theyre all criminals"
-    c "Surely that can't be true, right?"
-    c "I mean, I know {i}I'm{/i} not a criminal, and I can't speak for the rest of you, but there are kids here..."
-    c "They can't have criminal records, right? Freddy's so nervous he won't even take off his hoodie."
     show catherine ind:
         linear .3 xcenter .75
     show jenny ind with moveinleft:
-        xcenter .25
-    j "Well, on the other side of the coin..."
-    j "If Shahar really is a pirate, that's definitely criminal activity."
-    j "And Dracula did just prove that Sid was stealing, even if it is only small things..."
-    c "So, maybe some of us really are criminals..."
-    j "It appears that way..."
-    hide jenny with moveoutleft
+        linear .3 xcenter .25
+    j "If one of us is the mole though, it should be our highest priority to figure out who it is."
+    c "That's true..."
+    c "Maybe we should just... Talk more about ourselves?"
+    c "Even if it doesn't help figure out who the mole is, it'd be good to learn more about each other."
+    j "Yeah, we're all stuck in here together anyway."
+    c "With that said, I don't feel particularly notable..."
+    c "I'm just a veterinary student... I like rock climbing... Long walks on the beach..."
+    hide catherine ind with moveoutright
+    show bert happy with moveinright:
+        xcenter .75
+    b "As interesting as that stuff is, maybe we should be focused more on... More extreme things."
+    hide bert happy
+    show bert sad:
+        xcenter .75
+    b "Reasons why someone might want to kidnap us, for example."
+
+    #############################################################################################################################################################################
+
+    hide jenny ind with moveoutleft
     show stella ind with moveinleft:
         xcenter .25
-    t "Look, darling... If it helps clear things up, I should probably admit..."
-    t "As a wildly successful businesswoman - some might even say the René Laennec of our time - I've inevitably built up a... record."
-    c "You have a criminal record?"
-    t "I have nothing to hide."
-    t "You can't make an omelette without cracking a few eggs. I did what I had to do to get to the top."
-    t "Anyway. Do what you will with this information."
+    t "Look, darlings... If it helps clear things up, I should probably admit..."
+    t "As a wildly successful businesswoman - some might even say the René Laennec of our time - I've inevitably built up a... reputation."
+    t "I've done what I had to do to get to the top, and I've made many enemies along the way."
+    t "Of course, I am not the mole. It'd be a waste of my time."
+    t "And sadly, I have no insight on who it might be."
     hide stella ind with moveoutleft
+    b "..."
+    b "Well at least she's being open about it."
+    show sam with moveinleft:
+        xcenter .25
+    s "If we're airing out our past, I can go next."
+    s "I used to sell drugs, mostly to upper-class business people and rich high schoolers."
+    s "I don't regret it - it was an easy way to make money."
+    s "But I definitely pissed some people off. I wouldn't be surprised if that's part of why I'm here."
+    b "Hmmm... Well, we're getting somewhere."
+    b "Any information we can gather is progress."
+    b "Does anyone else have anything they want to bring up?"
+    ni "..."
+    show scary with dissolve:
+        alpha .2
+    ni "Should... Should I speak up?"
+    play sound "audio/jaws.mp3"
+    show scary:
+        linear .3 alpha .5
+    ni "I... Don't think they'd understand."
+    show scary:
+        linear .3 alpha .8
+    ni "There's no way they could understand."
+    show scary:
+        linear .3 alpha .95
+    ni "Yeah... Now's not the ti-"
+    hide scary
+    b "I guess I'll go next."
+    b "It's not exactly the same as Stella's or Sam's, but..."

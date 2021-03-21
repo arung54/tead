@@ -10,6 +10,8 @@ image tracks:
     "tracks2.png"
     pause .05
     repeat
+define audio.jaws = "jaws.mp3"
+
 
 ##############
 #Toggle Dev
@@ -27,7 +29,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("voi3.mp3")
+            renpy.sound.play("audio/voi3.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 init python:
@@ -35,7 +37,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("fill.mp3")
+            renpy.sound.play("audio/fill.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 init python:
@@ -43,7 +45,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("voi.mp3")
+            renpy.sound.play("audio/voi.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 init python:
@@ -51,7 +53,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("voi4.mp3")
+            renpy.sound.play("audio/voi4.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 init python:
@@ -59,7 +61,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("pencil.mp3")
+            renpy.sound.play("audio/pencil.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 init python:
@@ -67,7 +69,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("voi2.mp3")
+            renpy.sound.play("audio/voi2.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 
@@ -162,5 +164,5 @@ label start:
 #Start jump
 ###########
 
-    call screen frontCar
+    #call screen frontCar
     jump midcar4
