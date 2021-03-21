@@ -95,7 +95,7 @@ label bertHang:
         show bert sad
         b "You're not wrong."
         b "But not all problems can be solved like a homework problem in a few minutes."
-        b "Unless the mastermind picked 12 arbitrary people, there has to be some answer"
+        b "Unless the mastermind picked 12 arbitrary people, there has to be some answer."
         b "We just have to work hard and work together to find it."
         b "The alternative is we just sit around hoping things work out."
         n "Surely it won't be that easy."

@@ -19,6 +19,7 @@ define audio.jaws = "jaws.mp3"
 
 init python:
     config.developer = True
+    config.debug_sound = True
 
 ##############
 #Voice Defines
