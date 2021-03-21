@@ -1112,7 +1112,7 @@ label midcar4:
     show scary with dissolve:
         alpha .2
     ni "Should... Should I speak up?"
-    play sound "audio/jaws.mp3"
+    play audio "audio/jaws.mp3"
     show scary:
         linear .3 alpha .5
     ni "I... Don't think they'd understand."
