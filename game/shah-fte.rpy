@@ -1,4 +1,5 @@
 
+#Train 1
 label shahAsk0:
     scene bg trainmid
     show shahar ind with dissolve
@@ -6,6 +7,7 @@ label shahAsk0:
     ni "...yeah, I should go talk to Bert instead of this guy."
     call screen midCar
 
+#Train 2
 label shahAsk1:
     scene bg trainmid
     show shahar ind with dissolve
@@ -13,7 +15,73 @@ label shahAsk1:
     h "Wait, no, that's just a mirage..."
     blank "Should I talk to Shahar?"
     menu:
-        "Spend time with shah":
+        "Spend time with Shahar?":
+            h "Arr laddy, you've made a good choice!"
+            ni "...have I?"
+            jump shahHang
+        "Maybe later":
+            hide shahar with dissolve
+            call screen midCar
+
+#Mansion 1
+label shahAsk2:
+    menu:
+        "Spend time with Shahar?":
+            h "Arr laddy, you've made a good choice!"
+            ni "...have I?"
+            jump shahHang
+        "Maybe later":
+            hide shahar with dissolve
+            call screen midCar
+
+#Mansion 2
+label shahAsk3:
+    menu:
+        "Spend time with Shahar?":
+            h "Arr laddy, you've made a good choice!"
+            ni "...have I?"
+            jump shahHang
+        "Maybe later":
+            hide shahar with dissolve
+            call screen midCar
+
+#Mansion 3
+label shahAsk4:
+    menu:
+        "Spend time with Shahar?":
+            h "Arr laddy, you've made a good choice!"
+            ni "...have I?"
+            jump shahHang
+        "Maybe later":
+            hide shahar with dissolve
+            call screen midCar
+
+#Hospital 1
+label shahAsk5:
+    menu:
+        "Spend time with Shahar?":
+            h "Arr laddy, you've made a good choice!"
+            ni "...have I?"
+            jump shahHang
+        "Maybe later":
+            hide shahar with dissolve
+            call screen midCar
+
+#Hospital 2
+label shahAsk6:
+    menu:
+        "Spend time with Shahar?":
+            h "Arr laddy, you've made a good choice!"
+            ni "...have I?"
+            jump shahHang
+        "Maybe later":
+            hide shahar with dissolve
+            call screen midCar
+
+#Hospital 3
+label shahAsk7:
+    menu:
+        "Spend time with Shahar?":
             h "Arr laddy, you've made a good choice!"
             ni "...have I?"
             jump shahHang
@@ -22,6 +90,7 @@ label shahAsk1:
             call screen midCar
 
 label shahHang:
+    #Dan FTE 1
     if fte_shah == -1:
         h "Y'arr, Dan, what can I do for ye?"
         n "Do you really have to talk like that?"
@@ -70,7 +139,7 @@ label shahHang:
         ni "I understand Shahar better now at least."
         ni "Understand he's a lunatic, that is."
 
-
+    #Bert FTE 1
     if fte_shah == 0:
         h "Ahoy laddy! What can I do fer ye?"
         b "Hey Shahar. I guess I wanted to know more about you and your life."
@@ -114,6 +183,7 @@ label shahHang:
         b "After what seemed like hours, I managed to talk him out of fighting me drunk."
         b "I can't claim I understand Shahar better, but I think I at least like him more now."
 
+    #Bert FTE 2
     if fte_shah == 1:
         h "Mate! Back for more tales of the sea?"
         b "Sort of. I was wondering, how did you become a pirate?"
@@ -159,6 +229,7 @@ label shahHang:
         scene black with fade
         b "I got to know Shahar better, but I think it just made more sorry for him."
 
+    #Bert FTE 3
     if fte_shah == 2:
         h "Back again lad? You must love hearing tales of the sea."
         bi "Not really, but at this point I'm all in on trying to figure him out."

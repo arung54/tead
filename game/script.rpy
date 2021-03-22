@@ -150,9 +150,9 @@ label start:
         ftecounter = 0
         fte_bert = -2
         fte_sam = -1
-        fte_stell = -1
+        fte_stel = -1
         fte_drac = -1
-        fte_fred = -1
+        fte_frog = -1
         fte_jenn = -1
         fte_laur = -1
         fte_sid = -1
