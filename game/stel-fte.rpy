@@ -16,7 +16,7 @@ label stelAsk1:
     menu:
         "Spend time with Stella?":
             j "Sure!"
-            jump samHang
+            jump stelHang
         "Maybe later":
             hide stella with dissolve
             call screen midCar
@@ -26,7 +26,7 @@ label stelAsk2:
     menu:
         "Spend time with Stella?":
             j "Sure!"
-            jump samHang
+            jump stelHang
         "Maybe later":
             hide stella with dissolve
             call screen midCar
@@ -36,7 +36,7 @@ label stelAsk3:
     menu:
         "Spend time with Stella?":
             j "Sure!"
-            jump samHang
+            jump stelHang
         "Maybe later":
             hide stella with dissolve
             call screen midCar
@@ -46,12 +46,12 @@ label stelAsk4:
     menu:
         "Spend time with Stella?":
             j "Sure!"
-            jump samHang
+            jump stelHang
         "Maybe later":
             hide stella with dissolve
             call screen midCar
 
-label samHang:
+label stelHang:
     #Dan FTE 1
     if fte_stel == -1:
         h "Y'arr, Dan, what can I do for ye?"
