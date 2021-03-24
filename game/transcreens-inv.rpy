@@ -11,6 +11,9 @@ screen trainMapInv():
 style button_text:
     color "#fff"
 
+style blue_text:
+    color "#00f"
+
 screen trainEvidence():
     vbox xalign 0.0 spacing 30:
         if train_evidence[0]:
