@@ -51,7 +51,7 @@ label stelAsk4:
             hide stella with dissolve
             call screen midCar
 
-label samHang:
+label stelHang:
     #Dan FTE 1
     if fte_stel == -1:
         h "Y'arr, Dan, what can I do for ye?"
