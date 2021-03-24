@@ -160,6 +160,7 @@ label start:
         fte_cath = -1
         fte_kais = -1
         currEvidence = -1
+        phase = 0
         statement = -1
         train_evidence = [True, True]
 
@@ -167,5 +168,5 @@ label start:
 #Start jump
 ###########
 
-    call screen trainTrial1
+    call screen trainTrial0
     #jump go
