@@ -11,7 +11,18 @@ image tracks:
     pause .05
     repeat
 define audio.jaws = "jaws.mp3"
-
+image eviscroll:
+    contains:
+        "evleftx3.png"
+        ypos -2.0
+        linear 80.0 ypos .01
+        repeat
+image debatescroll:
+    contains:
+        "vineslide.png"
+        ypos .2
+        xpos -1
+        linear 60 xpos .01
 
 ##############
 #Toggle Dev
@@ -168,5 +179,5 @@ label start:
 #Start jump
 ###########
 
-    call screen trainTrial0
-    #jump go
+    #call screen trainTrial0
+    jump test3

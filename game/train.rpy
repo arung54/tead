@@ -1171,3 +1171,11 @@ label midcar4:
     hide scary
     b "I guess I'll go next."
     b "It's not exactly the same as Stella's or Sam's, but..."
+
+label test3:
+    show debatescroll
+    show debateui
+    show sid ind with moveinleft:
+        xcenter .16
+    centered "Im bert"
+    b "Hmm does anyone else"
