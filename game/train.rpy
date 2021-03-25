@@ -12,19 +12,19 @@ label go:
     ni "Huh?"
     blank "HEY!!!"
     scene bg trainmid
-    show cydney ind
+    show lauren ind
     with fade
     o "Hey, wake up already."
     o "How'd you manage to stay knocked out even longer than the kid?"
     n "..."
     n "Where are we now?"
-    show cydney ind:
+    show lauren ind:
         xcenter .5
         linear 0.3 xcenter .75
     o "I mean, look around. Where do you think we are?"
     n "It's a... train car."
     n "And we're {i}moving.{/i}"
-    hide cydney ind with dissolve
+    hide lauren ind with dissolve
     show sam
     s "Yeah, we're going somewhere..."
     s "...Or being taken somewhere."
@@ -121,7 +121,7 @@ label go:
     show kaiser ind:
         xcenter .5
         linear 0.3 xcenter .75
-    show cydney ind with moveinleft:
+    show lauren ind with moveinleft:
         xcenter .25
     o "Kaiser's probably right... Think back to what the monitor told us."
 
@@ -132,7 +132,7 @@ label go:
     o "As terrifying as that is, it seems like the only explaination..."
     n "You really think the chips knocked us out somehow?"
     hide kaiser ind
-    hide cydney ind
+    hide lauren ind
     with dissolve
     show sam with dissolve
     s "It's the only logical explanation."
@@ -167,18 +167,18 @@ label go:
     show frog ind:
         xcenter .5
         linear .3 xcenter .75
-    show cydney ind with moveinleft:
+    show lauren ind with moveinleft:
         xcenter .25
     o "We can sit together, buddy. We'll hang out here."
     f "{i}*sniffle*{/i} Okay miss."
     hide frog ind with moveoutright
-    show cydney ind:
+    show lauren ind:
         linear .3 xcenter .5
     o "I can watch him, I used to babysit in highschool."
     o "I don't want a kid involved in... Whatever this is."
     n "That's probably smart. I'm not great with kids myself."
     o "The rest of you better search every corner of this train though."
-    hide cydney ind
+    hide lauren ind
 ###########################################
 ###############INVESTIGATE#################
 ###########################################
@@ -326,17 +326,17 @@ label midcar2:
         zoom 1.5 xpos 20 ypos 20
     show samchibi:
         zoom 1.5 xpos 20 ypos 70
-    show cydneychibi:
+    show laurenchibi:
         zoom 1.5 xpos 20 ypos 120
     show bertchibi:
         zoom 1.5 xpos 20 ypos 170
     show stellachibi:
         zoom 1.5 xpos 20 ypos 220
-    show cydney ind
+    show lauren ind
     o "Did you find anything useful?"
     n "Not really. The next car back is the caboose."
     n "We should probably wait for everyone else to come back before going into too much detail."
-    hide cydney ind
+    hide lauren ind
     show stella drunk
     t "Hey cutie, is there anything harder back there? Maybe some rum?"
     show stella drunk:
@@ -421,7 +421,7 @@ python:
     hide sidchibi with dissolve
     hide catherinechibi
     hide draculachibi
-    hide cydneychibi
+    hide laurenchibi
 '''
 
 label frontcar1:
@@ -432,7 +432,7 @@ label frontcar1:
         zoom 1.5 xpos 20 ypos 20
     show samchibi:
         zoom 1.5 xpos 20 ypos 70
-    show cydneychibi:
+    show laurenchibi:
         zoom 1.5 xpos 20 ypos 120
     show bertchibi:
         zoom 1.5 xpos 20 ypos 170
@@ -510,7 +510,7 @@ label frontcar2:
         zoom 1.5 xpos 20 ypos 20
     show samchibi:
         zoom 1.5 xpos 20 ypos 70
-    show cydneychibi:
+    show laurenchibi:
         zoom 1.5 xpos 20 ypos 120
     show bertchibi:
         zoom 1.5 xpos 20 ypos 170
@@ -540,13 +540,13 @@ label frontcar2:
         xcenter .25
     h "Arg. I say we crack a window n' make a jump for it!"
     hide catherine ind with moveoutright
-    show cydney ind with moveinright:
+    show lauren ind with moveinright:
         xcenter .8
     o "Kaiser just said we're going over 140 MPH."
     o "Feel free to jump out the window if you want to, but there's no way I'm going to."
     h "Ye make a good point."
     h "A hundred knots is nothing to trifle with."
-    hide cydney ind
+    hide lauren ind
     hide shahar ind
     with dissolve
     show frog sad with moveinbottom:
@@ -576,14 +576,14 @@ label frontcar2:
     s "In any case..."
     s "We should make a plan."
     s "We can't just sit here and wait to find out where we're going."
-    show cydney ind with moveinright:
+    show lauren ind with moveinright:
         xcenter .75
     o "I agree. It's getting late, but we should spend a little more time exploring before calling it a day."
     o "Some of us haven't even seen the back car yet, so we should start there."
     s "Yeah, let's make sure we're staying in groups."
     s "Especially the kids, like Freddy and Sid."
     hide sidstand with dissolve
-    show cydney ind:
+    show lauren ind:
         xcenter .75
         linear 0.3 xcenter .85
     show sam:
@@ -599,7 +599,7 @@ label frontcar2:
     i "..............."
     i "I'm outta here! You guys suck!"
     hide sid ind with dissolve
-    show cydney ind:
+    show lauren ind:
         xcenter .85
         linear 0.3 xcenter .75
     show sam:
@@ -609,7 +609,7 @@ label frontcar2:
     s "...I'll go after him to apologize."
     s "We can head to the back car together afterwards."
     o "I'll come too."
-    hide cydney ind with dissolve
+    hide lauren ind with dissolve
     hide sam with dissolve
     show kaiser ind with dissolve
     k "I'm going as well. I haven't seen the back car yet."
@@ -718,7 +718,7 @@ label midcar3:
     j "Hope you don't mind, we started eating without you."
     show jenny happy:
         linear .3 xcenter .75
-    show cydney ind:
+    show lauren ind:
         xcenter .25
     o "Turkey sandwiches and mixed nuts aren't much, but I'm starving."
     j "Yeah, this our first meal since we've woken up here."
@@ -728,7 +728,7 @@ label midcar3:
     j "I feel a little bad for Catherine..."
     j "She's a vegetarian, so she's only been eating the nuts and bread."
     o "Plus, there's no cat food. Sesame's been eating the turkey from the sandwiches."
-    hide cydney ind with dissolve
+    hide lauren ind with dissolve
     show catherine happy with dissolve:
         xcenter .25
     c "Don't worry about us!"
@@ -935,7 +935,7 @@ label day2:
     hide tracks with dissolve
     ni "But for now, I should go meet the others."
     show bg trainmid with fade
-    $ showchibi("dan", "bert", "catherine", "cydney", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
     show catherine happy with dissolve:
         xcenter .5
         linear .3 xcenter .75
@@ -1005,7 +1005,7 @@ label day2:
 label midcar4:
     play music "audio/rush.mp3"
     show bg trainmid with fade
-    $ showchibi("dan", "bert", "catherine", "cydney", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show bert sad with dissolve:
         xcenter .5
         linear .3 xcenter .75
@@ -1028,7 +1028,7 @@ label midcar4:
     j "I think the implication is that whoever planned all this..."
     j "Is one of us."
     hide kaiser ind with moveoutleft
-    show cydney ind with moveinleft:
+    show lauren ind with moveinleft:
         xcenter .25
     o "Do you really think the person behind the messages is here right now?"
     hide jenny ind with moveoutright
@@ -1050,7 +1050,7 @@ label midcar4:
         xcenter .75
     i "Sam's right! Shahar and Dracula are suspicious."
     o "I don't think we should start throwing around accusations..."
-    hide cydney ind with moveoutleft
+    hide lauren ind with moveoutleft
     show shahar ind with moveinleft:
         xcenter .25
     h "Aye, I'm a man of 'onor. What are ye worried about, bucko?"
