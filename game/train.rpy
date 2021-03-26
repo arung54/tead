@@ -595,8 +595,8 @@ label frontcar2:
     i "I'm a man!"
     s "Oh yeah? Any luck with the controls panel big guy?"
     i "..."
-    i "....."
-    i "..............."
+    i "It locked me out after 5 attempts at the password..."
+    s "Ha!"
     i "I'm outta here! You guys suck!"
     hide sid ind with dissolve
     show lauren ind:
@@ -680,29 +680,35 @@ label frontcar3:
     hide bert sad
     hide drac ind
     with dissolve
-    n "......"
-    n "{i}Now that I'm alone...{/i}"
+    ni "......"
+    ni "Now that I'm alone..."
 label passwording:
     show welcomescreenblank with dissolve
-    n "{i}Might as well try some passwords.{/i}"
-    python:
-        password = renpy.input("What could it be?", length=10)
-        password = password.strip()
+    $ passattempts = 1
+    while passattempts < 10:
+        $ password = renpy.input("What could it be?", length=10)
+        $ password = password.strip()
 
         if not password:
-            password = "ERROR"
-    play sfx "audio/beep.mp3"
-    n "{i}I don't think the password is '[password]'...{/i}"
-    menu:
-        n "{i}Maybe I should try again...{/i}"
+            $ password = "ERROR"
+        play sfx "<from 0 to 1>audio/beep.mp3"
+        ni "I don't think the password is '[password]'..."
+        menu:
+            ni "Maybe I should try again..."
+            "It can't hurt...":
+                $ passattempts += 1
+                if passattempts > 5:
+                    ni "Hmm... The screen froze up."
+                    ni "I must have gotten it wrong too many times, it's not letting me enter any more passwords."
+                    ni "I guess I should go meet back up with the others."
+                    jump donepasswording
 
-        "{i}It can't hurt...{/i}":
-            jump passwording
-
-        "{i}I should go meet up with the others...{/i}":
-            n "{i}They're probably waiting for me.{/i}"
-    hide welcomescreenblank with dissolve
-    n "{i}I can come back if I figure it out, but I don't want to take too long up here.{/i}"
+            "I should go meet up with the others...":
+                jump donepasswording
+label donepasswording:
+    show bg trainfront1 with fade
+    ni "They're probably waiting for me."
+    ni "I can come back if I figure it out, but I don't want to take too long up here."
 label midcar3:
     play music "audio/invest1.wav" volume .3
 
@@ -899,7 +905,10 @@ label midcar3:
     n "We found all 3 light switches in the front car earlier."
     i "That should make it a little easier to sleep."
     n "Yeah, let's hit the hay. We can figure out some more plans in the morning."
-    i "Yeah! I call the bed!"
+    i "You can have the bed. I'm fine sleeping on the bench."
+    n "Okay, you can have the bed tomorrow night."
+    ni "The thought of still being stuck on this train tomorrow night sent chills through my body."
+    n "Alright, goodnight Sid."
     hide sid ind with dissolve
 label day2:
     scene black

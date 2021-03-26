@@ -22,8 +22,9 @@ image debatescroll:
         "vineslide.png"
         ypos .2
         xpos -1
-        linear 60 xpos .01
-
+        linear 30 xpos .01
+        repeat
+$ passattempts = 1
 ##############
 #Toggle Dev
 ##############
@@ -31,7 +32,7 @@ image debatescroll:
 init python:
     config.developer = True
     config.debug_sound = True
-    renpy.music.register_channel("sfx")
+    renpy.music.register_channel("sfx", loop = False)
 
 ##############
 #Voice Defines
@@ -180,4 +181,4 @@ label start:
 ###########
 
     #call screen trainTrial0
-    jump test3
+    jump passwording
