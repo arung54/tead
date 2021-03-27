@@ -346,7 +346,7 @@ label midcar2:
         xcenter .25
     b "Hey, woah!"
     b "Stella might be a little drunk. I tried to tell her not to drink, but..."
-    t "Anyone need a beer? There's a lot back th-"
+    t "Anyone need a beer? There's a lot ba-"
     hide bert sad
     show sam with dissolve:
         xcenter .25
@@ -683,6 +683,7 @@ label frontcar3:
     ni "......"
     ni "Now that I'm alone..."
 label passwording:
+    play music "audio/invest1.wav" volume .3
     show welcomescreenblank with dissolve
     $ passattempts = 1
     while passattempts < 10:
@@ -691,7 +692,7 @@ label passwording:
 
         if not password:
             $ password = "ERROR"
-        play sfx "<from 0 to 1>audio/beep.mp3"
+        play sfx "<from 0 to 1>audio/beep.mp3" volume .5
         ni "I don't think the password is '[password]'..."
         menu:
             ni "Maybe I should try again..."
@@ -1121,6 +1122,7 @@ label midcar4:
     show bert sad:
         xcenter .75
     b "Reasons why someone might want to kidnap us, for example."
+    ni "..."
 
     #############################################################################################################################################################################
 
@@ -1180,11 +1182,3 @@ label midcar4:
     hide scary
     b "I guess I'll go next."
     b "It's not exactly the same as Stella's or Sam's, but..."
-
-label test3:
-    show debatescroll
-    show debateui
-    show sid ind with moveinleft:
-        xcenter .16
-    centered "Im bert"
-    b "Hmm does anyone else"

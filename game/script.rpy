@@ -181,4 +181,4 @@ label start:
 ###########
 
     #call screen trainTrial0
-    jump passwording
+    jump midcar4
