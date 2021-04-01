@@ -17,8 +17,11 @@ label checkEvidenceTrain:
 
 
 screen trainEvidenceTrial():
-    add "scary.png"
-    vbox xalign 0.0 spacing 30:
+    add "eviscroll"
+    imagemap:
+        ground "evidenceui.png"
+        hotspot(35, 29, 144, 75) action [Hide("trainEvidenceTrial")]
+    vbox xalign 0.15 yalign 0.5 spacing 30:
         if train_evidence[0]:
             textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
         else:
@@ -28,17 +31,21 @@ screen trainEvidenceTrial():
             textbutton "The View From The Front" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
-        textbutton "Go Back" action Hide("trainEvidenceTrial")
 
     if currEvidence == 0:
-        image "computer.png" xalign 1.0 yalign 0.0
-        text "The computer used to navigate the train." xalign 1.0 yalign 0.5
-        textbutton "Submit Evidence" xalign 1.0 yalign 1.0 action [Hide("trainEvidenceTrial"), Jump("checkEvidenceTrain")]
+        image "computer.png" xcenter 800 yalign 0.0
+        text "The computer used to navigate the train." xcenter 800 yalign 0.3
 
     if currEvidence == 1:
-        image "window.png" xalign 1.0 yalign 0.0
-        text "The tunnel wasn't visible from the window." xalign 1.0 yalign 0.5
-        textbutton "Submit Evidence" xalign 1.0 yalign 1.0 action [Hide("trainEvidenceTrial"), Jump("checkEvidenceTrain")]
+        image "window.png" xcenter 800 yalign 0.0
+        text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yalign 0.3
+
+    if currEvidence >= 0:
+        imagebutton:
+            idle "usethis.png"
+            xalign 0.66
+            yalign 0.9
+
 
 screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4):
     add "debatescroll"
