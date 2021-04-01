@@ -1237,14 +1237,79 @@ label midcar4:
     j "I don't see us getting anywhere with this."
     o "Alright, let's divide up the food for tonight."
     hide jenny ind
+    hide lauren ind
     hide frog ind
     with dissolve
     show lauren ind:
-        linear .3 xcenter .5
-    o "I think after we eat I'll spend some time on the computers in the front car."
-    o "Who knows, maybe with a little luck we can figure out the passwords."
-    show lauren ind:
+label midcar5:
+    scene black
+    blank "They shared the rest of the non-alcoholic food and drinks amongst themselves."
+    blank "There was much less talking tonight."
+    show bg trainmid with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show lauren ind with dissolve:
+        xcenter .3
         linear .3 xcenter .75
+    o "I think I'm going to spend some time on the computers in the front car."
+    o "Who knows, maybe with a little luck we can figure out the passwords."
     show sam with moveinleft:
         xcenter .25
     s "Yeah, I'll come too. I'm not very tired yet."
+    hide sam
+    hide lauren ind
+    with moveoutleft
+    $ showchibi("dan", "bert", "catherine", "freddy", "jenny", "kaiser", "shahar", "sid", "stella", "dracula")
+    show kaiser ind:
+        xcenter .25
+    show shahar ind:
+        xcenter .75
+    with moveinright
+    h "I feel a bit guilty, lads."
+    h "I want to 'figure out the passwords', as ye say, but I ain't much help when it comes to techlonogy..."
+    k "There's no harm in trying."
+    k "We might as well head up to the front as well."
+    hide kaiser ind
+    hide shahar ind
+    with moveoutleft
+    $ showchibi("dan", "bert", "catherine", "freddy", "jenny", "sid", "stella", "dracula")
+    show sid ind with dissolve
+    i "Hey Dan."
+    i "It seems like almost everyone - bar maybe Dracula - is starting to go to sleep here."
+    i "And I'm starting to get tired myself."
+    i "I'm gunna hit the hay."
+    play sfx "audio/butt.mp3" volume .1
+    hide sid ind
+    show sid happy
+    show bg trainmid:
+        alpha .3
+    n "!"
+    n "I guess they hit the light switch in the front car, since everyone's going to sleep anyway."
+    ni "It's pretty hard to see in here, with the lights off."
+    n "I'll come too, Sid."
+    scene black
+    blank "They made their way to the back car."
+    show bg trainback with dissolve
+    $ showchibi("dan", "sid")
+    show sid ind with dissolve
+    i "Well, goodnight Dan!"
+    n "Hey, Sid. How are you, well, feeling? About everything."
+    i "Well, it's a little scary I suppose."
+    i "We're all out of food, and some of the people on board are suspicious..."
+    hide sid ind
+    show sid smile
+    i "But I'm hopeful."
+    n "Hopeful?"
+    i "Yeah! I think we're gunna get off this train, safe and sound."
+    i "After all, I have stuff to do! I'm gunna show my family the world!"
+    ni "Damn right you will, kid."
+    n "You can have the bed tonight."
+    n "I'll sleep on the bench."
+    i "Wahoo!"
+    i "A-are you sure though? I don't mind sleeping on the bench."
+    n "Yeah, I don't think I'm going to go to sleep yet anyway."
+    i "Okay! Goodnight Dan."
+    hide sid smile with dissolve
+    ni "....."
+    ni "I can already hear him snoring."
+    ni "It almost makes me feel bad..."
+    ni "Wait - what is that?"

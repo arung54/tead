@@ -184,9 +184,9 @@ label start:
 ###########
 #Start jump
 ###########
-    call screen trainEvidenceTrial
+    #call screen trainEvidenceTrial
     # call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
     # "sid", "test2 asdfasdfasdfasdfasdf", -1,
     # "sid", "test3 asdfasdfasdfasdf", 1,
     # "sid", "test4 asdfasdfasdfasdf", -1)
-    jump midcar4
+    jump midcar5
