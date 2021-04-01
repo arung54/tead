@@ -255,7 +255,22 @@ label laurHang:
 
     #Bert FTE 3
     if fte_laur == 2:
-        h "Back again lad? You must love hearing tales of the sea."
+        o "Hey Bert, gotta tell you, our conversations got real deep real fast."
+        b "Yeah, sorry about that."
+        b "I know you that sort of stuff is hard to talk to strangers who might want to kill you."
+        b "I appreciate your openness, and get if you wanna talk more casually."
+        o "Well, I'm pretty sure you're not going to try to kill me at this point."
+        o "Not to bring up sore sports, but you're one of the few people who opened up about their crime."
+        o "And we haven't exactly been anywhere with access to roads."
+        o "So I don't really mind bringing it up."
+        b "Well, even if you trust me, we haven't known each other that long."
+        o "I mean, I've gone through some shit, but I was able to use it to become stronger."
+        o "Or at least, stubborn enough to give the illusion of being strong."
+        o "And it defines who I am a lot. My main hobby came out of needing to feel safe."
+        o "So really, I don't mind talking about it."
+        b "Thanks for saying that."
+        o "But it would be nice if we could talk about something fun for once."
+
 
     #Bert post-3
     if fte_laur >= 3:

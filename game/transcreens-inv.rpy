@@ -15,7 +15,11 @@ style blue_text:
     color "#00f"
 
 screen trainEvidence():
-    vbox xalign 0.0 spacing 30:
+    add "eviscroll"
+    imagemap:
+        ground "evidenceui.png"
+        hotspot(35, 29, 144, 75) action [Hide("trainEvidenceTrial")]
+    vbox xalign 0.15 yalign 0.5 spacing 30:
         if train_evidence[0]:
             textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
         else:
@@ -27,13 +31,12 @@ screen trainEvidence():
             textbutton "-" style "button_text"
 
     if currEvidence == 0:
-        image "computer.png" xalign 1.0 yalign 0.0
-        text "The computer used to navigate the train." xalign 1.0 yalign 0.5
+        image "computer.png" xcenter 800 yalign 0.0
+        text "The computer used to navigate the train." xcenter 800 yalign 0.3
 
     if currEvidence == 1:
-        image "window.png" xalign 1.0 yalign 0.0
-        text "The tunnel wasn't visible from the window." xalign 1.0 yalign 0.5
-
+        image "window.png" xcenter 800 yalign 0.0
+        text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yalign 0.3
 
 screen frontCarInv():
 
