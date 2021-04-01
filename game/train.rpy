@@ -1288,7 +1288,7 @@ label midcar5:
     n "I'll come too, Sid."
     scene black
     blank "They made their way to the back car."
-    show bg trainback with dissolve
+    show bg trainbacknight with dissolve
     $ showchibi("dan", "sid")
     show sid ind with dissolve
     i "Well, goodnight Dan!"
