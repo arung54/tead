@@ -41,7 +41,9 @@ screen trainEvidenceTrial():
         textbutton "Submit Evidence" xalign 1.0 yalign 1.0 action [Hide("trainEvidenceTrial"), Jump("checkEvidence")]
 
 screen trainTrial0():
-    vbox xalign 0.0 spacing 50:
+    add "debatescroll"
+    add "debateui.png"
+    vbox xalign 0.0 ypos 169 spacing 100:
         imagebutton:
             idle "jennychibi.png" at customzoom
         imagebutton:

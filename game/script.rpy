@@ -180,5 +180,5 @@ label start:
 #Start jump
 ###########
 
-    #call screen trainTrial0
+    call screen trainTrial0
     jump midcar4
