@@ -1,6 +1,6 @@
 init:
-    transform customzoom:
-        zoom 2.0
+    transform exzoom:
+        zoom 0.7
 
 init python:
     trainAnswers = [[3, 0], [0, 1]]
@@ -52,6 +52,8 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
             idle pers3+"face.png"
         imagebutton:
             idle pers4+"face.png"
+    if statement >= 0:
+        add "expoint.png" xpos 0.28 ypos 175+127*statement at exzoom
     textbutton statement1 xpos 0.38 ypos 220 style "button_text" action [SetVariable("statement", 0), SetVariable("agree", ag1)]
     textbutton statement2 xpos 0.38 ypos 347 style "button_text" action [SetVariable("statement", 1), SetVariable("agree", ag2)]
     textbutton statement3 xpos 0.38 ypos 474 style "button_text" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
