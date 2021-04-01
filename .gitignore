@@ -20,3 +20,4 @@ game/cache/bytecode.rpyb
 *.json
 *.rpyb
 game/laur-fte.rpyc
+*.rpyb
