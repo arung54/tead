@@ -171,14 +171,22 @@ label start:
         fte_shah = -1
         fte_cath = -1
         fte_kais = -1
+
+##################
+#Trial Variables
+##################
         currEvidence = -1
         phase = 0
         statement = -1
+        agree = 0
         train_evidence = [True, True]
 
 ###########
 #Start jump
 ###########
 
-    #call screen trainTrial0
+    call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
+    "sid", "test2 asdfasdfasdfasdfasdf", -1,
+    "sid", "test3 asdfasdfasdfasdf", 1, 
+    "sid", "test4 asdfasdfasdfasdf", -1)
     jump midcar4
