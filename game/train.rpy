@@ -1187,7 +1187,7 @@ label midcar4:
     b "It's not exactly the same as Stella's or Sam's, but..."
     hide sam with moveoutleft
     show bert sad:
-        linear 1 xcenter .5
+        linear .3 xcenter .5
     b "I guess I can't think of anything else."
     b "I was only 17, too. It feels like so long ago but I think about it every day."
     b "I was driving after tutoring, same as always."
@@ -1196,7 +1196,7 @@ label midcar4:
     b "Into the road..."
     ni "He's all choked up."
     show bert sad:
-        linear 1 xcenter .75
+        linear .3 xcenter .75
     show lauren ind with moveinleft:
         xcenter .25
     o "Alright, we're done with this."
@@ -1214,6 +1214,37 @@ label midcar4:
     show jenny ind with moveinright:
         xcenter .75
     j "I don't think we should force anyone to talk about sensative topics, but..."
-    j "I am starting to worry we're not getting anywhere."
+    j "I am starting to worry we're not going to get anywhere."
     j "We could just wait until we get to our destination, but we have no idea how long that'll take."
-    o "... Our food supply is starting to run low."
+    o "We're almost out of food, too..."
+    show scary:
+        alpha 0
+        linear .3 alpha .5
+    ni "And morale."
+    ni "Maybe I really do need to take this into my own hands..."
+    ni "If we don't make any progress by midnight, maybe, I'll..."
+    hide scary with dissolve
+    show jenny ind:
+        xcenter .75
+        linear 0.3 xcenter .80
+    show lauren ind:
+        xcenter .25
+        linear 0.15 xcenter .2
+    show frog ind with moveinbottom
+    f "Can we go to sleep? I'm tired..."
+    ni "It's hard not to feel bad for the kid..."
+    j "Maybe we should just call it a day."
+    j "I don't see us getting anywhere with this."
+    o "Alright, let's divide up the food for tonight."
+    hide jenny ind
+    hide frog ind
+    with dissolve
+    show lauren ind:
+        linear .3 xcenter .5
+    o "I think after we eat I'll spend some time on the computers in the front car."
+    o "Who knows, maybe with a little luck we can figure out the passwords."
+    show lauren ind:
+        linear .3 xcenter .75
+    show sam with moveinleft:
+        xcenter .25
+    s "Yeah, I'll come too. I'm not very tired yet."
