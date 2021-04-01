@@ -1169,7 +1169,7 @@ label midcar4:
     show scary with dissolve:
         alpha .2
     ni "Should... Should I speak up?"
-    play sfx "<from 0 to 3>audio/jaws.mp3" volume .1
+    #play sfx "<from 0 to 3>audio/jaws.mp3" volume .1
     show scary:
         linear .3 alpha .5
     ni "I... Don't think they'd understand."
@@ -1178,7 +1178,14 @@ label midcar4:
     ni "There's no way they could understand."
     show scary:
         linear .3 alpha .95
-    ni "Yeah... Now's not the ti-"
+    ni "Well... Maybe I should speak up."
     hide scary
     b "I guess I'll go next."
     b "It's not exactly the same as Stella's or Sam's, but..."
+    hide sam with moveoutleft
+    show bert sad:
+        linear 3 xcenter .5
+    b "I guess I can't think of anything else."
+    b "I was only 17, too. It feels like so long ago but I think about it every day."
+    b "I was driving to work, minding my own business."
+    b "."
