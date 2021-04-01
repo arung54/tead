@@ -1162,7 +1162,10 @@ label midcar4:
     s "Honestly? I don't even know."
     s "That stuff's behind me, and it's hard to think about sometimes, so I try not to."
     s "But I do know I at {i}least{/i} pissed some people off. I wouldn't be surprised if that's part of why I'm here."
-    b "Hmmm... Well, we're getting somewhere."
+    s "It's hard to come to terms with some of this stuff..."
+    s "Maybe I deserve this."
+    b "Hey, don't say that! No way."
+    b "We've all made mistakes, and owning up to it now can help us figure this out."
     b "Any information we can gather is progress."
     b "Does anyone else have anything they want to bring up?"
     ni "..."
@@ -1175,17 +1178,42 @@ label midcar4:
     ni "I... Don't think they'd understand."
     show scary:
         linear .3 alpha .8
-    ni "There's no way they could understand."
+    ni "This might be my only opportunity though."
     show scary:
         linear .3 alpha .95
-    ni "Well... Maybe I should speak up."
+    ni "Maybe I should speak up."
     hide scary
     b "I guess I'll go next."
     b "It's not exactly the same as Stella's or Sam's, but..."
     hide sam with moveoutleft
     show bert sad:
-        linear 3 xcenter .5
+        linear 1 xcenter .5
     b "I guess I can't think of anything else."
     b "I was only 17, too. It feels like so long ago but I think about it every day."
-    b "I was driving to work, minding my own business."
-    b "."
+    b "I was driving after tutoring, same as always."
+    b "It was spring..."
+    b "And this lady... She just... Walked out..."
+    b "Into the road..."
+    ni "He's all choked up."
+    show bert sad:
+        linear 1 xcenter .75
+    show lauren ind with moveinleft:
+        xcenter .25
+    o "Alright, we're done with this."
+    o "I can't sit by and watch you guys talk about stuff like this."
+    o "For all we know our pasts aren't even relevant."
+    hide bert sad with moveoutright
+    show stella ind with moveinright:
+        xcenter .75
+    t "If the kid wants to talk, let him."
+    t "It can't hurt."
+    o "It's clearly a sensative topic for him."
+    o "We don't need to make this situation any shittier."
+    t "Hmph, just when I thought we were going to get into the juicy stuff..."
+    hide stella ind with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "I don't think we should force anyone to talk about sensative topics, but..."
+    j "I am starting to worry we're not getting anywhere."
+    j "We could just wait until we get to our destination, but we have no idea how long that'll take."
+    o "... Our food supply is starting to run low."
