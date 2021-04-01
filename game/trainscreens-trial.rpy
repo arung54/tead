@@ -13,7 +13,10 @@ label checkEvidenceTrain:
         b "No, that can't be it... let me think some more."
     if phase == 0:
         hide screen trainTrial
-        call screen trainTrial
+        call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
+        "sid", "test2 asdfasdfasdfasdfasdf", -1,
+        "sid", "test3 asdfasdfasdfasdf", 1,
+        "sid", "test4 asdfasdfasdfasdf", -1)
 
 
 screen trainEvidenceTrial():
