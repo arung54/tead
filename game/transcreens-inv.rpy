@@ -1,13 +1,25 @@
+init:
+    transform iconzoom:
+        zoom 0.5
+
 screen trainMapInv():
     imagemap:
-        ground "trainmapicon.png"
-        hotspot(25, 19, 396, 278) action [Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
-        hotspot(22, 329, 450, 148) action [Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
-        hotspot(447, 20, 394, 276) action [Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
-        hotspot(471, 327, 425, 147) action [Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
-        hotspot(867, 21, 391, 280) action [Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
-        hotspot(909, 320, 315, 157) action [Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMap")]
-
+        ground "trainmapoverlay.png"
+        hotspot(182, 461, 330, 210):
+            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
+            hovered ShowTransient("trainPreview", img="trainmapoverlay1.png")
+            unhovered Hide("trainPreview")
+        hotspot(542, 462, 330, 210):
+            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
+            hovered ShowTransient("trainPreview", img="trainmapoverlay2.png")
+            unhovered Hide("trainPreview")
+        hotspot(905, 460, 329, 211):
+            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
+            hovered ShowTransient("trainPreview", img="trainmapoverlay3.png")
+            unhovered Hide("trainPreview")
+    imagemap:
+        idle "trainmapoverlayleft.png"
+        hotspot(0, 0, 119, 719) action [Hide("trainMapInv", transition=Dissolve(0.3))]
 style button_text:
     color "#fff"
 
@@ -18,7 +30,7 @@ screen trainEvidence():
     add "eviscroll"
     imagemap:
         ground "evidenceui.png"
-        hotspot(35, 29, 144, 75) action [Hide("trainEvidenceTrial")]
+        hotspot(35, 29, 144, 75) action [Hide("trainEvidence")]
     vbox xalign 0.15 yalign 0.5 spacing 30:
         if train_evidence[0]:
             textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
@@ -48,25 +60,47 @@ screen frontCarInv():
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "mapicon.png"
-        action [Show("trainMap", transition=Dissolve(0.3)), Hide("frontCarInv")]
+        idle "mapicon.png" at iconzoom
+        action [Show("trainMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.1
+        idle "evidenceicon.png" at iconzoom
+        action [Show("trainEvidence", transition=Dissolve(0.3))]
 
 
 screen midCarInv():
-    add "bg trainMID.png"
+    imagemap:
+        ground "bg trainMID.png"
+
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "mapicon.png"
-        action [Show("trainMap", transition=Dissolve(0.3)), Hide("midCarInv")]
+        idle "mapicon.png" at iconzoom
+        action [Show("trainMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.1
+        idle "evidenceicon.png" at iconzoom
+        action [Show("trainEvidence", transition=Dissolve(0.3))]
 
 screen backCarInv():
-    add "bg trainBACK.png"
+    imagemap:
+        ground "bg trainBACK.png"
+
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "mapicon.png"
-        action [Show("trainMap", transition=Dissolve(0.3)), Hide("backCarInv")]
+        idle "mapicon.png" at iconzoom
+        action [Show("trainMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.1
+        idle "evidenceicon.png" at iconzoom
+        action [Show("trainEvidence", transition=Dissolve(0.3))]
 
 label trainComputer:
     scene bg trainfront1

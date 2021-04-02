@@ -179,12 +179,12 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence = [True, True]
+        train_evidence = [False, False]
 
 ###########
 #Start jump
 ###########
-    #call screen trainEvidenceTrial
+    call screen frontCarInv
     # call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
     # "sid", "test2 asdfasdfasdfasdfasdf", -1,
     # "sid", "test3 asdfasdfasdfasdf", 1,
