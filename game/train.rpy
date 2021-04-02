@@ -609,8 +609,9 @@ label frontcar2:
     s "...I'll go after him to apologize."
     s "We can head to the back car together afterwards."
     o "I'll come too."
-    hide lauren ind with dissolve
-    hide sam with dissolve
+    hide lauren ind
+    hide sam
+    with dissolve
     show kaiser ind with dissolve
     k "I'm going as well. I haven't seen the back car yet."
     hide kaiser ind with dissolve
@@ -624,6 +625,7 @@ label frontcar2:
     show drac ind with moveinleft:
         xcenter .25
     d "I am quite unfamiliar with everything I'm seeing up here."
+    d "Illumination trapped in such curious containers..."
     blank "Is this guy really Dracula?"
     d "Perhaps we could talk through some things together?"
     hide bert sad
@@ -635,8 +637,7 @@ label frontcar2:
     b "Let's try them!"
     blank "Bert flipped the first switch."
     play sfx "audio/butt.mp3"
-    show bg trainfront1:
-        alpha .3
+    show bg otrainfront
     hide drac ind
     show drac oh:
         xcenter .25
@@ -648,8 +649,7 @@ label frontcar2:
     b "Yeah. I think the 3 light switches correspond to the 3 train cars."
     blank "Bert flipped the first switch back."
     play sfx "audio/butt.mp3"
-    show bg trainfront1:
-        alpha 1
+    show bg trainfront1
     b "We're making progress already! Let's keep looking around."
 label frontcar3:
     scene black with fade
@@ -707,7 +707,8 @@ label passwording:
             "I should go meet up with the others...":
                 jump donepasswording
 label donepasswording:
-    show bg trainfront1 with fade
+    hide welcomescreenblank with fade
+    show bg trainfront1
     ni "They're probably waiting for me."
     ni "I can come back if I figure it out, but I don't want to take too long up here."
 label midcar3:
@@ -719,9 +720,6 @@ label midcar3:
     j "Hey, Bert found some food behind the bar!"
     hide jenny ind
     show jenny happy
-    show behappy
-    bp "Epicchamp!"
-    hide behappy
     j "Hope you don't mind, we started eating without you."
     show jenny happy:
         linear .3 xcenter .75
@@ -744,7 +742,7 @@ label midcar3:
     scene black with fade
     n "{i}It feels... Surprisingly nice having a communal meal.{/i}"
     blank "They ate; about an hour passed."
-    show bg trainmid with fade
+    show bg ntrainmid with fade
     show kaiser ind with dissolve:
         xcenter .75
     show jenny ind with dissolve:
@@ -817,7 +815,7 @@ label midcar3:
     n "..."
     scene black with fade
     blank "Dan made his way to the back car."
-    show bg trainback with fade
+    show bg ntrainback with fade
     ni "I forgot how dusty it was back here."
     show sid ind with dissolve
     i "Wow, there's even an old school water kettle back here!"
@@ -899,8 +897,7 @@ label midcar3:
     n "I'm with you. Let's stick together Sid."
     i "D-deal!"
     play sfx "audio/butt.mp3" volume .5
-    show bg trainback:
-        alpha .5
+    show bg notrainback
     i "Huh?"
     n "Hmm, someone must have hit the light switch."
     n "We found all 3 light switches in the front car earlier."
@@ -1245,7 +1242,7 @@ label midcar5:
     scene black
     blank "They shared the rest of the non-alcoholic food and drinks amongst themselves."
     blank "There was much less talking tonight."
-    show bg trainmid with dissolve
+    show bg ntrainmid with dissolve
     $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show lauren ind with dissolve:
         xcenter .3
@@ -1280,15 +1277,14 @@ label midcar5:
     play sfx "audio/butt.mp3" volume .1
     hide sid ind
     show sid happy
-    show bg trainmid:
-        alpha .3
+    show bg notrainmid
     n "!"
     n "I guess they hit the light switch in the front car, since everyone's going to sleep anyway."
-    ni "It's pretty hard to see in here, with the lights off."
+    ni "It's pretty hard to see in here with the lights off."
     n "I'll come too, Sid."
     scene black
     blank "They made their way to the back car."
-    show bg trainbacknight with dissolve
+    show bg ntrainback with dissolve
     $ showchibi("dan", "sid")
     show sid ind with dissolve
     i "Well, goodnight Dan!"
@@ -1313,3 +1309,56 @@ label midcar5:
     ni "I can already hear him snoring."
     ni "It almost makes me feel bad..."
     ni "Wait - what is that?"
+    show ntracks with fade
+    ni "There's something hanging outside the window, about a foot from the glass."
+    ni "It looks like a coin, or maybe a cufflink?"
+    ni "I don't think that was there this morning..."
+    ni "I guess somebody put that out there earlier today."
+    ni "It doesn't seem worth the risk to open the door and get it though..."
+    ni "Whatever..."
+    blank "FLASHBACK TO 'THEIR ENDS ARE DESERVED' SCREEN from chapter 0"
+    ni "What a shame... I just got out of the pen, and now I have to do this..."
+    ni "At least there are a lot of easy targets -"
+    scene black
+    ni "Wh-what?"
+    ni "Everything's... Dark."
+label midcar6:
+    show black
+    bi "We're out of food and water, but..."
+    bi "We can get out of here. Together."
+    blank "pssst!!!"
+    play music "audio/invest1.wav" volume .3
+    show bg notrainmid
+    $ showchibi("bert", "catherine", "freddy", "jenny", "stella", "dracula")
+    show stella happy with dissolve:
+        linear .3 xcenter .75
+    t "Hey Bert, wanna take some shots with us?"
+    show drac ind with moveinleft:
+        xcenter .25
+    d "Stella made me a bloody mary, but without tomato juice or hot sauce."
+    bi "Huh?"
+    t "Yeah! I call it, 'vodka'!"
+    hide drac ind
+    show drac happy:
+        xcenter .25
+    d "Marvelous, really."
+    b "I think I'm going to try and sleep."
+    hide stella happy
+    show stella ind:
+        xcenter .75
+    hide drac happy
+    show drac ind:
+        xcenter .25
+    t "Suit yourself."
+    hide drac ind
+    hide stella ind
+    with dissolve
+    show catherine ind with dissolve
+    c "Okay, Freddy is asleep. I'm going to go say goodnight to Dan and Sid in the back car and then hit the hay."
+    b "Tell them I say goodnight too!"
+    hide catherine ind with dissolve
+    show catback with dissolve:
+        zoom 1.2
+        xcenter .43
+        ycenter .5
+    b "ok she goin"

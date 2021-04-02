@@ -10,6 +10,12 @@ image tracks:
     "tracks2.png"
     pause .05
     repeat
+image ntracks:
+    "tracksn1.png"
+    pause .05
+    "tracksn2.png"
+    pause .05
+    repeat
 define audio.jaws = "jaws.mp3"
 image eviscroll:
     contains:
@@ -17,6 +23,19 @@ image eviscroll:
         ypos -2.0
         linear 80.0 ypos .01
         repeat
+transform blink:
+        "eye.png"
+        alpha 1.0
+        .1
+        alpha 0.0
+        .2
+        alpha 1.0
+        .1
+        alpha 0.0
+        .7
+        alpha 1.0
+        .1
+        alpha 0.0
 image debatescroll:
     contains:
         "vineslide.png"
@@ -136,7 +155,7 @@ define m = Character("Me?", callback=mevoice)
 define n = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF")
 define ni = Character("{i}Dan Scagnelli{/i}", callback=mevoice, what_italic=True, who_color = "FFFFFF") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
-define bi = Character("{i}Bert Kim{/i}", who_color= "#78AB46", callback=bertvoice, what_italics=True) #Bert Internal, name and text ite
+define bi = Character("{i}Bert Kim{/i}", who_color= "#78AB46", callback=bertvoice, what_italics=True) #Bert Internal, name and text italics
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox)
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice)
 define s = Character("Sam Lee", who_color= "f3946a", image="sam", callback=samvoice)
@@ -179,14 +198,14 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence = [False, False]
+        train_evidence = [True, True]
 
 ###########
 #Start jump
 ###########
-    call screen frontCarInv
+    #call screen frontCarInv
     # call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
     # "sid", "test2 asdfasdfasdfasdfasdf", -1,
     # "sid", "test3 asdfasdfasdfasdf", 1,
     # "sid", "test4 asdfasdfasdfasdf", -1)
-    jump midcar5
+    jump midcar6
