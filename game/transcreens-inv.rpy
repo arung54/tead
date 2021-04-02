@@ -51,7 +51,6 @@ screen trainEvidence():
         text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yalign 0.3
 
 screen frontCarInv():
-
     imagemap:
         ground "bg trainFRONT1.png"
         hotspot(479, 196, 327, 101) action [Jump("trainFrontWindow")]
@@ -68,6 +67,12 @@ screen frontCarInv():
         yalign 0.1
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "bertchibi.png"
+        action [Jump("trainBert")]
 
 
 screen midCarInv():
@@ -110,11 +115,16 @@ label trainComputer:
         n "I think that's everything to find in this room"
     call screen frontCarInv
 
-
 label trainFrontWindow:
     scene bg trainfront1
     $train_evidence[1] = True
     n "You can't see the tunnel from the front window until it's too late. I should remember that."
     if train_evidence[0] and train_evidence[1]:
         n "I think that's everything to find in this room"
+    call screen frontCarInv
+
+label trainBert:
+    scene bg trainfront1
+    show bert happy
+    b "I'm Bert!"
     call screen frontCarInv
