@@ -1343,3 +1343,22 @@ label midcar6:
         xcenter .25
     d "Marvelous, really."
     b "I think I'm going to try and sleep."
+    hide stella happy
+    show stella ind:
+        xcenter .75
+    hide drac happy
+    show drac ind:
+        xcenter .25
+    t "Suit yourself."
+    hide drac ind
+    hide stella ind
+    with dissolve
+    show catherine ind with dissolve
+    c "Okay, Freddy is asleep. I'm going to go say goodnight to Dan and Sid in the back car and then hit the hay."
+    b "Tell them I say goodnight too!"
+    hide catherine ind with dissolve
+    show catback with dissolve:
+        zoom 1.2
+        xcenter .43
+        ycenter .5
+    b "ok she goin"
