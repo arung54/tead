@@ -87,25 +87,25 @@ screen frontCarInv():
         xpos 20
         ypos 20
         idle "bertchibi.png" at chibizoom
-        action [Jump("trainBert")]
+        action [Hide("frontCarInv"), Jump("trainBert")]
 
     imagebutton:
         xpos 20
         ypos 70
         idle "kaiserchibi.png" at chibizoom
-        action [Jump("trainKaiser")]
+        action [Hide("frontCarInv"), Jump("trainKaiser")]
 
     imagebutton:
         xpos 20
         ypos 120
         idle "laurenchibi.png" at chibizoom
-        action [Jump("trainKaiser")]
+        action [Hide("frontCarInv"), Jump("trainKaiser")]
 
     imagebutton:
         xpos 20
         ypos 170
         idle "samchibi.png" at chibizoom
-        action [Jump("trainKaiser")]
+        action [Hide("frontCarInv"), Jump("trainKaiser")]
 
     imagebutton:
         xpos 20
@@ -135,13 +135,13 @@ screen midCarInv():
         xpos 20
         ypos 20
         idle "bertchibi.png" at chibizoom
-        action [Jump("trainmidBert")]
+        action [Hide("midCarInv"), Jump("trainmidBert")]
 
     imagebutton:
         xpos 20
         ypos 70
         idle "catherinechibi.png" at chibizoom
-        action [Jump("traincatherine")]
+        action [Hide("midCarInv"), Jump("traincatherine")]
 
 ############
 
