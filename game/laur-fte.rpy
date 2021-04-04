@@ -258,23 +258,39 @@ label laurHang:
         o "Hey Bert, gotta tell you, our conversations got real deep real fast."
         b "Yeah, sorry about that."
         b "I know you that sort of stuff is hard to talk to strangers who might want to kill you."
-        b "I appreciate your openness, and get if you wanna talk more casually."
+        b "I appreciate your openness, totally get it if you wanna talk more casually."
         o "Well, I'm pretty sure you're not going to try to kill me at this point."
-        o "Not to bring up sore sports, but you're one of the few people who opened up about their crime."
+        o "Not to bring up sore spots, but you're one of the few people who opened up about their crime."
         o "And we haven't exactly been anywhere with access to roads."
         o "So I don't really mind bringing it up."
         b "Well, even if you trust me, we haven't known each other that long."
         o "I mean, I've gone through some shit, but I was able to use it to become stronger."
         o "Or at least, stubborn enough to give the illusion of being strong."
-        o "And it defines who I am a lot. My main hobby came out of needing to feel safe."
+        o "And it defines a lot of who I am. My main hobby came out of needing to feel safe."
         o "So really, I don't mind talking about it."
-        b "Thanks for saying that."
         o "But it would be nice if we could talk about something fun for once."
+        b "Sure, any ideas?"
+        o "Hmm... tell me about your hobbies? Since you know about mine."
+        b "Well, recently I got into journaling."
+        b "This is still kind of a dark topic though."
+        o "Only talk about it if you want to!"
+        b "Well, you opened up a ton to me, I can open up back to you."
+        b "I got into it after my own... incident, as a way of therapy."
+        b "It started out as a way to process emotions by turning them into words."
+        b "But eventually it became a nice way to chronicle what happened during my day."
+        b "It helps me keep track of my goals, I remember things people said to me more easily."
+        b "Just overall helps me mentally feel like I'm part of the moment always."
+        o "That's super cool!"
+        o "And it seems like you also turned something born out of dark necessities into a positive hobby."
+        o "So I guess that's one thing we have in common."
+        scene black with fade
+        bi "We talked for a bit about other hobbies we had."
+        bi "I think I finally learned to talk to Lauren casually, we're much closer now."
 
 
     #Bert post-3
     if fte_laur >= 3:
-        bi "I enjoyed some time with Lauren, if only because of his pirate speak."
+        bi "I enjoyed some time with Lauren, now that we were able to speak casually."
 
     $fte_laur += 1
     $ftecounter += 1
