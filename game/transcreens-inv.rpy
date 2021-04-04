@@ -59,15 +59,17 @@ screen trainEvidence():
 
     if currEvidence == 2:
         image "window.png" xcenter 800 yalign 0.0 alpha .4
-        text "Kaiser, Lauren, Sam, and Shahar \nsaid they were all in the front car. \n \nLauren said the lights turned \nthey heard the scream, and \nthen went to the bar car." xcenter 800 yalign 0.3
+        text "Kaiser, Lauren, Sam, and Shahar \nsaid they were all in the front car. \n \nLauren said the lights turned off,\nthey heard the scream, and \nthen went to the bar car." xcenter 800 yalign 0.3
 
 ############################### put button locations and jumps here
 
 screen frontCarInv():
     imagemap:
         ground "bg trainFRONT1.png"
-        hotspot(479, 196, 327, 101) action [Jump("trainFrontWindow")]
-        hotspot(547, 266, 185, 85) action [Jump("trainComputer")]
+        hotspot(480, 198, 320, 148) action [Jump("trainFrontWindow")]
+        hotspot(342, 100, 97, 250) action [Jump("trainComputer")]
+        hotspot(830, 94, 107, 255) action [Jump("trainComputer")]
+        hotspot(529, 48, 221, 107) action [Jump("trainComputer")]
 
     imagebutton:
         xalign 1.0
@@ -85,7 +87,7 @@ screen frontCarInv():
         xpos 20
         ypos 20
         idle "bertchibi.png" at chibizoom
-        ##action [Jump("trainKaiser")]
+        action [Jump("trainBert")]
 
     imagebutton:
         xpos 20
@@ -93,9 +95,29 @@ screen frontCarInv():
         idle "kaiserchibi.png" at chibizoom
         action [Jump("trainKaiser")]
 
+    imagebutton:
+        xpos 20
+        ypos 120
+        idle "laurenchibi.png" at chibizoom
+        action [Jump("trainKaiser")]
+
+    imagebutton:
+        xpos 20
+        ypos 170
+        idle "samchibi.png" at chibizoom
+        action [Jump("trainKaiser")]
+
+    imagebutton:
+        xpos 20
+        ypos 220
+        idle "shaharchibi.png" at chibizoom
+        action [Jump("trainKaiser")]
+
+#############
+
 screen midCarInv():
     imagemap:
-        ground "bg trainMID.png"
+        ground "bg notrainMID.png"
 
     imagebutton:
         xalign 1.0
@@ -108,6 +130,20 @@ screen midCarInv():
         yalign 0.1
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "bertchibi.png" at chibizoom
+        action [Jump("trainmidBert")]
+
+    imagebutton:
+        xpos 20
+        ypos 70
+        idle "catherinechibi.png" at chibizoom
+        action [Jump("traincatherine")]
+
+############
 
 screen backCarInv():
     imagemap:
@@ -125,26 +161,45 @@ screen backCarInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
 
+
+
 #################################################### put descriptions here
 
 label trainComputer:
     scene bg trainfront1
-    $train_evidence[0] = True
-    n "The computer used to navigate the train. I should add this to my list of evidence."
-    if train_evidence[0] and train_evidence[1]:
-        n "I think that's everything to find in this room"
+    $train_evidence1[0] = True
+    bi "The train's computer system. Hmmm..."
+    bi "Let's take a closer look."
+    scene welcomescreendir4
+    bi "It looks the same as before, I think."
+    bi "Wait - no! There is something different..."
+    bi "I should make a mental note of that."
+    scene bg trainfront1
+    if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
+        bi "I think that's everything to find in this car."
     call screen frontCarInv
 
 label trainFrontWindow:
     scene bg trainfront1
-    $train_evidence[1] = True
-    n "You can't see the tunnel from the front window until it's too late. I should remember that."
-    if train_evidence[0] and train_evidence[1]:
-        n "I think that's everything to find in this room"
+    $train_evidence1[1] = True
+    bi "The train's front window."
+    bi "It's pretty dark out, but there's still some light coming through."
+    bi "With the computers all on too, you'd think it would stay pretty bright in here."
+    bi "Hmmm..."
+    if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
+        bi "I think that's everything to find in this car."
+    call screen frontCarInv
+
+label trainBert:
+    scene bg trainfront1
+    show bert sad with dissolve
+    bi "What a terrible situation..."
+    bi "The best way we can help is by collecting evidence."
     call screen frontCarInv
 
 label trainKaiser:
     scene bg trainfront1
+    $train_evidence1[2] = True
     show sam with dissolve
     s "I can't believe someone actually did this..."
     s "One of {i}us{/i} did this."
@@ -179,4 +234,32 @@ label trainKaiser:
     hide lauren ind
     hide shahar mad
     with dissolve
+    if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
+        bi "I think that's everything to find in this car."
     call screen frontCarInv
+
+label trainmidBert:
+    scene bg notrainmid
+    show bert sad with dissolve
+    bi "What a terrible situation..."
+    bi "The best way we can help is by collecting evidence."
+    call screen midCarInv
+
+label traincatherine:
+    scene bg notrainmid
+    $train_evidence2[0] = True
+    show sam with dissolve
+    c "This is so scary..."
+    c "It's like a crappy murder mystery game."
+    ses "Mrow!!!"
+    b "Catherine, when the lights went out, did you keep walking to the back car?"
+    b "I distinctly remember you on your way to say goodnight to Sid and Dan."
+    c "No, I stayed in this car. In fact, I held onto the doorknob to the back car the whole time the lights were out."
+    c "I was scared of getting lost if I kept moving, so I clung to the doorknob and waited it out."
+    b "So you would know if somebody went to the back car while the lights were out?"
+    c "Nobody did, there's no way they could have. The door stayed closed the whole time, I swear to it."
+    ses "Me-ow!"
+    b "Hmmm, I see. Thanks Catherine."
+    if train_evidence2[0]:
+        bi "I think that's everything important in this car."
+    call screen midCarInv
