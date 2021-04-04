@@ -6,6 +6,8 @@ init:
 screen trainPreview(img):
     add img pos (25, 20)
 
+##############################################
+
 screen trainMap():
     imagemap:
         ground "trainmapoverlay.png"

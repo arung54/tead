@@ -42,6 +42,11 @@ screen trainEvidence():
         else:
             textbutton "-" style "button_text"
 
+        if train_evidence[2]:
+            textbutton "Kaiser, Lauren, Sam, and Shahar's accounts" style "button_text" action SetVariable("currEvidence", 2)
+        else:
+            textbutton "-" style "button_text"
+
     if currEvidence == 0:
         image "computer.png" xcenter 800 yalign 0.0
         text "The computer used to navigate the train." xcenter 800 yalign 0.3
@@ -49,6 +54,12 @@ screen trainEvidence():
     if currEvidence == 1:
         image "window.png" xcenter 800 yalign 0.0
         text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yalign 0.3
+
+    if currEvidence == 2:
+        image "window.png" xcenter 800 yalign 0.0 alpha .4
+        text "Kaiser, Lauren, Sam, and Shahar \nsaid they were all in the front car. \n \nLauren said the lights turned \nthey heard the scream, and \nthen went to the bar car." xcenter 800 yalign 0.3
+
+############################### put button locations and jumps here
 
 screen frontCarInv():
     imagemap:
@@ -70,9 +81,9 @@ screen frontCarInv():
 
     imagebutton:
         xpos 20
-        ypos 20
-        idle "bertchibi.png"
-        action [Jump("trainBert")]
+        ypos 70
+        idle "kaiserchibi.png"
+        action [Jump("trainKaiser")]
 
 
 screen midCarInv():
@@ -107,6 +118,8 @@ screen backCarInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
 
+#################################################### put descriptions here
+
 label trainComputer:
     scene bg trainfront1
     $train_evidence[0] = True
@@ -123,8 +136,40 @@ label trainFrontWindow:
         n "I think that's everything to find in this room"
     call screen frontCarInv
 
-label trainBert:
+label trainKaiser:
     scene bg trainfront1
-    show bert happy
-    b "I'm Bert!"
+    show sam with dissolve
+    s "I can't believe someone actually did this..."
+    s "One of {i}us{/i} did this."
+    show sam:
+        linear .3 xcenter .75
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "For Dan's sake, and our own, we need to keep a calm head."
+    b "Agree. The most important thing is finding the culprit."
+    b "So the 4 of you were in this car up until... It happened?"
+    s "Yeah, Kaiser, Lauren, Shahar, and I were up here."
+    s "I don't think any of us left the car for the past hour or so."
+    k "We were trying to figure out the computer password."
+    k "Of course, to no avail."
+    bi "Since there were 4 of them up here together, it's a pretty air-tight alibi."
+    hide sam
+    hide kaiser ind
+    with dissolve
+    show lauren ind with dissolve:
+        xcenter .25
+    show shahar mad with dissolve:
+        xcenter .75
+    o "This is... Crazy."
+    o "I knew this was a mess of a situation from the start, but..."
+    o "A murder?! Really?"
+    h "Aye. A shame we've lost 'im to Davey Jones."
+    b "There will be time to grief, as long as we can figure out who was behind it."
+    b "Did any of you notice anything that might be important?"
+    o "Hmmm... Not really. Pretty much just what Jenny said."
+    o "It went dark, we heard that blood-curdling scream, and we made our way to the bar car."
+    b "Hmmm. Okay, thanks."
+    hide lauren ind
+    hide shahar mad
+    with dissolve
     call screen frontCarInv

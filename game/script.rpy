@@ -1,4 +1,20 @@
 
+#    image kchibi = Image([Transform(zoom=1.5"kaiserchibi.png", zoom = 3.5)
+#    image bchibi = Image("bertchibi.png", zoom = 1.5)
+#    image schibi = Image("samchibi.png", zoom = 1.5)
+#    image tchibi = Image("stellachibi.png", zoom = 1.5)
+#    image ichibi = Image("sidchibi.png", zoom = 1.5)
+#    image fchibi = Image("freddychibi.png", zoom = 1.5)
+#    image hchibi = Image("shaharchibi.png", zoom = 1.5)
+#    image jchibi = Image("jenbychibi.png", zoom = 1.5)
+#    image cchibi = Image("catherinechibi.png", zoom = 1.5)
+#    image dchibi = Image("draculachibi.png", zoom = 1.5)
+#    image ochibi = Image("laurenchibi.png", zoom=1.5)
+
+
+
+
+
 image splash = "tead.png"
 image darken = "welcomescreenblank.png"
 define danbox = Image("gui/textbox2.png", yalign=.5)
@@ -203,7 +219,7 @@ label start:
 ###########
 #Start jump
 ###########
-    #call screen frontCarInv
+    call screen frontCarInv
     # call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
     # "sid", "test2 asdfasdfasdfasdfasdf", -1,
     # "sid", "test3 asdfasdfasdfasdf", 1,
