@@ -111,7 +111,7 @@ screen frontCarInv():
         xpos 20
         ypos 220
         idle "shaharchibi.png" at chibizoom
-        action [Jump("trainKaiser")]
+        action [Hide("frontCarInv"), Jump("trainKaiser")]
 
 #############
 
