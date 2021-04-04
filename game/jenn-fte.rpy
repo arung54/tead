@@ -5,14 +5,14 @@ label jennAsk0:
     scene bg trainmid
     show jenny happy with dissolve
     j "Hey Dan!"
-    ni "I should go talk to Bert instead of this guy."
+    ni "I should go talk to Bert."
     call screen midCar
 
 #Train 2
 label jennAsk1:
     scene bg trainmid
     show jenny happy with dissolve
-    h "Hey Dan!"
+    j "Hey Dan!"
     menu:
         "Spend time with Jenny?":
             j "Sure!"

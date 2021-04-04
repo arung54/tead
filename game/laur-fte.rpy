@@ -194,7 +194,7 @@ label laurHang:
         o "Thanks, though I do feel like I have some obligation."
         b "What does that mean?"
         o "I probably said more than I meant to. Sorry, another thing I don't really want to talk about with people I don't know well."
-        b "That's totally fine, thanks for opening up as much as you did!"
+        b "That's totally fine, thanks for opening up as much as you did."
         scene black with fade
         bi "On that note, we went to meet up with the others. I can feel Lauren and I slowly growing closer."
 
@@ -268,6 +268,7 @@ label laurHang:
         o "Or at least, stubborn enough to give the illusion of being strong."
         o "And it defines a lot of who I am. My main hobby came out of needing to feel safe."
         o "So really, I don't mind talking about it."
+        show lauren happy
         o "But it would be nice if we could talk about something fun for once."
         b "Sure, any ideas?"
         o "Hmm... tell me about your hobbies? Since you know about mine."
