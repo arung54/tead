@@ -1,6 +1,8 @@
 init:
     transform iconzoom:
         zoom 0.5
+    transform chibizoom:
+        zoom 1.5
 
 screen trainMapInv():
     imagemap:
@@ -81,10 +83,15 @@ screen frontCarInv():
 
     imagebutton:
         xpos 20
-        ypos 70
-        idle "kaiserchibi.png"
-        action [Jump("trainKaiser")]
+        ypos 20
+        idle "bertchibi.png" at chibizoom
+        ##action [Jump("trainKaiser")]
 
+    imagebutton:
+        xpos 20
+        ypos 70
+        idle "kaiserchibi.png" at chibizoom
+        action [Jump("trainKaiser")]
 
 screen midCarInv():
     imagemap:

@@ -214,7 +214,7 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence = [True, True]
+        train_evidence = [True, True, True]
 
 ###########
 #Start jump
