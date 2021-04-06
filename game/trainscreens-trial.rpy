@@ -20,17 +20,18 @@ label checkEvidenceTrain:
 
 
 screen trainEvidenceTrial():
+    modal True
     add "eviscroll"
     imagemap:
         ground "evidenceui.png"
-        hotspot(35, 29, 144, 75) action [Hide("trainEvidenceTrial")]
+        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
     vbox xalign 0.15 yalign 0.5 spacing 30:
-        if train_evidence[0]:
+        if train_evidence1[0]:
             textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
-        if train_evidence[1]:
+        if train_evidence1[1]:
             textbutton "The View From The Front" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
@@ -44,13 +45,22 @@ screen trainEvidenceTrial():
         text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yalign 0.3
 
     if currEvidence >= 0:
-        imagebutton:
-            idle "usethis.png"
-            xalign 0.66
-            yalign 0.9
+        if trainAnswers[phase][0] == statement and trainAnswers[phase][1] == currEvidence:
+            imagebutton:
+                idle "usethis.png"
+                xalign 0.66
+                yalign 0.9
+                action [Jump("correctTrain")]
+        else:
+            imagebutton:
+                idle "usethis.png"
+                xalign 0.66
+                yalign 0.9
+                action [Show("tryAgain", transition=Dissolve(0.2))]
 
 
 screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4):
+    modal True
     add "debatescroll"
     add "debateui.png"
     vbox xalign 0.06 ypos 190 spacing 20:
@@ -69,11 +79,19 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
     textbutton statement3 xpos 0.38 ypos 474 style "button_text" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
     textbutton statement4 xpos 0.38 ypos 601 style "button_text" action [SetVariable("statement", 3), SetVariable("agree", ag4)]
     if agree == 1:
-        imagebutton:
-            idle "agree.png"
-            xpos 0.55
-            yalign 0.04
-            action [Hide("trainTrial"), SetVariable("currEvidence", -1), Jump("checkEvidenceTrain")]
+        if trainAnswers[phase][0] == statement and trainAnswers[phase][1] == -1:
+            imagebutton:
+                idle "agree.png"
+                xpos 0.55
+                yalign 0.04
+                action [Jump("correctTrain")]
+        else:
+            imagebutton:
+                idle "agree.png"
+                xpos 0.55
+                yalign 0.04
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+
     else:
         imagebutton:
             idle "agreegrey.png"
@@ -85,9 +103,18 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
             idle "refute.png"
             xpos 0.775
             yalign 0.04
-            action [Show("trainEvidenceTrial")]
+            action [Show("trainEvidenceTrial", transition=Dissolve(0.2))]
     else:
         imagebutton:
             idle "refutegrey.png"
             xpos 0.775
             yalign 0.04
+
+screen tryAgain:
+    modal True
+    imagemap:
+        ground "tryagain.png"
+        hotspot(0, 0, 1279, 719) action [Hide("tryAgain", transition=Dissolve(0.2))]
+
+label correctTrain:
+    b "No, that's wrong!"
