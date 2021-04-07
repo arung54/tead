@@ -4,7 +4,7 @@ label go:
     #show screen button_overlay
     scene black
     play music "audio/rush.mp3"
-    ni "Was I... Dreaming?"
+    ni "Was I... dreaming?"
     ni "It'd make sense..."
     ni "I did tend to get nightmares in there..."
     ni "..."
@@ -25,7 +25,7 @@ label go:
     n "It's a... train car."
     n "And we're {i}moving.{/i}"
     hide lauren ind with dissolve
-    show sam
+    show sam with dissolve
     s "Yeah, we're going somewhere..."
     s "...Or being taken somewhere."
     hide sam with dissolve
@@ -40,7 +40,7 @@ label go:
     show windowview
     with fade
     n "Wow..."
-    ni "There's... Nothing out there."
+    ni "There's... nothing out there."
     ni "Where are we? There are no landmarks anywhere."
     hide forest run
     hide windowview
@@ -123,19 +123,19 @@ label go:
         linear 0.3 xcenter .75
     show lauren ind with moveinleft:
         xcenter .25
-    o "Kaiser's probably right... Think back to what the monitor told us."
+    o "Kaiser's probably right... think back to what the monitor told us."
 
     ###FLASHBACK###
     show black
     n "flashback to part about chips in our brain, have to cooperate etc"
     hide black
-    o "As terrifying as that is, it seems like the only explaination..."
+    o "As terrifying as that is, it seems like the only explanation..."
     n "You really think the chips knocked us out somehow?"
     hide kaiser ind
     hide lauren ind
     with dissolve
     show sam with dissolve
-    s "It's the only logical explanation."
+    s "It's the only logical explanation." #Arun: Maybe use another word for explanation here to avoid redundancy
     s "Either way, I don't think it's worth spending any more time on."
     s "We're finally all awake, we should try to figure out what's going on."
     n "Right. We should start exploring the train."
@@ -145,8 +145,8 @@ label go:
     show bert happy with moveinleft:
         xcenter .25
     b "Maybe we can find the conductor!"
-    b "He could stop the train for us."
-    ni "That seems a little optomistic..."
+    b "They could stop the train for us."
+    ni "That seems a little optimistic..."
     s "It's worth a shot."
     b "That's the spirit! Poggers!"
     s "It's not like we're going to just sit around here."
@@ -174,8 +174,8 @@ label go:
     hide frog ind with moveoutright
     show lauren ind:
         linear .3 xcenter .5
-    o "I can watch him, I used to babysit in highschool."
-    o "I don't want a kid involved in... Whatever this is."
+    o "I can watch him, I used to babysit in high school."
+    o "I don't want a kid involved in... whatever this is."
     n "That's probably smart. I'm not great with kids myself."
     o "The rest of you better search every corner of this train though."
     hide lauren ind
@@ -184,7 +184,7 @@ label go:
 ###########################################
 
     show stella happy
-    t "Great point Lauren - the whiskey could be hiding anywhere."
+    t "Great point Lauren, the whiskey could be hiding anywhere."
     t "I'll check behind the bar."
 
 
@@ -218,14 +218,14 @@ label go:
     c "Oops! Sorry, that's just Sesame's way of saying he's excited!"
     j "Ow..."
     c "Hehe, sorry! Alright Sesame, we're going exploring!"
-    ses "Moewwwwww!"
+    ses "Meowwwwww!"
     ni "..."
     hide jenny ind with moveoutright
     hide catherine ind with moveoutleft
 
     show sam
     s "Okay, the rest of us can check the next car back."
-    s "It looks like it's just the 3 of us."
+    s "It looks like it's just the three of us."
     hide sam
     show drac ind
     d "Very well."
@@ -259,7 +259,7 @@ label backcar1:
     show sam with dissolve:
         xcenter .5
         linear 0.3 xcenter .75
-    s "Hmmm... It seems awfully run down back here."
+    s "Hmmm... it seems awfully run down back here."
     s "There's a little cot, a bench, a water tank..."
     n "This must be where the train hands would sleep on long trips."
     hide sam
@@ -481,14 +481,14 @@ label frontcar1:
     hide kaiser ind with moveoutleft
     show catherine ind with moveinleft:
         xcenter .25
-    c "This is also the front most car, which means..."
+    c "This is also the frontmost car, which means..."
     hide bert with moveoutright
     show sam with moveinright:
         xcenter .75
     s "Nobody else is on the train. Damn."
     s "I was hoping we could find someone to help us."
     c "No conductor and no way to control the train ourselves."
-    c "To summarize, it's just these 3 train cars."
+    c "To summarize, it's just these three train cars."
 label showcars:
     scene black with fade
     show bg trainfront1 with fade:
@@ -498,10 +498,10 @@ label showcars:
     show bg trainmid with fade:
         zoom .9 xcenter .5 ycenter .5
     c "Followed by the bar car behind us."
-    k "Which has an... Upscale 1970s aesthetic."
+    k "Which has an... upscale 1970s aesthetic."
     show bg trainback with fade:
         zoom .9 xcenter .5 ycenter .5
-    c "And then the 3rd car, a little caboose."
+    c "And then the third car, a little caboose."
     d "A run down dusty little mess."
 label frontcar2:
     show bg trainfront1 with dissolve:
@@ -560,7 +560,7 @@ label frontcar2:
     hide jenny ind
     show jenny happy:
         xcenter .75
-    j "Hey it's ok Freddy! It's like an adventure."
+    j "Hey it's okay Freddy! It's like an adventure."
     j "Come on, let's go back to the other train car and find something to play with."
     f "Okay."
     hide frog sad with moveoutbottom
@@ -591,11 +591,11 @@ label frontcar2:
         linear 0.15 xcenter .15
     show sid ind with moveinbottom
     i "Hey! Who are you callin' a kid?!"
-    i "I'm an honor student and I work 4 hours after school every day!"
+    i "I'm an honors student and I work four hours after school every day!"
     i "I'm a man!"
     s "Oh yeah? Any luck with the controls panel big guy?"
     i "..."
-    i "It locked me out after 5 attempts at the password..."
+    i "It locked me out after five attempts at the password..."
     s "Ha!"
     i "I'm outta here! You guys suck!"
     hide sid ind with dissolve
@@ -632,7 +632,7 @@ label frontcar2:
     show bert happy:
         xcenter .75
     b "Yeah, of course! I just noticed a panel over here that seemed interesting."
-    b "It seems like there are a 3 accessible switches."
+    b "It seems like there are three accessible switches."
     n "We probably shouldn't try them haphazardl-"
     b "Let's try them!"
     blank "Bert flipped the first switch."
@@ -653,7 +653,7 @@ label frontcar2:
     b "We're making progress already! Let's keep looking around."
 label frontcar3:
     scene black with fade
-    blank "10 minutes pass."
+    blank "Ten minutes passed."
     show bg trainfront1
     show bert sad:
         xcenter .75
@@ -681,9 +681,9 @@ label frontcar3:
     hide drac ind
     with dissolve
     ni "......"
-    ni "Now that I'm alone..."
-label passwording:
+    ni "Now that I'm alone..." #Arun: Here I think we need to make it clearer the user can type
     play music "audio/invest1.wav" volume .3
+label passwording:
     show welcomescreenblank with dissolve
     $ passattempts = 1
     while passattempts < 10:
@@ -712,7 +712,6 @@ label donepasswording:
     ni "They're probably waiting for me."
     ni "I can come back if I figure it out, but I don't want to take too long up here."
 label midcar3:
-    play music "audio/invest1.wav" volume .3
 
     scene bg trainmid with fade
     $ showchibi("dan", "shahar", "stella")
@@ -737,10 +736,10 @@ label midcar3:
     show catherine happy with dissolve:
         xcenter .25
     c "Don't worry about us!"
-    c "It feels nice to relax and eat for a bit."
+    c "It's still nice to relax and eat for a bit."
     ses "mewmewmewmew!"
     scene black with fade
-    n "{i}It feels... Surprisingly nice having a communal meal.{/i}"
+    n "{i}It feels... surprisingly nice having a communal meal.{/i}"
     blank "They ate; about an hour passed."
     show bg ntrainmid with fade
     show kaiser ind with dissolve:
@@ -760,25 +759,25 @@ label midcar3:
     k "Maybe we should follow in Stella's footsteps here."
     j "Get black out drunk and pass out on the floor?"
     k "Well, sleep. It is getting late, and we've been at it all day."
-    k "Both Freddy and the Pirate guy have already fallen asleep over there."
+    k "Both Freddy and the pirate guy have already fallen asleep over there."
     k "We should figure out the rest of the sleeping arrangements."
-    n "The train is pretty cramped, there definitely aren't 9 more chairs or beds for us."
+    n "The train is pretty cramped, there definitely aren't nine more chairs or beds for us."
     hide jenny ind with moveoutleft
     show bert sad with moveinleft:
         xcenter .25
-    b "There are 5 more chairs in this car, and then a bed and a bench in the caboose."
-    b "So that leaves... 2 people's beds unaccounted for."
+    b "There are five more chairs in this car, and then a bed and a bench in the caboose."
+    b "So that leaves... two people's beds unaccounted for."
     hide kaiser ind with moveoutright
     show drac ind with moveinright:
         xcenter .75
     d "If I may add - Do not worry about my sleeping arrangements."
-    d "This is no need."
+    d "There is no need."
     n "Why's that?"
     d "I simply do not sleep."
     n "..."
     b "..."
     d "..."
-    b "Okay, so only 1 more bed to account for."
+    b "Okay, so only one more bed to account for."
     hide drac ind with moveoutright
     show kaiser ind with moveinright:
         xcenter .75
@@ -793,7 +792,7 @@ label midcar3:
         xcenter .25
     show sam with dissolve:
         xcenter .75
-    i "So, 2 of us 3 are in the back car?"
+    i "So, two of us three are in the back car?"
     s "It's so dusty back there... Maybe we should all just squeeze in here somehow?"
     n "I don't think there's enough space in here. It's just a bar car after all."
     n "I can sleep in the back car, I don't mind."
@@ -803,7 +802,7 @@ label midcar3:
     s "Sid, are you sure? If it's too dusty for you I can sleep back there."
     show sid ind:
         linear .3 xcenter .5
-    i "I'm used to sharing 1 bed with my whole family! This is a practically an upgrade!"
+    i "I'm used to sharing one bed with my whole family! This is a practically an upgrade!"
     hide sid ind with moveoutleft
     show sam:
         linear .3 xcenter .5
@@ -868,8 +867,8 @@ label midcar3:
     with fade
     n "Wow... \"Train Route\" would almost definitely be useful."
     i "I'm positive that it would tell us where the train is going, if we could open it."
-    n "And... Participants. I wonder if that's about... Us."
-    i "Yeah... That's what I was thinking too."
+    n "And... participants. I wonder if that's about... us."
+    i "Yeah... that's what I was thinking too."
     ni "If it is, maybe that file could tell us why we're all here..."
     ni "Maybe it would tell us who's behind all this."
     i "Afterwards, I noticed something else when I hit Return..."
@@ -933,7 +932,7 @@ label day2:
     i "No idea, but the sun's up. I'm heading to the bar car to the others."
     hide sid happy with moveoutright
     $ showchibi("dan")
-    ni "That kid's got a lot of energy. It must be around 7AM."
+    ni "That kid's got a lot of energy. It must be around 7 AM."
     blank "Dan walked to the back window."
     show tracks with dissolve
     ni "Damn... There really isn't anything out there..."
@@ -953,7 +952,7 @@ label day2:
     c "Come get your gourmet turkey sandwiches and half-sized cans of soda!"
     f "Soda for breakfast! Wooo!"
     n "How are you guys so peppy?"
-    f "Come on sesame, let's go play!"
+    f "Come on Sesame, let's go play!"
     ses "Merowwwwww!"
     hide frog ind with moveoutleft
     c "Nothing we can do but try to enjoy ourselves a little!"
@@ -965,8 +964,8 @@ label day2:
     show bert happy with dissolve:
         xcenter .25
     b "It was pretty heartwarming, to be honest."
-    b "I'm glad we're all still staying optomistic."
-    b "We're gunna figure this out and get off this train!"
+    b "I'm glad we're all still staying optimistic."
+    b "We're gonna figure this out and get off this train!"
     s "Agreed."
     ni "..."
     s "We should wait for everyone to wake up and have a meeting."
