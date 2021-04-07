@@ -45,21 +45,21 @@ screen trainEvidence():
             textbutton "-" style "button_text"
 
         if train_evidence[2]:
-            textbutton "Kaiser, Lauren, Sam, and Shahar's accounts" style "button_text" action SetVariable("currEvidence", 2)
+            textbutton "Front Car Accounts" style "button_text" action SetVariable("currEvidence", 2)
         else:
             textbutton "-" style "button_text"
 
     if currEvidence == 0:
         image "computer.png" xcenter 800 yalign 0.0
-        text "The computer used to navigate the train." xcenter 800 yalign 0.3
+        text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 250
 
     if currEvidence == 1:
         image "window.png" xcenter 800 yalign 0.0
-        text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yalign 0.3
+        text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yanchor 0.0 ypos 250
 
     if currEvidence == 2:
         image "window.png" xcenter 800 yalign 0.0 alpha .4
-        text "Kaiser, Lauren, Sam, and Shahar \nsaid they were all in the front car. \n \nLauren said the lights turned off,\nthey heard the scream, and \nthen went to the bar car." xcenter 800 yalign 0.3
+        text "Kaiser, Lauren, Sam, and Shahar said they were all \n in the front car. \n \nLauren said the lights turned off,they heard the\nscream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 250
 
 ############################### put button locations and jumps here
 
