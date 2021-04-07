@@ -214,15 +214,18 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [False, True, True]
-        train_evidence2 = [True]
+        train_evidence1 = [True, True, True]
+        train_evidence2 = [True, True, True, True, True]
+        train_evidence3 = [True]
+        lightscount = 0
+        windowcount = 0
 
 ###########
 #Start jump
 ###########
-    call screen freeTimeCounter
-    # call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
-    # "sid", "test2 asdfasdfasdfasdfasdf", -1,
-    # "sid", "test3 asdfasdfasdfasdf", 1,
-    # "sid", "test4 asdfasdfasdfasdf", -1)
+    call screen midCarInv
+    call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
+    "sid", "test2 asdfasdfasdfasdfasdf", -1,
+    "sid", "test3 asdfasdfasdfasdf", 1,
+    "sid", "test4 asdfasdfasdfasdf", -1)
     jump midcar6
