@@ -215,7 +215,7 @@ label start:
         statement = -1
         agree = 0
         train_evidence1 = [True, True, True]
-        train_evidence2 = [True, True, True, True]
+        train_evidence2 = [True, True, True]
         train_evidence3 = [True, True, True, True]
         lightscount = 0
         windowcount = 0
