@@ -5,6 +5,7 @@ init:
         zoom 1.5
 
 screen trainMapInv():
+    modal True
     imagemap:
         ground "trainmapoverlay.png"
         hotspot(182, 461, 330, 210):
@@ -30,10 +31,12 @@ style blue_text:
 
 screen trainEvidence():
     add "eviscroll"
+    modal True
+
     imagemap:
         ground "evidenceui.png"
         hotspot(35, 29, 144, 75) action [Hide("trainEvidence")]
-    vbox xalign 0.15 yalign 0.5 spacing 30:
+    vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
             textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
         else:
@@ -49,27 +52,91 @@ screen trainEvidence():
         else:
             textbutton "-" style "button_text"
 
-    if currEvidence == 0:
-        image "computer.png" xcenter 800 yalign 0.0
-        text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 250
+        if train_evidence2[0]:
+            textbutton "Bar Car Lighting" style "button_text" action SetVariable("currEvidence", 3)
+        else:
+            textbutton "-" style "button_text"
 
-    if currEvidence == 1:
-        image "window.png" xcenter 800 yalign 0.0
-        text "Wee woo wee woo.\nThis is a new line but it's longer!" xcenter 800 yanchor 0.0 ypos 250
+        if train_evidence2[1]:
+            textbutton "Dracula's Account" style "button_text" action SetVariable("currEvidence", 4)
+        else:
+            textbutton "-" style "button_text"
 
-    if currEvidence == 2:
-        image "window.png" xcenter 800 yalign 0.0 alpha .4
-        text "Kaiser, Lauren, Sam, and Shahar said they were all \n in the front car. \n \nLauren said the lights turned off,they heard the\nscream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 250
+        if train_evidence2[2]:
+            textbutton "Catherine's Account" style "button_text" action SetVariable("currEvidence", 5)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[0]:
+            textbutton "Hanging Object" style "button_text" action SetVariable("currEvidence", 6)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[1]:
+            textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 7)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[2]:
+            textbutton "Back Car Closet" style "button_text" action SetVariable("currEvidence", 8)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[3]:
+            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 9)
+        else:
+            textbutton "-" style "button_text"
+
+    fixed xmaximum 580:
+        if currEvidence == 0:
+            image "computer.png" xcenter 800 yalign 0.0
+            text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 1:
+            image "window.png" xcenter 800 yalign 0.0
+            text "Wee woo wee woo. This is a new line but it's longer!" xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 2:
+            image "window.png" xcenter 800 yalign 0.0 alpha .4
+            text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the lights turned off,they heard thescream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 3:
+            image "window.png" xcenter 800 yalign 0.0
+            text "It's dark out, and the lights in the bar car are off." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 4:
+            image "window.png" xcenter 800 yalign 0.0
+            text "Dracula said the scream we heard while it was dark was somehow 'familiar'." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 5:
+            image "window.png" xcenter 800 yalign 0.0
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 6:
+            image "window.png" xcenter 800 yalign 0.0
+            text "We found this hanging outside the back window of the train." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 7:
+            image "window.png" xcenter 800 yalign 0.0
+            text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 8:
+            image "window.png" xcenter 800 yalign 0.0
+            text "The closet opened easily, but there was nothing inside." xcenter 800 yanchor 0.0 ypos 250
+
+        if currEvidence == 9:
+            image "window.png" xcenter 800 yalign 0.0
+            text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 250
 
 ############################### put button locations and jumps here
 
 screen frontCarInv():
     imagemap:
         ground "bg trainFRONT1.png"
-        hotspot(480, 198, 320, 148) action [Jump("trainFrontWindow")]
-        hotspot(342, 100, 97, 250) action [Jump("trainComputer")]
-        hotspot(830, 94, 107, 255) action [Jump("trainComputer")]
-        hotspot(529, 48, 221, 107) action [Jump("trainComputer")]
+        hotspot(480, 198, 320, 148) action [Hide("frontcarinv"), Jump("trainFrontWindow")]
+        hotspot(342, 100, 97, 250) action [Hide("frontcarinv"), Jump("trainComputer")]
+        hotspot(830, 94, 107, 255) action [Hide("frontcarinv"), Jump("trainComputer")]
+        hotspot(529, 48, 221, 107) action [Hide("frontcarinv"), Jump("trainComputer")]
 
     imagebutton:
         xalign 1.0
@@ -113,29 +180,29 @@ screen frontCarInv():
         idle "shaharchibi.png" at chibizoom
         action [Hide("frontCarInv"), Jump("trainKaiser")]
 
-#############
+##################################################################################
 
 screen midCarInv():
     imagemap:
         ground "bg notrainMID.png"
-        hotspot(379, 366, 40, 105) action [Jump("trainlights")]
-        hotspot(721, 288, 40, 65) action [Jump("trainlights")]
-        hotspot(604, 228, 64, 34) action [Jump("trainlights")]
+        hotspot(379, 366, 40, 105) action [Hide("midcarinv"), Jump("trainlights")]
+        hotspot(721, 288, 40, 65) action [Hide("midcarinv"), Jump("trainlights")]
+        hotspot(604, 228, 64, 34) action [Hide("midcarinv"), Jump("trainlights")]
         ###
-        hotspot(130, 352, 150, 192) action [Jump("trainwindows")]
-        hotspot(998, 351, 150, 189) action [Jump("trainwindows")]
-        hotspot(423, 322, 93, 82) action [Jump("trainwindows")]
-        hotspot(792, 329, 135, 111) action [Jump("trainwindows")]
-        hotspot(607, 230, 57, 29) action [Jump("trainwindows")]
+        hotspot(130, 352, 150, 192) action [Hide("midcarinv"), Jump("trainwindows")]
+        hotspot(998, 351, 150, 189) action [Hide("midcarinv"), Jump("trainwindows")]
+        hotspot(423, 322, 93, 82) action [Hide("midcarinv"), Jump("trainwindows")]
+        hotspot(792, 329, 135, 111) action [Hide("midcarinv"), Jump("trainwindows")]
+        hotspot(607, 230, 57, 29) action [Hide("midcarinv"), Jump("trainwindows")]
         ###
-        hotspot(573, 276, 133, 176) action [Jump("trainbar")]
-        hotspot(704, 363, 62, 86) action [Jump("trainbar")]
+        hotspot(573, 276, 133, 176) action [Hide("midcarinv"), Jump("trainbar")]
+        hotspot(704, 363, 62, 86) action [Hide("midcarinv"), Jump("trainbar")]
         ##
-        hotspot(110, 618, 362, 97) action [Jump("traincouch")]
-        hotspot(252, 514, 212, 102) action [Jump("traincouch")]
-        hotspot(679, 611, 486, 108) action [Jump("traincouch")]
-        hotspot(670, 466, 227, 176) action [Jump("traincouch")]
-        hotspot(881, 512, 131, 128) action [Jump("traincouch")]
+        hotspot(110, 618, 362, 97) action [Hide("midcarinv"), Jump("traincouch")]
+        hotspot(252, 514, 212, 102) action [Hide("midcarinv"), Jump("traincouch")]
+        hotspot(679, 611, 486, 108) action [Hide("midcarinv"), Jump("traincouch")]
+        hotspot(670, 466, 227, 176) action [Hide("midcarinv"), Jump("traincouch")]
+        hotspot(881, 512, 131, 128) action [Hide("midcarinv"), Jump("traincouch")]
 
     imagebutton:
         xalign 1.0
@@ -168,11 +235,25 @@ screen midCarInv():
         action [Hide("midCarInv"), Jump("traindracula")]
 
 
-############
+##################################################################################
 
 screen backCarInv():
     imagemap:
-        ground "bg trainBACK.png"
+        ground "bg notrainBACK.png"
+        hotspot(484, 104, 70, 230) action [Hide("backcarinv"), Jump("traincloset")]
+        ##
+        hotspot(606, 167, 97, 77) action [Hide("backcarinv"), Jump("traincoin")]
+        ##
+        hotspot(602, 287, 113, 246) action [Hide("backcarinv"), Jump("trainbody")]
+        ##
+        hotspot(732, 19, 147, 66) action [Hide("backcarinv"), Jump("trainrip")]
+        ##
+        hotspot(322, 377, 131, 315) action [Hide("backcarinv"), Jump("trainwater")]
+        ##
+        hotspot(456, 353, 125, 164) action [Hide("backcarinv"), Jump("trainbed")]
+        ##
+        hotspot(773, 334, 111, 156) action [Hide("backcarinv"), Jump("trainbench")]
+        hotspot(840, 372, 107, 346) action [Hide("backcarinv"), Jump("trainbench")]
 
     imagebutton:
         xalign 1.0
@@ -186,6 +267,17 @@ screen backCarInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
 
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "bertchibi.png" at chibizoom
+        action [Hide("backCarInv"), Jump("trainbackBert")]
+
+    imagebutton:
+        xpos 20
+        ypos 70
+        idle "sidchibi.png" at chibizoom
+        action [Hide("backCarInv"), Jump("trainsid")]
 
 
 #################################################### put descriptions here
@@ -200,8 +292,12 @@ label trainComputer:
     bi "Wait - no! There is something different..."
     bi "I should make a mental note of that."
     scene bg trainfront1
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
+    call traindone
     call screen frontCarInv
 
 label trainFrontWindow:
@@ -211,8 +307,12 @@ label trainFrontWindow:
     bi "It's pretty dark out, but there's still some light coming through."
     bi "With the computers all on too, you'd think it would stay pretty bright in here."
     bi "Hmmm..."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
+    call traindone
     call screen frontCarInv
 
 label trainBert:
@@ -259,8 +359,12 @@ label trainKaiser:
     hide lauren ind
     hide shahar mad
     with dissolve
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
+    call traindone
     call screen frontCarInv
 
 label trainmidBert:
@@ -285,8 +389,12 @@ label traincatherine:
     c "Nobody did, there's no way they could have. The door stayed closed the whole time, I swear to it."
     ses "Me-ow!"
     b "Hmmm, I see. Thanks Catherine."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
     if False not in train_evidence2:
         bi "I think that's everything important in this car."
+    call traindone
     call screen midCarInv
 
 label traindracula:
@@ -307,8 +415,12 @@ label traindracula:
     d "Regardless. That's all the information I have."
     hide drac ind with dissolve
     b "Hmm..."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
     if False not in train_evidence2:
         bi "I think that's everything important in this car."
+    call traindone
     call screen midCarInv
 
 label trainlights:
@@ -324,11 +436,15 @@ label trainlights:
         j "Wow, you're right. That's a good point."
         $train_evidence2[2] = True
         $lightscount += 10
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
         if False not in train_evidence2:
             bi "I think that's everything important in this car."
     else:
         b "Hmmm... The lights are still off."
         $ lightscount += 10
+    call traindone
     call screen midCarInv
 
 label trainwindows:
@@ -344,11 +460,15 @@ label trainwindows:
         j "Wow, you're right. That's a good point."
         $ windowcount += 10
         $train_evidence2[2] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
         if False not in train_evidence2:
             bi "I think that's everything important in this car."
     else:
         b "Hmmm... It's pretty dark out."
         $ windowcount += 10
+    call traindone
     call screen midCarInv
 
 label trainbar:
@@ -362,3 +482,120 @@ label traincouch:
     bi "Some chairs and couches throughout the bar car."
     bi "I don't think there's anything important about them right now."
     call screen midCarInv
+
+label trainbackBert:
+    scene bg notrainback
+    show bert sad with dissolve
+    bi "What a terrible situation..."
+    bi "The best way we can help is by collecting evidence."
+    call screen backCarInv
+
+label trainrip:
+    scene bg notrainback
+    bi "Well I guess it's a good thing we have this."
+    bi "I don't think it's important right now though."
+    call screen backCarInv
+
+label trainbed:
+    scene bg notrainback
+    bi "The bed. It's next to the closet, but other than that..."
+    bi "I don't think it's very important right now."
+    call screen backCarInv
+
+label trainwater:
+    scene bg notrainback
+    bi "There's an old-timey water heater and kettle back here."
+    bi "I don't think it's relevant right now."
+    call screen backCarInv
+
+label trainbench:
+    scene bg notrainback
+    bi "The bench. I think this is where either Dan or Sid was sleeping."
+    call screen backCarInv
+
+label trainsid:
+    scene bg notrainback
+    show sid ind with dissolve
+    i "Is he really... dead?"
+    b "Yeah, Sid. He's dead."
+    b "You should go up to the bar car, you don't have to be back here."
+    i "I was just... talking to him. He let me sleep in the bed..."
+    i "Why did it have to happen to {i}Dan?{/i}"
+    i "Who did this?!"
+    b "I'm going to figure it out. But I need your help."
+    b "Sid, what were you doing before... this happened?"
+    i "I just told you! I was sleeping in the bed. Dan took it last night, so tonight was my turn."
+    i "Then I heard someone scream, the window break, and I woke up to... this."
+    hide sid ind with dissolve
+    bi "Hmmm. It seems like Dan is the only one he really befriended here."
+    bi "But it also seems kinda like he killed Dan."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    $train_evidence3[0] = True
+    if False not in train_evidence3:
+        bi "I think that's everything important in this car."
+    call traindone
+    call screen backCarInv
+
+label traincloset:
+    scene bg notrainback
+    bi "The locked closet."
+    bi "I might as well try it."
+    blank "The closet door opened without any trouble."
+    blank "Nothing was inside."
+    bi "What?!"
+    bi "I thought this closet was locked shut?"
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    $train_evidence3[1] = True
+    if False not in train_evidence3:
+        bi "I think that's everything important in this car."
+    call traindone
+    call screen backCarInv
+
+label traincoin:
+    scene bg notrainback
+    bi "The window is cracked from the murder weapon..."
+    bi "The culprit must have used a ton of extra force."
+    bi "...Hm?"
+    bi "There'e something dangling outside the window."
+    blank "Bert carefully reached through the cracks in the window and retrieved the object."
+    bi "It's a... cuff link?"
+    bi "I'll hold on to this."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    $train_evidence3[2] = True
+    if False not in train_evidence3:
+        bi "I think that's everything important in this car."
+    call traindone
+    call screen backCarInv
+
+label trainbody:
+    scene bg notrainback
+    bi "Dan's body..."
+    bi "It's hard to look at."
+    bi "But I think it's important for me to at least do a superficial autopsy."
+    blank "Bert took a few minutes investigating the body."
+    bi "God... there's so much blood."
+    bi "I don't there's {i}too{/i} much to take away from that."
+    bi "He has no visible wounds other than the metal bar through his chest."
+    bi "The way he's laying makes it look like he was looking out the window when it happened."
+    bi "...Rest in peace, Dan. We'll find out who did this."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    $train_evidence3[3] = True
+    if False not in train_evidence3:
+        bi "I think that's everything important in this car."
+    call traindone
+    call screen backCarInv
+
+label traindone:
+     if False not in train_evidence1 and train_evidence2 and train_evidence3:
+           bi "...Actually, I think that's everything."
+           bi "I think I should meet up with the others."
+           #jump elsewhere
+     return
