@@ -133,10 +133,10 @@ screen trainEvidence():
 screen frontCarInv():
     imagemap:
         ground "bg trainFRONT1.png"
-        hotspot(480, 198, 320, 148) action [Hide("frontcarinv"), Jump("trainFrontWindow")]
-        hotspot(342, 100, 97, 250) action [Hide("frontcarinv"), Jump("trainComputer")]
-        hotspot(830, 94, 107, 255) action [Hide("frontcarinv"), Jump("trainComputer")]
-        hotspot(529, 48, 221, 107) action [Hide("frontcarinv"), Jump("trainComputer")]
+        hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")]
+        hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")]
+        hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")]
+        hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")]
 
     imagebutton:
         xalign 1.0
@@ -185,24 +185,24 @@ screen frontCarInv():
 screen midCarInv():
     imagemap:
         ground "bg notrainMID.png"
-        hotspot(379, 366, 40, 105) action [Hide("midcarinv"), Jump("trainlights")]
-        hotspot(721, 288, 40, 65) action [Hide("midcarinv"), Jump("trainlights")]
-        hotspot(604, 228, 64, 34) action [Hide("midcarinv"), Jump("trainlights")]
+        hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")]
+        hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")]
+        hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")]
         ###
-        hotspot(130, 352, 150, 192) action [Hide("midcarinv"), Jump("trainwindows")]
-        hotspot(998, 351, 150, 189) action [Hide("midcarinv"), Jump("trainwindows")]
-        hotspot(423, 322, 93, 82) action [Hide("midcarinv"), Jump("trainwindows")]
-        hotspot(792, 329, 135, 111) action [Hide("midcarinv"), Jump("trainwindows")]
-        hotspot(607, 230, 57, 29) action [Hide("midcarinv"), Jump("trainwindows")]
+        hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")]
+        hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")]
+        hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")]
+        hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")]
+        hotspot(607, 230, 57, 29) action [Hide("midCarInv"), Jump("trainwindows")]
         ###
-        hotspot(573, 276, 133, 176) action [Hide("midcarinv"), Jump("trainbar")]
-        hotspot(704, 363, 62, 86) action [Hide("midcarinv"), Jump("trainbar")]
+        hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")]
+        hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")]
         ##
-        hotspot(110, 618, 362, 97) action [Hide("midcarinv"), Jump("traincouch")]
-        hotspot(252, 514, 212, 102) action [Hide("midcarinv"), Jump("traincouch")]
-        hotspot(679, 611, 486, 108) action [Hide("midcarinv"), Jump("traincouch")]
-        hotspot(670, 466, 227, 176) action [Hide("midcarinv"), Jump("traincouch")]
-        hotspot(881, 512, 131, 128) action [Hide("midcarinv"), Jump("traincouch")]
+        hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")]
+        hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")]
+        hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")]
+        hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")]
+        hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")]
 
     imagebutton:
         xalign 1.0
@@ -240,20 +240,20 @@ screen midCarInv():
 screen backCarInv():
     imagemap:
         ground "bg notrainBACK.png"
-        hotspot(484, 104, 70, 230) action [Hide("backcarinv"), Jump("traincloset")]
+        hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")]
         ##
-        hotspot(606, 167, 97, 77) action [Hide("backcarinv"), Jump("traincoin")]
+        hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")]
         ##
-        hotspot(602, 287, 113, 246) action [Hide("backcarinv"), Jump("trainbody")]
+        hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")]
         ##
-        hotspot(732, 19, 147, 66) action [Hide("backcarinv"), Jump("trainrip")]
+        hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")]
         ##
-        hotspot(322, 377, 131, 315) action [Hide("backcarinv"), Jump("trainwater")]
+        hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")]
         ##
-        hotspot(456, 353, 125, 164) action [Hide("backcarinv"), Jump("trainbed")]
+        hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")]
         ##
-        hotspot(773, 334, 111, 156) action [Hide("backcarinv"), Jump("trainbench")]
-        hotspot(840, 372, 107, 346) action [Hide("backcarinv"), Jump("trainbench")]
+        hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")]
+        hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")]
 
     imagebutton:
         xalign 1.0
