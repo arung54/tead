@@ -89,44 +89,44 @@ screen trainEvidence():
 
     fixed xmaximum 580:
         if currEvidence == 0:
-            image "computer.png" xcenter 800 yalign 0.0
-            text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
-            image "window.png" xcenter 800 yalign 0.0
-            text "Wee woo wee woo. This is a new line but it's longer!" xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "Wee woo wee woo. This is a new line but it's longer!" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
-            image "window.png" xcenter 800 yalign 0.0 alpha .4
-            text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the lights turned off,they heard thescream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1 alpha .4
+            text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the lights turned off,they heard thescream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 3:
-            image "window.png" xcenter 800 yalign 0.0
-            text "It's dark out, and the lights in the bar car are off." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "It's dark out, and the lights in the bar car are off." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
-            image "window.png" xcenter 800 yalign 0.0
-            text "Dracula said the scream we heard while it was dark was somehow 'familiar'." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "Dracula said the scream we heard while it was dark was somehow 'familiar'." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:
-            image "window.png" xcenter 800 yalign 0.0
-            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
-            image "window.png" xcenter 800 yalign 0.0
-            text "We found this hanging outside the back window of the train." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "We found this hanging outside the back window of the train." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
-            image "window.png" xcenter 800 yalign 0.0
-            text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
-            image "window.png" xcenter 800 yalign 0.0
-            text "The closet opened easily, but there was nothing inside." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "The closet opened easily, but there was nothing inside." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
-            image "window.png" xcenter 800 yalign 0.0
-            text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 250
+            image "window.png" xcenter 800 yalign 0.1
+            text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 330
 
 ############################### put button locations and jumps here
 
@@ -562,7 +562,10 @@ label traincoin:
     bi "...Hm?"
     bi "There'e something dangling outside the window."
     blank "Bert carefully reached through the cracks in the window and retrieved the object."
-    bi "It's a... cuff link?"
+    show thering with dissolve
+    pause 1
+    hide thering with dissolve
+    bi "It's a... ring?"
     bi "I'll hold on to this."
     show newevidencefound with dissolve
     pause 1
