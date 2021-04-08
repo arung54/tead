@@ -34,17 +34,17 @@ screen trainEvidence():
         ground "evidenceui.png"
         hotspot(35, 29, 144, 75) action [Hide("trainEvidence")]
     vbox xalign 0.15 yalign 0.5 spacing 30:
-        if train_evidence[0]:
+        if train_evidence1[0]:
             textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
-        if train_evidence[1]:
+        if train_evidence1[1]:
             textbutton "The View From The Front" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
-        if train_evidence[2]:
+        if train_evidence1[2]:
             textbutton "Front Car Accounts" style "button_text" action SetVariable("currEvidence", 2)
         else:
             textbutton "-" style "button_text"

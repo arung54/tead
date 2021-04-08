@@ -11,12 +11,12 @@ label correctTrain:
     if phase == 0:
         b "Dialog after the first argument"
         b "Blah blah blah"
-        phase += 1
+        $ phase += 1
         call screen trainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1,
         "sid", "Statement {color=#f55}1{/color}", -1,
         "sid", "Statement 3", 0,
         "sid", "Statement {color=#55f}1{/color}", 1)
-    if phase == 1
+    if phase == 1:
         b "Dialog after second argument"
 
 
@@ -67,7 +67,10 @@ screen trainEvidenceTrial():
                 yalign 0.9
                 action [Show("tryAgain", transition=Dissolve(0.2))]
 
+#pers = prefix for the ___face.png you want to show
+#statement is text that appears on the screen
 #ag = 1 if you can agree, -1 if you can refute, and 0 if you can't interact
+
 screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4):
     modal True
     add "debatescroll"

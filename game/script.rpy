@@ -223,9 +223,5 @@ label start:
 ###########
 #Start jump
 ###########
-    # call screen midCarInv
-    call screen trainTrial("sid", "Statement {color=#55f}1{/color}", 1,
-    "sid", "Statement {color=#f55}1{/color}", -1,
-    "sid", "Statement 3", 0,
-    "sid", "Statement {color=#55f}1{/color}", 1)
+    call screen midCarInv
     jump go
