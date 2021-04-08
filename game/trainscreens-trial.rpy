@@ -3,7 +3,22 @@ init:
         zoom 0.7
 
 init python:
-    trainAnswers = [[3, 0], [0, 1]]
+    trainAnswers = [[3, 0], [0, 1]] #This means first trial screen, statement 3, and you want to use evidence 0.
+                                    #Second trial screen, statement 0, and you want to use evidence 1.
+                                    # Evidence -1 = agree.
+
+label correctTrain:
+    if phase == 0:
+        b "Dialog after the first argument"
+        b "Blah blah blah"
+        phase += 1
+        call screen trainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1,
+        "sid", "Statement {color=#f55}1{/color}", -1,
+        "sid", "Statement 3", 0,
+        "sid", "Statement {color=#55f}1{/color}", 1)
+    if phase == 1
+        b "Dialog after second argument"
+
 
 screen trainEvidenceTrial():
     modal True
@@ -52,7 +67,7 @@ screen trainEvidenceTrial():
                 yalign 0.9
                 action [Show("tryAgain", transition=Dissolve(0.2))]
 
-
+#ag = 1 if you can agree, -1 if you can refute, and 0 if you can't interact
 screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4):
     modal True
     add "debatescroll"
@@ -109,6 +124,3 @@ screen tryAgain:
     imagemap:
         ground "tryagain.png"
         hotspot(0, 0, 1279, 719) action [Hide("tryAgain", transition=Dissolve(0.2))]
-
-label correctTrain:
-    b "No, that's wrong!"
