@@ -5,20 +5,6 @@ init:
 init python:
     trainAnswers = [[3, 0], [0, 1]]
 
-label checkEvidenceTrain:
-    if trainAnswers[phase][0] == statement and trainAnswers[phase][1] == currEvidence:
-        b "No, that's wrong!"
-        $b(str(currEvidence))
-    else:
-        b "No, that can't be it... let me think some more."
-    if phase == 0:
-        hide screen trainTrial
-        call screen trainTrial("sid", "test1asdfasdfasdfasdfasdf", 1,
-        "sid", "test2 asdfasdfasdfasdfasdf", -1,
-        "sid", "test3 asdfasdfasdfasdf", 1,
-        "sid", "test4 asdfasdfasdfasdf", -1)
-
-
 screen trainEvidenceTrial():
     modal True
     add "eviscroll"
