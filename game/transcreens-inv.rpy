@@ -376,7 +376,7 @@ label trainmidBert:
 
 label traincatherine:
     scene bg notrainmid
-    $train_evidence2[0] = True
+    $train_evidence2[2] = True
     show catherine ind with dissolve
     c "This is so scary..."
     c "It's like a crappy murder mystery game."
@@ -434,7 +434,7 @@ label trainlights:
         b "If the lights are off, and there's no sunlight, but we can still see..."
         b "Then why couldn't we see during the commotion?"
         j "Wow, you're right. That's a good point."
-        $train_evidence2[2] = True
+        $train_evidence2[0] = True
         $lightscount += 10
         show newevidencefound with dissolve
         pause 1
@@ -459,7 +459,7 @@ label trainwindows:
         b "Then why couldn't we see during the commotion?"
         j "Wow, you're right. That's a good point."
         $ windowcount += 10
-        $train_evidence2[2] = True
+        $train_evidence2[0] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
@@ -594,7 +594,7 @@ label trainbody:
     call screen backCarInv
 
 label traindone:
-     if False not in train_evidence1 and train_evidence2 and train_evidence3:
+     if False not in train_evidence1 and False not in train_evidence2 and False not in train_evidence3:
            bi "...Actually, I think that's everything."
            bi "I think I should meet up with the others."
            #jump elsewhere
