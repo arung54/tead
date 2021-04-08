@@ -86,10 +86,11 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
             idle pers4+"face.png"
     if statement >= 0:
         add "expoint.png" xpos 0.28 ypos 175+127*statement at exzoom
-    textbutton statement1 xpos 0.38 ypos 220 style "button_text" action [SetVariable("statement", 0), SetVariable("agree", ag1)]
-    textbutton statement2 xpos 0.38 ypos 347 style "button_text" action [SetVariable("statement", 1), SetVariable("agree", ag2)]
-    textbutton statement3 xpos 0.38 ypos 474 style "button_text" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
-    textbutton statement4 xpos 0.38 ypos 601 style "button_text" action [SetVariable("statement", 3), SetVariable("agree", ag4)]
+    fixed xmaximum 750:
+        textbutton statement1 xpos 0.64 xanchor 0 ypos 190 yanchor 0 style "button_text" action [SetVariable("statement", 0), SetVariable("agree", ag1)]
+        textbutton statement2 xpos 0.64 xanchor 0 ypos 317 yanchor 0 style "button_text" action [SetVariable("statement", 1), SetVariable("agree", ag2)]
+        textbutton statement3 xpos 0.64 xanchor 0 ypos 444 yanchor 0 style "button_text" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
+        textbutton statement4 xpos 0.64 xanchor 0 ypos 571 yanchor 0 style "button_text" action [SetVariable("statement", 3), SetVariable("agree", ag4)]
     if agree == 1:
         if trainAnswers[phase][0] == statement and trainAnswers[phase][1] == -1:
             imagebutton:
