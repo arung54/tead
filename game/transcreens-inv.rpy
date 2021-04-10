@@ -35,15 +35,16 @@ screen trainEvidence():
 
     imagemap:
         ground "evidenceui.png"
+        add "usethis.png" xcenter 800 yalign .9
         hotspot(35, 29, 144, 75) action [Hide("trainEvidence")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
-            textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
+            textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence1[1]:
-            textbutton "The View From The Front" style "button_text" action SetVariable("currEvidence", 1)
+            textbutton "Front Car Lighting" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
@@ -89,39 +90,39 @@ screen trainEvidence():
 
     fixed xmaximum 580:
         if currEvidence == 0:
-            image "window.png" xcenter 800 yalign 0.1
-            text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 330
+            image "loginev.png" xcenter 800 yalign 0.1
+            text "Something seems different here..." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
-            image "window.png" xcenter 800 yalign 0.1
-            text "Wee woo wee woo. This is a new line but it's longer!" xcenter 800 yanchor 0.0 ypos 330
+            image "lights2ev.png" xcenter 800 yalign 0.1
+            text "The ambient light in the front car makes it pertty easy to see, even at night." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
-            image "window.png" xcenter 800 yalign 0.1 alpha .4
+            image "frontaccounts1.png" xcenter 800 yalign 0.1
             text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the lights turned off,they heard thescream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 3:
-            image "window.png" xcenter 800 yalign 0.1
+            image "lightsev" xcenter 800 yalign 0.1
             text "It's dark out, and the lights in the bar car are off." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
-            image "window.png" xcenter 800 yalign 0.1
+            image "dracaccount1" xcenter 800 yalign 0.1
             text "Dracula said the scream we heard while it was dark was somehow 'familiar'." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:
-            image "window.png" xcenter 800 yalign 0.1
+            image "catherineaccount1" xcenter 800 yalign 0.1
             text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
-            image "window.png" xcenter 800 yalign 0.1
+            image "ringev" xcenter 800 yalign 0.1
             text "We found this hanging outside the back window of the train." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
-            image "window.png" xcenter 800 yalign 0.1
+            image "sidaccount1.png" xcenter 800 yalign 0.1
             text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
-            image "window.png" xcenter 800 yalign 0.1
+            image "closetev.png" xcenter 800 yalign 0.1
             text "The closet opened easily, but there was nothing inside." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
