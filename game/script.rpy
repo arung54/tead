@@ -186,6 +186,7 @@ define z = Character("?????", who_color= "#FFFFFF", callback=fillvoice)
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=fillvoice)
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice)
+define warden = Character("Warden", who_color= "ffffff", callback=fillvoice) #used in chapter 0
 define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
 
 label start:
