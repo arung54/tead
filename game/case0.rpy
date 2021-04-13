@@ -1,3 +1,356 @@
+screen intros():
+    add "bg startmeet.png"
+    if meetings[0] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "bertchibi.png"
+            action [Hide("intros"), Jump("meetBert")]
+    if meetings[1] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20 + 50*meetings[0]
+            idle "samchibi.png"
+            action [Hide("frontCar"), Jump("meetSam")]
+    if meetings[2] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:1])
+            idle "stellachibi.png"
+            action [Hide("frontCar"), Jump("meetStella")]
+    if meetings[3] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:2])
+            idle "sidchibi.png"
+            action [Hide("frontCar"), Jump("meetSid")]
+    if meetings[4] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:3])
+            idle "jennychibi.png"
+            action [Hide("frontCar"), Jump("meetJenny")]
+    if meetings[5] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:4])
+            idle "catherinechibi.png"
+            action [Hide("frontCar"), Jump("meetCatherine")]
+    if meetings[6] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:5])
+            idle "kaiserchibi.png"
+            action [Hide("frontCar"), Jump("meetKaiser")]
+    if meetings[7] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:6])
+            idle "draculachibi.png"
+            action [Hide("frontCar"), Jump("meetDracula")]
+    if meetings[8] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:7])
+            idle "laurenchibi.png"
+            action [Hide("frontCar"), Jump("meetLauren")]
+    if meetings[9] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:8])
+            idle "freddychibi.png"
+            action [Hide("frontCar"), Jump("meetFreddy")]
+    if meetings[10] == 1:
+        imagebutton:
+            xpos 20
+            ypos 20+50*sum(meetings[0:9])
+            idle "shaharchibi.png"
+            action [Hide("frontCar"), Jump("meetShahar")]
+
+label meetBert:
+    scene bg startmeet
+    show bert happy with dissolve
+    b "Hi, my name's Bert."
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu bertQuestions:
+        set menuset
+        "What should I ask Bert?"
+
+        "What do you do for a living?":
+            b "I graduated pretty recently, I'm a software engineer now."
+            n "Damn, you must be pretty smart."
+            b "That's nice of you to say! But I think these days most people can pick up coding if they try really hard."
+
+        "What were you doing before you ended up here?":
+            b "I was at this really great Italian restaurant just enjoying some pasta."
+            b "Tortellini with pesto... man I'm sad I didn't get to finish it."
+            b "Well, I guess that's the last thing I remember."
+            b "I imagine there's more between then and now that I don't remember."
+            n "Yeah, same for me..."
+
+        "Why do you think we're here?":
+            b "Hmm, I honestly have no idea."
+            b "If I were still in college I'd think I was getting hazed by some frat."
+            b "Maybe everyone here knows something the government doesn't want us to."
+            b "And they brought everyone here to mind wipe us or something?"
+            n "That's... a theory."
+            ni "I think the government would've just left me in prison if that were the case."
+
+    hide bert with dissolve
+    ni "I think that's everything I want to ask Bert."
+    $ meetings[0] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetSam:
+    scene bg startmeet
+    show sam ind with dissolve
+    s "Not much of a formalities guy, but I'm Sam."
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu samQuestions:
+        set menuset
+        "What should I ask Sam?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide sam with dissolve
+    ni "I think that's everything I want to ask Sam."
+    $ meetings[1] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetStella:
+    scene bg startmeet
+    show stella ind with dissolve
+    s "You're not my type, but I guess we can talk. My name's Stella."
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu stellaQuestions:
+        set menuset
+        "What should I ask Stella?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide stella with dissolve
+    ni "I think that's everything I want to ask Stella."
+    $ meetings[2] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetSid:
+    scene bg startmeet
+    show sid ind with dissolve
+    s "Hey I'm Sid. You better take me seriously!"
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu sidQuestions:
+        set menuset
+        "What should I ask Sid?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide sid with dissolve
+    ni "I think that's everything I want to ask Sid."
+    $ meetings[3] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetJenny:
+    scene bg startmeet
+    show jenny happy with dissolve
+    s "Hey! I'm Jenny."
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu jennyQuestions:
+        set menuset
+        "What should I ask Jenny?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide sam with dissolve
+    ni "I think that's everything I want to ask Jenny."
+    $ meetings[4] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetCatherine:
+    scene bg startmeet
+    show catherine happy with dissolve
+    s "Heya! I'm Catherine, and this is Sesame!"
+    ses "Mreoww!"
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu cathQuestions:
+        set menuset
+        "What should I ask Bert?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide catherine with dissolve
+    ni "I think that's everything I want to ask Catherine."
+    $ meetings[5] = 0
+    if 1 not in meetings:
+        ni "I've finally talked to everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetKaiser:
+    scene bg startmeet
+    show kaiser ind with dissolve
+    s "Greetings, I'm Kaiser."
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu kaisQuestions:
+        set menuset
+        "What should I ask Kaiser?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide kaiser with dissolve
+    ni "I think that's everything I want to ask Kaiser."
+    $ meetings[6] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetDracula:
+    scene bg startmeet
+    show drac ind with dissolve
+    d "Hey, I'm Dracula."
+    n "...Like the vampire?"
+    d "Yes, that's me."
+    ni "...I don't know if I believe him."
+    n "I'm Dan, nice to meet you."
+    $menuset = set()
+    menu dracQuestions:
+        set menuset
+        "What should I ask Bert?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide drac with dissolve
+    ni "I think that's everything I want to ask Sam."
+    $ meetings[7] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetLauren:
+    scene bg startmeet
+    show lauren ind with dissolve
+    s "Hi, I'm Lauren."
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu laurenQuestions:
+        set menuset
+        "What should I ask Lauren?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide sam with dissolve
+    ni "I think that's everything I want to ask Lauren."
+    $ meetings[8] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetFreddy:
+    scene bg startmeet
+    show sam ind with dissolve
+    s "H-hey, I'm Freddy. But I like it when people call me Froggy"
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu froggyQuestions:
+        set menuset
+        "What should I ask Froggy?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide sam with dissolve
+    ni "I think that's everything I want to ask Freddy."
+    $ meetings[9] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+label meetShahar:
+    scene bg startmeet
+    show shahar ind with dissolve
+    s "Ahoy there matey! Y'er talking to Shahar, the finest pirate on the seven seas."
+    ni "...is this guy serious?"
+    n "Hey, I'm Dan."
+    $menuset = set()
+    menu shaharQuestions:
+        set menuset 
+        "What should I ask Bert?"
+
+        "What do you do for a living?":
+
+        "What were you doing before you ended up here?":
+
+        "Why do you think we're here?":
+
+    hide sam with dissolve
+    ni "I think that's everything I want to ask Shahar."
+    $ meetings[10] = 0
+    if 1 not in meetings:
+        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+        jump postMeetings
+    call screen intros
+
+
 label start:
     scene black
     warden "Dan Scagnelli, wake up."
@@ -60,168 +413,67 @@ label start:
     m "{i}Where... Where am I?{/i}"
     m "{i}I can't... remember how I got here...{/i}"
     m "{i}My head is throbbing...{/i}"
-    m "{i}I see some people laying down over there.{/i}"
-    m "{i}Or are they... bodies?{/i}"
-
     scene black
     m "........"
     m "{i}I think I passed out again...{/i}"
     m "{i}Have to... get up...{/i}"
     scene bg start
-    m "{i}.....!{/i}"
-    z "It looks like he's awake."
-    show sam with dissolve
-    z "Hey - are you alright?"
-    m "Who are you? Where am I?"
-    hide sam
-    show bert sad with dissolve
-    z "I guess that means he doesn't know anything more than we do."
-    b "You can call me Bert."
-    $ showchibi("bert")
-    b "I woke here a few minutes ago, followed shortly by..."
-    show bert sad:
-        xcenter .5
-        linear 0.3 xcenter .75
-    show sam:
-        xcenter .25
-    $ showchibi("bert", "sam")
-    b "Sam, who was passed out over there against the wall."
-    s "We need to figure out what's going on... What's your name?"
-    m "My name..."
-    n "My name is Dan."
-    b "Alright Dan, surely you know {i}something{/i} about what's going on?"
-    n "...I wish I did. I have no idea how I got here, or where here even is..."
-    b "Yeah, same for us two."
-    n "Is there an exit?"
-    hide sam
-    hide bert sad
-    blank "I noticed a big steel door behind us."
-    show bert sad with dissolve:
-        xcenter .75
-    show sam with dissolve:
-        xcenter .25
-    b "There's a door, we haven't tried it since we didn't want to leave you unconscious and alone."
-    b "Let's try it now. Be careful though, we don't know what's past here."
-    n "..."
-    hide sam
-    hide bert sad
-    ni "We ran to the door and sure enough, it was unlocked."
+    ni "{i}.....!{/i}"
+    ni "Where... am I?"
+    ni "How did I get here?"
+    ni "Last thing I remember... I was in my cell being told I'd get out."
+    ni "...why can't I remember anything past that?"
+    play sfx "audio/beep.mp3"
+    ni "Oh, there's a door. Sounds like it just opened."
+    ni "Let's see what's on the other side..."
     scene black
-    ni "We were greeted by a very similar room, but many new faces."
+    ni "I walked into a very similar room, at the same time as eleven other people."
     scene bg startmeet
-    $ showchibi("bert", "sam")
-    show sam with dissolve
-    s "Let's just get all the pleasantries out of the way."
-    s "Everyone, introduce yourselves and if you know anything. I'm Sam."
-    hide sam
-    $ showchibi("bert", "sam", "stella")
-    show stella ind
-    t "Certainly. I am Stella Cantoire, you may know of me from the Cantoire Group."
-    show stellachibi:
-        zoom 1.5 xpos 20 ypos 116
-    t "I dont know how I got here, but I have work to do, so let's finish up whatever this is quickly."
-    show stella ind:
-        xcenter .5
-        linear 0.3 xcenter .75
-    $ showchibi("bert", "sam", "stella", "sid")
-    show sid ind:
-        xcenter .25
-    z "I... Don't think it's our choice, ma'am? Where even are we?"
-    t "Don't you dare call me ma'am, I'm young enough to be your sister. Hmph."
-    hide stella ind with moveoutright
-    show jenny ind with moveinright:
-        xcenter .75
-    $ showchibi("bert", "sam", "stella", "sid", "jenny")
-    j "I'm Jenny. Your nametag says Sid, can we call you that?"
-    hide jenny with moveoutright
-    i "Yea-yeah. Sid works."
-    j "Do any of you know how you got here?"
-    hide sid ind with moveoutleft
-    show bert sad with dissolve
-    b "The three of us who were in that room have no idea..."
-    show bert sad:
-        xcenter .5
-        linear 0.3 xcenter .25
-    show catherine ind with dissolve:
-        xcenter .75
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine")
-    z "Hey, don't start talking about serious stuff before I've introduced myself!"
-    show catherine happy:
-        xcenter .75
-    c "I'm Catherine, and this is Sesame."
-    ses "Mooeowowwwwwwwwwww!"
-    hide catherine with moveoutright
-    hide bert with moveinleft
-    show kaiser ind with dissolve
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser")
-    k "I'm Kaiser. I look forward to working with you all to get out of here."
-    hide kaiser with moveoutright
-    show drac ind with dissolve
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula")
-    d "I'm Dracula. I would like to echo Kaiser's sentiment."
-    show drac ind:
-        xcenter .5
-        linear 0.3 xcenter .75
-    show sam ind with dissolve:
-        xcenter .25
-    s "Dracula... like the vampire."
-    d "Yes, I'm Dracula."
-    s "Somehow I don't think anyone here believes you."
-    d "That's fine, the truth is the truth, it doesn't matter to me if you believe it."
-    d "Besides, weren't you the one who wanted to skip past pleasantries?"
-    d "We are in a potentially very precarious situation, it would seem."
-    s "Fine. So that's everyone. Does anyone know how we got here?"
-    s "Bert, Dan, and I all have no memories of being brought here."
-    hide sam with moveoutleft
-    hide drac with moveoutright
-    show catherine ind with dissolve
-    c "We were in the same situation. We were out on a walk, and next thing we knew, we're knocked out in that dusty room."
-    hide catherine with dissolve
-    ni "We took turns answering in a circle, and everyone had the same story."
-    ni "Some memory of just living our lives, and then suddenly being in this place."
-    ni "For me it was being in the prison cell, being told I was about to be let out."
-    ni "No memory of losing consciousness or being transported, it just ended there."
+    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     show sam ind with dissolve
-    s "Well, looks like no one has any idea what's going on."
-    s "Have we explored this building? Is there even anything to explore?"
+    #TODO: Replace w/ everyone introducing 1-by-1
+    z "Let's get straight to the point. Anyone know where we are or why we're here?"
     show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
-    show jenny ind with moveinright
-    j "Hold up, seems like it's not just the nine of us."
-    j "Another group is coming in."
-    blank "A kid, woman, and man walked in."
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
-    hide jenny with moveoutright
-    show lauren ind with moveinright:
+    show catherine ind with moveinright:
         xcenter .75
-    z "Guessing the rest of you are just as confused and clueless as we are?"
-    s "Yeah. We were about to try to find ways out. Your names?"
-    o "Lauren."
-    hide sam with moveoutleft
-    show freddy ind with moveinleft:
+    z "No clue. The last thing I remember I was out for a walk, totally fine."
+    hide catherine with moveoutright
+    show sam ind:
         xcenter .25
-    o "The kid's name is Freddy, though he goes by Froggy."
-    f "H-hi..."
-    o "He's a bit shaken up, as I'm sure we all are."
-    hide freddy with moveoutleft
-    show sam ind with moveinleft:
-        xcenter .25
-    s "And the... bare-chested guy?"
-    hide lauren with moveoutright
-    show shahar ind with moveinright:
+        linear 0.3 xcenter .5
+    ni "A few people spoke up at once agreeing."
+    z "So no one knows how they got here."
+    z "I think we should look around and try to find a way out or some answers."
+    show sam ind:
+        xcenter .5
+        linear 0.3 xcenter .25
+    show catherine ind with moveinright:
         xcenter .75
-    h "Name's Shahar lad. The finest pirate on the seven seas!"
-    n "..."
-    s "..."
-    s "Are we sure this isn't some elaborate prank?"
-    h "Prank? 'ere's nothing funny or foolish 'bout piracy me boy."
-    s "Alright, sure, Shahar the pirate."
-    hide shahar with moveoutright
-    hide sam with moveoutleft
-    ni "We did another round of introductions for the newcomers."
-    show sam with dissolve
-    s "Okay, unless another group shows up, let's try to look around and find-"
+    z "Wait, I wanna get to know everyone."
+    z "It doesn't seem like we're gonna get out of here easily, it'd be good to know who we're stuck with."
+    hide catherine with moveoutright
+    show drac ind with moveinleft:
+        xcenter .75
+    z "I agree with the girl. I don't even know any of your names."
+    z "It'll be hard for us to work together without some sense of camaraderie."
+    hide drac with moveoutright
+    show sam ind:
+        xcenter .25
+        linear 0.3 xcenter .5
+    z "Alright, let's take some time to talk to each other."
+    hide sam with fade
+    tut "Throughout the game, when a character is present in a room, their icon will appear in the top left."
+    tut "In some segments you gain control of the story, and can choose who to talk to."
+    tut "To talk to a character, click on their icon in the top left."
+    tut "Ask everyone a few questions to progress the story."
+    $ meetings = [1] * 11
+    call screen intros
+
+    label postMeetings:
+    show sam ind with dissolve
+    s "Okay, now that that's done, I think we should look around and try-"
     hide sam with dissolve
     blank "A whirring noise cut Sam off."
     scene bg start2 with fade
@@ -256,7 +508,7 @@ label start:
     ni "There's no clear path to victory."
     ni "Looking around, it was clear others were just as shocked."
     show shahar mad with dissolve
-    b "A... a game where we all have to bloody kill each other?"
+    h "A... a game where we all have to bloody kill each other?"
     hide shahar with dissolve
     show drac oh with dissolve
     d "This is... inhumane, to say the least."
