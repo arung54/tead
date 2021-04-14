@@ -68,6 +68,7 @@ init python:
     config.developer = True
     config.debug_sound = True
     renpy.music.register_channel("sfx", loop = False)
+    config.menu_include_disabled = True
 
 ##############
 #Voice Defines
@@ -163,6 +164,40 @@ init python:
             y += 50
         renpy.with_statement(Dissolve(1.0))
 
+
+    def showchibinofade(*argv):
+        argv = [j + "chibi" for j in argv]
+        currchibis = list()
+        for i in renpy.get_showing_tags():
+            if i.endswith("chibi"):
+                currchibis.append(i)
+
+        toremove = list()
+        for i in currchibis:
+            if i not in argv:
+                toremove.append(i)
+        toadd = list()
+        for i in argv:
+            if i not in currchibis:
+                toadd.append(i)
+        tostay = list()
+        for i in argv:
+            if i in currchibis:
+                tostay.append(i)
+
+        for i in toremove:
+            renpy.hide(i)
+
+        y = 20
+        for i in tostay:
+            renpy.hide(i)
+            renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
+            y += 50
+
+        for i in toadd:
+            renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
+            y += 50
+
 ##################
 #Character Defines
 ##################
@@ -226,5 +261,5 @@ label start:
 ###########
 #Start jump
 ###########
-    call screen midCarInv
+    #call screen midCarInv
     jump go

@@ -4,68 +4,68 @@ screen intros():
         imagebutton:
             xpos 20
             ypos 20
-            idle "bertchibi.png"
-            action [Hide("intros"), Jump("meetBert")]
+            idle "bertchibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetBert")]
     if meetings[1] == 1:
         imagebutton:
             xpos 20
-            ypos 20 + 50*meetings[0]
-            idle "samchibi.png"
-            action [Hide("frontCar"), Jump("meetSam")]
+            ypos 20 + 50*sum(meetings[0:1])
+            idle "samchibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetSam")]
     if meetings[2] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:1])
-            idle "stellachibi.png"
-            action [Hide("frontCar"), Jump("meetStella")]
+            ypos 20+50*sum(meetings[0:2])
+            idle "stellachibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetStella")]
     if meetings[3] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:2])
-            idle "sidchibi.png"
-            action [Hide("frontCar"), Jump("meetSid")]
+            ypos 20+50*sum(meetings[0:3])
+            idle "sidchibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetSid")]
     if meetings[4] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:3])
-            idle "jennychibi.png"
-            action [Hide("frontCar"), Jump("meetJenny")]
+            ypos 20+50*sum(meetings[0:4])
+            idle "jennychibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetJenny")]
     if meetings[5] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:4])
-            idle "catherinechibi.png"
-            action [Hide("frontCar"), Jump("meetCatherine")]
+            ypos 20+50*sum(meetings[0:5])
+            idle "catherinechibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetCatherine")]
     if meetings[6] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:5])
-            idle "kaiserchibi.png"
-            action [Hide("frontCar"), Jump("meetKaiser")]
+            ypos 20+50*sum(meetings[0:6])
+            idle "kaiserchibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetKaiser")]
     if meetings[7] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:6])
-            idle "draculachibi.png"
-            action [Hide("frontCar"), Jump("meetDracula")]
+            ypos 20+50*sum(meetings[0:7])
+            idle "draculachibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetDracula")]
     if meetings[8] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:7])
-            idle "laurenchibi.png"
-            action [Hide("frontCar"), Jump("meetLauren")]
+            ypos 20+50*sum(meetings[0:8])
+            idle "laurenchibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetLauren")]
     if meetings[9] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:8])
-            idle "freddychibi.png"
-            action [Hide("frontCar"), Jump("meetFreddy")]
+            ypos 20+50*sum(meetings[0:9])
+            idle "freddychibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetFreddy")]
     if meetings[10] == 1:
         imagebutton:
             xpos 20
-            ypos 20+50*sum(meetings[0:9])
-            idle "shaharchibi.png"
-            action [Hide("frontCar"), Jump("meetShahar")]
+            ypos 20+50*sum(meetings[0:10])
+            idle "shaharchibi.png" at chibizoom
+            action [Hide("intros", transition=Fade), Jump("meetShahar")]
 
 label meetBert:
     scene bg startmeet
@@ -103,17 +103,16 @@ label meetBert:
         "Finish talking to Bert." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetBert
 label postMeetBert:
-    hide bert with dissolve
     ni "I think that's everything I want to ask Bert."
+    hide bert with dissolve
     $ meetings[0] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetSam:
     scene bg startmeet
-    show sam ind with dissolve
+    show sam with dissolve
     s "Not much of a formalities guy, but I'm Sam."
     n "Hey, I'm Dan."
     $menuset = set()
@@ -146,13 +145,12 @@ label meetSam:
         "Finish talking to Sam." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetSam
 label postMeetSam:
-    hide sam with dissolve
     ni "I think that's everything I want to ask Sam."
+    hide sam with dissolve
     $ meetings[1] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetStella:
     scene bg startmeet
@@ -192,13 +190,12 @@ label meetStella:
         "Finish talking to Stella." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetStella
 label postMeetStella:
-    hide stella with dissolve
     ni "I think that's everything I want to ask Stella."
+    hide stella with dissolve
     $ meetings[2] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetSid:
     scene bg startmeet
@@ -231,13 +228,12 @@ label meetSid:
         "Finish talking to Sid." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetSid
 label postMeetSid:
-    hide sid with dissolve
     ni "I think that's everything I want to ask Sid."
+    hide sid with dissolve
     $ meetings[3] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetJenny:
     scene bg startmeet
@@ -276,13 +272,12 @@ label meetJenny:
         "Finish talking to Jenny." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetJenny
 label postMeetJenny:
-    hide jenny with dissolve
     ni "I think that's everything I want to ask Jenny."
+    hide jenny with dissolve
     $ meetings[4] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetCatherine:
     scene bg startmeet
@@ -321,13 +316,12 @@ label meetCatherine:
         "Finish talking to Catherine." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetCatherine
 label postMeetCatherine:
-    hide catherine with dissolve
     ni "I think that's everything I want to ask Catherine."
+    hide catherine with dissolve
     $ meetings[5] = 0
     if 1 not in meetings:
-        ni "I've finally talked to everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetKaiser:
     scene bg startmeet
@@ -340,31 +334,40 @@ label meetKaiser:
         "What should I ask Kaiser?"
 
         "What do you do for a living?":
+            k "I'm a logistics analyst for a large retail company."
+            k "Basically just work on projects to optimize the shipping and distribution side of things."
+            k "It's the kind of job that most people think sounds boring but I think it's a fun challenge."
+            ni "Yup, sounds boring to me."
             jump kaisQuestions
 
         "What were you doing before you ended up here?":
+            k "I think I was in a taxi back home from a bar."
+            k "That's last thing I remember, though that's somewhat odd..."
+            k "I feel like I should at least remember leaving the taxi, unless the driver is complicit in all this."
             jump kaisQuestions
 
         "Why do you think we're here?":
+            k "I don't know, maybe a terrorist attack?"
+            k "Like the Iranian hostage crisis or something?"
+            k "Hard to say without meeting the people behind it."
             jump kaisQuestions
 
         "Finish talking to Kaiser." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetKaiser
 label postMeetKaiser:
-    hide kaiser with dissolve
     ni "I think that's everything I want to ask Kaiser."
+    hide kaiser with dissolve
     $ meetings[6] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetDracula:
     scene bg startmeet
     show drac ind with dissolve
     d "Hey, I'm Dracula."
     n "...Like the vampire?"
-    d "Yes, that's me."
+    d "Yes."
     ni "...I don't know if I believe him."
     n "I'm Dan, nice to meet you."
     $menuset = set()
@@ -373,24 +376,37 @@ label meetDracula:
         "What should I ask Dracula?"
 
         "What do you do for a living?":
+            d "Let's just say during the day I don't do a whole lot."
+            d "But what I do at night is very lucrative."
+            ni "...that just sounds like you're a prostitute."
+            n "That... really isn't very helpful."
+            d "For your sake and mine, it's better I don't give a helpful answer to that question."
             jump dracQuestions
 
         "What were you doing before you ended up here?":
+            d "I think I'd just fallen asleep."
+            d "I work odd hours, so I sleep during the day."
+            d "So I've tuned my sleep environment to mute sounds and block out light."
+            d "That may have made it easy for a kidnapper approach me."
             jump dracQuestions
 
         "Why do you think we're here?":
+            d "There's a lot of money to be made from human bodies."
+            d "Ransom, organ harvesting, slavery."
+            d "Wouldn't surprise me if it were one of those."
+            d "But our kidnapper did put a lot of effort into this setup."
+            d "Usually human trafficking is much less... elegant."
             jump dracQuestions
 
         "Finish talking to Dracula." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetDracula
 label postMeetDracula:
-    hide drac with dissolve
     ni "I think that's everything I want to ask Dracula."
+    hide drac with dissolve
     $ meetings[7] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetLauren:
     scene bg startmeet
@@ -403,28 +419,40 @@ label meetLauren:
         "What should I ask Lauren?"
 
         "What do you do for a living?":
+            o "I'm a manager for a local athletics retail store."
+            o "The sports I like are not so easy to go pro in, otherwise I would be doing that."
+            n "Oh, what kinds of sports?"
+            o "I'd... rather not get into that."
+            ni "?"
             jump laurenQuestions
 
         "What were you doing before you ended up here?":
+            o "There's a kid I'm sort of a mentor to."
+            o "Not related by blood or anything, just someone I met through a friend."
+            o "I was on my way back home after spending some time with him."
+            o "Thing is, I'm absurdly careful about walking around by myself."
+            o "So if I got kidnapped, they must have been very precise about it..."
             jump laurenQuestions
 
         "Why do you think we're here?":
+            o "No clue."
+            o "I feel like I've lived a pretty honest and boring life."
+            o "There has to be a million people in my city who'd be better kidnapping targets than me."
             jump laurenQuestions
 
         "Finish talking to Lauren." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetLauren
 label postMeetLauren:
-    hide lauren with dissolve
     ni "I think that's everything I want to ask Lauren."
+    hide lauren with dissolve
     $ meetings[8] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetFreddy:
     scene bg startmeet
-    show sam ind with dissolve
+    show frog ind with dissolve
     f "H-hey, I'm Freddy. But I like it when people call me Froggy!"
     n "Hey, I'm Dan."
     $menuset = set()
@@ -433,24 +461,35 @@ label meetFreddy:
         "What should I ask Froggy?"
 
         "What do you do for a living?":
+            f "I-I'm twelve, mister."
+            f "I just go to school and my parents feed me and buy me things when I ask."
+            ni "...in retrospect, that was a pretty dumb question."
             jump froggyQuestions
 
         "What were you doing before you ended up here?":
+            f "I... I was taking a nap."
+            f "I'd just had a long day of playing video games!"
+            f "Uh... I ate a cookie?"
+            ni "This isn't getting anywhere..."
             jump froggyQuestions
 
         "Why do you think we're here?":
+            f "I... I dunno?"
+            f "Is this... a surprise party set up by my parents?"
+            f "Am- am I getting bullied?"
+            f "Or... is this a dream?"
+            n "I wish it was, kid."
             jump froggyQuestions
 
         "Finish talking to Freddy." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetFreddy
 label postMeetFreddy:
-    hide sam with dissolve
     ni "I think that's everything I want to ask Freddy."
+    hide frog with dissolve
     $ meetings[9] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 label meetShahar:
     scene bg startmeet
@@ -464,44 +503,58 @@ label meetShahar:
         "What should I ask Shahar?"
 
         "What do you do for a living?":
+            h "Didn't ye hear me lad?! I'm the finest pirate on the seven seas."
+            n "...oh, I thought you were joking."
+            n "Trying to lighten up the situation."
+            h "No, I'm a pirate, right before yer very eyes!"
+            ni "...I think I'd prefer to believe he's joking."
             jump shaharQuestions
 
         "What were you doing before you ended up here?":
+            h "I was enjoying my love, the sea."
+            n "...so you were on a ship?"
+            h "Nay, lad. I was sitting on the beach, enjoying the sunset."
+            ni "Wasn't expecting something like that from such a macho man."
             jump shaharQuestions
 
         "Why do you think we're here?":
+            h "Thinking isn't exactly my strong suit, mate."
+            h "You look like a smart guy, why don't you be the captain here and tell me why we're here!"
+            n "Uh... I don't know, have you looted or plundered any villages with angry mayors?"
+            h "Mate, what do you think this is, the 16th century? Piracy is serious business! We loot towns, not villages!"
+            n "..."
             jump shaharQuestions
 
         "Finish talking to Shahar." if len(menuset) > 0 and len(menuset) < 3:
             jump postMeetShahar
 label postMeetShahar:
-    hide shahar with dissolve
     ni "I think that's everything I want to ask Shahar."
+    hide shahar with dissolve
     $ meetings[10] = 0
     if 1 not in meetings:
-        ni "And I've met everyone. Looks like the group is reconvening to discuss now."
         jump postMeetings
-    call screen intros
+    call screen intros with fade
 
 
-label start:
+label go:
     scene black
     warden "Dan Scagnelli, wake up."
-    m "No... don't want to wake up for another day of this"
+    m "No... don't want to wake up for another day of this..."
     warden "Dan Scagnelli, wake up. That is an order."
     m "Urgh..."
-    scene bg phall with dissolve 2.0
+    scene bg phall
+    with dissolve
     warden "Dan Scagnelli, do not make me repeat myself."
     n "I'm up, I'm up. Just getting used to the light."
     ni "I realized how dumb I sounded, light was barely filtering into the cell."
-    ni "Seems like it's only sundown now."
+    ni "Seems like it's only sunrise now."
     n "What time is it? Why am being woken up so early?"
     warden "Dan Scagnelli. You're being let go."
     n "Huh?"
     warden "Your sentence ends today."
     n "I... I thought I was stuck here for a few more years?"
     warden "I don't know what to tell you, just following orders."
-    warden "There's someone waiting for you out front, don't make them wait."
+    warden "There's someone to pick you up out front, don't make them wait."
     ni "The warden handed me my civilian clothes."
     ni "I could barely remember how long it had been since I last wore these."
     ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
@@ -524,6 +577,7 @@ label start:
     ni "What was so urgent that it needed me to be pulled out of prison and rushed to a car?"
     ni "We headed outside, and for the first time in ages I was excited to see the glorious sun and greenery."
     scene black
+    with fade
     ni "Like a poorly edited TV show, my vision faded to black as we stepped outside."
     ni "Only it never faded back to light."
     ni "I lost vision, there was something tingling in my mouth."
@@ -531,16 +585,13 @@ label start:
     ni "My thoughts started to fade slowly. The last thing I can remember thinking..."
     ni "Whoever this is, they aren't here to save me."
 
-    play sfx "audio/heartbeat.mp3"
-    pause 1.0
-    play sfx "audio/heartbeat.mp3"
-    pause 1.0
-
     scene black
+    play sfx "audio/heartbeat.mp3"
+    pause 1.0
+    play sfx "audio/heartbeat.mp3"
+    pause 1.0
     blank "....."
     blank "........."
-    blank "If I just ran, I would've gotten out."
-    blank "A shame, really."
     show bg start with fade:
         alpha .1
     m "{i}Where... Where am I?{/i}"
@@ -550,36 +601,37 @@ label start:
     m "........"
     m "{i}I think I passed out again...{/i}"
     m "{i}Have to... get up...{/i}"
-    scene bg start
+    scene bg start with fade
     ni "{i}.....!{/i}"
     ni "Where... am I?"
     ni "How did I get here?"
     ni "Last thing I remember... I was in my cell being told I'd get out."
     ni "...why can't I remember anything past that?"
     play sfx "audio/beep.mp3"
-    ni "Oh, there's a door. Sounds like it just opened."
+    pause 1.0
+    ni "What was that sound?"
+    ni "Oh, a door. Was that the sound of it unlocking?"
     ni "Let's see what's on the other side..."
-    scene black
+    scene black with fade
     ni "I walked into a very similar room, at the same time as eleven other people."
-    scene bg startmeet
+    scene bg startmeet with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
-    show sam ind with dissolve
-    #TODO: Replace w/ everyone introducing 1-by-1
+    show sam with dissolve
     z "Let's get straight to the point. Anyone know where we are or why we're here?"
-    show sam ind:
+    show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
         xcenter .75
     z "No clue. The last thing I remember I was out for a walk, totally fine."
     hide catherine with moveoutright
-    show sam ind:
+    show sam:
         xcenter .25
         linear 0.3 xcenter .5
     ni "A few people spoke up at once agreeing."
     z "So no one knows how they got here."
     z "I think we should look around and try to find a way out or some answers."
-    show sam ind:
+    show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
@@ -587,34 +639,39 @@ label start:
     z "Wait, I wanna get to know everyone."
     z "It doesn't seem like we're gonna get out of here easily, it'd be good to know who we're stuck with."
     hide catherine with moveoutright
-    show drac ind with moveinleft:
+    show drac ind with moveinright:
         xcenter .75
     z "I agree with the girl. I don't even know any of your names."
     z "It'll be hard for us to work together without some sense of camaraderie."
     hide drac with moveoutright
-    show sam ind:
+    show sam:
         xcenter .25
         linear 0.3 xcenter .5
     z "Alright, let's take some time to talk to each other."
+    ni "Hmm... while we're introducing ourselves, I should see if anyone knows anything."
     hide sam with fade
     tut "Throughout the game, when a character is present in a room, their icon will appear in the top left."
     tut "In some segments you gain control of the story, and can choose who to talk to."
     tut "To talk to a character, click on their icon in the top left."
-    tut "Ask everyone a few questions to progress the story."
+    tut "Ask everyone at least one question to progress the story. You can ask more if you're interested."
     $ meetings = [1] * 11
     call screen intros
 
-    label postMeetings:
-    show sam ind with dissolve
+label postMeetings:
+    scene bg startmeet
+    ni "And I've met everyone. Looks like the group is reconvening to discuss now."
+    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    show sam with dissolve
     s "Okay, now that that's done, I think we should look around and try-"
     hide sam with dissolve
     blank "A whirring noise cut Sam off."
-    scene bg start2 with fade
+    show bg start2 with dissolve
     blank "A screen slowly lowered, and everyone's attention turned to it."
     #TODO: Add pretty pictures to help explain game
-    scr "Welcome. At this point, everyone should have arrived."
+    scr "Welcome."
     scr "This screen cannot hear or react to anything you say. Questions will not be answered."
     scr "The game you all have been brought here to play will now be explained."
+    ni "...game?"
     scr "There are twelve of you. Eleven were unwillingly chosen to participate."
     scr "The remaining person is the mastermind that organized this game, who will also participate."
     scr "The identity of the mastermind will not be revealed."
@@ -634,7 +691,7 @@ label start:
     ni "And when did they plant the chip?"
     scr "Each round of the game will take place in a different location."
     scr "The chip will also be used to keep you unconscious as you are transported between locations."
-    scr "As proof of this, you will soon be knocked unconscious and transported to the first location, to play the first round of the game."
+    scr "As proof of this, you will soon be transported to the first location, to play the first round of the game."
     ni "...what?"
     ni "How would we even know who to kill?"
     ni "This game... it's so much to process."
