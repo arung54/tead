@@ -68,6 +68,7 @@ init python:
     config.developer = True
     config.debug_sound = True
     renpy.music.register_channel("sfx", loop = False)
+    config.menu_include_disabled = True
 
 ##############
 #Voice Defines
@@ -163,6 +164,40 @@ init python:
             y += 50
         renpy.with_statement(Dissolve(1.0))
 
+
+    def showchibinofade(*argv):
+        argv = [j + "chibi" for j in argv]
+        currchibis = list()
+        for i in renpy.get_showing_tags():
+            if i.endswith("chibi"):
+                currchibis.append(i)
+
+        toremove = list()
+        for i in currchibis:
+            if i not in argv:
+                toremove.append(i)
+        toadd = list()
+        for i in argv:
+            if i not in currchibis:
+                toadd.append(i)
+        tostay = list()
+        for i in argv:
+            if i in currchibis:
+                tostay.append(i)
+
+        for i in toremove:
+            renpy.hide(i)
+
+        y = 20
+        for i in tostay:
+            renpy.hide(i)
+            renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
+            y += 50
+
+        for i in toadd:
+            renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
+            y += 50
+
 ##################
 #Character Defines
 ##################
@@ -171,21 +206,24 @@ define m = Character("Me?", callback=mevoice)
 define n = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF")
 define ni = Character("{i}Dan Scagnelli{/i}", callback=mevoice, what_italic=True, who_color = "FFFFFF") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
-define bi = Character("{i}Bert Kim{/i}", who_color= "#78AB46", callback=bertvoice, what_italics=True) #Bert Internal, name and text italics
+define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italics=True) #Bert Internal, name and text italics
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox)
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice)
 define s = Character("Sam Lee", who_color= "f3946a", image="sam", callback=samvoice)
-define t = Character("Stella Cantoire", who_color= "#d4af37", callback=stellavoice)
+define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice)
 define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice)
 define f = Character("Freddy Ogden", who_color= "76d352", image="frog ind", callback=fillvoice)
 define j = Character("Jenny Flowers", who_color= "e50548", callback=fillvoice)
 define o = Character("Lauren Palmer", who_color= "fbe55c", callback=fillvoice)
 define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice)
 define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice)
-define z = Character("?????", who_color= "#FFFFFF", callback=fillvoice)
+define z = Character("?????", who_color= "FFFFFF", callback=fillvoice)
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=fillvoice)
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice)
+define warden = Character("Warden", who_color= "ffffff", callback=fillvoice) #used in chapter 0
+define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=fillvoice) #used in chapter 0
+define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
 define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
 
 label start:
@@ -223,5 +261,5 @@ label start:
 ###########
 #Start jump
 ###########
-    call screen midCarInv
+    #call screen midCarInv
     jump go

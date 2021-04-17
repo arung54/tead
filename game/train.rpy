@@ -1,4 +1,4 @@
-label go:
+label trainGo:
 
     #jump frontcar1
     #show screen button_overlay
