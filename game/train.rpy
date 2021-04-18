@@ -1323,15 +1323,22 @@ label midcar5:
     ni "Everything's... Dark."
 label midcar6:
     show black
+    bi "..."
+    bi "What a sticky situation."
     bi "We're out of food and water, but..."
+    show bertface2 with dissolve:
+        xcenter .5
+        ycenter .5
     bi "We can get out of here. Together."
+    hide bertface2
     blank "pssst!!!"
     play music "audio/invest1.wav" volume .3
     show bg notrainmid
     $ showchibi("bert", "catherine", "freddy", "jenny", "stella", "dracula")
     show stella happy with dissolve:
         linear .3 xcenter .75
-    t "Hey Bert, wanna take some shots with us?"
+    t "psssst!"
+    t "Hey Bert! Wanna take some shots with us?"
     show drac ind with moveinleft:
         xcenter .25
     d "Stella made me a bloody mary, but without tomato juice or hot sauce."
@@ -1360,4 +1367,161 @@ label midcar6:
         zoom 1.2
         xcenter .43
         ycenter .5
-    b "ok she goin"
+    show jenny ind with dissolve
+    j "Hey Bert, do you thin-"
+    stop music
+    show scary:
+        alpha 0
+        linear .2 alpha 1
+    j "W-what?"
+    b "What's going on?"
+    t "Who did that? Knock it off!"
+    d "Where is everyone?"
+    blank "A sharp sound suddenly filled the train car momentarily."
+    f "Ahhh! Mommy!"
+    bi "It sounded like a the world's biggest chandelier fell."
+    j "I'm scared!"
+    blank "AHHHHHH!!!"
+    bi "Oh no."
+    t "Someone screamed?"
+    d "Who was that? Is everyone okay?"
+    t "It came from the front car!"
+    hide scary with dissolve
+    j "Bert! You're okay. Thank goodness."
+    hide jenny ind with dissolve
+    hide catback with dissolve
+    show catherine ind with dissolve
+    c "What was that? Whose scream was that?"
+    b "I don't know, but it sounded like it came from the front car."
+    b "I'm going to check it out."
+    show catherine ind:
+        linear .3 xcenter .75
+    show stella ind with moveinleft:
+        xcenter .25
+    t "We should all go."
+    b "Agreed."
+    scene black with fade
+    blank "All 6 of them made their way to the front car."
+    show bg notrainfront
+    $ showchibi("bert", "catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
+    show lauren ind with moveinleft
+    o "What the hell was that about?"
+    show lauren ind:
+        linear .3 xcenter .75
+    show sam with moveinleft:
+        xcenter .25
+    s "We heard Jenny scream, are you okay?"
+    hide lauren ind with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "Huh? You heard ME scream?"
+    s "I mean, at least we thought so."
+    j "We heard someone scream in the bar car, it sounded like it came from up here."
+    s "Oh. Well everyone's okay up here."
+    s "We were a light shook when all the lights cut, but we're fine."
+    hide sam with moveoutleft
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "Yes, the computer screens stayed on and gave us some light."
+    b "Well that's good."
+    b "..."
+    b "Oh no."
+    j "What's wrong?"
+    b "Where's Sid? And Dan?"
+    b "They were in the back car, but surely they'd be here by now."
+    k "Perhaps they are asleep, and didn't hear whoever it was that screamed."
+    b "But... that other noise."
+    hide kaiser ind with moveoutleft
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "What are ye on about?"
+    hide jenny ind with moveoutright
+    show catherine ind with moveinright:
+        xcenter .75
+    c "Bert's right, there's no way they slept through that noise."
+    c "We have to check on them."
+    scene black with fade
+    blank "the 10 of them ran to the back car as fast as they could."
+    blank "But when they got there..."
+    show bg bodytrainback:
+        alpha .0
+        linear 3 alpha 1
+    $ showchibi("bert", "catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
+    b "Oh no..."
+    b "No no no no..."
+    show sid ind with moveinleft:
+        xcenter .25
+    i "I... I..."
+    b "Sid..."
+    b "What happened..."
+    show sam with moveinright:
+        xcenter .75
+    s "What the hell..."
+    s "Is he... dead?"
+    s "Sid, you... did you kill Dan?"
+    i "No! I was asleep, I... I didn't do anything..."
+    s "Everyone, back away from Sid!"
+    show sam:
+        linear .2 xcenter .8
+    s "I can't believe it..."
+    s "You digusting little..."
+    i "I swear, I didn't do anything!"
+    hide sam with moveoutright
+    show drac ind with moveinright:
+        xcenter .75
+    d "Excuse me."
+    hide drac ind with dissolve
+    blank "Dracula walked over and inspected Dan's body for a minute."
+    show drac ind with dissolve:
+        xcenter .75
+    d "He is dead."
+    d "Very, very dead."
+    i "Th-this is what I woke up to! Just a minute ago!"
+    d "Hmph."
+    hide drac ind with moveoutright
+    bi "I don't know if I believe him, but..."
+    b "We all have to calm down!"
+    b "Yelling at each other won't solve anything."
+    show frog ind with moveinbottom:
+        xcenter .75
+    f "What happened?"
+    o "Okay hey woah!"
+    show lauren ind with moveinright:
+        xcenter .65
+    show frog ind:
+        linear .2 xcenter .8
+    o "Hey let's not look over there!"
+    o "Come on Freddy, come with me!"
+    f "O-okay!"
+    hide frog ind with moveoutright
+    show lauren ind:
+        linear .2 xcenter .75
+    o "I don't know what to say."
+    o "I can't believe it."
+    i "Lauren, I swear, I..."
+    hide lauren ind with moveoutright
+    i "I-I swear..."
+    b "Hold on!"
+    bi "I need to stop and think."
+    play sfx "<from 0 to 3>audio/jaws.mp3" volume .2
+    hide sid ind with dissolve
+    show scary with dissolve:
+        alpha .95
+    show dan ind with dissolve
+    bi "Dan is dead."
+    show dan dead with dissolve
+    bi "There's nothing I can do about that..."
+    bi "But... I can figure out what to do next."
+    bi "Dan deserves justice."
+    show dan dead:
+        linear .3 xcenter .75
+    show sid dead with dissolve:
+        xcenter .25
+    bi "It seems like everyone thinks Sid killed him."
+    bi "And... I can't really blame them. It does look like he did it."
+    bi "But I need to take control of the situation and figure out exactly what happened."
+    bi "Okay!"
+    hide sid dead
+    hide dan dead
+    with dissolve
+    hide scary with dissolve
