@@ -1476,6 +1476,7 @@ label midcar6:
         xcenter .75
     d "He is dead."
     d "Very, very dead."
+    d "The metal rod is going all the way through his chest."
     i "Th-this is what I woke up to! Just a minute ago!"
     d "Hmph."
     hide drac ind with moveoutright
@@ -1500,6 +1501,7 @@ label midcar6:
     o "I can't believe it."
     i "Lauren, I swear, I..."
     hide lauren ind with moveoutright
+    $ showchibi("bert", "catherine", "jenny", "kaiser", "sam", "shahar", "stella", "dracula", "sid")
     i "I-I swear..."
     b "Hold on!"
     bi "I need to stop and think."
@@ -1519,9 +1521,123 @@ label midcar6:
         xcenter .25
     bi "It seems like everyone thinks Sid killed him."
     bi "And... I can't really blame them. It does look like he did it."
-    bi "But I need to take control of the situation and figure out exactly what happened."
+    bi "It's not like we can call the police in a situation like this, either."
+    bi "So I'll do it myself."
+    bi "Let's figure out exactly what happened."
     bi "Okay!"
     hide sid dead
     hide dan dead
     with dissolve
     hide scary with dissolve
+    b "Alright, everyone except for Sid and Jenny - go to the bar car."
+    b "Jenny and I can talk to Sid about what happened and we'll go from there."
+    bi "I probably shouldn't be alone with him."
+    bi "And hopefully Jenny's presence will calm him down a bit."
+    show sam with moveinleft
+    s "So who made you the leader here?"
+    show sam:
+        linear .3 xcenter .75
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "Oh please. As if Sid would even speak to you."
+    s "..."
+    k "It is fine. There will be more time to investigate and discuss."
+    b "Yeah! We have to start somewhere."
+    s "Fine."
+    hide kaiser ind
+    hide sam
+    with dissolve
+    $ showchibi("bert", "catherine", "jenny", "shahar", "stella", "dracula", "sid")
+    show catherine ind with moveinleft
+    c "I didn't exactly like Dan, but he didn't deserve this..."
+    hide catherine ind
+    show catherine happy
+    c "Bert, thank you for taking charge."
+    b "O-of course!"
+    ses "Meoooo!"
+    c "I'll corral everyone toward the bar car."
+    hide catherine happy with dissolve
+    $ showchibi("bert", "jenny", "sid")
+    show sid ind with dissolve:
+        xcenter .25
+    show jenny ind with dissolve:
+        xcenter .75
+    j "Alright, everyone else is gone."
+    j "Let's just... have a chat."
+    i "We were getting so close, too..."
+    i "He was like... my friend. I would never hurt Dan!"
+    j "Sid... We just need you to explain everything that happened."
+    b "What were you guys doing before you went to sleep?"
+    i "We were talking about getting out of here."
+    i "I told him I missed my family, and that I can't wait to see them again."
+    i "He told me I could take the bed, since he did the night before..."
+    i "So I laid down, and fell asleep."
+    b "..."
+    b "And then what?"
+    i "Well, nothing."
+    i "The next thing I knew, I... He..."
+    i "....."
+    j "It's okay Sid, take your time."
+    i "I heard a really loud noise, but when I rolled over, I couldn't see anything."
+    i "I paniced for a moment, and yelled out for Dan, and then..."
+    i "The next thing I saw was this."
+    j "Jeez..."
+    b "Did he... say anything?"
+    b "Before he couldn't anymore."
+    bi "This is incredibly uncomfortable..."
+    i "Well... I thought I heard him say my name, with a faint breath."
+    i "But it's hard to remember."
+    j "I'm sure he did."
+    j "You guys were friends, like you said."
+    i "Y-yeah."
+    i "Excuse me..."
+    hide sid ind with moveoutleft
+    blank "Sid walked to the corner and began sobbing loudly."
+    show jenny ind:
+        linear .3 xcenter .5
+    b "Jenny, I think whether or not Sid did it, we should do our best job investigating."
+    b "I'm sure there's a lot we could find if we look around a bit and talk to everyone else."
+    j "Yeah. I mean, for starters, where did this metal bar come from?"
+    j "We searched every inch of this train and definitely didn't come across that."
+    b "You're right... There's a lot to figure out."
+    b "Jenny - I need a favor."
+    b "Can you get everyone in the bar car to go back to where they were when the lights went off?"
+    b "I think they'll listen to you."
+    j "Sure. Be careful back here with him."
+    b "Thanks. I'll be there in a minute."
+    hide jenny ind with moveoutleft
+    $ showchibi("bert", "sid")
+
+    show sid ind with moveinleft
+    i "Bert?"
+    b "Yeah Sid?"
+    i "I really s-swear I'm innocent."
+    bi "..."
+    b "I believe you."
+    bi "I don't know if I believe him."
+    b "We'll get to the bottom of it."
+
+label preinvest:
+    scene black with fade
+    blank "Bert made his way to the bar car."
+    show bg notrainmid with dissolve
+    $ showchibi("bert", "catherine", "freddy", "jenny", "stella", "dracula")
+    show jenny ind with dissolve
+    j "Okay, everyone should be back in the car they were in when the lights went off."
+    b "Perfect."
+    b "And thank you for helping me calm down Sid."
+    j "Now to calm down Freddy... Shahar told him that 'Dan be as good as shark bait' now."
+    b "Oh jeez..."
+    hide jenny ind with dissolve
+    bi "Jenny is a big help, but she's also a suspect."
+    bi "I can't forget that."
+    bi "For now though, it's time to gather evidence."
+
+    show evidenceicon at iconzoom:
+        xalign 1.0
+        yalign 0.1
+    show mapicon at iconzoom:
+        xalign 1.0
+        yalign 0.1
+
+    tut "During investigations, you'll find ligma"
