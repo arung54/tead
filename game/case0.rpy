@@ -692,7 +692,7 @@ label postMeetings:
     show expl 8
     scr "If they kill the mastermind, the game immediately ends and the remaining participants will be let free."
     show expl 9
-    scr "If they kill someone who is not the mastermind then they should try to hide the fact that they are the murderer."
+    scr "If they kill someone who is not the mastermind, then they should try to hide the fact that they are the murderer."
     show expl 10
     scr "This is because the participants will investigate the murder and try to identify the murderer."
     show expl 11
@@ -725,7 +725,10 @@ label postMeetings:
     hide drac with dissolve
     scr "You may be scared to kill someone who isn't the mastermind."
     scr "You may feel sorry when someone dies."
-    scr "But there is one thing you should know before you are transported to the first round of the game."
+    scr "Let me assure you of one thing."
     scr "Everyone who dies in the course of the game..."
     scr "Their endings are deserved."
     scene black with fade
+    play movie "montage.mpeg"
+    $ renpy.pause(71.0, hard=True)
+    jump trainGo
