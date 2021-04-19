@@ -1,5 +1,7 @@
 screen intros():
-    add "bg startmeet.png"
+    imagemap:
+        ground "bg startmeet.png"
+        hotspot(420, 69, 10, 10) action [Hide("intros", transition=Fade), Jump("ligma")]
     if meetings[0] == 1:
         imagebutton:
             xpos 20
@@ -66,6 +68,17 @@ screen intros():
             ypos 20+50*sum(meetings[0:10])
             idle "shaharchibi.png" at chibizoom
             action [Hide("intros", transition=Fade), Jump("meetShahar")]
+
+label ligma:
+    scene bg startmeet
+    show bert happy with dissolve
+    b "Hey Dan, you ever think about removing the A from your first name?"
+    n "My name would be D-N? What does that even mean"
+    b "DEEZ NUTZ!"
+    n "..."
+    hide bert with dissolve
+    call screen intros with fade
+
 
 label meetBert:
     scene bg startmeet

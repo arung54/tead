@@ -262,4 +262,4 @@ label start:
 #Start jump
 ###########
     #call screen midCarInv
-    jump postMeetings
+    jump go
