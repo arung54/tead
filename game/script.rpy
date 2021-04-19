@@ -206,7 +206,7 @@ define m = Character("Me?", callback=mevoice)
 define n = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF")
 define ni = Character("{i}Dan Scagnelli{/i}", callback=mevoice, what_italic=True, who_color = "FFFFFF") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
-define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italics=True) #Bert Internal, name and text italics
+define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True) #Bert Internal, name and text italics
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox)
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice)
 define s = Character("Sam Lee", who_color= "f3946a", image="sam", callback=samvoice)
@@ -262,4 +262,4 @@ label start:
 #Start jump
 ###########
     #call screen midCarInv
-    jump go
+    jump preinvest
