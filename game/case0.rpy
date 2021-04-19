@@ -672,19 +672,37 @@ label postMeetings:
     scr "This screen cannot hear or react to anything you say. Questions will not be answered."
     scr "The game you all have been brought here to play will now be explained."
     ni "...game?"
-    scr "There are twelve of you. Eleven were unwillingly chosen to participate."
+    scene expl 1 with fade
+    scr "There are twelve of you."
+    show expl 2
+    scr "Eleven were unwillingly forced to participate."
+    show expl 3
     scr "The remaining person is the mastermind that organized this game, who will also participate."
+    show expl 4
     scr "The identity of the mastermind will not be revealed."
     scr "The goal of the game is simple."
+    show expl 5
     scr "Kill the mastermind."
     scr "The game will be played in rounds."
+    show expl 6
     scr "Each round, one of you who is not the mastermind will be chosen."
+    show expl 7
     scr "The chosen individual must kill someone, who they think is the mastermind."
-    scr "If they kill the mastermind, the game ends and the remaining participants will be let free."
-    scr "If they kill someone who is not the mastermind, the participants will investigate the murder."
+    scr "You may use any method to kill."
+    show expl 8
+    scr "If they kill the mastermind, the game immediately ends and the remaining participants will be let free."
+    show expl 9
+    scr "If they kill someone who is not the mastermind then they should try to hide the fact that they are the murderer."
+    show expl 10
+    scr "This is because the participants will investigate the murder and try to identify the murderer."
+    show expl 11
     scr "After investigating, the participants will discuss and vote on who they think the murderer is."
+    show expl 12
     scr "If they vote for the murderer correctly, the murderer will be killed."
+    show expl 13
     scr "If they vote incorrectly, everyone but the murderer and mastermind will be killed, and the game ends."
+    scene bg start2 with fade
+    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     scr "A chip has been planted in each of your heads, capable of killing you instantly."
     scr "This chip will be used to resolve the outcome of the vote."
     ni "Does technology like that really exist?"
