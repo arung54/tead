@@ -379,7 +379,7 @@ label postMeetKaiser:
 label meetDracula:
     scene bg startmeet
     show drac ind with dissolve
-    d "Hey, I'm Dracula."
+    d "Hi, I'm Dracula."
     n "...Like the vampire?"
     d "Yes."
     ni "...I don't know if I believe him."
