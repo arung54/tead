@@ -73,9 +73,10 @@ label ligma:
     scene bg startmeet
     show bert happy with dissolve
     b "Hey Dan, you ever think about removing the A from your first name?"
-    n "My name would be D-N? What does that even mean"
+    n "My name would be D-N? What does that even mean?"
     b "DEEZ NUTZ!"
     n "..."
+    ni "Damn, he got me."
     hide bert with dissolve
     call screen intros with fade
 
@@ -569,6 +570,9 @@ label go:
     warden "I don't know what to tell you, just following orders."
     warden "There's someone to pick you up out front, don't make them wait."
     ni "The warden handed me my civilian clothes."
+    show dan ind with dissolve
+    $renpy.pause(2.0, hard=True)
+    hide dan ind with dissolve
     ni "I could barely remember how long it had been since I last wore these."
     ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
     scene bg pfront with fade
