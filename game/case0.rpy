@@ -78,7 +78,7 @@ label ligma:
     n "..."
     ni "Damn, he got me."
     hide bert with dissolve
-    call screen intros with fade
+    call screen intros with dissolve
 
 
 label meetBert:
@@ -122,7 +122,7 @@ label postMeetBert:
     $ meetings[0] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetSam:
     scene bg startmeet
@@ -164,7 +164,7 @@ label postMeetSam:
     $ meetings[1] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetStella:
     scene bg startmeet
@@ -209,7 +209,7 @@ label postMeetStella:
     $ meetings[2] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetSid:
     scene bg startmeet
@@ -247,7 +247,7 @@ label postMeetSid:
     $ meetings[3] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetJenny:
     scene bg startmeet
@@ -291,7 +291,7 @@ label postMeetJenny:
     $ meetings[4] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetCatherine:
     scene bg startmeet
@@ -335,7 +335,7 @@ label postMeetCatherine:
     $ meetings[5] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetKaiser:
     scene bg startmeet
@@ -374,7 +374,7 @@ label postMeetKaiser:
     $ meetings[6] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetDracula:
     scene bg startmeet
@@ -420,7 +420,7 @@ label postMeetDracula:
     $ meetings[7] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetLauren:
     scene bg startmeet
@@ -462,7 +462,7 @@ label postMeetLauren:
     $ meetings[8] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetFreddy:
     scene bg startmeet
@@ -503,7 +503,7 @@ label postMeetFreddy:
     $ meetings[9] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 label meetShahar:
     scene bg startmeet
@@ -547,7 +547,7 @@ label postMeetShahar:
     $ meetings[10] = 0
     if 1 not in meetings:
         jump postMeetings
-    call screen intros with fade
+    call screen intros with dissolve
 
 
 label go:
@@ -666,7 +666,7 @@ label go:
         linear 0.3 xcenter .5
     z "Alright, let's take some time to talk to each other."
     ni "Hmm... while we're introducing ourselves, I should see if anyone knows anything."
-    hide sam with fade
+    hide sam with dissolve
     tut "Throughout the game, when a character is present in a room, their icon will appear in the top left."
     tut "In some segments you gain control of the story, and can choose who to talk to."
     tut "To talk to a character, click on their icon in the top left."
