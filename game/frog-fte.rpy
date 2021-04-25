@@ -121,7 +121,7 @@ label frogHang:
         n "So uh... what's with the frog thing?"
         f "The... frog thing?"
         n "Yeah like... you're wearing a frog costume, and you like being called Froggy."
-        f "Oh... that frog thing."
+        f "Oh..."
         show frog ind
         f "Well, I really like frogs!"
         f "My favorite is the poison dart frog!"
