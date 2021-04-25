@@ -2,7 +2,7 @@
 
 #Train 1
 label dracAsk0:
-    scene bg trainmid
+    scene bg trainback
     show drac happy with dissolve
     d "I wish it were slightly less bright in this train..."
     ni "I should go talk to Bert instead of this guy."
@@ -10,7 +10,7 @@ label dracAsk0:
 
 #Train 2
 label dracAsk1:
-    scene bg trainmid
+    scene bg trainback
     show drac happy with dissolve
     d "Hello Dan, would you like to speak?"
     menu:
@@ -121,7 +121,7 @@ label dracHang:
         d "Let's brainstorm escape plans. That seems to be the most prudent use of time."
         n "Sheesh, was just trying to get to know you better."
         d "If we both make it out alive, we will have plenty of time for that."
-        scene black with fade        
+        scene black with fade
         ni "Guess Dracula and I just need to agree to coexist peacefully..."
         ni "Or maybe just not talk to each other."
 

@@ -119,6 +119,7 @@ label jennHang:
         n "Uh... I'm not very good at math, but I'm down to listen."
         j "I'm just wondering, if we can identify the murderer every time and the murderer chooses a random victim..."
         j "How many of us escape on average?"
+        j "I think the answer's between 4 and 5 but I'm not sure."
         n "That's... a rather dark math problem."
         show jenny ind
         j "Well, I haven't really been able to stop thinking about our situation."
@@ -132,7 +133,7 @@ label jennHang:
         j "Haha, expectations, no pun intended."
         n "Oh yeah, good one."
         ni "I don't get it."
-        j "Anyway, we don't have to talk about math. But maybe I can poke your brain for something I'm wondering."
+        j "Anyway, we don't have to talk about math. But maybe I can pick your brain on something I'm wondering about..."
         show jenny ind
         j "What happens if there are four of us left and the murderer doesn't kill the mastermind?"
         n "What do you mean? Wouldn't there just be an investigation and vote?"
