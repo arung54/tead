@@ -1632,12 +1632,53 @@ label preinvest:
     bi "Jenny is a big help, but she's also a suspect."
     bi "I can't forget that."
     bi "For now though, it's time to gather evidence."
+    pause 1
+    tut "During investigations, you'll need to find pieces of evidence by clicking around and by talking to people."
+    tut "You can use the Evidence Folder button in the top right to review evidence you've collected,"
+    tut "and once you've collected all the evidence in a room, you'll be alerted."
+    tut "If you need to review this information, it is available via the menu."
+    pause .5
+    show investstart with dissolve
+    pause 1
+    hide investstart with dissolve
+    call screen midCarInv
 
-    show evidenceicon at iconzoom:
-        xalign 1.0
-        yalign 0.1
-    show mapicon at iconzoom:
-        xalign 1.0
-        yalign 0.1
+################################################################################
+################################################################################      TRIAL STARTING!!! WOOT WOOT LEGO
+################################################################################
 
-    tut "During investigations, you'll find ligma"
+label trial1:
+    scene black with fade
+    blank "Everyone was brought to the bar car."
+    show bg notrainmid with fade
+    $ showchibi("bert", "catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    show stella ind with dissovle
+    t "So what's the plan?"
+    t "I think I agree with the pirate at this point, let's all just jump out a window."
+    show stella ind:
+        linear .3 xcenter .75
+    show lauren ind with moveinleft:
+        xcenter .25
+    o "That's not funny... we need to figure this out."
+    o "For Dan's sake, and for our own."
+    o "One of us IS a murderer."
+    t "Hm. You say that quite confidently, do you have something you'd like to share with the group?"
+    hide stella ind with moveoutright
+    show kaiser ind with moveinright:
+        xcenter .75
+    k "I've been ignoring her and I will continue to ignore her."
+    k "Anyway, Bert. Where do you think we should start?"
+    b "That's a good question..."
+    b "I think the most logical thing to start with is... when it happened."
+
+    #stella holding onto dracula
+
+    start with is where everyone was."
+    b "Who can vouch, with 100% certainty, that they knew where someone else was?"
+
+
+
+
+
+
+    #ligma

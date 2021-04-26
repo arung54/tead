@@ -99,7 +99,7 @@ screen trainEvidence():
 
         if currEvidence == 2:
             image "frontaccounts1.png" xcenter 800 yalign 0.1
-            text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the lights turned off,they heard thescream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 330
+            text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the car went dark, but the lights were still on, so they could see what they were doing." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 3:
             image "lightsev" xcenter 800 yalign 0.1
@@ -232,15 +232,32 @@ screen midCarInv():
     imagebutton:
         xpos 20
         ypos 120
+        idle "freddychibi.png" at chibizoom
+        action [Hide("midCarInv"), Jump("trainfreddy")]
+
+    imagebutton:
+        xpos 20
+        ypos 170
+        idle "jennychibi.png" at chibizoom
+        action [Hide("midCarInv"), Jump("trainjenny")]
+
+    imagebutton:
+        xpos 20
+        ypos 220
+        idle "stellachibi.png" at chibizoom
+        action [Hide("midCarInv"), Jump("trainstella")]
+
+    imagebutton:
+        xpos 20
+        ypos 270
         idle "draculachibi.png" at chibizoom
         action [Hide("midCarInv"), Jump("traindracula")]
-
 
 ##################################################################################
 
 screen backCarInv():
     imagemap:
-        ground "bg notrainBACK.png"
+        ground "bg bodytrainBACK.png"
         hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")]
         ##
         hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")]
@@ -280,8 +297,16 @@ screen backCarInv():
         idle "sidchibi.png" at chibizoom
         action [Hide("backCarInv"), Jump("trainsid")]
 
+    imagebutton:
+        xpos 20
+        ypos 120
+        idle "danchibi.png" at chibizoom
+        action [Hide("backCarInv"), Jump("trainbody")]
+
 
 #################################################### put descriptions here
+####################################################
+####################################################
 
 label trainComputer:
     scene bg trainfront1
@@ -355,7 +380,9 @@ label trainKaiser:
     b "There will be time to grief, as long as we can figure out who was behind it."
     b "Did any of you notice anything that might be important?"
     o "Hmmm... Not really. Pretty much just what Jenny said."
-    o "It went dark, we heard that blood-curdling scream, and we made our way to the bar car."
+    o "It got darker all of a sudden while we were on the computers, but since the lights were still, it was easy to keep a cool head."
+    h "Till we heard that scream..."
+    o "Yeah."
     b "Hmmm. Okay, thanks."
     hide lauren ind
     hide shahar mad
@@ -373,6 +400,50 @@ label trainmidBert:
     show bert sad with dissolve
     bi "What a terrible situation..."
     bi "The best way we can help is by collecting evidence."
+    call screen midCarInv
+
+label trainfreddy:
+    scene bg notrainmid
+    show frog sad with moveinbottom
+    f "Shahar said Dan's... swimming with the fishes?"
+    f "Why are there fish on the train?"
+    bi "..."
+    b "Hey, did you see or hear anything weird when it went dark?"
+    f "Umm... I don't think so..."
+    f "I'm just a frog..."
+    f "Sorry..."
+    hide frog sad with moveoutbottom
+    bi "I guess that's what I expected from him..."
+    bi "Technically, I can't confirm where he was when it happened. Which means he... in a crazy world..."
+    bi "could have killed Dan."
+    bi "Seems unlikely though."
+    call screen midCarInv
+
+label trainjenny:
+    scene bg notrainmid
+    show jenny ind with dissolve
+    j "Personally, I don't remember much..."
+    j "It got dark, and I called out to you."
+    j "I think I reached out looking to grab on to you for balance, but I couldn't find you."
+    bi "Hmmm..."
+    j "Next thing I know, we can see again, and you're right in front of me."
+    hide jenny ind with dissolve
+    bi "She was definitely right next to me when it went dark, and when it got bright again."
+    bi "The period in-between though, I can't vouch for just yet."
+    call screen midCarInv
+
+label trainstella:
+    scene bg notrainmid
+    show stella ind with dissolve
+    t "Well sheesh, that'll sober you up quick."
+    b "Stella, do you remember anything that might be useful?"
+    b "Or do you have an alibi for what you were doing while it was dark?"
+    t "Honestly? Not really. I was right here with you guys, freaking out."
+    bi "That is true, she was talking a bunch the whole time."
+    t "Dracula was saying something interesting a minute ago though."
+    t "He might be more useful than myself."
+    hide stella ind with dissolve
+    b "Hm?"
     call screen midCarInv
 
 label traincatherine:
@@ -485,37 +556,37 @@ label traincouch:
     call screen midCarInv
 
 label trainbackBert:
-    scene bg notrainback
+    scene bg bodytrainback
     show bert sad with dissolve
     bi "What a terrible situation..."
     bi "The best way we can help is by collecting evidence."
     call screen backCarInv
 
 label trainrip:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "Well I guess it's a good thing we have this."
     bi "I don't think it's important right now though."
     call screen backCarInv
 
 label trainbed:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "The bed. It's next to the closet, but other than that..."
     bi "I don't think it's very important right now."
     call screen backCarInv
 
 label trainwater:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "There's an old-timey water heater and kettle back here."
     bi "I don't think it's relevant right now."
     call screen backCarInv
 
 label trainbench:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "The bench. I think this is where either Dan or Sid was sleeping."
     call screen backCarInv
 
 label trainsid:
-    scene bg notrainback
+    scene bg bodytrainback
     show sid ind with dissolve
     i "Is he really... dead?"
     b "Yeah, Sid. He's dead."
@@ -540,7 +611,7 @@ label trainsid:
     call screen backCarInv
 
 label traincloset:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "The locked closet."
     bi "I might as well try it."
     blank "The closet door opened without any trouble."
@@ -557,7 +628,7 @@ label traincloset:
     call screen backCarInv
 
 label traincoin:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "The window is cracked from the murder weapon..."
     bi "The culprit must have used a ton of extra force."
     bi "...Hm?"
@@ -578,7 +649,7 @@ label traincoin:
     call screen backCarInv
 
 label trainbody:
-    scene bg notrainback
+    scene bg bodytrainback
     bi "Dan's body..."
     bi "It's hard to look at."
     bi "But I think it's important for me to at least do a superficial autopsy."
@@ -586,7 +657,7 @@ label trainbody:
     bi "God... there's so much blood."
     bi "I don't there's {i}too{/i} much to take away from that."
     bi "He has no visible wounds other than the metal bar through his chest."
-    bi "The way he's laying makes it look like he was looking out the window when it happened."
+    bi "It seems pretty clear someone skewered him through the back, killing him."
     bi "...Rest in peace, Dan. We'll find out who did this."
     show newevidencefound with dissolve
     pause 1
@@ -599,7 +670,8 @@ label trainbody:
 
 label traindone:
      if False not in train_evidence1 and False not in train_evidence2 and False not in train_evidence3:
-           bi "...Actually, I think that's everything."
-           bi "I think I should meet up with the others."
+           bi "Actually... I think that's everything."
+           bi "I've searched all 3 cars and talked to everyone who seems like they have something to say."
+           bi "Time to call the others and get to the bottom of this."
            #jump elsewhere
      return
