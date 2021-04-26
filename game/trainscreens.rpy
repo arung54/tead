@@ -40,12 +40,22 @@ screen frontCar():
             ypos 20
             idle "sidchibi.png" at chibizoom
             action [Hide("frontCar"), Jump("sidAsk0")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "kaiserchibi.png" at chibizoom
+            action [Hide("frontCar"), Jump("kaisAsk0")]
     if ftecounter == 1:
         imagebutton:
             xpos 20
             ypos 20
             idle "sidchibi.png" at chibizoom
             action [Hide("frontCar"), Jump("sidAsk1")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "kaiserchibi.png" at chibizoom
+            action [Hide("frontCar"), Jump("kaisAsk1")]
 
 screen midCar():
     add "bg trainMID.png"
@@ -65,6 +75,11 @@ screen midCar():
             ypos 70
             idle "catherinechibi.png" at chibizoom
             action [Hide("midCar"), Jump("cathAsk0")]
+        imagebutton:
+            xpos 20
+            ypos 120
+            idle "jennychibi.png" at chibizoom
+            action [Hide("midCar"), Jump("jennAsk0")]
     if ftecounter == 1:
         imagebutton:
             xpos 20
@@ -76,6 +91,11 @@ screen midCar():
             ypos 70
             idle "catherinechibi.png"
             action [Hide("midCar"), Jump("cathAsk1")]
+        imagebutton:
+            xpos 20
+            ypos 120
+            idle "jennychibi.png" at chibizoom
+            action [Hide("midCar"), Jump("jennAsk1")]
 
 screen backCar():
     add "bg trainBACK.png"
@@ -84,3 +104,15 @@ screen backCar():
         yalign 0.0
         idle "map"
         action [Show("trainMap", transition=Dissolve(0.3))]
+    if ftecounter == 0:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "draculachibi.png" at chibizoom
+            action [Hide("backCar"), Jump("dracAsk0")]
+    if ftecounter == 1:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "draculachibi.png" at chibizoom
+            action [Hide("backCar"), Jump("dracAsk1")]

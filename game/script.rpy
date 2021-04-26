@@ -261,5 +261,10 @@ label start:
 ###########
 #Start jump
 ###########
+<<<<<<< HEAD
     #call screen midCarInv
     jump preinvest
+=======
+    call screen freeTimeCounter
+    jump go
+>>>>>>> 8933b4108321373bbd63cf0eb937773591b191b8
