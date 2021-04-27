@@ -985,28 +985,40 @@ label day2:
    #############
    #FREE TIME ONE
    #############
-    show stella ind with dissolve
-    t "Oh? So you've got nobody better to chat with?"
-    b "Well, we should get to know each other."
-    t "Hmph. I don't {i}mind{/i} that, but don't get the wrong idea."
-    t "I'm not into younger men."
-    b "Oh, I didn't mean like th-"
-    hide stella ind
-    show stella happy
-    t "Okay, okay, you caught me, so I {i}am{/i} into younger men."
-    t "But we just met! Wine and wine me a little first, huh?"
-    b "Don't you mean wine and {i}dine{/i}?"
-    hide stella happy
-    show stella bigsmile
-    t "Deal!"
-    b "Wait, I-"
-    t "You're a sweetheart. It's a shame someone like you is stuck in a situation like this."
-    hide stella bigsmile
-    show stella happy
-    t "It's been fun chatting. We should spend some more time together soon."
-    hide stella happy with dissolve
-    bi "I - what?"
-    scene black with fade
+    tut "Throughout the game, there will be free time segments."
+    tut "In these segments, you will have the opportunity to talk with other participants and get to know them better."
+    tut "You can use the map icon, in the top right, to navigate around the train and find people."
+    tut "Click on someone's face in the top-left corner to initiate a conversation with them."
+    tut "You can spend up to three free times with each participant."
+    tut "The friendship menu, accessed using the heart icon in the top right, will show how many times you've talked to each participant."
+    tut "Free time segments will not impact the main story."
+    tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
+    tut "For the first free time segment, move to the front car and talk to Bert."
+    tut "For this segment only, the skip function will be disabled."
+    call screen trainMid
+label postFT0:
+    # show stella ind with dissolve
+    # t "Oh? So you've got nobody better to chat with?"
+    # b "Well, we should get to know each other."
+    # t "Hmph. I don't {i}mind{/i} that, but don't get the wrong idea."
+    # t "I'm not into younger men."
+    # b "Oh, I didn't mean like th-"
+    # hide stella ind
+    # show stella happy
+    # t "Okay, okay, you caught me, so I {i}am{/i} into younger men."
+    # t "But we just met! Wine and wine me a little first, huh?"
+    # b "Don't you mean wine and {i}dine{/i}?"
+    # hide stella happy
+    # show stella bigsmile
+    # t "Deal!"
+    # b "Wait, I-"
+    # t "You're a sweetheart. It's a shame someone like you is stuck in a situation like this."
+    # hide stella bigsmile
+    # show stella happy
+    # t "It's been fun chatting. We should spend some more time together soon."
+    # hide stella happy with dissolve
+    # bi "I - what?"
+    # scene black with fade
     blank "30 minutes had passed, Dan went to meet the others in the bar car."
 label midcar4:
     play music "audio/rush.mp3"
@@ -1673,7 +1685,7 @@ label trial1:
 
     #stella holding onto dracula
 
-    start with is where everyone was."
+    b "Let's start with where everyone was."
     b "Who can vouch, with 100% certainty, that they knew where someone else was?"
 
 

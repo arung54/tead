@@ -8,6 +8,7 @@ screen trainPreview(img):
 
 ##############################################
 
+
 screen trainMap():
     imagemap:
         ground "trainmapoverlay.png"
@@ -32,8 +33,19 @@ screen frontCar():
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "map"
+        idle "mapicon" at iconzoom
         action [Show("trainMap", transition=Dissolve(0.3))]
+    imagebutton:
+        xalign 1.0
+        yalign 0.1
+        idle "hearticon" at iconzoom
+        action [Show("freeTimeCounter", transition=Dissolve(0.3))]
+    if ftecounter > 0:
+        imagebutton:
+            xalign 1.0
+            yalign 0.2
+            idle "skipicon" at iconzoom
+            action [Show("skipFT", transition=Dissolve(0.3))]
     if ftecounter == 0:
         imagebutton:
             xpos 20

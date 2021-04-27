@@ -2,12 +2,30 @@ init:
     transform chibizoom2:
         zoom 3.0
 
+screen skipFT():
+    modal True
+    imagemap:
+        ground "skipfreetime.png"
+        hotspot(739, 388, 294, 182):
+            action[Hide("skipFT", transition=Dissolve(0.3))]
+            if ftecounter == 0:
+                hotspot(262, 386, 293, 185):
+                    action [Hide("frontCar", transition=Dissolve(0.3)), Hide("midCar", transition=Dissolve(0.3)),
+                    Hide("backCar", transition=Dissolve(0.3)), Hide("skipFT", transition=Dissolve(0.3)),
+                    Jump("postFTE0")]
+            if ftecounter == 1:
+                hotspot(262, 386, 293, 185):
+                    action [Hide("frontCar", transition=Dissolve(0.3)), Hide("midCar", transition=Dissolve(0.3)),
+                    Hide("backCar", transition=Dissolve(0.3)), Hide("skipFT", transition=Dissolve(0.3)),
+                    Jump("postFTE1")]
+
 screen freeTimeCounter():
+    modal True
     imagebutton:
         idle "goback.png"
         xalign 1.0
         yalign 1.0
-        action [Hide("freeTimeCounter")]
+        action [Hide("freeTimeCounter", transition=Dissolve(0.3))]
     if ftecounter < 2:
         vbox xalign 0.18 yalign 0.5 spacing 50:
             image "bertchibi.png" at chibizoom2
