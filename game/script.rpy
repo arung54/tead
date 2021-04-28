@@ -261,5 +261,5 @@ label start:
 ###########
 #Start jump
 ###########
-    call screen chooseChar("dan", "postFT0")
-    jump preinvest
+    #call screen chooseChar("dan", "trial1b", "trpogpogpogopgop")
+    jump midcar6

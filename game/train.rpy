@@ -1391,7 +1391,11 @@ label midcar6:
         zoom 1.2
         xcenter .43
         ycenter .5
-    show jenny ind with dissolve
+    show jenny ind:
+        xcenter .55
+    show frog ind:
+        xcenter .8
+    with dissolve
     j "Hey Bert, do you thin-"
     stop music
     show scary:
@@ -1412,7 +1416,9 @@ label midcar6:
     t "It came from the front car!"
     hide scary with dissolve
     j "Bert! You're okay. Thank goodness."
-    hide jenny ind with dissolve
+    hide jenny ind
+    hide frog ind
+    with dissolve
     hide catback with dissolve
     show catherine ind with dissolve
     c "What was that? Whose scream was that?"
@@ -1671,12 +1677,12 @@ label preinvest:
 ################################################################################      TRIAL STARTING!!! WOOT WOOT LEGO
 ################################################################################
 
-label trial1:
+label trial1a:
     scene black with fade
     blank "Everyone was brought to the bar car."
     show bg notrainmid with fade
     $ showchibi("bert", "catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
-    show stella ind with dissovle
+    show stella ind with dissolve
     t "So what's the plan?"
     t "I think I agree with the pirate at this point, let's all just jump out a window."
     show stella ind:
@@ -1717,7 +1723,16 @@ label trial1:
         xcenter .25
     j "I think we should talk about alibis."
     j "That's what they do in all the crime shows, at least."
-
+    show catherine happy
+    c "Haha! I love those shows."
+    show catherine ind
+    c "Oops. Dammit Catherine, now's not the time to think about crime shows."
+    j "Anyway... who here can vouch, with certainty, about where someone else was during the darkness?"
+    j "It's important to figure out exactly where everyone was."
+    j "Per"
+    hide catherine ind with moveoutright
+    show drac ind with moveinright:
+        xcenter .75
 
 
 
