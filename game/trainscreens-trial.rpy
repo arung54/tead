@@ -76,14 +76,14 @@ screen trainEvidenceTrial(s, e, l):
     imagemap:
         ground "evidenceui.png"
         hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
-    vbox xalign 0.15 yalign 0.5 spacing 30:
+    vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
-            textbutton "The Computer" style "button_text" action SetVariable("currEvidence", 0)
+            textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence1[1]:
-            textbutton "The View From The Front" style "button_text" action SetVariable("currEvidence", 1)
+            textbutton "Front Car Lighting" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
@@ -91,17 +91,82 @@ screen trainEvidenceTrial(s, e, l):
             textbutton "Front Car Accounts" style "button_text" action SetVariable("currEvidence", 2)
         else:
             textbutton "-" style "button_text"
-    if currEvidence == 0:
-        image "computer.png" xcenter 800 yalign 0.0
-        text "The computer used to navigate the train." xcenter 800 yanchor 0.0 ypos 250
 
-    if currEvidence == 1:
-        image "window.png" xcenter 800 yalign 0.0
-        text "Wee woo wee woo.\nThis\n is\n a\n new\n line\n but it's longer!" xcenter 800 yanchor 0.0 ypos 250
+        if train_evidence2[0]:
+            textbutton "Bar Car Lighting" style "button_text" action SetVariable("currEvidence", 3)
+        else:
+            textbutton "-" style "button_text"
 
-    if currEvidence == 2:
-        image "window.png" xcenter 800 yalign 0.0 alpha .4
-        text "Kaiser, Lauren, Sam, and Shahar said they were all \nin the front car. \n \nLauren said the lights turned off,they heard the\nscream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 250
+        if train_evidence2[1]:
+            textbutton "Dracula's Account" style "button_text" action SetVariable("currEvidence", 4)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence2[2]:
+            textbutton "Catherine's Account" style "button_text" action SetVariable("currEvidence", 5)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[0]:
+            textbutton "Hanging Object" style "button_text" action SetVariable("currEvidence", 6)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[1]:
+            textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 7)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[2]:
+            textbutton "Back Car Closet" style "button_text" action SetVariable("currEvidence", 8)
+        else:
+            textbutton "-" style "button_text"
+
+        if train_evidence3[3]:
+            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 9)
+        else:
+            textbutton "-" style "button_text"
+
+    fixed xmaximum 580:
+        if currEvidence == 0:
+            image "loginev.png" xcenter 800 yalign 0.1
+            text "Something seems different here..." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 1:
+            image "lights2ev.png" xcenter 800 yalign 0.1
+            text "The ambient light in the front car makes it pertty easy to see, even at night." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 2:
+            image "frontaccounts1.png" xcenter 800 yalign 0.1
+            text "Kaiser, Lauren, Sam, and Shahar said they were all in the front car. Lauren said the car went dark, but the lights were still on, so they could see what they were doing." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 3:
+            image "lightsev" xcenter 800 yalign 0.1
+            text "It's dark out, and the lights in the bar car are off." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 4:
+            image "dracaccount1" xcenter 800 yalign 0.1
+            text "Dracula said the scream we heard while it was dark was somehow 'familiar'." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 5:
+            image "catherineaccount1" xcenter 800 yalign 0.1
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 6:
+            image "ringev" xcenter 800 yalign 0.1
+            text "We found this hanging outside the back window of the train." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 7:
+            image "sidaccount1.png" xcenter 800 yalign 0.1
+            text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 8:
+            image "closetev.png" xcenter 800 yalign 0.1
+            text "The closet opened easily, but there was nothing inside." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 9:
+            image "window.png" xcenter 800 yalign 0.1
+            text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 330
 
     if currEvidence >= 0:
         if s == statement and e == currEvidence:
