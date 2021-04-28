@@ -1729,7 +1729,16 @@ label trial1a:
     c "Oops. Dammit Catherine, now's not the time to think about crime shows."
     j "Anyway... who here can vouch, with certainty, about where someone else was during the darkness?"
     j "It's important to figure out exactly where everyone was."
-    j "Per"
+    j "Freddy and I, for example, were holding hands the whole time."
+    j "In fact, I think Dan even saw us holding hands before it got dark."
+    hide catherine with moveoutright
+    show frog ind with moveinright:
+        xcenter .75
+    f "Yeah! We wanted Bert to play with us."
+    f "We didn't g-get to play though..."
+    b "Yeah, it is true. They definitely came up to me together before it all happened."
+    b "I don't think they had even moved a foot once I could see them again."
+
     hide catherine ind with moveoutright
     show drac ind with moveinright:
         xcenter .75
