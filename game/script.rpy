@@ -261,5 +261,10 @@ label start:
 ###########
 #Start jump
 ###########
-    #call screen chooseChar("dan", "trial1b", "trpogpogpogopgop")
-    jump midcar6
+    call screen trainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1,
+    "sid", "Statement {color=#f55}1{/color}", -1,
+    "sid", "Statement 3", 0,
+    "sid", "Statement {color=#55f}1{/color}", -1,
+    3, 0, "postFT0")
+    call screen chooseChar("dan", "postFT0")
+    jump preinvest

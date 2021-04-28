@@ -4,11 +4,6 @@ init:
     transform cczoom:
         zoom 0.75
 
-init python:
-    trainAnswers = [[3, 0], [0, 1]] #This means first trial screen, statement 3, and you want to use evidence 0.
-                                    #Second trial screen, statement 0, and you want to use evidence 1.
-                                    # Evidence -1 = agree.
-
 screen chooseChar(ans, correctLabel, midText):
     add "debatescroll" at cczoom
     imagemap:
@@ -75,22 +70,7 @@ screen chooseChar(ans, correctLabel, midText):
                 action [Show("tryAgain", transition=Dissolve(0.2))]
     text midText xalign 0.5 yalign 0.5
 
-
-
-label correctTrain:
-    if phase == 0:
-        b "Dialog after the first argument"
-        b "Blah blah blah"
-        $ phase += 1
-        call screen trainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1,
-        "sid", "Statement {color=#f55}1{/color}", -1,
-        "sid", "Statement 3", 0,
-        "sid", "Statement {color=#55f}1{/color}", 1)
-    if phase == 1:
-        b "Dialog after second argument"
-
-
-screen trainEvidenceTrial():
+screen trainEvidenceTrial(s, e, l):
     modal True
     add "eviscroll"
     imagemap:
@@ -124,12 +104,12 @@ screen trainEvidenceTrial():
         text "Kaiser, Lauren, Sam, and Shahar said they were all \nin the front car. \n \nLauren said the lights turned off,they heard the\nscream, and then went to the bar car." xcenter 800 yanchor 0.0 ypos 250
 
     if currEvidence >= 0:
-        if trainAnswers[phase][0] == statement and trainAnswers[phase][1] == currEvidence:
+        if s == statement and e == currEvidence:
             imagebutton:
                 idle "usethis.png"
                 xalign 0.66
                 yalign 0.9
-                action [Jump("correctTrain")]
+                action [Hide("trainEvidenceTrial"), Hide("trainTrial") ,Jump(l)]
         else:
             imagebutton:
                 idle "usethis.png"
@@ -141,7 +121,7 @@ screen trainEvidenceTrial():
 #statement is text that appears on the screen
 #ag = 1 if you can agree, -1 if you can refute, and 0 if you can't interact
 
-screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4):
+screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4, corrS, corrE, corrL):
     modal True
     add "debatescroll"
     add "debateui.png"
@@ -162,12 +142,12 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
         textbutton statement3 xpos 0.64 xanchor 0 ypos 444 yanchor 0 style "button_text" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
         textbutton statement4 xpos 0.64 xanchor 0 ypos 571 yanchor 0 style "button_text" action [SetVariable("statement", 3), SetVariable("agree", ag4)]
     if agree == 1:
-        if trainAnswers[phase][0] == statement and trainAnswers[phase][1] == -1:
+        if corrS == statement and corrE == -1:
             imagebutton:
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
-                action [Jump("correctTrain")]
+                action [Hide("trainTrial") ,Jump(l)]
         else:
             imagebutton:
                 idle "agree.png"
@@ -186,7 +166,7 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
             idle "refute.png"
             xpos 0.775
             yalign 0.04
-            action [Show("trainEvidenceTrial", transition=Dissolve(0.2))]
+            action [Show("trainEvidenceTrial", transition=Dissolve(0.2), s = corrS, e = corrE, l = corrL)]
     else:
         imagebutton:
             idle "refutegrey.png"
