@@ -9,7 +9,7 @@ init python:
                                     #Second trial screen, statement 0, and you want to use evidence 1.
                                     # Evidence -1 = agree.
 
-screen chooseChar(ans, correctLabel):
+screen chooseChar(ans, correctLabel, midText):
     add "debatescroll" at cczoom
     imagemap:
         ground "lineup.png"
@@ -73,7 +73,7 @@ screen chooseChar(ans, correctLabel):
                 action [Jump(correctLabel)]
             else:
                 action [Show("tryAgain", transition=Dissolve(0.2))]
-
+    text midText xalign 0.5 yalign 0.5
 
 
 
