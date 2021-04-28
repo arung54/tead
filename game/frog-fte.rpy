@@ -173,8 +173,5 @@ label frogHang:
         bi "I enjoyed some time with frog, if only because of his pirate speak."
 
     $fte_frog += 1
-    $ftecounter += 1
     hide frog with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after Train FT2
+    jump postFTEHandler

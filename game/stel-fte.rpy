@@ -73,8 +73,5 @@ label stelHang:
         bi "I enjoyed some time with sam, if only because of his pirate speak."
 
     $fte_stel += 1
-    $ftecounter += 1
-    hide stella with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after Train FT2
+    hide stella
+    jump postFTEHandler

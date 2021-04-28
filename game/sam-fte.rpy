@@ -135,5 +135,8 @@ label samHang:
     $ftecounter += 1
     hide sam with dissolve
 
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after Train FT2
+    if ftecounter == 0:
+        jump postFT0
+
+    if ftecounter == 1:
+        jump postFT1

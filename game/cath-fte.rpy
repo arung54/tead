@@ -34,8 +34,5 @@ label cathHang:
 
 
     $fte_cath += 1
-    $ftecounter += 1
     hide catherine with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after free time 2
+    jump postFTEHandler

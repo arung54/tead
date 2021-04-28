@@ -125,11 +125,5 @@ label bertHang:
         ni "I guess I understand Bert better now. Not sure if we're closer, though."
 
     $fte_bert += 1
-    $ftecounter += 1
     hide bert with dissolve
-
-    if ftecounter - 1 == 0:
-        call screen frontCar #replace w/ jump to FT2
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after FT2
+    jump postFTEHandler

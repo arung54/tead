@@ -275,8 +275,5 @@ label shahHang:
         bi "I enjoyed some time with Shahar, if only because of his pirate speak."
 
     $fte_shah += 1
-    $ftecounter += 1
     hide shahar with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after FT2
+    jump postFTEHandler

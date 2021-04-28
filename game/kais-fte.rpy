@@ -27,8 +27,5 @@ label kaisHang:
         h "Y'arr, Dan, what can I do for ye?"
 
     $fte_kais += 1
-    $ftecounter += 1
     hide kaiser with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after Train FT2
+    jump postFTEHandler

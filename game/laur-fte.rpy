@@ -295,8 +295,5 @@ label laurHang:
         bi "I enjoyed some time with Lauren, now that we were able to speak casually."
 
     $fte_laur += 1
-    $ftecounter += 1
     hide lauren with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after Train FT2
+    jump postFTEHandler
