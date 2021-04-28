@@ -123,8 +123,5 @@ label sidHang:
         bi "I feel like we’re growing closer… Slowly."
 
     $fte_sid += 1
-    $ftecounter += 1
     hide sid ind with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after free time 2
+    jump postFTEHandler

@@ -2,6 +2,13 @@ init:
     transform chibizoom2:
         zoom 3.0
 
+label postFTEHandler:
+    if ftecounter == 0:
+        jump postFT0
+
+    if ftecounter == 1:
+        jump postFT1
+
 screen skipFT():
     modal True
     imagemap:

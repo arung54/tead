@@ -142,8 +142,5 @@ label dracHang:
         bi "I enjoyed some time with drac, if only because of his pirate speak."
 
     $fte_drac += 1
-    $ftecounter += 1
     hide drac with dissolve
-
-    if ftecounter - 1 == 1:
-        call screen frontCar #replace w/ jump to after Train FT2
+    jump postFTEHandler

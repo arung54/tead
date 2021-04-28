@@ -13,3 +13,4 @@ label sesAsk0:
 
 label sesHang:
     ses "Meow!"
+    jump postFTEHandler

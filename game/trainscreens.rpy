@@ -50,11 +50,16 @@ screen frontCar():
         imagebutton:
             xpos 20
             ypos 20
+            idle "bertchibi.png" at chibizoom
+            action [Hide("midCar"), Jump("bertAsk0")]
+        imagebutton:
+            xpos 20
+            ypos 70
             idle "sidchibi.png" at chibizoom
             action [Hide("frontCar"), Jump("sidAsk0")]
         imagebutton:
             xpos 20
-            ypos 70
+            ypos 120
             idle "kaiserchibi.png" at chibizoom
             action [Hide("frontCar"), Jump("kaisAsk0")]
     if ftecounter == 1:
@@ -80,16 +85,11 @@ screen midCar():
         imagebutton:
             xpos 20
             ypos 20
-            idle "bertchibi.png" at chibizoom
-            action [Hide("midCar"), Jump("bertAsk0")]
-        imagebutton:
-            xpos 20
-            ypos 70
             idle "catherinechibi.png" at chibizoom
             action [Hide("midCar"), Jump("cathAsk0")]
         imagebutton:
             xpos 20
-            ypos 120
+            ypos 70
             idle "jennychibi.png" at chibizoom
             action [Hide("midCar"), Jump("jennAsk0")]
     if ftecounter == 1:
