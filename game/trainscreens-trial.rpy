@@ -1,11 +1,81 @@
 init:
     transform exzoom:
         zoom 0.7
+    transform cczoom:
+        zoom 0.75
 
 init python:
     trainAnswers = [[3, 0], [0, 1]] #This means first trial screen, statement 3, and you want to use evidence 0.
                                     #Second trial screen, statement 0, and you want to use evidence 1.
                                     # Evidence -1 = agree.
+
+screen chooseChar(ans, correctLabel):
+    add "debatescroll" at cczoom
+    imagemap:
+        ground "lineup.png"
+        hotspot(46, 70, 172, 257):
+            if ans == "bert":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(243, 89, 164, 237):
+            if ans == "catherine":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(438, 61, 180, 262):
+            if ans == "dan":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(648, 48, 231, 275):
+            if ans == "dracula":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(921, 131, 148, 196):
+            if ans == "froggy":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(1104, 70, 112, 255):
+            if ans == "jenny":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(50, 423, 164, 275):
+            if ans == "kaiser":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(258, 446, 154, 246):
+            if ans == "lauren":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(477, 457, 107, 234):
+            if ans == "sam":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(674, 413, 168, 279):
+            if ans == "shahar":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(887, 436, 163, 256):
+            if ans == "sid":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(1093, 432, 132, 260):
+            if ans == "stella":
+                action [Jump(correctLabel)]
+            else:
+                action [Show("tryAgain", transition=Dissolve(0.2))]
+
+
+
 
 label correctTrain:
     if phase == 0:

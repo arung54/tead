@@ -995,7 +995,7 @@ label day2:
     tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
     tut "For the first free time segment, move to the front car and talk to Bert."
     tut "For this segment only, the skip function will be disabled."
-    call screen trainMid
+    call screen midCar
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
     # b "Well, we should get to know each other."
@@ -1029,7 +1029,7 @@ label postFT0:
     n "Guess I'll keep mingling."
     tut "For this and all future free time segments, you will have the luxury of talking to anyone or skipping."
     $freetimecounter = 1
-    call screen trainMid
+    call screen midCar
 label postFT1:
     blank "30 minutes had passed, Dan went to meet the others in the bar car."
 label midcar4:

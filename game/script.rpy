@@ -261,5 +261,5 @@ label start:
 ###########
 #Start jump
 ###########
-    #call screen midCarInv
+    call screen chooseChar("dan", "postFT0")
     jump preinvest
