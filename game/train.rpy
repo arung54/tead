@@ -1694,15 +1694,58 @@ label trial1:
     k "Anyway, Bert. Where do you think we should start?"
     b "That's a good question..."
     b "I think the most logical thing to start with is... when it happened."
+    hide lauren ind with moveoutleft
+    show sam with moveinleft:
+        xcenter .25
+    s "Hmm, when the four of us went to the front car, Dan was still here in the bar car."
+    k "Yes, it's true."
+    hide kaiser ind with moveoutright
+    show catherine ind with moveinright:
+        xcenter .75
+    c "And then a few minutes later, Sid and Dan went to the back car together."
+    c "A bunch of us watched the two of them go."
+    s "So it had to have happened sometime between then and when we made our way to the back car to check on them."
+    s "Which honestly wasn't a very long time... maybe 20 minutes."
+    c "Putting a time to it somehow makes this even more disturbing."
+    b "Also, we did all go check up in the front car first."
+    c "Yeah so for a few minutes, this car had to have been completely empty."
+    b "Well, Sid could have come into this car while everyone was up front, and we would have no way of knowing."
+    b "But aside from that, yes."
+    s "I don't think there's any time trickery going on here, it seems pretty clear-cut."
+    hide sam with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "I think we should talk about alibis."
+    j "That's what they do in all the crime shows, at least."
+
+
+
+
+    bi "Wait..."
+    hide sam
+    hide catherine ind
+    with dissolve
+    show scary with dissolve:
+        alpha .5
+    extend " is that true?"
+    bi "I think someone could have been here, actually."
+    bi "That person is..."
+    window hide
+
+    #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    scene black
+    show debatescroll with dissolve:
+        zoom .75
+    show lineup
+    b "The rest of us were together, so the only person who could have been in here was Sid."
+    hide catherine ind with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "And I didn't, I swear!"
+    i "Once I woke up and saw what happened, I was... stunned."
+    s "Yeah, likely story. Punk."
 
     #stella holding onto dracula
 
     b "Let's start with where everyone was."
-    b "Who can vouch, with 100% certainty, that they knew where someone else was?"
-
-
-
-
-
-
-    #ligma
+    b "Who can vouch, with full certainty, that they knew where someone else was?"
