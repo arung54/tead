@@ -14,7 +14,7 @@ label jennAsk1:
     show jenny happy with dissolve
     j "Hey Dan!"
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -24,7 +24,7 @@ label jennAsk1:
 #Mansion 1
 label jennAsk2:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -34,7 +34,7 @@ label jennAsk2:
 #Mansion 2
 label jennAsk3:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -44,7 +44,7 @@ label jennAsk3:
 #Mansion 3
 label jennAsk4:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -54,7 +54,7 @@ label jennAsk4:
 #Hospital 1
 label jennAsk5:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -64,7 +64,7 @@ label jennAsk5:
 #Hospital 2
 label jennAsk6:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -74,7 +74,7 @@ label jennAsk6:
 #Hospital 3
 label jennAsk7:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -84,7 +84,7 @@ label jennAsk7:
 #Bank 1
 label jennAsk8:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -93,7 +93,7 @@ label jennAsk8:
 #Bank 2
 label jennAsk9:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
@@ -103,7 +103,7 @@ label jennAsk9:
 #Bank 3
 label jennAsk10:
     menu:
-        "Spend time with Jenny?":
+        "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":

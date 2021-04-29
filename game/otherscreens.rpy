@@ -10,6 +10,7 @@ label postFTEHandler:
         jump postFT1
 
 screen skipFT():
+    add "scary.png"
     modal True
     imagemap:
         ground "skipfreetime.png"
@@ -27,6 +28,7 @@ screen skipFT():
                     Jump("postFTE1")]
 
 screen freeTimeCounter():
+    add "scary.png"
     modal True
     imagebutton:
         idle "goback.png"

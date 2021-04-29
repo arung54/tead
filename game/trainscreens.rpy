@@ -40,18 +40,18 @@ screen frontCar():
         yalign 0.1
         idle "hearticon" at iconzoom
         action [Show("freeTimeCounter", transition=Dissolve(0.3))]
-    if ftecounter > 0:
-        imagebutton:
-            xalign 1.0
-            yalign 0.2
-            idle "skipicon" at iconzoom
+    imagebutton:
+        xalign 1.0
+        yalign 0.2
+        idle "skipicon" at iconzoom
+        if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
     if ftecounter == 0:
         imagebutton:
             xpos 20
             ypos 20
             idle "bertchibi.png" at chibizoom
-            action [Hide("midCar"), Jump("bertAsk0")]
+            action [Hide("frontCar"), Jump("bertAsk0")]
         imagebutton:
             xpos 20
             ypos 70
@@ -79,8 +79,19 @@ screen midCar():
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "map"
+        idle "mapicon" at iconzoom
         action [Show("trainMap", transition=Dissolve(0.3))]
+    imagebutton:
+        xalign 1.0
+        yalign 0.1
+        idle "hearticon" at iconzoom
+        action [Show("freeTimeCounter", transition=Dissolve(0.3))]
+    imagebutton:
+        xalign 1.0
+        yalign 0.2
+        idle "skipicon" at iconzoom
+        if ftecounter > 0:
+            action [Show("skipFT", transition=Dissolve(0.3))]
     if ftecounter == 0:
         imagebutton:
             xpos 20
@@ -101,7 +112,7 @@ screen midCar():
         imagebutton:
             xpos 20
             ypos 70
-            idle "catherinechibi.png"
+            idle "catherinechibi.png" at chibizoom
             action [Hide("midCar"), Jump("cathAsk1")]
         imagebutton:
             xpos 20
@@ -114,14 +125,19 @@ screen backCar():
     imagebutton:
         xalign 1.0
         yalign 0.0
-        idle "map"
+        idle "mapicon" at iconzoom
         action [Show("trainMap", transition=Dissolve(0.3))]
-    if ftecounter == 0:
-        imagebutton:
-            xpos 20
-            ypos 20
-            idle "draculachibi.png" at chibizoom
-            action [Hide("backCar"), Jump("dracAsk0")]
+    imagebutton:
+        xalign 1.0
+        yalign 0.1
+        idle "hearticon" at iconzoom
+        action [Show("freeTimeCounter", transition=Dissolve(0.3))]
+    imagebutton:
+        xalign 1.0
+        yalign 0.2
+        idle "skipicon" at iconzoom
+        if ftecounter > 0:
+            action [Show("skipFT", transition=Dissolve(0.3))]
     if ftecounter == 1:
         imagebutton:
             xpos 20

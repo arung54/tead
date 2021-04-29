@@ -269,4 +269,4 @@ label start:
     #3, 0, "postFT0")
 
     #call screen chooseChar("dan", "postFT0")
-    jump trial1a
+    jump testft

@@ -940,6 +940,7 @@ label day2:
     ni "I might have to take this into my own hands..."
     hide tracks with dissolve
     ni "But for now, I should go meet the others."
+label testft:
     show bg trainmid with fade
     $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
     show catherine happy with dissolve:
@@ -1020,15 +1021,16 @@ label day2:
     # scene black with fade
 label postFT0:
     show bg trainmid with dissolve
+    ni "Hmm... that didn't take up as much time as I hoped it would."
+    ni "Guess I'll keep mingling."
+    play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
-    n "Hmm... that didn't take up as much time as I hoped it would."
-    n "Guess I'll keep mingling."
     tut "For this and all future free time segments, you will have the luxury of talking to anyone or skipping."
-    $freetimecounter = 1
+    $ftecounter = 1
     call screen midCar
 label postFT1:
     blank "30 minutes had passed, Dan went to meet the others in the bar car."

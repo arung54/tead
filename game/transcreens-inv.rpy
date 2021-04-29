@@ -1,6 +1,6 @@
 init:
     transform iconzoom:
-        zoom 0.5
+        zoom 0.3
     transform chibizoom:
         zoom 1.5
 
