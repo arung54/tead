@@ -52,6 +52,7 @@ transform blink:
         alpha 1.0
         .1
         alpha 0.0
+define slowdissolve = Dissolve(2.0)
 image debatescroll:
     contains:
         "vineslide.png"
@@ -269,4 +270,5 @@ label start:
     #3, 0, "postFT0")
 
     #call screen chooseChar("dan", "postFT0")
-    jump testft
+    $ftecounter = 6
+    jump mansionGo
