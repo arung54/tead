@@ -12,7 +12,8 @@
 #    image ochibi = Image("laurenchibi.png", zoom=1.5)
 
 
-
+# pa system demo
+#
 
 
 image splash = "tead.png"
@@ -270,5 +271,5 @@ label start:
     #3, 0, "postFT0")
 
     #call screen chooseChar("dan", "postFT0")
-    $ftecounter = 6
-    jump mansionGo
+    #$ftecounter = 6
+    jump trial1a
