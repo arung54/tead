@@ -1728,7 +1728,7 @@ label trial1a:
     show catherine happy
     c "Haha! I love those shows."
     show catherine ind
-    c "Oops. Dammit Catherine, now's not the time to think about crime shows."
+    c "Oops. Dammit Catherine, now's not the time to fangirl."
     j "Anyway... who here can vouch, with certainty, about where someone else was during the darkness?"
     j "It's important to figure out exactly where everyone was."
     j "Freddy and I, for example, were holding hands the whole time."
@@ -1740,11 +1740,10 @@ label trial1a:
     f "We didn't g-get to play though..."
     b "Yeah, it is true. They definitely came up to me together before it all happened."
     b "I don't think they had even moved a foot once I could see them again."
-
-    hide catherine ind with moveoutright
-    show drac ind with moveinright:
-        xcenter .75
-
+    j "I'd like to say that we can vouch for where Bert was too, but..."
+    b "No, you can't. For all you know I could have been anywhere, and just came back."
+    j "...Yeah."
+    b "So Jenny and Freddy should be cleared with alibis. 
 
 
     bi "Wait..."
