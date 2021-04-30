@@ -35,7 +35,7 @@ label mansionGo:
     l "You wanna look around and try to find food with me? Everyone's probably hungry after sleeping!"
     f "S-sure..."
     hide lauren with moveoutleft
-    hide freddy with moveoutright
+    hide frog with moveoutright
     $showchibi()
     bi "Where did she come from?"
     bi "Oh, everyone else is here too, waking up like us."
@@ -48,7 +48,7 @@ label mansionGo:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show sam ind with moveinright:
+    show sam with moveinright:
         xcenter .75
     s "I agree with the vampire for once."
     s "Given the information Kaiser shared with us before his untimely end."
@@ -111,6 +111,7 @@ label mansionGo:
     b "What?"
     j "Huh?"
     t "What? You're both young, cute, happy types."
+    t "And it's obvious Bert doesn't want to talk about his crime, and you're saving him."
     show stella bigsmile:
         xcenter .75
     t "But hey, if you're not interested in Bert I'll take him."
@@ -133,24 +134,69 @@ label mansionGo:
         xcenter .25
     show drac ind:
         xcenter .75
+    with dissolve
     s "..."
     d "..."
     bi "Looks like that's the end of that conversation."
-    hide sam with dissolve
-    hide drac with dissolve
+    hide sam
+    hide drac
+    with dissolve
     show sid ind with dissolve
     i "So um, are we free to go?"
     i "I... I've never been in a house this big."
     i "I was hoping we'd do what we did on the train and explore."
-    show jenny ind:
+    show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
     show catherine happy with moveinright:
         xcenter .75
     c "Great idea Sid!"
     c "There's bound to be some new information here we can use."
+    ses "Mrow!"
+    c "Oh, true, and maybe mice to catch!"
     bi "I'm not sure if she actually thinks its a great idea, but..."
     bi "Sid is probably the most shaken up about Dan's death."
     b "Yeah, plus we have to figure out what there is to eat and where to sleep."
     bi "...and if nothing else, it's a chance for us all to forget about our fate for a bit."
-    scene black with dissolve
+    hide sid
+    hide catherine
+    with dissolve
+    show jenny ind with dissolve
+    bi "I approached Jenny and made sure Stella wasn't within earshot."
+    b "Hey Jenny, want to explore together?"
+    j "Oh?"
+    b "I wanted to talk to you while we're looking around."
+    show jenny happy
+    j "Sure!"
+    $ showchibi("jenny")
+    bi "The others left as we talked."
+    b "Guess no one wants to look around here?"
+    show jenny ind
+    j "Maybe they thought they saw everything."
+    j "Which to be fair, there isn't much to see."
+    j "A large dining table, some furniture..."
+    j "There is an ominous portrait."
+    bi "She pointed above the fireplace."
+    bi "An old, ordinary-looking man dressed up quite nicely."
+    b "Wait... who is that?"
+    j "No clue."
+    b "It must be someone relevant, right?"
+    b "Unless the mastermind just took someone's mansion without a problem."
+    b "But it seems like anyone rich enough to own this house wouldn't be so easily... overcome?"
+    j "You might be onto something."
+    j "Maybe it's the mastermind? And this is their mansion?"
+    b "Well, that would contradict what the screen told us about one of us being the mastermind."
+    b "But maybe we'd be naive to trust that."
+    j "Unless someone's met this person before, I don't know if we'll get much information out of this."
+    j "Let's look somewhere else. Looks like this room connects to the kitchen and a bedroom."
+    b "Let's head to the kitchen, I'm hungry!"
+    scene bg mansionkitchen with fade
+    $showchibi("freddy", "lauren")
+    show lauren ind with dissolve
+    l "Hey, what happened in the other room? Heard lots of chatter."
+    b "Some people suggested we all admit to our crime. It wasn't received very well."
+    b "Now everyone's off exploring."
+    l "Ah okay. Well, good news, the kitchen is rather well-stocked."
+    l "What you'd expect from a kitchen in a mansion."
+    l "All sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water's running."
+    
