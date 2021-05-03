@@ -139,8 +139,16 @@ label mansionGo:
     d "..."
     bi "Looks like that's the end of that conversation."
     hide sam
-    hide drac
-    with dissolve
+    show drac ind:
+        xcenter .75
+        linear 0.15 xcenter .5
+    d "Well, one more comment."
+    d "It seems despite not being in a fast-moving train, escape is unlikely."
+    d "The windows have been boarded closed with a thick metal sheet."
+    d "Even if they were not there, the chips in our brains would likely kill us upon leaving the building."
+    d "And given what happened to Kaiser, it would seem the chips are unlikely to be a hoax."
+    d "That is all I wished to say. Would hate to see any more unnecessary deaths than we already have."
+    hide drac with dissolve
     show sid ind with dissolve
     i "So um, are we free to go?"
     i "I... I've never been in a house this big."
@@ -191,12 +199,187 @@ label mansionGo:
     j "Let's look somewhere else. Looks like this room connects to the kitchen and a bedroom."
     b "Let's head to the kitchen, I'm hungry!"
     scene bg mansionkitchen with fade
-    $showchibi("freddy", "lauren")
+    $showchibi("jenny", "freddy", "lauren")
     show lauren ind with dissolve
     l "Hey, what happened in the other room? Heard lots of chatter."
     b "Some people suggested we all admit to our crime. It wasn't received very well."
     b "Now everyone's off exploring."
     l "Ah okay. Well, good news, the kitchen is rather well-stocked."
     l "What you'd expect from a kitchen in a mansion."
-    l "All sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water's running."
+    l "Plenty of fancy cutlery and cookware."
+    l "Including a full knife set, which we might want to discuss..."
+    l "All sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water..."
+    hide lauren ind with dissolve
+    show shahar happy with moveinright:
+        xcenter .25
+    show stella happy with moveinright:
+        xcenter .75
+    $showchibi("jenny", "freddy", "lauren", "shahar", "stella")
+    h "I heard fridge and freezer. Is there rum fer the takin'?"
+    t "If the mansion's owner has any class, there should be."
+    hide shahar
+    hide stella with dissolve
+    show lauren ind
+    l "..."
+    l "Hey Freddy, Shahar and Stella want a chance to check out the kitchen, maybe let's not disturb them."
+    b "We could just ask them to-"
+    l "It's easier to just not bother, honestly."
+    l "Freddy, wanna go claim a bed?"
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show frog ind with moveinleft:
+        xcenter .25
+    f "O-okay..."
+    hide lauren
+    hide freddy
+    with dissolve
+    $showchibi("jenny", "shahar", "stella")
+    show shahar happy with moveinleft:
+        xcenter .25
+    show stella happy with moveinright:
+        xcenter .75
+    h "Rum, vodka, mead, they have ev'rything here!"
+    t "Tequila shots! It's been so long. Bert, Jenny, want to join us?"
+    hide shahar with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "I'm... not old enough to drink yet."
+    t "Who's gonna arrest you? The mastermind who's already broken twenty different laws?"
+    t "Plus it'd be good for you and Bert to get to know each other with your inhibitions down."
+    b "Alright, I think we've seen everything we need to see here."
+    b "Jenny, let's go check out another room."
+    t "A bedroom?"
+    j "Yes please, get me out of here."
+    scene black with fade
+    scene bg mansionmaster with fade
+    $showchibi("jenny", "dracula", "sam")
+    b "The master bedroom?"
+    show jenny ind with dissolve
+    j "You... didn't actually intend to bring me to a bedroom right."
+    b "What? No!"
+    b "Besides, Sam and Dracula are here."
+    hide jenny ind
+    show sam:
+        xcenter .25
+    show drac ind:
+        xcenter .75
+    with dissolve
+    d "Good of you to join us."
+    d "Sam and I were just chatting. There's nothing particularly interesting here."
+    d "Just a fancy bedroom, befitting for an old accomplished vampire."
+    s "Subtle attempt to make an early claim on the nicest room."
+    s "Sure you're not just saying that because your joints are giving out?"
+    d "Hmph, make jokes if you must."
+    d "But being a vampire means despite my age I am quite nimble."
+    b "Before deciding who sleeps where, do we know what the other living arrangements are?"
+    d "There are four bedrooms upstairs."
+    b "So enough for everyone to sleep on a bed, if people are willing to share."
+    d "Unfortunately, the above bedrooms only have beds to fit one."
+    d "So as before, some of us will have to sleep elsewhere."
+    d "Fortunately the couches in the living room seem rather comfy."
+    b "Okay, I think in thirty minutes or so we should meet up and decide this."
+    b "With a vote, rather than someone making an early claim."
+    d "Hmph."
+    d "Fine."
+    b "Cool, make sure to mention it to anyone you bump into."
+    b "By the way, can I ask what you were talking about?"
+    d "..."
+    s "..."
+    d "We were discussing private affairs."
+    d "You have secrets you're keeping about your crime, so surely you won't mind me keeping my own."
+    s "Yeah, what the vampire said."
+    b "Oh, yeah, of course..."
+    d "And maybe you'd like to give us some privacy so we may continue speaking?"
+    d "Continue going on your little date around the house, it'll be more fun than us."
+    bi "Is everyone going to keep bringing this up? It's getting annoying."
+    hide sam
+    hide drac
+    with dissolve
+    show jenny ind with dissolve
+    b "Let's move on?"
+    j "Sounds good."
+    scene black with fade
+    scene bg mansiongarage with fade
+    $showchibi( "jenny", "catherine", "sid")
+    show catherine happy with dissolve
+    c "Hey guys! Welcome to Catherine's garage emporium!"
+    b "Catherine's garage emporium?"
+    c "Just something I made up, haha."
+    c "There's no car, otherwise we could make a sick getaway!"
+    show catherine ind
+    c "Well, you know, minus the whole chip in our head thing."
+    c "Also the garage door doesn't open, though it's not surprising."
+    show catherine happy
+    c "In better news, there's some rope here Sesame can use as a scratching toy!"
+    s "{i}Scrichhhh{/i}"
+    b "Sesame can scratch her way out of here for us!"
+    c "What? Don't be silly."
+    c "There's also some simple tools, and a stepstool."
+    c "We could use these to repair anything that breaks maybe?"
+    c "Not sure if anyone here's much of handyman though."
+    show catherine happy:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "I... I could repair things around here."
+    i "We couldn't afford to hire people so my dad taught me how to do basic household repairs."
+    c "That's nice of you to offer Sid!"
+    c "But hopefully the need doesn't arise."
+    c "There's also a clock and some boxes full of junk."
+    c "According to the clock it's early afternoon right now."
+    c "Hard to tell if that's right with the boarded windows though."
+    c "There's also a generator here, it seems like it's fully fueled."
+    c "We have running power so we shouldn't need it, but it's nice to know that won't be an issue."
+    show catherine ind
+    c "I imagine whoever owns this house isn't paying the electricity bill."
+    c "So unless the mastermind's doing us that favor..."
+    b "Well, the lights were on in the dining room, and the fridge and freeze are running."
+    b "So I don't think we'll need to worry about that."
+    show catherine happy
+    c "Oh, nice! Do you happen to know if the kitchen is well stocked?"
+    c "I used to work as a chef in a kitchen, I could whip us up some nice meals."
+    c "Don't have to be vegetarian meals, wouldn't want the meat to go to waste."
+    b "That's very nice of you to offer!"
+    i "Um... Catherine, if you're going to cook, I have an idea."
+    c "Send it at me!"
+    i "I... I've only lived in my parents' cramped apartment."
+    i "Sustaining ourselves off budget meals."
+    i "while we're here, before someone dies, I... thought it'd be nice if we had a fancy dinner party."
+    c "Aww, Sid... that's such a cute idea!"
+    c "Yes, let's do it!"
+    c "Unfortunately I probably need at least a day to prepare, so it would have to be tomorrow evening."
+    i "O-oh..."
+    i "But... what if the kill happens before then?"
+    c "I think that's just a chance we have to take."
+    b "Oh, forgot to mention, there's a meeting soon to decide sleeping arrangements."
+    b "Maybe at that meeting we can... kindly suggest the killer wait a day?"
+    hide sid with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "That might be a hard sell."
+    j "What if they're afraid it will become harder to kill people after the party?"
+    c "This is a bit of a depressing topic."
+    hide jenny with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    show jenny ind with moveinleft:
+        xcenter .25
+    show catherine happy:
+        xcenter .75
+    c "Sid, we'll have a dinner party tomorrow, you can count on it."
+    i "Th-th-"
+    show sid happy:
+        xcenter .25
+    i "Thanks Catherine. This is so exciting!"
+    bi "I'm glad something good is coming out of this at least."
+    hide jenny
+    hide sid
+    with dissolve
+    show jenny ind
+    b "Let's move on?"
+    j "Sounds good, Catherine gave us a very good rundown of this room anyway."
+    j "Seems like we've explored the entirety of this floor, let's go upstairs?"
+    b "Sure."
     
