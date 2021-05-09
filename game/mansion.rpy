@@ -430,4 +430,9 @@ label mansionGo:
     show jenny happy
     j "But like I said, ignoring how much trouble it caused everyone, I'm kinda proud."
     j "I'm a good enough gambler to make some scary, powerful businessmen scared."
-    
+    b "That is pretty impressive."
+    j "Anyway, that's my crime."
+    b "Guess it's my turn."
+    show jenny ind
+    j "Guess so. If you want to back out now that's-"
+    b "No, we made a deal."
