@@ -4,6 +4,44 @@ init:
     transform cczoom:
         zoom 0.75
 
+init python:
+    def startTrainTrial(p1, s1, a1, t1, p2, s2, a2, t2, p3, s3, a3, t3, p4, s4, a4, t4, cS, cE, cL):
+        trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4)
+        renpy.transition(Dissolve(1.0))
+        renpy.call_screen("trainTrial", pers1 = p1, statement1 = s1, ag1 = a1, pers2 = p2, statement2 = s2, ag2 = a2, pers3 = p3, statement3 = s3, ag3 = a3, pers4 = p4, statement4 = s4, ag4 = a4, corrS = cS, corrE = cE, corrL = cL)
+
+
+    def trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4):
+        renpy.show("debatescroll")
+        renpy.show("debateui")
+        renpy.with_statement(Dissolve(1.0))
+        renpy.pause(1.0)
+
+        renpy.show(p1+"face", at_list=[Position(xalign = 0.06, ypos = 298)], tag = "p1")
+        renpy.show("s1", at_list=[Position(xpos=0.375, xanchor=0, ypos=190, yanchor=0)], what = Text(s1, xmaximum = 750))
+        renpy.with_statement(moveinbottom)
+        renpy.pause(t1, hard = True)
+
+        renpy.show(p2+"face", at_list=[Position(xalign = 0.06, ypos = 425)], tag = "p2")
+        renpy.show("s2", at_list=[Position(xpos=0.375, xanchor=0, ypos=317, yanchor=0)], what = Text(s2, xmaximum = 750))
+        renpy.with_statement(moveinbottom)
+        renpy.pause(t2, hard = True)
+
+        renpy.show(p3+"face", at_list=[Position(xalign = 0.06, ypos = 552)], tag = "p3")
+        renpy.show("s3", at_list=[Position(xpos=0.375, xanchor=0, ypos=444, yanchor=0)], what = Text(s3, xmaximum = 750))
+        renpy.with_statement(moveinbottom)
+        renpy.pause(t3, hard = True)
+
+        renpy.show(p4+"face", at_list=[Position(xalign = 0.06, ypos = 679)], tag = "p4")
+        renpy.show("s4", at_list=[Position(xpos=0.375, xanchor=0, ypos=571, yanchor=0)], what = Text(s4, xmaximum = 750))
+        renpy.with_statement(moveinbottom)
+        renpy.pause(t4, hard = True)
+
+        renpy.show("makeyourcase")
+        renpy.with_statement(Dissolve(1.0))
+        renpy.pause(1.0, hard = True)
+
+
 screen chooseChar(ans, correctLabel, midText):
     add "debatescroll" at cczoom
     imagemap:

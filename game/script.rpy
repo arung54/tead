@@ -71,6 +71,7 @@ init python:
     config.debug_sound = True
     renpy.music.register_channel("sfx", loop = False)
     config.menu_include_disabled = True
+    config.layers = [ 'background', 'master', 'transient', 'screens', 'overlay', '1', '2', '3', '4' ]
 
 ##############
 #Voice Defines
@@ -200,12 +201,6 @@ init python:
             renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
             y += 50
 
-    def trialAnimation(pers1, s1, pers2, s2, pers3, s3, pers4, s4):
-        renpy.show("debatescroll")
-        renpy.show("debateui")
-        renpy.with_statement(Dissolve(0.2))
-        renpy.show(pers1+"face.png", at_list=[Position(yalign = 0.1)])
-
 ##################
 #Character Defines
 ##################
@@ -271,11 +266,11 @@ label start:
 #Start jump
 ###########
 
-    # call screen trainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1,
-    # "sid", "Statement {color=#f55}1{/color}", -1,
-    # "sid", "Statement 3", 0,
-    # "sid", "Statement {color=#55f}1{/color}", -1,
-    # 3, 0, "postFT0")
+    python:
+        startTrainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1, 1.0,
+        "sid", "Statement {color=#f55}1{/color}", -1, 1.0,
+        "sid", "Statement 3", 0, 1.0,
+        "sid", "Statement {color=#55f}1{/color}", -1, 1.0,
+         3, 0, "postFT0")
     #call screen chooseChar("dan", "postFT0")
     #$ftecounter = 6
-    jump trial1a

@@ -1743,7 +1743,7 @@ label trial1a:
     j "I'd like to say that we can vouch for where Bert was too, but..."
     b "No, you can't. For all you know I could have been anywhere, and just came back."
     j "...Yeah."
-    b "So Jenny and Freddy should be cleared with alibis. 
+    b "So Jenny and Freddy should be cleared with alibis."
 
 
     bi "Wait..."
