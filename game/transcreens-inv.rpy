@@ -111,7 +111,7 @@ screen trainEvidence():
 
         if currEvidence == 5:
             image "catherineaccount1" xcenter 800 yalign 0.1
-            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 330
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. It was dark, and the scream scared her, so she didn't keep moving." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
             image "ringev" xcenter 800 yalign 0.1
@@ -456,9 +456,9 @@ label traincatherine:
     b "Catherine, when the lights went out, did you keep walking to the back car?"
     b "I distinctly remember you on your way to say goodnight to Sid and Dan."
     c "No, I stayed in this car. In fact, I held onto the doorknob to the back car the whole time the lights were out."
-    c "I was scared of getting lost if I kept moving, so I clung to the doorknob and waited it out."
+    c "I was scared of getting lost, and scared from the scream, so I clung to the doorknob and waited it out."
     b "So you would know if somebody went to the back car while the lights were out?"
-    c "Nobody did, there's no way they could have. The door stayed closed the whole time, I swear to it."
+    c "Nobody did, there's no way they could have."
     ses "Me-ow!"
     b "Hmmm, I see. Thanks Catherine."
     show newevidencefound with dissolve

@@ -187,7 +187,6 @@ label trainGo:
     t "Great point Lauren, the whiskey could be hiding anywhere."
     t "I'll check behind the bar."
 
-
     hide stella ind with moveoutright
     show bert sad with dissolve
     b "..."
@@ -361,6 +360,22 @@ label midcar2:
         xcenter .25
         linear 0.3 xcenter .5
     s "I can already tell she's going to get on my nerves."
+    s "Anyway, it's interesting how smooth of a ride this is."
+    s "This train car looks like it's from the 60s, but it's the smoothest train I've ever been on."
+    n "You do have a point... maybe it's a very modern car, just decorated like this?"
+    play sfx "audio/beep.mp3" volume .3
+    show text "Attention!" with moveintop:
+        ycenter .1
+    pause 1
+    hide text
+    play sfx "audio/beep.mp3" volume .3
+    show text "Stand Clear of the Closing Doors!" with moveintop:
+        ycenter .1
+    pause 1
+    hide text with dissolve
+    s "...What was that about?"
+    n "It sounded like a PA system? It must be a pre-recorded message or something."
+    s "There aren't even exit doors in this car..."
     s "Oh, the others are back."
     hide sam
     blank "The front train car door opened, and Shahar, Jenny, Sid, and Catherine walked in."
@@ -385,6 +400,12 @@ label midcar2:
         linear 0.3 xcenter .75
     show drac ind:
         xcenter .25
+    d "What was that peculiar alert we just heard?"
+    j "What do you mean?"
+    n "The train just told us to stand clear of the closing doors."
+    j "Oh! That must be what that button does!"
+    n "..."
+    d "Regardless."
     d "I cannot say I was particularly impressed by the back car."
     blank "Dracula spent a few minutes explaining the back car to everyone else."
     hide jenny happy with moveoutright
@@ -570,7 +591,7 @@ label frontcar2:
     j "You punk. We're stuck in here together, you know?"
     j "It wouldn't kill you to be cooperative."
     hide jenny ind with moveoutright
-    blank "How can I cooperate after what that screen told us..."
+    ni "How can I cooperate after what that screen told us..."
     show sam with moveinleft:
         xcenter .25
     s "In any case..."
@@ -647,6 +668,7 @@ label frontcar2:
         xcenter .25
     d "Interesting. It seems this car {i}does{/i} control the rest of the train."
     b "Yeah. I think the 3 light switches correspond to the 3 train cars."
+    b "Plus, there's this little button that must be for the PA system that Jenny mentioned."
     blank "Bert flipped the first switch back."
     play sfx "audio/butt.mp3"
     show bg trainfront1
@@ -1437,32 +1459,34 @@ label midcar6:
     show bg notrainfront
     $ showchibi("bert", "catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
     show lauren ind with moveinleft
-    o "What the hell was that about?"
+    o "What's going on?"
     show lauren ind:
         linear .3 xcenter .75
     show sam with moveinleft:
         xcenter .25
-    s "We heard Jenny scream, are you okay?"
+    s "Did your car go dark too?"
     hide lauren ind with moveoutright
     show jenny ind with moveinright:
         xcenter .75
-    j "Huh? You heard ME scream?"
-    s "I mean, at least we thought so."
-    j "We heard someone scream in the bar car, it sounded like it came from up here."
-    s "Oh. Well everyone's okay up here."
-    s "We were a light shook when all the lights cut, but we're fine."
+    j "What about that scream?"
+    j "Who was that?"
+    s "Scream? What do you mean?"
     hide sam with moveoutleft
     show kaiser ind with moveinleft:
         xcenter .25
-    k "Yes, the computer screens stayed on and gave us some light."
+    k "We didn't hear anything like that up here."
+    b "Really? I could have sworn it came from the front car..."
+    j "Maybe it was just one of us in the bar car when it got dark."
+    j "Speaking of which, you said it got dark in this car too?"
+    k "Yes, almost like an eclipse. But the computer screens stayed on and gave us some light."
     b "Well that's good."
     b "..."
     b "Oh no."
     j "What's wrong?"
     b "Where's Sid? And Dan?"
     b "They were in the back car, but surely they'd be here by now."
-    k "Perhaps they are asleep, and didn't hear whoever it was that screamed."
-    b "But... that other noise."
+    k "Perhaps they are asleep?"
+    b "But... that noise. They would have heard it for sure."
     hide kaiser ind with moveoutleft
     show shahar ind with moveinleft:
         xcenter .25
@@ -1571,7 +1595,7 @@ label midcar6:
         linear .3 xcenter .75
     show kaiser ind with moveinleft:
         xcenter .25
-    k "Oh please. As if Sid would even speak to you."
+    k "Oh please. As if Sid would even speak to you after that outburst a second ago."
     s "..."
     k "It is fine. There will be more time to investigate and discuss."
     b "Yeah! We have to start somewhere."
@@ -1614,7 +1638,7 @@ label midcar6:
     i "I paniced for a moment, and yelled out for Dan, and then..."
     i "The next thing I saw was this."
     j "Jeez..."
-    b "Did he... say anything?"
+    b "Did he... yell? Or say anything?"
     b "Before he couldn't anymore."
     bi "This is incredibly uncomfortable..."
     i "Well... I thought I heard him say my name, with a faint breath."
@@ -1741,36 +1765,82 @@ label trial1a:
     b "Yeah, it is true. They definitely came up to me together before it all happened."
     b "I don't think they had even moved a foot once I could see them again."
     j "I'd like to say that we can vouch for where Bert was too, but..."
-    b "No, you can't. For all you know I could have been anywhere, and just came back."
+    b "No, you can't. For all you know I could have been anywhere, and just went back to the same spot."
     j "...Yeah."
     b "So Jenny and Freddy should be cleared with alibis."
+<<<<<<< Updated upstream
 
 
     bi "Wait..."
     hide sam
     hide catherine ind
+=======
+    b "As well as Lauren, Kaiser, Sam, and Shahar."
+    hide frog ind
+    hide jenny ind
+>>>>>>> Stashed changes
     with dissolve
-    show scary with dissolve:
-        alpha .5
-    extend " is that true?"
-    bi "I think someone could have been here, actually."
-    bi "That person is..."
-    window hide
-
-    #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    scene black
-    show debatescroll with dissolve:
-        zoom .75
-    show lineup
-    b "The rest of us were together, so the only person who could have been in here was Sid."
-    hide catherine ind with moveoutright
+    show catherine happy with moveinleft:
+        xcenter .25
+    c "Sesame was my alibi!"
+    ses "Mrewew!"
     show sid ind with moveinright:
         xcenter .75
-    i "And I didn't, I swear!"
-    i "Once I woke up and saw what happened, I was... stunned."
-    s "Yeah, likely story. Punk."
+    i "Does that count?"
+    b "Not exactly... "
+    show catherine ind
+    i "So it could have been Catherine?"
+    i "She could have snuck into the back car and done it!"
+    i "I told you it wasn't me!"
+    hide catherine ind with moveoutleft
+    show stella ind with moveinleft:
+        xcenter .25
+    b "Wait, slow down!"
+    call screen trainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place.{color=#55f}{/color}", 0,
+    "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
+    "sid", "Sid: I told you it {color=#55f}wasn't me{/color}!", 1,
+    "stella",  "Stella: It would also explain that perky attitude of hers... it's just a diversion.", 0,
+    1, 5, "trial1b")
 
-    #stella holding onto dracula
+label trial1b:
+    scene bg notrainmid
+    show bert happy with moveinleft
+    b "Yeah, that's it!"
+    hide bert happy with moveoutright
+    show stella ind:
+        xcenter .25
+    show sid ind:
+        xcenter .75
+    with dissolve
+    b "Hey! Catherine couldn't have left the bar car."
+    b "She knew about the scream!"
+    t "Hmmm... and neither Sid nor those in the front car heard the scream..."
+    t "So if she left the bar car, how could she have known?"
+    b "Exactly!"
+    b "We can't prove exactly what she was doing, but it seems pretty clear she didn't leave this car."
+    i "I-I... agree. I guess."
+    i "I just don't want to be the only suspect..."
+    i "I r-really didn't do it."
+    hide sid ind with moveoutright
+    hide stella ind with moveoutleft
+    with dissolve
+    show lauren ind with dissolve
+    o "Well... If anything, that just made it seem even more like Sid did it."
+    o "It's hard to come to terms with that though, he is just a kid..."
+    o "Maybe we should pivot toward a different topic."
+    b "Yeah, there's a lot to talk about."
+    show lauren ind:
+        linear .3 xcenter .75
+    show jenny ind with moveinleft:
+        xcenter .25
 
-    b "Let's start with where everyone was."
-    b "Who can vouch, with full certainty, that they knew where someone else was?"
+
+
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+
+###R
