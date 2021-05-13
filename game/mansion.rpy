@@ -275,7 +275,7 @@ label mansionGo:
     b "Before deciding who sleeps where, do we know what the other living arrangements are?"
     d "There are four bedrooms upstairs."
     b "So enough for everyone to sleep on a bed, if people are willing to share."
-    d "Unfortunately, the above bedrooms only have beds to fit one."
+    d "Unfortunately, the above bedrooms only have beds that fit one."
     d "So as before, some of us will have to sleep elsewhere."
     d "Fortunately the couches in the living room seem rather comfy."
     b "Okay, I think in thirty minutes or so we should meet up and decide this."
@@ -291,8 +291,8 @@ label mansionGo:
     s "Yeah, what the vampire said."
     b "Oh, yeah, of course..."
     d "And maybe you'd like to give us some privacy so we may continue speaking?"
-    d "Continue going on your little date around the house, it'll be more fun than us."
-    bi "Is everyone going to keep bringing this up? It's getting annoying."
+    d "Continue going on your little adventure around the house, it'll be more fun than us."
+    bi "I left, a little bit annoyed by the whole conversation."
     hide sam
     hide drac
     with dissolve
@@ -315,7 +315,7 @@ label mansionGo:
     s "{i}Scrichhhh{/i}"
     b "Sesame can scratch her way out of here for us!"
     c "What? Don't be silly."
-    c "There's also some simple tools, and a stepstool."
+    c "There's also some simple tools, like a drill, a level, a hammer, a screwdriver, and a stepstool."
     c "We could use these to repair anything that breaks maybe?"
     c "Not sure if anyone here's much of handyman though."
     show catherine happy:
@@ -462,3 +462,141 @@ label mansionGo:
     b "Last time there was a closet that was locked, it wasn't good news."
     j "Nothing we can do about it besides keep an eye on it though."
     b "Yeah, guess not."
+    b "In that case, let's check out some of the bedrooms."
+    b "We are about to have a meeting about them..."
+    j "Sounds good."
+    scene black
+    scene bg mansionbedroom with fade
+    $showchibi("jenny", "freddy", "lauren")
+    show lauren ind with dissolve
+    l "Oh, hey guys."
+    l "I thought bouncing on a bed might get Freddy's mind off things."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show frog ind with moveinbottom:
+        xcenter .75
+        ycenter .8
+    show frog ind:
+        xcenter .75
+        ycenter .8
+        linear .15 ycenter .2
+    show frog ind:
+        xcenter .75
+        ycenter .2
+        linear .15 ycenter .8
+    show frog ind:
+        xcenter .75
+        ycenter .8
+        linear .15 ycenter .2
+    show frog ind:
+        xcenter .75
+        ycenter .2
+        linear .15 ycenter .5
+    f "It's fun!"
+    l "It's probably not what he's used to in terms of fun but... it's something."
+    l "Hey Freddy, how high do you think you can go?"
+    b "By the way, we're meeting soon in the living room to discuss who gets to sleep where."
+    b "We can bring you down with us when it's time to start."
+    l "Got it."
+    b "Do you mind if we look around here?"
+    l "Sure, don't mind us."
+    hide lauren
+    hide jenny
+    with dissolve
+    show jenny ind with dissolve
+    j "Huh. Looks like they weren't lying about having only small beds upstairs."
+    b "Yeah, it's very weird for how luxurious the house is otherwise."
+    b "The room isn't particularly well furnished either."
+    b "Normally there'd be a dresser or something like that in here."
+    j "Hm... maybe the mastermind is trying to minimize how many spots things can be hidden in?"
+    j "After all, searching four fully furnished bedrooms sounds like a chore."
+    b "That'd be awfully considerate for someone who, you know, wants most of us dead."
+    j "That's true. But if they wanted us dead, why not just kill us instead of making us play this game?"
+    b "I wish I knew."
+    b "Not sure if it's worth dwelling on anyway, unless we think we can get to the right answer."
+    j "If you say so."
+    b "I'm assuming all the bedrooms upstairs look like this, so I think we just need to look at the bathroom."
+    b "We're about to have that meeting anyway."
+    j "Um... you mind checking that out without me?"
+    b "Huh?"
+    j "I... don't want Stella to see us walking in there together."
+    b "That's... unfortunately very fair."
+    j "I'll just keep Freddy and Lauren company, so no need to worry about shady business from me."
+    b "Sounds good."
+    bi "I headed to the bathroom by myself."
+    scene black with fade
+    scene bg mansionbr with fade
+    b "So uh..."
+    b "Guess this is the bathroom."
+    bi "...who am I talking to?"
+    bi "It's just me in here."
+    bi "This is the nicest bathroom I've been in, I think."
+    bi "Even some of the hotel bathrooms I've been in weren't quite this nice."
+    bi "There's so much space, the largest bathroom mirror I've ever seen."
+    bi "More drawers than I can even think of a use for..."
+    bi "...well, I guess I'm done admiring this bathroom."
+    bi "I'll grab Jenny, Lauren, and Freddy and head downstairs, I guess."
+    scene black with fade
+    scene bg mansiondining with fade
+    $showchibi("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
+    show sam with dissolve
+    s "So Bert, you called this meeting, right?"
+    b "Yeah, mostly to discuss the sleeping arrangements, though Catherine might have an announcement too?"
+    show sam:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show catherine happy with moveinright:
+        xcenter .75
+    c "Yessir! But I'll wait until you're done Bert."
+    b "Alright. So there's four bedrooms upstairs, each with a twin bed, and then the master bedroom has a bigger bed."
+    b "So six of us can sleep pretty easily."
+    hide sam with moveoutleft
+    show lauren ind with moveineftl:
+        xcenter .25
+    l "For what it's worth, Freddy can probably fit in a twin bed with someone, if both Freddy and that person don't mind."
+    l "Freddy, that sound okay to you?"
+    hide catherine with moveoutright
+    show frog ind with moveinright:
+        xcenter .75
+    f "Yeah, okay with me!"
+    f "Can Lauren be the person I share a bed with?"
+    l "Never thought you'd ask."
+    bi "I could've guessed that..."
+    b "Okay, so three of us need to stay somewhere that isn't a bedroom."
+    b "And two people can probably share the master bedroom."
+    hide frog with moveoutright
+    show stella happy with moveinright:
+        xcenter .75
+    t "Any young guys want to share the master bedroom with me?"
+    t "I think we'd make the best use of it, if you catch my drift."
+    t "Plus a house like this probably has soundproofing."
+    l "Your libido isn't a valid reason to give you that room."
+    show stella ind:
+        xcenter .75
+    t "Fine, the lovebirds should have it then?"
+    l "Who?"
+    b "You better not mean me and Jenny."
+    b "Just because you're drunk doesn't mean it's any less callous to matchmake people in the middle of a life-or-death scenario."
+    t "..."
+    t "You're all such killjoys, I remember why I work long hours now."
+    t "At least when I'm on the clock people have to respect my whims and fancies."
+    t "Fine, if I can't have the master bedroom, I'll take the living room."
+    t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night."
+    b "I... okay, fine."
+    b "I'll volunteer too, since I'm the one organizing this meeting."
+    l "You sure you can handle Stella?"
+    b "Can't be worse than anything I had to deal with in college."
+    b "Okay, that leaves one more."
+    b "Any volunteers?"
+    hide stella
+    hide lauren
+    with dissolve
+    show jenny ind with dissolve
+    bi "I hoped Jenny would volunteer."
+    bi "It seemed like we were closer now, it would be fun to talk to her more."
+    bi "Just as I thought she was opening her mouth..."
+    hide jenny
+    show shahar
+    h "Arr, I'll do it!"
+    h "Stella's got a point, the living room's right next to the kitchen and the kitchen has drinks!"

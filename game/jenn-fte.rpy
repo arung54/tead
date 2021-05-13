@@ -149,7 +149,7 @@ label jennHang:
         j "Seems like a lot of effort to set up this game that requires all these additional resources."
         n "I've been thinking about this a bit... maybe this game is meant to be torture."
         j "Oh?"
-        n "Fates worse than death... a game where innocent people have to kill each other might one of them."
+        n "Fates worse than death... a game where {i}innocent{/i} people have to kill each other might one of them."
         ni "...did I pull off that lie convincingly enough?"
         j "But then why would they put their lives on the line?"
         ni "Seems like I did."

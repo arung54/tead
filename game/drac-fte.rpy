@@ -115,7 +115,7 @@ label dracHang:
         d "But if you are, I don't think conversations like this are making progress in any meaningful way."
         d "I will not be taking further questions on this line of thought."
         n "...got it."
-        n "So uh... got any hobbies."
+        n "So uh... got any hobbies?"
         d "Maybe I should rephrase. I will take no further questions about myself and my life."
         n "What am I supposed to talk to you about then?"
         d "Let's brainstorm escape plans. That seems to be the most prudent use of time."
