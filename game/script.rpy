@@ -12,8 +12,7 @@
 #    image ochibi = Image("laurenchibi.png", zoom=1.5)
 
 
-# pa system demo
-#
+# scream ONLY heard in mid car
 
 
 image splash = "tead.png"
@@ -266,11 +265,21 @@ label start:
 #Start jump
 ###########
 
+<<<<<<< Updated upstream
     python:
         startTrainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1, 1.0,
         "sid", "Statement {color=#f55}1{/color}", -1, 1.0,
         "sid", "Statement 3", 0, 1.0,
         "sid", "Statement {color=#55f}1{/color}", -1, 1.0,
          3, 0, "postFT0")
+=======
+
+    #call screen trainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1,
+    #"sid", "Statement {color=#f55}1{/color}", -1,
+    #"sid", "Statement 3", 0,
+    #"sid", "Statement {color=#55f}1{/color}", -1,
+    #3, 0, "postFT0")
+
+>>>>>>> Stashed changes
     #call screen chooseChar("dan", "postFT0")
     #$ftecounter = 6
