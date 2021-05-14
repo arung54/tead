@@ -3,16 +3,18 @@ init:
         zoom 0.7
     transform cczoom:
         zoom 0.75
+    $ shatter = ImageDissolve("shatter.png", 1.0, 8)
+    $ shot = ImageDissolve("shot.png", 1.0, 8)
 
 init python:
     def startTrainTrial(p1, s1, a1, p2, s2, a2, p3, s3, a3, p4, s4, a4, cS, cE, cL):
         startTrainTrialTimes(p1, s1, a1, 1.0, p2, s2, a2, 1.0, p3, s3, a3, 1.0, p4, s4, a4, 1.0, cS, cE, cL)
 
     def startTrainTrialTimes(p1, s1, a1, t1, p2, s2, a2, t2, p3, s3, a3, t3, p4, s4, a4, t4, cS, cE, cL):
+        renpy.music.play("audio/invest1.wav")
         trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4)
         renpy.transition(Dissolve(1.0))
         renpy.call_screen("trainTrial", pers1 = p1, statement1 = s1, ag1 = a1, pers2 = p2, statement2 = s2, ag2 = a2, pers3 = p3, statement3 = s3, ag3 = a3, pers4 = p4, statement4 = s4, ag4 = a4, corrS = cS, corrE = cE, corrL = cL)
-
 
     def trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4):
         renpy.show("debatescroll")
@@ -215,7 +217,7 @@ screen trainEvidenceTrial(s, e, l):
                 idle "usethis.png"
                 xalign 0.66
                 yalign 0.9
-                action [Hide("trainEvidenceTrial"), Hide("trainTrial") ,Jump(l)]
+                action [Hide("trainTrial"), Hide("trainEvidenceTrial", transition=shatter), Jump(l)]
         else:
             imagebutton:
                 idle "usethis.png"
@@ -253,7 +255,7 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
-                action [Hide("trainTrial") ,Jump(l)]
+                action [Hide("trainTrial", transition=shatter), Jump(l)]
         else:
             imagebutton:
                 idle "agree.png"
@@ -284,3 +286,4 @@ screen tryAgain:
     imagemap:
         ground "tryagain.png"
         hotspot(0, 0, 1279, 719) action [Hide("tryAgain", transition=Dissolve(0.2))]
+    on "show" action renpy.music.play("audio/wrong.wav", channel="sfx", relative_volume = 0.2)

@@ -561,6 +561,8 @@ label mansionGo:
         xcenter .75
     f "Yeah, okay with me!"
     f "Can Lauren be the person I share a bed with?"
+    show lauren happy:
+        xcenter .25
     l "Never thought you'd ask."
     bi "I could've guessed that..."
     b "Okay, so three of us need to stay somewhere that isn't a bedroom."
@@ -597,6 +599,34 @@ label mansionGo:
     bi "It seemed like we were closer now, it would be fun to talk to her more."
     bi "Just as I thought she was opening her mouth..."
     hide jenny
-    show shahar
+    show shahar ind
     h "Arr, I'll do it!"
     h "Stella's got a point, the living room's right next to the kitchen and the kitchen has drinks!"
+    bi "...guess I'm sleeping with the drunkards."
+    show shahar happy:
+        xcenter .5
+        linear .15 xcenter .75
+    show stella with moveinleft:
+        xcenter .25
+    t "Sleeping with two cute drunk boys? Hell yes, who needs a master bedroom?"
+    b "{i}Two{/i} drunk boys?"
+    t "You think we're gonna let you get away without drinking with us?"
+    bi "...hopefully one of the couches will only fit me."
+    b "Anyway, we also need to decide who goes in the master bedroom."
+    hide stella
+    hide shahar
+    with dissolve
+    show catherine happy
+    c "Oh, I had an idea about that!"
+    c "Sid, you seemed really excited to be in a nice house."
+    show catherine happy:
+        xcenter .5
+        linear .15 xcenter .25
+    show sid ind with moveinright:
+        xcenter .75
+    s "Oh... yeah, my family isn't that well off so... this is the nicest building I've ever been in."
+    c "I say we give Sid a treat and let him take the master bedroom!"
+    b "That's a really kind idea, Catherine."
+    show sid happy:
+        xcenter .75
+    s "You... you're all okay with that?"
