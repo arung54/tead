@@ -262,9 +262,10 @@ label start:
         windowcount = 0
 
 ###########
-#Start jump
+jump trial1b
 ###########
 
+<<<<<<< Updated upstream
     python:
         startTrainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1, 1.0,
         "sid", "Statement {color=#f55}1{/color}", -1, 1.0,
@@ -279,3 +280,11 @@ label start:
     #3, 0, "postFT0")
     #call screen chooseChar("dan", "postFT0")
     #$ftecounter = 6
+=======
+#    python:
+#        startTrainTrial("sid", "This is phase 1 {color=#55f}{/color}", 1, 1.0,
+#        "sid", "Statement {color=#f55}1{/color}", -1, 1.0,
+#        "sid", "Statement 3", 0, 1.0,
+#        "sid", "Statement {color=#55f}1{/color}", -1, 1.0,
+#         3, 0, "postFT0")
+>>>>>>> Stashed changes

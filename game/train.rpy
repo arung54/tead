@@ -1484,9 +1484,10 @@ label midcar6:
     b "Oh no."
     j "What's wrong?"
     b "Where's Sid? And Dan?"
-    b "They were in the back car, but surely they'd be here by now."
-    k "Perhaps they are asleep?"
-    b "But... that noise. They would have heard it for sure."
+    b "Maybe we were wrong and the scream came from their car..."
+    b "Plus, they were in the back car, but surely they'd be here by now."
+    k "Perhaps they are asleep? Slept through the whole event."
+    b "Even then... that noise. They would have heard it for sure."
     hide kaiser ind with moveoutleft
     show shahar ind with moveinleft:
         xcenter .25
@@ -1768,17 +1769,9 @@ label trial1a:
     b "No, you can't. For all you know I could have been anywhere, and just went back to the same spot."
     j "...Yeah."
     b "So Jenny and Freddy should be cleared with alibis."
-<<<<<<< Updated upstream
-
-
-    bi "Wait..."
-    hide sam
-    hide catherine ind
-=======
     b "As well as Lauren, Kaiser, Sam, and Shahar."
     hide frog ind
     hide jenny ind
->>>>>>> Stashed changes
     with dissolve
     show catherine happy with moveinleft:
         xcenter .25
@@ -1833,6 +1826,26 @@ label trial1b:
         linear .3 xcenter .75
     show jenny ind with moveinleft:
         xcenter .25
+    j "Yeah. Let's talk about the uh, stabby stick."
+    o "The stabby stick?"
+    j "The murder pole! Whatever we're calling it."
+    b "The murder weapon?"
+    j "Yeah, what is that thing? And where did it come from?"
+    b "It seems to be a pretty ordinary metal pole with a sharp end to it."
+    b "I don't know what it's doing on the train though."
+    o "And Jenny made a good point - where did it come from?"
+    o "I thought we had all searched the train, at least a little bit."
+    o "Does anybody remember seeing it?"
+    hide lauren ind
+    hide jenny ind
+    with dissolve
+    blank "Nobody spoke up."
+    show scary with dissolve:
+        alpha .5
+    bi "Nobody saw it?"
+    bi "Unfortunately, that can't be true."
+    bi "Someone here used it to kill Dan. Where was it hiding?"
+    bi "I thought I had checked everywhere... but maybe there is one place I hadn't looked."
 
 
 
