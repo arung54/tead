@@ -61,7 +61,7 @@ init python:
 
 screen shattered(lab):
     add "shot.png"
-    timer 2.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial")]
+    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial")]
     on "show" action renpy.music.play("audio/shatter.mp3", channel="sfx")
 
 screen iGotIt(l):
