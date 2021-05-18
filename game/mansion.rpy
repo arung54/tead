@@ -346,7 +346,7 @@ label mansionGo:
     c "Send it at me!"
     i "I... I've only lived in my parents' cramped apartment."
     i "Sustaining ourselves off budget meals."
-    i "while we're here, before someone dies, I... thought it'd be nice if we had a fancy dinner party."
+    i "While we're here, before someone dies, I... thought it'd be nice if we had a fancy dinner party."
     c "Aww, Sid... that's such a cute idea!"
     c "Yes, let's do it!"
     c "Unfortunately I probably need at least a day to prepare, so it would have to be tomorrow evening."
@@ -568,14 +568,12 @@ label mansionGo:
     b "Okay, so three of us need to stay somewhere that isn't a bedroom."
     b "And two people can probably share the master bedroom."
     hide frog with moveoutright
-    show stella happy with moveinright:
+    show stella drunk with moveinright:
         xcenter .75
     t "Any young guys want to share the master bedroom with me?"
     t "I think we'd make the best use of it, if you catch my drift."
     t "Plus a house like this probably has soundproofing."
     l "Your libido isn't a valid reason to give you that room."
-    show stella ind:
-        xcenter .75
     t "Fine, the lovebirds should have it then?"
     l "Who?"
     b "You better not mean me and Jenny."
@@ -606,7 +604,7 @@ label mansionGo:
     show shahar happy:
         xcenter .5
         linear .15 xcenter .75
-    show stella with moveinleft:
+    show stella drunk with moveinleft:
         xcenter .25
     t "Sleeping with two cute drunk boys? Hell yes, who needs a master bedroom?"
     b "{i}Two{/i} drunk boys?"
@@ -624,9 +622,201 @@ label mansionGo:
         linear .15 xcenter .25
     show sid ind with moveinright:
         xcenter .75
-    s "Oh... yeah, my family isn't that well off so... this is the nicest building I've ever been in."
+    i "Oh... yeah, my family isn't that well off so... this is the nicest building I've ever been in."
     c "I say we give Sid a treat and let him take the master bedroom!"
+    c "He should get to know what a bougie life is like."
     b "That's a really kind idea, Catherine."
     show sid happy:
         xcenter .75
-    s "You... you're all okay with that?"
+    i "You... you're all okay with that?"
+    hide catherine with moveoutleft
+    show sam with moveinleft:
+        xcenter .25
+    s "Wait, are we really going to trust what Sid says at face value?"
+    s "He could just be lying about being poor so we're nicer to him."
+    show sid ind:
+        xcenter .75
+    i "Wh-why would I lie?"
+    s "You do remember the part where we're all criminals, right?"
+    s "Everyone here has a reason to lie."
+    i "..."
+    hide sid with moveoutright
+    show catherine ind with moveinright:
+        xcenter .75
+    c "Sam, do you have a better suggestion?"
+    s "Yeah, I was-"
+    c "That doesn't involve you getting the master bedroom."
+    s "..."
+    bi "Catherine got closer to Sam and whispered, just barely loud enough for me to hear."
+    c "Do we need to bring up the fact that Sid got close to Dan before he died?"
+    s "No..."
+    hide sam with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    c "Room's all yours Sid."
+    c "Well, yours and one other person's."
+    show sid happy:
+        xcenter .25
+    i "Thanks Catherine!"
+    i "Uh... Dracula, do you want to share the room with me?"
+    i "If that's okay with everyone else."
+    hide catherine with moveoutright
+    show drac ind with moveinright:
+        xcenter .75
+    d "I'm not opposed, but do you mind explaining why me?"
+    i "Well, I don't like Sam so that's not an option."
+    i "Also, I don't think I can ask a girl to share a room with me."
+    i "And then Shahar and Bert are already sleeping in the living room."
+    i "So you're pretty much the only option I have."
+    bi "Well, I wouldn't mind switching..."
+    bi "Not that anyone would be down to take my spot."
+    d "Reasonable enough for me."
+    b "Alright, so Sam, Jenny, and Catherine get their own rooms upstairs."
+    hide drac
+    hide sid
+    with dissolve
+    show catherine happy with dissolve
+    c "My own room? Don't forget Sesame!"
+    ses "Sssss."
+    b "Right, Catherine and Sesame get a room."
+    b "Guess we've figured that out. Catherine, do you want to tell them about your announcement?"
+    c "Yes!"
+    c "So I was thinking tomorrow evening we could have a dinner party!"
+    c "It would be a shame to not make good use of all the food in the kitchen."
+    c "Plus I'm sure we could all use a mood lifter."
+    c "I can do most of the cooking, but if anyone has anything to contribute they can feel free!"
+    show catherine happy:
+        xcenter .5
+        linear .15 xcenter .75
+    show stella drunk with moveinleft:
+        xcenter .25
+    t "Is drinking allowed at this party?"
+    show catherine ind:
+        xcenter .75
+    c "...I guess so, it is a party."
+    hide catherine with moveoutright
+    show lauren ind with moveinright:
+        xcenter .75
+    l "Don't overdo it."
+    t "Girly, I've never drank too much in my life."
+    t "I have a liver of iron."
+    l "...Please just don't overdo it."
+    l "There are still children here."
+    t "I'm sure Freddy's parents have gotten drunk around him before."
+    l "That doesn't make it any more okay for you to do it."
+    l "As is I'm not very okay with you and Shahar forcing Bert to deal with your debauchery."
+    hide stella with moveoutleft
+    show sam with moveinleft:
+        xcenter .25
+    s "In her defense, the point of the party is to lift our moods, right?"
+    s "A little bit of drinking isn't going to do any damage."
+    s "I might drink a bit myself."
+    l "...Are you even old enough to drink?"
+    s "Again, did you forget the part where we're all criminals?"
+    l "...Fine."
+    s "So, that concludes the meeting, right?"
+    b "I guess so."
+    b "Uh... yeah, everyone's free to go."
+    hide lauren
+    hide sam
+    with dissolve
+    show drac ind with dissolve
+    d "If I may, while everyone's here."
+    d "Earlier, we had discussed sharing our crimes and there were some negative reactions."
+    d "Chances are even if people did share, they might lie about it."
+    d "But to build trust and provide us with information, I still think it would be prudent to share."
+    d "Maybe not with the whole group, but in private with someone you trust."
+    d "Sam and I have already done this, it would be nice to see others follow our initiative."
+    bi "Is that what they were discussing earlier?"
+    d "Some close pairs seem to have already formed anyway."
+    bi "...that is true."
+    bi "Lauren and Freddy are definitely very close now."
+    bi "And... there's me and Jenny, though I don't know how close we are."
+    bi "I guess everyone is desperate for someone they can trust in an environment like this."
+    bi "Even if that person could be the mastermind, even the illusion of trust is very comforting."
+    d "I will not bother trying to enforce this request, since I do not expect everyone to be fully cooperative."
+    d "That is all."
+    hide drac with dissolve
+    show shahar ind with dissolve
+    h "Is that all the business yer gonna jabber about?"
+    h "On the sea we don't have meetings, we just sail with the flow."
+    h "I fell asleep fer most of that discussion to be honest."
+    b "...you fell asleep?"
+    h "Aye! If I can sleep on a stormy sea I can sleep through anything."
+    h "Plus, I'm loaded with rum and whiskey."
+    bi "...I hope that doesn't stop him from sleeping tonight."
+    b "Yeah, if no one else has anything to bring up everyone can go."
+    hide shahar with dissolve
+    bi "Everyone except Catherine and Freddy slowly left."
+    $showchibi("catherine", "freddy")
+    show frog ind with dissolve:
+        xcenter .25
+    show catherine happy with dissolve:
+        xcenter .75
+    f "Uh... Catherine? Can I play with Sesame again?"
+    c "Sure!"
+    c "In fact, do you mind taking care of Sesame while I check out the kitchen?"
+    c "Sesame will eat pretty much anything left out, and there's... stuff in there cats shouldn't eat or drink."
+    f "Yeah!"
+    bi "Catherine turned and whispered to me."
+    c "Alcohol can kill cats in small doses, and I expect Shahar and Stella might have left an open bottle around."
+    bi "With that dark comment, she went to the kitchen."
+    hide catherine with dissolve
+    $showchibi("freddy")
+    bi "Seems like there's still some time before we're going to sleep."
+    bi "Guess I should find someone to talk to."
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    tut "Since you are now playing as Bert, the number of times you've talked to each participant has been reset."
+    #FT2 to be inserted here.
+label postFT2:
+    scene bg mansiondining with fade
+    $showchibi("catherine", "dracula", "freddy", "shahar", "sid", "stella")
+    bi "Well, guess it's time to sleep."
+    bi "Or at least, try to."
+    show frog happy with dissolve:
+        xcenter .25
+    show catherine happy with dissolve:
+        xcenter .75
+    c "Sorry Freddy, I think I'm gonna take Sesame up to bed now."
+    show frog ind:
+        xcenter .25
+    f "Oh, okay..."
+    c "You can play tomorrow though! And if you fall asleep quickly then tomorrow will be here soon!"
+    f "Y-yeah, let's go upstairs."
+    hide frog
+    hide catherine
+    with dissolve
+    $showchibi("dracula", "shahar", "sid", "stella")
+    show drac ind with dissolve
+    d "We are also off to sleep."
+    d "I trust that you three will not be too loud enough to bother us?"
+    b "Uh..."
+    d "I'll take that as a yes. And if not, Bert, you will be held personally responsible."
+    b "What?"
+    d "Anyway, good night."
+    hide drac with dissolve
+    $showchibi("shahar", "stella")
+    show shahar ind with dissolve:
+        xcenter .25
+    show stella drunk with dissolve:
+        xcenter .75
+    h "Well lad, looks like it's just you, me, the lady, and the rum!"
+    t "And duh vodka, tequila, and all duh other drinks."
+    b "...how much have you guys had to drink already?"
+    h "Oh, just-ish one shot lad."
+    b "Oh, that's not that-"
+    h "One shot every 15 minutes each."
+    b "...and it's been roughly two hours."
+    t "Math's for duh losers, not for me."
+    t "Bert, you're gonna get drunk with us, right?"
+    b "I was hoping to sleep soon given, you know, we might need to solve another murder case sometime soon."
+    t "Come on, haven't you heard duh saying?"
+    t "All work and no play makes Bert a dull-uh boy."
+    h "Yeah, lad, surely y've some stress pent up in ye."
+    h "Stress ye can release through the joys of alcohol!"
+    b "No, we really should sleep."

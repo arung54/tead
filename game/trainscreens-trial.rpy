@@ -46,6 +46,27 @@ init python:
         renpy.with_statement(Dissolve(1.0))
         renpy.pause(1.0, hard = True)
 
+    def shatterTransitionTrain():
+        renpy.music.play("audio/shatter.mp3", channel="sfx")
+        renpy.show_screen("shattered")
+        renpy.pause(2.0, hard=True)
+        renpy.hide_screen("trainTrial")
+        renpy.hide_screen("trainEvidenceTrial")
+        renpy.hide_screen("shattered")
+        renpy.call_screen("iGotIt")
+        renpy.with_statement(Dissolve(1.0))
+        renpy.pause(1.0, hard=True)
+        renpy.hide_screen("iGotIt")
+        renpy.with_statement(Dissolve(1.0))
+
+screen shattered(lab):
+    add "shot.png"
+    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial")]
+    on "show" action renpy.music.play("audio/shatter.mp3", channel="sfx")
+
+screen iGotIt(l):
+    add "igotit.png"
+    timer 1.5 action[Hide("shattered"), Hide("p1"), Hide("p2"), Hide("p3"), Hide("p4"), Hide("s1"), Hide("s2"), Hide("s3"), Hide("s4"), Hide("debatescroll"), Hide("debateui"), Hide("iGotIt", transition=Dissolve(1.0)), Jump(l)]
 
 screen chooseChar(ans, correctLabel, midText):
     add "debatescroll" at cczoom
@@ -217,7 +238,7 @@ screen trainEvidenceTrial(s, e, l):
                 idle "usethis.png"
                 xalign 0.66
                 yalign 0.9
-                action [Hide("trainTrial"), Hide("trainEvidenceTrial", transition=shatter), Jump(l)]
+                action [Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
         else:
             imagebutton:
                 idle "usethis.png"
@@ -263,7 +284,7 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
-                action [Hide("trainTrial", transition=shatter), Jump(l)]
+                action [Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
         else:
             imagebutton:
                 idle "agree.png"
