@@ -760,8 +760,11 @@ label mansionGo:
     f "Yeah!"
     bi "Catherine turned and whispered to me."
     c "Alcohol can kill cats in small doses, and I expect Shahar and Stella might have left an open bottle around."
-    $showchibi()
+    bi "With that dark comment, she went to the kitchen."
+    hide catherine with dissolve
+    $showchibi("freddy")
     bi "Seems like there's still some time before we're going to sleep."
+    bi "Guess I should find someone to talk to."
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
@@ -769,7 +772,6 @@ label mansionGo:
     pause 2
     hide freetime with dissolve
     tut "Since you are now playing as Bert, the number of times you've talked to each participant has been reset."
-    bi "Guess I should find someone to talk to."
     #FT2 to be inserted here.
 label postFT2:
     scene bg mansiondining with fade
@@ -810,12 +812,11 @@ label postFT2:
     b "Oh, that's not that-"
     h "One shot every 15 minutes each."
     b "...and it's been roughly two hours."
-    t "Math's for da losers, not for me."
+    t "Math's for duh losers, not for me."
     t "Bert, you're gonna get drunk with us, right?"
-    b "I was hoping to sleep soon given, you know, we might need to solve another murder case tomorrow."
+    b "I was hoping to sleep soon given, you know, we might need to solve another murder case sometime soon."
     t "Come on, haven't you heard duh saying?"
     t "All work and no play makes Bert a dull-uh boy."
     h "Yeah, lad, surely y've some stress pent up in ye."
     h "Stress ye can release through the joys of alcohol!"
     b "No, we really should sleep."
-    
