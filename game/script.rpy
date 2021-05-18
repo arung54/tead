@@ -264,4 +264,4 @@ label start:
 ###########
 #Start
 ###########
-    call screen pickSpot
+    call screen pickSpot1

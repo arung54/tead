@@ -7,6 +7,12 @@ init:
     $ shot = ImageDissolve("shot.png", 1.0, 8)
 
 init python:
+    def shatterNoise():
+        renpy.music.play("audio/shatter.mp3", channel="sfx")
+
+    def errorNoise():
+        renpy.music.play("audio/wrong.wav", channel="sfx", relative_volume = 0.2)
+
     def startTrainTrial(p1, s1, a1, p2, s2, a2, p3, s3, a3, p4, s4, a4, cS, cE, cL):
         startTrainTrialTimes(p1, s1, a1, 1.0, p2, s2, a2, 1.0, p3, s3, a3, 1.0, p4, s4, a4, 1.0, cS, cE, cL)
 
@@ -46,23 +52,9 @@ init python:
         renpy.with_statement(Dissolve(1.0))
         renpy.pause(1.0, hard = True)
 
-    def shatterTransitionTrain():
-        renpy.music.play("audio/shatter.mp3", channel="sfx")
-        renpy.show_screen("shattered")
-        renpy.pause(2.0, hard=True)
-        renpy.hide_screen("trainTrial")
-        renpy.hide_screen("trainEvidenceTrial")
-        renpy.hide_screen("shattered")
-        renpy.call_screen("iGotIt")
-        renpy.with_statement(Dissolve(1.0))
-        renpy.pause(1.0, hard=True)
-        renpy.hide_screen("iGotIt")
-        renpy.with_statement(Dissolve(1.0))
-
 screen shattered(lab):
     add "shot.png"
-    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial")]
-    on "show" action renpy.music.play("audio/shatter.mp3", channel="sfx")
+    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
 
 screen iGotIt(l):
     add "igotit.png"
@@ -74,64 +66,64 @@ screen chooseChar(ans, correctLabel, midText):
         ground "lineup.png"
         hotspot(46, 70, 172, 257):
             if ans == "bert":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(243, 89, 164, 237):
             if ans == "catherine":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(438, 61, 180, 262):
             if ans == "dan":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(648, 48, 231, 275):
             if ans == "dracula":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(921, 131, 148, 196):
             if ans == "froggy":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(1104, 70, 112, 255):
             if ans == "jenny":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(50, 423, 164, 275):
             if ans == "kaiser":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(258, 446, 154, 246):
             if ans == "lauren":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(477, 457, 107, 234):
             if ans == "sam":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(674, 413, 168, 279):
             if ans == "shahar":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(887, 436, 163, 256):
             if ans == "sid":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(1093, 432, 132, 260):
             if ans == "stella":
-                action [Jump(correctLabel)]
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
             else:
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
     text midText xalign 0.5 yalign 0.5
 
 screen trainEvidenceTrial(s, e, l):
@@ -238,28 +230,26 @@ screen trainEvidenceTrial(s, e, l):
                 idle "usethis.png"
                 xalign 0.66
                 yalign 0.9
-                action [Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
+                action [Function(shatterNoise), Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
         else:
             imagebutton:
                 idle "usethis.png"
                 xalign 0.66
                 yalign 0.9
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+
+screen pickSpot1:
+    imagemap:
+        ground "pickthespot1"
+        hotspot(0, 0, 1279, 719):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(774, 427, 487, 274):
+            action [Function(shatterNoise), Show("shattered", lab = "trial1c")]
+    add "wherewasmurderweapon"
 
 #pers = prefix for the ___face.png you want to show
 #statement is text that appears on the screen
 #ag = 1 if you can agree, -1 if you can refute, and 0 if you can't interact
-
-screen pickSpot:
-    imagemap:
-        ground "pickthespot"
-        hotspot(0, 0, 1279, 719):
-            action [Show("tryAgain", transition=Dissolve(0.2))]
-        hotspot(774, 429, 483, 274):
-            action [Hide("pickSpot"), Jump("trial1c")]
-    add "wherewasmurderweapon"
-
-
 
 screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4, corrS, corrE, corrL):
     modal True
@@ -287,13 +277,13 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
-                action [Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
+                action [Function(shatterNoise), Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
         else:
             imagebutton:
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
-                action [Show("tryAgain", transition=Dissolve(0.2))]
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
 
     else:
         imagebutton:
@@ -319,4 +309,3 @@ screen tryAgain:
         ground "tryagain.png"
         hotspot(0, 0, 1279, 719):
              action [Hide("tryAgain", transition=Dissolve(0.2))]
-    on "show" action renpy.music.play("audio/wrong.wav", channel="sfx", relative_volume = 0.2)
