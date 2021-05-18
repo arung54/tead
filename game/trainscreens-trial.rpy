@@ -53,10 +53,12 @@ init python:
         renpy.pause(1.0, hard = True)
 
 screen shattered(lab):
+    modal True
     add "shot.png"
     timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
 
 screen iGotIt(l):
+    modal True
     add "igotit.png"
     timer 1.5 action[Hide("shattered"), Hide("p1"), Hide("p2"), Hide("p3"), Hide("p4"), Hide("s1"), Hide("s2"), Hide("s3"), Hide("s4"), Hide("debatescroll"), Hide("debateui"), Hide("iGotIt", transition=Dissolve(1.0)), Jump(l)]
 
