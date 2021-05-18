@@ -262,5 +262,6 @@ label start:
         windowcount = 0
 
 ###########
-jump trial1c
+#Start
 ###########
+    call screen pickSpot

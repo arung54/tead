@@ -251,10 +251,13 @@ screen trainEvidenceTrial(s, e, l):
 #ag = 1 if you can agree, -1 if you can refute, and 0 if you can't interact
 
 screen pickSpot:
-    add "pickthespot"
+    imagemap:
+        ground "pickthespot"
+        hotspot(0, 0, 1279, 719):
+            action [Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(774, 429, 483, 274):
+            action [Hide("pickSpot"), Jump("trial1c")]
     add "wherewasmurderweapon"
-    #hotspot(76, 52, 1124, 596) action [Hide("pickSpot"), Jump("trial1c")]
-    #hotspot(773, 426, 487, 276) action [Jump("tryAgain")]
 
 
 
@@ -314,5 +317,6 @@ screen tryAgain:
     modal True
     imagemap:
         ground "tryagain.png"
-        hotspot(0, 0, 1279, 719) action [Hide("tryAgain", transition=Dissolve(0.2))]
+        hotspot(0, 0, 1279, 719):
+             action [Hide("tryAgain", transition=Dissolve(0.2))]
     on "show" action renpy.music.play("audio/wrong.wav", channel="sfx", relative_volume = 0.2)
