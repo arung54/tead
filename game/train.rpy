@@ -979,14 +979,28 @@ label testft:
     ses "Merowwwwww!"
     hide frog ind with moveoutleft
     c "Nothing we can do but try to enjoy ourselves a little!"
-    hide catherine happy with moveoutleft
+    show sid ind with movinleft:
+        xcenter .25
+    c "How'd you guys sleep back there?"
+    i "The bench kinda hurt my back... but I'll manage."
+    hide catherine happy
+    show catherine ind:
+        xcenter .75
+    c "Dan! You took the cot for yourself and made Sid sleep on the bench?"
+    d "Huh? No, he insisted."
+    i "I did I did!"
+    c "Hmph. For shame."
+    hide catherine ind with moveoutright
+    i "..."
+    hide sid ind with moveoutleft
     show sam with dissolve:
         xcenter .5
         linear .3 xcenter .75
+    s "I wouldn't worry about her being upset with you."
     s "She was up late with Freddy making sure he wasn't freaking out too much."
     show bert happy with dissolve:
         xcenter .25
-    b "It was pretty heartwarming, to be honest."
+    b "It was pretty heartwarming, all things considered."
     b "I'm glad we're all still staying optimistic."
     b "We're gonna figure this out and get off this train!"
     s "Agreed."
@@ -1846,13 +1860,126 @@ label trial1b:
     bi "Unfortunately, that can't be true."
     bi "Someone here used it to kill Dan. Where was it hiding?"
     bi "I thought I had checked everywhere... but maybe there is one place I hadn't looked."
+    call screen pickSpot with dissolve
 
+label trial1c:
+    play music "audio/rush.mp3"
+    scene bg notrainmid
+    show lauren ind:
+        xcenter .75
+    show jenny ind:
+        xcenter .25
+    with dissolve
+    b "That's it!"
+    b "It had to have been in the caboose closet."
+    hide lauren ind with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "Hm? That closet was locked."
+    s "Dracula checked it when we first explored the back car."
+    j "He mentioned that to me too."
+    b "But did anyone other than Dracula actually check the closet?"
+    j "Hmm, I didn't."
+    s "Hey, what the hell? Was he lying about the closet being locked?"
+    hide jenny ind with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    d "This is an unfortunate situation..."
+    d "I was hoping this wouldn't wind up being relevant..."
+    s "What are you talking about?"
+    d "Truth be told, I was the first one to wake up on the train."
+    d "I noticed everyone else was still unconsious, so I did a little exploring."
+    d "That's when I noticed the, as the girl says, 'stabby stick' in the closet."
+    s "Are you kidding me?! So it was unlocked?"
+    d "Yes, the closet was unlocked the whole time."
+    d "When I saw the metal bar, I was worried about it becoming a weapon."
+    d "However, I couldn't find anywhere better to hide it. So instead, I made sure to disuade people from opening the closet."
+    hide sam with moveoutright
+    show kaiser ind with moveinright:
+        xcenter .75
+    k "And we're to simply believe that?"
+    d "Well, {i}did{/i} anybody else check the closet to see if it really was locked?"
+    hide drac ind
+    show drac happy:
+        xcenter .25
+    blank "Nobody spoke up."
+    k "..."
+    hide drac happy
+    show drac ind:
+        xcenter .25
+    d "Hmph. As I thought."
+    b "So unless Dan himself found the murder weapon, it seems like the murderer themself was the only one who could have."
+    b "...This is progress...!"
+    b "Now we just need to figure out who went into the closet!"
+    b "..."
+    bi "That might be easier said than done. It feels like it could have been anyone."
+    k "Well, if we're accepting this reality... it once again seems Sid is the obvious answer."
+    k "Sid and Dan were sleeping in the back car every night."
+    k "Sid should have had access to the weapon quite easily."
+    k "In fact, he could have just done it while Dan was sleeping, and staged the scene afterwards."
+    d "Yes, I do agree."
+    d "The evidence seems quite damning, once again."
+    hide drac ind with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Wait, no way!"
+    i "Even i-if I wanted to, I couldn't have gotten into the closet!"
+    k "Why's that?"
+    i "Dan! Dan was sleeping in the cot last night, and the cot blocks the closet!"
+    i "It won't even open if you don't move the cot a little!"
+    show drac ind with moveinleft:
+        rotate 45
+        xcenter -.1
+        ycenter .5
+    d "This is true."
+    hide drac ind with moveoutleft
+    hide kaiser ind with moveoutright
+    show stella happy with moveinright:
+        xcenter .75
+    t "Oh my, this is starting to get interesting!"
+    t "So you two weren't sharing the cot?"
+    i "I - what? No, of course not! I slept on the bench."
+    b "Stella..."
+    t "Hehe, I kid darling."
+    t "Regardless,"
+    hide stella happy
+    show stella ind:
+        xcenter .75
+    t "I'm not entirely sure your defense would hold up in court."
+    t "How do we know you slept on the bench and not the cot?"
+    t "Then you'd be able to grab the weapon while Dan was sleeping, no problem."
+    i "Well, "
+    extend "I don't know, I guess..."
+    i "I guess I can't prove it."
+    show scary:
+        alpha .5
+    hide stella ind
+    hide sid ind
+    with dissolve
+    bi "Hmmm... proof that Dan slept on the cot, and Sid slept on the bench."
+    bi "Who might have that?"
+    call screen chooseChar("catherine", "trial1d", "Who might have proof that Dan slept on the cot, and Sid slept on the bench?") with dissolve
+label trial1d:
+    play music "audio/rush.mp3"
+    scene bg notrainmid
+    show catherine ind with dissolve
+    c "Huh? Me?"
+    c "What do you mean?"
+    b "Remember back to your conversation with Dan and Sid this morning?"
+    c "Hm?"
+    c "Oh! You're right!"
+    hide catherine ind
+    show catherine happy
+    c "I completely forgot about getting mad at Dan this morning."
+    c "Sorry Dan!"
+    bi "He's still dead."
+    c "Anyway, you're totally right! Sid mentioned that his back hurt from sleeping on the bench."
+    b "Yeah, that's it!"
+    b "If Sid was planning on murdering Dan, it'd make sense for him to lie."
+    b "But Dan agreed and said he slept on the cot, so it seems like we have proof."
 
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
-
 
 
 

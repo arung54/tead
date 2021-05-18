@@ -229,6 +229,14 @@ screen trainEvidenceTrial(s, e, l):
 #statement is text that appears on the screen
 #ag = 1 if you can agree, -1 if you can refute, and 0 if you can't interact
 
+screen pickSpot:
+    add "pickthespot"
+    add "wherewasmurderweapon"
+    #hotspot(76, 52, 1124, 596) action [Hide("pickSpot"), Jump("trial1c")]
+    #hotspot(773, 426, 487, 276) action [Jump("tryAgain")]
+
+
+
 screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statement3, ag3, pers4, statement4, ag4, corrS, corrE, corrL):
     modal True
     add "debatescroll"
