@@ -1977,10 +1977,40 @@ label trial1d:
     b "Yeah, that's it!"
     b "If Sid was planning on murdering Dan, it'd make sense for him to lie."
     b "But Dan agreed and said he slept on the cot, so it seems like we have proof."
+    c "So it probably wasn't Sid. At least not while Dan was sleeping."
+    show catherine ind:
+        linear .3 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Yeah! And and and,"
+    i "I spent almost all my free time up in the front car trying to get into the computer."
+    i "I was never alone in the back car, I swear!"
+    b "Can anyone prove otherwise?"
+    blank "Nobody spoke up."
+    i "Does... does that finally prove I'm innocent?"
+    hide catherine ind with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "More than anything, it shows we're not getting anywhere."
+    s "You were basically our only lead."
+    s "I mean, you were literally right next to him when he died."
+    s "If it wasn't you, who the hell was it?"
+    b "Hey! We're getting somewhere. We've learned about a lot of our alibis, and about the murder weapon."
+    s "Where do we even go from here?"
+    s "What are we supposed to do?"
+    hide sid ind with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    d "If I may."
+    d "Those of us who were in this car - Stella, Catherine, Bert, Jenny, Freddy, and myself -"
+    d "Recall the loud scream we heard."
+    bi "...!"
+    b "Dracula's right! We haven't explored that yet."
+    b "Who was that? I definitely heard someone scream."
+    d "Me as well. There's no mistaking it."
+
+
+
 
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
-
-
-###R
