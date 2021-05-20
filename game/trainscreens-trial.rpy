@@ -23,6 +23,7 @@ init python:
         renpy.call_screen("trainTrial", pers1 = p1, statement1 = s1, ag1 = a1, pers2 = p2, statement2 = s2, ag2 = a2, pers3 = p3, statement3 = s3, ag3 = a3, pers4 = p4, statement4 = s4, ag4 = a4, corrS = cS, corrE = cE, corrL = cL)
 
     def trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4):
+        _preferences.show_empty_window = False
         renpy.show("debatescroll")
         renpy.show("debateui")
         renpy.with_statement(Dissolve(1.0))
