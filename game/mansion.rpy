@@ -912,3 +912,11 @@ label postFT2:
     b "Oh? Why's that?"
     h "I'd rather not talk about it laddy, you don't ask a man why he hasn't had a lover in a while."
     h "And the sea is my love."
+    b "That... sounds more like taking a break from a relationship than not having a lover."
+    show shahar mad:
+        xcenter .25
+    h "Lad, what'd I tell ya, don't ask!"
+    t "Ooh, duh boys are about to fight!"
+    t "Catfight! Catfight! Catfight!"
+    b "What? No! I don't want to fight."
+    b "Sorry, I won't ask anymore about it."
