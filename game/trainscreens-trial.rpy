@@ -133,9 +133,13 @@ screen chooseChar(ans, correctLabel, midText):
 screen trainEvidenceTrial(s, e, l):
     modal True
     add "eviscroll"
-    imagemap:
-        ground "evidenceui.png"
-        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
+    if s == -1:
+        imagemap:
+            ground "evidenceuinb.png"
+    else:
+        imagemap:
+            ground "evidenceui.png"
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
             textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
@@ -229,7 +233,7 @@ screen trainEvidenceTrial(s, e, l):
             text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 330
 
     if currEvidence >= 0:
-        if s == statement and e == currEvidence:
+        if (s == statement or s == -1) and e == currEvidence:
             imagebutton:
                 idle "usethis.png"
                 xalign 0.66
