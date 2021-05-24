@@ -22,7 +22,9 @@ init python:
         renpy.transition(Dissolve(1.0))
         renpy.call_screen("trainTrial", pers1 = p1, statement1 = s1, ag1 = a1, pers2 = p2, statement2 = s2, ag2 = a2, pers3 = p3, statement3 = s3, ag3 = a3, pers4 = p4, statement4 = s4, ag4 = a4, corrS = cS, corrE = cE, corrL = cL)
 
+
     def trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4):
+        _preferences.show_empty_window = False
         renpy.show("debatescroll")
         renpy.show("debateui")
         renpy.with_statement(Dissolve(1.0))
@@ -55,7 +57,7 @@ init python:
 screen shattered(lab):
     modal True
     add "shot.png"
-    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
+    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("makeyourcase"), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
 
 screen iGotIt(l):
     modal True
@@ -131,9 +133,13 @@ screen chooseChar(ans, correctLabel, midText):
 screen trainEvidenceTrial(s, e, l):
     modal True
     add "eviscroll"
-    imagemap:
-        ground "evidenceui.png"
-        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
+    if s == -1:
+        imagemap:
+            ground "evidenceuinb.png"
+    else:
+        imagemap:
+            ground "evidenceui.png"
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
             textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
@@ -227,7 +233,7 @@ screen trainEvidenceTrial(s, e, l):
             text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 330
 
     if currEvidence >= 0:
-        if s == statement and e == currEvidence:
+        if (s == statement or s == -1) and e == currEvidence:
             imagebutton:
                 idle "usethis.png"
                 xalign 0.66
