@@ -312,8 +312,9 @@ label mansionGo:
     c "Also the garage door doesn't open, though it's not surprising."
     show catherine happy
     c "In better news, there's some rope here Sesame can use as a scratching toy!"
-    s "{i}Scrichhhh{/i}"
-    b "Sesame can scratch her way out of here for us!"
+    s "{i}Scrichhhh{/i}."
+    c "He's having fun with it already!"
+    b "Wow, maybe Sesame can scratch his way out of here for us!"
     c "What? Don't be silly."
     c "There's also some simple tools, like a drill, a level, a hammer, a screwdriver, and a stepstool."
     c "We could use these to repair anything that breaks maybe?"
@@ -330,7 +331,7 @@ label mansionGo:
     c "There's also a clock and some boxes full of junk."
     c "According to the clock it's early afternoon right now."
     c "Hard to tell if that's right with the boarded windows though."
-    c "There's also a generator here, it seems like it's fully fueled."
+    c "There's also a light generator here, it seems like it's fully fueled."
     c "We have running power so we shouldn't need it, but it's nice to know that won't be an issue."
     show catherine ind
     c "I imagine whoever owns this house isn't paying the electricity bill."
@@ -465,7 +466,7 @@ label mansionGo:
     b "In that case, let's check out some of the bedrooms."
     b "We are about to have a meeting about them..."
     j "Sounds good."
-    scene black
+    scene black with fade
     scene bg mansionbedroom with fade
     $showchibi("jenny", "freddy", "lauren")
     show lauren ind with dissolve
@@ -1079,7 +1080,7 @@ label postFT2:
     show catherine happy with dissolve
     c "Oh, morning Bert!"
     b "How... how early is it?"
-    c "Well, we don't really have a sense of time in here but I think most of us got eight hours of sleep."
+    c "I haven't checked the clock in the garage but I think most of us got eight hours of sleep."
     c "You probably had less, I heard about your adventures last night from Sam on the way down."
     b "Oh... yeah, that'd explain why I'm so tired."
     b "What are you doing so early?"
@@ -1116,16 +1117,122 @@ label postFT2:
     bi "Wouldn't want to distract Shahar and Stella's beauty sleep..."
     scene black with fade
     scene bg mansionhallway with fade
-    $showchibi("jenny")
-    show jenny ind with dissolve
+    $showchibi("jenny", "sam")
+    show jenny ind:
+        xcenter .25
+    show sam:
+        xcenter .75
+    with dissolve
     j "Oh, Bert."
-    j "Good morning! I was just about to head downstairs and see if Catherine needed help."
-    j "There's not exactly much else to do until the party tonight."
+    j "Good morning! Sam and I were just about to head downstairs and help out Catherine."
+    b "Oh, you're both cooks?"
+    j "Not really, but I like being helpful!"
+    s "I'm gonna make some dessert."
+    s "Some of my customers prefer to receive their product in brownies or other baked goods, so I got pretty good at baking."
+    s "There's not exactly much else to do until the party tonight."
     b "Well, unless you want to get super drunk like Stella and Shahar did."
-    j "Oh yeah, how was that?"
-    j "I heard some noise last night."
+    s "Eh, day drinking's not really my thing."
+    j "Oh yeah, how was last night?"
+    j "I heard some noise."
     b "They uh... tried to steal the sink knob from the bathroom."
     j "...Why?"
     b "Drunken boredom, I guess?"
     b "Anyway, it wasn't too bad."
     b "Once that failed they let me go to sleep, though I'm pretty tired now from having stayed up."
+    s "We really shouldn't be enabling their shenanigans."
+    b "I wouldn't say we're enabling them as much as tolerating it..."
+    b "Besides, I tried to talk them out of it and they seemed pretty set in their ways."
+    b "Lauren tried yesterday as well."
+    s "I guess so."
+    s "Anyway, Jenny, shall we head down?"
+    j "Sure! Have a good day Bert, feel free to stop by the kitchen if you're bored!"
+    hide jenny
+    hide sam
+    with dissolve
+    $showchibi()
+    bi "Hm... while no one else is around and it doesn't look suspicious."
+    pause 1
+    bi "Nope, closet is still locked."
+    bi "Well, I guess I have some time to kill before the party. Everyone's probably awake by now, maybe I can find someone to talk to?"
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    #FT3
+label postFT3:
+    scene bg mansiondining with fade
+    $showchibi("shahar", "stella")
+    bi "Well, still have some time to kill before the party."
+    $showchibi("shahar", "stella", "lauren")
+    show lauren ind with dissolve
+    l "Hey, Bert, are you busy right now?"
+    b "Uh... I guess not."
+    l "Do you mind watching over Freddy, and I guess Sesame?"
+    l "I've been with them all day and was hoping to take a shower while we could..."
+    b "Yeah, I don't mind."
+    l "Cool, thanks. They both should still be in our bedroom right now."
+    l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on cooking right now."
+    scene black with fade
+    scene bg mansionbedroom with fade
+    $showchibi("freddy")
+    show frog ind with dissolve
+    f "Oh, hey."
+    f "Are you here to hang out with me?"
+    b "Yeah, Lauren had some stuff she wanted to do."
+    f "Oh, cool!"
+    b "N-not that I wouldn't want to hang out with you normally."
+    f "Huh?"
+    b "Never mind."
+    b "So uh..."
+    bi "I'm still not great at making conversation with the kid..."
+    bi "Maybe I can ask him for some information that's useful?"
+    bi "Feel like we haven't really talked to him meaningfully yet."
+    bi "Sesame is keeping him occupied, so I can think this through."
+    bi "What kind of crime would a kid have done?"
+    b "Hey Freddy, what hobbies do you have?"
+    f "Uh... I really like frogs!"
+    f "I spend a lot of time just watching videos about then and learning new frog facts."
+    b "Are you in any clubs at school?"
+    f "Clubs?"
+    b "Yeah, like, things you do with other students for fun."
+    f "Oh, I'm homeschooled."
+    f "My parents pay for a guy to come to our place and teach me."
+    f "They say it's so I get a better education."
+    f "I think it's really because my dad got upset when I went to school with other kids."
+    b "What happened?"
+    f "We had a homework assignment where we had to talk about what our parents did."
+    show frog sad
+    f "I tried asking my dad to help and he got really angry."
+    f "So I uh, didn't turn in the homework."
+    f "The teacher got angry during class and then a bunch of the kids started asking me about it at lunch."
+    f "My dad wasn't happy people were asking so he pulled me out of that school."
+    b "That's... huh. {i}Do{/i} you know what your dad does?"
+    f "Nah, after that day I felt like it was better not to ask."
+    f "I just know he's not around a lot and is angry all the time."
+    b "Do you get to meet other kids still?"
+    f "Not really, no."
+    f "When I go out my mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me."
+    f "I don't mind because I feel like a frog when I'm in it!"
+    b "That... isn't that lonely, Freddy?"
+    show frog ind
+    f "Maybe? It's okay though! My mom loves me a lot."
+    f "And if I behave my dad gets me whatever I want!"
+    b "Well, as long as you're happy..."
+    bi "That sounds like a really sad existence."
+    bi "I do have to wonder though... is Freddy really a criminal?"
+    bi "Maybe he's lying, but if he's stuck at home what crimes could he really do?"
+    b "Freddy, do you use the computer at home often?"
+    f "Yeah! That's how I learned so much about frogs!"
+    b "Do you do anything else on the computer?"
+    f "Uh, I play games and watch other videos sometimes."
+    f "I think that's what most kids do on the computer these days."
+    b "Yeah, makes sense."
+    f "Bert, can I ask why you're asking me all of this?"
+    b "Oh uh, just trying to make small talk."
+    bi "...and understand why a kid is in a group of criminals."
+    bi "Maybe it's a mistake?"
+
+
+#Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
