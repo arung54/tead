@@ -1825,6 +1825,11 @@ label trial1b:
     t "So if she left the bar car, how could she have known?"
     b "Exactly!"
     b "We can't prove exactly what she was doing, but it seems pretty clear she didn't leave this car."
+    show scary with dissolve:
+        alpha .5
+    bi "Unless of course, she was the one that caused the scream..."
+    bi "Then she would know about it even if she did leave this train car."
+    bi "Best to keep that in mind."
     i "I-I... agree. I guess."
     i "I just don't want to be the only suspect..."
     i "I r-really didn't do it."
@@ -1999,16 +2004,281 @@ label trial1d:
     s "Where do we even go from here?"
     s "What are we supposed to do?"
     hide sid ind with moveoutleft
+    show stella ind with moveinleft:
+        xcenter .25
+    t "Weren't you paying attention Sam? No?"
+    t "There are a few more things to figure out."
+    t "For example - those of us who were in this car - Stella, Catherine, Bert, Jenny, Freddy, and myself,"
+    t "Recall the loud scream we heard."
+    bi "...!"
+    t "Who was that? There's no mistaking that it happened."
+    b "You're right - I heard it too."
+    s "What are you on about? Who cares if someone screamed?"
+    s "Dan got stabbed through the chest, of course people are going to be screaming."
+    t "Hmmm, with all due respect - which isn't much - you don't know what you're talking about."
+    show sam:
+        linear .05 xcenter .7
+    s "What did you just say to me?"
+    hide stella ind
+    show stella happy:
+        xcenter .25
+    t "Oh? Did that get you all riled up? Haha!"
+    show scary with dissolve:
+        alpha .5
+    bi "I need to step in... I know the answer!"
+    python:
+        startTrainTrial("stella", "Isn't it obvious? Think about that scream in particular.", 0,
+        "sam", "What are you even talking about? There shouldn't be {color=#f00}anything notable{/color} about someone screaming.", -1,
+        "stella", "Do you think I'm {color=#50CAFF}making up{/color} the scream? Why would I do that?", 1,
+        "sam", "Maybe to cover up the murder! I don't trust you for a second.", 0,
+        1, 4, "trial1e")
+
+label trial1e:
+    show bg notrainmid
+    show stella ind:
+        xcenter .25
+    show sam:
+        xcenter .75
+    with dissolve
+    b "Hey, look!"
+    b "Believe it or not, Stella has a point. That scream was different."
+    b "And we have a testimonial to back it up."
+    hide sam with moveoutright
+    show drac ind with moveinright:
+        xcenter .75
+    d "I'd hardly call it a testimonial, but yes, I do agree with Stella."
+    d "I find it quite easy to focus in the dark, and to me, that scream felt very particular."
+    b "And what do you mean by that?"
+    show stella happy:
+        xcenter .25
+    t "Ooooooo, can I be the one to explain it? I think I figured it out."
+    d "If you insist."
+    t "It wasn't really someone screaming, it was a recording."
+    b "What? What do you mean?"
+    d "Yes, this is the same conclusion I reached."
+    b "How do you know?"
+    d "Well... it sounded strange. I immediately recognized that something was odd."
+    hide stella happy with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .25
+    o "No offense, but saying it 'sounded strange' isn't enough to convince me."
+    d "I agree, which is why I did not speak up sooner."
+    d "Truth be told, it took me a while to piece it together."
+    d "The nail in the coffin, though, was that it wasn't just a random recording."
+    d "The scream was Jenny's."
+    o "Huh?"
+    hide lauren ind with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Yeah, huh? What do you mean?"
+    d "Think back to yesterday, do you remember... yelling?"
+    j "Ummm... I don't think so? Are you sure I did?"
+    d "I suppose it'll be hard to convince you of something like that."
+    show scary with dissolve:
+        alpha .75
+    bi "I will."
+label trial1f:
+    show bg notrainmid
+    show jenny ind:
+        xcenter .25
+    show drac ind:
+        xcenter .75
+    show scary:
+        alpha .75
+    menu:
+        bi "When was it that Jenny screamed?"
+
+        "When she saw the body.":
+            bi "Actually... I don't think that's it."
+            jump trial1f
+
+        "When she first got on the train.":
+            bi "No, that can't be it. "
+            jump trial1f
+
+        "When she got mad at Dan.":
+            bi "Hmm, I don't think she yelled."
+            jump trial1f
+
+        "When Sesame bit her.":
+            bi "That's it!"
+
+    hide scary with dissolve
+    b "Yeah, that's it! I remember Sesame biting Jenny, and she screamed."
+    d "Yes, she screamed bloody murder. And the scream we heard tonight? It was the same one."
+    bi "I think he's right!"
+    hide drac ind with moveoutright
+    show catherine ind with moveinright:
+        xcenter .75
+    c "Now that you mention it, both did sound like they came from a little girl."
+    j "Hey! I'm basically the same age as you!"
+    c "Anyway, I think Dracula's right."
+    b "I agree."
+    c "But we do we do about it?"
+    c "What does that even mean for the case?"
+    j "This is getting really confusing..."
+    c "Hmm... I know it sounds weird, but maybe we should take a break."
+    c "It'll let us collect ourselves a little bit."
+    hide jenny ind with moveoutleft
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "No time to be lollygagging."
+    h "We shant let our guard down, mateys."
+    hide catherine ind with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "Ye-yeah. There's a dead body in the back car, it seems like a weird time to take a break."
+    b "Hmm. I'm not sure."
+    b "It might be good to give everyone a chance to think for themselves."
+    i "How am I supposed to be calm? Or even try to think at a time like this?"
+    i "Half of you just accused me of murder and I just met you."
+    i "Plus, I can barely even see, it's so dark in here."
+    h "Aye, I don't trust ye scallywags."
+    b "Wait... I completely forgot. It is dark in here, but... you {i}can{/i} see."
+    hide shahar ind with moveoutleft
     show drac ind with moveinleft:
         xcenter .25
-    d "If I may."
-    d "Those of us who were in this car - Stella, Catherine, Bert, Jenny, Freddy, and myself -"
-    d "Recall the loud scream we heard."
-    bi "...!"
-    b "Dracula's right! We haven't explored that yet."
-    b "Who was that? I definitely heard someone scream."
-    d "Me as well. There's no mistaking it."
+    d "Ahhh... How foolish of us."
+    i "What are you guys talking about?"
+    d "It seems obvious in hindsight..."
+    call screen trainEvidenceTrial(-1, 3, "trial1g")
+label trial1g:
+    b "That's it."
+    b "It's the middle of the night now, and all the lights in the car are off."
+    b "The only thing letting us see is the residual moonlight coming through the windows."
+    i "I... I don't get it."
+    i "Why does that matter?"
+    d "Think back."
+    d "Why was it even darker than this for a moment?"
+    d "Why couldn't we see at all during the murder?"
+    b "Exactly."
+    hide sid ind with moveoutright
+    show lauren ind with moveinright:
+        xcenter .75
+    o "We were in the front car, which was pretty well lit by the computers."
+    o "But this car was pitch black?"
+    b "Yeah - I couldn't see an inch in front of my face, for about 30 seconds."
+    b "Thinking about it more... I can only come to one conclusion."
+label trial1h:
+    show bg notrainmid
+    show drac ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    show scary:
+        alpha .75
+    menu:
+        bi "The reason we couldn't see was because..."
 
+        "Someone quickly hung sheets in front of all the car's windows!":
+            bi "Well, technically they could have, but I don't think so..."
+            jump trial1h
+
+        "Some threw a smoke bomb!":
+            bi "Hmm, that's probably not it. It got dark, not smokey."
+            jump trial1h
+
+        "Something blocked the moonlight coming through the windows!":
+            bi "That's it!"
+
+        "We were temporarily blinded by the mastermind's brain chips!":
+            bi "Hmm... It could be that, but I don't think it's right."
+            bi "I feel like that would hurt a lot more..."
+            jump trial1h
+
+    hide scary with dissolve
+    b "That must be it! Something blocked all the moonlight coming through the windows."
+    o "Oh, maybe you're right."
+    d "He's definitely right."
+    d "I have no proof, but I certainly cannot think of any other alternatives."
+    o "Well if that's the case, how did it happen?"
+    b "How did it happen? Hmmm..."
+    b "!"
+    b "We must have gone through a tunnel!"
+    b "We went through a tunnel, and for the minute or so we were in it, we couldn't see anything!"
+    o "That makes a lot of sense... I don't think anyone who was in the front car would have noticed."
+    blank "They looked around, but nobody else spoke up."
+    o "Plus, this train is really quiet and smooth."
+    o "It's hard to even remember we're on a train sometimes, let alone notice things like that."
+    b "Exactly!"
+    b "The most obvious aspect of going through a tunnel would have to be -"
+    o "- the darkness."
+    d "If I may interject: what is a tunnel?"
+    bi "..."
+    o "Freddy, I have a job for you."
+    show frog ind with moveinbottom:
+        xcenter .875
+    f "Job for me?"
+    o "Explain what a tunnel is to Mr. Dracula please. I don't have time for this."
+    show shahar ind with moveinleft:
+        xcenter .1
+    h "Aye, me as well please."
+    h "Never 'eard of such a thing."
+    bi "This ten year old boy is about to explain tunnels to two grown men."
+    f "O-okay!"
+    hide drac ind
+    hide frog ind
+    hide shahar ind
+    with moveoutleft
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "So we went through a tunnel right when the murderer was going to strike?"
+    k "Or did the murderer simply capitalize off of the darkness and decide to kill?"
+    b "...I don't know."
+    o "This also doesn't change the fact that Catherine was basically guarding the door to the back car."
+    b "...That is true..."
+    k "It feels like we're uncovering some things, but no closer to a real answer."
+    hide lauren ind with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "I agree with Kaiser and Lauren."
+    s "I don't think we're getting anywhere."
+    s "Plus, it still seems pretty obvious to me that it had to have been Sid."
+    hide kaiser ind with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Hey! We already moved past that, it couldn't have been me."
+    show scary with dissolve:
+        alpha .7
+    bi "Damn, are they right?"
+    bi "Are we really not getting anywhere?"
+    bi "So far we've learned what everyone was doing, where the weapon came from, and why it got dark."
+    bi "It feels close."
+    bi "It feels like if we just figure out a few more things..."
+    hide scary
+    f "Hey, wait a minute!"
+    show sid ind:
+        xcenter .25
+        linear 0.15 xcenter .15
+    show sam:
+        xcenter .75
+        linear 0.15 xcenter .85
+    show frog ind with moveinbottom
+    f "This doesn't make any sense!"
+    b "What's wrong Freddy?"
+    f "Well..."
+    f "I was telling the scary men about tunnels, right."
+    f "But then I realized!"
+    f "If we went through a tunnel, it would probably break the flag."
+    s "The flag? What do you mean?"
+    f "You know, the one on the back of the train!"
+    b "Freddy, what are you talking about?"
+    f "Lauren knows! When I looked out the window earlier, I saw a flag on the back of the train."
+    hide sid ind with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .15
+    o "He did mention something like that this morning."
+    o "We were up in the front car, and I was half paying attention, but I do remember something about a flag."
+    f "Come on, I can show you guys!"
+    hide freddy ind with moveoutleft
+    s "I'm so lost..."
+    b "Me too, but it can't hurt to hear him out."
+
+label trial1i:
+    scene black
+    blank "The 10 of them followed Freddy to the front car."
+    # show chibis
+    #show front car, look out window to nothing, wait, look on turn,
 
 
 
