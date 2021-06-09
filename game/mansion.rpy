@@ -312,8 +312,9 @@ label mansionGo:
     c "Also the garage door doesn't open, though it's not surprising."
     show catherine happy
     c "In better news, there's some rope here Sesame can use as a scratching toy!"
-    s "{i}Scrichhhh{/i}"
-    b "Sesame can scratch her way out of here for us!"
+    s "{i}Scrichhhh{/i}."
+    c "He's having fun with it already!"
+    b "Wow, maybe Sesame can scratch his way out of here for us!"
     c "What? Don't be silly."
     c "There's also some simple tools, like a drill, a level, a hammer, a screwdriver, and a stepstool."
     c "We could use these to repair anything that breaks maybe?"
@@ -330,7 +331,7 @@ label mansionGo:
     c "There's also a clock and some boxes full of junk."
     c "According to the clock it's early afternoon right now."
     c "Hard to tell if that's right with the boarded windows though."
-    c "There's also a generator here, it seems like it's fully fueled."
+    c "There's also a light generator here, it seems like it's fully fueled."
     c "We have running power so we shouldn't need it, but it's nice to know that won't be an issue."
     show catherine ind
     c "I imagine whoever owns this house isn't paying the electricity bill."
@@ -465,7 +466,7 @@ label mansionGo:
     b "In that case, let's check out some of the bedrooms."
     b "We are about to have a meeting about them..."
     j "Sounds good."
-    scene black
+    scene black with fade
     scene bg mansionbedroom with fade
     $showchibi("jenny", "freddy", "lauren")
     show lauren ind with dissolve
@@ -535,6 +536,7 @@ label mansionGo:
     bi "Even some of the hotel bathrooms I've been in weren't quite this nice."
     bi "There's so much space, the largest bathroom mirror I've ever seen."
     bi "More drawers than I can even think of a use for..."
+    bi "The knobs on the faucet and in the tub are gold-plated..."
     bi "...well, I guess I'm done admiring this bathroom."
     bi "I'll grab Jenny, Lauren, and Freddy and head downstairs, I guess."
     scene black with fade
@@ -898,8 +900,8 @@ label postFT2:
     t "Just drink more, then you'll understand."
     show stella drunk:
         xcenter .5
-        xcenter .25
-    show shahar ind with moveinright:
+        xcenter .75
+    show shahar ind with moveinleft:
         xcenter .25
     t "Speaking of drinking more, Shahar, are you alright?"
     t "Can I get you a shot of something? You've been awfully quiet."
@@ -918,5 +920,319 @@ label postFT2:
     h "Lad, what'd I tell ya, don't ask!"
     t "Ooh, duh boys are about to fight!"
     t "Catfight! Catfight! Catfight!"
-    b "What? No! I don't want to fight."
-    b "Sorry, I won't ask anymore about it."
+    b "What? No! I don't want to fight!"
+    b "Sorry, I won't say anything else about it."
+    show shahar ind:
+        xcenter .25
+    h "Look laddy, maybe I'm getting old."
+    h "Pirate life, it's long hours, good pay but asks a lot of ye."
+    h "What little time you're not working you're drinking, does a toll on yer body."
+    t "I'll drink to that."
+    h "And the time you are working, yer putting yer whole body into it."
+    b "Why'd you get into the pirate life then?"
+    h "I don't remember much lad, far back as my memory goes I've been a pirate."
+    h "I vaguely recall something about getting into trouble with the law and losing another job."
+    h "And well, being a pirate, ye don't really care much about the law."
+    h "But I don't remember how er why I got in legal trouble to begin with."
+    t "Hey, maybe you were a businessman in your past life."
+    t "I've gotten in plenty of legal trouble myself."
+    t "Granted, when you're rich enough legal trouble is just financial trouble."
+    h "Aye, I don't think a rich Shahar would choose to become a pirate."
+    h "He'd probably retire and enjoy life on a yacht, or some other fancy ship."
+    h "Sipping cocktails, enjoying a more intimate relation with the sea."
+    h "Reading a good book, since I ne'er had time to."
+    h "I bet a yacht sails much more smoothly than a wooden ship!"
+    h "I get motion sickness reading on vehicles."
+    b "...but you're a pirate."
+    h "I only said I get motion sickness while reading, lad!"
+    h "Do you think a pirate's life is being out on the sea readin' poetry?"
+    b "Yeah but..."
+    b "Never mind."
+    bi "Not worth getting into an argument over this."
+    t "Speaking of a pirate's life, don't pirates own a lot of jewelry?"
+    t "Shahar I feel like you're rather... bare."
+    t "Not that anyone minds."
+    h "Ay, you're right about that."
+    h "I do own a chestful of booty!"
+    h "But booty's inconvenient to carry round."
+    t "Ooh yeah, fat booty makes walking hard."
+    b "I... don't think that's what he meant."
+    t "Oh trust me hun, I get it."
+    h "Regardless, even if I wanted to show up studded, we had nary a chance to prepare for this game!"
+    t "Ooh don't worry, you're enough of a stud as is."
+    h "Oh, I wonder if this mansion's got anything we can plunder?"
+    b "...you want to steal something to bring with you when you get out?"
+    h "Aye! Least we can do to pass the time."
+    b "Again, we could pass the time while sleeping."
+    t "I don't know if I can approve of stealing from duh rich given... well, you know."
+    h "Aye lass, it's not like I'm pillaging your village!"
+    t "Hmm, that is true."
+    t "Duh guy who owns this place might be my business enemy for all we know."
+    t "Alright, let's steal something!"
+    t "Woo!"
+    hide stella with moveoutright
+    blank "Thud."
+    bi "...Stella took two steps and fell over."
+    show stella drunk with moveinbottom:
+        xcenter .75
+    t "I'm alright."
+    b "I... really don't think you are."
+    t "What duh hell do you know?"
+    t "You probably haven't had more than two shots in your life."
+    b "...sigh."
+    t "C'mon, let's go steal something!"
+    h "Aye, a good pirate mission!"
+    b "If I join will you let me sleep after this?"
+    h "Fine with me lad."
+    t "Fine, buzzkill. Have it your way."
+    b "So uh... what exactly are we stealing?"
+    h "It oughta be something small. Gotta be able to keep it in my pocket for the rest of our time here."
+    t "It should be shiny too! I love shiny!"
+    b "What about something from the upstairs bathroom?"
+    b "It has a lot of gold things, like the sink knobs."
+    b "That would probably fit in your pocket?"
+    bi "It would also probably take a lot of effort to unscrew one."
+    bi "Maybe enough that it will tire them out?"
+    h "Aye lad, you're finally contributing something useful!"
+    bi "I mean... not like I helped us all avoid dying in the train by solving the murder or anything."
+    t "Let's gooooooo!"
+    hide stella with moveoutright
+    bi "Stella was off before we could even get started."
+    bi "Dracula's probably not going to be very happy about our noise level after this..."
+    scene black with fade
+    scene bg mansionhallway with fade
+    $showchibi("shahar", "stella")
+    show stella drunk:
+        xcenter .75
+    show shahar ind:
+        xcenter .25
+    with dissolve
+    b "Be quiet, we don't want to wake up anyone sleeping."
+    h "Plundering isn't about being quiet! CHAAAAAARGE!"
+    t "Yay, stealing from duh rich! This must be what Robin Hood felt like."
+    hide shahar
+    hide stella
+    with moveoutright
+    $showchibi()
+    $showchibi("sam")
+    show sam with dissolve
+    s "Didn't expect the noise out here to be you."
+    b "Sorry, you probably heard Shahar yelling... they're not letting me sleep and are a bit hard to control."
+    s "Think you can keep them quieter? Some of us are trying to sleep."
+    b "Yeah, I'll try..."
+    s "Whatever. Good night."
+    hide sam with dissolve
+    $showchibi()
+    bi "You know, I could just go to sleep now."
+    bi "But I get the feeling Stella will force me awake if I try."
+    b "Sigh."
+    b "Okay, to the bathroom we go."
+    scene black with fade
+    scene bg mansionbr with fade
+    $showchibi("shahar", "stella")
+    show stella drunk:
+        xcenter .75
+    show shahar ind:
+        xcenter .25
+    with dissolve
+    h "Ay lad, what took ye so long!"
+    b "We should really be quieter, there are people sleeping on the other side of these walls."
+    t "Psh, I've fell asleep in duh corners of clubs, they can sleep through a little tomfoolery."
+    b "That... doesn't sound like the safest idea, sleeping in a club."
+    b "And you know someone on the other side of the walls might be trying to kill us?"
+    b "Probably shouldn't give them a reason."
+    t "Damn, you really are a killjoy."
+    t "Maybe I'll start calling you that."
+    t "Well Killjoy, do you have any idea how to steal this sink knob?"
+    t "We pulled on it real hard but no luck."
+    b "Did you check under the sink?"
+    h "Like... in the cabinet under it?"
+    b "Yeah. In a fancy house like this, the nuts and bolts of the sink are in the cabinet."
+    b "It looks nicer but still lets a plumber work on the sink."
+    b "...aren't you rich Stella? Why didn't you think of this?"
+    t "I'm drunk, Killjoy."
+    t "I'm not here for thinking, I'm here for doing."
+    t "If you know what I mean."
+    b "You... don't need to keep saying that."
+    t "Well, it wouldn't be very ladylike of me to bend down and try to look down there."
+    t "Killjoy, you mind doing it?"
+    h "Why not Shahar?"
+    t "I don't think his muscles will fit in the cabinet."
+    bi "Hm... if I lie about it, maybe they'll give up."
+    b "Okay, going in."
+    b "..."
+    b "Hm, I don't see any way to detach the handles from the sink down here."
+    bi "That was a lie. There were some bolts holding the handles in place."
+    h "By Davy Jones... this plundering mission might be over lads."
+    h "Oh well, it was a noble effort! Let's go sleep."
+    t "Ugh, fine. I'm starting to come down anyway."
+    bi "Finally..."
+    scene black with fade
+    bi "With that, we headed downstairs and finally went to sleep."
+    pause 1
+    blank "The next morning..."
+    scene bg mansiondining
+    bi "..."
+    bi "What time is it?"
+    $showchibi("shahar", "stella")
+    bi "Those two are still asleep."
+    $showchibi("shahar", "stella", "catherine")
+    show catherine happy with dissolve
+    c "Oh, morning Bert!"
+    b "How... how early is it?"
+    c "I haven't checked the clock in the garage but I think most of us got eight hours of sleep."
+    c "You probably had less, I heard about your adventures last night from Sam on the way down."
+    b "Oh... yeah, that'd explain why I'm so tired."
+    b "What are you doing so early?"
+    c "I'm getting ready for the party tonight!"
+    c "Going to be cooking all day pretty much, we have a feast planned."
+    c "Freddy offered to \"take care\" of Sesame today, which is great since I don't want his fur or anything getting in the food."
+    c "Plus there's some stuff in the kitchen he shouldn't eat..."
+    b "Wait, besides alcohol?"
+    c "Yeah, raw meat can contain bacteria that can kill cats."
+    c "There's some other stuff that's not lethal but a little bit risky, like yeast and chocolate."
+    b "Well, at least Freddy will be distracted for a bit."
+    c "Yeah! Anyway, I should go get started. Have a good day Bert!"
+    b "Thanks Catherine, let us know if we can help with cooking."
+    c "Will do!"
+    hide catherine with dissolve
+    $showchibi("shahar", "stella")
+    $showchibi("shahar", "stella", "dracula")
+    show drac ind with dissolve
+    d "Good morning, Bert."
+    b "Morning."
+    d "I must say, it was quite loud last night."
+    b "Sorry, I can't really do much to control the drunkards."
+    b "I did try to at least get them to sleep as early as I could..."
+    d "Not your fault if you tried I guess."
+    d "Well, that is all I wished to say. I am returning to my room to think."
+    d "If you wish to talk, I will be in there, although we should perhaps wait until Sid is awake."
+    b "Okay, have a good day."
+    hide drac with dissolve
+    $showchibi("shahar", "stella")
+    bi "...he's so weird."
+    bi "It feels like I'm talking to a robot, not a vampire."
+    bi "Oh well, I should find some way to kill time."
+    bi "Maybe I'll go upstairs and see who there is to talk to."
+    bi "Wouldn't want to distract Shahar and Stella's beauty sleep..."
+    scene black with fade
+    scene bg mansionhallway with fade
+    $showchibi("jenny", "sam")
+    show jenny ind:
+        xcenter .25
+    show sam:
+        xcenter .75
+    with dissolve
+    j "Oh, Bert."
+    j "Good morning! Sam and I were just about to head downstairs and help out Catherine."
+    b "Oh, you're both cooks?"
+    j "Not really, but I like being helpful!"
+    s "I'm gonna make some dessert."
+    s "Some of my customers prefer to receive their product in brownies or other baked goods, so I got pretty good at baking."
+    s "There's not exactly much else to do until the party tonight."
+    b "Well, unless you want to get super drunk like Stella and Shahar did."
+    s "Eh, day drinking's not really my thing."
+    j "Oh yeah, how was last night?"
+    j "I heard some noise."
+    b "They uh... tried to steal the sink knob from the bathroom."
+    j "...Why?"
+    b "Drunken boredom, I guess?"
+    b "Anyway, it wasn't too bad."
+    b "Once that failed they let me go to sleep, though I'm pretty tired now from having stayed up."
+    s "We really shouldn't be enabling their shenanigans."
+    b "I wouldn't say we're enabling them as much as tolerating it..."
+    b "Besides, I tried to talk them out of it and they seemed pretty set in their ways."
+    b "Lauren tried yesterday as well."
+    s "I guess so."
+    s "Anyway, Jenny, shall we head down?"
+    j "Sure! Have a good day Bert, feel free to stop by the kitchen if you're bored!"
+    hide jenny
+    hide sam
+    with dissolve
+    $showchibi()
+    bi "Hm... while no one else is around and it doesn't look suspicious."
+    pause 1
+    bi "Nope, closet is still locked."
+    bi "Well, I guess I have some time to kill before the party. Everyone's probably awake by now, maybe I can find someone to talk to?"
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    #FT3
+label postFT3:
+    scene bg mansiondining with fade
+    $showchibi("shahar", "stella")
+    bi "Well, still have some time to kill before the party."
+    $showchibi("shahar", "stella", "lauren")
+    show lauren ind with dissolve
+    l "Hey, Bert, are you busy right now?"
+    b "Uh... I guess not."
+    l "Do you mind watching over Freddy, and I guess Sesame?"
+    l "I've been with them all day and was hoping to take a shower while we could..."
+    b "Yeah, I don't mind."
+    l "Cool, thanks. They both should still be in our bedroom right now."
+    l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on cooking right now."
+    scene black with fade
+    scene bg mansionbedroom with fade
+    $showchibi("freddy")
+    show frog ind with dissolve
+    f "Oh, hey."
+    f "Are you here to hang out with me?"
+    b "Yeah, Lauren had some stuff she wanted to do."
+    f "Oh, cool!"
+    b "N-not that I wouldn't want to hang out with you normally."
+    f "Huh?"
+    b "Never mind."
+    b "So uh..."
+    bi "I'm still not great at making conversation with the kid..."
+    bi "Maybe I can ask him for some information that's useful?"
+    bi "Feel like we haven't really talked to him meaningfully yet."
+    bi "Sesame is keeping him occupied, so I can think this through."
+    bi "What kind of crime would a kid have done?"
+    b "Hey Freddy, what hobbies do you have?"
+    f "Uh... I really like frogs!"
+    f "I spend a lot of time just watching videos about then and learning new frog facts."
+    b "Are you in any clubs at school?"
+    f "Clubs?"
+    b "Yeah, like, things you do with other students for fun."
+    f "Oh, I'm homeschooled."
+    f "My parents pay for a guy to come to our place and teach me."
+    f "They say it's so I get a better education."
+    f "I think it's really because my dad got upset when I went to school with other kids."
+    b "What happened?"
+    f "We had a homework assignment where we had to talk about what our parents did."
+    show frog sad
+    f "I tried asking my dad to help and he got really angry."
+    f "So I uh, didn't turn in the homework."
+    f "The teacher got angry during class and then a bunch of the kids started asking me about it at lunch."
+    f "My dad wasn't happy people were asking so he pulled me out of that school."
+    b "That's... huh. {i}Do{/i} you know what your dad does?"
+    f "Nah, after that day I felt like it was better not to ask."
+    f "I just know he's not around a lot and is angry all the time."
+    b "Do you get to meet other kids still?"
+    f "Not really, no."
+    f "When I go out my mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me."
+    f "I don't mind because I feel like a frog when I'm in it!"
+    b "That... isn't that lonely, Freddy?"
+    show frog ind
+    f "Maybe? It's okay though! My mom loves me a lot."
+    f "And if I behave my dad gets me whatever I want!"
+    b "Well, as long as you're happy..."
+    bi "That sounds like a really sad existence."
+    bi "I do have to wonder though... is Freddy really a criminal?"
+    bi "Maybe he's lying, but if he's stuck at home what crimes could he really do?"
+    b "Freddy, do you use the computer at home often?"
+    f "Yeah! That's how I learned so much about frogs!"
+    b "Do you do anything else on the computer?"
+    f "Uh, I play games and watch other videos sometimes."
+    f "I think that's what most kids do on the computer these days."
+    b "Yeah, makes sense."
+    f "Bert, can I ask why you're asking me all of this?"
+    b "Oh uh, just trying to make small talk."
+    bi "...and understand why a kid is in a group of criminals."
+    bi "Maybe it's a mistake?"
+
+
+#Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
