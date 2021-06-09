@@ -1,4 +1,5 @@
 label mansionGo:
+    $ftecounter = 2
     scene black
     bi "..."
     bi "Two people died..."
@@ -316,7 +317,7 @@ label mansionGo:
     c "He's having fun with it already!"
     b "Wow, maybe Sesame can scratch his way out of here for us!"
     c "What? Don't be silly."
-    c "There's also some simple tools, like a drill, a level, a hammer, a screwdriver, and a stepstool."
+    c "There's also some simple tools and supplies, like a drill, a hammer, a screwdriver, a stepstool, and some batteries."
     c "We could use these to repair anything that breaks maybe?"
     c "Not sure if anyone here's much of handyman though."
     show catherine happy:
@@ -776,6 +777,7 @@ label mansionGo:
     tut "Since you are now playing as Bert, the number of times you've talked to each participant has been reset."
     #FT2 to be inserted here.
 label postFT2:
+    $ftecounter = 3
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "shahar", "sid", "stella")
     bi "Well, guess it's time to sleep."
@@ -1162,18 +1164,19 @@ label postFT2:
     hide freetime with dissolve
     #FT3
 label postFT3:
+    $ftecounter = 4
     scene bg mansiondining with fade
     $showchibi("shahar", "stella")
-    bi "Well, still have some time to kill before the party."
+    bi "Well, I still have a tiny amount of time to kill before the party."
     $showchibi("shahar", "stella", "lauren")
     show lauren ind with dissolve
     l "Hey, Bert, are you busy right now?"
     b "Uh... I guess not."
     l "Do you mind watching over Freddy, and I guess Sesame?"
-    l "I've been with them all day and was hoping to take a shower while we could..."
+    l "I've been with them all day and was hoping to take a shower while I could..."
     b "Yeah, I don't mind."
     l "Cool, thanks. They both should still be in our bedroom right now."
-    l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on cooking right now."
+    l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on the party right now."
     scene black with fade
     scene bg mansionbedroom with fade
     $showchibi("freddy")
@@ -1204,16 +1207,16 @@ label postFT3:
     b "What happened?"
     f "We had a homework assignment where we had to talk about what our parents did."
     show frog sad
-    f "I tried asking my dad to help and he got really angry."
+    f "I tried asking my dad to help and he said it was too hard to explain."
     f "So I uh, didn't turn in the homework."
     f "The teacher got angry during class and then a bunch of the kids started asking me about it at lunch."
-    f "My dad wasn't happy people were asking so he pulled me out of that school."
+    f "My dad wasn't happy people were bullying me so he pulled me out of that school."
     b "That's... huh. {i}Do{/i} you know what your dad does?"
     f "Nah, after that day I felt like it was better not to ask."
     f "I just know he's not around a lot and is angry all the time."
     b "Do you get to meet other kids still?"
     f "Not really, no."
-    f "When I go out my mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me."
+    f "When I go out my mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me and bully me."
     f "I don't mind because I feel like a frog when I'm in it!"
     b "That... isn't that lonely, Freddy?"
     show frog ind
@@ -1233,6 +1236,144 @@ label postFT3:
     b "Oh uh, just trying to make small talk."
     bi "...and understand why a kid is in a group of criminals."
     bi "Maybe it's a mistake?"
+    bi "Or maybe it's some very petty crime."
+    bi "I don't really feel like I'm a criminal as much as someone who happened to be in the wrong place."
+    bi "Maybe that's the case for Freddy too?"
+    $showchibi("freddy", "lauren")
+    show frog ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show lauren ind with moveinright:
+        xcenter .75
+    l "And I'm back."
+    l "How are you two doing?"
+    b "Oh, good, we were just making small talk."
+    l "The party's about to start. We should head down if we want to eat while the food is hot."
+    f "Sesame, let's go!"
+    l "Oh, Sesame can't come."
+    show frog sad:
+        xcenter .25
+    f "Wh...why?"
+    l "There's gonna be a lot of stuff Sesame can't eat or drink at the party."
+    f "Can't Catherine hold onto him?"
+    l "She's hosting the party, she'll probably be too busy worrying about the food."
+    f "But... but I wanna play with Sesame."
+    f "Can't I stay here?"
+    l "Sorry Freddy, I think it's safest if you're with the group."
+    l "Besides, you gotta eat dinner eventually."
+    l "I'm sure you'll have a great time at the party."
+    f "O-okay..."
+    l "Let's head downstairs?"
+    f "Yeah..."
+    b "Oh boy, I can't wait to eat!"
+    scene black with fade
+    scene bg mansionhallway with fade
+    bi "..."
+    bi "Should I check the closet again?"
+    bi "Nah, I'm probably just being paranoid. Besides, there's food waiting for me!"
+    bi "Mmmm, I can smell it from here."
+    b "Dinner, I'm on my way!"
+    scene black with fade
+    scene bg mansiondining with fade
+    $showchibi("dracula", "freddy", "lauren", "shahar", "sid", "stella")
+    show sid ind:
+        xcenter .25
+    show drac ind:
+        xcenter .75
+    with dissolve
+    i "My first dinner party, I'm so excited!"
+    d "Hopefully your first of many. I've hosted quite a few in my lair before."
+    i "Your lair?"
+    d "I guess what humans call a mansion."
+    i "You have a mansion?"
+    d "Being a vampire pays well, in its own way."
+    d "Anyways, enjoy the party Sid. Well, as much as one can without drinking."
+    i "Why can't I drink? Sam's underage and is going to drink."
+    d "Yes, but you are quite young. You are free to do what you wish but drinking definitely gets riskier the younger you are."
+    d "Not to mention, a scrawny kid such as yourself probably has tolerance more similar to a teenage girl."
+    i "Who're you calling a girl?"
+    d "I'm not calling you a girl, just drawing a comparison."
+    i "Screw you old man!"
+    bi "This can only go poorly... let me interrupt."
+    b "Hey guys, has the food been served yet?"
+    d "No, I believe the chefs are putting the finishing touches on it."
+    b "Oh, cool. In that case I'll go see if they need any help."
+    bi "Hopefully I defused that conversation..."
+    scene black with fade
+    scene bg mansionkitchen with fade
+    $showchibi("catherine", "jenny", "sam")
+    show jenny happy with dissolve
+    j "Hey Bert! Whatcha up to?"
+    b "Just came to see if I could help with finishing dinner."
+    j "You just want to be the first to get served, don't you."
+    b "...maybe."
+    b "For real though, everything going smoothly here?"
+    j "Mostly yeah."
+    b "Mostly?"
+    j "The display for the clocks on the stove and microwave aren't working anymore for some reason."
+    j "So we've been using the clock from the garage to manually time everything."
+    b "Huh, that's weird. Do you know why?"
+    j "Honestly haven't thought to look into it, we've been busy with prepping food."
+    j "Everything else is still working so it's fine."
+    j "It's probably just be a maintenance issue, who knows how long it's been since someone lived in this house."
+    b "Yeah, makes sense."
+    j "Anyway, first course should be out soon."
+    b "First course?"
+    show jenny happy:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show catherine catless:
+        xcenter .25
+    with moveinleft
+    c "Yeah! If we're fancy people eating a fancy dinner, we gotta serve everything in courses."
+    b "Isn't that a lot of work for you? Don't you want to go out and socialize?"
+    c "It's fine! If everyone else is enjoying themselves I'm happy."
+    c "Plus I missed cooking, it's fun to be in the kitchen!"
+    c "Plus I'll be able to party once everything besides dessert is done."
+    b "Oh, who's making dessert?"
+    hide jenny with moveinright
+    show sam with moveinright:
+        xcenter .75
+    s "Me, I'll be out in the living room soon."
+    b "What did you make?"
+    s "I made an ice cream layer cake, was about all I could manage with the ingredients we had."
+    b "Still sounds pretty fancy."
+    s "Well, as much fun as baking is, drinking is a bit more fun."
+    s "My cake's already in the freezer so I'm going to go out and mingle, I guess."
+    hide sam with dissolve
+    $showchibi("catherine", "jenny")
+    show jenny happy with moveinright:
+        xcenter .75
+    c "Anyway, Bert, I think we're good to go here."
+    c "You should feel free to go out and talk to the others!"
+    c "The food will be out when it's out."
+    j "You know what they say, a watched pot never boils!"
+    b "That's just untrue."
+    j "Most idioms are."
+    b "Point taken. For real though, if you need help, let me know."
+    j "Thanks Bert, now go out and party!"
+    scene black with fade
+    scene bg mansiondining with fade
+    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
+    bi "Hm... I guess I have nothing to do besides mingle until food gets here."
+    bi "Who should I talk to?"
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    bi "I don't want to miss the food getting served, so I probably should stay in the dining room and kitchen."
+    #FT4 to be inserted here.
+label postFT4:
+    scene bg mansiondining with fade
+    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
+
+
+
+
+
+
 
 
 #Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
