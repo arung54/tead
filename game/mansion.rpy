@@ -1128,7 +1128,7 @@ label postFT2:
     j "Oh, Bert."
     j "Good morning! Sam and I were just about to head downstairs and help out Catherine."
     b "Oh, you're both cooks?"
-    j "Not really, but I like being helpful!"
+    j "Not as experienced as Catherine, but I like being helpful!"
     s "I'm gonna make some dessert."
     s "Some of my customers prefer to receive their product in brownies or other baked goods, so I got pretty good at baking."
     s "There's not exactly much else to do until the party tonight."
@@ -1367,13 +1367,236 @@ label postFT3:
     #FT4 to be inserted here.
 label postFT4:
     scene bg mansiondining with fade
+    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
+    show catherine catless:
+        xcenter .25
+    show sid ind:
+        xcenter .75
+    c "First course is served! We have a charcuterie with various crackers, cheeses, meats, and some fruit to start!"
+    i "Huh... is this what rich people eat?"
+    c "Only part of it! At expensive restaurants you usually do multiple rounds of food, with the main part of the meal being in the second to last round."
+    c "The idea is to avoid filling you up too early so you can enjoy a variety of dishes."
+    i "Oh... ok. Sorry, I'm still new to this fancy dining thing."
+    show sid smile:
+        xcenter .75
+    i "Thanks Catherine, this looks really good!"
+    c "No worries! Anyway, gotta get back to the kitchen!"
+    hide catherine with moveoutleft
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
-
-
-
-
-
-
-
+    show sid smile:
+        xcenter .75
+        linear .15 xcenter .5
+    i "Wow, there's so many types of food here already."
+    i "This is only one course?"
+    b "Yeah, though if you're anything like me you're gonna eat the equivalent of four meals."
+    b "But uh, if you've got a small stomach probably best to pace yourself."
+    i "Hm... that sounds like a challenge!"
+    b "Uh, that's not what I..."
+    bi "Before I could finish, Sid was already digging in."
+    bi "...Guess that's the end of my conversation with him."
+    hide sid with dissolve
+    show stella happy with dissolve
+    t "Food's here, so the party's started right?"
+    b "...Yes, but I don't like where this is going."
+    t "Party started means drinking time's started!"
+    b "Have you not been drinking all day?"
+    t "On and off. Even someone like me needs breaks."
+    b "What constitutes a break?"
+    t "Oh you know, an hour-long nap to sober up."
+    show stella happy:
+        xcenter .25
+        linear 0.15 xcenter .75
+    show shahar ind with moveinright:
+        xcenter .75
+    h "Aye, did someone say time to start drinking?"
+    b "I'm... gonna go talk to some other people."
+    h "Suit yerself lad, we'll be drinking with ye tonight anyway!"
+    hide shahar
+    hide stella
+    with dissolve
+    bi "I made my way to chat with Sam and Dracula."
+    show sam:
+        xcenter .25
+    show drac ind:
+        xcenter .75
+    with dissolve
+    s "Hello Bert."
+    b "Hey, sorry, needed to get away from the drunkards."
+    b "Hope I'm not interrupting anything here."
+    d "No, you're free to join us."
+    s "Though you should be warned, I believe we both plan to drink at some point."
+    s "If that bothers you maybe you can go see if Catherine and Jenny need help in the kitchen?"
+    b "That's fine with me."
+    s "In that case, maybe you wouldn't mind grabbing us a first round from the kitchen?"
+    b "...I get the message."
+    d "Sorry Bert, nothing personal, but trust and time are limited commodities here."
+    hide sam
+    hide drac
+    with dissolve
+    bi "I'd probably just be distracting Catherine and Jenny in the kitchen."
+    bi "Well, that only really leaves me two people to talk to."
+    show lauren ind with dissolve
+    b "Hey, how's it going?"
+    l "It's okay. Freddy's pretty torn up about not having Sesame at the party."
+    l "While it's very nice of Catherine and Jenny to cook for us, they were some of the people Freddy got along better with."
+    l "So, no offense, but it's pretty much is just me that he gets along with at the party right now."
+    b "Huh? I thought we were getting along fine..."
+    l "You asked him about his home life, right? He told me on the way down here."
+    b "Oh... yeah, I was just trying to figure out why he's here."
+    l "I get that you're trying to be helpful but..."
+    l "Given some of the very innocent crimes people are \"admitting\" to I don't think knowing more about him will accomplish much."
+    l "And from I gather his home life wasn't great so maybe it's best not to remind him of that."
+    b "That's fair, sorry."
+    l "Nothing to apologize for, you were just trying to get us out of here in your own way."
+    l "But I don't think you need to do that constantly, we don't need to spend every moment like we did on the train."
+    b "What do you mean?"
+    l "It felt like every moment we spent on the train we were fighting for our lives."
+    l "We're still fighting for our lives here, but not as directly, if that makes sense."
+    l "I think that and events like this party are overall helping our morale."
+    b "That's true, but I worry about how much of us not trying to escape is because we're losing motivation to fight our way out."
+    l "Maybe it's because of that, maybe it's just that we're somewhere more relaxing."
+    l "I wouldn't overthink it, not like if we find a way out we'll be able to get Shahar and Stella to help us."
+    b "That is unfortunately true..."
+    l "And people like Sam and Dracula only seem to be interested in very extreme ways of helping us get out."
+    l "Anyway, the food is only going to keep Freddy entertained for so long."
+    l "I should probably go back to talking to him before Shahar and Stella try to do anything stupid around him."
+    b "I'll join you."
+    bi "In part because... I somehow forgot to try out the food."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show frog ind with moveinleft:
+        xcenter .25
+    l "Hey Freddy, how's the food?"
+    f "It's so good! So many different types of cheese."
+    f "I don't think I know all of their names, some are a bit long."
+    f "Like Cam... Cam... Camembert?"
+    b "Hey, that's me!"
+    f "Huh?"
+    f "Oh, I get it."
+    l "Don't eat too much cheese, gotta save some space for the rest of the meal."
+    bi "As they talked I picked up a plate and took some of the cheese and meat on crackers."
+    bi "..."
+    b "Oh my god."
+    l "Huh?"
+    l "Everything okay?"
+    b "It's... it's beautiful."
+    f "What is?"
+    b "The food."
+    f "Huh? Looks normal to me."
+    b "It's so tasty, after all those turkey sandwiches and bar snacks."
+    b "The spices and seasoning on the sausage."
+    b "The nibbles of pepper in the jack cheese."
+    b "The slight saltiness of the cracker."
+    l "...Are you sure you're okay?"
+    b "Sorry, I'm having a bit of a moment."
+    b "It feels like ages since I've had real food."
+    l "You know it's only been a few days since this whole game started, right?"
+    b "More like a few days too many!"
+    l "..."
+    l "C'mon Freddy, let's go sit on the couch and eat."
+    hide lauren
+    hide frog
+    with dissolve
+    bi "...well, seems with my hunger pangs I've alienated everyone except Sid here."
+    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
+    show jenny happy with dissolve
+    j "The next course is ready! We have appetizers and salad."
+    j "For the appetizers we have kebabs, and the salad is a kale caesar."
+    b "Wow, Jenny, did you make these?"
+    j "Well, Catherine prepped the meat, I just put the kebabs together."
+    show jenny ind
+    j "And I had a... complicated family situation so I made lots of meals for myself growing up."
+    j "Salad is easy to make, so I made a lot of it."
+    b "...Is a salad that filling?"
+    show jenny happy
+    j "If you pour on enough dressing yeah!"
+    j "I love Caesar dressing... oh, but I didn't add that much this time because there's more courses coming."
+    b "This all looks really good, but are you and Catherine getting a chance to eat?"
+    j "We've been taste testing the food throughout the day, and we have some portions saved for ourselves."
+    j "No need to worry Bert, we're taking care of ourselves too!"
+    b "Well, if you want to take a break and come out here I'd be happy to swap in..."
+    b "I might be saying this so I can take a break from Stella and Shahar's shenanigans."
+    j "You mean their Stellanigans? Or maybe their Shahanigans?"
+    show jenny happy:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show stella drunk with moveinright:
+        xcenter .75
+    t "Did someone say Stellanigans?"
+    b "Huh? How was that a word that caught your attention?"
+    t "That's what a lot of my subordinates called my drunk antics."
+    j "Ha, knew it was a good word!"
+    j "Stella, you look like you're having a good time! That's good to see."
+    b "No, don't encourage her!"
+    t "Thanks sweetie, you look good too."
+    show jenny ind:
+        xcenter .25
+    j "Huh? That's not what I said..."
+    t "Anyway, Bert, you remember our adventure last night?"
+    b "...Adventure?"
+    t "You know, the one upstairs."
+    b "I'd hardly call that an adventure, but sure."
+    t "I think I'm going to continue that adventure, want to join?"
+    b "Not really... does Shahar not want to join you?"
+    t "Psh, he's carrying a lot of muscle but he's a bit of a weak drunk."
+    t "Says he's still tired from last night and wants to stay down here and keep drinking."
+    b "I uh... no."
+    t "Psh, killjoy as always."
+    t "Well, I'm off!"
+    j "Wait, Stella, I really don't think it's a good idea for you to..."
+    t "Vroom!"
+    hide stella drunk with moveoutright
+    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "jenny")
+    show jenny ind:
+        xcenter .25
+        linear 0.15 xcenter .5
+    j "...And she's gone."
+    j "Sigh. Well, if you do want to help out Bert, do you know where I can find some batteries?"
+    j "Catherine said the clock we're using died and wanted me to find some replacements."
+    b "Oh, I think there's some in the garage."
+    b "I'm surprised Catherine didn't tell you that, she was the one who found them yesterday."
+    j "She's cooking like crazy, I'm sure she's just distracted.":
+    j "But thanks! I'll go get them right now."
+    hide jenny with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid")
+    show shahar ind with dissolve
+    h "Ahoy lad, is Stella gone?"
+    b "Uh, yeah, were you not going to join her?"
+    h "Nay, there's a bounty of rum in the kitchen and I wanted to have as much as I could afore she drinks it all."
+    h "That lass is stashin' a second liver somewhere in here, I swear t' Blackbeard!"
+    h "If I open a bottle I'll have hardly a shotful before it's gone!"
+    b "Oh, yeah, then you're good to grab it now."
+    h "Aye-aye, to the kitchen, chaaaarge!"
+    hide shahar with moveoutleft
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid")
+    show sam:
+        xcenter .25
+    show drac ind:
+        xcenter .75
+    with dissolve
+    d "Do tell, Bert, what was that all about?"
+    b "Well, Stella went upstairs to continue trying to break apart the bathroom."
+    b "And Shahar is using the opportunity to have a drink without Stella stealing some."
+    d "Well, as long as the drunkards are gone, we can have peace and quiet."
+    b "...Aren't you two drinking right now as well?"
+    s "Yeah, you didn't get us one so we poured ourselves a round."
+    b "I thought you wanted me to leave you alone, not actually get you a drink."
+    s "Well yeah, but a drink would've been nice too."
+    d "Regardless, I have basically infinite tolerance."
+    d "Vampires' metabolism works differently than puny human metabolism."
+    s "And I'm not going to drink that much, just a casual amount."
+    s "Enough to loosen up without causing a ruckus."
+    b "Oh yeah, isn't your course of the meal coming up?"
+    s "Yeah, just the entrees are left before dessert."
+    s "But again, I just need to take my dessert out of the freezer and find something to cut it into pieces with."
+    b "Huh? Is there not a bunch of knives in the kitchen?"
+    s "No, there's only one. According to Lauren when she searched she could only find one yesterday in the whole kitchen."
+    s "And Catherine wanted to serve it with the entree so people could cut themselves a portion."
+    d "Clever, the knife can't be used as a murder weapon if it's in the middle of a crowd."
+    s "I'm not sure if that was her attention."
+    s "She's a bit of a ditz, I don't think she thinks things nearly that far that aren't cats or food."
+    b "...You know she's in the other room and could walk in any moment."
+    s "I'm sure she's heard it before, or figured it out herself."
 
 #Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
