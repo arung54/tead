@@ -208,8 +208,9 @@ label mansionGo:
     l "Ah okay. Well, good news, the kitchen is rather well-stocked."
     l "What you'd expect from a kitchen in a mansion."
     l "Plenty of fancy cutlery and cookware."
-    l "Including a full knife set, which we might want to discuss..."
-    l "All sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water..."
+    l "Though there seems to be only one knife..."
+    l "Maybe the mastermind didn't want a knife murder to be too easy?"
+    l "Regardless, there's also all sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water..."
     hide lauren ind with dissolve
     show shahar happy with moveinright:
         xcenter .25
@@ -317,7 +318,7 @@ label mansionGo:
     c "He's having fun with it already!"
     b "Wow, maybe Sesame can scratch his way out of here for us!"
     c "What? Don't be silly."
-    c "There's also some simple tools and supplies, like a drill, a hammer, a screwdriver, a stepstool, and some batteries."
+    c "There's also some simple tools and supplies, like a drill, a hammer and nails, a screwdriver and screws, a stepstool, and some batteries."
     c "We could use these to repair anything that breaks maybe?"
     c "Not sure if anyone here's much of handyman though."
     show catherine happy:
@@ -1556,7 +1557,7 @@ label postFT4:
     j "Catherine said the clock we're using died and wanted me to find some replacements."
     b "Oh, I think there's some in the garage."
     b "I'm surprised Catherine didn't tell you that, she was the one who found them yesterday."
-    j "She's cooking like crazy, I'm sure she's just distracted.":
+    j "She's cooking like crazy, I'm sure she's just distracted."
     j "But thanks! I'll go get them right now."
     hide jenny with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid")
@@ -1594,9 +1595,131 @@ label postFT4:
     s "No, there's only one. According to Lauren when she searched she could only find one yesterday in the whole kitchen."
     s "And Catherine wanted to serve it with the entree so people could cut themselves a portion."
     d "Clever, the knife can't be used as a murder weapon if it's in the middle of a crowd."
-    s "I'm not sure if that was her attention."
-    s "She's a bit of a ditz, I don't think she thinks things nearly that far that aren't cats or food."
+    s "I'm not sure if that was her intention."
+    s "She's a bit of a ditz, I don't think she thinks nearly that far ahead unless cats or food are involved."
     b "...You know she's in the other room and could walk in any moment."
     s "I'm sure she's heard it before, or figured it out herself."
+    b "Regardless, I don't really want to talk about the person selflessly cooking dinner for us behind her back..."
+    s "Fine."
+    show sid ind with moveinright:
+        rotate 315
+        xcenter 1.1
+        ycenter .5
+    b "Huh?"
+    s "Is something the matter?"
+    hide sid with moveoutright
+    b "I... nothing, I thought I saw someone pop out behind the couch."
+    s "You haven't gone delirious already, have you?"
+    b "No, I think that's my cue to leave again though."
+    hide sam
+    hide drac
+    with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "jenny")
+    show jenny happy with dissolve
+    j "Hey Bert, I found the batteries! Thanks for the help."
+    j "The entree should be out soon."
+    b "Ooh, what is the entree?"
+    j "Meatloaf with french onion soup!"
+    b "A... a giant slab of meat?"
+    b "I'm so in love."
+    show jenny ind
+    j "With Catherine?"
+    b "No, with meat."
+    j "Oh."
+    b "Wait..."
+    b "Catherine can't eat meatloaf though, right?"
+    j "She can't eat the meatloaf, but she had a pretty hearty portion of french onion soup set aside."
+    j "We just need to heat it in the oven for a few minutes with the sauce on top so it seeps in."
+    j "Anyway, I'm off to go hand the clock off to her."
+    j "Seeya Bert!"
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid")
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar")
+    show shahar happy with dissolve
+    h "Aye, Bert, I got this bottle of wine but I need help openin' it."
+    h "Unfortunately in my drunken stupor I seem to have lost me corkscrew."
+    h "Do you know if there's any screws I can use to uncork me a bottle?"
+    bi "Are Catherine, Sid, and I the only ones who bothered checking the garage?"
+    b "Screws?"
+    h "Yes lad! All a corkscrew does is turn a screw into the cork and yank it out."
+    h "I can just do that with a screwdriver and the back end of a hammer."
+    h "Requires some elbow grease, but I got the greasiest elbows around!"
+    b "I uh... don't think saying you have greasy elbows sounds as good as you think it does."
+    b "Regardless, there's some in a toolbox in the garage."
+    h "Aye, lad, I knew ye would help me out. To the booty I go!"
+    hide shahar with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid")
+    show sid ind with dissolve
+    i "Hey Bert, uh... did you see me earlier?"
+    b "See you? Like when you peeked from behind the couch?"
+    i "Yeah... I guess you did see me."
+    i "For my... \"job\" I did a lot of eavesdropping in crowds."
+    i "And I still don't totally trust everyone so it felt like a natural thing to do here."
+    b "Seems reasonable."
+    b "You don't have to justify it to me, parties aren't everyone's favorite way to socialize."
+    b "I know people who lurk in the corner at parties because that's what most comfortable to them."
+    i "Oh... thanks Bert. But uh, could I ask you not to tell anyone else if they haven't noticed?"
+    b "Sure, but let's make a deal?"
+    i "Huh?"
+    b "If you overhear anything that might be useful, let me know."
+    i "Well, I did hear one thing."
+    i "I don't know how useful it is, but it's something I was curious about."
+    b "Oh?"
+    i "Let's make sure no one is listening."
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar")
+    bi "Looking around, no one was really paying attention."
+    bi "Shahar came back in the middle of our conversation, but was too focused on opening his bottle."
+    b "I think we're good."
+    bi "Sid leaned in to whisper."
+    i "Dracula obviously isn't a vampire, he's just using that to hide his job for some reason."
+    i "But I think I overheard him discussing his real job with Sam."
+    i "I had to keep my distance and they were almost whispering so it was hard to hear much."
+    i "But I heard the word \"doctor\" come up. So I think he's a doctor."
+    b "Huh. I guess it's kinda fitting for a doctor to pretend to be someone who drinks blood?"
+    b "Did you get any more details?"
+    i "Anyways, you can't tell anyone I told you this."
+    i "If Dracula finds out I get the sense he'll be very angry at me."
+    i "And I don't want to give anyone a reason to murder me..."
+    b "I won't tell anyone you told me."
+    bi "...But I might bring this up without saying you told me if it's relevant information later."
+    b "Thanks Sid. Your secret is safe with me."
+    hide sid with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
+    show catherine catless with dissolve
+    c "And the entree is served!"
+    c "Meatloaf with french onion soup!"
+    c "There should be plenty for everyone, there's a knife her to use to serve yourself a portion."
+    c "Try not to take it away from the table though, we only have the one!"
+    b "Meat?"
+    b "Meeeeeeeeeeeeat."
+    bi "Like a zombie, I walked to the meatloaf and cut myself a large portion."
+    b "Mmmmm... so juicy."
+    b "You're such a good chef Catherine."
+    c "Thanks Bert!"
+    show catherine catless:
+        xcenter .5
+        linear .15 xcenter .25
+    show sam with dissolve:
+        xcenter .75
+    s "I guess that means I should get dessert ready."
+    s "Catherine, did you see anything else we could use to cut the dessert into slices?"
+    c "Hmm, not sure, though there's some cabinets that we haven't looked in because they're high up."
+    c "Maybe you could try those?"
+    s "Sure, I think there was a stepstool in the garage."
+    s "I'll go grab that and use it to search."
+    c "Sounds good! Jenny is still in there cleaning up so she can help you if needed."
+    s "Got it."
+    hide sam with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine")
+    show catherine catless:
+        xcenter .25
+        linear .15 xcenter .5
+    c "Well, that's it for cooking."
+    c "Time to party hardy!"
+    hide catherine with dissolve
+
+
+
+
+
 
 #Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
