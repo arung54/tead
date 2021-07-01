@@ -285,7 +285,7 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
-                action [Function(shatterNoise), Show("shattered", lab = l)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
+                action [Function(shatterNoise), Show("shattered", lab = corrL)]#, Hide("trainTrial"), Hide("trainEvidenceTrial"), Jump(l)]
         else:
             imagebutton:
                 idle "agree.png"
