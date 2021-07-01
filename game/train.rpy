@@ -1803,7 +1803,7 @@ label trial1a:
     show stella ind with moveinleft:
         xcenter .25
     b "Wait, slow down!"
-    call screen trainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place.{color=#55f}{/color}", 0,
+    call screen trainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
     "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
     "sid", "Sid: I told you it {color=#55f}wasn't me{/color}!", 1,
     "stella",  "Stella: It would also explain that perky attitude of hers... it's just a diversion.", 0,
@@ -2238,6 +2238,7 @@ label trial1h:
     show sid ind with moveinleft:
         xcenter .25
     i "Hey! We already moved past that, it couldn't have been me."
+    s "This is such a circular argument..."
     show scary with dissolve:
         alpha .7
     bi "Damn, are they right?"
@@ -2266,7 +2267,7 @@ label trial1h:
     f "Lauren knows! When I looked out the window earlier, I saw a flag on the back of the train."
     hide sid ind with moveoutleft
     show lauren ind with moveinleft:
-        xcenter .15
+        xcenter .18
     o "He did mention something like that this morning."
     o "We were up in the front car, and I was half paying attention, but I do remember something about a flag."
     f "Come on, I can show you guys!"
@@ -2277,8 +2278,198 @@ label trial1h:
 label trial1i:
     scene black
     blank "The 10 of them followed Freddy to the front car."
-    # show chibis
-    #show front car, look out window to nothing, wait, look on turn,
+    show bg notrainfront with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show jenny ind with dissolve:
+        xcenter .5
+        linear 0.3 xcenter .75
+    j "I'm skeptical that this'll lead to anything..."
+    j "But it's not like we were getting that much done anyway!"
+    show frog ind with moveinbottom:
+        xcenter .25
+    f "Look!"
+    hide frog ind with dissolve
+    blank "Freddy ran over to the window."
+    blank "A few others followed."
+    scene black with dissolve
+    image forest run2:
+        contains:
+            "windowviewout.png"
+            xpos -9.0
+            linear 555.0 xpos 0.0
+        contains:
+                "scary.png"
+                alpha .8
+    show forest run2
+    show windowview2
+    with fade
+    b "Hmmm... looks about the same as the last time we checked."
+    b "What did you say we're looking for again, Freddy?"
+    f "The flag!"
+    f "It's all the way on the back of the train."
+    b "I'm pushing my head all the way up against the glass and I can't see that far back."
+    k "Me as well..."
+    hide forest run
+    hide windowview2
+    with fade
+    show bg notrainfront with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show frog ind with moveinbottom
+    f "Hmm... well, nevermind I guess."
+    show frog ind:
+        linear .3 xcenter .75
+    show drac ind with moveinleft:
+        xcenter .25
+    d "Well..."
+    d "There is no need to rush."
+    b "Huh? Of course there is!"
+    b "Dan is dead! We have to figure out what happened!"
+    d "Slow down."
+    hide frog ind with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "What are you talking about?"
+    j "Freddy is just making things up now and we're not getting anywhere."
+    d "I don't believe he made anything up."
+    d "We just do not have the correct angle."
+    bi "!"
+    b "I think I get it."
+    b "We have to wait until we're going around a turn."
+    b "Then we'll be able to see the back car from the window."
+    j "Hmmm."
+    j "How long will we have to wait?"
+    d "We don't know."
+    hide jenny ind with moveoutright
+    show shahar ind with moveinright:
+        xcenter .75
+    h "Aye."
+    h "I don't get it."
+    h "Are ye sayin' the flag is invisble?"
+    bi "..."
+    hide drac ind with moveoutleft
+    show catherine happy with moveinleft:
+        xcenter .25
+    c "I can explain!"
+    c "It's pretty simple."
+    hide catherine happy with dissolve
+    blank "Catherine grabbed a piece of paper and started drawing on it."
+    show catherine happy with dissolve:
+        xcenter .25
+    hide shahar ind with dissolve
+    show traindoodle1 with dissolve
+    c "So, this is us right now."
+    c "We're in the first of the 3 train cars."
+    c "Since we're going straight, we can't see the back of the train out the window."
+    c "Buuuut..."
+    blank "Catherine flipped the paper over and drew on the back."
+    c "If we're going around a turn, "
+    hide traindoodle1 with dissolve
+    show traindoodle2 with dissolve
+    extend "we have a better field of view!"
+    c "Does that make sense?"
+    i "Why is he smiling now..."
+    o "And you even signed it, with a heart."
+    c "I think I did a pretty good job drawing it!"
+    hide traindoodle2 with dissolve
+    show shahar ind with dissolve:
+        xcenter .75
+    h "Aye! That does make sense."
+    hide shahar ind with moveoutright
+    hide catherine ind with moveoutleft
+    show kaiser ind with moveinleft
+    k "I suppose we're just waiting then."
+    b "Yeah, we should just hang tight until we start going around a turn."
+    k "I feel we're investing quite a bit of time into the child's theory."
+    bi "He is right..."
+    bi "But it's all we've really got right now."
+    show kaiser ind:
+        linear .3 xcenter .75
+    show stella ind with moveinleft:
+        xcenter .25
+    t "I have been meaning to ask."
+    t "What do you plan to do if we figure out who killed Dan?"
+    k "She makes a good point, for once."
+    k "There {i}is{/i} a killer amongst us."
+    t "Seems easy enough, no? We can just kill them."
+    k "Agreed."
+    b "What!? We don't need another dead body on this train."
+    k "What do you suggest then?"
+    b "..."
+    bi "I hadn't exactly thought that far ahead."
+    b "We can just... lock them in one of the cars alone or something."
+    b "But now's not the time to worry about that, we don't know who did it yet."
+    hide kaiser ind with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "Hey! Do you guys feel that?"
+    s "We're turning."
+    hide sam
+    hide stella ind
+    with dissolve
+    blank "Bert and Freddy made their way over to the window again."
+    show turning with fade
+    b "Dracula was right, we can see the back of the train pretty easily now."
+    f "Oh! See!"
+    b "..."
+    b "No, I don't really see anything."
+    f "Well, yeah! The flag is GONE!"
+    b "It's hard when I don't know what I'm looking for."
+    b "Did it really look like a flag? What was on it?"
+    f "Well... I don't know! It was a long, pointy flag!"
+    hide turning with fade
+    show frog ind:
+        xcenter .25
+    show sid ind:
+        xcenter .75
+    with dissolve
+    i "This kid's starting to bother me..."
+    b "Wait, let him keep talking."
+    b "Freddy, what do you mean it was a long, pointy flag?"
+    b "That doesn't sound like any flag I've seen before."
+    f "Umm... can I draw it?"
+    c "Seems like I started a trend!"
+    hide frog ind with dissolve
+    blank "Freddy grabbed another piece of paper."
+    show frog ind with dissolve:
+        xcenter .25
+    hide sid ind with dissolve
+    show traindoodle3 with dissolve
+    f "If this is the train going left, it looked kinda like this."
+    c "That's a pretty good drawing..."
+    bi "Why does she sound jealous..."
+    b "Anyway, so Freddy. It doesn't seem very much like a flag then?"
+    f "W-well that's what it looked like..."
+    f "It was really thin, and mounted on a sick."
+    bi "!"
+    hide frog ind
+    hide traindoodle3
+    with dissolve
+    show catherine ind with moveinleft:
+        xcenter .75
+    c "Well anyway, I think we should move on from this."
+    c "I don't think we're going down the right path."
+    show sid ind with moveinleft:
+        xcenter .25
+    s "Wait, no! I think we were just starting to get somewhere!"
+    c "I think I'm going to go inspect the body again."
+    s "Catherine, you can't! Hear me out!"
+    c "Hmm... I'll give you one minute!"
+
+    call screen trainTrial("sid", "Sid: I know it seems like a waste, but think about what Freddy just said.{color=#55f}{/color}", 0,
+    "catherine", "Catherine: Look! I'll admit it, {color=#f00}his drawing was better than mine...{/color}", -1,
+    "catherine", "Catherine: But this is a waste of time. There's {color=#55f}nothing useful in his picture{/color} anyway.", 1,
+    "sid",  "Sid: Don't you think his flag looked... {color=#55f}awfully similar to a sythe{/color}?", 1,
+    3, -1, "trial1j")
+
+label trial1j:
+    scene black
+    bi "!"
+    bi "That's it!"
+    show bg notrainfront with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show jenny ind with dissolve:
+        xcenter .5
+
 
 
 

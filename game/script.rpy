@@ -32,6 +32,12 @@ image ntracks:
     "tracksn2.png"
     pause .05
     repeat
+image turning:
+    "trainturn1.png"
+    pause .05
+    "trainturn2.png"
+    pause .05
+    repeat
 define audio.jaws = "jaws.mp3"
 image eviscroll:
     contains:
@@ -264,4 +270,5 @@ label start:
 ###########
 #Start
 ###########
-    call screen pickSpot1
+    jump trial1i
+    #all screen pickSpot1
