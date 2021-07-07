@@ -1803,7 +1803,9 @@ label trial1a:
     show stella ind with moveinleft:
         xcenter .25
     b "Wait, slow down!"
-    call screen trainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
+
+    python:
+        startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
     "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
     "sid", "Sid: I told you it {color=#55f}wasn't me{/color}!", 1,
     "stella",  "Stella: It would also explain that perky attitude of hers... it's just a diversion.", 0,
@@ -2313,7 +2315,7 @@ label trial1i:
     hide windowview2
     with fade
     show bg notrainfront with dissolve
-    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show frog ind with moveinbottom
     f "Hmm... well, nevermind I guess."
     show frog ind:
@@ -2450,28 +2452,192 @@ label trial1i:
     c "I don't think we're going down the right path."
     show sid ind with moveinleft:
         xcenter .25
-    s "Wait, no! I think we were just starting to get somewhere!"
+    i "Wait, no! I think we were just starting to get somewhere!"
     c "I think I'm going to go inspect the body again."
-    s "Catherine, you can't! Hear me out!"
+    i "Catherine, you can't! Hear me out!"
     c "Hmm... I'll give you one minute!"
-
-    call screen trainTrial("sid", "Sid: I know it seems like a waste, but think about what Freddy just said.{color=#55f}{/color}", 0,
-    "catherine", "Catherine: Look! I'll admit it, {color=#f00}his drawing was better than mine...{/color}", -1,
-    "catherine", "Catherine: But this is a waste of time. There's {color=#55f}nothing useful in his picture{/color} anyway.", 1,
-    "sid",  "Sid: Don't you think his flag looked... {color=#55f}awfully similar to a sythe{/color}?", 1,
-    3, -1, "trial1j")
+    python:
+        startTrainTrial("sid", "Sid: I know it seems like a waste, but think about what Freddy just said.{color=#55f}{/color}", 0,
+        "catherine", "Catherine: Look! I'll admit it, {color=#f00}his drawing was better than mine...{/color}", -1,
+        "catherine", "Catherine: But this is a waste of time. There's {color=#55f}nothing useful in his picture{/color} anyway.", 1,
+        "sid",  "Sid: Don't you think his flag looked... {color=#55f}awfully similar to a scythe{/color}?", 1,
+        3, -1, "trial1j")
 
 label trial1j:
     scene black
     bi "!"
     bi "That's it!"
     show bg notrainfront with dissolve
-    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show jenny ind with dissolve:
         xcenter .5
+    j "What do you mean a scythe?"
+    show jenny ind:
+        linear .3 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "W-well not exactly a scythe, but..."
+    i "Look at his drawing!"
+    i "I think I'm starting to piece it together!"
+    show scary with dissolve:
+        alpha .5
+    bi "It does look like a scythe, but... what does that mean?"
+
+label trial1k:
+    menu:
+        bi "Is it..."
+
+        "The flag was actually the murder weapon.":
+            bi "That must be it!"
+            jump trial1l
+
+        "Someone switched the flag and the scythe.":
+            bi "There's an even simpler answer."
+            jump trial1k
+
+        "Freddy was probably imagining it...":
+            bi "No, there's a connection here!"
+            jump trial1k
+
+        "Maybe there was a farmer on the train's roof!":
+            bi "Hmm, on second thought, probably not..."
+            jump trial1k
+
+label trial1l:
+    hide scary with dissolve
+    j "What! How? Who? Huh?"
+    i "..."
+    i "It does make sense though, right?"
+    hide jenny ind with moveoutright
+    show lauren ind with moveinright:
+        xcenter .75
+    o "What you're suggesting is pretty crazy..."
+    i "But? Maybe?"
+    show shahar ind with moveinleft:
+        rotate 45
+        xcenter -.1
+        ycenter .5
+    h "Ye lost me again, lads."
+    hide shahar ind with moveoutleft
+    i "Ugh... Gimme that piece of paper."
+    hide sid ind
+    hide lauren ind
+    with dissolve
+    blank "Sid grabbed the piece of paper that Freddy was holding."
+    show sid ind with dissolve:
+        xcenter .25
+    show traindoodle4 with dissolve
+    i "Someone could have set up a mechanism to BONK the scythe off the tunnel entrance,"
+    i "and swing down to stab through the back car window!"
+    hide traindoodle4
+    show sam with moveinright:
+        xcenter .75
+    s "That is a batshit insane theory."
+    i "Wait, bu-"
+    s "But! If it's right, we should be able to check."
+    s "The murderer would have had to set up a hinge or something to make sure it swung down correctly."
+    b "You're right!"
+    b "We should go check."
+    hide sid ind with moveoutleft
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "I agree that it seems absurd. However I also agree there is no harm in checking."
+    k "We should all move to the back car, together."
+    b "Maybe someone can stay up here with Freddy? So he doesn't have to see the body again..."
+    s "No, I don't trust any of you at this point. Bring the kid."
+    bi "..."
+    b "Alright."
+
+label trial1m:
+    scene black with fade
+    blank "All 11 of them made their way to the back car, together."
+    show bg bodytrainback with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show sid ind with dissolve
+    i "Damn..."
+    i "I don't really want to, uh, climb over his body to check the window..."
+    b "I can do it."
+    bi "I don't want to, but I can."
+    show btracks with fade
+    hide sid ind
+    bi "Stepping over a dead body like this is unnerving..."
+    bi "But I have to."
+    bi "Hmmm... It's hard to get a good view of the overhand outside the train..."
+    bi "But if I lean up against the broken glass of the window just right..."
+    show trainhinge with dissolve
+    bi "!"
+    bi "On second thought... This must have been where that object was hanging from..."
+    bi "There really is a big hinge, right outside the back door."
+    bi "Sid was right..."
+    hide trainhinge
+    hide btracks
+    show scary:
+        alpha .5
+    with dissolve
+    blank "Bert stepped back over the body, and explained what he saw to everyone else."
+    hide scary with dissolve
+    show stella ind with moveinleft
+    t "Well well well... that certainly changes things."
+    show stella ind:
+        linear .3 xcenter .75
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "Yes, it seems we have quite the mechanic on our hands."
+    t "Mechanic?"
+    k "Well, to construct a mechanism that releases a scythe specifically upon hitting the tunnel..."
+    k "Especially in secret, with such little time..."
+    k "It's nearly impossible."
+    hide stella ind
+    show stella happy:
+        xcenter .75
+    t "In any case, it's a fun lead!"
+    b "Fun?"
+    t "Think about it! The whole case is changed now."
+    show scary with dissolve:
+        alpha .5
+    bi "She has a point."
+    bi "If we assume this scythe contraption was actually used, everything is different."
+    hide scary with dissolve
+    hide stella happy
+    show stella ind:
+        xcenter .75
+    t "Though, our alibis may be inaccurate now..."
+    t "We might not be looking for someone who was in the back car at the time of death."
+    hide kaiser ind with moveoutleft
+    show frog ind with moveinleft:
+        xcenter .25
+    f "W-what? I don't get it."
+    f "Someone killed Dan even though they weren't there with him?"
+    t "Well buddy, once they put the flag up there, all they had to do was wait for the tunnel."
+    t "It's sort of like a cuckoo clock. Once it's installed, you don't have to do anything."
+    f "B-but... no! You're missing the point!"
+    t "Au contraire."
+    python:
+        startTrainTrial("freddy", "Freddy: Y-you're so mean to me! You're not my mom...", 0,
+        "stella", "Stella: Dear, you're too young and stupid to understand. Leave this to us for now.", 0,
+        "stella", "Stella: We can explain after - {color=#f00}they didn't need to be in the car.{/color}!", -1,
+        "freddy",  "Freddy: B-but... Why did Dan stand at the window? {color=#f00}Didn't somebody have to hold him there{/color}?", -1,
+        3, 6, "trial1n")
+
+label trial1n:
+    show bg bodytrainback with fade
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    show frog ind with moveinbottom
+    f "W-what do you mean? What object?"
+    b "When I came back here to investigate more, I noticed this hanging right outside the back window."
+    show frog ind:
+        linear .3 xcenter .25
+    show thering with dissolve:
+        xcenter .75
+    b "In fact, it was hanging from that same hinge."
+    b "My guess is that Dan noticed the same thing and walked over to the back window."
 
 
+    #lead into ring evidence
 
-
+    #fred you're so mean to me!
+    #stella darling you're too young to understand something like this
+    #stella they didn't have to be in the car
+    #fred but didnt someone have to hold him in front of the windsofdj
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

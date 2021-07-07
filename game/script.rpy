@@ -32,6 +32,14 @@ image ntracks:
     "tracksn2.png"
     pause .05
     repeat
+
+image btracks:
+    "tracksb1.png"
+    pause .05
+    "tracksb2.png"
+    pause .05
+    repeat
+
 image turning:
     "trainturn1.png"
     pause .05
@@ -270,5 +278,5 @@ label start:
 ###########
 #Start
 ###########
-    jump trial1i
+    jump trial1m
     #all screen pickSpot1
