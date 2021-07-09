@@ -278,5 +278,5 @@ label start:
 ###########
 #Start
 ###########
-    jump trial1m
+    jump trial1n
     #all screen pickSpot1

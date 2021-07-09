@@ -2620,7 +2620,8 @@ label trial1m:
         3, 6, "trial1n")
 
 label trial1n:
-    show bg bodytrainback with fade
+    scene black with fade
+    scene bg bodytrainback with dissolve
     $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show frog ind with moveinbottom
     f "W-what do you mean? What object?"
@@ -2631,13 +2632,56 @@ label trial1n:
         xcenter .75
     b "In fact, it was hanging from that same hinge."
     b "My guess is that Dan noticed the same thing and walked over to the back window."
+    f "Sh-shiny..."
+    show stella ind with moveinleft:
+        xcenter .35
+    show frog ind:
+        linear .3 xcenter .15
+    t "Hey, give me that!"
+    t "That is my ring!"
+    show stella ind:
+        linear .3 xcenter .5
+    hide frog ind with moveoutleft
+    hide thering with dissolve
+    b "Huh? This is yours?"
+    t "Why yes of course it is, now hand it over."
+    t "Hmm... I don't remember losing this, or giving it to anyone."
+    b "Are you... admitting to hanging it outside the back car window?"
+    t "Of course not, raclure de bidet."
+    t "Why would I, Stella Cantoire, do such a thing?"
+    bi "More importantly, if she did do it, she probably wouldn't own up to the ring being hers..."
+    t "Someone must have stolen it from me."
+    show stella ind:
+        linear .3 xcenter .75
+    show sam with moveinleft:
+        xcenter .25
+    s "Or they just asked for it while you were blackout drunk."
+    s "If you don't remember who you gave it to -"
+    t "Or who took it-"
+    s "Then it doesn't really matter that it's yours."
+    s "More importantly, I have a question."
+    s "We're assuming the murderer used the ring as bait for someone to stand at the window."
+    s "I can get on board with that, sure. But."
+    s "Dan probably only stood there for a minute or two, max."
+    s "How did the murderer know exactly when we'd get to the tunnel?"
+    t "Oh yes... a few moments ago we didn't even know when we'd be taking a turn."
+    t "How was the murderer able to so perfectly time the tunnel entrance?"
+    b "That's true. We don't have access to the train route, or even a map of the area."
+    hide stella ind with moveoutright
+    show lauren ind with moveinright:
+        xcenter .75
+    o "Yeah, we were trying to find a map on the computers in the front car, but no luck."
+    s "Someone must have gotten into the computers and kept it a secret from the rest of us."
+    s "Damnit, right under our noses..."
+    o "Wait, hold on. I don't think anyone managed to get into the computers."
+    s "Don't be so foolish."
+#    python:
+#        startTrainTrial("freddy", "Freddy: Y-you're so mean to me! You're not my mom...", 0,
+#        "stella", "Stella: Dear, you're too young and stupid to understand. Leave this to us for now.", 0,
+#        "stella", "Stella: We can explain after - {color=#f00}they didn't need to be in the car.{/color}!", -1,
+#        "freddy",  "Freddy: B-but... Why did Dan stand at the window? {color=#f00}Didn't somebody have to hold him there{/color}?", -1,
+#        3, 6, "trial1n")
 
 
-    #lead into ring evidence
-
-    #fred you're so mean to me!
-    #stella darling you're too young to understand something like this
-    #stella they didn't have to be in the car
-    #fred but didnt someone have to hold him in front of the windsofdj
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
