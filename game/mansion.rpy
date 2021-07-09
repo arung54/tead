@@ -1784,7 +1784,8 @@ label postFT4:
     scene black with fade
     bi "Sid was in a lot of pain, but managed to hold it in the entire trip up."
     bi "But as soon as we got into the bathroom, he had to sprint to the toilet to vomit."
-    bi "After seeing what we saw in there, I had to hold it in a bit too..."
+    bi "I can't blame him."
+    bi "After seeing what we saw in there, I wanted to vomit too."
     #Stella dead D:
 
 
