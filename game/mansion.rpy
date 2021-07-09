@@ -1375,9 +1375,9 @@ label postFT4:
         xcenter .75
     c "First course is served! We have a charcuterie with various crackers, cheeses, meats, and some fruit to start!"
     i "Huh... is this what rich people eat?"
-    c "Only part of it! At expensive restaurants you usually do multiple rounds of food, with the main part of the meal being in the second to last round."
+    c "Only part of it! We're going to do multiple rounds of food, with the main part of the meal being in the second to last round."
     c "The idea is to avoid filling you up too early so you can enjoy a variety of dishes."
-    i "Oh... ok. Sorry, I'm still new to this fancy dining thing."
+    i "Oh... ok. I was gonna say, this doesn't seem like a meal."
     show sid smile:
         xcenter .75
     i "Thanks Catherine, this looks really good!"
@@ -1387,10 +1387,9 @@ label postFT4:
     show sid smile:
         xcenter .75
         linear .15 xcenter .5
-    i "Wow, there's so many types of food here already."
-    i "This is only one course?"
-    b "Yeah, though if you're anything like me you're gonna eat the equivalent of four meals."
-    b "But uh, if you've got a small stomach probably best to pace yourself."
+    i "Wow, there's so much food here already."
+    i "It's insane to me that this is only one course."
+    b "I got a big stomach, to me this is a light snack."
     i "Hm... that sounds like a challenge!"
     b "Uh, that's not what I..."
     bi "Before I could finish, Sid was already digging in."
@@ -1693,7 +1692,7 @@ label postFT4:
     b "Meeeeeeeeeeeeat."
     bi "Like a zombie, I walked to the meatloaf and cut myself a large portion."
     b "Mmmmm... so juicy."
-    b "You're such a good chef Catherine."
+    b "You're such a good cook Catherine!"
     c "Thanks Bert!"
     show catherine catless:
         xcenter .5
@@ -1716,6 +1715,79 @@ label postFT4:
     c "Well, that's it for cooking."
     c "Time to party hardy!"
     hide catherine with dissolve
+    show sid happy with dissolve
+    i "I'm so full... how am I supposed to eat this meat loaf..."
+    b "Ate too much, big guy?"
+    i "I shouldn't have taken what you said as a challenge... how are you gonna eat that big a slice?"
+    b "I have lots of experience at all-you-can-eat Korean barbeque."
+    b "My stomach has slowly expanded over the years through rigorous training."
+    bi "By which I mean getting fast food at midnight even after having a big dinner."
+    i "Well I don't wanna be outdone! I'm gonna eat a big slice of meatloaf too!"
+    b "Uh, that might not be the best-"
+    i "*burp*"
+    b "Oh jeez... pace yourself Sid, don't go overboard."
+    b "And please let us know if you're not feeling okay, overeating is a very real thing."
+    i "I... I will eat this meat loaf... just let me sit down first."
+    hide sid with dissolve
+    bi "As we were talking, Sam had come back with the stepstool and went to the kitchen."
+    show jenny happy with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny")
+    j "Well, I cleaned everything I could for now."
+    j "How's the party been Bert?"
+    b "Good, it's nice to just make conversation with people."
+    b "And eat good food!"
+    b "Did you get a chance to eat yet?"
+    j "Catherine had a separate portion of everything set aside for us."
+    j "So I had my fair share. You should eat more if you want."
+    b "Yes please!"
+    bi "I took yet another large slice of meat loaf."
+    show jenny ind
+    j "I guess I should go socialize with the others while you have your mouth full Bert..."
+    b "Hrm? Erkay, guh uhb fuh wih ereryah!"
+    j "...You should learn to swallow before talking at a fancy party."
+    hide jenny with dissolve
+    bi "...is she actually upset?"
+    show sam with dissolve
+    $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
+    s "Dessert is ready."
+    s "Nothing too fancy, just an ice cream layer cake."
+    b "Ice cream layer cake?"
+    s "Yeah. It's like a normal layer cake, but one of the layers is ice cream."
+    s "There's no more sharp objects in the kitchen, but I found the sheath for the knife Catherine was using."
+    s "It's not perfect but we can use it to cut slices without getting meat juice on the cake."
+    bi "Just like before, I cut myself way too big a slice."
+    bi "It's so tasty, but I'm so full..."
+    bi "But everyone has a desert stomach."
+    b "This is great Sam, thanks!"
+    s "The sheath is working?"
+    b "It's a bit blunt, but for something softer like this it gets the job done."
+    bi "Kind of like you, Sam."
+    s "Cool. In that case I'm gonna go party."
+    hide sam with dissolve
+    show sid ind with dissolve
+    i "I... I ate way too much."
+    b "Huh?"
+    i "Bert... help..."
+    show sid ind:
+        xcenter .5
+        linear .15 xcenter .25
+    show lauren ind with dissolve:
+        xcenter .75
+    l "Sid, you okay?"
+    i "I... I think I'm gonna vomit."
+    l "Come on, let's get you to the bathroom."
+    i "It... it hurts to move."
+    l "Bert, can you lend me a hand in getting him up the stairs?"
+    bi "But... my cake's gonna melt..."
+    b "Yeah, let's go."
+    bi "We each got an arm under one of Sid's shoulders and lugged him up the stairs."
+    scene black with fade
+    bi "Sid was in a lot of pain, but managed to hold it in the entire trip up."
+    bi "But as soon as we got into the bathroom, he had to sprint to the toilet to vomit."
+    bi "I can't blame him."
+    bi "After seeing what we saw in there, I wanted to vomit too."
+    #Stella dead D:
+
 
 
 
