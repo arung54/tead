@@ -1,6 +1,6 @@
 
 label bertAsk0:
-    scene bg trainfront
+    scene bg trainfront1
     show bert happy with dissolve
     b "Sandwiches aren't bad, but I really miss food from home..."
     blank "Should I talk to Bert?"
@@ -46,7 +46,7 @@ label bertHang:
         b "Try me. Maybe you'll be surprised."
         n "Honestly, I haven't had anything but gruel in... years."
         b "...gruel?"
-        n "Basically something meant for sustenance like oatmeal but boiled."
+        n "Basically something meant for sustenance like oats, but boiled."
         b "Oh... why did you only eat that?"
         n "It's not like I had a choice."
         b "..."

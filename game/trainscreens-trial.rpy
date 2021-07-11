@@ -214,7 +214,7 @@ screen trainEvidenceTrial(s, e, l):
 
         if currEvidence == 5:
             image "catherineaccount1" xcenter 800 yalign 0.1
-            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. " xcenter 800 yanchor 0.0 ypos 330
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. It was dark, and the scream scared her, so she didn't keep moving." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
             image "ringev" xcenter 800 yalign 0.1

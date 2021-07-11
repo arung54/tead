@@ -35,7 +35,7 @@ screen trainEvidence():
 
     imagemap:
         ground "evidenceui.png"
-        add "usethis.png" xcenter 800 yalign .9
+        #add "usethis.png" xcenter 800 yalign .9
         hotspot(35, 29, 144, 75) action [Hide("trainEvidence")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
@@ -328,14 +328,16 @@ label trainComputer:
 
 label trainFrontWindow:
     scene bg trainfront1
-    $train_evidence1[1] = True
     bi "The train's front window."
     bi "It's pretty dark out, but there's still some light coming through."
     bi "With the computers all on too, you'd think it would stay pretty bright in here."
     bi "Hmmm..."
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
+    if not train_evidence1[1]:
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Front Car Lighting was added to evidence."
+        $train_evidence1[1] = True
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
     call traindone
@@ -360,12 +362,12 @@ label trainKaiser:
         xcenter .25
     k "For Dan's sake, and our own, we need to keep a calm head."
     b "Agree. The most important thing is finding the culprit."
-    b "So the 4 of you were in this car up until... It happened?"
+    b "So the four of you were in this car up until... It happened?"
     s "Yeah, Kaiser, Lauren, Shahar, and I were up here."
     s "I don't think any of us left the car for the past hour or so."
     k "We were trying to figure out the computer password."
     k "Of course, to no avail."
-    bi "Since there were 4 of them up here together, it's a pretty air-tight alibi."
+    bi "Since there were four of them up here together, it's a pretty air-tight alibi."
     hide sam
     hide kaiser ind
     with dissolve
@@ -377,7 +379,7 @@ label trainKaiser:
     o "I knew this was a mess of a situation from the start, but..."
     o "A murder?! Really?"
     h "Aye. A shame we've lost 'im to Davey Jones."
-    b "There will be time to grief, as long as we can figure out who was behind it."
+    b "There will be time to grieve, as long as we can figure out who was behind it."
     b "Did any of you notice anything that might be important?"
     o "Hmmm... Not really. Pretty much just what Jenny said."
     o "It got darker all of a sudden while we were on the computers, but since the lights were still, it was easy to keep a cool head."
@@ -390,6 +392,7 @@ label trainKaiser:
     show newevidencefound with dissolve
     pause 1
     hide newevidencefound with dissolve
+    blank "Front Car Accounts was added to evidence."
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
     call traindone
@@ -587,6 +590,7 @@ label trainbench:
 
 label trainsid:
     scene bg bodytrainback
+    stop music fadeout 1.0
     show sid ind with dissolve
     i "Is he really... dead?"
     b "Yeah, Sid. He's dead."
@@ -607,6 +611,7 @@ label trainsid:
     $train_evidence3[0] = True
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
+    play music "audio/inthefaceofdeath.mp3" fadein 1.0
     call traindone
     call screen backCarInv
 
@@ -632,13 +637,13 @@ label traincoin:
     bi "The window is cracked from the murder weapon..."
     bi "The culprit must have used a ton of extra force."
     bi "...Hm?"
-    bi "There'e something dangling outside the window."
+    bi "There's something dangling outside the window."
     blank "Bert carefully reached through the cracks in the window and retrieved the object."
     show thering with dissolve
     pause 1
     hide thering with dissolve
     bi "It's a... ring?"
-    bi "I'll hold on to this."
+    bi "I'll hold onto this."
     show newevidencefound with dissolve
     pause 1
     hide newevidencefound with dissolve
@@ -671,7 +676,7 @@ label trainbody:
 label traindone:
      if False not in train_evidence1 and False not in train_evidence2 and False not in train_evidence3:
            bi "Actually... I think that's everything."
-           bi "I've searched all 3 cars and talked to everyone who seems like they have something to say."
+           bi "I've searched all three cars and talked to everyone who seems like they have something to say."
            bi "Time to call the others and get to the bottom of this."
-           #jump elsewhere
+           jump trial1a
      return

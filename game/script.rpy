@@ -240,7 +240,7 @@ define k = Character("Kaiser Maden", who_color= "b07b4c", callback=fillvoice)
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice)
 define warden = Character("Warden", who_color= "ffffff", callback=fillvoice) #used in chapter 0
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=fillvoice) #used in chapter 0
-define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
+define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
 define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
 
 label start:
@@ -269,14 +269,13 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [True, True, True]
-        train_evidence2 = [True, True, True]
-        train_evidence3 = [True, True, True, True]
+        train_evidence1 = [False, False, False]
+        train_evidence2 = [False, False, False]
+        train_evidence3 = [False, False, False, False]
         lightscount = 0
         windowcount = 0
 
 ###########
 #Start
 ###########
-    jump trial1n
-    #all screen pickSpot1
+    jump trainGo
