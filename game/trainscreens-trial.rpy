@@ -25,10 +25,14 @@ init python:
 
     def trialAnimation(p1, s1, t1, p2, s2, t2, p3, s3, t3, p4, s4, t4):
         _preferences.show_empty_window = False
+
+        renpy.show("makeyourcase")
+        renpy.with_statement(Dissolve(1.0))
+        renpy.pause(1.0, hard = True)
+        renpy.hide("makeyourcase")
         renpy.show("debatescroll")
         renpy.show("debateui")
         renpy.with_statement(Dissolve(1.0))
-        renpy.pause(1.0)
 
         renpy.show(p1+"face", at_list=[Position(xalign = 0.06, ypos = 298)], tag = "p1")
         renpy.show("s1", at_list=[Position(xpos=0.375, xanchor=0, ypos=190, yanchor=0)], what = Text(s1, xmaximum = 750))
@@ -50,10 +54,6 @@ init python:
         renpy.with_statement(moveinbottom)
         renpy.pause(t4, hard = True)
 
-        renpy.show("makeyourcase")
-        renpy.with_statement(Dissolve(1.0))
-        renpy.pause(1.0, hard = True)
-
 screen shattered(lab):
     modal True
     add "shot.png"
@@ -62,7 +62,7 @@ screen shattered(lab):
 screen iGotIt(l):
     modal True
     add "igotit.png"
-    timer 1.5 action[Hide("shattered"), Hide("p1"), Hide("p2"), Hide("p3"), Hide("p4"), Hide("s1"), Hide("s2"), Hide("s3"), Hide("s4"), Hide("debatescroll"), Hide("debateui"), Hide("iGotIt", transition=Dissolve(1.0)), Jump(l)]
+    timer 1.5 action[SetVariable("statement", -1), SetVariable("agree", 0), Hide("shattered"), Hide("p1"), Hide("p2"), Hide("p3"), Hide("p4"), Hide("s1"), Hide("s2"), Hide("s3"), Hide("s4"), Hide("debatescroll"), Hide("debateui"), Hide("iGotIt", transition=Dissolve(1.0)), Jump(l)]
 
 screen chooseChar(ans, correctLabel, midText):
     add "debatescroll" at cczoom

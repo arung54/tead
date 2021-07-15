@@ -22,3 +22,7 @@ game/cache/bytecode.rpyb
 game/laur-fte.rpyc
 *.rpyb
 game/images/montage.mpeg
+game/cache/screens.rpyb
+game/cache/bytecode.rpyb
+game/saves/persistent
+*.rpyb

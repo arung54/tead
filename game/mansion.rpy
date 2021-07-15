@@ -440,7 +440,7 @@ label mansionGo:
     j "Guess so. If you want to back out now that's-"
     b "No, we made a deal."
     b "Mine's much less... exciting?"
-    b "Basically I was driving through the city after visiting a friend."
+    b "Basically I was 17, driving home after tutoring."
     b "This lady was walking on the sidewalk and suddenly turns into the road, without looking, nowhere near an intersection."
     b "The next light was green so I wasn't going that slow, and had barely any time to react."
     b "And... well, I ran into her."

@@ -310,7 +310,6 @@ screen backCarInv():
 
 label trainComputer:
     scene bg trainfront1
-    $train_evidence1[0] = True
     bi "The train's computer system. Hmmm..."
     bi "Let's take a closer look."
     scene welcomescreendir4
@@ -318,9 +317,12 @@ label trainComputer:
     bi "Wait - no! There is something different..."
     bi "I should make a mental note of that."
     scene bg trainfront1
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
+    if not train_evidence1[0]:
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Login Screen was added to evidence."
+        $train_evidence1[0] = True
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
     call traindone
@@ -352,7 +354,6 @@ label trainBert:
 
 label trainKaiser:
     scene bg trainfront1
-    $train_evidence1[2] = True
     show sam with dissolve
     s "I can't believe someone actually did this..."
     s "One of {i}us{/i} did this."
@@ -389,10 +390,12 @@ label trainKaiser:
     hide lauren ind
     hide shahar mad
     with dissolve
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
-    blank "Front Car Accounts was added to evidence."
+    if not train_evidence1[2]:
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Front Car Accounts was added to evidence."
+        $train_evidence1[2] = True
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
     call traindone
@@ -451,7 +454,6 @@ label trainstella:
 
 label traincatherine:
     scene bg notrainmid
-    $train_evidence2[2] = True
     show catherine ind with dissolve
     c "This is so scary..."
     c "It's like a crappy murder mystery game."
@@ -464,9 +466,12 @@ label traincatherine:
     c "Nobody did, there's no way they could have."
     ses "Me-ow!"
     b "Hmmm, I see. Thanks Catherine."
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
+    if not train_evidence2[2]:
+        $train_evidence2[2] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Catherine's Account was added to evidence."
     if False not in train_evidence2:
         bi "I think that's everything important in this car."
     call traindone
@@ -474,7 +479,6 @@ label traincatherine:
 
 label traindracula:
     scene bg notrainmid
-    $train_evidence2[1] = True
     show drac ind with dissolve
     d "By the way..."
     d "What was that scream we heard?"
@@ -490,9 +494,12 @@ label traindracula:
     d "Regardless. That's all the information I have."
     hide drac ind with dissolve
     b "Hmm..."
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
+    if not train_evidence2[1]:
+        $train_evidence2[1] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Dracula's Account was added to evidence."
     if False not in train_evidence2:
         bi "I think that's everything important in this car."
     call traindone
@@ -509,11 +516,13 @@ label trainlights:
         b "If the lights are off, and there's no sunlight, but we can still see..."
         b "Then why couldn't we see during the commotion?"
         j "Wow, you're right. That's a good point."
-        $train_evidence2[0] = True
         $lightscount += 10
-        show newevidencefound with dissolve
-        pause 1
-        hide newevidencefound with dissolve
+        if not train_evidence2[0]:
+            $train_evidence2[0] = True
+            show newevidencefound with dissolve
+            pause 1
+            hide newevidencefound with dissolve
+            blank "Bar Car Lighting was added to evidence."
         if False not in train_evidence2:
             bi "I think that's everything important in this car."
     else:
@@ -605,10 +614,12 @@ label trainsid:
     hide sid ind with dissolve
     bi "Hmmm. It seems like Dan is the only one he really befriended here."
     bi "But it also seems kinda like he killed Dan."
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
-    $train_evidence3[0] = True
+    if not train_evidence3[0]:
+        $train_evidence3[0] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Hanging Object was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
@@ -623,10 +634,12 @@ label traincloset:
     blank "Nothing was inside."
     bi "What?!"
     bi "I thought this closet was locked shut?"
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
-    $train_evidence3[1] = True
+    if not train_evidence3[1]:
+        $train_evidence3[1] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Sid's Account was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     call traindone
@@ -644,10 +657,12 @@ label traincoin:
     hide thering with dissolve
     bi "It's a... ring?"
     bi "I'll hold onto this."
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
-    $train_evidence3[2] = True
+    if not train_evidence3[2]:
+        $train_evidence3[2] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Back Car Closet was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     call traindone
@@ -664,10 +679,12 @@ label trainbody:
     bi "He has no visible wounds other than the metal bar through his chest."
     bi "It seems pretty clear someone skewered him through the back, killing him."
     bi "...Rest in peace, Dan. We'll find out who did this."
-    show newevidencefound with dissolve
-    pause 1
-    hide newevidencefound with dissolve
-    $train_evidence3[3] = True
+    if not train_evidence3[3]:
+        $train_evidence3[3] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "State of the Body was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     call traindone
