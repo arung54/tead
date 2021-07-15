@@ -1792,7 +1792,7 @@ label postFT4:
         xcenter .37
         ycenter .8
     with Dissolve(2.0)
-    showchibi("bert", "lauren", "sid")
+    $ showchibi("bert", "lauren", "sid")
     b "..."
     b "Wh-wha?"
     bi "Stella's body lay in front of us, slumped on the sink, a stab would in the dead center of her back."
@@ -1810,7 +1810,7 @@ label postFT4:
     l "Bert, maybe it'd be good if you Sid stepped outside."
     l "Take as much as time as you need to calm down. I'm going to go let everyone else know."
     hide lauren with dissolve
-    showchibi("bert", "sid")
+    $ showchibi("bert", "sid")
     b "Y-yeah."
     show sid ind:
         xcenter .75
