@@ -386,7 +386,7 @@ label mansionGo:
     j "Seems like we've explored the entirety of this floor, let's go upstairs?"
     b "Sure."
     scene black with fade
-    scene bg mansionhallway with fade
+    scene bg mansionhall with fade
     $showchibi("jenny")
     show jenny ind
     j "Hey Bert, while we're alone..."
@@ -459,7 +459,7 @@ label mansionGo:
     b "..."
     j "..."
     b "We should look around more."
-    b "There's a closet in this hallway, let's see what's inside."
+    b "There's a closet in this hall, let's see what's inside."
     b "..."
     b "It won't open..."
     b "Last time there was a closet that was locked, it wasn't good news."
@@ -1003,7 +1003,7 @@ label postFT2:
     bi "Stella was off before we could even get started."
     bi "Dracula's probably not going to be very happy about our noise level after this..."
     scene black with fade
-    scene bg mansionhallway with fade
+    scene bg mansionhall with fade
     $showchibi("shahar", "stella")
     show stella drunk:
         xcenter .75
@@ -1119,7 +1119,7 @@ label postFT2:
     bi "Maybe I'll go upstairs and see who there is to talk to."
     bi "Wouldn't want to distract Shahar and Stella's beauty sleep..."
     scene black with fade
-    scene bg mansionhallway with fade
+    scene bg mansionhall with fade
     $showchibi("jenny", "sam")
     show jenny ind:
         xcenter .25
@@ -1268,7 +1268,7 @@ label postFT3:
     f "Yeah..."
     b "Oh boy, I can't wait to eat!"
     scene black with fade
-    scene bg mansionhallway with fade
+    scene bg mansionhall with fade
     bi "..."
     bi "Should I check the closet again?"
     bi "Nah, I'm probably just being paranoid. Besides, there's food waiting for me!"
@@ -1323,7 +1323,7 @@ label postFT3:
     show jenny happy:
         xcenter .5
         linear 0.15 xcenter .75
-    show catherine catless:
+    show catherine nocat:
         xcenter .25
     with moveinleft
     c "Yeah! If we're fancy people eating a fancy dinner, we gotta serve everything in courses."
@@ -1369,7 +1369,7 @@ label postFT3:
 label postFT4:
     scene bg mansiondining with fade
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
-    show catherine catless:
+    show catherine nocat:
         xcenter .25
     show sid ind:
         xcenter .75
@@ -1683,7 +1683,7 @@ label postFT4:
     b "Thanks Sid. Your secret is safe with me."
     hide sid with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
-    show catherine catless with dissolve
+    show catherine nocat with dissolve
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
     c "There should be plenty for everyone, there's a knife her to use to serve yourself a portion."
@@ -1694,7 +1694,7 @@ label postFT4:
     b "Mmmmm... so juicy."
     b "You're such a good cook Catherine!"
     c "Thanks Bert!"
-    show catherine catless:
+    show catherine nocat:
         xcenter .5
         linear .15 xcenter .25
     show sam with dissolve:
@@ -1709,7 +1709,7 @@ label postFT4:
     s "Got it."
     hide sam with dissolve
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine")
-    show catherine catless:
+    show catherine nocat:
         xcenter .25
         linear .15 xcenter .5
     c "Well, that's it for cooking."
@@ -1786,7 +1786,49 @@ label postFT4:
     bi "But as soon as we got into the bathroom, he had to sprint to the toilet to vomit."
     bi "I can't blame him."
     bi "After seeing what we saw in there, I wanted to vomit too."
-    #Stella dead D:
+    scene bg mansionbr
+    show stella dead:
+        zoom 1.0
+        xcenter .37
+        ycenter .8
+    with Dissolve(2.0)
+    showchibi("bert", "lauren", "sid")
+    b "..."
+    b "Wh-wha?"
+    bi "Stella's body lay in front of us, slumped on the sink, a stab would in the dead center of her back."
+    bi "A smell that felt too familiar lingered in the air."
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    l "..."
+    l "Another one so soon?"
+    b "H-hold on, maybe she's still alive?"
+    bi "Lauren put her fingers to Stella's pulse."
+    l "I'm not feeling a pulse. I'm sorry Bert, I think she's dead."
+    b "D-don't say it so casually."
+    l "Sorry."
+    l "Bert, maybe it'd be good if you Sid stepped outside."
+    l "Take as much as time as you need to calm down. I'm going to go let everyone else know."
+    hide lauren with dissolve
+    showchibi("bert", "sid")
+    b "Y-yeah."
+    show sid ind:
+        xcenter .75
+    with dissolve
+    i "Bert?"
+    i "Did it happen again?"
+    b "Yeah, it did."
+    i "Wh-why am I always the first person to find the body."
+    i "I swear it wasn't me."
+    b "I know, there wasn't a moment I didn't have my eyes on you since we last saw Stella."
+    i "O-ok."
+    i "Sorry, I'm just... still shaken up from everyone accusing me of Dan's death."
+    b "We're... we're gonna get through this one too Sid."
+    b "Let's go outside, I can't handle being in here right now."
+    scene black with fade
+    scene bg mansionhall with fade
+
+
 
 
 
