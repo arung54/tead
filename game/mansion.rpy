@@ -1686,7 +1686,7 @@ label postFT4:
     show catherine nocat with dissolve
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
-    c "There should be plenty for everyone, there's a knife her to use to serve yourself a portion."
+    c "There should be plenty for everyone, I brought a knife from the kitchen. Use it to cut yourself as much as you want."
     c "Try not to take it away from the table though, we only have the one!"
     b "Meat?"
     b "Meeeeeeeeeeeeat."
@@ -1729,7 +1729,6 @@ label postFT4:
     b "And please let us know if you're not feeling okay, overeating is a very real thing."
     i "I... I will eat this meat loaf... just let me sit down first."
     hide sid with dissolve
-    bi "As we were talking, Sam had come back with the stepstool and went to the kitchen."
     show jenny happy with dissolve
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny")
     j "Well, I cleaned everything I could for now."
@@ -1747,6 +1746,9 @@ label postFT4:
     j "...You should learn to swallow before talking at a fancy party."
     hide jenny with dissolve
     bi "...is she actually upset?"
+    bi "Oh well. I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
+    bi "As I sat and ate, Sam had come back with the stepstool and went to the kitchen."
+    bi "After some more time had passed..."
     show sam with dissolve
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
     s "Dessert is ready."
@@ -1803,11 +1805,10 @@ label postFT4:
     l "..."
     l "Another one so soon?"
     b "H-hold on, maybe she's still alive?"
-    bi "Lauren put her fingers to Stella's pulse."
-    l "I'm not feeling a pulse. I'm sorry Bert, I think she's dead."
+    l "I'm sorry Bert, I think she's dead."
     b "D-don't say it so casually."
     l "Sorry."
-    l "Bert, maybe it'd be good if you Sid stepped outside."
+    l "Bert, maybe it'd be good if you and Sid stepped outside."
     l "Take as much as time as you need to calm down. I'm going to go let everyone else know."
     hide lauren with dissolve
     $ showchibi("bert", "sid")
@@ -1828,11 +1829,202 @@ label postFT4:
     scene black with fade
     scene bg mansionhall with fade
 
+label trial2a:
+    play music "audio/rush.mp3"
+    scene black with fade
+    bi "Everyone gathered in the dining room."
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    show lauren ind with dissolve
+    l "Well, this murder should be easier to figure out than the previous one."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show catherine ind with moveinleft:
+        xcenter .25
+    c "What makes you say that?"
+    b "Uh... is it okay to have Sesame around again?"
+    show catherine happy:
+        xcenter .25
+    c "Yeah! Now that I'm not busy cooking I can hold onto him while we talk."
+    c "But yeah, what about this murder seems easy?"
+    l "Well, there's not a tunnel for this mansion to go through that caused Stella to get stabbed."
+    l "So someone had to be there to do it."
+    l "Also, it's pretty obvious what the murder weapon was."
+    show catherine ind:
+        xcenter .25
+    c "Is it?"
+    l "Yeah, it was the skewers from the dinner party."
+    c "Oh no, did the dinner party get Stella killed?"
+    b "I wouldn't view it that way, the skewers would have been in the house regardless of us having a party or not."
+    python:
+        startMansionTrial("lauren", "Lauren: The {color=#f00}knife was in the dining room the whole time{/color}.", -1,
+        "lauren",  "Lauren: Plus there's {color=#f00}no evidence suggesting the knife was used{/color} to stab her.", -1,
+        "lauren", "Lauren: So it must be the {color=#f00}only other sharp object{/color} we had access to, the skewers.", -1,
+        "lauren",  "Catherine: Would they really have been able to stab her to death with skewers?", 0,
+        3, 0, "trial2b")
+label trial2b:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    show lauren ind with dissolve
+    b "Lauren, I think you missed something because you were watching over Freddy during our investigation."
+    b "When we took a close look at the body the stab wound was the shape you'd expect from using the kitchen knife."
+    b "It'd be pretty hard to create that kind of shape with a skewer."
+    l "Hm... what if they stabbed Stella with the skewer multiple times in a line?"
+    b "They could have, but I don't think it would produce the same shape."
+    b "It'd probably look more like a line of varying width."
+    b "Also, why would the killer try to do that?"
+    l "I guess..."
+    l "But how did they use the knife then?"
+    l "I'm still pretty sure it was in the dining room the whole time."
+    b "..."
+    bi "I looked around."
+    bi "Seems no one had a good answer for that."
+    bi "Despite our initial hopes, it seemed this case wasn't going to be much easier."
+    hide lauren with dissolve
+    show sid ind with dissolve
+    i "I have something I wanna talk about."
+    i "When did the murder actually happen?"
+    show sid ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show sam with moveinright:
+        xcenter .75
+    s "C'mon, kid, isn't it obvious?"
+    i "Huh?"
+    s "I mean, I don't know {i}exactly{/i} when it happened."
+label trial2c:
+    menu:
+        s "But it's pretty clear that she died..."
 
+        "Before the party started.":
+            bi "No, Stella was definitely alive at the party."
+            jump trial2c
 
+        "Soon after the party started.":
+            bi "Hmm, Stella left the party after the second course was served."
+            bi "So I know she didn't die until after that."
+            jump trial2c
 
+        "In the middle of the party.":
+            bi "That's it!"
 
+        "Right before we found the body.":
+            bi "No, I have other evidence that shows the body had been dead for a while when we found it"
+            jump trial2c
+    b "In the middle of the party?"
+    s "Yeah."
+    s "She was around for the start of the party, so obviously she didn't die before that."
+    s "And she definitely died a while ago."
+    i "How do you know? You're not a coroner or anything like that."
+    s "Maybe not, but there's evidence that shows the body's been dead for a bit."
+    i "I don't believe you!"
+    s "Sigh. Fine, you don't have to believe me."
+    s "Bert, could you take care of the rest?"
+    b "Uh... let's see, evidence that shows Stella didn't die recently..."
+    call screen mansionEvidenceTrial(-1, 1, "trial2d") with dissolve
+label trial2d:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    show sid ind with dissolve
+    i "The blood dried?"
+    b "Yeah, when we looked at the wound some of the blood had dried."
+    show sid ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show drac ind with moveinright:
+        xcenter .75
+    d "Blood normally dries after about an hour or so of exposure."
+    d "But it varies due to other factors"
+    i "How do you know?"
+    d "In my... \"line of work\" I see a lot of human blood."
+    b "...anyway, this suggests Stella died a while ago."
+    d "It also makes it pretty clear who the killer should be."
+    i "Huh?"
+    d "I was thinking about this when Lauren was speaking."
+    d "Our assumption is the knife wasn't used to commit the murder."
+    d "But that's because the knife was in the dining room after the meatloaf was served, where everyone could see it."
+    d "Before then, the knife was presumably in the kitchen."
+    d "There's someone who left the party at the same time Stella did, who also was in the kitchen and could have taken the knife with them."
+    i "Didn't Sam go to get a stepstool during the party?"
+    hide drac with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "Yes, but I only left after the meatloaf had been served, when the knife was in the dining room."
+    bi "In that case, the person Dracula is talking about must be..."
+    call screen chooseChar("jenny", "trial2e", "Who left the party the same time as Stella, and had been in the kitchen?") with dissolve
+label trial2e:
+    play music "audio/rush.mp3"
+    scene black with fade
+    bi "...is it really Jenny?"
+    bi "I... I thought we were becoming closer but..."
+    bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
+    show bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    show drac ind with dissolve
+    b "Dracula, are you... suggesting Jenny murdered Stella?"
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Me?"
+    d "Is there another Jenny here you'd like to accuse?"
+    j "Why me? I swear I didn't do it."
+    d "You did leave around when Stella did to \"go grab batteries\""
+    d "And you could've taken the knife with you. Unless Catherine can attest to the knife being in the kitchen the whole time."
+    hide drac with moveoutright
+    show catherine ind with dissolve:
+        xcenter .75
+    c "I... I can't say my eyes were on the knife the whole time."
+    c "I wasn't using it the entire time, so she could have taken the knife out with her."
+    c "Honestly, I'm not the most focused person, so I wasn't really tracking Jenny's actions in the kitchen."
+    j "C-catherine..."
+    j "I swear I... I didn't."
+    bi "Jenny was starting to tear up."
+    bi "I... don't want to think she could have committed murder."
+    bi "Can I believe her?"
+    bi "Or would I be letting my emotions get the better of me?"
+    hide jenny with dissolve
+    show shahar ind with dissolve:
+        xcenter .25
+    h "Aye, I don't really follow what yer all discussin', but, I got a riddle for ye."
+    d "Riddle? This isn't the time for games, we might as well move to vote Jenny."
+    b "Do you mean a question Shahar?"
+    h "That's what I said ye scallywag, a riddle! Don't make me repeat meself."
+    h "I be already plenty exhausted weepin' o'er the death o' me drinkin' matey."
+    bi "...I'm starting to think this pirate speak is just Shahar's way of coping with the situation."
+    h "Why am I not a suspect?"
+    h "I went to the kitchen for me rum, and I left the party to grab some tools for me makeshift corkscrew."
+    h "But the geezer seems focused on the fact that Jenny and Stella left at the same stroke of the sun."
+    d "As much as the geezer comment makes me wish we had an excuse to pin it on you..."
+    d "You didn't return to the kitchen after visiting it the first time, correct?"
+    h "Ye, but how's that relevant?"
+    h "I could still have grabbed the knife and shanked the lady."
+label trial2f:
+    menu:
+        bi "No, if the murder happened as Dracula described it, there's a reason for the murderer to return to the kitchen..."
 
+        "For an alibi.":
+            bi "Being in the kitchen isn't a much better alibi than being in the dining room."
+            jump trial2f
+
+        "For the knife.":
+            bi "That's it!"
+
+        "For another murder weapon.":
+            bi "If they used the knife, why would they need another weapon?"
+            jump trial2f
+
+        "To grab a drink and forget the murder.":
+            bi "That would be in character for Shahar, not Jenny."
+            jump trial2f
+
+    bi "I have to admit, he does have a point."
+    bi "If Catherine wasn't paying attention and she hid the knife on her while walking around..."
+    bi "It wouldn't be that hard to get away with the murder as Dracula had described it."
 
 
 
