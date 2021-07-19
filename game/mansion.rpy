@@ -1941,19 +1941,19 @@ label trial2d:
     i "How do you know?"
     d "In my... \"line of work\" I see a lot of human blood."
     b "...anyway, this suggests Stella died a while ago."
-    d "It also makes it pretty clear who the killer should be."
-    i "Huh?"
-    d "I was thinking about this when Lauren was speaking."
-    d "Our assumption is the knife wasn't used to commit the murder."
-    d "But that's because the knife was in the dining room after the meatloaf was served, where everyone could see it."
-    d "Before then, the knife was presumably in the kitchen."
-    d "There's someone who left the party at the same time Stella did, who also was in the kitchen and could have taken the knife with them."
-    i "Didn't Sam go to get a stepstool during the party?"
-    hide drac with moveoutright
+    hide drac ind with moveoutright
     show sam with moveinright:
         xcenter .75
+    s "It also makes it pretty clear who the killer should be."
+    i "Huh?"
+    s "I was thinking about this when Lauren was speaking."
+    s "Our assumption is the knife wasn't used to commit the murder."
+    s "But that's because the knife was in the dining room after the meatloaf was served, where everyone could see it."
+    s "Before then, the knife was presumably in the kitchen."
+    s "There's someone who left the party at the same time Stella did, who also was in the kitchen and could have taken the knife with them."
+    i "Didn't you go to get a stepstool during the party?"
     s "Yes, but I only left after the meatloaf had been served, when the knife was in the dining room."
-    bi "In that case, the person Dracula is talking about must be..."
+    bi "In that case, the person Sam is talking about must be..."
     call screen chooseChar("jenny", "trial2e", "Who left the party the same time as Stella, and had been in the kitchen?") with dissolve
 label trial2e:
     play music "audio/rush.mp3"
@@ -1963,23 +1963,23 @@ label trial2e:
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
     show bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
-    show drac ind with dissolve
-    b "Dracula, are you... suggesting Jenny murdered Stella?"
-    show drac ind:
+    show sam with dissolve
+    b "Sam, are you... suggesting Jenny murdered Stella?"
+    show sam:
         xcenter .5
         linear 0.15 xcenter .75
     show jenny ind with moveinleft:
         xcenter .25
     j "Me?"
-    d "Is there another Jenny here you'd like to accuse?"
+    s "Is there another Jenny here you'd like to accuse?"
     j "Why me? I swear I didn't do it."
-    d "You did leave around when Stella did to \"go grab batteries\""
-    d "And you could've taken the knife with you. Unless Catherine can attest to the knife being in the kitchen the whole time."
-    hide drac with moveoutright
+    s "You did leave around when Stella did to \"go grab batteries\""
+    s "And you could've taken the knife with you. Unless Catherine can attest to the knife being in the kitchen the whole time."
+    hide sam with moveoutright
     show catherine ind with dissolve:
         xcenter .75
     c "I... I can't say my eyes were on the knife the whole time."
-    c "I wasn't using it the entire time, so she could have taken the knife out with her."
+    c "I wasn't using it the entire time, and I was pretty focused, so anyone could have taken the knife out at any point."
     c "Honestly, I'm not the most focused person, so I wasn't really tracking Jenny's actions in the kitchen."
     j "C-catherine..."
     j "I swear I... I didn't."
@@ -1987,44 +1987,124 @@ label trial2e:
     bi "I... don't want to think she could have committed murder."
     bi "Can I believe her?"
     bi "Or would I be letting my emotions get the better of me?"
-    hide jenny with dissolve
+    hide catherine with dissolve
     show shahar ind with dissolve:
-        xcenter .25
+        xcenter .75
     h "Aye, I don't really follow what yer all discussin', but, I got a riddle for ye."
-    d "Riddle? This isn't the time for games, we might as well move to vote Jenny."
+    s "Riddle? This isn't the time for games, we might as well move to vote Jenny."
     b "Do you mean a question Shahar?"
     h "That's what I said ye scallywag, a riddle! Don't make me repeat meself."
     h "I be already plenty exhausted weepin' o'er the death o' me drinkin' matey."
     bi "...I'm starting to think this pirate speak is just Shahar's way of coping with the situation."
     h "Why am I not a suspect?"
     h "I went to the kitchen for me rum, and I left the party to grab some tools for me makeshift corkscrew."
-    h "But the geezer seems focused on the fact that Jenny and Stella left at the same stroke of the sun."
-    d "As much as the geezer comment makes me wish we had an excuse to pin it on you..."
-    d "You didn't return to the kitchen after visiting it the first time, correct?"
+    h "But the scallywag seems focused on the fact that Jenny and Stella left at the same stroke of the sun."
+    s "As much as calling me a scallywag makes me wish we had an excuse to pin it on you..."
+    s "You didn't return to the kitchen after visiting it the first time, correct?"
     h "Ye, but how's that relevant?"
     h "I could still have grabbed the knife and shanked the lady."
 label trial2f:
     menu:
-        bi "No, if the murder happened as Dracula described it, there's a reason for the murderer to return to the kitchen..."
+        bi "No, if the murder happened as Sam described it, there's a reason for the murderer to return to the kitchen..."
 
-        "For an alibi.":
+        "An alibi.":
             bi "Being in the kitchen isn't a much better alibi than being in the dining room."
             jump trial2f
 
-        "For the knife.":
+        "The knife.":
             bi "That's it!"
 
         "For another murder weapon.":
             bi "If they used the knife, why would they need another weapon?"
             jump trial2f
 
-        "To grab a drink and forget the murder.":
+        "To grab a drink.":
             bi "That would be in character for Shahar, not Jenny."
             jump trial2f
+    b "Sam's suggesting that the murderer had to have returned the knife to the kitchen after stabbing Stella."
+    b "Catherine brought the knife from the kitchen to the dining room later, so the knife must have been in the kitchen at some point after Stella's murder."
+    c "Also, the knife didn't have blood on it."
+    c "So if it was used for murder, it must have been washed off at some point."
+    c "I'd imagine it'd be easier to clean it off in the kitchen than in the bathroom."
+    hide shahar with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "Exactly. The only person who left towards the foyer and then was in the kitchen was Jenny."
+    s "So she's the only one that could have reasonably stabbed Stella with a knife."
+    j "N-no..."
+    j "Bert... there must be something wrong with Sam's argument."
+    j "Something to save me..."
+    bi "I have to admit, Sam does have a point."
+    bi "If Catherine wasn't paying attention and Jenny hid the knife on her while walking around..."
+    bi "It wouldn't be that hard to get away with the murder as Sam had described it."
+    bi "And Jenny would be the only one that could have done it."
+    bi "Is this really it? Is the person I thought was my closest friend here a murdere-"
+    hide jenny
+    show drac ind:
+        xcenter .25
+    d "Wait."
+    d "Something doesn't make sense."
+    d "Sam, I'm disappointed, I thought you were more rational than this."
+    s "Care to enlighten us, Mr. Vampire?"
+    s "I think I'm being perfectly rational."
+    python:
+        startMansionTrial("sam", "Sam: The knife was clearly returned to the kitchen shortly after the murder, what part of that do you disagree with?", 0,
+        "sam",  "Sam: There was {color=#f00}no reason for the murderer to wait upstairs after the murder{/color}.", -1,
+        "sam", "Sam: And clearly the murderer {color=#f00}didn't leave the murder weapon in the body{/color}.", -1,
+        "sam",  "Sam: So, what, do you think {color=#5ff}the knife went straight to the dining room instead of the kitchen?{/color}", 1,
+        2, 1, "trial2g")
+label trial2g:
+    play music "audio/rush.mp3"
+    show bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    show drac ind:
+        xcenter .25
+    show sam:
+        xcenter .75
+    with dissolve
+    b "Sam, Dracula inspected the wound during the investigation."
+    b "If the murderer took the knife with them, there would probably be a lot more blood."
+    s "Care to explain more?"
+    hide drac with moveoutleft
+    show catherine happy with moveinleft:
+        xcenter .25
+    c "Oh, I think I can take it from here, Bert!"
+    b "...Really?"
+    c "Yeah! I watched this detective show that was super popular a few years ago."
+    c "I think it's called, like... Warlock or something?"
+    c "I can't remember the name, maybe because it's copyrighted."
+    b "Huh?"
+    c "Oh, never mind."
+    c "Anyway, there's an episode where a serial killer builds blades into the belts of his victims, who were royal guards."
+    c "Their victims would only die after taking off their belts, so they would die in isolation and it seemed like a ghost killed them."
+    c "Can you guess why?"
+    b "...Catherine, maybe it's best if we try to solve the murder in front of us instead of a contrived fictional one."
+    show catherine ind:
+        xcenter .25
+    c "Oh fine."
+    c "Okay, when someone is stabbed, the bleeding doesn't tend to get bad until the sharp object is removed."
+    c "The idea is that while the sharp object caused the wound, while it's in the body it also clogs the wound."
+    c "When you take it out, the wound is free to bleed out much faster."
+    c "If your internals weren't critically damaged by the stab wound, the loss of blood tends to be the cause of death."
+    b "You uh... know a lot about this."
+    c "I used to be really into this show! I did a lot of searching online after each episode to learn more."
+    bi "Yet you can't remember the name..."
+    c "Anyway, something similar probably happened with Stella!"
+    c "Well, we can't be sure whether bleeding or damage to her internals killed her, but..."
+    c "What Bert's suggesting is that whatever caused the stab wound was left in the body and helped limit the bleeding."
+    s "This seems like a stretch."
+    s "How can we know precisely how much blood there should or shouldn't be based on the knife being taken away?"
+    s "I feel like we pinned it on Jenny and Bert's just grasping for straws to protect someone he considers a friend."
+    hide catherine with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    d "Sam, I was the one who pointed this out initially, not Bert."
+    d "Perhaps I am wrong, and the lack of blood is just due to other factors."
+    d "But it won't hurt us to consider all possibilities, and it can't help to rush a vote for Jenny."
+    s "...Fine."
 
-    bi "I have to admit, he does have a point."
-    bi "If Catherine wasn't paying attention and she hid the knife on her while walking around..."
-    bi "It wouldn't be that hard to get away with the murder as Dracula had described it."
+
+
 
 
 
