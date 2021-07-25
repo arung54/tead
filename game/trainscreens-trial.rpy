@@ -130,6 +130,33 @@ screen chooseChar(ans, correctLabel, midText):
                 action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
     text midText xalign 0.5 yalign 0.5
 
+screen chooseChar2(ans, correctLabel, midText):
+    add "debatescroll" at cczoom
+    imagemap:
+        ground "lineup1.png"
+        hotspot(623, 63, 310, 616):
+            if ans == "kaiser":
+                action [Jump(correctLabel)]
+            else:
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(951, 123, 276, 554):
+            if ans == "lauren":
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
+            else:
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(47, 114, 231, 563):
+            if ans == "sam":
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
+            else:
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(301, 54, 312, 623):
+            if ans == "shahar":
+                action [Function(shatterNoise), Show("shattered", lab = correctLabel)]
+            else:
+                action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+    text midText xalign 0.5 yalign 0.5
+
+
 screen trainEvidenceTrial(s, e, l):
     modal True
     add "eviscroll"

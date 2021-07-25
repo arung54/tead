@@ -29,7 +29,7 @@ screen trainMap():
         hotspot(0, 0, 119, 719) action [Hide("trainMap", transition=Dissolve(0.3))]
 
 screen frontCar():
-    add "bg trainFRONT1.png"
+    add "bg NOtrainFRONT.png"
     imagebutton:
         xalign 1.0
         yalign 0.0

@@ -74,6 +74,7 @@ image debatescroll:
         xpos -1
         linear 30 xpos .01
         repeat
+
 $ passattempts = 1
 ##############
 #Toggle Dev
@@ -278,4 +279,6 @@ label start:
 ###########
 #Start
 ###########
-    jump trainGo
+    python:
+        fte_kais = -1
+    jump kaisHang

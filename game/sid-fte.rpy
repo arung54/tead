@@ -57,7 +57,7 @@ label sidHang:
         i "Wait, I have to do that {i}again?{/i}"
         n "It's the only way to get stronger! We can train together."
         i "D-deal!"
-        ni "He's a good kid, just... Needs a little guidance."
+        ni "He's a good kid, just... needs a little guidance."
         n "You'll be twice my size before you know it."
         i "You bet! Thanks Dan."
         hide sid ind with moveoutright

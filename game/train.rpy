@@ -8,11 +8,12 @@ label trainGo:
     ni "It'd make sense..."
     ni "I did tend to get nightmares in there..."
     ni "..."
-    blank "Hey..." #Arun: Change speaker to ???
+    z "Hey..." #Arunj: Change speaker to ???
     ni "Huh?"
-    blank "HEY!!!"
+    z "HEY!!!"
     scene bg trainmid
     show lauren ind
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
     o "Hey, wake up already."
     o "How'd you manage to stay knocked out even longer than the kid?"
@@ -23,13 +24,15 @@ label trainGo:
         linear 0.3 xcenter .75
     o "I mean, look around. Where do you think we are?"
     n "It's a... train car."
-    n "And we're {i}moving.{/i}"
-    hide lauren ind with dissolve
-    show sam with dissolve
-    s "Yeah, we're going somewhere..."
+    o "And we're {i}moving.{/i}"
+    n "Wow, really?"
+    hide lauren ind with moveoutright
+    show sam with moveoutright
+    s "I mean, take a look for yourself, genius."
+    s "We're going somewhere..."
     s "...Or being taken somewhere."
     hide sam with dissolve
-    blank "I looked out the window."
+    blank "Dan walked over to the window."
     image forest run:
         contains:
             "windowviewout.png"
@@ -42,19 +45,21 @@ label trainGo:
     n "Wow..."
     ni "There's... nothing out there."
     ni "Where are we? There are no landmarks anywhere."
+    ni "It's like the middle of a desert."
     hide forest run
     hide windowview
     with fade
     show shahar ind with dissolve
-    h "Laddies, it feels like the whole room is moving!"
+    h "Laddies, is it just me, or does it feels like the whole room is moving?"
     n "That's how trains work."
     n "Have you never been on a train before?"
     h "Blimey, you're right! We {i}are{/i} movin'!"
+    h "It be like a land boat!"
     hide shahar ind with moveoutright
     n "..."
     show catherine ind with dissolve
     c "Oh, Dan's finally awake?"
-    c "It seems like everyone from that scary room is here."
+    c "It seems like everyone from that scary place is here."
     show catherine ind:
         xcenter .5
         linear 0.3 xcenter .75
@@ -62,41 +67,47 @@ label trainGo:
         xcenter .25
     d "Yes. All 12 of us are here."
     d "13 if you include the feline."
+    c "Excuuuse meee, please don't talke about King Sesame like that."
     ses "Mrow!"
     n "..."
     hide catherine ind
     hide drac ind
-    with dissolve
-    #show screen test
-
+    with moveoutright
     show sid ind with dissolve
     i "How did we even get here?"
-    i "A minute ago we were trapped in that lab." #Arun: Change lab to ???
+    i "A minute ago we were trapped in that weird place."
     n "That's a good question..."
+    i "Next thing I know, I'm waking up to some pirate poking me on a train."
     hide sid ind with dissolve
     show jenny ind with dissolve
     j "Maybe we were on the train the whole time?"
+    j "And just got moved to a different train car?"
     show jenny ind:
         linear .3 xcenter .75
     show bert sad with dissolve:
         xcenter .25
     b "I don't think so... Those rooms were pretty wide."
-    b "I don't think they could have fit in a train car."
+    b "I don't think they could have fit in any reasonable train car."
     hide jenny ind with moveoutright
     show bert sad:
         linear .3 xcenter .5
     b "Dan, what do you think?"
+    show scary with dissolve:
+        alpha .5
     n "Me? Hmm..."
     menu:
         n "{i}How did we get here?{/i}"
 
         "Maybe we got on board ourselves.":
             n "Maybe we got on board ourselves."
-            hide bert sad with dissolve
+            hide scary with dissolve
+            hide bert sad with moveoutright
             show drac ind with dissolve
             d "I refuse to accept that."
-            hide drac ind with dissolve
-            show stella ind with dissolve
+            show drac ind:
+                linear .3 xcenter .75
+            show stella ind with dissolve:
+                xcenter .25
             t "The vampire's right, there's no way we got onboard ourselves."
             t "We'd obviously remember that."
             t "We must have been knocked out and moved here somehow."
@@ -104,16 +115,22 @@ label trainGo:
 
         "We must have been moved here.":
             n "We must have been moved here."
-            hide bert sad with dissolve
+            hide scary with dissolve
+            hide bert sad with moveoutright
             show drac ind with dissolve
             d "Yes, the culprit must have knocked us out and moved us here."
             d "Otherwise we'd remember it."
-            hide drac ind with dissolve
-            show stella ind with dissolve
+            show drac ind:
+                linear .3 xcenter .75
+            show stella ind with dissolve:
+                xcenter .25
             t "I don't remember boarding myself, that's for sure."
             t "How did they manage to knock all of us out though?"
 
-    hide stella ind with dissolve
+
+    hide stella ind
+    hide drac ind
+    with moveoutright
     show kaiser ind with dissolve
     k "It seems obvious enough, yes?"
     n "You know how we got knocked out?"
@@ -131,11 +148,12 @@ label trainGo:
     hide black
     o "As terrifying as that is, it seems like the only explanation..."
     n "You really think the chips knocked us out somehow?"
+    k "Yes, it seems most likely."
     hide kaiser ind
     hide lauren ind
     with dissolve
     show sam with dissolve
-    s "It's the only logical explanation." #Arun: Maybe use another word for explanation here to avoid redundancy
+    s "I can't think of any other solutions..." #Arunj: Maybe use another word for explanation here to avoid redundancy
     s "Either way, I don't think it's worth spending any more time on."
     s "We're finally all awake, we should try to figure out what's going on."
     n "Right. We should start exploring the train."
@@ -178,30 +196,43 @@ label trainGo:
     o "I don't want a kid involved in... whatever this is."
     n "That's probably smart. I'm not great with kids myself."
     o "The rest of you better search every corner of this train though."
-    hide lauren ind
+    hide lauren ind with moveoutright
 ###########################################
 ###############INVESTIGATE#################
 ###########################################
 
     show stella happy with dissolve
-    t "Great point Lauren, the whiskey could be hiding anywhere."
+    t "Great point by uhh, Lauren, is it?"
+    t "Time to search - The whiskey could be hiding anywhere!"
     t "I'll check behind the bar."
-
     hide stella ind with moveoutright
     show bert sad with dissolve
     b "..."
     hide bert sad
     show bert happy
-    b "There might be food back there though, and we're going to need to eat. I'll look with you."
+    b "Her motives may be skewed, but it's still helpful."
+    b "There might be food back there though, and we're going to need to eat."
+    b "I'll look with her."
 
     hide bert happy with moveoutright
     show shahar ind with dissolve
     h "Aye, I'll check the next car up. To the front with me!"
     h "The captain aught to be at the bow!"
     hide shahar ind with moveoutleft
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "sid", "stella", "dracula")
     show sid ind with dissolve
     i "I'll go with, the uh, pirate. Why is there a pirate here again?"
-    hide sid ind with moveoutleft
+    show sid ind:
+        linear .3 xcenter .75
+    show kaiser ind with moveinleft:
+        xcenter .25
+    k "Not much makes sense at the moment."
+    k "No point in getting caught up in it."
+    i "Tr-true. Let's go with them."
+    hide sid ind
+    hide kaiser ind
+    with moveoutleft
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "sam", "stella", "dracula")
     show jenny ind with dissolve
     j "Hmm, I'm going to go with them too. We should probably try to stay in groups."
     j "Plus, going to the front seems like the best way to find out where we're going."
@@ -219,27 +250,37 @@ label trainGo:
     c "Hehe, sorry! Alright Sesame, we're going exploring!"
     ses "Meowwwwww!"
     ni "..."
-    hide jenny ind with moveoutright
-    hide catherine ind with moveoutleft
 
+    hide jenny ind
+    hide catherine ind
+    with moveoutleft
+    $ showchibi("dan", "bert", "lauren", "freddy", "sam", "stella", "dracula")
+
+    ni "What a strange bunch."
     show sam with dissolve
     s "Okay, the rest of us can check the next car back."
     s "It looks like it's just the three of us."
-    hide sam with dissolve
-    show drac ind with dissolve
+    show sam:
+        linear .3 xcenter .75
+    show drac ind with moveinleft:
+        xcenter .25
     d "Very well."
-    hide drac ind
+    #hide drac ind
+    show scary with dissolve:
+        alpha .5
     menu:
         n "{i}Should I go with them?{/i}"
 
         "Yes":
             n "Alright."
+            hide scary with dissolve
 
         "No":
             n "Actually, I might just stay here."
-    show sam with dissolve:
-        xcenter .75
+            hide scary with dissolve
+    hide drac ind with moveoutleft
     s "Hey, Dan..."
+    s "I know you might not be the guy to ask but..."
     s "Between you and me, I don't feel particularly comfortable being alone with him."
     show drac ind with moveinleft:
         rotate 45
@@ -255,6 +296,7 @@ label backcar1:
     scene black with fade
     ni "We made our way one train car back, carefully watching our step between cars."
     show bg trainback with fade
+    $ showchibi("dan", "dracula", "sam")
     show sam with dissolve:
         xcenter .5
         linear 0.3 xcenter .75
@@ -278,7 +320,7 @@ label backcar1:
     s "No such luck - it definitely isn't designed to be opened."
     s "Also, this is the back of the train."
     n "Wait, we're at the backmost car already?"
-    hide sam
+    hide sam with dissolve
     ni "Dracula and I checked the window as well."
     ni "Sure enough, the window was riveted on and there was nothing behind us."
     show sam with dissolve:
@@ -293,11 +335,11 @@ label backcar1:
     n "........"
     show drac oh:
         xcenter .75
-    show sam with dissolve:
+    show sam with move:
         xcenter .25
     s "Anyway."
 
-    hide drac oh with dissolve
+    hide drac oh with moveoutright
 
     show sam:
         xcenter .25
@@ -320,7 +362,7 @@ label backcar1:
 
 label midcar2:
     scene bg trainmid with fade
-    $showchibi("dan", "sam", "lauren", "bert", "stella")
+    $showchibi("dan", "sam", "freddy", "lauren", "bert", "stella", "dracula")
     show lauren ind with dissolve
     o "Did you find anything useful?"
     n "Not really. The next car back is the caboose."
@@ -346,6 +388,8 @@ label midcar2:
     t "Oh please, you twerps are no fun."
     hide stella drunk with moveoutright
     hide stellachibi with dissolve
+    show stellapassed
+    hide sam
     show sam:
         xcenter .25
         linear 0.3 xcenter .5
@@ -367,7 +411,7 @@ label midcar2:
     n "It sounded like a PA system? It must be a pre-recorded message or something."
     s "There aren't even exit doors in this car..."
     s "Oh, the others are back."
-    hide sam
+    hide sam with dissolve
     blank "The front train car door opened, and Shahar, Jenny, Sid, and Catherine walked in."
     $showchibi("dan", "sam", "lauren", "bert", "stella", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
     show jenny happy with dissolve
@@ -381,6 +425,7 @@ label midcar2:
     j "What do you mean?"
     n "The train just told us to stand clear of the closing doors."
     j "Oh! That must be what that button does!"
+    n "Huh?"
     n "..."
     d "Regardless."
     d "I cannot say I was particularly impressed by the back car."
@@ -490,44 +535,22 @@ label frontcar1:
 label showcars:
     scene black with fade
     show bg trainfront1 with fade:
-        zoom .9 xcenter .5 ycenter .5
+        zoom .7 xcenter .5 ycenter .5
     #Arun: Reorder cars?
     c "So this is the front car, that we're in right now."
     n "Stuffed to the brim with screens and controls."
     show bg trainmid with fade:
-        zoom .9 xcenter .5 ycenter .5
+        zoom .7 xcenter .5 ycenter .5
     c "Followed by the bar car behind us."
     k "Which has an... upscale 1970s aesthetic."
     show bg trainback with fade:
-        zoom .9 xcenter .5 ycenter .5
+        zoom .7 xcenter .5 ycenter .5
     c "And then the third car, a little caboose."
     d "A run down dusty little mess."
 label frontcar2:
     show bg trainfront1 with dissolve:
         zoom 1
-    #Arun: showchibi here
-    show danchibi:
-        zoom 1.5 xpos 20 ypos 20
-    show samchibi:
-        zoom 1.5 xpos 20 ypos 70
-    show laurenchibi:
-        zoom 1.5 xpos 20 ypos 120
-    show bertchibi:
-        zoom 1.5 xpos 20 ypos 170
-    show jennychibi:
-        zoom 1.5 xpos 20 ypos 220
-    show shaharchibi:
-        zoom 1.5 xpos 20 ypos 270
-    show sidchibi:
-        zoom 1.5 xpos 20 ypos 320
-    show catherinechibi:
-        zoom 1.5 xpos 20 ypos 370
-    show draculachibi:
-        zoom 1.5 xpos 20 ypos 420
-    show freddychibi:
-        zoom 1.5 xpos 20 ypos 470
-    show kaiserchibi:
-        zoom 1.5 xpos 20 ypos 520
+    $ showchibi("dan", "sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
     show sidstand with dissolve:
         zoom .9 xcenter .5 ycenter .46
     show catherine ind with dissolve:
@@ -552,7 +575,8 @@ label frontcar2:
         xcenter .25
     f "No driver?"
     f "What are we going to do?... I'm scared..."
-    n "Yeah, me too kid. We're outta options." #Arun: Make Dan ruder
+    f "I miss my mom..."
+    n "Well whining about it won't help, so quit being such a brat." #Arunj: Make Dan ruder
     show jenny ind with dissolve:
         xcenter .75
     j "What's wrong with you, Dan? He's just a little kid."
@@ -568,9 +592,15 @@ label frontcar2:
          xcenter .75
     j "You punk. We're stuck in here together, you know?"
     j "It wouldn't kill you to be cooperative."
-    #Arun: Showchibi for Jenny/Freddy leaving
+    $ showchibi("dan", "sam", "lauren", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
+    #Arunj: Showchibi for Jenny/Freddy leaving
     hide jenny ind with moveoutright
+    show scary with dissolve:
+        alpha .5
     ni "How can I cooperate after what that screen told us..."
+    ni "I can't trust these people... even a child, like Freddy."
+    ni "Best to keep my guard up."
+    hide scary with dissolve
     show sam with moveinleft:
         xcenter .25
     s "In any case..."
@@ -606,9 +636,10 @@ label frontcar2:
         xcenter .15
         linear 0.15 xcenter .25
     o "That was a little harsh."
-    s "...I'll go after him to apologize." #Arun: Kind of out of character
-    s "We can head to the back car together afterwards."
-    o "I'll come too."
+    s "...Yeah, maybe, fine. Maybe I'll apologize so he doesn't try to murder me." #Arunj: Kind of out of character
+    o "I'll come too. We shouldn't be starting fights over dumb things."
+    o "We need to work together."
+    s "Whatever... I'm heading to the back car."
     hide lauren ind
     hide sam
     with dissolve
@@ -632,7 +663,11 @@ label frontcar2:
     show bert happy:
         xcenter .75
     b "Yeah, of course! I just noticed a panel over here that seemed interesting."
-    b "It seems like there are three accessible switches."
+    b "It seems like there are three accessible switches, and button."
+    n "Ah, that makes sense."
+    n "Jenny mentioned the button earlier."
+    n "She pressed it up here, and it played the \"closing doors\" message over the intercom in the bar car."
+    b "True! And these switches..."
     n "We probably shouldn't try them haphazardl-"
     b "Let's try them!"
     blank "Bert flipped the first switch."
@@ -655,8 +690,9 @@ label frontcar2:
 label frontcar3:
     scene black with fade
     blank "Ten minutes passed."
-    #Arun: chibis through this whole scene
+    #Arunj: chibis through this whole scene
     show bg trainfront1
+    $ showchibi("dan", "bert", "dracula")
     show bert sad:
         xcenter .75
     show drac ind:
@@ -682,14 +718,15 @@ label frontcar3:
     hide bert sad
     hide drac ind
     with dissolve
+    $ showchibi("dan")
     ni "......"
     ni "Now that I'm alone..." #Arun: Here I think we need to make it clearer the user can type. Maybe "Let me try a password"
-    play music "audio/invest1.wav" volume .3 #Arun: Is there audio fade in renpy?
+    play music "audio/invest1.wav" volume .3 fadein 1.0 #Arun: Is there audio fade in renpy?
 label passwording:
     show welcomescreenblank with dissolve
     $ passattempts = 1
     while passattempts < 10:
-        $ password = renpy.input("What could it be?", length=10)
+        $ password = renpy.input("What could it be? {color=00ff00}(Try typing in a password.){/color}", length=10)
         $ password = password.strip()
 
         if not password:
@@ -716,7 +753,7 @@ label donepasswording:
 label midcar3:
 
     scene bg trainmid with fade
-    $ showchibi("dan", "shahar", "stella", "jenny", "lauren", "catherine")
+    $ showchibi("dan", "stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
     show jenny ind with dissolve
     j "Hey, Bert found some food behind the bar!"
     hide jenny ind
@@ -743,8 +780,11 @@ label midcar3:
     scene black with fade
     n "{i}It feels... surprisingly nice having a communal meal.{/i}"
     blank "They ate; about an hour passed."
-    show bg ntrainmid with fade
-    #Arun: show chibis
+    show bg ntrainmid
+    show frogsit
+    with fade
+    $ showchibi("dan", "stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
+
     show kaiser ind with dissolve:
         xcenter .75
     show jenny ind with dissolve:
@@ -782,6 +822,8 @@ label midcar3:
     d "..."
     b "Okay, so only one more bed to account for."
     hide drac ind with moveoutright
+    $ showchibi("dan", "stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "kaiser")
+
     show kaiser ind with moveinright:
         xcenter .75
     k "I'm content sleeping on the floor in the front car, if it makes it easier for the young ones."
@@ -789,6 +831,8 @@ label midcar3:
     k "It is fine. I am used to poor sleeping conditions."
     k "With that taken care of. Goodnight all."
     hide kaiser ind with moveoutright
+    $ showchibi("dan", "stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine")
+
     b "Well, as long as that's taken care of. G'night Dan!"
     hide bert with moveoutleft
     show sid ind with dissolve:
@@ -803,14 +847,16 @@ label midcar3:
         linear .3 xcenter .35
     i "Me too! I can handle it."
     s "Sid, are you sure? If it's too dusty for you I can sleep back there."
-    show sid ind: #Arun: Sid movement kinda weird
-        linear .3 xcenter .5
+    show sid ind: #Arunj: Sid movement kinda weird
+        linear .3 xcenter .45
     i "I'm used to sharing one bed with my whole family! This is a practically an upgrade!"
     hide sid ind with moveoutleft
     show sam:
         linear .3 xcenter .5
     s "Well, that settles it I guess."
-    s "Keep an eye on him back there Dan, I don't want anything bad to happen to the kids." #Arun: Edgier?
+    s "And Dan?"
+    s "Keep an eye on him back there..."
+    s "I know neither of us are really kid people but, I don't want anything bad to happen to them." #Arunj: Edgier?
     n "Anything... bad?"
     s "Goodnight Dan."
     hide sam with dissolve
@@ -818,6 +864,8 @@ label midcar3:
     scene black with fade
     blank "Dan made his way to the back car."
     show bg ntrainback with fade
+    $ showchibi("dan", "sid")
+
     ni "I forgot how dusty it was back here."
     show sid ind with dissolve
     i "Wow, there's even an old school water kettle back here!"
@@ -828,12 +876,18 @@ label midcar3:
     show sid happy
     i "Exciting!"
     i "I wish I could travel and live on cool trains like this."
-    n "Haha, you're still young, Sid, maybe you can one day."
+    n "You're still young, Sid, maybe you can one day."
     hide sid happy
     show sid ind
     i "What do you mean, young?"
     i "I work my ass off to take care of my parents!"
     i "You don't know what I've been through."
+    show scary with dissolve:
+        alpha .5
+    ni "It's kinda funny... this punk reminds me of myself when I was his age."
+    ni "Taking myself way too seriously, blatant disrespect for authority..."
+    ni "Kinda badass. I can respect that."
+    hide scary with dissolve
     n "Hey woah! Don't take it the wrong way."
     n "You're more of a man than I am, bud."
     hide sid ind
@@ -870,10 +924,14 @@ label midcar3:
     with fade
     n "Wow... \"Train Route\" would almost definitely be useful."
     i "I'm positive that it would tell us where the train is going, if we could open it."
-    n "And... participants. I wonder if that's about... us."
-    i "Yeah... that's what I was thinking too."
+    show scary with dissolve:
+        alpha .5
+    ni "And... \"participants\". I wonder if that's about... us."
     ni "If it is, maybe that file could tell us why we're all here..."
     ni "Maybe it would tell us who's behind all this."
+    ni "If I could find them... I could kill them... and end this mess."
+    hide scary with dissolve
+    i "That's not all, though!"
     i "Afterwards, I noticed something else when I hit Return..."
     show welcomescreendir3 with dissolve
     i "The users went up from 0 to 1."
@@ -907,8 +965,9 @@ label midcar3:
     n "Yeah, let's hit the hay. We can figure out some more plans in the morning."
     i "You can have the bed. I'm fine sleeping on the bench."
     n "Okay, you can have the bed tomorrow night."
-    ni "The thought of still being stuck on this train tomorrow night sent chills through my body." #Arun: Little cheesy
-    n "Alright, goodnight Sid."
+    ni "Damn... the thought of still being on this train tommorrow night is..."
+    i "Is something wrong?" #Arun: Little cheesy
+    n "No, not at all. Goodnight Sid."
     hide sid ind with dissolve
 label day2:
     scene black
@@ -917,16 +976,16 @@ label day2:
     play music "audio/rush.mp3" volume .3 fadein 1.0
     scene bg trainback
     $ showchibi("dan", "sid")
-    show chaptericon at topright:
-        zoom .4
-    show mapicon:
-        xcenter .965
-        ycenter .12
-        zoom .3
-    show evidenceicon:
-        xcenter .91
-        ycenter .12
-        zoom .3
+#    #show chaptericon at topright:
+#        zoom .4
+#    show mapicon:
+#        xcenter .965
+#        ycenter .12
+#        zoom .3
+#    show evidenceicon:
+#        xcenter .91
+#        ycenter .12
+#        zoom .3
     show sid happy with dissolve:
         xcenter .5
         linear .3 xcenter .75
@@ -1177,7 +1236,7 @@ label midcar4:
     ni "Is this lady for real?"
     b "That... Definitely seems like a reason to have enemies."
     t "It feels oddly freeing to not have my bodyguards and assistants around, saying:"
-    t "'Ms. Cantoire! Put down the vodka!' 'Ms. Cantoire, don't put your head out the limousine sunroof!'"
+    t "\"Ms. Cantoire! Put down the vodka!\" \"Ms. Cantoire, don't put your head out the limousine sunroof!\""
     b "..."
     n "..."
     t "Of course, I am not the mole. It'd be a waste of my time."
@@ -1284,7 +1343,9 @@ label midcar5:
     scene black
     blank "They shared the rest of the non-alcoholic food and drinks amongst themselves."
     blank "There was much less talking tonight."
-    show bg ntrainmid with dissolve
+    show bg ntrainmid
+    show frogsit
+    with dissolve
     $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show lauren ind with dissolve:
         xcenter .3
@@ -1313,7 +1374,7 @@ label midcar5:
     $ showchibi("dan", "bert", "catherine", "freddy", "jenny", "sid", "stella", "dracula")
     show sid ind with dissolve
     i "Hey Dan."
-    i "It seems like almost everyone - bar maybe Dracula - is starting to go to sleep here." #Arun: Not accurate
+    i "It seems like everyone else staying in this car is going to start sleeping." #Arun: Not accurate
     i "And I'm starting to get tired myself."
     i "I'm gunna hit the hay."
     play sfx "audio/butt.mp3" volume .1
@@ -1326,11 +1387,11 @@ label midcar5:
     n "I'll come too, Sid."
     scene black
     blank "They made their way to the back car."
-    show bg ntrainback with dissolve
+    show bg notrainback with dissolve
     $ showchibi("dan", "sid")
     show sid ind with dissolve
     i "Well, goodnight Dan!" #Arun: Lights off
-    n "Hey, Sid. How are you, well, feeling? About everything."
+    n "Hey, Sid. Before you sleep. How are you, well, feeling? About everything."
     i "Well, it's a little scary I suppose."
     i "We're all out of food, and some of the people on board are suspicious..."
     hide sid ind
@@ -1367,6 +1428,8 @@ label midcar5:
 label midcar6:
     show black #Arun: Some sort of pause/transition here
     bi "..."
+    bi "............."
+    bi ".........................."
     bi "What a sticky situation."
     bi "We're out of food and water, but..."
     show bertface2 with dissolve:
@@ -1428,9 +1491,10 @@ label midcar6:
     f "Ahhh! Mommy!"
     bi "It sounded like a the world's biggest chandelier fell."
     j "I'm scared!"
-    blank "AHHHHHH!!!"
+    play sfx "audio/beep.mp3" volume .1
+    z "AHHHHHH!!!"
     bi "Oh no."
-    t "Someone screamed?"
+    bi "Was that a... scream?"
     d "Who was that? Is everyone okay?"
     t "It came from the front car!"
     hide scary with dissolve
@@ -1440,19 +1504,25 @@ label midcar6:
     with dissolve
     hide catback with dissolve
     show catherine ind with dissolve
-    c "What was that? Whose scream was that?"
-    b "I don't know, but it sounded like it came from the front car."
-    b "I'm going to check it out."
+    c "What was that? Why couldn't we see anything?"
+    b "I don't know, but we need to go check out the front car."
     show catherine ind:
         linear .3 xcenter .75
+    show frog ind with moveinleft:
+        xcenter .25
+    c "I'll stay here with Freddy and Sesame."
+    f "W-what's going on? I'm scared..."
+    hide catherine ind
+    hide frog ind
+    with moveoutright
     show stella ind with moveinleft:
         xcenter .25
-    t "We should all go."
+    t "The rest of us should go to the front car, together."
     b "Agreed."
     scene black with fade
-    blank "All six of them made their way to the front car."
+    blank "The four of them - Dan, Stella, Dracula, and Jenny - made their way to the front car."
     show bg notrainfront
-    $ showchibi("bert", "catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
+    $ showchibi("bert", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
     show lauren ind with moveinleft
     o "What's going on?"
     show lauren ind:
@@ -1463,6 +1533,7 @@ label midcar6:
     hide lauren ind with moveoutright
     show jenny ind with moveinright:
         xcenter .75
+    j "Yeah, but more importantly..."
     j "What about that scream?"
     j "Who was that?"
     s "Scream? What do you mean?"
@@ -1475,7 +1546,7 @@ label midcar6:
     j "Speaking of which, you said it got dark in this car too?"
     k "Yes, almost like an eclipse. But the computer screens stayed on and gave us some light."
     b "Well that's good."
-    b "..."
+    b "... But..."
     b "Oh no."
     j "What's wrong?"
     b "Where's Sid? And Dan?"
@@ -1488,16 +1559,18 @@ label midcar6:
         xcenter .25
     h "What are ye on about?"
     hide jenny ind with moveoutright
-    show catherine ind with moveinright:
+    show dracula ind with moveinright:
         xcenter .75
-    c "Bert's right, there's no way they slept through that noise."
-    c "We have to check on them."
+    d "He's right, there's no way they slept through that noise."
+    d "As well, it sounded like it came from the back car."
+    b "We have to check on them."
     scene black with fade
-    blank "The 10 of them ran to the back car as fast as they could."
+    blank "The 8 of them ran to the bar car as fast as they could."
+    blank "Catherine and Freddy joined them on the way to the caboose."
     blank "But when they got there..."
     show bg bodytrainback:
         alpha .0
-        linear 3 alpha 1
+        linear 4 alpha 1
     $ showchibi("bert", "catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
     b "Oh no..."
     b "No no no no..."
@@ -1786,7 +1859,7 @@ label trial1a:
     show stella ind with moveinleft:
         xcenter .25
     b "Wait, slow down!"
-    #Arun: Stella should say something here
+    t "Please, child... Think more clearly."
     python:
         startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
     "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
@@ -1973,7 +2046,7 @@ label trial1d:
     b "Yeah, that's it!"
     b "If Sid was planning on murdering Dan, it'd make sense for him to lie."
     b "But Dan agreed and said he slept on the cot, so it seems like we have proof."
-    c "So it probably wasn't Sid. At least not while Dan was sleeping."
+    c "So it seems like it wasn't Sid... at least not while Dan was sleeping."
     show catherine ind:
         linear .3 xcenter .75
     show sid ind with moveinleft:
@@ -1999,7 +2072,7 @@ label trial1d:
         xcenter .25
     t "Weren't you paying attention Sam? No?"
     t "There are a few more things to figure out."
-    t "For example - those of us who were in this car - Stella, Catherine, Bert, Jenny, Freddy, and myself." #Arun Stella and myself?
+    t "For example - those of us who were in this car - Catherine, Bert, Jenny, Freddy, and myself." #Arun Stella and myself?
     t "Recall the loud scream we heard."
     bi "...!"
     t "Who was that? There's no mistaking that it happened."
@@ -2110,8 +2183,7 @@ label trial1f:
     c "But we do we do about it?"
     c "What does that even mean for the case?"
     j "This is getting really confusing..."
-    c "Hmm... I know it sounds weird, but maybe we should take a break."
-    c "It'll let us collect ourselves a little bit."
+    c "Yeah, I need to collect my thoughts for a minute."
     hide jenny ind with moveoutleft
     show shahar ind with moveinleft:
         xcenter .25
@@ -2120,20 +2192,23 @@ label trial1f:
     hide catherine ind with moveoutright
     show sid ind with moveinright:
         xcenter .75
-    i "Ye-yeah. There's a dead body in the back car, it seems like a weird time to take a break."
-    b "Hmm. I'm not sure."
-    b "It might be good to give everyone a chance to think for themselves."
-    i "How am I supposed to be calm? Or even try to think at a time like this?"
+    i "Ye-yeah. There's a dead body in the back car, no time to be messing around."
+    i "I mean, damn, how am I supposed to be calm? Or even try to think at a time like this?"
     i "Half of you just accused me of murder and I just met you."
     i "Plus, I can barely even see, it's so dark in here."
-    h "Aye, I don't trust ye scallywags."
-    b "Wait... I completely forgot. It is dark in here, but... you {i}can{/i} see."
+    bi "!"
     hide shahar ind with moveoutleft
     show drac ind with moveinleft:
         xcenter .25
-    d "Ahhh... How foolish of us."
-    i "What are you guys talking about?"
-    d "It seems obvious in hindsight..."
+    d "Bert, I saw something click in your brain just now."
+    d "Did you make the same realization as myself?"
+    b "I think so..."
+    show scary with dissolve:
+        alpha .5
+    bi "How foolish of us!"
+    bi "It seems obvious in hindsight... something's very different about now and the time of the murder."
+    bi "And that is..."
+    hide scary with dissolve
     call screen trainEvidenceTrial(-1, 3, "trial1g") with dissolve
 label trial1g:
     scene bg notrainmid with fade
@@ -2324,18 +2399,47 @@ label trial1i:
     d "There is no need to rush."
     b "Huh? Of course there is!"
     b "Dan is dead! We have to figure out what happened!"
-    d "Slow down."
     hide frog ind with moveoutright
     show jenny ind with moveinright:
         xcenter .75
-    j "What are you talking about?"
+    j "What are you talking about, Dracula?"
     j "Freddy is just making things up now and we're not getting anywhere."
-    d "I don't believe he made anything up."
-    d "We just do not have the correct angle."
+    d "I don't think he made anything up."
+    d "Just because we're not able to see the flag right now, doesn't mean that he didn't before."
+    j "Yeah, but we can't even see the back train car from this angle out the window."
+    d "Surely, Bert, you must understand the situation now."
     bi "!"
-    b "I think I get it."
+    show scary with dissolve:
+        alpha .5
+    bi "A reason why he was able to see it earlier, but we can't right now..."
+    bi "Something about the angle of the train..."
+    bi "I... have a guess. I might get it."
+label trial1ia:
+    menu:
+        bi "The truth is..."
+
+        "Freddy really is lying.":
+            bi "No, this can all make sense."
+            jump trial1ia
+
+        "Only Freddy is able to see the flag, because of his onesie.":
+            bi "Ahh, no. That doesn't make any sense."
+            jump trial1ia
+
+        "We need to be going around a turn to see it.":
+            bi "Yes, that's it!"
+            jump trial1ib
+
+        "Freddy has better vision than the rest of us.":
+            bi "Hmm, on second thought, probably not..."
+            jump trial1ia
+
+label trial1ib:
+    hide scary with dissolve
+    b "That's it!"
     b "We have to wait until we're going around a turn."
     b "Then we'll be able to see the back car from the window."
+    d "Yes, precisely."
     j "Hmmm."
     j "How long will we have to wait?"
     d "We don't know."
@@ -2427,7 +2531,12 @@ label trial1i:
     b "Freddy, what do you mean it was a long, pointy flag?"
     b "That doesn't sound like any flag I've seen before."
     f "Umm... can I draw it?"
-    c "Seems like I started a trend!" #Arun: Catherine poke head in
+    show catherine happy with moveinleft:
+        rotate 45
+        xcenter 0
+        ycenter .5
+    c "Seems like I started a trend!"
+    hide catherine happy with moveoutleft
     hide frog ind with dissolve
     blank "Freddy grabbed another piece of paper."
     show frog ind with dissolve:
@@ -2551,7 +2660,7 @@ label trial1m:
     scene black with fade
     blank "All 11 of them made their way to the back car, together."
     show bg bodytrainback with dissolve
-    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show sid ind with dissolve
     i "Damn..."
     i "I don't really want to, uh, climb over his body to check the window..."
@@ -2690,6 +2799,8 @@ label trial1o:
     b "The user counter on the monitors have a different value now."
     o "Wait, really?"
     b "Yes, it went up from 1 to 3 at some point."
+    o "That would mean whoever used the computer used it {i}twice,{/i} as well."
+    b "Yeah... maybe once to see what they can access, and again to set up the murder."
     show lauren ind:
         linear .3 xcenter .75
     show kaiser ind with moveinleft:
@@ -2738,8 +2849,13 @@ label trial1o:
     b "..."
     show jenny ind with dissolve:
         xcenter .75
-    j "Yep, it went up to 4!"
+    j "Yep, I accessed the directory, and the counter went up to 4!"
     i "Phew!"
+    j "Sid, why didn't you tell anyone else about this?"
+    j "It could have been useful to see the directory, even if we can't open anything."
+    i "W-well, I talked to Dan about it, and he said we shouldn't..."
+    i "It's kinda hard to trust anyone, ya know..."
+    b "Hmmm, either way, we know now."
     j "So it seems like someone did access the computer, either using the same input, or..."
     j "with the password."
     i "It couldn't have been me - I was never in the front car alone after the first time."
@@ -2762,12 +2878,308 @@ label trial1o:
     c "So is Sesame I think."
     ses "Rmrowwwwwww."
     j "Agreed."
+    c "With Sesame, or with me?"
+    j "Uhh, both, I suppose."
+    hide jenny ind with moveoutright
+    hide catherine ind with moveoutleft
+    show kaiser ind with moveinleft
+    k "It seems the first half of our investigation was in vain."
+    k "We spent quite some time considering ways someone could have stabbed Dan."
+    show kaiser ind:
+        linear .3 xcenter .75
+    show stella ind with moveinleft:
+        xcenter .25
+    t "Not wasted, per se, simply not the correct solution."
+    t "Now we know that nobody snuck into the back car."
+    k "That is true."
+    k "As well, some information about the tunnel."
+    b "And the computer log in!"
+    b "We don't know {i}who{/i} figured out the password, {i}what{/i} it is, or {i}how{/i}..."
+    b "But, we know someone did."
+    hide kaiser ind with moveoutright
+    show lauren ind with moveinright:
+        xcenter .75
+    o "So, the person who accessed the computer is the murderer?"
+    t "It seems quite that simple."
+    t "Otherwise, they wouldn't be able to time the murder weapon hitting the tunnel so accurately."
+    o "I see..."
+    hide stella ind with moveoutleft
+    show lauren ind:
+        linear .3 xcenter .5
+    o "Then I can't think of any other solution:"
+    o "It must have been one of the four in the front car at the time of the murder."
+    o "Shahar, Sam, Kaiser, or myself."
+    b "What? You can't just narrow it down so quickly!"
+    o "Think about it - it's the perfect excuse."
+    o "Being able to claim, \"I couldn't have done it, I was nowhere near the crime.\""
+    o "Plus, if they accessed the computer twice, it's likely one of the times was during the murder."
+    show lauren ind:
+        linear .3 xcenter .75
+    show drac ind with moveinleft:
+        xcenter .25
+    d "Yes - I concur."
+    b "But why?"
+    d "Think back to something we concluded earlier."
+    d "Something essential to the setup that could only be accomplished in this car."
 
-    #summarize up to now
-    #"it must be someone who was in the front car!"
-    #all give their what they were doing shpeel
+label trial1p:
+    show scary:
+        alpha .75
+    menu:
+        bi "Something that could only be accomplished in the front car, at the time of the murder?"
+
+        "Activating the PA system.":
+            bi "Yeah, that must be the answer!"
+
+        "Checking the maps.":
+            bi "They could check the maps, but that's probably not what they were doing at the time of the murder."
+            jump trial1p
+
+        "Changing the train's route.":
+            bi "We still don't know if that's even possible..."
+            jump trial1p
+
+        "Securing the murder weapon to the back of the train.":
+            bi "No, that would have had to be done earlier, and from the back car."
+            jump trialp
+
+    hide scary with dissolve
+    b "They must have been... activating the PA system with the button!"
+    d "Precisely."
+    o "You act like you have it all figured out, Mr. Dracula."
+    hide drac ind
+    show drac happy:
+        xcenter .25
+    d "Oh, surely no faster than you do."
+    d "Besides, I wasn't the one in this traincar during the murder."
+    hide drac happy with moveoutleft
+    o "..."
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Stay on task! We're so close to the answer."
+    i "We know that you can't hear the PA system from the front car, Jenny already proved that."
+    i "But... there's a way we can check."
+    hide sid with moveoutleft
+    b "Wait, Sid!"
+    blank "Sid ran over to the train car door."
+    blank "He opened both the front car door and the bar car door,"
+    blank "so everyone could see directly into the bar car."
+    i "Hit the button!!!"
+    show lauren ind:
+        linear .2 xcenter .8
+    blank "Lauren pressed the button."
+    z "AHHHHHH!!!"
+    b "!"
+    show catherine ind with moveinleft:
+        xcenter .25
+    c "Wow! Jenny's scream really is programmed onto that button!"
+    c "Press it again!"
+    z "AHHHHHH!!!"
+    z "AHHHHHH!!!"
+    z "AHHHHHH!!!"
+    o "Wow..."
+    hide lauren ind with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "That settles it then, it really was one of the four from up here."
+    i "They pressed the button when we went into the tunnel, to cause a diversion."
+    i "Despicable..."
+    i "WELL, OUT WITH IT! WHO KILLED DAN?!"
+    b "Woah woah, take a step back..."
+    hide sid ind
+    hide catherine ind
+    with dissolve
+    show scary with dissolve:
+        alpha .5
+    bi "Sid's furious all of a sudden, but I can't blame him."
+    bi "We're so close."
+    bi "There's only one logical next step."
+    bi "This could be it..."
+    bi "Let's settle this!"
+    hide scary with dissolve
+    b "Okay! Sam, Shahar, Kaiser, and Lauren."
+    show sam with dissolve:
+        xcenter .125
+    show shahar ind with dissolve:
+        xcenter .38
+    show kaiser ind with dissolve:
+        xcenter .6
+    show lauren ind with dissolve:
+        xcenter .875
+    b "You four were up here at the time of the murder."
+    b "I need you to to each tell us exactly what you were doing up here at the time of the murder."
+    b "{i}Exactly{/i} what you were doing."
+    b "Sam, you first."
+    s "Sheesh, it's pretty lame that I'm getting roped into this just because I was in this train car..."
+    s "Whatever, I was pretty much just looking around."
+    s "I wanted to see if I could find anything in the cabinets, in all the corners, etc."
+    b "Okay. Shahar, you next."
+    h "Aye, captain."
+    h "Ya see, I was tryin' at the helm."
+    h "If I could figure out 'ow to control the train, I could stop it. No such luck though, laddies."
+    b "Hmmm... Kaiser."
+    k "If you insist."
+    k "I tried some possible passwords, starting with all of our names, to no avail."
+    k "Then I searched with Sam for a bit."
+    b "And you, Lauren?"
+    o "I was unplugging and replugging some of the monitors, hoping maybe something would change."
+    o "Nothing changed... and this is what became of it..."
+    b "I see."
+    hide sam
+    hide shahar ind
+    hide kaiser ind
+    hide lauren ind
+    with dissolve
+    show scary with dissolve
+    bi "That settles it. I know who it was."
+    bi "The murderer is..."
+
+    call screen chooseChar2("kaiser", "trial1q", "  ") with dissolve
+
+label trial1q:
+    show kaiser dead:
+        xcenter .58
+    play sfx "audio/shatter.mp3" volume .8
+    #pause 1
+    blank "........"
+    show kaiser dead:
+        linear .75 xcenter .5
+    blank "It... has to be Kaiser."
+    scene bg notrainfront
+    show kaiser ind
+    #show bg NOtrainFRONT
+    with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    k "Excuse me?"
+    k "Are you insinuating that I killed Dan?"
+    b "No, I'm proclaiming it. It had to have been you."
+    b "We have all the evidence we need now."
+    k "Excuse me, but how did you come to such a ridiculous conclusion?"
+    k "Surely the four of us tell you what we were doing couldn't have been the deciding factor."
+    b "It was, Kaiser!"
+    b "You said you were trying everyone's names as passwords."
+    k "That's exactly what happened, you fool."
+    b "We know that can't be true!"
+    k "Pardon me, bu-"
+    b "Think back to yesterday! We have proof you couldn't have done that."
+    b "Who said it..."
+    show scary with dissolve
+    call screen chooseChar("sid", "trial1r", "Who knows the truth?") with dissolve
+label trial1r:
+    scene black
+    show bg notrainfront with fade
+    show kaiser ind with dissolve
+    $ showchibi("dan", "bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    k "Excuse me?"
+    b "It's true!"
+    show kaiser ind:
+        linear .3 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "M-me?"
+    b "Yes! Think back to what you said yesterday!"
+    b "You can prove that Kaiser was the one who killed Dan!"
+    i "I..."
+    show sid happy:
+        xcenter .25
+    i "You're right! I do know!"
+    i "Kaiser couldn't possibly have tested everyone's name as passwords!"
+    i "After 5 attempts it locks you out!"
+    hide sid happy
+    show sid ind:
+        xcenter .25
+    show kaiser ind:
+        linear .1 xcenter .775
+    k "What?! Surely you're joking..."
+    i "No, it's true!"
+    blank "Lauren rushed over to a computer and started typing."
+    show scary with dissolve:
+        alpha .5
+    bi "Did Kaiser really kill Dan?"
+    bi "I know someone had to have done it, but..."
+    bi "It's hard to actually accept the truth."
+    hide scary with dissolve
+    hide sid ind with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .25
+    o "It's... true."
+    o "After 5 attempts it stopped me from typing anything else in."
+    o "There's no pop-up or anything, but it's impossible to input any new letters."
+    o "I... can't believe it, Kaiser, did you really do this?"
+    b "..."
+    k "..."
+    k "Yes, you've figured it all out."
+    k "I'm impressed, quite frankly."
+    hide lauren ind with moveoutleft
+    show kaiser ind:
+        linear .3 xcenter .5
+    k "I killed Dan, there's no reason to claim otherwise now."
+    b "But... but why?"
+    b "Why would you do something like that?"
+    k "A wonderful question, truly."
+    k "And I wish I had a better answer."
+    k "You see..."
+    show bg notrainfront:
+        alpha .5
+    #show doom #wrong spot
+    with dissolve
+    k "I too have been hiding some personal details."
+    k "I liked to imagine I was past my crime days, but... alas."
+    b "Crime?"
+    k "My homeland was very dependent on trains."
+    k "Be it for bourgeoisie travels, international trading, civilian errands."
+    k "Everything revolved around the rails."
+    k "I was personally never much of a fan of the trains."
+    b "Where are you going with this?"
+    k "You see, such methods are vulnerable to heists and robbery."
+    k "I took great advantage of this."
+    b "You were a train robber?"
+    k "Yes. I did what I must to make ends meet."
+    k "I did not hurt anyone, I simply stole from those with extra resources."
+    b "Until today..."
+    k "Yes, until today."
+    b "But why?"
+    k "I didn't have a choice."
+    k "I had to kill the mastermind."
+    b "What? How do you know he was the mastermind?"
+    k "I don't know for sure, but... his personality was so cold."
+    show kaiser ind:
+        linear .3 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "You... you killed my friend! He didn't deserve to die!"
+    k "How do you know that?"
+    k "Maybe he was the mastermind."
+    i "No way!"
+    k "Regardless, it was my turn, and I had to choose someone."
+    k "He seemed like the most likely candidate."
+    b "Your turn? What do you mean?"
+    k "You see, I knew I had to act."
+    k "Becau "
+    show braindeath
+    pause .25
+    hide kaiser ind
+    show doom
+    hide braindeath with dissolve
+    hide sid ind
+    show sid happy:
+        xcenter .25
+        linear .1 xcenter .2
+    blank "Kaiser fell to the floor."
+    b "Wh-what?!"
+    i "No no no no no!"
+    i "What happened?!"
+    b "He just, "
+    extend "died..."
 
 
+
+
+    #kaiser not reveal advantage
+    #train important
+    #dies -> eveyrone else pass out
+
+    #
 
 
 #XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
