@@ -112,7 +112,7 @@ init python:
         if not interact:
             return
         if event == "show_done":
-            renpy.sound.play("audio/voi.mp3")
+            renpy.sound.play("audio/voi5deep_1.mp3")
         elif event == "slow_done":
             renpy.sound.stop()
 init python:
