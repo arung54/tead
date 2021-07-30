@@ -6,7 +6,7 @@ label dracAsk0:
     show drac happy with dissolve
     d "I wish it were slightly less bright in this train..."
     ni "I should go talk to Bert instead of this guy."
-    call screen midCar
+    call screen backCar
 
 #Train 2
 label dracAsk1:
@@ -19,7 +19,7 @@ label dracAsk1:
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen backCar
 
 #Mansion 1
 label dracAsk2:

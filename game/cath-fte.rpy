@@ -1,14 +1,14 @@
 
 label cathAsk0:
-    scene bg trainmid
+    scene bg trainback
     show catherine happy with dissolve
-    c "Here you go Sesame! You can have the turkey from this sandwich."
+    c "Achoo! Whew, sure is dusty back here."
     ni "I should go talk to Bert."
-    call screen midCar
+    call screen backCar
 
 
 label cathAsk1:
-    scene bg trainmid
+    scene bg trainback
     show catherine happy with dissolve
     c "Hey Dan!"
     blank "Should I talk to Catherine?"
@@ -18,7 +18,7 @@ label cathAsk1:
             jump cathHang
         "Maybe later":
             hide catherine with dissolve
-            call screen midCar
+            call screen backCar
 
 label cathHang:
     if fte_cath == -1:

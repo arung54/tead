@@ -1,10 +1,10 @@
 
 label sidAsk0:
-    scene bg trainfront
+    scene bg trainmid
     show sid ind with dissolve
-    i "I feel like I'm so close to getting this password...Focus, Sid, focus!"
+    i "Hmm. I wonder what the password could be..."
     ni "I should go talk to Bert."
-    call screen frontCar
+    call screen midCar
 
 
 label sidAsk1:

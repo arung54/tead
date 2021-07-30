@@ -2,24 +2,24 @@
 
 #Train 1
 label kaisAsk0:
-    scene bg trainmid
+    scene bg trainfront1
     show kaiser ind with dissolve
     k "..."
     ni "I should go talk to Bert instead of this guy."
-    call screen midCar
+    call screen frontCar
 
 #Train 2
 label kaisAsk1:
-    scene bg trainmid
+    scene bg trainfront1
     show kaiser ind with dissolve
     k "..."
     menu:
         "Spend time with Kaiser?":
-            j "Sure!"
+            k "Oh? Did you have something to say, Dan?"
             jump kaisHang
         "Maybe later":
             hide kaiser ind with dissolve
-            call screen midCar
+            call screen frontCar
 
 label kaisHang:
     #Dan FTE 1

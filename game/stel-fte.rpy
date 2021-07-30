@@ -5,7 +5,7 @@ label stelAsk0:
     scene bg trainmid
     show stella happy with dissolve
     t "Hello."
-    ni "I should go talk to Bert instead of this guy."
+    ni "I should go talk to Bert instead of her."
     call screen midCar
 
 #Train 2
@@ -15,7 +15,7 @@ label stelAsk1:
     t "Hello."
     menu:
         "Spend time with Stella?":
-            j "Sure!"
+            t "Sure, you're cute enough."
             jump stelHang
         "Maybe later":
             hide stella ind with dissolve

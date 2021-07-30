@@ -14,7 +14,7 @@ label bertAsk0:
 
 
 label bertAsk1:
-    scene bg trainmid
+    scene bg trainfront1
     show bert happy with dissolve
     b "Hey Dan! Want to chat some more?"
     blank "Should I talk to Bert?"
@@ -24,7 +24,7 @@ label bertAsk1:
             jump bertHang
         "Maybe later":
             hide bert with dissolve
-            call screen midCar
+            call screen frontCar
 
 label bertHang:
     if fte_bert == -2:
