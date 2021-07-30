@@ -1,15 +1,15 @@
 
 #Train 1
 label shahAsk0:
-    scene bg trainmid
+    scene bg trainfront1
     show shahar ind with dissolve
     h "Y'arr, if you think about it, a train is just a pirate ship on land."
     ni "...yeah, I should go talk to Bert instead of this guy."
-    call screen midCar
+    call screen frontCar
 
 #Train 2
 label shahAsk1:
-    scene bg trainmid
+    scene bg trainfront1
     show shahar ind with dissolve
     h "Land ho!"
     h "Wait, no, that's just a mirage..."
@@ -21,7 +21,7 @@ label shahAsk1:
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen frontCar
 
 #Mansion 1
 label shahAsk2:

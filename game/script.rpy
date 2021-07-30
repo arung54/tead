@@ -279,6 +279,4 @@ label start:
 ###########
 #Start
 ###########
-    python:
-        fte_kais = -1
-    jump kaisHang
+    jump trainGo

@@ -2,24 +2,24 @@
 
 #Train 1
 label samAsk0:
-    scene bg trainmid
+    scene bg trainfront
     show sam happy with dissolve
     s "Hey."
     ni "I should go talk to Bert instead."
-    call screen midCar
+    call screen frontCar
 
 #Train 2
 label samAsk1:
-    scene bg trainmid
+    scene bg trainfront
     show sam with dissolve
     s "Hey."
     menu:
         "Spend time with Sam?":
-            j "Sure!"
+            s "Sure, I guess I can talk."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen frontCar
 
 #Mansion 1
 label samAsk2:
