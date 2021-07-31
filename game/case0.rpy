@@ -114,7 +114,7 @@ label meetBert:
             ni "I think the government would've just left me in prison if that were the case."
             jump bertQuestions
 
-        "Finish talking to Bert." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Bert." if len(menuset) > 0:
             jump postMeetBert
 label postMeetBert:
     ni "I think that's everything I want to ask Bert."
@@ -156,7 +156,7 @@ label meetSam:
             ni "I don't even know the results of the last election, are we really all someone's political enemies?"
             jump samQuestions
 
-        "Finish talking to Sam." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Sam." if len(menuset) > 0:
             jump postMeetSam
 label postMeetSam:
     ni "I think that's everything I want to ask Sam."
@@ -201,7 +201,7 @@ label meetStella:
             ni "Rich people really are judgmental, aren't they..."
             jump stellaQuestions
 
-        "Finish talking to Stella." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Stella." if len(menuset) > 0:
             jump postMeetStella
 label postMeetStella:
     ni "I think that's everything I want to ask Stella."
@@ -239,7 +239,7 @@ label meetSid:
             ni "I {i}really{/i} hope this isn't a jail."
             jump sidQuestions
 
-        "Finish talking to Sid." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Sid." if len(menuset) > 0:
             jump postMeetSid
 label postMeetSid:
     ni "I think that's everything I want to ask Sid."
@@ -283,7 +283,7 @@ label meetJenny:
             ni "How is she saying that with such a bubbly expression?"
             jump jennyQuestions
 
-        "Finish talking to Jenny." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Jenny." if len(menuset) > 0:
             jump postMeetJenny
 label postMeetJenny:
     ni "I think that's everything I want to ask Jenny."
@@ -327,7 +327,7 @@ label meetCatherine:
             ni "Somehow I doubt pet adoptions are the motivation here..."
             jump cathQuestions
 
-        "Finish talking to Catherine." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Catherine." if len(menuset) > 0:
             jump postMeetCatherine
 label postMeetCatherine:
     ni "I think that's everything I want to ask Catherine."
@@ -366,7 +366,7 @@ label meetKaiser:
             k "Hard to say without meeting the people behind it."
             jump kaisQuestions
 
-        "Finish talking to Kaiser." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Kaiser." if len(menuset) > 0:
             jump postMeetKaiser
 label postMeetKaiser:
     ni "I think that's everything I want to ask Kaiser."
@@ -412,7 +412,7 @@ label meetDracula:
             d "Usually human trafficking is much less... elegant."
             jump dracQuestions
 
-        "Finish talking to Dracula." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Dracula." if len(menuset) > 0:
             jump postMeetDracula
 label postMeetDracula:
     ni "I think that's everything I want to ask Dracula."
@@ -454,7 +454,7 @@ label meetLauren:
             o "There has to be a million people in my city who'd be better kidnapping targets than me."
             jump laurenQuestions
 
-        "Finish talking to Lauren." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Lauren." if len(menuset) > 0:
             jump postMeetLauren
 label postMeetLauren:
     ni "I think that's everything I want to ask Lauren."
@@ -495,7 +495,7 @@ label meetFreddy:
             n "I wish it was, kid."
             jump froggyQuestions
 
-        "Finish talking to Freddy." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Freddy." if len(menuset) > 0:
             jump postMeetFreddy
 label postMeetFreddy:
     ni "I think that's everything I want to ask Freddy."
@@ -539,7 +539,7 @@ label meetShahar:
             n "..."
             jump shaharQuestions
 
-        "Finish talking to Shahar." if len(menuset) > 0 and len(menuset) < 3:
+        "Finish talking to Shahar." if len(menuset) > 0:
             jump postMeetShahar
 label postMeetShahar:
     ni "I think that's everything I want to ask Shahar."
@@ -550,7 +550,7 @@ label postMeetShahar:
     call screen intros with dissolve
 
 
-label go:
+label go: #Add silhouttes here?
     scene black
     warden "Dan Scagnelli, wake up."
     m "No... don't want to wake up for another day of this..."
@@ -634,6 +634,7 @@ label go:
     scene bg startmeet with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     show sam with dissolve
+    #Make this section longer
     z "Let's get straight to the point. Anyone know where we are or why we're here?"
     show sam:
         xcenter .5
