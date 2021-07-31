@@ -147,7 +147,7 @@ label meetSam:
             s "Last thing I remember is I was on my way back to my dorm from the campus library."
             s "I'd been up late working on an assignment, so campus was pretty empty."
             s "Maybe that's how our kidnapper was able to get me."
-            ni "Hm... sounds a lot easier than breaking kidnapping someone from a prison."
+            ni "Hm... sounds a lot easier than kidnapping someone from a prison."
             jump samQuestions
 
         "Why do you think we're here?":
@@ -318,7 +318,7 @@ label meetCatherine:
             c "Next thing we know, we ended up here."
             c "Whoever brought us here must be somewhat of a gentle soul, if they brought both of us."
             ses "Mew!"
-            ni "As a rule of thumb, I don't often label kidnappers as gentleb..."
+            ni "As a rule of thumb, I don't often label kidnappers as gentle..."
             jump cathQuestions
 
         "Why do you think we're here?":
@@ -356,7 +356,7 @@ label meetKaiser:
 
         "What were you doing before you ended up here?":
             k "I think I was in a taxi back home from a bar."
-            k "That's last thing I remember, though that's somewhat odd..."
+            k "That's the last thing I remember, though that's somewhat odd..."
             k "I feel like I should at least remember leaving the taxi, unless the driver is complicit in all this."
             jump kaisQuestions
 
@@ -634,7 +634,7 @@ label go: #Add silhouttes here?
     scene bg startmeet with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     show sam with dissolve
-    #Make this section longer
+    #Make this section longer/make them conclude they kidnapped
     z "Let's get straight to the point. Anyone know where we are or why we're here?"
     show sam:
         xcenter .5
