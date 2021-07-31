@@ -46,30 +46,48 @@ label mansionGo:
     b "Something like that. I think she's just trying to keep him from crying."
     d "Regardless, they have gone to a new area without consulting the rest of us."
     d "Seems somewhat rash."
+    d "Plus, I was hoping we could try to revisit discussing our crimes."
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .25
     show sam with moveinright:
         xcenter .75
     s "I agree with the vampire for once."
-    s "Given the information Kaiser shared with us before his untimely end."
-    s "It would be good to discuss that topic as a group."
+    s "It would be good to discuss them as a group."
     bi "..."
     bi "Silence followed, with no one sure how to proceed."
     s "Come on, we can talk about it. We're all criminals."
     s "There, I said it."
     s "Stella and I have already admitted to committing crimes, it's not like much has changed."
-    d "Yes. It could be prudent to strategize around this information."
+    d "Yes. Plus, it could be prudent to strategize around this information."
     hide sam with moveoutright
     show stella ind with moveinright:
         xcenter .75
     t "Strategize how exactly?"
     d "Maybe we could each admit what crimes we've committed and try to find a common link."
+    d "That common link could then help us identify the mastermind. The mastermind might even be the common link themselves."
+    d "Then whoever is the killer this round would have better odds of killing the mastermind and ending the game."
     d "For example, my crime was vampiric manslaughter."
     d "I think it's unfair to call my need for sustenance a crime, but I digress."
+    show scary with dissolve:
+        alpha .5
+    bi "Common link? The few crimes people had admitted to definitely didn't have a common link. Was Dracula really this irrational?"
+    bi "No... I think I understood what Dracula was trying to do, but it was best not to say it out loud and he must know that."
+    bi "Kaiser admitted to robbing trains, and then said it was \"his turn\" to murder someone on the train."
+    bi "So there's a reasonable chance the person whose \"turn\" it is to murder someone in the mansion committed a crime at the mansion."
+    bi "If people honestly admitted to crimes, we could rule out suspects whose crimes couldn't take place at a mansion."
+    bi "Or, if the murderer slipped up, we could even find out ahead of time who committed a crime in the mansion and pay extra attention to them."
+    bi "Obviously, if the murderer realized this, they would simply not admit to a crime that could tie them to this location."
+    bi "So Dracula must be hoping the murderer isn't so wise."
+    bi "Better yet, he's suggesting that the murderer's task, identifying and killing the mastermind, could be aided by this process."
+    bi "If they took his words to heart, they would indirectly out themselves, and think that was the right thing to do..."
+    bi "But will Dracula's plan really work?"
+    hide scary with dissolve
     t "Babe, you're just coming off as senile."
     t "The idea of admitting to our crimes would be much more enticing from a younger guy..."
-    d "Hmph, fine. Even if we don't admit to our crime, maybe we should take precautions like mandatory travelling in pairs."
+    t "But we've already discussed this and it won't work."
+    d "Hmph, fine. Maybe this is a conversation that should wait for all of us to be present anyway."
+    d "But, even if we don't admit to our crimes, maybe we should take precautions like mandatory travelling in pairs."
     t "Hell no!"
     show stella happy:
         xcenter .75
@@ -84,7 +102,7 @@ label mansionGo:
     show sam with moveinleft:
         xcenter .25
     s "With all due respect, you're kind of derailing the conversation here."
-    s "The point is we have information thanks to Kaiser, and we should use it to maximize our chance of escaping."
+    s "The point is we have information, and we should use it to maximize our chance of escaping."
     s "The particulars don't really matter, though I do think admitting our crimes might help."
     bi "..."
     bi "I don't want to think about it again."
@@ -106,12 +124,12 @@ label mansionGo:
     j "One of those things that you have to keep bottled up or ignore for your own sanity."
     j "Like the awkward moment from middle school that ruins you when you think of it."
     bi "..."
-    t "I agree with the chick. I'm sure some of you have fetishes you wouldn't admit to, what makes a crime so different?"
+    t "I agree with the cutie. I'm sure some of you have fetishes you wouldn't admit to, what makes a crime so different?"
     t "That being said, are you sure you aren't just trying to get on Bert's good side?"
     bi "Suddenly, all eyes were either on me or Jenny."
     b "What?"
     j "Huh?"
-    t "What? You're both young, cute, happy types."
+    t "What? You're both young, doe-eyed, happy types."
     t "And it's obvious Bert doesn't want to talk about his crime, and you're saving him."
     show stella bigsmile:
         xcenter .75
@@ -143,11 +161,11 @@ label mansionGo:
     show drac ind:
         xcenter .75
         linear 0.15 xcenter .5
-    d "Well, one more comment."
+    d "Well, one more thing."
     d "It seems despite not being in a fast-moving train, escape is unlikely."
-    d "The windows have been boarded closed with a thick metal sheet."
+    d "The windows have been boarded with a thick metal sheet."
     d "Even if they were not there, the chips in our brains would likely kill us upon leaving the building."
-    d "And given what happened to Kaiser, it would seem the chips are unlikely to be a hoax."
+    d "And given what happened to Kaiser, it would seem the chips are going to be hard to subvert."
     d "That is all I wished to say. Would hate to see any more unnecessary deaths than we already have."
     hide drac with dissolve
     show sid ind with dissolve
@@ -192,6 +210,7 @@ label mansionGo:
     b "It must be someone relevant, right?"
     b "Unless the mastermind just took someone's mansion without a problem."
     b "But it seems like anyone rich enough to own this house wouldn't be so easily... overcome?"
+    b "Surely they could afford some top notch security or would have police trying to help them retake their mansion non-stop."
     j "You might be onto something."
     j "Maybe it's the mastermind? And this is their mansion?"
     b "Well, that would contradict what the screen told us about one of us being the mastermind."
@@ -212,7 +231,7 @@ label mansionGo:
     l "Maybe the mastermind didn't want a knife murder to be too easy?"
     l "Regardless, there's also all sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water..."
     hide lauren ind with dissolve
-    show shahar happy with moveinright:
+    show shahar ind with moveinright:
         xcenter .25
     show stella happy with moveinright:
         xcenter .75
@@ -237,7 +256,7 @@ label mansionGo:
     hide freddy
     with dissolve
     $showchibi("jenny", "shahar", "stella")
-    show shahar happy with moveinleft:
+    show shahar ind with moveinleft:
         xcenter .25
     show stella happy with moveinright:
         xcenter .75
@@ -277,7 +296,7 @@ label mansionGo:
     b "Before deciding who sleeps where, do we know what the other living arrangements are?"
     d "There are four bedrooms upstairs."
     b "So enough for everyone to sleep on a bed, if people are willing to share."
-    d "Unfortunately, the above bedrooms only have beds that fit one."
+    d "Unfortunately, the above bedrooms only have beds that fit one adult."
     d "So as before, some of us will have to sleep elsewhere."
     d "Fortunately the couches in the living room seem rather comfy."
     b "Okay, I think in thirty minutes or so we should meet up and decide this."
@@ -605,7 +624,7 @@ label mansionGo:
     h "Arr, I'll do it!"
     h "Stella's got a point, the living room's right next to the kitchen and the kitchen has drinks!"
     bi "...guess I'm sleeping with the drunkards."
-    show shahar happy:
+    show shahar ind:
         xcenter .5
         linear .15 xcenter .75
     show stella drunk with moveinleft:
@@ -674,6 +693,7 @@ label mansionGo:
     i "So you're pretty much the only option I have."
     bi "Well, I wouldn't mind switching..."
     bi "Not that anyone would be down to take my spot."
+    i "Plus, you claim you don't sleep, so I'd have someone protecting me at night."
     d "Reasonable enough for me."
     b "Alright, so Sam, Jenny, and Catherine get their own rooms upstairs."
     hide drac
@@ -1337,8 +1357,8 @@ label postFT3:
         xcenter .75
     s "Me, I'll be out in the living room soon."
     b "What did you make?"
-    s "I made an ice cream layer cake, was about all I could manage with the ingredients we had."
-    b "Still sounds pretty fancy."
+    s "I made an ice cream cake, was about all I could manage with the ingredients we had."
+    b "Still sounds pretty tasty."
     s "Well, as much fun as baking is, drinking is a bit more fun."
     s "My cake's already in the freezer so I'm going to go out and mingle, I guess."
     hide sam with dissolve
@@ -1580,11 +1600,11 @@ label postFT4:
     b "And Shahar is using the opportunity to have a drink without Stella stealing some."
     d "Well, as long as the drunkards are gone, we can have peace and quiet."
     b "...Aren't you two drinking right now as well?"
-    s "Yeah, you didn't get us one so we poured ourselves a round."
+    s "Yeah, you didn't get us one so I went to the kitchen and got us a round."
     b "I thought you wanted me to leave you alone, not actually get you a drink."
     s "Well yeah, but a drink would've been nice too."
     d "Regardless, I have basically infinite tolerance."
-    d "Vampires' metabolism works differently than puny human metabolism."
+    d "Vampires' metabolism works differently than the relatively weak human metabolism."
     s "And I'm not going to drink that much, just a casual amount."
     s "Enough to loosen up without causing a ruckus."
     b "Oh yeah, isn't your course of the meal coming up?"
@@ -1633,7 +1653,7 @@ label postFT4:
     j "Seeya Bert!"
     $showchibi("dracula", "freddy", "lauren", "sam", "sid")
     $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar")
-    show shahar happy with dissolve
+    show shahar ind with dissolve
     h "Aye, Bert, I got this bottle of wine but I need help openin' it."
     h "Unfortunately in my drunken stupor I seem to have lost me corkscrew."
     h "Do you know if there's any screws I can use to uncork me a bottle?"
@@ -1757,15 +1777,15 @@ label postFT4:
     s "Nothing too fancy, just an ice cream layer cake."
     b "Ice cream layer cake?"
     s "Yeah. It's like a normal layer cake, but one of the layers is ice cream."
-    s "There's no more sharp objects in the kitchen, but I found the sheath for the knife Catherine was using."
-    s "It's not perfect but we can use it to cut slices without getting meat juice on the cake."
+    b "It looks like you already cut into it. I assume that means you found something to cut it with?"
+    s "Yeah, there's no more sharp objects in the kitchen, but I found the sheath for the knife Catherine was using."
+    s "It's much blunter than a knife, but we can use it to cut slices without getting meat juice on the cake."
     bi "Just like before, I cut myself way too big a slice."
+    bi "Sam must have been very precise with the sheath when he tried it out, my cut with the blunt sheath was much less even than the previous cuts..."
+    bi "Not that the shape of my slice matters, it's all getting digested anyway!"
     bi "It's so tasty, but I'm so full..."
-    bi "But everyone has a desert stomach."
-    b "This is great Sam, thanks!"
-    s "The sheath is working?"
-    b "It's a bit blunt and even larger than the knife , but for something softer like this it gets the job done."
-    s "Cool. In that case I'm gonna go party."
+    bi "But everyone has a dessert stomach."
+    s "Well, my work here's done. I'm gonna go party."
     hide sam with dissolve
     show sid ind with dissolve
     i "I... I ate way too much."
@@ -1835,7 +1855,7 @@ label trial2a:
     scene black with fade
     bi "Everyone gathered in the dining room."
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
@@ -1869,7 +1889,7 @@ label trial2a:
 label trial2b:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Lauren, I think you missed something because you were watching over Freddy during our investigation."
     b "When we took a close look at the body the stab wound was the shape you'd expect from using the kitchen knife."
@@ -1930,7 +1950,7 @@ label trial2c:
 label trial2d:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind with dissolve
     i "The blood dried?"
     b "Yeah, when we looked at the wound some of the blood had dried."
@@ -1965,7 +1985,7 @@ label trial2e:
     bi "I... I thought we were becoming closer but..."
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam with dissolve
     b "Sam, are you... suggesting Jenny murdered Stella?"
     show sam:
@@ -1981,9 +2001,8 @@ label trial2e:
     hide sam with moveoutright
     show catherine ind with dissolve:
         xcenter .75
-    c "I... I can't say my eyes were on the knife the whole time."
-    c "I wasn't using it the entire time, and I was pretty focused, so anyone could have taken the knife out at any point."
-    c "Honestly, I'm not the most focused person, so I wasn't really tracking Jenny's actions in the kitchen."
+    c "No, I was focusing on prepping dinner so I wasn't paying attention to things like what people were holding or taking in/out of it."
+    c "So anyone who came to the kitchen when I wasn't using the knife could have taken it out without me noticing."
     j "C-catherine..."
     j "I swear I... I didn't."
     bi "Jenny was starting to tear up."
@@ -2029,8 +2048,6 @@ label trial2f:
             jump trial2f
     b "Sam's suggesting that the murderer had to have returned the knife to the kitchen after stabbing Stella."
     b "Catherine brought the knife from the kitchen to the dining room later, so the knife must have been in the kitchen at some point after Stella's murder."
-    s "Also, the knife didn't have blood on it. So if it was used for murder, it must have been washed off at some point."
-    s "I'd imagine it'd be easier to clean it off in the kitchen than in the bathroom."
     s "So we're looking for someone who left the dining room towards the foyer, and then was in the kitchen. The only person whose movements follow that pattern is Jenny."
     s "So she's the only one that could have reasonably stabbed Stella with a knife."
     hide shahar with moveoutright
@@ -2056,12 +2073,12 @@ label trial2f:
         startMansionTrial("sam", "Sam: The knife was clearly returned to the kitchen shortly after the murder, what part of that do you disagree with?", 0,
         "sam",  "Sam: There was {color=#f00}no reason for the murderer to wait upstairs after the murder{/color}.", -1,
         "sam", "Sam: And clearly the murderer {color=#f00}didn't leave the murder weapon in the body{/color}.", -1,
-        "sam",  "Sam: So, what, do you think {color=#5ff}the knife went straight to the dining room instead of the kitchen?{/color}", 1,
+        "sam",  "Sam: So, what, do you think {color=#55f}the knife went straight to the dining room instead of the kitchen?{/color}", 1,
         2, stabwound2, "trial2g")
 label trial2g:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind:
         xcenter .25
     show sam:
@@ -2174,7 +2191,7 @@ label trial2g:
     bi "I wasn't sure why."
     bi "Eventually, Dracula and Shahar returned."
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny" "sam", "shahar", "sid")
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show dracula ind:
         xcenter .25
     show shahar ind:
@@ -2194,7 +2211,7 @@ label trial2g:
     b "Shahar wouldn't be able to verify that, right? Since he didn't put the knife back in."
     d "No, I'm merely asking you to trust me on this one."
     d "Are there any further questions or objections to my rebuttal of Sam's theory?"
-    bi "Ther was some silence."
+    blank "There was some silence."
     d "It seems like there is none. In that case, let us proceed?"
     hide shahar with moveoutright
     show jenny ind with moveinright:
@@ -2202,7 +2219,8 @@ label trial2g:
     j "Proceed how exactly?"
     j "While I'm grateful Sam's theory was debunked, we don't exactly have any new ones."
     hide dracula with moveoutleft
-    show sid ind with moveinleft
+    show sid ind with moveinleft:
+        xcenter .25
     i "Um... I have an idea."
     hide jenny with moveoutright
     show sam with moveinright:
@@ -2217,6 +2235,202 @@ label trial2g:
     i "There can't be that many of those in the house."
     bi "Hm... what fits that description?"
     $ sheath = 2
-    call screen mansionEvidenceTrial(-1, sheath, "trial2g") with dissolve
+    call screen mansionEvidenceTrial(-1, sheath, "trial2h") with dissolve
+label trial2h:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam:
+        xcenter .75
+    show sid ind:
+        xcenter .25
+    b "...the sheath?"
+    s "You know the sheath is a blunt object, right?"
+    s "The whole purpose is to carry a knife around without the sharp part being exposed."
+    s "It'd be pretty silly for a sheath to be sharp enough to cut something."
+    i "Well, what else fits the description of being slightly larger than the knife?"
+    i "Since it holds the knife, the sheath obviously is slightly bigger."
+    hide sid with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    d "Can I propose another experiment?"
+    s "I thought we were in a mansion, not a laboratory."
+    s "What's with all these experiments, anyway?"
+    d "This one is less gruesome and involved."
+    blank "Dracula took the knife again and grabbed the sheath out of the now-melted ice cream cake."
+    blank "He stuck the knife in the sheath and wiggled it around."
+    d "Hmm, there's about the same wiggle room in the sheath as there is in the stab wound."
+    s "Yeah, a sheath has to have some breathing room for the knife."
+    s "Otherwise it'd be hard to put the knife in the sheath and pull it out later."
+    d "Sure, but my point is that maybe Sid's not too far off."
+    hide sam
+    hide drac
+    show catherine happy
+    c "Oh, I get it!"
+    hide catherine
+    show shahar ind
+    h "Yes lass, I understand too!"
+    hide shahar
+    show lauren ind
+    l "I think I get it as well!"
+    hide lauren
+    show sam
+    s "I think you're all about to speak over each other and spout some crazy theories..."
+    bi "...are they really all on the same page?"
+    python:
+        startMansionTrial("catherine", "Catherine: They clearly {color=#55f}inverted the sheath{/color} and the inside must be pointy enough to stab with!", 1,
+        "shahar",  "Shahar: They used {color=#55f}something to make the sheath sharper{/color} before stabbing Stella!", 1,
+        "lauren", "Lauren: The killer {color=#55f}used the sheath as a mold{/color} to make a sharp object.", 1,
+        "sam",  "Sam: I found the sheath during the party in the kitchen, and then it stayed here in the dining room. {color=#f00}If you believe that, then the sheath couldn't have gone near Stella's body{/color}.", -1,
+        2, -1, "trial2i")
+label trial2i:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show lauren ind with dissolve
+    b "Wait, everyone quiet down."
+    b "Lauren, say that again?"
+    l "The killer used the sheath as a mold."
+    b "Hmm... it's a bit out there, I'll admit."
+    b "But... it would explain why the inside of the sheath and the stab wound are roughly the same size."
+    b "Plus if the sheath was used as a mold for a weapon itself, the weapon could leave the area without the sheath leaving."
+    b "So unlike Catherine and Stella's theories, Lauren's isn't invalidated by Sam's account of where the sheath was during the party."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show frog ind with moveinright:
+        xcenter .75
+    f "So... Lauren is right? We figured it out!"
+    bi "I always forget there's a kid here during these discussions of how someone was murdered."
+    l "Freddy, are you okay with talking about this?"
+    f "Oh, I was napping."
+    f "I just woke up when I heard your voice."
+    show lauren happy:
+        xcenter .25
+    l "Aww, that's cute Freddy."
+    b "Wait, I wouldn't go that far."
+    b "It's the most plausible of the theories for how the sheath ties into Stella's death."
+    b "That's all I'm saying."
+    hide frog with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "Wait, this theory still seems wild to me."
+    l "Jenny, shouldn't you be the one supporting alternate theories?"
+    l "You were just accused earlier..."
+    j "Look, I want to survive."
+    j "But that doesn't just mean not being accused."
+    j "It means finding the truth of what happened."
+    b "..."
+    b "That was kind of cool, Jenny."
+    show jenny happy:
+        xcenter .75
+    j "Teehee, I thought of it while we were waiting for Dracula."
+    l "Is now really the time..."
+    b "Right, sorry."
+    b "Jenny, your objection to Lauren's theory?"
+    j "I feel like we searched the whole mansion pretty thoroughly after finding Stella's corpse."
+    j "If the killer used the sheath as a mold, shouldn't we have found a stabby stick that wasn't the knife?"
+    j "Also, what would they even have filled the mold with?"
+    bi "Hmm... both good questions I don't know if I have a good answer to yet."
+    b "Maybe it would be best if we answered these one at a time, starting with why we couldn't find this object?"
+    hide lauren with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    d "No need. There's a simple solution, really."
+    b "Hm?"
+    d "Yes. One that can answer both of Jenny's questions."
+    d "What the mold was filled it, and why we didn't find the makeshift knife during the investigation."
+    b "...Do you want to tell us?"
+    d "Bert, I think it's best if someone else fills in the gaps."
+    d "If both of us can arrive at the same theory independently, it's more likely to be correct."
+    bi "...seems like something someone would say in a mystery game to make the player figure it out on their own."
+    bi "But fine."
+    bi "What explains both the missing weapon and what it was made of?"
+    $water = 3
+    call screen mansionEvidenceTrial(-1, water, "trial2j") with dissolve
+label trial2j:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show drac ind with dissolve
+    b "Dracula, I assume you're referring to Stella's clothes being damp?"
+    d "Yes. I believe it was water."
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "Water? You sure it wasn't a splash of vodka? That'd be more in character fer the lass."
+    d "No, the way the killer formed the weapon wouldn't work with alcohol due to its chemical properties."
+    d "Not that the liquid itself is particularly relevant to the case. Bert, care to explain?"
+    b "Is this part of your \"arriving at the same conclusion independently\" shtick?"
+    d "You call it a shtick, I call it a deliberate method to maximize our odds of survival."
+    b "Fine..."
+    b "Dracula's suggesting the sheath was filled with water."
+    h "Water? How are you gonna stab Stella with a knife made of water?"
+    h "Water ain't sharp at all."
+label trial2k:
+    menu:
+        bi "I thought this was obvious, but I guess I'll spell it out..."
+
+        "The water made the sheath heavy enough to stab with.":
+            bi "Wait, we're assuming the sheath never went near Stella's body..."
+            jump trial2k
+
+        "The water cleaned off the substance the knife was made of.":
+            bi "I don't have any idea what that substance would be though..."
+            jump trial2k
+
+        "The water was frozen before being used as a knife.":
+            bi "Duh, maybe I should have started with that."
+
+        "Actually, it was filled with alcohol.":
+            bi "...am I still drunk from last night?"
+            jump trial2k
+    b "Ok, let me rephrase."
+    b "The sheath was filled with {i}ice{/i}."
+    b "That is, the killer filled it with water, then put it in the freezer."
+    show drac ind:
+        xcenter .75
+        linear 0.15 xcenter .5
+    d "Again, not that it matters, but something like vodka has a freezing point below the temperature a household freezer is usually set to."
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    b "...Thank you for the science lesson."
+    hide shahar with moveoutleft
+    show catherine happy with moveinleft
+    c "Ooh, ice is pretty sharp!"
+    c "I once read a news story about a guy who got speared in the head because he walked under an icicle right as it detached from a roof!"
+    b "Um... yes, thanks for the support Catherine."
+    bi "...How does she have all this esoteric knowledge about random deaths?"
+    bi "Also, will I get to finish this explanation without being interrupted again?"
+    b "Anyway, the point is, Dracula's theory is that the killer used the sheath to make an ice knife."
+    b "Since ice melts at room temperature, we weren't able to find the ice knife."
+    b "Well, I guess we did find it, but in the form of water that had been absorbed by Stella's clothing."
+    b "This also explains why the wound wasn't that bloody, without the killer needing to come back and remove the knife."
+    d "Yes, it is a rather clever and elegant idea, ignoring the fact that it is a murder."
+    d "This whole time we had been clearing people of suspicion based on their location and where we assumed the murder weapon was located."
+    d "But if the murder weapon never had to move after Stella was murdered, all of those alibis need to be reexamined."
+    hide catherine with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    i "This is still kind of a fishy theory, right?"
+    i "We're assuming the existence of an ice knife we never actually saw."
+    d "Well, is there another explanation for water on the back of Stella's clothes, right where the stab wound is?"
+    i "Maybe the killer tried to wash off the blood?"
+    d "What incentive would they have to do that?"
+    i "...None, I guess."
+    d "There you go."
+    d "Unless there are other objections, I think we can move forward with this theory."
+    d "Especially because it has a clear suspect associated with it."
+    b "That's true..."
+    b "One person would have been able to pull off the ice knife murder much more easily."
+    call screen chooseCharMansion("sam", "trial2l", "Who used the ice knife?") with dissolve
+label trial2l:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+
 
 #Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
