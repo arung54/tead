@@ -785,9 +785,10 @@ label go: #Add silhouttes here?
     hide frog
     hide shahar
     with dissolve
+    ni "My people watching session was quickly interrupted by someone finally finding the courage to speak up."
     show sam with dissolve
     #Make this section longer/make them conclude they kidnapped
-    z "I'm assuming you're all as confused as I am, so let's get straight to the point."
+    z "I'm assuming you're all as confused as I am, so let's get straight to figuring things out."
     z "Anyone know where we are or why we're here?"
     show sam:
         xcenter .5
