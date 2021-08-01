@@ -84,7 +84,7 @@ label ligma:
 label meetBert:
     scene bg startmeet
     show bert happy with dissolve
-    b "Hi, my name's Bert."
+    b "Hi, my name's Bert Kim."
     n "Hey, I'm Dan."
     $menuset = set()
     menu bertQuestions:
@@ -127,7 +127,7 @@ label postMeetBert:
 label meetSam:
     scene bg startmeet
     show sam with dissolve
-    s "Not really one for formalities, but I'm Sam."
+    s "Not really one for formalities, but I'm Sam. Sam Lee."
     n "Hey, I'm Dan."
     $menuset = set()
     menu samQuestions:
@@ -214,7 +214,7 @@ label postMeetStella:
 label meetSid:
     scene bg startmeet
     show sid ind with dissolve
-    i "Hey I'm Sid. You better take me seriously!"
+    i "Hey I'm Sid Straits. Don't forget it!"
     n "Hey, I'm Dan."
     $menuset = set()
     menu sidQuestions:
@@ -253,7 +253,7 @@ label postMeetSid:
 label meetJenny:
     scene bg startmeet
     show jenny happy with dissolve
-    j "Hey! I'm Jenny."
+    j "Hey! I'm Jenny Flowers."
     n "Hey, I'm Dan."
     $menuset = set()
     menu jennyQuestions:
@@ -297,7 +297,7 @@ label postMeetJenny:
 label meetCatherine:
     scene bg startmeet
     show catherine happy with dissolve
-    c "Heya! I'm Catherine, and this is Sesame!"
+    c "Heya! I'm Catherine Henson, and this is Sesame Henson!"
     ses "Mreoww!"
     n "Hey, I'm Dan."
     $menuset = set()
@@ -341,7 +341,7 @@ label postMeetCatherine:
 label meetKaiser:
     scene bg startmeet
     show kaiser ind with dissolve
-    k "Greetings, I'm Kaiser."
+    k "Greetings, I'm Kaiser Maden."
     n "Hey, I'm Dan."
     $menuset = set()
     menu kaisQuestions:
@@ -384,7 +384,8 @@ label meetDracula:
     n "...Like the vampire?"
     d "Yes."
     ni "...I don't know if I believe him."
-    n "I'm Dan, nice to meet you."
+    ni "I've never had someone introduce themselves as a famous vampire before."
+    n "I'm Dan, it's... nice to meet you."
     $menuset = set()
     menu dracQuestions:
         set menuset
@@ -426,7 +427,7 @@ label postMeetDracula:
 label meetLauren:
     scene bg startmeet
     show lauren ind with dissolve
-    o "Hi, I'm Lauren."
+    o "Hi, I'm Lauren Palmer."
     n "Hey, I'm Dan."
     $menuset = set()
     menu laurenQuestions:
@@ -468,7 +469,7 @@ label postMeetLauren:
 label meetFreddy:
     scene bg startmeet
     show frog ind with dissolve
-    f "H-hey, I'm Freddy. But I like it when people call me Froggy!"
+    f "H-hey, I'm Freddy Ogden. But I like it when people call me Froggy!"
     n "Hey, I'm Dan."
     $menuset = set()
     menu froggyQuestions:
@@ -509,7 +510,7 @@ label postMeetFreddy:
 label meetShahar:
     scene bg startmeet
     show shahar ind with dissolve
-    h "Ahoy there matey! Y'er talking to Shahar, the finest pirate on the seven seas."
+    h "Ahoy there matey! Y'er talking to Shahar Syed, the finest pirate on the seven seas."
     ni "...is this guy serious?"
     n "Hey, I'm Dan."
     $menuset = set()
@@ -708,6 +709,7 @@ label go: #Add silhouttes here?
     ni "I quickly glanced around to familiarize myself with everyone."
     show bert ind:
         xcenter .25
+    with dissolve
     ni "First was a guy with backpack. He looked like... just a regular guy."
     ni "Nothing wrong with that. Definitely a much better first impression than I probably gave."
     ni "Not the most intimidating but not meek either, I could work with that."
@@ -719,6 +721,7 @@ label go: #Add silhouttes here?
     ni "Not threatening per se, but a clear signal not to step on their toes."
     show stella ind:
         xcenter .75
+    with dissolve
     ni "Next was a woman in a suit. She looked to be in her late 20s, like me. It was hard to read her expression."
     ni "Her outfit made it seem like she would be very serious, but the way her eyes flicked around..."
     ni "She was definitely checking some of the men in the room out."
@@ -729,15 +732,16 @@ label go: #Add silhouttes here?
     with dissolve
     show sid ind:
         xcenter .25
+    with dissolve
     ni "Next to her was a kid. He seemed more confused than the rest of us."
     ni "His outfit was... unusual. Like his wardrobe was made of hand-me-downs and he was worried it would rain."
     ni "Judging by the nametag, his name was Sid. If he's wearing a name tag, he was probably at a job before this?"
     show jenny ind:
         xcenter .5
     with dissolve
-    ni "Next was a very fashionable girl. Probably a college student."
+    ni "Next was a fashionable girl. Probably a college student."
     ni "Unlike most of us, she seemed to be lost in thought rather than trying to make sense of the situation."
-    ni "She gave the impression of being the one unlucky girl in a math seminar who just wanted to focus on her work, but all the guys glanced at her."
+    ni "A lot of the the guys were glancing at her."
     show catherine ind:
         xcenter .75
     with dissolve
@@ -750,11 +754,10 @@ label go: #Add silhouttes here?
     hide catherine
     with dissolve
     show kaiser ind:
-        xcenter .25
+        xcenter .2
     with dissolve
     ni "Towering over the women was a blonde man. His glasses were very reflective, so it was hard to read his expression."
     ni "His posture was very confident, but besides that I couldn't really tell what to make of him."
-    ni "I should probably keep an eye on him..."
     show drac ind:
         xcenter .5
     with dissolve
@@ -762,11 +765,11 @@ label go: #Add silhouttes here?
     ni "Not that any of us knew what was going on, but he definitely gave off a vibe of being too cool to be here."
     ni "...Seriously though, what was with the outfit? Is it Halloween today?"
     show lauren ind:
-        xcenter .75
+        xcenter .83
     with dissolve
-    ni "Moving on, another woman. She gave off strong \"mother bear\" vibes."
-    ni "That is, she seemed like she could be a very caring person, without being as bubbly or flirty as the other girls."
-    ni "Fine with me. Not like I'm looking for romance here anyway."
+    ni "Moving on, another woman. She gave off \"warm\" vibes."
+    ni "She seemed like she could be a very caring person, not quite as bubbly as the other girls."
+    ni "Her cropped hoodie says \"SAB\", very very faintly."
     hide kaiser
     hide drac
     hide lauren
@@ -788,47 +791,47 @@ label go: #Add silhouttes here?
     ni "My people watching session was quickly interrupted by someone finally finding the courage to speak up."
     show sam with dissolve
     #Make this section longer/make them conclude they kidnapped
-    z "I'm assuming you're all as confused as I am, so let's get straight to figuring things out."
-    z "Anyone know where we are or why we're here?"
+    zs "I'm assuming you're all as confused as I am, so let's get straight to figuring things out."
+    zs "Anyone know where we are or why we're here?"
     show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
         xcenter .75
-    z "No clue. The last thing I remember I was out for a walk, totally fine."
-    z "After that, my memory is a haze. It's like I suddenly took a nap and woke up here."
+    zc "No clue. The last thing I remember I was out for a walk, totally fine."
+    zc "After that, my memory is a haze. It's like I suddenly took a nap and woke up here."
     ni "A few people spoke up at once agreeing."
     hide catherine with moveoutright
     show sam:
         xcenter .25
         linear 0.3 xcenter .5
-    z "So no one knows how they got here, and there's probably gaps in our memory..."
-    z "Does anyone recognize anyone else in here?"
+    zs "So no one knows how they got here, and there's probably gaps in our memory..."
+    zs "Does anyone recognize anyone else in here?"
     ni "A few people were starting to raise their hands..."
     show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show stella ind with moveinright:
         xcenter .75
-    z "Besides the world-famous businesswoman, who I'm sure we've all seen on TV."
+    zt "Besides the world-famous businesswoman, who I'm sure we've all seen on TV."
     ni "Well, not all of us..."
     ni "But after that clarification the hands shot back down."
     hide stella with moveoutright
     show sam:
         xcenter .25
         linear 0.3 xcenter .5
-    z "So no one personally knows each other, I see. Not even as friends of friends or connections of that sort."
-    z "In that case, I think it's fair to assume we've been placed here against our will then."
-    z "That is to say, we've probably been kidnapped by someone with an unknown motive."
+    zs "So no one personally knows each other, I see. Not even as friends of friends or connections of that sort."
+    zs "In that case, I think it's fair to assume we've been placed here against our will then."
+    zs "That is to say, we've probably been kidnapped by someone with an unknown motive."
     ni "I think we all knew this on some level, but several people's expressions sunk upon hearing that."
     ni "Mine not so much. This wasn't much more hopeless than being in a jail cell."
     ni "But at least some of these people seemed to be ordinary people."
     ni "This was probably the first time most of them had been trapped in a situation like this."
-    z "Until we have more information, it's probably best to assume our lives are in some sort of danger while we are here."
-    z "In which case I think we should look around and try to find a way out or some answers."
-    z "Any objections?"
+    zs "Until we have more information, it's probably best to assume our lives are in some sort of danger while we are here."
+    zs "In which case I think we should look around and try to find a way out or some answers."
+    zs "Any objections?"
     ni "Again, silence."
-    z "Alright, let's look around then."
+    zs "Alright, let's look around then."
     hide sam with dissolve
     show scary with dissolve:
         alpha .5
@@ -842,28 +845,28 @@ label go: #Add silhouttes here?
     ni "At least, none we could use."
     hide scary with dissolve
     show sam with dissolve
-    z "Anyone have anything to report?"
-    z "...Yeah, didn't think so."
-    z "In that case, does anyone have a particularly good sense of hearing?"
-    z "Perhaps if we listen closely to the walls we will get a sense of whether we're in civilization or not."
-    z "If so, then we could reason about our chances of getting help from the authorities."
+    zs "Anyone have anything to report?"
+    zs "...Yeah, didn't think so."
+    zs "In that case, does anyone have a particularly good sense of hearing?"
+    zs "Perhaps if we listen closely to the walls we will get a sense of whether we're in civilization or not."
+    zs "If so, then we could reason about our chances of getting help from the authorities."
     show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
         xcenter .75
-    z "Wait, I wanna get to know everyone."
-    z "It doesn't seem like we're gonna get out of here anytime soon, it'd be good to know who we're stuck with."
+    zc "Wait, I wanna get to know everyone."
+    zc "It doesn't seem like we're gonna get out of here anytime soon, it'd be good to know who we're stuck with."
     hide catherine with moveoutright
     show drac ind with moveinright:
         xcenter .75
-    z "I agree with the girl. I don't even know any of your names."
-    z "It'll be hard for us to work together without some sense of camaraderie."
+    zd "I agree with the girl. I don't even know any of your names."
+    zd "It'll be hard for us to work together without some sense of camaraderie."
     hide drac with moveoutright
     show sam:
         xcenter .25
         linear 0.3 xcenter .5
-    z "Alright, let's take some time to talk to each other."
+    zs "Alright, let's take some time to talk to each other."
     ni "Hmm... while we're introducing ourselves, I should see if anyone knows anything."
     hide sam with dissolve
     tut "Throughout the game, when a character is present in a room, their icon will appear in the top left."
@@ -879,46 +882,61 @@ label postMeetings:
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     show sam with dissolve
     s "Okay, now that that's done, I think we should look around and try-"
-    hide sam with dissolve
+    hide sam with moveoutright
     blank "A whirring noise cut Sam off."
     show bg start2 with dissolve
     blank "A screen slowly lowered, and everyone's attention turned to it."
     #TODO: Add pretty pictures to help explain game
     scr "Welcome."
-    scr "This screen cannot hear or react to anything you say. Questions will not be answered."
     scr "The game you all have been brought here to play will now be explained."
     ni "...game?"
-    scene expl 1 with fade
-    scr "There are twelve of you."
-    show expl 2
+    scr "Pay attention closely, as this will only be explained once."
+    scene expl 1a with fade
+    scr "There are twelve of you here."
+    show expl 2a with dissolve
     scr "Eleven were unwillingly forced to participate."
-    show expl 3
-    scr "The remaining person is the mastermind that organized this game, who will also participate."
-    show expl 4
-    scr "The identity of the mastermind will not be revealed."
+    show expl 3a with dissolve
+    scr "The remaining person is the Game Master behind all of this, who will also participate."
+    show expl 4a with dissolve
+    scr "The identity of the Game Master will not be revealed."
     scr "The goal of the game is simple."
-    show expl 5
-    scr "Kill the mastermind."
+    show expl 5a with dissolve
+    scr "Kill the Game Master."
+    #show expl kill0 with dissolve
+    show text "{b}{color=#000000}Kill the Game Master.{/color}{/b}" with dissolve:
+        ycenter .65
+        xcenter .29
     scr "The game will be played in rounds."
-    show expl 6
-    scr "Each round, one of you who is not the mastermind will be chosen."
-    show expl 7
-    scr "The chosen individual must kill someone, who they think is the mastermind."
+    show expl 6a
+    scr "Each round, one of you who is not the Game Master will be chosen."
+    show expl 7a
+    scr "The chosen individual must kill someone who they think is the Gamer Master."
     scr "You may use any method to kill."
-    show expl 8
-    scr "If they kill the mastermind, the game immediately ends and the remaining participants will be let free."
-    show expl 9
-    scr "If they kill someone who is not the mastermind, then they should try to hide the fact that they are the murderer."
-    show expl 10
-    scr "This is because the participants will investigate the murder and try to identify the murderer."
-    show expl 11
-    scr "After investigating, the participants will discuss and vote on who they think the murderer is."
-    show expl 12
+    show expl 6b
+    scr "If they do successfully kill the Gamer Master, the game immediately ends and the remaining participants will be let free."
+    show expl 7b with dissolve
+    scr "If they kill someone who is not the Game Master..."
+    scr "They should do their best to hide thier guilt."
+    show expl 8a
+    scr "This is because the remaing participants will investigate and vote on who the murderer is."
+    show expl 8b
     scr "If they vote for the murderer correctly, the murderer will be killed."
-    show expl 13
-    scr "If they vote incorrectly, everyone but the murderer and mastermind will be killed, and the game ends."
+    scr "The game will then continue with the surviving participants."
+    ###########
+    scr "However, if they can't identify who the real murderer was,"
+    show expl 9a
+    #show expl kill1 with dissolve
+    show text "{b}{color=#000000}Kill the Game Master. Or, kill anyone else and get away with it.{/color}{/b}" with dissolve:
+        ycenter .65
+        xcenter .5
+    scr "everyone but the murderer and Game Master will be killed, and the game ends."
+    show expl 10a
+    hide text
+    with dissolve
+    scr "In short, kill the Game Master, or kill anyone else, and get away with it."
     scene bg start2 with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    ni "What the hell is all this..."
     scr "A chip has been planted in each of your heads, capable of killing you instantly."
     scr "This chip will be used to resolve the outcome of the vote."
     ni "Does technology like that really exist?"
