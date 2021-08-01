@@ -141,11 +141,15 @@ label trainGo:
     show lauren ind with moveinleft:
         xcenter .25
     o "Kaiser's probably right... think back to what the monitor told us."
-
-    ###FLASHBACK###
-    show black
-    n "flashback to part about chips in our brain, have to cooperate etc"
-    hide black
+    show start2
+    show sepia:
+        alpha .5
+    with dissolve
+    scr "A chip has been planted in each of your heads, capable of killing you instantly."
+    scr "The chip will also be used to keep you unconscious as you are transported between locations."
+    hide start2
+    hide sepia
+    with dissolve
     o "As terrifying as that is, it seems like the only explanation..."
     n "You really think the chips knocked us out somehow?"
     k "Yes, it seems most likely."
@@ -1419,7 +1423,14 @@ label midcar5:
     ni "I guess somebody put that out there earlier today."
     ni "It doesn't seem worth the risk to open the door and get it though..."
     ni "Whatever..."
-    blank "FLASHBACK TO 'THEIR ENDS ARE DESERVED' SCREEN from chapter 0"
+    show start2
+    show sepia:
+        alpha .5
+    with dissolve
+    scr "Their endings are deserved."
+    hide start2
+    hide sepia
+    with dissolve
     ni "What a shame... I just got out of the pen, and now I have to do this..."
     ni "At least there are a lot of easy targets -" #Arun: BIG NOISE, cut off music
     scene black
