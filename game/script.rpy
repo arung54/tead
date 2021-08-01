@@ -286,6 +286,7 @@ define zs = Character("?????", who_color= "f3946a", image="sam", callback=samvoi
 define zc = Character("?????", who_color= "b66baa", callback=fillvoice)
 define zt = Character("?????", who_color= "d4af37", callback=stellavoice)
 define zd = Character("?????", who_color= "ff9483", callback=dracvoice)
+define zf = Character("?????", who_color= "76d352", callback=frogvoice)
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice)
@@ -330,4 +331,4 @@ label start:
 ###########
 #Start
 ###########
-    jump postMeetings
+    jump go

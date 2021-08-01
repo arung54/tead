@@ -846,7 +846,21 @@ label go: #Add silhouttes here?
     hide scary with dissolve
     show sam with dissolve
     zs "Anyone have anything to report?"
-    zs "...Yeah, didn't think so."
+    show sam:
+        linear .3 xcenter .75
+    show frog ind with moveinbottom:
+        xcenter .25
+    zf "I'm scared... I miss my mom..."
+    zs "Not sure that counts as finding something..."
+    ni "So it is a little boy in the frog suit."
+    n "Why are you wearing that anyway, kid?"
+    zf "It makes me feel safe... I'm just a little frog."
+    zs "Just try to stay calm for now and the adults will figure this out."
+    zf "O-okay."
+    hide frog ind with moveoutbottom
+    show sam:
+        linear .3 xcenter .5
+    zs "Anyway, it doesn't seem like anyone found anything useful."
     zs "In that case, does anyone have a particularly good sense of hearing?"
     zs "Perhaps if we listen closely to the walls we will get a sense of whether we're in civilization or not."
     zs "If so, then we could reason about our chances of getting help from the authorities."
