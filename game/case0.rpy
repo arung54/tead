@@ -278,7 +278,7 @@ label meetJenny:
 
         "Why do you think we're here?":
             j "Hmm... I once tried card counting with some friends at a casino."
-            j "I've seen movies where casinos hire beat people up who do that kind of thing in a more organized manner."
+            j "I've seen movies where casinos beat people up who do that kind of thing in a more organized manner."
             j "Maybe this is that kind of thing? Did the rest of you make a casino upset?"
             j "I hope they know they'd be monsters if they punched a girl!"
             ni "How is she saying that with such a bubbly expression?"
@@ -403,7 +403,7 @@ label meetDracula:
             d "I think I'd just fallen asleep."
             d "I work odd hours, so I sleep during the day."
             d "So I've tuned my sleep environment to mute sounds and block out light."
-            d "That may have made it easy for a kidnapper approach me."
+            d "That may have made it easy for a kidnapper to approach me."
             jump dracQuestions
 
         "Why do you think we're here?":
@@ -710,13 +710,13 @@ label go: #Add silhouttes here?
     show bert ind:
         xcenter .25
     with dissolve
-    ni "First was a guy with backpack. He looked like... just a regular guy."
+    ni "First was a guy with a backpack. He looked like... just a regular guy."
     ni "Nothing wrong with that. Definitely a much better first impression than I probably gave."
     ni "Not the most intimidating but not meek either, I could work with that."
     show sam:
         xcenter .5
     with dissolve
-    ni "Starting from my left, there was someone who looked to be in their early 20s."
+    ni "Second, there was someone who looked to be in their early 20s."
     ni "Their figure was somewhat petite, but their resting expression was a very stern one."
     ni "Not threatening per se, but a clear signal not to step on their toes."
     show stella ind:
@@ -782,7 +782,7 @@ label go: #Add silhouttes here?
     ni "I'm just going to assume it's a kid. But the outfit they're wearing makes it hard to tell anything else about them."
     show shahar ind:
         xcenter .67
-    ni "Last was a... pretty much half-naked man. His costume was about as out-of-place as the vampire's."
+    ni "Last was a... pretty much half-naked man. His outfit was about as out-of-place as the vampire's."
     ni "Maybe it really was Halloween before we all were gathered here."
     ni "I was hoping to get good reads on everyone, but this guy, the frog, and the vampire threw that out the window."
     hide frog
@@ -924,10 +924,10 @@ label postMeetings:
     show expl 6a
     scr "Each round, one of you who is not the Game Master will be chosen."
     show expl 7a
-    scr "The chosen individual must kill someone who they think is the Gamer Master."
+    scr "The chosen individual must kill someone who they think is the Game Master."
     scr "You may use any method to kill."
     show expl 6b
-    scr "If they do successfully kill the Gamer Master, the game immediately ends and the remaining participants will be let free."
+    scr "If they do successfully kill the Game Master, the game immediately ends and the remaining participants will be let free."
     show expl 7b with dissolve
     scr "If they kill someone who is not the Game Master..."
     scr "They should do their best to hide thier guilt."

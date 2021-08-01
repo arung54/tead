@@ -154,7 +154,7 @@ label frogHang:
         scene black with fade
         ni "Freddy went on for what felt like hours."
         ni "I didn't learn a lot about Freddy, but I think I learned a lot about frogs?"
-        ni "Nothing that'll help us get out, unless the mastermind is a frog..."
+        ni "Nothing that'll help us get out, unless the Game Master is a frog..."
 
     #Bert FTE 1
     if fte_frog == 0:

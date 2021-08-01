@@ -2256,7 +2256,7 @@ label trial1h:
         "Something blocked the moonlight coming through the windows!":
             bi "That's it!"
 
-        "We were temporarily blinded by the mastermind's brain chips!":
+        "We were temporarily blinded by the Game Master's brain chips!":
             bi "Hmm... It could be that, but I don't think it's right."
             bi "I feel like that would hurt a lot more..."
             jump trial1h
@@ -3140,8 +3140,8 @@ label trial1r:
     k "Yes, until today."
     b "But why?"
     k "I didn't have a choice."
-    k "I had to kill the mastermind."
-    b "What? How do you know he was the mastermind?"
+    k "I had to kill the Game Master."
+    b "What? How do you know he was the Game Master?"
     k "I don't know for sure, but... his personality was so cold."
     show kaiser ind:
         linear .3 xcenter .75
@@ -3149,7 +3149,7 @@ label trial1r:
         xcenter .25
     i "You... you killed my friend! He didn't deserve to die!"
     k "How do you know that?"
-    k "Maybe he was the mastermind."
+    k "Maybe he was the Game Master."
     i "No way!"
     k "Regardless, it was my turn, and I had to choose someone."
     k "He seemed like the most likely candidate."

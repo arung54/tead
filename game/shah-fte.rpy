@@ -221,7 +221,7 @@ label shahHang:
         bi "And how did he acquire a ship to do all this on?"
         bi "Well, that's assuming this story is real to begin with."
         b "Be honest with me Shahar. Are you faking this pirate story to hide something?"
-        h "Like what, lad? Yer accusin' me of being the mastermind?"
+        h "Like what, lad? Yer accusin' me of being the Game Master?"
         b "No, just... this is all so hard to believe."
         h "Lad, everything I'm telling you, it's what I truly remember and believe."
         b "Got it. I'll trust you then. Thanks for telling me about it."
