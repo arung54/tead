@@ -2093,7 +2093,7 @@ label trial1d:
     python:
         startTrainTrial("stella", "Isn't it obvious? Think about that scream in particular.", 0,
         "sam", "What are you even talking about? There shouldn't be {color=#f00}anything notable{/color} about someone screaming.", -1,
-        "stella", "Do you think I'm {color=#50CAFF}making up{/color} the scream? Why would I do that?", 1,
+        "stella", "Do you think I'm {color=#55F}making up{/color} the scream? Why would I do that?", 1,
         "sam", "Maybe to cover up the murder! I don't trust you for a second.", 0,
         1, 4, "trial1e")
 

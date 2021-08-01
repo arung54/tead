@@ -127,7 +127,7 @@ label postMeetBert:
 label meetSam:
     scene bg startmeet
     show sam with dissolve
-    s "Not much of a formalities guy, but I'm Sam."
+    s "Not really one for formalities, but I'm Sam."
     n "Hey, I'm Dan."
     $menuset = set()
     menu samQuestions:
@@ -182,14 +182,14 @@ label meetStella:
             n "I... haven't paid much attention to the news recently."
             n "Are you famous?"
             t "I'm CEO of Cantoire Management."
-            t "One of the largest investment firms in the country, surely you've heard of it."
+            t "One of the largest investment firms in the world, surely you've heard of it."
             n "Ah, yeah that rings a bell."
             ni "I've been in prison for years now, so that does not ring a bell."
             jump stellaQuestions
 
         "What were you doing before you ended up here?":
-            t "I was at one of my boy toys' apartments, spending the night."
-            ni "{i}One of{/i} my boy toys? She really has no shame..."
+            t "I was at a cute prince's estate, spending the night."
+            ni "She really has no shame..."
             t "Naturally, I can't let the boys near my home office where business secrets are, otherwise we'd be at my place."
             t "He had gone out to get us some breakfast while I was laying in bed."
             t "Next thing I can remember, I'm here."
@@ -235,7 +235,8 @@ label meetSid:
 
         "Why do you think we're here?":
             i "I don't know, maybe we got arrested?"
-            i "N-never mind, even if I had committed a crime, they wouldn't arrest a minor like me, right?"
+            i "N-never mind, I didn't do anything wrong..."
+            i "And even if I had committed a crime, they wouldn't arrest a minor like me, r-right?"
             ni "I {i}really{/i} hope this isn't a jail."
             jump sidQuestions
 
@@ -557,53 +558,104 @@ label go: #Add silhouttes here?
     warden "Dan Scagnelli, wake up. That is an order."
     m "Urgh..."
     scene bg phall
+    show cellwindow
     with dissolve
-    warden "Dan Scagnelli, do not make me repeat myself."
-    n "I'm up, I'm up. Just getting used to the light."
-    ni "I realized how dumb I sounded, light was barely filtering into the cell."
+    #warden "Dan Scagnelli, do not make me repeat myself."
+    ni "Why me specifically... what did I do wrong?"
+    #n "I'm up, I'm up. Just getting used to the light."
+    #ni "I realized how dumb I sounded, light was barely filtering into the cell."
     ni "Seems like it's only sunrise now."
-    n "What time is it? Why am being woken up so early?"
+    ni "Why am I being woken so early?"
     warden "Dan Scagnelli. You're being let go."
-    n "Huh?"
+    n "What!?"
     warden "Your sentence ends today."
-    n "I... I thought I was stuck here for a few more years?"
-    warden "I don't know what to tell you, just following orders."
-    warden "There's someone to pick you up out front, don't make them wait."
-    ni "The warden handed me my civilian clothes."
-    show dan ind with dissolve
-    $renpy.pause(2.0, hard=True)
-    hide dan ind with dissolve
-    ni "I could barely remember how long it had been since I last wore these."
-    ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
-    scene bg pfront with fade
-    ni "A stranger was there to greet me."
-    ni "I wish I knew who it was, but they had concealed their face."
-    ni "Surely no reasonable prison would let someone like this bail a prisoner out?"
-    n "Who are you?"
-    z "Don't worry about that for now. Let's get going."
+    ni "I... I thought I was stuck here for a few more years?"
+    #warden "I don't know what to tell you, just following orders."
+    warden "Someone's come for you."
+    warden "They're on their way to your cell."
+    ni "What's going on? Who could possibly be coming to bail me out?"
+    ni "Did someone get the money? There's no way."
+    ni "Maybe it's a mistake?"
+    show myster ind behind cellwindow
+    $ showchibi("myster")
+    with dissolve
+    z "Dan Scagnelli, I take it?"
+    n "Wh-who are you?"
+    ni "Who is this? They're completely covered up, almost covered in shadows."
+    z "Don't worry about me for now. Let's get going."
     n "Why did you do this for me?"
-    z "Questions later, when we're in the car."
-    z "Here's a sandwich, eat it, you'll want some energy where we're headed."
-    n "Which is?"
-    z "Questions in the car."
-    n "Surely you can explain while we're walking."
-    z "That's not really a good way to talk to someone who got you out. Eat while walking."
-    ni "I started eating."
-    ni "The stranger pushed me when they saw I was standing still."
-    z "I said eat while walking."
-    ni "What was so urgent that it needed me to be pulled out of prison and rushed to a car?"
-    ni "We headed outside, and for the first time in ages I was excited to see the glorious sun and greenery."
+    z "Put your civilian clothes on."
+    play sfx "audio/butt.mp3" volume .5
+    hide cellwindow with dissolve
+    ni "They unlocked my cell and threw my old clothes in."
+    ni "I changed quickly."
+    show myster ind:
+        linear .3 xcenter .75
+    show dan ind with moveinleft:
+        xcenter .25
+    $ showchibi("myster", "dan")
+    z "Much better."
+    n "I could barely remember how long it had been since I last wore these..."
+    #ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
+    #ni "A stranger was there to greet me."
+    #ni "I wish I knew who it was, but they had concealed their face."
+    #ni "Surely no reasonable prison would let someone like this bail a prisoner out?"
+    n "Now tell me... who are you?"
+    z "Look, Dan."
+    hide dan ind with moveoutleft
+    show myster ind:
+        linear .3 xcenter .5
+    z "That's not important right now."
+    z "Trust me. You can trust me, Dan."
+    show bg debatescroll with fade:
+        zoom 1.1 ycenter .3
+    z "Dan..."
+    show handextend with dissolve:
+        #zoom 4
+        xcenter .45
+        ycenter .62
+    z "Come with me."
+    ni "They extended their hand."
+    ni "Who... who is this?"
+    ni "What's going on?"
+    ni "Should I go with them?"
+    menu:
+        ni "Do I take the hand?"
+
+        "Yes.":
+            n "..."
+            n "Okay."
+            ni "I reached out and grabbed the hand."
+
+        "No.":
+            n "I... don't trust you."
+            z "I'm sorry."
+            z "But it is not an option."
+
+    #n "Why did you do this for me?"
+    #z "Questions later, when we're in the car."
+    #z "Here's a sandwich, eat it, you'll want some energy where we're headed."
+    #n "Which is?"
+    #z "Questions in the car."
+    #n "Surely you can explain while we're walking."
+    #z "That's not really a good way to talk to someone who got you out. Eat while walking."
+    #ni "I started eating."
+    #ni "The stranger pushed me when they saw I was standing still."
+    #z "I said eat while walking."
+    #ni "What was so urgent that it needed me to be pulled out of prison and rushed to a car?"
+    #ni "We headed outside, and for the first time in ages I was excited to see the glorious sun and greenery."
     scene black
-    with fade
-    ni "Like a poorly edited TV show, my vision faded to black as we stepped outside."
-    ni "Only it never faded back to light."
-    ni "I lost vision, there was something tingling in my mouth."
-    ni "Was there something in the food?"
+    #with fade
+    #ni "Like a poorly edited TV show, my vision faded to black as we stepped outside."
+    #ni "Only it never faded back to light."
+    #ni "I lost vision, there was something tingling in my mouth."
+    #ni "Was there something in the food?"
+    ni "Everything went dark."
     ni "My thoughts started to fade slowly. The last thing I can remember thinking..."
-    ni "Whoever this is, they aren't here to save me."
+    ni "Whoever this is, they didn't come to save me."
 
     scene black
-    play sfx "audio/heartbeat.mp3"
+    play sfx "audio/heartbeat.mp3" 
     pause 1.0
     play sfx "audio/heartbeat.mp3"
     pause 1.0
