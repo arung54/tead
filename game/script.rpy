@@ -264,6 +264,7 @@ init python:
 ##################
 
 define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF")
+define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF")
 define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF")
 define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=True, who_color = "FFFFFF") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
@@ -283,7 +284,7 @@ define z = Character("?????", who_color= "FFFFFF", callback=fillvoice)
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice)
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice)
-define warden = Character("Warden over loudspeaker", who_color= "ffffff", callback=mevoice) #used in chapter 0
+define warden = Character("Warden", who_color= "ffffff", callback=mevoice) #used in chapter 0
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=fillvoice) #used in chapter 0
 define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
 define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics

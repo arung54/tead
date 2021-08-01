@@ -554,9 +554,10 @@ label postMeetShahar:
 label go: #Add silhouttes here?
     scene black
     warden "Dan Scagnelli, wake up."
-    m "No... don't want to wake up for another day of this..."
+    mi "Another morning being woken up by the prison loudspeaker."
+    mi "It's gotten to the point where the sound of a loud alarm clock would be music to my ears."
     warden "Dan Scagnelli, wake up. That is an order."
-    m "Urgh..."
+    mi "Ugh... don't want to wake up for another day of this..."
     scene bg phall
     show cellwindow
     with dissolve
@@ -567,6 +568,7 @@ label go: #Add silhouttes here?
     ni "Seems like it's only sunrise now."
     ni "Why am I being woken so early?"
     warden "Dan Scagnelli. You're being let go."
+    n "..."
     n "What!?"
     warden "Your sentence ends today."
     ni "I... I thought I was stuck here for a few more years?"
@@ -581,8 +583,8 @@ label go: #Add silhouttes here?
     with dissolve
     z "Dan Scagnelli, I take it?"
     n "Wh-who are you?"
-    ni "Who is this? They're completely covered up, almost covered in shadows."
-    z "Don't worry about me for now. Let's get going."
+    ni "Who is this? They're completely covered up in shadow."
+    z "Don't worry about who I am for now. Let's get going."
     n "Why did you do this for me?"
     z "Put your civilian clothes on."
     play sfx "audio/butt.mp3" volume .5
@@ -595,7 +597,7 @@ label go: #Add silhouttes here?
         xcenter .25
     $ showchibi("myster", "dan")
     z "Much better."
-    n "I could barely remember how long it had been since I last wore these..."
+    ni "I could barely remember how long it had been since I last wore these..."
     #ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
     #ni "A stranger was there to greet me."
     #ni "I wish I knew who it was, but they had concealed their face."
@@ -605,11 +607,30 @@ label go: #Add silhouttes here?
     hide dan ind with moveoutleft
     show myster ind:
         linear .3 xcenter .5
-    z "That's not important right now."
-    z "Trust me. You can trust me, Dan."
-    show bg debatescroll with fade:
+    z "I'll be the one asking the questions for now."
+    show bg debatescroll with dissolve:
         zoom 1.1 ycenter .3
-    z "Dan..."
+    ni "Wh-what's going on?"
+    z "Dan... do you feel guilty?"
+    n "Guilty?"
+    n "I mean... yes, I feel guilty for what I did in the past."
+    n "But I didn't really have a choice back then."
+    n "And I'm not the same person now that I was before."
+    n "So I feel guilty, but I'd like to leave it in the past, and live life as a new me who learned from my mistakes."
+    n "Isn't that what the prison system's for?"
+    z "I see."
+    z "Was anyone harmed by your past crimes?"
+    n "Well... they weren't exactly victimless crimes."
+    z "Do you think the people who were harmed could leave it in the past?"
+    n "...No, I guess that would be pretty difficult."
+    z "What about their loved ones? People who depended on them?"
+    z "Do you think they can so easily forgive and forget?"
+    n "What's your point?"
+    z "What makes you think you have the right to forgive yourself if those people could never forgive you?"
+    n "That's... a bit of a leading question."
+    z "I see."
+    z "Well then, let's not waste anymore time here."
+    z "You have plenty of hard work ahead of you..."
     show handextend with dissolve:
         #zoom 4
         xcenter .45
@@ -617,7 +638,6 @@ label go: #Add silhouttes here?
     z "Come with me."
     ni "They extended their hand."
     ni "Who... who is this?"
-    ni "What's going on?"
     ni "Should I go with them?"
     menu:
         ni "Do I take the hand?"
@@ -631,7 +651,7 @@ label go: #Add silhouttes here?
             n "I... don't trust you."
             z "I'm sorry."
             z "But it is not an option."
-
+            ni "...Somehow I felt compelled to grab the hand, despite my brain saying otherwise."
     #n "Why did you do this for me?"
     #z "Questions later, when we're in the car."
     #z "Here's a sandwich, eat it, you'll want some energy where we're headed."
@@ -655,7 +675,7 @@ label go: #Add silhouttes here?
     ni "Whoever this is, they didn't come to save me."
 
     scene black
-    play sfx "audio/heartbeat.mp3" 
+    play sfx "audio/heartbeat.mp3"
     pause 1.0
     play sfx "audio/heartbeat.mp3"
     pause 1.0
@@ -685,29 +705,154 @@ label go: #Add silhouttes here?
     ni "I walked into a very similar room, at the same time as eleven other people."
     scene bg startmeet with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    ni "I quickly glanced around to familiarize myself with everyone."
+    show bert ind:
+        xcenter .25
+    ni "First was a guy with backpack. He looked like... just a regular guy."
+    ni "Nothing wrong with that. Definitely a much better first impression than I probably gave."
+    ni "Not the most intimidating but not meek either, I could work with that."
+    show sam:
+        xcenter .5
+    with dissolve
+    ni "Starting from my left, there was someone who looked to be in their early 20s."
+    ni "Their figure was somewhat petite, but their resting expression was a very stern one."
+    ni "Not threatening per se, but a clear signal not to step on their toes."
+    show stella ind:
+        xcenter .75
+    ni "Next was a woman in a suit. She looked to be in her late 20s, like me. It was hard to read her expression."
+    ni "Her outfit made it seem like she would be very serious, but the way her eyes flicked around..."
+    ni "She was definitely checking some of the men in the room out."
+    ni "I was mildly offended when she made eye contact with me and then quickly looked away."
+    hide bert
+    hide sam
+    hide stella
+    with dissolve
+    show sid ind:
+        xcenter .25
+    ni "Next to her was a kid. He seemed more confused than the rest of us."
+    ni "His outfit was... unusual. Like his wardrobe was made of hand-me-downs and he was worried it would rain."
+    ni "Judging by the nametag, his name was Sid. If he's wearing a name tag, he was probably at a job before this?"
+    show jenny ind:
+        xcenter .5
+    with dissolve
+    ni "Next was a very fashionable girl. Probably a college student."
+    ni "Unlike most of us, she seemed to be lost in thought rather than trying to make sense of the situation."
+    ni "She gave the impression of being the one unlucky girl in a math seminar who just wanted to focus on her work, but all the guys glanced at her."
+    show catherine ind:
+        xcenter .75
+    with dissolve
+    ni "Next was a... woman? In a crop top holding a cat. Honestly, she could have been 15 or 35, it was hard to tell."
+    ni "You know how they say pet owners tend to look like their pets?"
+    ni "She definitely looked to me like a cat. For a second, I thought she even had narrow pupils."
+    ni "Like the previous girl, she was much more preoccupied with her cat than the current situation."
+    hide sid
+    hide jenny
+    hide catherine
+    with dissolve
+    show kaiser ind:
+        xcenter .25
+    with dissolve
+    ni "Towering over the women was a blonde man. His glasses were very reflective, so it was hard to read his expression."
+    ni "His posture was very confident, but besides that I couldn't really tell what to make of him."
+    ni "I should probably keep an eye on him..."
+    show drac ind:
+        xcenter .5
+    with dissolve
+    ni "And then there was definitely the oldest one here, a... vampire?"
+    ni "Not that any of us knew what was going on, but he definitely gave off a vibe of being too cool to be here."
+    ni "...Seriously though, what was with the outfit? Is it Halloween today?"
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    ni "Moving on, another woman. She gave off strong \"mother bear\" vibes."
+    ni "That is, she seemed like she could be a very caring person, without being as bubbly or flirty as the other girls."
+    ni "Fine with me. Not like I'm looking for romance here anyway."
+    hide kaiser
+    hide drac
+    hide lauren
+    with dissolve
+    show frog ind:
+        xcenter .33
+    with dissolve
+    ni "Next was... okay, honestly I wasn't sure what that was."
+    ni "Was it a robot? A child in a frog costume?"
+    ni "I'm just going to assume it's a kid. But the outfit they're wearing makes it hard to tell anything else about them."
+    show shahar ind:
+        xcenter .67
+    ni "Last was a... pretty much half-naked man. His costume was about as out-of-place as the vampire's."
+    ni "Maybe it really was Halloween before we all were gathered here."
+    ni "I was hoping to get good reads on everyone, but this guy, the frog, and the vampire threw that out the window."
+    hide frog
+    hide shahar
+    with dissolve
     show sam with dissolve
     #Make this section longer/make them conclude they kidnapped
-    z "Let's get straight to the point. Anyone know where we are or why we're here?"
+    z "I'm assuming you're all as confused as I am, so let's get straight to the point."
+    z "Anyone know where we are or why we're here?"
     show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
         xcenter .75
     z "No clue. The last thing I remember I was out for a walk, totally fine."
+    z "After that, my memory is a haze. It's like I suddenly took a nap and woke up here."
+    ni "A few people spoke up at once agreeing."
     hide catherine with moveoutright
     show sam:
         xcenter .25
         linear 0.3 xcenter .5
-    ni "A few people spoke up at once agreeing."
-    z "So no one knows how they got here."
-    z "I think we should look around and try to find a way out or some answers."
+    z "So no one knows how they got here, and there's probably gaps in our memory..."
+    z "Does anyone recognize anyone else in here?"
+    ni "A few people were starting to raise their hands..."
+    show sam:
+        xcenter .5
+        linear 0.3 xcenter .25
+    show stella ind with moveinright:
+        xcenter .75
+    z "Besides the world-famous businesswoman, who I'm sure we've all seen on TV."
+    ni "Well, not all of us..."
+    ni "But after that clarification the hands shot back down."
+    hide stella with moveoutright
+    show sam:
+        xcenter .25
+        linear 0.3 xcenter .5
+    z "So no one personally knows each other, I see. Not even as friends of friends or connections of that sort."
+    z "In that case, I think it's fair to assume we've been placed here against our will then."
+    z "That is to say, we've probably been kidnapped by someone with an unknown motive."
+    ni "I think we all knew this on some level, but several people's expressions sunk upon hearing that."
+    ni "Mine not so much. This wasn't much more hopeless than being in a jail cell."
+    ni "But at least some of these people seemed to be ordinary people."
+    ni "This was probably the first time most of them had been trapped in a situation like this."
+    z "Until we have more information, it's probably best to assume our lives are in some sort of danger while we are here."
+    z "In which case I think we should look around and try to find a way out or some answers."
+    z "Any objections?"
+    ni "Again, silence."
+    z "Alright, let's look around then."
+    hide sam with dissolve
+    show scary with dissolve:
+        alpha .5
+    ni "We looked around for a bit."
+    ni "But it quickly became clear there was nothing to find or see here."
+    ni "We each woke up in an identical-looking room with no notable features."
+    ni "And then the central room connecting them all also had no notable features."
+    ni "It was the most nondescript building I'd even been in."
+    ni "Even prison had more character than this room."
+    ni "The only really notable feature of this building seemed to be there was no exit."
+    ni "At least, none we could use."
+    hide scary with dissolve
+    show sam with dissolve
+    z "Anyone have anything to report?"
+    z "...Yeah, didn't think so."
+    z "In that case, does anyone have a particularly good sense of hearing?"
+    z "Perhaps if we listen closely to the walls we will get a sense of whether we're in civilization or not."
+    z "If so, then we could reason about our chances of getting help from the authorities."
     show sam:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
         xcenter .75
     z "Wait, I wanna get to know everyone."
-    z "It doesn't seem like we're gonna get out of here easily, it'd be good to know who we're stuck with."
+    z "It doesn't seem like we're gonna get out of here anytime soon, it'd be good to know who we're stuck with."
     hide catherine with moveoutright
     show drac ind with moveinright:
         xcenter .75
