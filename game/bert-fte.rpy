@@ -1,6 +1,7 @@
 
 label bertAsk0:
     scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show bert happy with dissolve
     b "Sandwiches aren't bad, but I really miss food from home..."
     blank "Should I talk to Bert?"
@@ -15,6 +16,7 @@ label bertAsk0:
 
 label bertAsk1:
     scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show bert happy with dissolve
     b "Hey Dan! Want to chat some more?"
     blank "Should I talk to Bert?"

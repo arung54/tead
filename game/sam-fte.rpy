@@ -2,15 +2,18 @@
 
 #Train 1
 label samAsk0:
-    scene bg trainfront
+    scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show sam happy with dissolve
     s "Hey."
     ni "I should go talk to Bert instead."
+    hide sam with dissolve
     call screen frontCar
 
 #Train 2
 label samAsk1:
-    scene bg trainfront
+    scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show sam with dissolve
     s "Hey."
     menu:

@@ -3,14 +3,17 @@
 #Train 1
 label kaisAsk0:
     scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show kaiser ind with dissolve
     k "..."
     ni "I should go talk to Bert instead of this guy."
+    hide kaiser with dissolve
     call screen frontCar
 
 #Train 2
 label kaisAsk1:
     scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show kaiser ind with dissolve
     k "..."
     menu:
@@ -18,7 +21,7 @@ label kaisAsk1:
             k "Oh? Did you have something to say, Dan?"
             jump kaisHang
         "Maybe later":
-            hide kaiser ind with dissolve
+            hide kaiser with dissolve
             call screen frontCar
 
 label kaisHang:

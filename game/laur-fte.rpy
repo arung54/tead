@@ -3,14 +3,17 @@
 #Train 1
 label laurAsk0:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show lauren ind with dissolve
     o "You're not being mean to Sid at night, are you?"
     ni "I should go talk to Bert."
+    hide lauren with dissolve
     call screen midCar
 
 #Train 2
 label laurAsk1:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show lauren ind with dissolve
     o "What's up Dan, wanted to chat?"
     menu:

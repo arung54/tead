@@ -3,14 +3,17 @@
 #Train 1
 label frogAsk0:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show frog sad with dissolve
     f "I miss my mom..."
     ni "I should go talk to Bert instead of this kid."
+    hide frog with dissolve
     call screen midCar
 
 #Train 2
 label frogAsk1:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show frog sad with dissolve
     f "I wish there was another kid here..."
     menu:

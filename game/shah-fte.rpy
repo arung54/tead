@@ -2,14 +2,17 @@
 #Train 1
 label shahAsk0:
     scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show shahar ind with dissolve
     h "Y'arr, if you think about it, a train is just a pirate ship on land."
     ni "...yeah, I should go talk to Bert instead of this guy."
+    hide shahar with dissolve
     call screen frontCar
 
 #Train 2
 label shahAsk1:
     scene bg trainfront1
+    $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show shahar ind with dissolve
     h "Land ho!"
     h "Wait, no, that's just a mirage..."

@@ -3,14 +3,17 @@
 #Train 1
 label dracAsk0:
     scene bg trainback
+    $ statusnt("Caboose", "dan", ch = 1, sun = 1)
     show drac happy with dissolve
     d "I wish it were slightly less bright in this train..."
     ni "I should go talk to Bert instead of this guy."
+    hide drac with dissolve
     call screen backCar
 
 #Train 2
 label dracAsk1:
     scene bg trainback
+    $ statusnt("Caboose", "dan", ch = 1, sun = 1)
     show drac happy with dissolve
     d "Hello Dan, would you like to speak?"
     menu:

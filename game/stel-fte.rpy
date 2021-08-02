@@ -3,14 +3,17 @@
 #Train 1
 label stelAsk0:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show stella happy with dissolve
     t "Hello."
     ni "I should go talk to Bert instead of her."
+    hide stella with dissolve
     call screen midCar
 
 #Train 2
 label stelAsk1:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show stella happy with dissolve
     t "Hello."
     menu:

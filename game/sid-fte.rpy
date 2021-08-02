@@ -1,14 +1,17 @@
 
 label sidAsk0:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show sid ind with dissolve
     i "Hmm. I wonder what the password could be..."
     ni "I should go talk to Bert."
+    hide sid with dissolve
     call screen midCar
 
 
 label sidAsk1:
     scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show sid ind with dissolve
     i "Hey Dan!"
     blank "Should I talk to Sid?"
