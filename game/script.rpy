@@ -331,4 +331,4 @@ label start:
 ###########
 #Start
 ###########
-    jump trainGo
+    jump showcars
