@@ -11,7 +11,7 @@ label trainGo:
     z "Hey..." #Arunj: Change speaker to ???
     ni "Huh?"
     z "HEY!!!"
-    $ scenent("bg trainmid", "Bar Car", "dan", ch = 1, sun = 1)
+    $ scenent("bg trainmid", "Bar Car", "dan", ch = 1, sun = 3)
     show lauren ind
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
@@ -299,8 +299,10 @@ label trainGo:
 label backcar1:
     scene black with fade
     ni "We made our way one train car back, carefully watching our step between cars."
-    show bg trainback with fade
-    $ showchibi("dracula", "sam")
+    show bg trainback
+    $ statusnt("Caboose", "dan", ch = 1, sun = 3)
+    $ showchibint("dracula", "sam")
+    with fade
     show sam with dissolve:
         xcenter .5
         linear 0.3 xcenter .75
@@ -366,7 +368,8 @@ label backcar1:
 
 label midcar2:
     scene bg trainmid with fade
-    $showchibi("sam", "freddy", "lauren", "bert", "stella", "dracula")
+    $showchibint("sam", "freddy", "lauren", "bert", "stella", "dracula")
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 3)
     show lauren ind with dissolve
     o "Did you find anything useful?"
     n "Not really. The next car back is the caboose."
@@ -474,8 +477,10 @@ python:
 label frontcar1:
     scene black with fade
     blank "The 11 of us made our way to the front car, leaving only Stella in the middle car."
-    show bg trainfront1 with dissolve
-    $ showchibi("sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
+    show bg trainfront1
+    $ showchibint("sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
+    $ statusnt("Front Car", "dan", ch = 1, sun = 3)
+    with dissolve
     show sam with dissolve:
         xcenter .8
     s "Wow, you guys were not joking... There are screens everywhere."
@@ -529,9 +534,11 @@ label showcars:
     c "And finally this, the front car, that we're in right now."
     n "Stuffed to the brim with screens and controls."
 label frontcar2:
-    scene bg trainfront1 with dissolve:
+    scene bg trainfront1:
         zoom 1
-    $ showchibi("sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
+    $ showchibint("sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
+    $ statusnt("Front Car", "dan", ch = 1, sun = 3)
+    with fade
     show sidstand with dissolve:
         zoom .9 xcenter .5 ycenter .46
     show catherine ind with dissolve:
@@ -610,6 +617,7 @@ label frontcar2:
     s "Ha!"
     i "I'm outta here! You guys suck!"
     hide sid ind with dissolve
+    $ showchibi("sam", "lauren", "bert", "shahar", "catherine", "dracula", "kaiser")
     show lauren ind:
         xcenter .85
         linear 0.3 xcenter .75
@@ -626,6 +634,7 @@ label frontcar2:
     with dissolve
     show kaiser ind with dissolve
     k "I'm going as well. I haven't seen the back car yet."
+    $ showchibi("bert", "shahar", "catherine", "dracula")
     hide kaiser ind with dissolve
     show bert sad with dissolve
     b "I haven't yet either, but I want to spend a little more time up here first."
@@ -670,10 +679,12 @@ label frontcar2:
     b "We're making progress already! Let's keep looking around."
 label frontcar3:
     scene black with fade
-    blank "Ten minutes passed."
+    blank "Thirty minutes passed."
+    blank "Shahar and Catherine also left the Front Car."
     #Arunj: chibis through this whole scene
     show bg trainfront1
-    $ showchibi("bert", "dracula")
+    $ showchibint("bert", "dracula")
+    $ statusnt("Front Car", "dan", ch = 1, sun = 3)
     show bert sad:
         xcenter .75
     show drac ind:
@@ -699,7 +710,7 @@ label frontcar3:
     hide bert sad
     hide drac ind
     with dissolve
-    $ showchibi("dan")
+    $ showchibi()
     ni "......"
     ni "Now that I'm alone..."
     play music "audio/invest1.wav" volume .3 fadein 1.0
@@ -733,8 +744,10 @@ label donepasswording:
     ni "I can come back if I figure it out, but I don't want to take too long up here."
 label midcar3:
 
-    scene bg trainmid with fade
-    $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
+    scene bg trainmid
+    $ showchibint("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 3)
+    with fade
     show jenny ind with dissolve
     j "Hey, Bert found some food behind the bar!"
     hide jenny ind
@@ -763,9 +776,9 @@ label midcar3:
     blank "They ate; about an hour passed."
     show bg ntrainmid
     show frogsit
-    with fade
     $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
-
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 4)
+    with fade
     show kaiser ind with dissolve:
         xcenter .75
     show jenny ind with dissolve:
@@ -844,8 +857,9 @@ label midcar3:
     n "..."
     scene black with fade
     blank "Dan made his way to the back car."
-    show bg ntrainback with fade
-    $ showchibi("sid")
+    show bg ntrainback
+    $ statusnt("Caboose", "dan", ch = 1, sun = 4)
+    $ showchibint("sid")
 
     ni "I forgot how dusty it was back here."
     show sid ind with dissolve
@@ -951,12 +965,14 @@ label midcar3:
     n "No, not at all. Goodnight Sid."
     hide sid ind with dissolve
 label day2:
-    scene black
+    scene black with fade
     pause 1
     blank "The next morning..." #Big transition here?
     play music "audio/rush.mp3" volume .3 fadein 1.0
     scene bg trainback
-    $ showchibi("sid")
+    $ statusnt("Caboose", "dan", ch = 1, sun = 1)
+    $ showchibint("sid")
+    with dissolve
 #    #show chaptericon at topright:
 #        zoom .4
 #    show mapicon:
@@ -974,7 +990,7 @@ label day2:
     n "Huh? Oh, Sid... What time is it?"
     i "No idea, but the sun's up. I'm heading to the bar car to the others."
     hide sid happy with moveoutright
-    $ showchibi("dan")
+    $ showchibi()
     ni "That kid's got a lot of energy. It must be around 7 AM."
     blank "Dan walked to the back window."
     show tracks with dissolve
@@ -984,8 +1000,10 @@ label day2:
     hide tracks with dissolve
     ni "But for now, I should go meet the others."
 label testft:
-    show bg trainmid with fade
-    $ showchibi("bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
+    scene bg trainmid
+    $ showchibint("bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
+    with fade
     show catherine happy with dissolve:
         xcenter .5
         linear .3 xcenter .75
@@ -999,19 +1017,22 @@ label testft:
     f "Come on Sesame, let's go play!"
     ses "Merowwwwww!"
     hide frog ind with moveoutleft
+    hide catherine happy
+    show catherine nocat happy:
+        xcenter .75
     c "Nothing we can do but try to enjoy ourselves a little!"
     show sid ind with moveinleft:
         xcenter .25
     c "How'd you guys sleep back there?"
     i "The bench kinda hurt my back... but I'll manage."
-    hide catherine happy
-    show catherine ind:
+    hide catherine nocat happy
+    show catherine nocat:
         xcenter .75
     c "Dan! You took the cot for yourself and made Sid sleep on the bench?"
     n "Huh? No, he insisted."
     i "I did I did!"
     c "Hmph. For shame."
-    hide catherine ind with moveoutright
+    hide catherine nocat with moveoutright
     i "..."
     hide sid ind with moveoutleft
     show sam with dissolve:
@@ -1053,7 +1074,7 @@ label testft:
     tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
     tut "For the first free time segment, move to the front car and talk to Bert."
     tut "For this segment only, the skip function will be disabled."
-    call screen midCar
+    call screen midCar with fade
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
     # b "Well, we should get to know each other."
@@ -1091,6 +1112,8 @@ label postFT0:
     call screen midCar
 label postFT1:
     blank "30 minutes had passed, Dan went to meet the others in the bar car."
+
+#julian
 label midcar4:
     play music "audio/rush.mp3"
     show bg trainmid with fade
