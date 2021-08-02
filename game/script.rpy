@@ -189,7 +189,7 @@ init python:
 ###########
 
 init python:
-    def sceneui(bg, trans, name, ch, sun):
+    def scenent(bg, name, person, ch, sun):
         sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
         chibilist = [Position(xpos=1225, xanchor=0, ypos=55, yanchor=0)]
         chapterlist = [Position(xpos=1095, xanchor=0, ypos=65, yanchor=0)]
@@ -206,11 +206,10 @@ init python:
             renpy.show("sundown", at_list = sunlist)
         if sun == 4:
             renpy.show("sungone", at_list = sunlist)
-        if ch == 1:
+        if person == "dan":
             renpy.show("danchibi2", at_list = chibilist)
-        if ch == 2:
+        if person == "bert":
             renpy.show("bertchibi2", at_list = chibilist)
-        renpy.with_statement(trans)
 
 init python:
     def showchibi(*argv):
@@ -250,7 +249,7 @@ init python:
         renpy.with_statement(Dissolve(1.0))
 
 
-    def showchibinofade(*argv):
+    def showchibint(*argv):
         argv = [j + "chibi" for j in argv]
         currchibis = list()
         for i in renpy.get_showing_tags():

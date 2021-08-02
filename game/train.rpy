@@ -11,9 +11,9 @@ label trainGo:
     z "Hey..." #Arunj: Change speaker to ???
     ni "Huh?"
     z "HEY!!!"
-    scene bg trainmid
+    $ scenent("bg trainmid", "Bar Car", "dan", ch = 1, sun = 1)
     show lauren ind
-    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
     o "Hey, wake up already."
     o "How'd you manage to stay knocked out even longer than the kid?"

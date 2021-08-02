@@ -8,7 +8,7 @@ label sidAsk0:
 
 
 label sidAsk1:
-    scene bg trainfront
+    scene bg trainmid
     show sid ind with dissolve
     i "Hey Dan!"
     blank "Should I talk to Sid?"
