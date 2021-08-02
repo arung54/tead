@@ -36,7 +36,7 @@ screen trainEvidence():
     imagemap:
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
-        hotspot(35, 29, 144, 75) action [Hide("trainEvidence")]
+        hotspot(35, 29, 144, 75) action [Hide("trainEvidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
             textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
@@ -133,21 +133,27 @@ screen trainEvidence():
 
 screen frontCarInv():
     imagemap:
-        ground "bg trainFRONT1.png"
+        ground "bg ntrainfront.png"
         hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")]
         hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")]
         hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")]
         hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")]
 
+    add "status.png"
+    add Text("{b}Front Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch1.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
     imagebutton:
         xalign 1.0
-        yalign 0.0
+        yalign 0.175
         idle "mapicon.png" at iconzoom
         action [Show("trainMapInv", transition=Dissolve(0.3))]
 
     imagebutton:
         xalign 1.0
-        yalign 0.1
+        yalign 0.275
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
 
@@ -205,15 +211,21 @@ screen midCarInv():
         hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")]
         hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")]
 
+    add "status.png"
+    add Text("{b}Bar Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch1.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
     imagebutton:
         xalign 1.0
-        yalign 0.0
+        yalign 0.175
         idle "mapicon.png" at iconzoom
         action [Show("trainMapInv", transition=Dissolve(0.3))]
 
     imagebutton:
         xalign 1.0
-        yalign 0.1
+        yalign 0.275
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
 
@@ -273,15 +285,21 @@ screen backCarInv():
         hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")]
         hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")]
 
+    add "status.png"
+    add Text("{b}Caboose{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch1.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
     imagebutton:
         xalign 1.0
-        yalign 0.0
+        yalign 0.175
         idle "mapicon.png" at iconzoom
         action [Show("trainMapInv", transition=Dissolve(0.3))]
 
     imagebutton:
         xalign 1.0
-        yalign 0.1
+        yalign 0.275
         idle "evidenceicon.png" at iconzoom
         action [Show("trainEvidence", transition=Dissolve(0.3))]
 
@@ -309,14 +327,15 @@ screen backCarInv():
 ####################################################
 
 label trainComputer:
-    scene bg trainfront1
+    scene bg ntrainfront
+    $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     bi "The train's computer system. Hmmm..."
     bi "Let's take a closer look."
     scene welcomescreendir4
     bi "It looks the same as before, I think."
     bi "Wait - no! There is something different..."
     bi "I should make a mental note of that."
-    scene bg trainfront1
+    scene bg ntrainfront
     if not train_evidence1[0]:
         show newevidencefound with dissolve
         pause 1
@@ -329,7 +348,8 @@ label trainComputer:
     call screen frontCarInv
 
 label trainFrontWindow:
-    scene bg trainfront1
+    scene bg ntrainfront
+    $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     bi "The train's front window."
     bi "It's pretty dark out, but there's still some light coming through."
     bi "With the computers all on too, you'd think it would stay pretty bright in here."
@@ -346,14 +366,16 @@ label trainFrontWindow:
     call screen frontCarInv
 
 label trainBert:
-    scene bg trainfront1
+    scene bg ntrainfront
+    $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     show bert sad with dissolve
     bi "What a terrible situation..."
     bi "The best way we can help is by collecting evidence."
     call screen frontCarInv
 
 label trainKaiser:
-    scene bg trainfront1
+    scene bg ntrainfront
+    $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     show sam with dissolve
     s "I can't believe someone actually did this..."
     s "One of {i}us{/i} did this."
@@ -403,6 +425,7 @@ label trainKaiser:
 
 label trainmidBert:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show bert sad with dissolve
     bi "What a terrible situation..."
     bi "The best way we can help is by collecting evidence."
@@ -410,6 +433,7 @@ label trainmidBert:
 
 label trainfreddy:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show frog sad with moveinbottom
     f "Shahar said Dan's... swimming with the fishes?"
     f "Why are there fish on the train?"
@@ -427,6 +451,7 @@ label trainfreddy:
 
 label trainjenny:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show jenny ind with dissolve
     j "Personally, I don't remember much..."
     j "It got dark, and I called out to you."
@@ -440,6 +465,7 @@ label trainjenny:
 
 label trainstella:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show stella ind with dissolve
     t "Well sheesh, that'll sober you up quick."
     b "Stella, do you remember anything that might be useful?"
@@ -454,6 +480,7 @@ label trainstella:
 
 label traincatherine:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show catherine ind with dissolve
     c "This is so scary..."
     c "It's like a crappy murder mystery game."
@@ -479,6 +506,7 @@ label traincatherine:
 
 label traindracula:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show drac ind with dissolve
     d "By the way..."
     d "What was that scream we heard?"
@@ -507,6 +535,7 @@ label traindracula:
 
 label trainlights:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     if windowcount > 5:
         b "Wait... The lights are still off."
         b "And it's night time."
@@ -533,6 +562,7 @@ label trainlights:
 
 label trainwindows:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     if lightscount > 5:
         b "Wait... It's night time."
         b "And the lights are still off."
@@ -557,18 +587,21 @@ label trainwindows:
 
 label trainbar:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     bi "The train bar."
     bi "I don't think now's the best time to start drinking."
     call screen midCarInv
 
 label traincouch:
     scene bg notrainmid
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     bi "Some chairs and couches throughout the bar car."
     bi "I don't think there's anything important about them right now."
     call screen midCarInv
 
 label trainbackBert:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     show bert sad with dissolve
     bi "What a terrible situation..."
     bi "The best way we can help is by collecting evidence."
@@ -576,29 +609,34 @@ label trainbackBert:
 
 label trainrip:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "Well I guess it's a good thing we have this."
     bi "I don't think it's important right now though."
     call screen backCarInv
 
 label trainbed:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The bed. It's next to the closet, but other than that..."
     bi "I don't think it's very important right now."
     call screen backCarInv
 
 label trainwater:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "There's an old-timey water heater and kettle back here."
     bi "I don't think it's relevant right now."
     call screen backCarInv
 
 label trainbench:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The bench. I think this is where either Dan or Sid was sleeping."
     call screen backCarInv
 
 label trainsid:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     stop music fadeout 1.0
     show sid ind with dissolve
     i "Is he really... dead?"
@@ -628,6 +666,7 @@ label trainsid:
 
 label traincloset:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The locked closet."
     bi "I might as well try it."
     blank "The closet door opened without any trouble."
@@ -647,6 +686,7 @@ label traincloset:
 
 label traincoin:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The window is cracked from the murder weapon..."
     bi "The culprit must have used a ton of extra force."
     bi "...Hm?"
@@ -670,6 +710,7 @@ label traincoin:
 
 label trainbody:
     scene bg bodytrainback
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "Dan's body..."
     bi "It's hard to look at."
     bi "But I think it's important for me to at least do a superficial autopsy."

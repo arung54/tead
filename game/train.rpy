@@ -1578,7 +1578,7 @@ label midcar6:
         xcenter .25
     h "What are ye on about?"
     hide jenny ind with moveoutright
-    show dracula ind with moveinright:
+    show drac ind with moveinright:
         xcenter .75
     d "He's right, there's no way they slept through that noise."
     d "As well, it sounded like it came from the back car."

@@ -2,6 +2,10 @@ screen intros():
     imagemap:
         ground "bg startmeet.png"
         hotspot(420, 69, 10, 10) action [Hide("intros", transition=Fade), Jump("ligma")]
+    add "status.png"
+    add Text("{b}???{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch0.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "danchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     if meetings[0] == 1:
         imagebutton:
             xpos 20
@@ -71,6 +75,7 @@ screen intros():
 
 label ligma:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show bert happy with dissolve
     b "Hey Dan, you ever think about removing the A from your first name?"
     n "My name would be D-N? What does that even mean?"
@@ -83,6 +88,7 @@ label ligma:
 
 label meetBert:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show bert happy with dissolve
     b "Hi, my name's Bert Kim."
     n "Hey, I'm Dan."
@@ -126,6 +132,7 @@ label postMeetBert:
 
 label meetSam:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show sam with dissolve
     s "Not really one for formalities, but I'm Sam. Sam Lee."
     n "Hey, I'm Dan."
@@ -168,6 +175,7 @@ label postMeetSam:
 
 label meetStella:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show stella ind with dissolve
     t "You're not my type, but I guess we can talk. I'm Stella Cantoire."
     n "Hey, I'm Dan."
@@ -213,6 +221,7 @@ label postMeetStella:
 
 label meetSid:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show sid ind with dissolve
     i "Hey I'm Sid Straits. Don't forget it!"
     n "Hey, I'm Dan."
@@ -252,6 +261,7 @@ label postMeetSid:
 
 label meetJenny:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show jenny happy with dissolve
     j "Hey! I'm Jenny Flowers."
     n "Hey, I'm Dan."
@@ -296,6 +306,7 @@ label postMeetJenny:
 
 label meetCatherine:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show catherine happy with dissolve
     c "Heya! I'm Catherine Henson, and this is Sesame Henson!"
     ses "Mreoww!"
@@ -340,6 +351,7 @@ label postMeetCatherine:
 
 label meetKaiser:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show kaiser ind with dissolve
     k "Greetings, I'm Kaiser Maden."
     n "Hey, I'm Dan."
@@ -379,6 +391,7 @@ label postMeetKaiser:
 
 label meetDracula:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show drac ind with dissolve
     d "Hi, I'm Dracula."
     n "...Like the vampire?"
@@ -426,6 +439,7 @@ label postMeetDracula:
 
 label meetLauren:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show lauren ind with dissolve
     o "Hi, I'm Lauren Palmer."
     n "Hey, I'm Dan."
@@ -468,6 +482,7 @@ label postMeetLauren:
 
 label meetFreddy:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show frog ind with dissolve
     f "H-hey, I'm Freddy Ogden. But I like it when people call me Froggy!"
     n "Hey, I'm Dan."
@@ -509,6 +524,7 @@ label postMeetFreddy:
 
 label meetShahar:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     show shahar ind with dissolve
     h "Ahoy there matey! Y'er talking to Shahar Syed, the finest pirate on the seven seas."
     ni "...is this guy serious?"
@@ -561,6 +577,7 @@ label go: #Add silhouttes here?
     mi "Ugh... don't want to wake up for another day of this..."
     scene bg phall
     show cellwindow
+    $ statusnt("Prison", "", ch = 0, sun = 0)
     with dissolve
     #warden "Dan Scagnelli, do not make me repeat myself."
     ni "Why me specifically... what did I do wrong?"
@@ -596,7 +613,9 @@ label go: #Add silhouttes here?
         linear .3 xcenter .75
     show dan ind with moveinleft:
         xcenter .25
-    $ showchibi("myster", "dan")
+    $ statusnt("Prison", "dan", ch = 0, sun = 0)
+    $ showchibint("myster")
+    with dissolve
     z "Much better."
     ni "I could barely remember how long it had been since I last wore these..."
     #ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
@@ -609,8 +628,10 @@ label go: #Add silhouttes here?
     show myster ind:
         linear .3 xcenter .5
     z "I'll be the one asking the questions for now."
-    show bg debatescroll with dissolve:
+    show bg debatescroll:
         zoom 1.1 ycenter .3
+    $ statusnt("???", "dan", ch = 0, sun = 0)
+    with dissolve
     ni "Wh-what's going on?"
     z "Dan... do you feel guilty?"
     n "Guilty?"
@@ -691,7 +712,9 @@ label go: #Add silhouttes here?
     m "........"
     m "{i}I think I passed out again...{/i}"
     m "{i}Have to... get up...{/i}"
-    scene bg start with fade
+    scene bg start
+    $ statusnt("???", "dan", ch = 0, sun = 0)
+    with fade
     ni "{i}.....!{/i}"
     ni "Where... am I?"
     ni "How did I get here?"
@@ -704,8 +727,10 @@ label go: #Add silhouttes here?
     ni "Let's see what's on the other side..."
     scene black with fade
     ni "I walked into a very similar room, at the same time as eleven other people."
-    scene bg startmeet with fade
     play music "audio/coming_together.mp3"
+    scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
+    with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     ni "I quickly glanced around to familiarize myself with everyone."
     show bert ind:
@@ -893,6 +918,7 @@ label go: #Add silhouttes here?
 
 label postMeetings:
     scene bg startmeet
+    $ statusnt("???", "dan", ch = 0, sun = 0)
     ni "And I've met everyone. Looks like the group is reconvening to discuss now."
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     show sam with dissolve
@@ -900,7 +926,9 @@ label postMeetings:
     hide sam with moveoutright
     stop music fadeout 1.0
     blank "A whirring noise cut Sam off."
-    show bg start2 with dissolve
+    show bg start2
+    $ statusnt("???", "dan", ch = 0, sun = 0)
+    with dissolve
     blank "A screen slowly lowered, and everyone's attention turned to it."
     scr "Welcome."
     scr "The game you all have been brought here to play will now be explained."
@@ -949,8 +977,10 @@ label postMeetings:
     hide text
     with dissolve
     scr "In short, the murderer wants to kill the Game Master, or kill anyone else, and get away with it."
-    scene bg start2 with fade
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    scene bg start2
+    $ statusnt("???", "dan", ch = 0, sun = 0)
+    $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    with fade
     ni "What the hell is all this..."
     scr "A chip has been planted in each of your heads, capable of killing you instantly."
     scr "This chip will be used to resolve the outcome of the vote."

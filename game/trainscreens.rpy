@@ -30,19 +30,24 @@ screen trainMap():
 
 screen frontCar():
     add "bg trainFRONT1.png"
+    add "status.png"
+    add Text("{b}Front Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch1.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "danchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
-        yalign 0.0
+        yalign 0.175
         idle "mapicon" at iconzoom
         action [Show("trainMap", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 0.1
+        yalign 0.275
         idle "hearticon" at iconzoom
         action [Show("freeTimeCounter", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 0.2
+        yalign 0.375
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
@@ -91,19 +96,24 @@ screen frontCar():
 
 screen midCar():
     add "bg trainMID.png"
+    add "status.png"
+    add Text("{b}Bar Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch1.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "danchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
-        yalign 0.0
+        yalign 0.175
         idle "mapicon" at iconzoom
         action [Show("trainMap", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 0.1
+        yalign 0.275
         idle "hearticon" at iconzoom
         action [Show("freeTimeCounter", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 0.2
+        yalign 0.375
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
@@ -162,19 +172,24 @@ screen midCar():
 
 screen backCar():
     add "bg trainBACK.png"
+    add "status.png"
+    add Text("{b}Caboose{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch1.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "danchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
-        yalign 0.0
+        yalign 0.175
         idle "mapicon" at iconzoom
         action [Show("trainMap", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 0.1
+        yalign 0.275
         idle "hearticon" at iconzoom
         action [Show("freeTimeCounter", transition=Dissolve(0.3))]
     imagebutton:
         xalign 1.0
-        yalign 0.2
+        yalign 0.375
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
