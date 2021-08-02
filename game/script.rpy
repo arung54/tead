@@ -189,7 +189,7 @@ init python:
 ###########
 
 init python:
-    def scenent(name, person, ch, sun):
+    def statusnt(name, person, ch, sun):
         sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
         chibilist = [Position(xpos=1225, xanchor=0, ypos=55, yanchor=0)]
         chapterlist = [Position(xpos=1095, xanchor=0, ypos=65, yanchor=0)]
