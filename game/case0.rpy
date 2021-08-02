@@ -947,7 +947,7 @@ label postMeetings:
     show expl 10a
     hide text
     with dissolve
-    scr "In short, kill the Game Master, or kill anyone else, and get away with it."
+    scr "In short, the murderer wants to kill the Game Master, or kill anyone else, and get away with it."
     scene bg start2 with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     ni "What the hell is all this..."
