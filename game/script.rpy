@@ -189,6 +189,26 @@ init python:
 ###########
 
 init python:
+    def scenent(name, person, ch, sun):
+        sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
+        chibilist = [Position(xpos=1225, xanchor=0, ypos=55, yanchor=0)]
+        chapterlist = [Position(xpos=1095, xanchor=0, ypos=65, yanchor=0)]
+        renpy.show("status")
+        renpy.show(name = "location", what = Text("{b}"+name+"{/b}"), at_list = [Position(xpos=1055, xanchor=0, ypos=5, yanchor=0)])
+        renpy.show("ch"+str(ch), at_list = chapterlist)
+        if sun == 1:
+            renpy.show("sunup", at_list = sunlist)
+        if sun == 2:
+            renpy.show("sunout", at_list = sunlist)
+        if sun == 3:
+            renpy.show("sundown", at_list = sunlist)
+        if sun == 4:
+            renpy.show("sungone", at_list = sunlist)
+        if person == "dan":
+            renpy.show("danchibi2", at_list = chibilist)
+        if person == "bert":
+            renpy.show("bertchibi2", at_list = chibilist)
+
     def scenent(bg, name, person, ch, sun):
         sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
         chibilist = [Position(xpos=1225, xanchor=0, ypos=55, yanchor=0)]

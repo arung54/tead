@@ -705,6 +705,7 @@ label go: #Add silhouttes here?
     scene black with fade
     ni "I walked into a very similar room, at the same time as eleven other people."
     scene bg startmeet with fade
+    play music "audio/coming_together.mp3"
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     ni "I quickly glanced around to familiarize myself with everyone."
     show bert ind:
@@ -897,10 +898,10 @@ label postMeetings:
     show sam with dissolve
     s "Okay, now that that's done, I think we should look around and try-"
     hide sam with moveoutright
+    stop music fadeout 1.0
     blank "A whirring noise cut Sam off."
     show bg start2 with dissolve
     blank "A screen slowly lowered, and everyone's attention turned to it."
-    #TODO: Add pretty pictures to help explain game
     scr "Welcome."
     scr "The game you all have been brought here to play will now be explained."
     ni "...game?"
