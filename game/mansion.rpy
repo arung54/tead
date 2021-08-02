@@ -11,7 +11,7 @@ label mansionGo:
     f "nrg...."
     bi "...no, that's not how I should think about it."
     bi "There were ten people I did help save."
-    bi "Well, nine excluding the mastermind."
+    bi "Well, nine excluding the Game Master."
     show frog ind
     f "Oh, Bert! Are you awake? Feeling okay?"
     bi "This kid's one of them."
@@ -65,8 +65,8 @@ label mansionGo:
         xcenter .75
     t "Strategize how exactly?"
     d "Maybe we could each admit what crimes we've committed and try to find a common link."
-    d "That common link could then help us identify the mastermind. The mastermind might even be the common link themselves."
-    d "Then whoever is the killer this round would have better odds of killing the mastermind and ending the game."
+    d "That common link could then help us identify the Game Master. The Game Master might even be the common link themselves."
+    d "Then whoever is the killer this round would have better odds of killing the Game Master and ending the game."
     d "For example, my crime was vampiric manslaughter."
     d "I think it's unfair to call my need for sustenance a crime, but I digress."
     show scary with dissolve:
@@ -79,7 +79,7 @@ label mansionGo:
     bi "Or, if the murderer slipped up, we could even find out ahead of time who committed a crime in the mansion and pay extra attention to them."
     bi "Obviously, if the murderer realized this, they would simply not admit to a crime that could tie them to this location."
     bi "So Dracula must be hoping the murderer isn't so wise."
-    bi "Better yet, he's suggesting that the murderer's task, identifying and killing the mastermind, could be aided by this process."
+    bi "Better yet, he's suggesting that the murderer's task, identifying and killing the Game Master, could be aided by this process."
     bi "If they took his words to heart, they would indirectly out themselves, and think that was the right thing to do..."
     bi "But will Dracula's plan really work?"
     hide scary with dissolve
@@ -208,12 +208,12 @@ label mansionGo:
     b "Wait... who is that?"
     j "No clue."
     b "It must be someone relevant, right?"
-    b "Unless the mastermind just took someone's mansion without a problem."
+    b "Unless the Game Master just took someone's mansion without a problem."
     b "But it seems like anyone rich enough to own this house wouldn't be so easily... overcome?"
     b "Surely they could afford some top notch security or would have police trying to help them retake their mansion non-stop."
     j "You might be onto something."
-    j "Maybe it's the mastermind? And this is their mansion?"
-    b "Well, that would contradict what the screen told us about one of us being the mastermind."
+    j "Maybe it's the Game Master? And this is their mansion?"
+    b "Well, that would contradict what the screen told us about one of us being the Game Master."
     b "But maybe we'd be naive to trust that."
     j "Unless someone's met this person before, I don't know if we'll get much information out of this."
     j "Let's look somewhere else. Looks like this room connects to the kitchen and a bedroom."
@@ -228,7 +228,7 @@ label mansionGo:
     l "What you'd expect from a kitchen in a mansion."
     l "Plenty of fancy cutlery and cookware."
     l "Though there seems to be only one knife..."
-    l "Maybe the mastermind didn't want a knife murder to be too easy?"
+    l "Maybe the Game Master didn't want a knife murder to be too easy?"
     l "Regardless, there's also all sorts of meats and veggies, the stove, fridge, and freezer all functioning, tap water..."
     hide lauren ind with dissolve
     show shahar ind with moveinright:
@@ -266,7 +266,7 @@ label mansionGo:
     show jenny ind with moveinleft:
         xcenter .25
     j "I'm... not old enough to drink yet."
-    t "Who's gonna arrest you? The mastermind who's already broken twenty different laws?"
+    t "Who's gonna arrest you? The Game Master who's already broken twenty different laws?"
     t "Plus it'd be good for you and Bert to get to know each other with your inhibitions down."
     b "Alright, I think we've seen everything we need to see here."
     b "Jenny, let's go check out another room."
@@ -356,7 +356,7 @@ label mansionGo:
     c "We have running power so we shouldn't need it, but it's nice to know that won't be an issue."
     show catherine ind
     c "I imagine whoever owns this house isn't paying the electricity bill."
-    c "So unless the mastermind's doing us that favor..."
+    c "So unless the Game Master's doing us that favor..."
     b "Well, the lights were on in the dining room, and the fridge and freeze are running."
     b "So I don't think we'll need to worry about that."
     show catherine happy
@@ -531,7 +531,7 @@ label mansionGo:
     b "Yeah, it's very weird for how luxurious the house is otherwise."
     b "The room isn't particularly well furnished either."
     b "Normally there'd be a dresser or something like that in here."
-    j "Hm... maybe the mastermind is trying to minimize how many spots things can be hidden in?"
+    j "Hm... maybe the Game Master is trying to minimize how many spots things can be hidden in?"
     j "After all, searching four fully furnished bedrooms sounds like a chore."
     b "That'd be awfully considerate for someone who, you know, wants most of us dead."
     j "That's true. But if they wanted us dead, why not just kill us instead of making us play this game?"
@@ -757,7 +757,7 @@ label mansionGo:
     bi "Lauren and Freddy are definitely very close now."
     bi "And... there's me and Jenny, though I don't know how close we are."
     bi "I guess everyone is desperate for someone they can trust in an environment like this."
-    bi "Even if that person could be the mastermind, even the illusion of trust is very comforting."
+    bi "Even if that person could be the Game Master, even the illusion of trust is very comforting."
     d "I will not bother trying to enforce this request, since I do not expect everyone to be fully cooperative."
     d "That is all."
     hide drac with dissolve
@@ -2166,7 +2166,7 @@ label trial2g:
     s "Wait, someone should go with you."
     s "You could be the murderer and be lying about the results of your \"test\""
     d "Me, the murderer? I never left the dining room."
-    s "Fine, if you're not the murderer, maybe you're the mastermind trying to spice things up."
+    s "Fine, if you're not the murderer, maybe you're the Game Master trying to spice things up."
     s "I'm just saying, we should have a second person there to confirm."
     d "Sure, doesn't matter to me."
     d "Sam, I assume you're volunteering?"

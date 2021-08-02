@@ -141,11 +141,15 @@ label trainGo:
     show lauren ind with moveinleft:
         xcenter .25
     o "Kaiser's probably right... think back to what the monitor told us."
-
-    ###FLASHBACK###
-    show black
-    n "flashback to part about chips in our brain, have to cooperate etc"
-    hide black
+    show start2
+    show sepia:
+        alpha .5
+    with dissolve
+    scr "A chip has been planted in each of your heads, capable of killing you instantly."
+    scr "The chip will also be used to keep you unconscious as you are transported between locations."
+    hide start2
+    hide sepia
+    with dissolve
     o "As terrifying as that is, it seems like the only explanation..."
     n "You really think the chips knocked us out somehow?"
     k "Yes, it seems most likely."
@@ -471,29 +475,7 @@ label frontcar1:
     scene black with fade
     blank "The 11 of us made our way to the front car, leaving only Stella in the middle car."
     show bg trainfront1 with dissolve
-    #Arun: showchibi here
-    show danchibi:
-        zoom 1.5 xpos 20 ypos 20
-    show samchibi:
-        zoom 1.5 xpos 20 ypos 70
-    show laurenchibi:
-        zoom 1.5 xpos 20 ypos 120
-    show bertchibi:
-        zoom 1.5 xpos 20 ypos 170
-    show jennychibi:
-        zoom 1.5 xpos 20 ypos 220
-    show shaharchibi:
-        zoom 1.5 xpos 20 ypos 270
-    show sidchibi:
-        zoom 1.5 xpos 20 ypos 320
-    show catherinechibi:
-        zoom 1.5 xpos 20 ypos 370
-    show draculachibi:
-        zoom 1.5 xpos 20 ypos 420
-    show freddychibi:
-        zoom 1.5 xpos 20 ypos 470
-    show kaiserchibi:
-        zoom 1.5 xpos 20 ypos 520
+    $ showchibi("dan", "sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
     show sam with dissolve:
         xcenter .8
     s "Wow, you guys were not joking... There are screens everywhere."
@@ -534,21 +516,20 @@ label frontcar1:
     c "To summarize, it's just these three train cars."
 label showcars:
     scene black with fade
-    show bg trainfront1 with fade:
+    show bg trainback with fade:
         zoom .7 xcenter .5 ycenter .5
-    #Arun: Reorder cars?
-    c "So this is the front car, that we're in right now."
-    n "Stuffed to the brim with screens and controls."
+    c "Starting from the back, a little caboose."
+    d "A run down dusty little mess."
     show bg trainmid with fade:
         zoom .7 xcenter .5 ycenter .5
     c "Followed by the bar car behind us."
     k "Which has an... upscale 1970s aesthetic."
-    show bg trainback with fade:
+    show bg trainfront1 with fade:
         zoom .7 xcenter .5 ycenter .5
-    c "And then the third car, a little caboose."
-    d "A run down dusty little mess."
+    c "And finally this, the front car, that we're in right now."
+    n "Stuffed to the brim with screens and controls."
 label frontcar2:
-    show bg trainfront1 with dissolve:
+    scene bg trainfront1 with dissolve:
         zoom 1
     $ showchibi("dan", "sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
     show sidstand with dissolve:
@@ -720,8 +701,8 @@ label frontcar3:
     with dissolve
     $ showchibi("dan")
     ni "......"
-    ni "Now that I'm alone..." #Arun: Here I think we need to make it clearer the user can type. Maybe "Let me try a password"
-    play music "audio/invest1.wav" volume .3 fadein 1.0 #Arun: Is there audio fade in renpy?
+    ni "Now that I'm alone..."
+    play music "audio/invest1.wav" volume .3 fadein 1.0
 label passwording:
     show welcomescreenblank with dissolve
     $ passattempts = 1
@@ -880,7 +861,7 @@ label midcar3:
     hide sid happy
     show sid ind
     i "What do you mean, young?"
-    i "I work my ass off to take care of my parents!"
+    i "I work my ass off to help my family!"
     i "You don't know what I've been through."
     show scary with dissolve:
         alpha .5
@@ -902,7 +883,7 @@ label midcar3:
     n "Yeah, none of us could figure out the password. We can't do anything without it."
     i "Well, I got to the file directory, but it wouldn't let me open anything up."
     n "What? You got to the file directory? How did you do that?"
-    i "I work with computers a lot when I'm helping my dad with the shop." #Arun: Inconsistent w/ line "I work my ass off to take care of my parents!"
+    i "I work with computers a lot when I'm helping my dad with the shop."
     i "A lot of computers let you check for files using the \"DIR\" command." #Make this nerdier later
     i "I tried that in the password box and it showed me some of the computer's files."
     n "Sid, you're a genius! What did they show?"
@@ -966,7 +947,7 @@ label midcar3:
     i "You can have the bed. I'm fine sleeping on the bench."
     n "Okay, you can have the bed tomorrow night."
     ni "Damn... the thought of still being on this train tommorrow night is..."
-    i "Is something wrong?" #Arun: Little cheesy
+    i "Is something wrong?"
     n "No, not at all. Goodnight Sid."
     hide sid ind with dissolve
 label day2:
@@ -1374,15 +1355,14 @@ label midcar5:
     $ showchibi("dan", "bert", "catherine", "freddy", "jenny", "sid", "stella", "dracula")
     show sid ind with dissolve
     i "Hey Dan."
-    i "It seems like everyone else staying in this car is going to start sleeping." #Arun: Not accurate
-    i "And I'm starting to get tired myself."
+    i "I'm starting to get tired."
     i "I'm gunna hit the hay."
     play sfx "audio/butt.mp3" volume .1
     hide sid ind
     show sid happy
     show bg notrainmid
     n "!"
-    n "I guess they hit the light switch in the front car, since everyone's going to sleep anyway."
+    n "I guess they hit the light switch in the front car, since everyone's going to sleep soon anyway."
     ni "It's pretty hard to see in here with the lights off."
     n "I'll come too, Sid."
     scene black
@@ -1419,9 +1399,17 @@ label midcar5:
     ni "I guess somebody put that out there earlier today."
     ni "It doesn't seem worth the risk to open the door and get it though..."
     ni "Whatever..."
-    blank "FLASHBACK TO 'THEIR ENDS ARE DESERVED' SCREEN from chapter 0"
+    show start2
+    show sepia:
+        alpha .5
+    with dissolve
+    scr "Their endings are deserved."
+    hide start2
+    hide sepia
+    with dissolve
     ni "What a shame... I just got out of the pen, and now I have to do this..."
     ni "At least there are a lot of easy targets -" #Arun: BIG NOISE, cut off music
+    stop music
     scene black
     ni "Wh-what?"
     ni "Everything's... Dark."
@@ -2256,7 +2244,7 @@ label trial1h:
         "Something blocked the moonlight coming through the windows!":
             bi "That's it!"
 
-        "We were temporarily blinded by the mastermind's brain chips!":
+        "We were temporarily blinded by the Game Master's brain chips!":
             bi "Hmm... It could be that, but I don't think it's right."
             bi "I feel like that would hurt a lot more..."
             jump trial1h
@@ -3140,8 +3128,8 @@ label trial1r:
     k "Yes, until today."
     b "But why?"
     k "I didn't have a choice."
-    k "I had to kill the mastermind."
-    b "What? How do you know he was the mastermind?"
+    k "I had to kill the Game Master."
+    b "What? How do you know he was the Game Master?"
     k "I don't know for sure, but... his personality was so cold."
     show kaiser ind:
         linear .3 xcenter .75
@@ -3149,7 +3137,7 @@ label trial1r:
         xcenter .25
     i "You... you killed my friend! He didn't deserve to die!"
     k "How do you know that?"
-    k "Maybe he was the mastermind."
+    k "Maybe he was the Game Master."
     i "No way!"
     k "Regardless, it was my turn, and I had to choose someone."
     k "He seemed like the most likely candidate."
