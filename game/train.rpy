@@ -2604,7 +2604,7 @@ label trial1ib:
 
 label trial1j:
     scene black with fade
-        play music "audio/coming_together.mp3"
+    play music "audio/coming_together.mp3"
     bi "!"
     bi "That's it!"
     show bg notrainfront with dissolve
