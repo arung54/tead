@@ -718,5 +718,6 @@ label traindone:
            bi "Actually... I think that's everything."
            bi "I've searched all three cars and talked to everyone who seems like they have something to say."
            bi "Time to call the others and get to the bottom of this."
+           stop music fadeout 1.0
            jump trial1a
      return

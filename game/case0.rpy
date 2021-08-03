@@ -632,6 +632,7 @@ label go: #Add silhouttes here?
         zoom 1.1 ycenter .3
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with dissolve
+    play music "audio/ominous.mp3" fadein 1.0
     ni "Wh-what's going on?"
     z "Dan... do you feel guilty?"
     n "Guilty?"
@@ -687,6 +688,7 @@ label go: #Add silhouttes here?
     #ni "What was so urgent that it needed me to be pulled out of prison and rushed to a car?"
     #ni "We headed outside, and for the first time in ages I was excited to see the glorious sun and greenery."
     scene black
+    stop music fadeout 0.5
     #with fade
     #ni "Like a poorly edited TV show, my vision faded to black as we stepped outside."
     #ni "Only it never faded back to light."
@@ -925,15 +927,18 @@ label postMeetings:
     s "Okay, now that that's done, I think we should look around and try-"
     hide sam with moveoutright
     stop music fadeout 1.0
+    play sfx "audio/whirr.mp3"
     blank "A whirring noise cut Sam off."
     show bg start2
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with dissolve
+    stop sfx fadeout 1.0
     blank "A screen slowly lowered, and everyone's attention turned to it."
     scr "Welcome."
     scr "The game you all have been brought here to play will now be explained."
     ni "...game?"
     scr "Pay attention closely, as this will only be explained once."
+    play music "audio/invest1.wav"
     scene expl 1a with fade
     scr "There are twelve of you here."
     show expl 2a with dissolve
@@ -959,7 +964,7 @@ label postMeetings:
     scr "If they do successfully kill the Game Master, the game immediately ends and the remaining participants will be let free."
     show expl 7b with dissolve
     scr "If they kill someone who is not the Game Master..."
-    scr "They should do their best to hide thier guilt."
+    scr "They should do their best to hide their guilt."
     show expl 8a
     scr "This is because the remaing participants will investigate and vote on who the murderer is."
     show expl 8b
@@ -971,7 +976,7 @@ label postMeetings:
     #show expl kill1 with dissolve
     show text "{b}{color=#000000}Kill the Game Master. Or, kill anyone else and get away with it.{/color}{/b}" with dissolve:
         ycenter .65
-        xcenter .5
+        xcenter .495
     scr "everyone but the murderer and Game Master will be killed, and the game ends."
     show expl 10a
     hide text
@@ -981,6 +986,7 @@ label postMeetings:
     $ statusnt("???", "dan", ch = 0, sun = 0)
     $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     with fade
+    ni "..."
     ni "What the hell is all this..."
     scr "A chip has been planted in each of your heads, capable of killing you instantly."
     scr "This chip will be used to resolve the outcome of the vote."
@@ -989,6 +995,7 @@ label postMeetings:
     scr "Each round of the game will take place in a different location."
     scr "The chip will also be used to keep you unconscious as you are transported between locations."
     scr "As proof of this, you will soon be transported to the first location, to play the first round of the game."
+    stop music fadeout 1.0
     ni "...what?"
     ni "How would we even know who to kill?"
     ni "This game... it's so much to process."
@@ -1009,5 +1016,5 @@ label postMeetings:
     scr "Their endings are deserved."
     scene black with fade
     play movie "montage.mpeg"
-    $ renpy.pause(71.0, hard=True)
+    $ renpy.pause(72.5, hard=True)
     jump trainGo

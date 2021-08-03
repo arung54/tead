@@ -3,7 +3,7 @@ label trainGo:
     #jump frontcar1
     #show screen button_overlay
     scene black
-    play music "audio/rush.mp3"
+    play music "audio/rush.mp3" fadein 1.0
     ni "Was I... dreaming?"
     ni "It'd make sense..."
     ni "I did tend to get nightmares in there..."
@@ -713,7 +713,7 @@ label frontcar3:
     $ showchibi()
     ni "......"
     ni "Now that I'm alone..."
-    play music "audio/invest1.wav" volume .3 fadein 1.0
+    play music "audio/invest1.wav" fadein 1.0
 label passwording:
     show welcomescreenblank with dissolve
     $ passattempts = 1
@@ -743,7 +743,7 @@ label donepasswording:
     ni "They're probably waiting for me."
     ni "I can come back if I figure it out, but I don't want to take too long up here."
 label midcar3:
-
+    play music "audio/rush.mp3" fadein 1.0
     scene bg trainmid
     $ showchibint("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
     $ statusnt("Bar Car", "dan", ch = 1, sun = 3)
@@ -952,6 +952,7 @@ label midcar3:
     n "I'm with you. Let's stick together Sid."
     i "D-deal!"
     play sfx "audio/butt.mp3" volume .5
+    stop music fadeout 1.0
     show bg notrainback
     i "Huh?"
     n "Hmm, someone must have hit the light switch."
@@ -960,7 +961,7 @@ label midcar3:
     n "Yeah, let's hit the hay. We can figure out some more plans in the morning."
     i "You can have the bed. I'm fine sleeping on the bench."
     n "Okay, you can have the bed tomorrow night."
-    ni "Damn... the thought of still being on this train tommorrow night is..."
+    ni "Damn... the thought of still being on this train tomorrow night is..."
     i "Is something wrong?"
     n "No, not at all. Goodnight Sid."
     hide sid ind with dissolve
@@ -968,7 +969,7 @@ label day2:
     scene black with fade
     pause 1
     blank "The next morning..." #Big transition here?
-    play music "audio/rush.mp3" volume .3 fadein 1.0
+    play music "audio/rush.mp3" fadein 1.0
     scene bg trainback
     $ statusnt("Caboose", "dan", ch = 1, sun = 1)
     $ showchibint("sid")
@@ -1462,7 +1463,7 @@ label midcar6:
     bi "We can get out of here. Together."
     hide bertface2
     blank "pssst!!!"
-    play music "audio/invest1.wav" volume .3
+    play music "audio/invest1.wav"
     show bg notrainmid
     $ showchibi("catherine", "freddy", "jenny", "stella", "dracula")
     show stella happy with dissolve:
@@ -1522,6 +1523,7 @@ label midcar6:
     d "Who was that? Is everyone okay?"
     t "It came from the front car!"
     hide scary with dissolve
+    play music "audio/ominous.mp3" fadein 1.0
     j "Bert! You're okay. Thank goodness."
     hide jenny ind
     hide frog ind
@@ -1589,14 +1591,15 @@ label midcar6:
     d "As well, it sounded like it came from the back car."
     b "We have to check on them."
     scene black with fade
-    blank "The 8 of them ran to the bar car as fast as they could."
+    stop music fadeout 1.0
+    blank "The eight of them ran to the bar car as fast as they could."
     blank "Catherine and Freddy joined them on the way to the caboose."
     blank "But when they got there..."
+    play music "audio/sadsong.mp3" fadein 2.0
     show bg bodytrainback:
         alpha .0
         linear 4 alpha 1
     $ showchibi("catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
-    play music "audio/sadsong.mp3"
     b "Oh no..."
     b "No no no no..."
     show sid ind with moveinleft:
@@ -1731,7 +1734,7 @@ label midcar6:
     i "....."
     j "It's okay Sid, take your time."
     i "I heard a really loud noise, but when I rolled over, I couldn't see anything."
-    i "I paniced for a moment, and yelled out for Dan, and then..."
+    i "I panicked for a moment, and yelled out for Dan, and then..."
     i "The next thing I saw was this."
     j "Jeez..."
     b "Did he... yell? Or say anything?"
@@ -1786,7 +1789,7 @@ label preinvest:
     bi "I can't forget that."
     bi "For now though, it's time to gather evidence."
     pause 1
-    play music "audio/inthefaceofdeath.mp3"
+    play music "audio/inthefaceofdeath.mp3" fadein 1.0
     pause .5
     show investstart with dissolve
     pause 1
@@ -1802,7 +1805,7 @@ label preinvest:
 ################################################################################
 
 label trial1a:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene black with fade
     blank "Everyone was brought to the bar car."
     show bg notrainmid with fade
@@ -1896,7 +1899,7 @@ label trial1a:
     1, 5, "trial1b")
 
 label trial1b:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene bg notrainmid
     $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     show bert happy with moveinleft
@@ -1958,7 +1961,7 @@ label trial1b:
     call screen pickSpot1 with dissolve
 
 label trial1c:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene bg notrainmid
     $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     show lauren ind:
@@ -2054,9 +2057,10 @@ label trial1c:
     with dissolve
     bi "Hmmm... proof that Dan slept on the cot, and Sid slept on the bench."
     bi "Who might have that?"
+    play music "audio/invest1.wav"
     call screen chooseChar("catherine", "trial1d", "Who might have proof that Dan slept on the cot, and Sid slept on the bench?") with dissolve
 label trial1d:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene bg notrainmid
     $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     show catherine ind with dissolve
@@ -2126,7 +2130,7 @@ label trial1d:
         1, 4, "trial1e")
 
 label trial1e:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene bg notrainmid with fade
     $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     show stella ind:
@@ -2600,7 +2604,7 @@ label trial1ib:
 
 label trial1j:
     scene black with fade
-    play music "audio/rush.mp3"
+        play music "audio/coming_together.mp3"
     bi "!"
     bi "That's it!"
     show bg notrainfront with dissolve
@@ -2756,6 +2760,7 @@ label trial1m:
         3, 6, "trial1n")
 
 label trial1n:
+    play music "audio/coming_together.mp3"
     scene black with fade
     scene bg bodytrainback with dissolve
     $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
@@ -2819,6 +2824,7 @@ label trial1n:
         2, 0, "trial1o")
 
 label trial1o:
+    play music "audio/coming_together.mp3"
     scene black with fade
     scene bg bodytrainback with dissolve
     $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
@@ -3061,10 +3067,11 @@ label trial1p:
     show scary with dissolve
     bi "That settles it. I know who it was."
     bi "The murderer is..."
-
+    play music "audio/invest1.wav"
     call screen chooseChar2("kaiser", "trial1q", "  ") with dissolve
 
 label trial1q:
+    stop music
     show kaiser dead:
         xcenter .58
     play sfx "audio/shatter.mp3" volume .8
@@ -3078,6 +3085,7 @@ label trial1q:
     #show bg NOtrainFRONT
     with dissolve
     $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    play music "audio/coming_together.mp3"
     k "Excuse me?"
     k "Are you insinuating that I killed Dan?"
     b "No, I'm proclaiming it. It had to have been you."
@@ -3092,12 +3100,14 @@ label trial1q:
     b "Think back to yesterday! We have proof you couldn't have done that."
     b "Who said it..."
     show scary with dissolve
+    play music "audio/invest1.wav"
     call screen chooseChar("sid", "trial1r", "Who knows the truth?") with dissolve
 label trial1r:
     scene black
     show bg notrainfront with fade
     show kaiser ind with dissolve
     $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    play music "audio/coming_together.mp3"
     k "Excuse me?"
     b "It's true!"
     show kaiser ind:
@@ -3133,9 +3143,11 @@ label trial1r:
     o "It's... true."
     o "After 5 attempts it stopped me from typing anything else in."
     o "There's no pop-up or anything, but it's impossible to input any new letters."
+    stop music fadeout 1.0
     o "I... can't believe it, Kaiser, did you really do this?"
     b "..."
     k "..."
+    play music "audio/ominous.mp3" fadein 1.0
     k "Yes, you've figured it all out."
     k "I'm impressed, quite frankly."
     hide lauren ind with moveoutleft
@@ -3184,6 +3196,7 @@ label trial1r:
     b "Your turn? What do you mean?"
     k "You see, I knew I had to act."
     k "Becau "
+    stop music
     show braindeath
     pause .25
     hide kaiser ind

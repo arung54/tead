@@ -94,6 +94,7 @@ init python:
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = True
     config.layers = [ 'background', 'master', 'transient', 'screens', 'overlay', '1', '2', '3', '4' ]
+    renpy.music.set_volume(0.3)
 
 ##############
 #Voice Defines
@@ -374,4 +375,4 @@ label start:
 ###########
 #Start
 ###########
-    jump testft
+    jump go
