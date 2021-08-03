@@ -26,3 +26,6 @@ game/cache/screens.rpyb
 game/cache/bytecode.rpyb
 game/saves/persistent
 *.rpyb
+game/cache/bytecode.rpyb
+game/cache/screens.rpyb
+game/saves/persistent
