@@ -1441,11 +1441,16 @@ label midcar5:
     ni "What a shame... I just got out of the pen, and now I have to do this..."
     ni "At least there are a lot of easy targets -" #Arun: BIG NOISE, cut off music
     stop music
-    scene black
+    play sfx "audio/stab.mp3"
+    show scary:
+        alpha .3
     ni "Wh-what?"
-    ni "Everything's... Dark."
+    show scary:
+        alpha .7
+    ni "Everything's... dark."
 label midcar6:
-    show black #Arun: Some sort of pause/transition here
+    scene black with fade
+    $renpy.pause(1.0, hard = True)
     bi "..."
     bi "............."
     bi ".........................."
@@ -1539,7 +1544,7 @@ label midcar6:
     t "The rest of us should go to the front car, together."
     b "Agreed."
     scene black with fade
-    blank "The four of them - Dan, Stella, Dracula, and Jenny - made their way to the front car."
+    blank "The four of them - Bert, Stella, Dracula, and Jenny - made their way to the front car."
     show bg notrainfront
     $ showchibi("jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
     show lauren ind with moveinleft
@@ -1591,6 +1596,7 @@ label midcar6:
         alpha .0
         linear 4 alpha 1
     $ showchibi("catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
+    play music "audio/sadsong.mp3"
     b "Oh no..."
     b "No no no no..."
     show sid ind with moveinleft:
@@ -1647,6 +1653,7 @@ label midcar6:
     hide lauren ind with moveoutright
     $ showchibi("catherine", "jenny", "kaiser", "sam", "shahar", "stella", "dracula", "sid")
     i "I-I swear..."
+    stop music fadeout 0.5
     b "Hold on!"
     bi "I need to stop and think."
     play sfx "<from 0 to 3>audio/jaws.mp3" volume .2
@@ -1673,6 +1680,7 @@ label midcar6:
     hide dan dead
     with dissolve
     hide scary with dissolve
+    play music "audio/sadsong.mp3"
     b "Alright, everyone except for Sid and Jenny - go to the bar car."
     b "Jenny and I can talk to Sid about what happened and we'll go from there."
     bi "I probably shouldn't be alone with him."
@@ -1762,6 +1770,7 @@ label midcar6:
     b "We'll get to the bottom of it."
 
 label preinvest:
+    stop music fadeout 1.0
     scene black with fade
     blank "Bert made his way to the bar car."
     show bg notrainmid with dissolve

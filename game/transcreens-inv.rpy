@@ -160,30 +160,24 @@ screen frontCarInv():
     imagebutton:
         xpos 20
         ypos 20
-        idle "bertchibi.png" at chibizoom
-        action [Hide("frontCarInv"), Jump("trainBert")]
-
-    imagebutton:
-        xpos 20
-        ypos 70
         idle "kaiserchibi.png" at chibizoom
         action [Hide("frontCarInv"), Jump("trainKaiser")]
 
     imagebutton:
         xpos 20
-        ypos 120
+        ypos 70
         idle "laurenchibi.png" at chibizoom
         action [Hide("frontCarInv"), Jump("trainKaiser")]
 
     imagebutton:
         xpos 20
-        ypos 170
+        ypos 120
         idle "samchibi.png" at chibizoom
         action [Hide("frontCarInv"), Jump("trainKaiser")]
 
     imagebutton:
         xpos 20
-        ypos 220
+        ypos 170
         idle "shaharchibi.png" at chibizoom
         action [Hide("frontCarInv"), Jump("trainKaiser")]
 
@@ -232,36 +226,30 @@ screen midCarInv():
     imagebutton:
         xpos 20
         ypos 20
-        idle "bertchibi.png" at chibizoom
-        action [Hide("midCarInv"), Jump("trainmidBert")]
-
-    imagebutton:
-        xpos 20
-        ypos 70
         idle "catherinechibi.png" at chibizoom
         action [Hide("midCarInv"), Jump("traincatherine")]
 
     imagebutton:
         xpos 20
-        ypos 120
+        ypos 70
         idle "freddychibi.png" at chibizoom
         action [Hide("midCarInv"), Jump("trainfreddy")]
 
     imagebutton:
         xpos 20
-        ypos 170
+        ypos 120
         idle "jennychibi.png" at chibizoom
         action [Hide("midCarInv"), Jump("trainjenny")]
 
     imagebutton:
         xpos 20
-        ypos 220
+        ypos 170
         idle "stellachibi.png" at chibizoom
         action [Hide("midCarInv"), Jump("trainstella")]
 
     imagebutton:
         xpos 20
-        ypos 270
+        ypos 220
         idle "draculachibi.png" at chibizoom
         action [Hide("midCarInv"), Jump("traindracula")]
 
@@ -306,18 +294,12 @@ screen backCarInv():
     imagebutton:
         xpos 20
         ypos 20
-        idle "bertchibi.png" at chibizoom
-        action [Hide("backCarInv"), Jump("trainbackBert")]
-
-    imagebutton:
-        xpos 20
-        ypos 70
         idle "sidchibi.png" at chibizoom
         action [Hide("backCarInv"), Jump("trainsid")]
 
     imagebutton:
         xpos 20
-        ypos 120
+        ypos 70
         idle "danchibi.png" at chibizoom
         action [Hide("backCarInv"), Jump("trainbody")]
 
