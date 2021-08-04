@@ -336,7 +336,7 @@ screen navigation():
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
-        textbutton _("Characters") action ShowMenu("Characters")
+        #textbutton _("Characters") action ShowMenu("Characters")
 
         if _in_replay:
 
@@ -569,6 +569,7 @@ style return_button:
 ## example of how to make a custom screen.
 
 screen about():
+    add "images/scary.png" alpha 0.8
 
     tag menu
 
@@ -581,14 +582,19 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
-            text _("Version [config.version!t]\n")
+            label "TEAD"
+            text _("Alpha Version 0.1\n")
+            text _("Graphics, Writing: Julian Pagliaccio\n")
+            text _("Music, Coding, Writing: Arun Ganesh\n")
+            text _("Music: Andrew Kim\n")
+            text _("Shirtless Pic: Shahar Syed\n")
+            text _("Alpha Testing: You!\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("Made with Ren'Py.")
 
 
 style about_label is gui_label

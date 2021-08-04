@@ -326,7 +326,7 @@ label trainComputer:
         $train_evidence1[0] = True
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
-    call traindone from _call_traindone
+    call traindone
     call screen frontCarInv
 
 label trainFrontWindow:
@@ -344,7 +344,7 @@ label trainFrontWindow:
         $train_evidence1[1] = True
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
-    call traindone from _call_traindone_1
+    call traindone
     call screen frontCarInv
 
 label trainBert:
@@ -402,7 +402,7 @@ label trainKaiser:
         $train_evidence1[2] = True
     if train_evidence1[0] and train_evidence1[1] and train_evidence1[2]:
         bi "I think that's everything to find in this car."
-    call traindone from _call_traindone_2
+    call traindone
     call screen frontCarInv
 
 label trainmidBert:
@@ -483,7 +483,7 @@ label traincatherine:
         blank "Catherine's Account was added to evidence."
     if False not in train_evidence2:
         bi "I think that's everything important in this car."
-    call traindone from _call_traindone_3
+    call traindone
     call screen midCarInv
 
 label traindracula:
@@ -512,7 +512,7 @@ label traindracula:
         blank "Dracula's Account was added to evidence."
     if False not in train_evidence2:
         bi "I think that's everything important in this car."
-    call traindone from _call_traindone_4
+    call traindone
     call screen midCarInv
 
 label trainlights:
@@ -539,7 +539,7 @@ label trainlights:
     else:
         b "Hmmm... The lights are still off."
         $ lightscount += 10
-    call traindone from _call_traindone_5
+    call traindone
     call screen midCarInv
 
 label trainwindows:
@@ -564,7 +564,7 @@ label trainwindows:
     else:
         b "Hmmm... It's pretty dark out."
         $ windowcount += 10
-    call traindone from _call_traindone_6
+    call traindone
     call screen midCarInv
 
 label trainbar:
@@ -643,7 +643,7 @@ label trainsid:
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
-    call traindone from _call_traindone_7
+    call traindone
     call screen backCarInv
 
 label traincloset:
@@ -663,7 +663,7 @@ label traincloset:
         blank "Sid's Account was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
-    call traindone from _call_traindone_8
+    call traindone
     call screen backCarInv
 
 label traincoin:
@@ -687,7 +687,7 @@ label traincoin:
         blank "Back Car Closet was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
-    call traindone from _call_traindone_9
+    call traindone
     call screen backCarInv
 
 label trainbody:
@@ -710,7 +710,7 @@ label trainbody:
         blank "State of the Body was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
-    call traindone from _call_traindone_10
+    call traindone
     call screen backCarInv
 
 label traindone:

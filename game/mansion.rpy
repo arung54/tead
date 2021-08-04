@@ -64,18 +64,18 @@ label mansionGo:
     show stella ind with moveinright:
         xcenter .75
     t "Strategize how exactly?"
-    d "Maybe we could each admit what crimes we've committed and try to find a common link."
+    d "Maybe we could each continue discussing reasons we could be here and try to find a common link."
     d "That common link could then help us identify the Game Master. The Game Master might even be the common link themselves."
     d "Then whoever is the killer this round would have better odds of killing the Game Master and ending the game."
-    d "For example, my crime was vampiric manslaughter."
+    d "For example, I've committed vampiric manslaughter."
     d "I think it's unfair to call my need for sustenance a crime, but I digress."
     show scary with dissolve:
         alpha .5
-    bi "Common link? The few crimes people had admitted to definitely didn't have a common link. Was Dracula really this irrational?"
+    bi "Common link? The few things people had admitted to definitely didn't have a common link. Was Dracula really this irrational?"
     bi "No... I think I understood what Dracula was trying to do, but it was best not to say it out loud and he must know that."
     bi "Kaiser admitted to robbing trains, and then said it was \"his turn\" to murder someone on the train."
-    bi "So there's a reasonable chance the person whose \"turn\" it is to murder someone in the mansion committed a crime at the mansion."
-    bi "If people honestly admitted to crimes, we could rule out suspects whose crimes couldn't take place at a mansion."
+    bi "So there's a reasonable chance the person whose \"turn\" it is to murder someone in the mansion is tied to the mansion."
+    bi "If people honestly admitted to their pasts, we could rule out suspects who hadn't been near this mansion."
     bi "Or, if the murderer slipped up, we could even find out ahead of time who committed a crime in the mansion and pay extra attention to them."
     bi "Obviously, if the murderer realized this, they would simply not admit to a crime that could tie them to this location."
     bi "So Dracula must be hoping the murderer isn't so wise."

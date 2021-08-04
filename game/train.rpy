@@ -1484,14 +1484,12 @@ label midcar5:
     hide sepia
     with dissolve
     ni "What a shame... I just got out of the pen, and now I have to murder again..."
-    ni "At least there are a lot of easy targe-{nw}" #Arun: BIG NOISE, cut off music
+    ni "At least there are a lot of easy targe-{p=0.5}{nw}" #Arun: BIG NOISE, cut off music
     stop music
+    show scary:
+        alpha 1.0
     play sfx "audio/stab.mp3"
-    show scary:
-        alpha .3
     ni "Wh-what?"
-    show scary:
-        alpha .7
     ni "Everything's... dark."
 label midcar6:
     scene black with fade
@@ -3278,7 +3276,7 @@ label trial1r:
     k "He seemed like the most likely candidate."
     b "Your turn? What do you mean?"
     k "Remember what the screen said? I was chosen as the murderer."
-    k "When we arrived here I{nw}"
+    k "When we arrived here I-{p=0.5}{nw}"
     stop music
     show braindeath
     pause .25
