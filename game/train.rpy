@@ -1032,7 +1032,7 @@ label day2:
     ni "But for now, I should go meet the others."
 label testft:
     scene bg trainmid
-    $ showchibint("bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula")
+    $ showchibint("bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula", "jenny")
     $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     with fade
     show catherine happy with dissolve:
@@ -1084,6 +1084,7 @@ label testft:
     hide bert happy
     hide sam
     with dissolve
+    $showchibi("jenny", "stella", "lauren", "freddy", "sid")
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
@@ -1105,7 +1106,7 @@ label testft:
     tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
     tut "For the first free time segment, move to the front car and talk to Bert."
     tut "For this segment only, the skip function will be disabled."
-    call screen midCar with fade
+    call screen midCar with dissolve
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
     # b "Well, we should get to know each other."
@@ -1129,7 +1130,9 @@ label testft:
     # bi "I - what?"
     # scene black with fade
 label postFT0:
-    show bg trainmid with dissolve
+    scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
+    with dissolve
     ni "Hmm... that didn't take up as much time as I hoped it would."
     ni "Guess I'll keep mingling."
     play sfx "audio/beep.mp3"
@@ -1140,15 +1143,17 @@ label postFT0:
     hide freetime with dissolve
     tut "For this and all future free time segments, you will have the luxury of talking to anyone or skipping."
     $ftecounter = 1
-    call screen midCar
+    call screen midCar with dissolve
 label postFT1:
-    blank "30 minutes had passed, Dan went to meet the others in the bar car."
+    scene black with fade
+    blank "Thirty minutes had passed, so Dan went to meet the others in the bar car."
 
 #julian
 label midcar4:
-    play music "audio/rush.mp3"
-    show bg trainmid with fade
-    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg trainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 2)
+    $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    with fade
     show bert sad with dissolve:
         xcenter .5
         linear .3 xcenter .75
@@ -1391,7 +1396,8 @@ label midcar5:
     scene black
     blank "They shared the rest of their rationed non-alcoholic food and drinks amongst themselves."
     blank "There was much less talking tonight."
-    show bg ntrainmid
+    scene bg ntrainmid
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 4)
     show frogsit
     with dissolve
     $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
@@ -1435,8 +1441,10 @@ label midcar5:
     n "I'll come too, Sid."
     scene black
     blank "They made their way to the back car."
-    show bg notrainback with dissolve
-    $ showchibi("sid")
+    scene bg notrainback
+    $ showchibint("sid")
+    $ statusnt("Caboose", "dan", ch = 1, sun = 4)
+    with dissolve
     show sid ind with dissolve
     i "Well, goodnight Dan!" #Arun: Lights off
     n "Hey, Sid. Before you sleep. How are you, well, feeling? About everything."
@@ -1476,7 +1484,7 @@ label midcar5:
     hide sepia
     with dissolve
     ni "What a shame... I just got out of the pen, and now I have to murder again..."
-    ni "At least there are a lot of easy targets -" #Arun: BIG NOISE, cut off music
+    ni "At least there are a lot of easy targe-{nw}" #Arun: BIG NOISE, cut off music
     stop music
     play sfx "audio/stab.mp3"
     show scary:
@@ -1500,8 +1508,10 @@ label midcar6:
     hide bertface2
     blank "pssst!!!"
     play music "audio/invest1.wav"
-    show bg notrainmid
-    $ showchibi("catherine", "freddy", "jenny", "stella", "dracula")
+    scene bg notrainmid
+    $ showchibint("catherine", "freddy", "jenny", "stella", "dracula")
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
+    with dissolve
     show stella happy with dissolve:
         linear .3 xcenter .75
     t "psssst!"
@@ -1584,8 +1594,10 @@ label midcar6:
     b "Agreed."
     scene black with fade
     blank "The four of them - Bert, Stella, Dracula, and Jenny - made their way to the front car."
-    show bg notrainfront
-    $ showchibi("jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
+    scene bg notrainfront
+    $ showchibint("jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula")
+    $ statusnt("Front Car", "bert", ch = 1, sun = 4)
+    with dissolve
     show lauren ind with moveinleft
     o "What's going on?"
     show lauren ind:
@@ -1633,10 +1645,10 @@ label midcar6:
     blank "Catherine and Freddy joined them on the way to the caboose."
     blank "But when they got there..."
     play music "audio/sadsong.mp3" fadein 2.0
-    show bg bodytrainback:
-        alpha .0
-        linear 4 alpha 1
-    $ showchibi("catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
+    scene bg bodytrainback
+    $ showchibint("catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
+    $ statusnt("Caboose", "bert", ch = 1, sun = 4)
+    with Dissolve(2.0)
     b "Oh no..."
     b "No no no no..."
     show sid ind with moveinleft:
@@ -1816,8 +1828,10 @@ label preinvest:
     stop music fadeout 1.0
     scene black with fade
     blank "Bert made his way to the bar car."
-    show bg notrainmid with dissolve
-    $ showchibi("catherine", "freddy", "jenny", "stella", "dracula")
+    scene bg notrainmid
+    $ showchibint("catherine", "freddy", "jenny", "stella", "dracula")
+    $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
+    with dissolve
     show jenny ind with dissolve
     j "Okay, everyone should be back in the car they were in when the lights went off."
     b "Perfect."
@@ -1834,11 +1848,12 @@ label preinvest:
     show investstart with dissolve
     pause 1
     hide investstart with dissolve
-    tut "During investigations, you'll need to find pieces of evidence by clicking around and by talking to people."
+    tut "During investigations, you'll need to find pieces of evidence by clicking on important objects and by talking to people."
+    tut "People can be talked to by clicking on their icons, just like in free time."
     tut "You can use the Evidence Folder button in the top right to review evidence you've collected,"
     tut "and once you've collected all the evidence in a room, you'll be alerted."
-    tut "If you need to review this information, it is available via the menu."
-    call screen midCarInv
+    #tut "If you need to review this information, it is available via the menu."
+    call screen midCarInv with dissolve
 
 ################################################################################
 ################################################################################      TRIAL STARTING!!! WOOT WOOT LEGO
@@ -1848,8 +1863,10 @@ label trial1a:
     play music "audio/coming_together.mp3"
     scene black with fade
     blank "Everyone was brought to the bar car."
-    show bg notrainmid with fade
-    $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    scene bg notrainmid
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Bar Car", "bert", ch=1, sun=4)
+    with dissolve
     show stella ind with dissolve
     t "So what's the plan?"
     t "I think I agree with the pirate at this point, let's all just jump out a window."
@@ -1941,7 +1958,9 @@ label trial1a:
 label trial1b:
     play music "audio/coming_together.mp3"
     scene bg notrainmid
-    $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Bar Car", "bert", ch=1, sun=4)
+    with dissolve
     show bert happy with moveinleft
     b "Yeah, that's it!"
     hide bert happy with moveoutright
@@ -2003,7 +2022,9 @@ label trial1b:
 label trial1c:
     play music "audio/coming_together.mp3"
     scene bg notrainmid
-    $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Bar Car", "bert", ch=1, sun=4)
+    with dissolve
     show lauren ind:
         xcenter .75
     show jenny ind:
@@ -2102,7 +2123,9 @@ label trial1c:
 label trial1d:
     play music "audio/coming_together.mp3"
     scene bg notrainmid
-    $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Bar Car", "bert", ch=1, sun=4)
+    with dissolve
     show catherine ind with dissolve
     c "Huh? Me?"
     c "What do you mean?"
@@ -2171,8 +2194,10 @@ label trial1d:
 
 label trial1e:
     play music "audio/coming_together.mp3"
-    scene bg notrainmid with fade
-    $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    scene bg notrainmid
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Bar Car", "bert", ch=1, sun=4)
+    with dissolve
     show stella ind:
         xcenter .25
     show sam:
@@ -2283,8 +2308,10 @@ label trial1f:
     hide scary with dissolve
     call screen trainEvidenceTrial(-1, 3, "trial1g") with dissolve
 label trial1g:
-    scene bg notrainmid with fade
-    $ showchibi("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    scene bg notrainmid
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Bar Car", "bert", ch=1, sun=4)
+    with dissolve
     show drac ind:
         xcenter .25
     show sid ind:
@@ -2425,8 +2452,10 @@ label trial1h:
 label trial1i:
     scene black with fade
     blank "The ten of them followed Freddy to the front car."
-    scene bg notrainfront with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    with dissolve
     show jenny ind with dissolve:
         xcenter .5
         linear 0.3 xcenter .75
@@ -2647,8 +2676,10 @@ label trial1j:
     play music "audio/coming_together.mp3"
     bi "!"
     bi "That's it!"
-    show bg notrainfront with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    with dissolve
     show jenny ind with dissolve:
         xcenter .5
     j "What do you mean a scythe?"
@@ -2731,8 +2762,10 @@ label trial1l:
 label trial1m:
     scene black with fade
     blank "All 11 of them made their way to the back car, together."
-    show bg bodytrainback with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg bodytrainback
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Caboose", "bert", ch=1, sun=4)
+    with dissolve
     show sid ind with dissolve
     i "Damn..."
     i "I don't really want to, uh, climb over his body to check the window..."
@@ -2802,8 +2835,10 @@ label trial1m:
 label trial1n:
     play music "audio/coming_together.mp3"
     scene black with fade
-    scene bg bodytrainback with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg bodytrainback
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Caboose", "bert", ch=1, sun=4)
+    with dissolve
     show frog ind with moveinbottom
     f "W-what do you mean? What object?"
     b "When I came back here to investigate more, I noticed this hanging right outside the back window."
@@ -2866,8 +2901,10 @@ label trial1n:
 label trial1o:
     play music "audio/coming_together.mp3"
     scene black with fade
-    scene bg bodytrainback with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg bodytrainback
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Caboose", "bert", ch=1, sun=4)
+    with dissolve
     show lauren ind with dissolve
     b "Believe it or not, Sam might be on to something."
     b "The user counter on the monitors have a different value now."
@@ -2906,8 +2943,10 @@ label trial1o:
     hide sid ind with moveoutleft
     scene black with fade
     blank "All 11 made their way back up to the front car."
-    show bg notrainfront with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
+    scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    with dissolve
     show jenny ind with dissolve
     j "I'll try it."
     j "Sid, what do I type again?"
@@ -3121,10 +3160,12 @@ label trial1q:
         linear .75 xcenter .5
     blank "It... has to be Kaiser."
     scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    with dissolve
     show kaiser ind
     #show bg NOtrainFRONT
     with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     play music "audio/coming_together.mp3"
     k "Excuse me?"
     k "Are you insinuating that I killed Dan?"
@@ -3144,10 +3185,12 @@ label trial1q:
     call screen chooseChar("sid", "trial1r", "Who knows the truth?") with dissolve
 label trial1r:
     scene black
-    show bg notrainfront with fade
-    show kaiser ind with dissolve
-    $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     play music "audio/coming_together.mp3"
+    scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    with dissolve
+    show kaiser ind with dissolve
     k "Excuse me?"
     b "It's true!"
     show kaiser ind:
@@ -3234,8 +3277,8 @@ label trial1r:
     k "Regardless, it was my turn, and I had to choose someone."
     k "He seemed like the most likely candidate."
     b "Your turn? What do you mean?"
-    k "You see, I knew I had to act."
-    k "Becau "
+    k "Remember what the screen said? I was chosen as the murderer."
+    k "When we arrived here I{nw}"
     stop music
     show braindeath
     pause .25

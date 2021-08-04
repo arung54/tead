@@ -220,13 +220,13 @@ init python:
         renpy.show(name = "location", what = Text("{b}"+name+"{/b}"), at_list = [Position(xpos=1055, xanchor=0, ypos=5, yanchor=0)])
         renpy.show("ch"+str(ch), at_list = chapterlist)
         if sun == 1:
-            renpy.show("sunup", at_list = sunlist)
+            renpy.show("sun1", at_list = sunlist)
         if sun == 2:
-            renpy.show("sunout", at_list = sunlist)
+            renpy.show("sun2", at_list = sunlist)
         if sun == 3:
-            renpy.show("sundown", at_list = sunlist)
+            renpy.show("sun3", at_list = sunlist)
         if sun == 4:
-            renpy.show("sungone", at_list = sunlist)
+            renpy.show("sun4", at_list = sunlist)
         if person == "dan":
             renpy.show("danchibi2", at_list = chibilist)
         if person == "bert":
