@@ -158,8 +158,16 @@ label trainGo:
     with dissolve
     show sam with dissolve
     s "I can't think of any other solutions..." #Arunj: Maybe use another word for explanation here to avoid redundancy
+    n "Does that mean... we actually have to play this game?"
+    ni "This isn't all a bad dream?"
+    s "It seems like it."
     s "Either way, I don't think it's worth spending any more time on."
     s "We're finally all awake, we should try to figure out what's going on."
+    s "Most of us can't really do anything about the game until someone dies."
+    s "Maybe if we find a way out of here, we can escape this game and no one will have to die."
+    s "So that should be our goal. And hopefully the murderer will give us some time to do that."
+    ni "We know the Game Master is one of us... would they really allow that?"
+    ni "Well, perhaps they have their reasons for giving us a way out."
     n "Right. We should start exploring the train."
     show sam:
         xcenter .5
@@ -171,7 +179,8 @@ label trainGo:
     ni "That seems a little optimistic..."
     s "It's worth a shot."
     b "That's the spirit! Poggers!"
-    s "It's not like we're going to just sit around here."
+    s "Plus, it's not like we're going to just sit around here."
+    s "If anything we'd better hurry, otherwise the murderer might have time to plan a murder before we find a way out."
     ni "..."
     show sam:
         xcenter .75
@@ -294,6 +303,8 @@ label trainGo:
     hide drac ind with moveoutleft
     s "Yeah. It'd be smarter of us to stay in groups of three or more."
     s "I'm wary of trusting anybody too much yet, especially after what the monitor said."
+    s "Granted, if two people go off on their own and one dies it'd be pretty obvious who did it."
+    s "But still, better safe than sorry."
     n "Alright. Let's go."
 
 label backcar1:
@@ -508,6 +519,7 @@ label frontcar1:
         zoom .9 xzoom -1 xcenter .5 ycenter .46
     k "But the controls are all either locked or password protected."
     k "So it seems like we can't stop the train or change the course."
+    k "It also doesn't seem like we have access to any information that will help us in the game."
     hide kaiser ind with moveoutleft
     show catherine ind with moveinleft:
         xcenter .25
@@ -516,7 +528,7 @@ label frontcar1:
     show sam with moveinright:
         xcenter .75
     s "Nobody else is on the train. Damn."
-    s "I was hoping we could find someone to help us."
+    s "I guess expecting the Game Master to let someone else on the train to save us was too much..."
     c "No conductor and no way to control the train ourselves."
     c "To summarize, it's just these three train cars."
 label showcars:
@@ -545,6 +557,9 @@ label frontcar2:
         xcenter .8
     c "We don't have too much to work with here..."
     c "And we still don't know where we're going."
+    o "If we wait long enough will we arrive somewhere we can get off at? That'd be kind of boring."
+    o "Or are we doomed to crash if a murder doesn't happen... that would be spicy!"
+    o "Hmm.. if I were the Game Master, what would I do... would I make it boring or spicy?"
     ses "Mrow..."
     show shahar ind with moveinleft:
         xcenter .25
@@ -587,6 +602,7 @@ label frontcar2:
         alpha .5
     ni "How can I cooperate after what that screen told us..."
     ni "I can't trust these people... even a child, like Freddy."
+    ni "For all I know he's a super smart kid hellbent on killing us all as the Game Master."
     ni "Best to keep my guard up."
     hide scary with dissolve
     show sam with moveinleft:
@@ -625,9 +641,10 @@ label frontcar2:
         xcenter .15
         linear 0.15 xcenter .25
     o "That was a little harsh."
-    s "...Yeah, maybe, fine. Maybe I'll apologize so he doesn't try to murder me." #Arunj: Kind of out of character
+    s "...Yeah, maybe, fine. I'll go apologize." #Arunj: Kind of out of character
     o "I'll come too. We shouldn't be starting fights over dumb things."
     o "We need to work together."
+    o "Giving someone more reason to kill you when you're not the Game Master is bad for all of us."
     s "Whatever... I'm heading to the back car."
     hide lauren ind
     hide sam
@@ -692,6 +709,9 @@ label frontcar3:
     with fade
     b "Well, it seems like the others were right."
     b "Despite all the stuff up here, it all seems password protected."
+    b "Hmm... maybe the Game Master is using this computer to control the game?"
+    d "If anyone knows the password, it's probably the Game Master."
+    d "It seems unlikely they would give the password to any of us."
     d "I am particularly intrigued by something."
     d "The password screens all have another value shown."
     d "For example..."
@@ -772,7 +792,7 @@ label midcar3:
     c "It's still nice to relax and eat for a bit."
     ses "mewmewmewmew!"
     scene black with fade
-    n "{i}It feels... surprisingly nice having a communal meal.{/i}"
+    ni "It feels... surprisingly nice having a communal meal."
     blank "They ate; about an hour passed."
     show bg ntrainmid
     show frogsit
@@ -784,6 +804,7 @@ label midcar3:
     show jenny ind with dissolve:
         xcenter .25
     j "Thankfully there's food on the train. It would have been an even bigger disaster otherwise."
+    ni "I'll refrain from asking how many days of food we have for now..."
     k "Yes, we got quite lucky there."
     ni "Is it luck?"
     n "Yeah."
@@ -919,12 +940,16 @@ label midcar3:
     with fade
     n "Wow... \"Train Route\" would almost definitely be useful."
     i "I'm positive that it would tell us where the train is going, if we could open it."
+    i "We could figure out how much time we have."
+    i "If we have time, the murderer could give us time to find a way out if they're feeling nice!"
     show scary with dissolve:
         alpha .5
     ni "And... \"participants\". I wonder if that's about... us."
     ni "If it is, maybe that file could tell us why we're all here..."
-    ni "Maybe it would tell us who's behind all this."
+    ni "Maybe the Game Master's not in the file. If so, it would tell us who's behind all this."
     ni "If I could find them... I could kill them... and end this mess."
+    ni "After all, the screen never said people who weren't chosen couldn't murder people."
+    ni "If I know I'm innocent, why shouldn't I try to kill someone to maximize my chances of surviving?"
     hide scary with dissolve
     i "That's not all, though!"
     i "Afterwards, I noticed something else when I hit Return..."
@@ -945,10 +970,15 @@ label midcar3:
     i "Haha, really, it's nothing..."
     n "Let's keep this between you and me for now."
     n "This might come in handy, but I don't think we should share it with everyone just yet."
-    i "Yeah... I don't trust some of these people."
-    i "The pirate guy and the vampire guy scare me, and that French lady is such a drunk hag."
     hide sid happy
     show sid ind
+    i "Yeah... I don't trust some of these people."
+    i "The pirate guy and the vampire guy scare me, and that French lady is such a drunk hag."
+    i "I think the pirate and vampire are hiding something."
+    i "And the rich lady would have tons of money, enough to hire people to kidnap all of us."
+    ni "Hm..."
+    ni "There's no chance a Game Master would reveal this kind of information to me, right?"
+    ni "Building trust with someone gives me one less candidate to murder, if nothing else."
     n "I'm with you. Let's stick together Sid."
     i "D-deal!"
     play sfx "audio/butt.mp3" volume .5
@@ -1162,7 +1192,9 @@ label midcar4:
     s "I haven't seen a single camera on board, so if they wanted to enjoy it, that's probably the only way."
     o "They're here to 'Enjoy it?' Sam, you sound a little hysterical..."
     s "We've been kidnapped, basically twice now, and have zero information on what the hell's happening."
-    s "I'm stuck on a train with Dracula and a pirate and you're telling me I'm hysterical for being confused?"
+    s "If they wanted us dead, they could have killed us when they kidnapped us. Instead we're playing this game."
+    s "Not to mention I'm stuck on a train with Dracula and a pirate."
+    s "And you're telling me I'm hysterical for being confused?"
     o "..."
     o "Fair enough."
     o "What do you think we should do about it?"
@@ -1224,7 +1256,7 @@ label midcar4:
     c "Even if it doesn't help figure out who the mole is, it'd be good to learn more about each other."
     j "Yeah, we're all stuck in here together anyway."
     c "With that said, I don't feel particularly notable..."
-    c "I'm just a veterinary student... I like rock climbing... Long walks on the beach..."
+    c "I'm just a worker at a shelter... I like rock climbing... Long walks on the beach..."
     hide catherine ind with moveoutright
     show bert happy with moveinright:
         xcenter .75
@@ -1256,6 +1288,7 @@ label midcar4:
     t "I have nothing to gain from... This."
     t "I'm only telling you all this so that you're not surprised when my past inevitably comes up."
     t "And sadly, I have no insight on who it might be."
+    t "I'm rich enough to put this together, but there's... easier ways to entertain oneself with money."
     hide stella ind with moveoutleft
     b "..."
     b "Well at least she's being open about it."
@@ -1318,6 +1351,8 @@ label midcar4:
         xcenter .75
     t "If the kid wants to talk, let him."
     t "It can't hurt."
+    t "Plus remember when that screen said our endings are deserved?"
+    t "It must be something about our pasts, why else would we \"deserve\" this?"
     o "It's clearly a sensitive topic for him."
     o "We don't need to make this situation any shittier."
     t "Hmph, just when I thought we were going to get into the juicy stuff..."
@@ -1333,7 +1368,8 @@ label midcar4:
         linear .3 alpha .5
     ni "And morale."
     ni "Maybe I really do need to take this into my own hands..."
-    ni "If we don't make any progress by midnight, maybe, I'll..."
+    ni "If we don't make any progress by midnight, I have some guesses..."
+    ni "Maybe tomorrow morning I should..."
     hide scary with dissolve
     show jenny ind:
         xcenter .75
@@ -1343,7 +1379,6 @@ label midcar4:
         linear 0.15 xcenter .2
     show frog ind with moveinbottom
     f "Can we go to sleep? I'm tired..."
-    ni "It's hard not to feel bad for the kid..."
     j "Maybe we should just call it a day."
     j "I don't see us getting anywhere with this."
     o "Alright, let's divide up the food for tonight."
@@ -1354,7 +1389,7 @@ label midcar4:
     show lauren ind:
 label midcar5:
     scene black
-    blank "They shared the rest of the non-alcoholic food and drinks amongst themselves."
+    blank "They shared the rest of their rationed non-alcoholic food and drinks amongst themselves."
     blank "There was much less talking tonight."
     show bg ntrainmid
     show frogsit
@@ -1380,6 +1415,7 @@ label midcar5:
     h "I feel a bit guilty, lads."
     h "I want to 'figure out the passwords', as ye say, but I ain't much help when it comes to techlonogy..."
     k "There's no harm in trying."
+    k "Random words and phrases are as good a guess as any."
     k "We might as well head up to the front as well."
     hide kaiser ind
     hide shahar ind
@@ -1439,7 +1475,7 @@ label midcar5:
     hide start2
     hide sepia
     with dissolve
-    ni "What a shame... I just got out of the pen, and now I have to do this..."
+    ni "What a shame... I just got out of the pen, and now I have to murder again..."
     ni "At least there are a lot of easy targets -" #Arun: BIG NOISE, cut off music
     stop music
     play sfx "audio/stab.mp3"
@@ -1479,6 +1515,7 @@ label midcar6:
     show drac happy:
         xcenter .25
     d "Marvelous, really."
+    bi "Is it really a good idea to drink when we're out of food?"
     b "I think I'm going to try and sleep."
     hide stella happy
     show stella ind:
@@ -1667,6 +1704,9 @@ label midcar6:
     bi "Dan is dead."
     show dan dead with dissolve
     bi "There's nothing I can do about that..."
+    bi "It makes sense. We're out of food, the murderer didn't have much time to act."
+    bi "And we don't know what consequences there are for the murderer not doing anything."
+    bi "It's all so logical, but still so shocking..."
     bi "But... I can figure out what to do next."
     bi "Dan deserves justice."
     show dan dead:
