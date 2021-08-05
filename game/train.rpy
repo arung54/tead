@@ -1914,7 +1914,7 @@ label trial1a:
     j "Anyway... who here can vouch, with certainty, about where someone else was during the darkness?"
     j "It's important to figure out exactly where everyone was."
     j "Freddy and I, for example, were holding hands the whole time."
-    j "In fact, I think Dan even saw us holding hands before it got dark."
+    j "In fact, I think Bert even saw us holding hands before it got dark."
     hide catherine with moveoutright
     show frog ind with moveinright:
         xcenter .75

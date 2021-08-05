@@ -134,10 +134,10 @@ screen trainEvidence():
 screen frontCarInv():
     imagemap:
         ground "bg ntrainfront.png"
-        hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")]
-        hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")]
-        hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")]
-        hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")]
+        hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'ex'
+        hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex'
+        hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex'
+        hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex'
 
     add "status.png"
     add Text("{b}Front Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
@@ -186,23 +186,23 @@ screen frontCarInv():
 screen midCarInv():
     imagemap:
         ground "bg notrainMID.png"
-        hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")]
-        hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")]
-        hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")]
+        hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex'
+        hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex'
+        hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex'
         ###
-        hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")]
-        hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")]
-        hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")]
-        hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")]
+        hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
+        hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
+        hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
+        hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
         ###
-        hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")]
-        hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")]
+        hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex'
+        hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex'
         ##
-        hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")]
-        hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")]
-        hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")]
-        hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")]
-        hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")]
+        hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
+        hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
+        hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
+        hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
+        hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
 
     add "status.png"
     add Text("{b}Bar Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
@@ -257,20 +257,20 @@ screen midCarInv():
 screen backCarInv():
     imagemap:
         ground "bg bodytrainBACK.png"
-        hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")]
+        hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'ex'
         ##
-        hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")]
+        hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")] mouse 'ex'
         ##
-        hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")]
+        hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")] mouse 'ex'
         ##
-        hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")]
+        hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")] mouse 'ex'
         ##
-        hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")]
+        hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")] mouse 'ex'
         ##
-        hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")]
+        hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")] mouse 'ex'
         ##
-        hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")]
-        hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")]
+        hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")] mouse 'ex'
+        hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")] mouse 'ex'
 
     add "status.png"
     add Text("{b}Caboose{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
