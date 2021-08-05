@@ -3302,15 +3302,24 @@ label trial1r:
     i "What happened?!"
     b "He just, "
     extend "died..."
-
-
-
-
-    #kaiser not reveal advantage
-    #train important
-    #dies -> eveyrone else pass out
-
-    #
-
-
-#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    show bg notrainfront1
+    with dissolve
+    pause 1.0
+    show bg notrainfront2 with dissolve
+    pause 1.0
+    b "..."
+    b "We survived..."
+    bi "Technically, we were closer to winning this game."
+    bi "But really, we had lost more than we had won."
+    b "...what n-{p=0.5}{nw}"
+    scene black
+    pause 1.0
+    bi "A more humane person would have given us some time."
+    bi "To celebrate, to reflect, to mourn."
+    bi "But instead, with no warning, I passed out."
+    play music "audio/ominous.mp3" fadein 3.0
+    show endch1 with Dissolve(3.0)
+    pause
+    stop music fadeout 3.0
+    hide endch1 with Dissolve (3.0)
+    $ MainMenu(confirm=False)()
