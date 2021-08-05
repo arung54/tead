@@ -9,20 +9,20 @@ screen trainMapInv():
     imagemap:
         ground "trainmapoverlayinv.png"
         hotspot(182, 461, 330, 210):
-            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
+            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMapInv"), Hide("trainPreview")]
             hovered ShowTransient("trainPreview", img="trainmapoverlay1.png")
             unhovered Hide("trainPreview")
         hotspot(542, 462, 330, 210):
-            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
+            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("midCarInv", transition=Dissolve(0.3)), Hide("trainMapInv"), Hide("trainPreview")]
             hovered ShowTransient("trainPreview", img="trainmapoverlay2.png")
             unhovered Hide("trainPreview")
         hotspot(905, 460, 329, 211):
-            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
+            action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("backCarInv", transition=Dissolve(0.3)), Hide("trainMapInv"), Hide("trainPreview")]
             hovered ShowTransient("trainPreview", img="trainmapoverlay3.png")
             unhovered Hide("trainPreview")
     imagemap:
         idle "trainmapoverlayleft.png"
-        hotspot(0, 0, 119, 719) action [Hide("trainMapInv", transition=Dissolve(0.3))]
+        hotspot(0, 0, 119, 719) action [Hide("trainPreview"), Hide("trainMapInv", transition=Dissolve(0.3))]
 style button_text:
     color "#fff"
 

@@ -671,7 +671,7 @@ label frontcar2:
     show bert happy:
         xcenter .75
     b "Yeah, of course! I just noticed a panel over here that seemed interesting."
-    b "It seems like there are three accessible switches, and button."
+    b "It seems like there are three accessible switches, and a button."
     n "Ah, that makes sense."
     n "Jenny mentioned the button earlier."
     n "She pressed it up here, and it played the \"closing doors\" message over the intercom in the bar car."
@@ -1295,7 +1295,7 @@ label midcar4:
     t "I have nothing to gain from... This."
     t "I'm only telling you all this so that you're not surprised when my past inevitably comes up."
     t "And sadly, I have no insight on who it might be."
-    t "I'm rich enough to put this together, but there's... easier ways to entertain oneself with money."
+    t "I'm rich enough to put this together, but there are... easier ways to entertain oneself with money."
     hide stella ind with moveoutleft
     b "..."
     b "Well at least she's being open about it."
