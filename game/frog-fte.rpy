@@ -8,7 +8,7 @@ label frogAsk0:
     f "I miss my mom..."
     ni "I should go talk to Bert instead of this kid."
     hide frog with dissolve
-    call screen midCar
+    call screen midCar with dissolve
 
 #Train 2
 label frogAsk1:
@@ -22,7 +22,7 @@ label frogAsk1:
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen midCar with dissolve
 
 #Mansion 1
 label frogAsk2:

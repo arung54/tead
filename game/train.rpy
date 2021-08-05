@@ -11,7 +11,7 @@ label trainGo:
     z "Hey..." #Arunj: Change speaker to ???
     ni "Huh?"
     z "HEY!!!"
-    $ scenent("bg trainmid", "Bar Car", "dan", ch = 1, sun = 3)
+    $ scenent("bg trainmid", "???", "dan", ch = 1, sun = 3)
     show lauren ind
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
@@ -23,6 +23,8 @@ label trainGo:
         xcenter .5
         linear 0.3 xcenter .75
     o "I mean, look around. Where do you think we are?"
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 3)
+    with dissolve
     n "It's a... train car."
     o "And we're {i}moving.{/i}"
     n "Wow, really?"
@@ -405,8 +407,7 @@ label midcar2:
     s "I don't think that's relevant."
     t "Oh please, you twerps are no fun."
     hide stella drunk with moveoutright
-    hide stellachibi with dissolve
-    show stellapassed
+    show stellapassed with dissolve
     hide sam
     show sam:
         xcenter .25
@@ -431,7 +432,7 @@ label midcar2:
     s "Oh, the others are back."
     hide sam with dissolve
     blank "The front train car door opened, and Shahar, Jenny, Sid, and Catherine walked in."
-    $showchibi("sam", "lauren", "bert", "stella", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
+    $showchibi("sam", "freddy", "lauren", "bert", "stella", "jenny", "shahar", "sid", "catherine", "dracula",  "kaiser")
     show jenny happy with dissolve
     j "Hey, you guys are back already!"
     show jenny happy:
@@ -550,16 +551,16 @@ label frontcar2:
         zoom 1
     $ showchibint("sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
     $ statusnt("Front Car", "dan", ch = 1, sun = 3)
-    with fade
-    show sidstand with dissolve:
+    show sidstand:
         zoom .9 xcenter .5 ycenter .46
+    with fade
     show catherine ind with dissolve:
         xcenter .8
     c "We don't have too much to work with here..."
     c "And we still don't know where we're going."
-    o "If we wait long enough will we arrive somewhere we can get off at? That'd be kind of boring."
-    o "Or are we doomed to crash if a murder doesn't happen... that would be spicy!"
-    o "Hmm.. if I were the Game Master, what would I do... would I make it boring or spicy?"
+    c "If we wait long enough will we arrive somewhere we can get off at? That'd be kind of boring."
+    c "Or are we doomed to crash if a murder doesn't happen... that would be spicy!"
+    c "Hmm.. if I were the Game Master, what would I do... would I make it boring or spicy?"
     ses "Mrow..."
     show shahar ind with moveinleft:
         xcenter .25
@@ -595,9 +596,9 @@ label frontcar2:
          xcenter .75
     j "You punk. We're stuck in here together, you know?"
     j "It wouldn't kill you to be cooperative."
+    hide jenny ind with moveoutright
     $ showchibi("sam", "lauren", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
     #Arunj: Showchibi for Jenny/Freddy leaving
-    hide jenny ind with moveoutright
     show scary with dissolve:
         alpha .5
     ni "How can I cooperate after what that screen told us..."
@@ -644,15 +645,15 @@ label frontcar2:
     s "...Yeah, maybe, fine. I'll go apologize." #Arunj: Kind of out of character
     o "I'll come too. We shouldn't be starting fights over dumb things."
     o "We need to work together."
-    o "Giving someone more reason to kill you when you're not the Game Master is bad for all of us."
+    o "After what that screen said, giving someone more reason to kill you is bad for all of us."
     s "Whatever... I'm heading to the back car."
     hide lauren ind
     hide sam
     with dissolve
     show kaiser ind with dissolve
     k "I'm going as well. I haven't seen the back car yet."
-    $ showchibi("bert", "shahar", "catherine", "dracula")
     hide kaiser ind with dissolve
+    $ showchibi("bert", "shahar", "catherine", "dracula")
     show bert sad with dissolve
     b "I haven't yet either, but I want to spend a little more time up here first."
     b "This feels like where we'll find the most answers."
@@ -794,9 +795,9 @@ label midcar3:
     scene black with fade
     ni "It feels... surprisingly nice having a communal meal."
     blank "They ate; about an hour passed."
-    show bg ntrainmid
+    scene bg ntrainmid
     show frogsit
-    $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
+    $ showchibint("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
     $ statusnt("Bar Car", "dan", ch = 1, sun = 4)
     with fade
     show kaiser ind with dissolve:
@@ -881,7 +882,7 @@ label midcar3:
     show bg ntrainback
     $ statusnt("Caboose", "dan", ch = 1, sun = 4)
     $ showchibint("sid")
-
+    with dissolve
     ni "I forgot how dusty it was back here."
     show sid ind with dissolve
     i "Wow, there's even an old school water kettle back here!"
@@ -1032,7 +1033,7 @@ label day2:
     ni "But for now, I should go meet the others."
 label testft:
     scene bg trainmid
-    $ showchibint("bert", "catherine", "lauren", "freddy", "kaiser", "sam", "sid", "stella", "dracula", "jenny")
+    $ showchibint("jenny", "stella", "lauren", "freddy", "sid", "bert", "catherine", "kaiser", "sam", "dracula")
     $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     with fade
     show catherine happy with dissolve:
@@ -1051,6 +1052,7 @@ label testft:
     hide catherine happy
     show catherine nocat happy:
         xcenter .75
+    with dissolve
     c "Nothing we can do but try to enjoy ourselves a little!"
     show sid ind with moveinleft:
         xcenter .25
@@ -1391,16 +1393,15 @@ label midcar4:
     hide lauren ind
     hide frog ind
     with dissolve
-    show lauren ind:
 label midcar5:
-    scene black
+    scene black with dissolve
     blank "They shared the rest of their rationed non-alcoholic food and drinks amongst themselves."
     blank "There was much less talking tonight."
     scene bg ntrainmid
+    $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     $ statusnt("Bar Car", "dan", ch = 1, sun = 4)
     show frogsit
     with dissolve
-    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show lauren ind with dissolve:
         xcenter .3
         linear .3 xcenter .75
@@ -1439,7 +1440,7 @@ label midcar5:
     n "I guess they hit the light switch in the front car, since everyone's going to sleep soon anyway."
     ni "It's pretty hard to see in here with the lights off."
     n "I'll come too, Sid."
-    scene black
+    scene black with dissolve
     blank "They made their way to the back car."
     scene bg notrainback
     $ showchibint("sid")
@@ -1548,7 +1549,7 @@ label midcar6:
     show frog ind:
         xcenter .8
     with dissolve
-    j "Hey Bert, do you thin-"
+    j "Hey Bert, do you thin-{p=0.5}{nw}"
     stop music
     show scary:
         alpha 0
@@ -1946,6 +1947,15 @@ label trial1a:
         xcenter .25
     b "Wait, slow down!"
     t "Please, child... Think more clearly."
+    stop music fadeout 1.0
+    tut "You're about to take part in your first debate."
+    tut "Four statements will appear. Statements with blue text can be agreed with."
+    tut "To agree with a statement, click on it then press \"Agree\"."
+    tut "Statements with red text can be refuted using evidence."
+    tut "To refute a statement, click on it, then press \"Refute\", then select evidence."
+    tut "Find the correct or incorrect statement and its refutation to proceed."
+    tut "There is no penalty for choosing the wrong statement or evidence, except shame upon your family."
+    tut "Good luck!"
     python:
         startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
     "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
@@ -2826,7 +2836,7 @@ label trial1m:
     python:
         startTrainTrial("freddy", "Freddy: Y-you're so mean to me! You're not my mom...", 0,
         "stella", "Stella: Dear, you're too young and stupid to understand. Leave this to us for now.", 0,
-        "stella", "Stella: We can explain after - {color=#f00}they didn't need to be in the car.{/color}!", -1,
+        "stella", "Stella: We can explain after - {color=#f00}they didn't need to be in the car{/color}!", -1,
         "freddy",  "Freddy: B-but... Why did Dan stand at the window? {color=#f00}Didn't somebody have to hold him there{/color}?", -1,
         3, 6, "trial1n")
 
@@ -3144,7 +3154,7 @@ label trial1p:
     show scary with dissolve
     bi "That settles it. I know who it was."
     bi "The murderer is..."
-    play music "audio/invest1.wav"
+    play music "audio/ominous.mp3"
     call screen chooseChar2("kaiser", "trial1q", "  ") with dissolve
 
 label trial1q:
@@ -3240,8 +3250,7 @@ label trial1r:
     k "A wonderful question, truly."
     k "And I wish I had a better answer."
     k "You see..."
-    show bg notrainfront:
-        alpha .5
+    show doom
     #show doom #wrong spot
     with dissolve
     k "I too have been hiding some personal details."

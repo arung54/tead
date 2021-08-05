@@ -6,7 +6,7 @@ label sidAsk0:
     i "Hmm. I wonder what the password could be..."
     ni "I should go talk to Bert."
     hide sid with dissolve
-    call screen midCar
+    call screen midCar with dissolve
 
 
 label sidAsk1:
@@ -21,7 +21,7 @@ label sidAsk1:
             jump sidHang
         "Maybe later":
             hide sid ind with dissolve
-            call screen midCar
+            call screen midCar with dissolve
 
 label sidHang:
     if fte_sid == -1:

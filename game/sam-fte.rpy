@@ -4,11 +4,11 @@
 label samAsk0:
     scene bg trainfront1
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
-    show sam happy with dissolve
+    show sam with dissolve
     s "Hey."
     ni "I should go talk to Bert instead."
     hide sam with dissolve
-    call screen frontCar
+    call screen frontCar with dissolve
 
 #Train 2
 label samAsk1:
@@ -22,7 +22,7 @@ label samAsk1:
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen frontCar
+            call screen frontCar with dissolve
 
 #Mansion 1
 label samAsk2:

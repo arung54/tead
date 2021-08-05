@@ -4,7 +4,7 @@ label cathAsk0:
     show catherine happy with dissolve
     c "Achoo! Whew, sure is dusty back here."
     ni "I should go talk to Bert."
-    call screen backCar
+    call screen backCar with dissolve
 
 
 label cathAsk1:
@@ -18,7 +18,7 @@ label cathAsk1:
             jump cathHang
         "Maybe later":
             hide catherine with dissolve
-            call screen backCar
+            call screen backCar with dissolve
 
 label cathHang:
     if fte_cath == -1:

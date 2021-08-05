@@ -8,7 +8,7 @@ label stelAsk0:
     t "Hello."
     ni "I should go talk to Bert instead of her."
     hide stella with dissolve
-    call screen midCar
+    call screen midCar with dissolve
 
 #Train 2
 label stelAsk1:
@@ -22,7 +22,7 @@ label stelAsk1:
             jump stelHang
         "Maybe later":
             hide stella ind with dissolve
-            call screen midCar
+            call screen midCar with dissolve
 
 #Mansion 1
 label stelAsk2:

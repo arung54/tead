@@ -7,7 +7,7 @@ label shahAsk0:
     h "Y'arr, if you think about it, a train is just a pirate ship on land."
     ni "...yeah, I should go talk to Bert instead of this guy."
     hide shahar with dissolve
-    call screen frontCar
+    call screen frontCar with dissolve
 
 #Train 2
 label shahAsk1:
@@ -24,7 +24,7 @@ label shahAsk1:
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen frontCar
+            call screen frontCar with dissolve
 
 #Mansion 1
 label shahAsk2:

@@ -8,7 +8,7 @@ label kaisAsk0:
     k "..."
     ni "I should go talk to Bert instead of this guy."
     hide kaiser with dissolve
-    call screen frontCar
+    call screen frontCar with dissolve
 
 #Train 2
 label kaisAsk1:
@@ -22,7 +22,7 @@ label kaisAsk1:
             jump kaisHang
         "Maybe later":
             hide kaiser with dissolve
-            call screen frontCar
+            call screen frontCar with dissolve
 
 label kaisHang:
     #Dan FTE 1

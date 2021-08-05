@@ -7,7 +7,7 @@ init:
 screen trainMapInv():
     modal True
     imagemap:
-        ground "trainmapoverlay.png"
+        ground "trainmapoverlayinv.png"
         hotspot(182, 461, 330, 210):
             action [Hide("frontCarInv"), Hide("midCarInv"), Hide("backCarInv"), Show("frontCarInv", transition=Dissolve(0.3)), Hide("trainMapInv")]
             hovered ShowTransient("trainPreview", img="trainmapoverlay1.png")

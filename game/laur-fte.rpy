@@ -8,7 +8,7 @@ label laurAsk0:
     o "You're not being mean to Sid at night, are you?"
     ni "I should go talk to Bert."
     hide lauren with dissolve
-    call screen midCar
+    call screen midCar with dissolve
 
 #Train 2
 label laurAsk1:
@@ -22,7 +22,7 @@ label laurAsk1:
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen midCar with dissolve
 
 #Mansion 1
 label laurAsk2:

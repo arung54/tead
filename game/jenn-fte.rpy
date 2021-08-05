@@ -8,7 +8,7 @@ label jennAsk0:
     j "Hey Dan!"
     ni "I should go talk to Bert."
     hide jenny with dissolve
-    call screen midCar
+    call screen midCar with dissolve
 
 #Train 2
 label jennAsk1:
@@ -22,7 +22,7 @@ label jennAsk1:
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen midCar with dissolve
 
 #Mansion 1
 label jennAsk2:

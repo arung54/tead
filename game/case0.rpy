@@ -597,7 +597,7 @@ label go: #Add silhouttes here?
     ni "Did someone get the money? There's no way."
     ni "Maybe it's a mistake?"
     show myster ind behind cellwindow
-    $ showchibi("myster")
+    $ showchibint("myster")
     with dissolve
     z "Dan Scagnelli, I take it?"
     n "Wh-who are you?"
@@ -699,9 +699,9 @@ label go: #Add silhouttes here?
     ni "Whoever this is, they didn't come to save me."
 
     scene black
-    play sfx "audio/heartbeat.mp3"
-    pause 1.0
-    play sfx "audio/heartbeat.mp3"
+    play sfx "audio/heartbeat.mp3" volume 0.5
+    pause 2.0
+    play sfx "audio/heartbeat.mp3" volume 0.5
     pause 1.0
     blank "....."
     blank "........."

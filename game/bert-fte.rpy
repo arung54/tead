@@ -11,7 +11,7 @@ label bertAsk0:
             jump bertHang
         "Maybe later":
             hide bert with dissolve
-            call screen frontCar
+            call screen frontCar with dissolve
 
 
 label bertAsk1:
@@ -26,7 +26,7 @@ label bertAsk1:
             jump bertHang
         "Maybe later":
             hide bert with dissolve
-            call screen frontCar
+            call screen frontCar with dissolve
 
 label bertHang:
     if fte_bert == -2:
