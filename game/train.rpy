@@ -55,7 +55,7 @@ label trainGo:
     h "Laddies, is it just me, or does it feels like the whole room is moving?"
     n "That's how trains work."
     n "Have you never been on a train before?"
-    h "Blimey, you're right! We {i}are{/i} movin'!"
+    h "Blimey, yer right! We {i}are{/i} movin'!"
     h "It be like a land boat!"
     hide shahar ind with moveoutright
     n "..."

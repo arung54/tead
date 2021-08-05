@@ -526,7 +526,7 @@ label meetShahar:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show shahar ind with dissolve
-    h "Ahoy there matey! Y'er talking to Shahar Syed, the finest pirate on the seven seas."
+    h "Ahoy there matey! Yer talking to Shahar Syed, the finest pirate on the seven seas."
     ni "...is this guy serious?"
     n "Hey, I'm Dan."
     $menuset = set()
@@ -551,9 +551,9 @@ label meetShahar:
 
         "Why do you think we're here?":
             h "Thinking isn't exactly my strong suit, mate."
-            h "You look like a smart guy, why don't you be the captain here and tell me why we're here!"
+            h "Ye look like a smart guy, why don't ye be the captain here and tell me why we're here!"
             n "Uh... I don't know, have you looted or plundered any villages with angry mayors?"
-            h "Mate, what do you think this is, the 16th century? Piracy is serious business! We loot towns, not villages!"
+            h "Mate, what do ye think this is, the 16th century? Piracy is serious business! We loot towns, not villages!"
             n "..."
             jump shaharQuestions
 
