@@ -633,12 +633,12 @@ label trainsid:
     hide sid ind with dissolve
     bi "Hmmm. It seems like Dan is the only one he really befriended here."
     bi "But it also seems kinda like he killed Dan."
-    if not train_evidence3[0]:
-        $train_evidence3[0] = True
+    if not train_evidence3[1]:
+        $train_evidence3[1] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Hanging Object was added to evidence."
+        blank "Sid's Account was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
@@ -654,12 +654,12 @@ label traincloset:
     blank "Nothing was inside."
     bi "What?!"
     bi "I thought this closet was locked shut?"
-    if not train_evidence3[1]:
-        $train_evidence3[1] = True
+    if not train_evidence3[2]:
+        $train_evidence3[2] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Sid's Account was added to evidence."
+        blank "Back Car Closet was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     call traindone from _call_traindone_8
@@ -678,12 +678,12 @@ label traincoin:
     hide thering with dissolve
     bi "It's a... ring?"
     bi "I'll hold onto this."
-    if not train_evidence3[2]:
-        $train_evidence3[2] = True
+    if not train_evidence3[0]:
+        $train_evidence3[0] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Back Car Closet was added to evidence."
+        blank "Hanging Object was added to evidence."
     if False not in train_evidence3:
         bi "I think that's everything important in this car."
     call traindone from _call_traindone_9
