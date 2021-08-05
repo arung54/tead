@@ -375,4 +375,5 @@ label start:
 ###########
 #Start
 ###########
+    $ _skipping = False
     jump go

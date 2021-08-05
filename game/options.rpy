@@ -209,3 +209,5 @@ init python:
 # define build.itch_project = "renpytom/test-project"
 
 define config.mouse = { 'default' : [ ('teadcursor.png', 0, 0)] }
+define config.rollback_enabled = False
+define config.skipping=False

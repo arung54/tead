@@ -777,20 +777,20 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                #
+                # vbox:
+                #     style_prefix "radio"
+                #     label _("Rollback Side")
+                #     textbutton _("Disable") action Preference("rollback side", "disable")
+                #     textbutton _("Left") action Preference("rollback side", "left")
+                #     textbutton _("Right") action Preference("rollback side", "right")
+                #
+                # vbox:
+                #     style_prefix "check"
+                #     label _("Skip")
+                #     textbutton _("Unseen Text") action Preference("skip", "toggle")
+                #     textbutton _("After Choices") action Preference("after choices", "toggle")
+                #     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
