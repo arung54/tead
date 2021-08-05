@@ -258,7 +258,7 @@ screen trainEvidenceTrial(s, e, l):
             text "The closet opened easily, but there was nothing inside." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
-            image "window.png" xcenter 800 yalign 0.1
+            image "stateofbody1.png" xcenter 800 yalign 0.1
             text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 330
 
     if currEvidence >= 0:
