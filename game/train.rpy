@@ -69,7 +69,7 @@ label trainGo:
         xcenter .25
     d "Yes. All 12 of us are here."
     d "13 if you include the feline."
-    c "Excuuuse meee, please don't talke about King Sesame like that."
+    c "Excuuuse meee, please don't talk about King Sesame like that."
     ses "Mrow!"
     n "..."
     hide catherine ind

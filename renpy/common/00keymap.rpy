@@ -30,10 +30,9 @@ init -1600 python:
         toggle_afm = [ ],
         toggle_fullscreen = [ 'f', 'alt_K_RETURN', 'alt_K_KP_ENTER', 'K_F11', 'noshift_K_f' ],
         game_menu = [ 'K_ESCAPE', 'K_MENU', 'K_PAUSE', 'mouseup_3' ],
-        hide_windows = [ 'mouseup_2', 'noshift_K_h' ],
+        hide_windows = [ 'mouseup_2', 'h', 'noshift_K_h' ],
         launch_editor = [ 'E', 'shift_K_e' ],
         dump_styles = [ ],
-        call_history = [ 'h' ]
         reload_game = [ 'R', 'alt_shift_K_r', 'shift_K_r' ],
         inspector = [ 'I', 'shift_K_i' ],
         full_inspector = [ 'alt_shift_K_i' ],

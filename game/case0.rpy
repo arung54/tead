@@ -1013,8 +1013,11 @@ label postMeetings:
     scr "You may feel sorry when someone dies."
     scr "Let me assure you of one thing."
     scr "Everyone who dies in the course of the game..."
+label testmontage:
     scr "Their endings are deserved."
     scene black with fade
+    $_game_menu_screen = None
     play movie "montage.mpeg"
     $ renpy.pause(72.5, hard=True)
+    $_game_menu_screen = "save_screen"
     jump trainGo
