@@ -3,6 +3,8 @@ init:
         zoom 0.7
     transform cczoom:
         zoom 0.75
+    transform evizoom:
+        zoom .8
     $ shatter = ImageDissolve("shatter.png", 1.0, 8)
     $ shot = ImageDissolve("shot.png", 1.0, 8)
 
@@ -306,6 +308,11 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
         textbutton statement2 xpos 0.64 xanchor 0 ypos 317 yanchor 0 style "button_text" action [SetVariable("statement", 1), SetVariable("agree", ag2)]
         textbutton statement3 xpos 0.64 xanchor 0 ypos 444 yanchor 0 style "button_text" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
         textbutton statement4 xpos 0.64 xanchor 0 ypos 571 yanchor 0 style "button_text" action [SetVariable("statement", 3), SetVariable("agree", ag4)]
+    imagebutton:
+        idle "evidenceicon.png" at evizoom
+        xpos 0.398
+        yalign 0.0225
+        action [Show("trainEvidence", transition=Dissolve(0.3))]
     if agree == 1:
         if corrS == statement and corrE == -1:
             imagebutton:

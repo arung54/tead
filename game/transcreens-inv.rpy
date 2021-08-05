@@ -36,7 +36,7 @@ screen trainEvidence():
     imagemap:
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
-        hotspot(35, 29, 144, 75) action [Hide("trainEvidence", transition=Dissolve(0.3))]
+        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
             textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)

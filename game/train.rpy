@@ -2557,7 +2557,7 @@ label trial1ib:
         xcenter .75
     h "Aye."
     h "I don't get it."
-    h "Are ye sayin' the flag is invisble?"
+    h "Are ye sayin' the flag is invisible?"
     bi "..."
     hide drac ind with moveoutleft
     show catherine happy with moveinleft:
