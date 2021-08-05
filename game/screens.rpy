@@ -1081,7 +1081,7 @@ screen keyboard_help():
 
     hbox:
         label "H"
-        text _("Hides the user interface.")
+        text _("Shows the history.")
 
     hbox:
         label "S"

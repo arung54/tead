@@ -1226,7 +1226,7 @@ label midcar4:
     i "Shut up, Stella."
     h "Aye. Ye see, me memory in't too good."
     h "Last I remember, me and me hearties were three sheets to the wind, mindin' our own."
-    h "Next minute, I come to in the little crow's next wit' the rest of ye."
+    h "Next minute, I come to in the little crow's nest wit' the rest of ye."
     i "I..."
     i "I don't really know what he just said."
     hide shahar ind with moveoutleft

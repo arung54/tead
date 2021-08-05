@@ -89,8 +89,8 @@ $ passattempts = 1
 ##############
 
 init python:
-    config.developer = True
-    config.debug_sound = True
+    config.developer = False
+    config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = True
     config.layers = [ 'background', 'master', 'transient', 'screens', 'overlay', '1', '2', '3', '4' ]
