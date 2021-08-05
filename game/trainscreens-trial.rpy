@@ -227,7 +227,7 @@ screen trainEvidenceTrial(s, e, l):
 
         if currEvidence == 1:
             image "lights2ev.png" xcenter 800 yalign 0.1
-            text "The ambient light in the front car makes it pertty easy to see, even at night." xcenter 800 yanchor 0.0 ypos 330
+            text "The ambient light in the front car makes it pretty easy to see, even at night." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "frontaccounts1.png" xcenter 800 yalign 0.1

@@ -1560,7 +1560,7 @@ label midcar6:
     d "Where is everyone?"
     blank "A sharp sound suddenly filled the train car momentarily."
     f "Ahhh! Mommy!"
-    bi "It sounded like a the world's biggest chandelier fell."
+    bi "It sounded like the world's biggest chandelier fell."
     j "I'm scared!"
     play sfx "audio/beep.mp3" volume .1
     z "AHHHHHH!!!"

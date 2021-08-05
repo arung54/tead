@@ -376,4 +376,4 @@ label start:
 #Start
 ###########
     $ _skipping = False
-    jump testft
+    jump preinvest

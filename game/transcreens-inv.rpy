@@ -95,7 +95,7 @@ screen trainEvidence():
 
         if currEvidence == 1:
             image "lights2ev.png" xcenter 800 yalign 0.1
-            text "The ambient light in the front car makes it pertty easy to see, even at night." xcenter 800 yanchor 0.0 ypos 330
+            text "The ambient light in the front car makes it pretty easy to see, even at night." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "frontaccounts1.png" xcenter 800 yalign 0.1
@@ -194,7 +194,6 @@ screen midCarInv():
         hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")]
         hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")]
         hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")]
-        hotspot(607, 230, 57, 29) action [Hide("midCarInv"), Jump("trainwindows")]
         ###
         hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")]
         hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")]
