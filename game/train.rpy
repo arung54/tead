@@ -741,15 +741,18 @@ label passwording:
     while passattempts < 10:
         $ password = renpy.input("What could it be? {color=00ff00}(Try typing in a password.){/color}", length=10)
         $ password = password.strip()
-
-        if not password:
-            $ password = "ERROR"
-        play sfx "<from 0 to 1>audio/beep.mp3" volume .5
-        ni "I don't think the password is '[password]'..."
+        if password == "DIR":
+            ni "\"DIR\"? Who would think to make that their password? That's just not worth trying."
+        else:
+            if not password:
+                $ password = "ERROR"
+            play sfx "<from 0 to 1>audio/beep.mp3" volume .5
+            ni "I don't think the password is '[password]'..."
         menu:
             ni "Maybe I should try again..."
             "It can't hurt...":
-                $ passattempts += 1
+                if password != "DIR":
+                    $ passattempts += 1
                 if passattempts > 5:
                     ni "Hmm... The screen froze up."
                     ni "I must have gotten it wrong too many times, it's not letting me enter any more passwords."
@@ -2783,7 +2786,7 @@ label trial1m:
     hide sid ind
     bi "Stepping over a dead body like this is unnerving..."
     bi "But I have to."
-    bi "Hmmm... It's hard to get a good view of the overhand outside the train..."
+    bi "Hmmm... It's hard to get a good view of the overhang outside the train..."
     bi "But if I lean up against the broken glass of the window just right..."
     show trainhinge with dissolve
     bi "!"
@@ -3062,7 +3065,7 @@ label trial1p:
 
         "Securing the murder weapon to the back of the train.":
             bi "No, that would have had to be done earlier, and from the back car."
-            jump trialp
+            jump trial1p
 
     hide scary with dissolve
     b "They must have been... activating the PA system with the button!"

@@ -89,7 +89,7 @@ $ passattempts = 1
 ##############
 
 init python:
-    config.developer = True
+    config.developer = False
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = True
@@ -376,4 +376,4 @@ label start:
 #Start
 ###########
     $ _skipping = False
-    jump preinvest
+    jump go
