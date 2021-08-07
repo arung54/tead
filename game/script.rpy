@@ -369,6 +369,7 @@ label start:
         train_evidence1 = [False, False, False]
         train_evidence2 = [False, False, False]
         train_evidence3 = [False, False, False, False]
+        train_extra = [False, False, False, False, False, False]
         lightscount = 0
         windowcount = 0
 
@@ -376,4 +377,4 @@ label start:
 #Start
 ###########
     $ _skipping = False
-    jump go
+    jump preinvest
