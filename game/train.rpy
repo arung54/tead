@@ -1852,7 +1852,7 @@ label preinvest:
     hide investstart with dissolve
     tut "During investigations, you'll need to find pieces of evidence by clicking on important objects and by talking to people."
     tut "When you hover the cursor over an object for the first time, a \"!\" will appear next to the cursor to indicate you can click on it."
-    tut "If you've already investigated an object, a \"?\" will instead appear when you hover over it."
+    tut "If you've already investigated an object, a \"check mark\" will instead appear when you hover over it."
     tut "People can be talked to by clicking on their icons, just like in free time."
     tut "You can use the Evidence Folder button in the top right to review evidence you've collected,"
     tut "and once you've collected all the evidence in a room, you'll be alerted."
