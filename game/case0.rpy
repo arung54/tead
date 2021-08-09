@@ -870,7 +870,7 @@ label go: #Add silhouttes here?
         alpha .5
     ni "We looked around for a bit."
     ni "But it quickly became clear there was nothing to find or see here."
-    ni "We each woke up in an identical-looking room with no notable features."
+    ni "It sounds like we all woke up in this same type of room with no notable features."
     ni "And then the central room connecting them all also had no notable features."
     ni "It was the most nondescript building I'd even been in."
     ni "Even prison had more character than this room."
