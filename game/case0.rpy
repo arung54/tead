@@ -166,7 +166,7 @@ label meetSam:
         "Finish talking to Sam." if len(menuset) > 0:
             jump postMeetSam
 label postMeetSam:
-    ni "I think that's everything I want to ask Sam."
+    ni "Hmm, I learned a little bit about Sam."
     hide sam with dissolve
     $ meetings[1] = 0
     if 1 not in meetings:
@@ -212,7 +212,7 @@ label meetStella:
         "Finish talking to Stella." if len(menuset) > 0:
             jump postMeetStella
 label postMeetStella:
-    ni "I think that's everything I want to ask Stella."
+    ni "Definitely a strange one. Keeping my eye on her."
     hide stella with dissolve
     $ meetings[2] = 0
     if 1 not in meetings:
@@ -252,7 +252,12 @@ label meetSid:
         "Finish talking to Sid." if len(menuset) > 0:
             jump postMeetSid
 label postMeetSid:
-    ni "I think that's everything I want to ask Sid."
+    ni "Seems like a pretty headstrong kid."
+    i "Hey, what about you? Tell me more about you."
+    ni "I was hoping I wouldn't really have to talk about myself."
+    n "Not much to say. I'm just a regular guy."
+    i "You seem kinda like a punk."
+    ni "Haha... I guess he's not wrong."
     hide sid with dissolve
     $ meetings[3] = 0
     if 1 not in meetings:
@@ -297,7 +302,7 @@ label meetJenny:
         "Finish talking to Jenny." if len(menuset) > 0:
             jump postMeetJenny
 label postMeetJenny:
-    ni "I think that's everything I want to ask Jenny."
+    ni "An interesting girl."
     hide jenny with dissolve
     $ meetings[4] = 0
     if 1 not in meetings:
@@ -342,7 +347,7 @@ label meetCatherine:
         "Finish talking to Catherine." if len(menuset) > 0:
             jump postMeetCatherine
 label postMeetCatherine:
-    ni "I think that's everything I want to ask Catherine."
+    ni "She's kinda... weird? Her cat is cute though."
     hide catherine with dissolve
     $ meetings[5] = 0
     if 1 not in meetings:
@@ -382,7 +387,7 @@ label meetKaiser:
         "Finish talking to Kaiser." if len(menuset) > 0:
             jump postMeetKaiser
 label postMeetKaiser:
-    ni "I think that's everything I want to ask Kaiser."
+    ni "I learned a little bit about Kaiser."
     hide kaiser with dissolve
     $ meetings[6] = 0
     if 1 not in meetings:
@@ -430,7 +435,7 @@ label meetDracula:
         "Finish talking to Dracula." if len(menuset) > 0:
             jump postMeetDracula
 label postMeetDracula:
-    ni "I think that's everything I want to ask Dracula."
+    ni "Is this guy really {i}the{/i} Dracula? Hmmm..."
     hide drac with dissolve
     $ meetings[7] = 0
     if 1 not in meetings:
@@ -473,7 +478,7 @@ label meetLauren:
         "Finish talking to Lauren." if len(menuset) > 0:
             jump postMeetLauren
 label postMeetLauren:
-    ni "I think that's everything I want to ask Lauren."
+    ni "She seems pretty reasonable."
     hide lauren with dissolve
     $ meetings[8] = 0
     if 1 not in meetings:
@@ -515,7 +520,7 @@ label meetFreddy:
         "Finish talking to Freddy." if len(menuset) > 0:
             jump postMeetFreddy
 label postMeetFreddy:
-    ni "I think that's everything I want to ask Freddy."
+    ni "It's hard to make heads or tails of this kid."
     hide frog with dissolve
     $ meetings[9] = 0
     if 1 not in meetings:
@@ -560,7 +565,7 @@ label meetShahar:
         "Finish talking to Shahar." if len(menuset) > 0:
             jump postMeetShahar
 label postMeetShahar:
-    ni "I think that's everything I want to ask Shahar."
+    ni "I uhh, what? Why did I just talk to a pirate..."
     hide shahar with dissolve
     $ meetings[10] = 0
     if 1 not in meetings:

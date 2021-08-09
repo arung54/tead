@@ -471,7 +471,7 @@ label midcar2:
     n "Should we do anything about Stella? She's passed out behind the bar."
     h "A nap might do her some good."
     n "...Okay."
-    blank "I hope we don't regret that leaving her here alone."
+    ni "I hope we don't regret that leaving her here alone."
 
 python:
     '''
