@@ -83,16 +83,23 @@ image bg debatescroll:
         linear 30 xpos .01
         repeat
 
+image gotit:
+    contains:
+        "igotitbg.png"
+        "igotitfg.png"
+        xpos .25
+        linear 2 xpos .0
+
 $ passattempts = 1
 ##############
 #Toggle Dev
 ##############
 
 init python:
-    config.developer = False
+    config.developer = True
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
-    config.menu_include_disabled = True
+    config.menu_include_disabled = False
     config.layers = [ 'background', 'master', 'transient', 'screens', 'overlay', '1', '2', '3', '4' ]
     renpy.music.set_volume(0.3)
 
@@ -331,6 +338,7 @@ define zc = Character("?????", who_color= "b66baa", callback=fillvoice)
 define zt = Character("?????", who_color= "d4af37", callback=stellavoice)
 define zd = Character("?????", who_color= "ff9483", callback=dracvoice)
 define zf = Character("?????", who_color= "76d352", callback=frogvoice)
+define zi = Character("?????", who_color= "4f90b0", callback=fillvoice)
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice)
@@ -376,5 +384,5 @@ label start:
 ###########
 #Start
 ###########
-    $ _skipping = False
-    jump preinvest
+    $ _skipping = True
+    jump trainGo

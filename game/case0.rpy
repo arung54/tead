@@ -590,7 +590,7 @@ label go: #Add silhouttes here?
     #ni "I realized how dumb I sounded, light was barely filtering into the cell."
     ni "Seems like it's only sunrise now."
     ni "Why am I being woken so early?"
-    warden "Dan Scagnelli. You're being let go."
+    warden "Dan Scagnelli. You're being released."
     n "..."
     n "What!?"
     warden "Your sentence ends today."
@@ -692,15 +692,21 @@ label go: #Add silhouttes here?
     #z "I said eat while walking."
     #ni "What was so urgent that it needed me to be pulled out of prison and rushed to a car?"
     #ni "We headed outside, and for the first time in ages I was excited to see the glorious sun and greenery."
-    scene black
+    scene black with fade
     stop music fadeout 0.5
+
     #with fade
     #ni "Like a poorly edited TV show, my vision faded to black as we stepped outside."
     #ni "Only it never faded back to light."
     #ni "I lost vision, there was something tingling in my mouth."
     #ni "Was there something in the food?"
     ni "Everything went dark."
-    ni "My thoughts started to fade slowly. The last thing I can remember thinking..."
+    z "I will remember that decision."
+    z "Even if you don't."
+    ni "My thoughts started to fade slowly."
+    ni "My consciousness, my ability to process what was happening to me."
+    ni "Fading."
+    ni "The last thing I can remember thinking..."
     ni "Whoever this is, they didn't come to save me."
 
     scene black
@@ -726,14 +732,19 @@ label go: #Add silhouttes here?
     ni "Where... am I?"
     ni "How did I get here?"
     ni "Last thing I remember... I was in my cell being told I'd get out."
+    ni "The warden called for me and told me I was being released..."
     ni "...why can't I remember anything past that?"
+    ni "Hmmm... I don't have anything with me."
+    ni "Not even ID in my pockets. Someone must have taken it from me."
+    ni "What's going on here?"
     play sfx "audio/beep.mp3"
     pause 1.0
     ni "What was that sound?"
-    ni "Oh, a door. Was that the sound of it unlocking?"
+    ni "Oh, it came from that door. It sounds like it unlocked..."
     ni "Let's see what's on the other side..."
     scene black with fade
     ni "I walked into a very similar room, at the same time as eleven other people."
+    ni "It seems like they all came from their own room, like myself."
     play music "audio/coming_together.mp3"
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
@@ -858,8 +869,24 @@ label go: #Add silhouttes here?
     zs "That is to say, we've probably been kidnapped by someone with an unknown motive."
     ni "I think we all knew this on some level, but several people's expressions sunk upon hearing that."
     ni "Mine not so much. This wasn't much more hopeless than being in a jail cell."
-    ni "But at least some of these people seemed to be ordinary people."
+    ni "But at least... some of these people seemed to be ordinary people."
     ni "This was probably the first time most of them had been trapped in a situation like this."
+    show sam:
+        xcenter .5
+        linear 0.3 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    zi "Umm... does anyone have a phone? Or something else like that?"
+    ni "A few people instinctively checked their pockets."
+    ni "A few others made it clear they had checked a few times already."
+    zi "I normally always have my phone on me..."
+    zs "Yeah, same. Someone must have taken all of our belongings."
+    zi "Th-that's... yeah."
+    hide sid ind with moveoutleft
+    show sam:
+        xcenter .75
+        linear .3 xcenter .5
+    zs "Hmmm..."
     zs "Until we have more information, it's probably best to assume our lives are in some sort of danger while we are here."
     zs "In which case I think we should look around and try to find a way out or some answers."
     zs "Any objections?"

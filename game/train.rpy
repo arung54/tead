@@ -224,6 +224,7 @@ label trainGo:
     show bert sad with dissolve
     b "..."
     hide bert sad
+    play sfx "audio/sfxmoodup.mp3"
     show bert happy
     b "Her motives may be skewed, but it's still helpful."
     b "There might be food back there though, and we're going to need to eat."
@@ -3277,20 +3278,89 @@ label trial1r:
     k "I didn't have a choice."
     k "I had to kill the Game Master."
     b "What? How do you know he was the Game Master?"
-    k "I don't know for sure, but... his personality was so cold."
+    k "I don't know for sure, but... his personality was..."
+    k "So cold."
     show kaiser ind:
         linear .3 xcenter .75
     show sid ind with moveinleft:
         xcenter .25
     i "You... you killed my friend! He didn't deserve to die!"
+    show kaiser ind:
+        linear .1 xcenter .7
     k "How do you know that?"
     k "Maybe he was the Game Master."
+    k "For all we know, he was behind this whole thing."
     i "No way!"
-    k "Regardless, it was my turn, and I had to choose someone."
-    k "He seemed like the most likely candidate."
+    b "How did you know the password to the computer?"
+    k "That is exactly how I knew it was my turn."
     b "Your turn? What do you mean?"
-    k "Remember what the screen said? I was chosen as the murderer."
-    k "When we arrived here I-{p=0.5}{nw}"
+    k "I've been on, and robbed, trains quite similar to all three of these."
+
+    scene black with fade
+    show bg trainback with fade:
+        zoom .7 xcenter .5 ycenter .5
+    k "My town had dozens of trains that closely resembled the caboose..."
+    k "My family's business, as well."
+    k "It reminds me of my mother, in an unfortunate way."
+    show bg trainmid with fade:
+        zoom .7 xcenter .5 ycenter .5
+    k "The bar car as well felt... familiar."
+    k "Those privileged bastards always had something upscale like it when passing through."
+    k "Even being in there there past few days... it makes my blood boil."
+    k "Disgusting."
+    scene black
+    #play music "audio/coming_together.mp3"
+    scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    show doom
+    with dissolve
+    show kaiser ind:
+        xcenter .7
+    show sid ind:
+        xcenter .25
+    with dissolve
+
+    k "And then... this car."
+    k "It reminds me of one heist in particular, my most famous heist."
+    k "In fact, it's nearly identical to the train from then."
+    b "So you tried the same password? From that heist?"
+    k "Yes, and it worked."
+    k "It was going to be my big break... and for a while, I thought it was."
+    k "How naive of me..."
+    k "Regardless, I have made my decision."
+    k "I killed Dan. Whether he was the Game Master or not, there's no way for us to know yet."
+    k "I had hoped to conceal my guilt, akin to the Game Master's original message..."
+    scene black with fade
+    scene expl 9a
+    show sepia:
+        alpha .5
+    with dissolve
+    scr "The game will then continue with the surviving participants."
+    scr "However, if they can't identify who the real murderer was,"
+    show text "{b}{color=#000000}Kill the Game Master. Or, kill anyone else and get away with it.{/color}{/b}" with dissolve:
+        ycenter .65
+        xcenter .495
+    scr "everyone but the murderer and Game Master will be killed, and the game ends."
+    scene black
+    #play music "audio/coming_together.mp3"
+    scene bg notrainfront
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    show doom
+    with dissolve
+    show kaiser ind:
+        xcenter .7
+    show sid ind:
+        xcenter .25
+    with dissolve
+    k "I'm not particularly well versed at hiding my guilt..."
+    k "So, Game Master."
+    k "Was I correct?"
+    k "If you are still alive, punish me."
+    b "What? No!"
+    k "If Dan was not the Game Master, my fate is death."
+    k "Show me. Show me my fa-{p=0.5}{nw}"
     stop music
     show braindeath
     pause .25
@@ -3312,8 +3382,14 @@ label trial1r:
     pause 1.0
     show bg notrainfront2 with dissolve
     pause 1.0
+    show sid happy:
+        xcenter .2
+        linear .1 xcenter .175
     b "..."
-    b "We survived..."
+    b "He was wrong... Dan was... innocent."
+    i "Dan... Kaiser..."
+    b "They're both dead."
+    b "I survived... we, the 10 of us, survived..."
     bi "Technically, we were closer to winning this game."
     bi "But really, we had lost more than we had won."
     b "...what n-{p=0.5}{nw}"
