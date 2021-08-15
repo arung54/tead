@@ -85,7 +85,6 @@ image bg debatescroll:
 
 image gotit:
     contains:
-        "igotitbg.png"
         "igotitfg.png"
         xpos .25
         linear 2 xpos .0
@@ -385,4 +384,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump trainGo
+    jump preinvest

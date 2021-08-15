@@ -132,20 +132,26 @@ screen train_evidence():
 ############################### put button locations and jumps here
 
 screen frontCarInv():
+    default tt = Tooltip("")
     imagemap:
         ground "bg ntrainfront.png"
         if train_evidence1[1]:
-            hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'q'
+            hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'q' hovered tt.Action("Front Window")
         else:
-            hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'ex'
+            hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'ex' hovered tt.Action("Front Window")
         if train_evidence1[0]:
-            hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q'
-            hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q'
-            hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q'
+            hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q' hovered tt.Action("Computer")
+            hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q' hovered tt.Action("Computer")
+            hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q' hovered tt.Action("Computer")
         else:
-            hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex'
-            hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex'
-            hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex'
+            hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex' hovered tt.Action("Computer")
+            hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex' hovered tt.Action("Computer")
+            hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex' hovered tt.Action("Computer")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
 
     add "status.png"
     add Text("{b}Front Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
@@ -192,47 +198,53 @@ screen frontCarInv():
 ##################################################################################
 
 screen midCarInv():
+    default tt = Tooltip("")
     imagemap:
         ground "bg notrainMID.png"
         if lightscount > 5:
-            hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")] mouse 'q'
-            hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")] mouse 'q'
-            hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")] mouse 'q'
+            hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")] mouse 'q' hovered tt.Action("Lights")
+            hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")] mouse 'q' hovered tt.Action("Lights")
+            hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")] mouse 'q' hovered tt.Action("Lights")
         else:
-            hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex'
-            hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex'
-            hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex'
+            hotspot(379, 366, 40, 105) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex' hovered tt.Action("Lights")
+            hotspot(721, 288, 40, 65) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex' hovered tt.Action("Lights")
+            hotspot(604, 228, 64, 34) action [Hide("midCarInv"), Jump("trainlights")] mouse 'ex' hovered tt.Action("Lights")
         ###
         if windowcount > 5:
-            hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q'
-            hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q'
-            hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q'
-            hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q'
+            hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q' hovered tt.Action("Bar Car Windows")
+            hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q' hovered tt.Action("Bar Car Windows")
+            hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q' hovered tt.Action("Bar Car Windows")
+            hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'q' hovered tt.Action("Bar Car Windows")
         else:
-            hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
-            hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
-            hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
-            hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex'
+            hotspot(130, 352, 150, 192) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex' hovered tt.Action("Bar Car Windows")
+            hotspot(998, 351, 150, 189) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex' hovered tt.Action("Bar Car Windows")
+            hotspot(423, 322, 93, 82) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex' hovered tt.Action("Bar Car Windows")
+            hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex' hovered tt.Action("Bar Car Windows")
         ###
         if train_extra[0]:
-            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q'
-            hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q'
+            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar")
+            hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar")
         else:
-            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex'
-            hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex'
+            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex' hovered tt.Action("Train Bar")
+            hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex' hovered tt.Action("Train Bar")
         ##
         if train_extra[1]:
-            hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q'
-            hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q'
-            hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q'
-            hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q'
-            hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q'
+            hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q' hovered tt.Action("Couches")
+            hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q' hovered tt.Action("Couches")
+            hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q' hovered tt.Action("Couches")
+            hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q' hovered tt.Action("Couches")
+            hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")] mouse 'q' hovered tt.Action("Couches")
         else:
-            hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
-            hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
-            hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
-            hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
-            hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex'
+            hotspot(110, 618, 362, 97) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex' hovered tt.Action("Couches")
+            hotspot(252, 514, 212, 102) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex' hovered tt.Action("Couches")
+            hotspot(679, 611, 486, 108) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex' hovered tt.Action("Couches")
+            hotspot(670, 466, 227, 176) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex' hovered tt.Action("Couches")
+            hotspot(881, 512, 131, 128) action [Hide("midCarInv"), Jump("traincouch")] mouse 'ex' hovered tt.Action("Couches")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
 
     add "status.png"
     add Text("{b}Bar Car{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
@@ -285,44 +297,50 @@ screen midCarInv():
 ##################################################################################
 
 screen backCarInv():
+    default tt = Tooltip("")
     imagemap:
         ground "bg bodytrainBACK.png"
         if train_evidence3[2]:
-            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'q'
+            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'q' hovered tt.Action("Closet")
         else:
-            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'ex'
+            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'ex' hovered tt.Action("Closet")
         ##
         if train_evidence3[0]:
-            hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")] mouse 'q'
+            hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")] mouse 'q' hovered tt.Action("Back Window")
         else:
-            hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")] mouse 'ex'
+            hotspot(606, 167, 97, 77) action [Hide("backCarInv"), Jump("traincoin")] mouse 'ex' hovered tt.Action("Back Window")
         ##
         if train_evidence3[3]:
-            hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")] mouse 'q'
+            hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")] mouse 'q' hovered tt.Action("Dan's Body")
         else:
-            hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")] mouse 'ex'
+            hotspot(602, 287, 113, 246) action [Hide("backCarInv"), Jump("trainbody")] mouse 'ex' hovered tt.Action("Dan's Body")
         ##
         if train_extra[2]:
-            hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")] mouse 'q'
+            hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")] mouse 'q' hovered tt.Action("Stretcher")
         else:
-            hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")] mouse 'ex'
+            hotspot(732, 19, 147, 66) action [Hide("backCarInv"), Jump("trainrip")] mouse 'ex' hovered tt.Action("Stretcher")
         ##
         if train_extra[3]:
-            hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")] mouse 'q'
+            hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")] mouse 'q' hovered tt.Action("Bed")
         else:
-            hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")] mouse 'ex'
+            hotspot(456, 353, 125, 164) action [Hide("backCarInv"), Jump("trainbed")] mouse 'ex' hovered tt.Action("Bed")
         ##
         if train_extra[4]:
-            hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")] mouse 'q'
+            hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")] mouse 'q' hovered tt.Action("Water Heater")
         else:
-            hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")] mouse 'ex'
+            hotspot(322, 377, 131, 315) action [Hide("backCarInv"), Jump("trainwater")] mouse 'ex' hovered tt.Action("Water Heater")
         ##
         if train_extra[5]:
-            hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")] mouse 'q'
-            hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")] mouse 'q'
+            hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")] mouse 'q' hovered tt.Action("Bench")
+            hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")] mouse 'q' hovered tt.Action("Bench")
         else:
-            hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")] mouse 'ex'
-            hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")] mouse 'ex'
+            hotspot(773, 334, 111, 156) action [Hide("backCarInv"), Jump("trainbench")] mouse 'ex' hovered tt.Action("Bench")
+            hotspot(840, 372, 107, 346) action [Hide("backCarInv"), Jump("trainbench")] mouse 'ex' hovered tt.Action("Bench")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
 
     add "status.png"
     add Text("{b}Caboose{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0

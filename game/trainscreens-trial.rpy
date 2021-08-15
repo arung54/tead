@@ -59,11 +59,12 @@ init python:
 screen shattered(lab):
     modal True
     add "shot.png"
-    timer 1.0 action [Show("iGotIt", transition=Dissolve(1.0), l = lab), Hide("makeyourcase"), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
+    timer 1.0 action [Show("iGotIt", transition=Fade(0.5, 0.0, 0.5), l = lab), Hide("makeyourcase"), Hide("shattered"), Hide("trainTrial"), Hide("trainEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
 
 screen iGotIt(l):
     modal True
-    add "igotit.png"
+    add "bg igotitbg.png"
+    add "gotit"
     timer 1.5 action[SetVariable("statement", -1), SetVariable("agree", 0), Hide("shattered"), Hide("p1"), Hide("p2"), Hide("p3"), Hide("p4"), Hide("s1"), Hide("s2"), Hide("s3"), Hide("s4"), Hide("debatescroll"), Hide("debateui"), Hide("iGotIt", transition=Dissolve(1.0)), Jump(l)]
 
 screen chooseChar(ans, correctLabel, midText):
@@ -312,7 +313,7 @@ screen trainTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stateme
         idle "evidenceicon.png" at evizoom
         xpos 0.398
         yalign 0.0225
-        action [Show("trainEvidence", transition=Dissolve(0.3))]
+        action [Show("train_evidence", transition=Dissolve(0.3))]
     if agree == 1:
         if corrS == statement and corrE == -1:
             imagebutton:
