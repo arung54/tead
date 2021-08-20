@@ -384,4 +384,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump preinvest
+    jump postMeetings
