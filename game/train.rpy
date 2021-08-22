@@ -2362,7 +2362,7 @@ label trial1h:
             bi "Well, technically they could have, but I don't think so..."
             jump trial1h
 
-        "Some threw a smoke bomb!":
+        "Someone threw a smoke bomb!":
             bi "Hmm, that's probably not it. It got dark, not smokey."
             jump trial1h
 
@@ -2502,7 +2502,9 @@ label trial1i:
     hide forest run
     hide windowview2
     with fade
-    show bg notrainfront with dissolve
+    show bg notrainfront
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    with dissolve
     $ showchibi("catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     show frog ind with moveinbottom
     f "Hmm... well, nevermind I guess."
@@ -2775,7 +2777,7 @@ label trial1l:
 
 label trial1m:
     scene black with fade
-    blank "All 11 of them made their way to the back car, together."
+    blank "All of them made their way to the back car, together."
     scene bg bodytrainback
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Caboose", "bert", ch=1, sun=4)
