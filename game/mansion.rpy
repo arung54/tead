@@ -963,14 +963,13 @@ label postFT2:
     t "It's like saying you took a shit today."
     b "..."
     t "Here, I'll be more useful than you in one sentence."
-    t "That guy in the painting? His name's Sydell."
+    t "Duh guy in the painting? His name's Mr. Sydell."
     b "Huh? Why didn't you mention this before."
-    t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I only just remembered his name."
-    t "Last name, don't remember his first name."
+    t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
     t "But I think at at some point my company sunk his into duh ground."
-    t "Knowing what my boys can do, I'm surprised he still had enough left over to pay duh taxes for a place like this."
+    t "Knowing what my boys can do, I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
     t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
     bi "Sydell... I don't think I've heard the name before."
     bi "Would anyone confess to knowing him?"
@@ -984,7 +983,7 @@ label postFT2:
     h "Is that a fellow pirate?"
     h "Unless he's a ocean lover like myself, I reckon I don't know him lad."
     bi "As expected."
-    t "Anyway yeah, see, in two minutes I've done more for us while drunk than you did in a day while sober."
+    t "Anyways, see, in two minutes I've done more for us while drunk than you did in a day while sober."
     t "I'm not trying to be harsh on you, kid."
     t "You didn't do anything useful because there's very little useful to do."
     t "Someone already has been assigned to murder, someone's going to have to be their victim."
@@ -1058,11 +1057,11 @@ label postFT2:
     h "Oh, I wonder if this mansion's got anything we can plunder?"
     b "...you want to steal something to bring with you when you get out?"
     h "Aye! Least we can do to pass the time."
-    b "Again, we could pass the time while sleeping."
+    b "Again, we could pass the time by sleeping."
     t "I don't know if I can approve of stealing from duh rich given... well, you know."
     h "Aye lass, it's not like I'm pillaging your village!"
     t "Hmm, that is true."
-    t "Duh guy who owns this place might be my business enemy for all we know."
+    t "After what my boys did this guy's probably too poor now to enjoy his life anyway."
     t "Alright, let's steal something!"
     t "Woo!"
     hide stella with moveoutright
@@ -1076,7 +1075,7 @@ label postFT2:
     t "You probably haven't had more than two shots in your life."
     b "...sigh."
     t "C'mon, let's go steal something!"
-    h "Aye, a good pirate mission!"
+    h "Aye, a good pirate adventure!"
     b "If I join will you let me sleep after this?"
     h "Fine with me lad."
     t "Fine, buzzkill. Have it your way."
@@ -1190,8 +1189,24 @@ label postFT2:
     c "Yeah! Anyway, I should go get started. Have a good day Bert!"
     b "Thanks Catherine, let us know if we can help with cooking."
     c "Will do!"
+    b "Oh before you go, one more thing."
+    c "Oh?"
+    b "Stella said the guy in the picture is Mr. Sydell. You ever seen or heard of him?"
+    c "Hmm... no, can't say that I do. Unless he was an extra in one of the dramas I watched."
+    c "But extras probably don't make enough money to live somewhere like here, right?"
+    c "Damn, Hollywood is rough."
+    c "But not as rough as being a red-headed teenager in Creekvale!"
+    b "Uh... ok, was just wondering, thanks. See you later Catherine."
+    c "Toodaloo!"
     hide catherine with dissolve
     $showchibi("shahar", "stella")
+    bi "Hm... is it even worth asking anyone else?"
+    bi "I think after Dracula suggested the murderer's been here before, no one would admit to knowing him."
+    bi "Besides Stella, but she claims she barely knew him at all."
+    bi "If that's the truth, what reason would she have to come to his mansion? She'd probably send a henchman."
+    bi "Plus, it might make me look more suspicious if I seem to know about the guy..."
+    bi "Catherine's lighthearted enough to not really care if I ask, but someone like Dracula might be."
+    bi "Speaking of which..."
     $showchibi("shahar", "stella", "dracula")
     show drac ind with dissolve
     d "Good morning, Bert."
@@ -1222,9 +1237,9 @@ label postFT2:
     j "Good morning! Sam and I were just about to head downstairs and help out Catherine."
     b "Oh, you're both cooks?"
     j "Not as experienced as Catherine, but I like being helpful!"
-    s "I'm gonna make some dessert."
-    s "Some of my customers prefer to receive their product in brownies or other baked goods, so I got pretty good at baking."
-    s "There's not exactly much else to do until the party tonight."
+    s "I'm more of a baker. Gonna make some dessert."
+    s "Some of my customers prefer to receive their product in brownies or cookies, so I got pretty good at baking."
+    s "Plus, there's not exactly much else to do until the party tonight."
     b "Well, unless you want to get super drunk like Stella and Shahar did."
     s "Eh, day drinking's not really my thing."
     j "Oh yeah, how was last night?"
@@ -1281,6 +1296,15 @@ label postFT3:
     b "N-not that I wouldn't want to hang out with you normally."
     f "Huh?"
     b "Never mind."
+    f "Check out all these tricks Sesame can do!"
+    b "Tricks?"
+    f "Yeah! Catherine trained Sesame really well!"
+    bi "Turns out, Sesame was trained more like a dog than a cat."
+    bi "He could high five Freddy, fetch objects from across the room, even do a backflip."
+    f "Sesame and Catherine are really close!"
+    f "So he's much easier to train than other cats, she says."
+    b "That's rather impressive."
+    bi "And convenient for keeping Freddy's mind distracted."
     b "So uh..."
     bi "I'm still not great at making conversation with the kid..."
     bi "Maybe I can ask him for some information that's useful?"
@@ -1348,6 +1372,7 @@ label postFT3:
         xcenter .25
     f "Wh...why?"
     l "There's gonna be a lot of stuff Sesame can't eat or drink at the party."
+    l "She asked us to leave him up here."
     f "Can't Catherine hold onto him?"
     l "She's hosting the party, she'll probably be too busy worrying about the food."
     f "But... but I wanna play with Sesame."
@@ -1389,7 +1414,7 @@ label postFT3:
     i "Screw you old man!"
     bi "This can only go poorly... let me interrupt."
     b "Hey guys, has the food been served yet?"
-    d "No, I believe the chefs are putting the finishing touches on it."
+    d "No, I believe the chefs are putting the finishing touches on the first course."
     b "Oh, cool. In that case I'll go see if they need any help."
     bi "Hopefully I defused that conversation..."
     scene black with fade
@@ -1422,7 +1447,7 @@ label postFT3:
     b "Isn't that a lot of work for you? Don't you want to go out and socialize?"
     c "It's fine! If everyone else is enjoying themselves I'm happy."
     c "Plus I missed cooking, it's fun to be in the kitchen!"
-    c "Plus I'll be able to party once everything besides dessert is done."
+    c "Don't worry, I'll be able to party once everything besides dessert is done."
     b "Oh, who's making dessert?"
     hide jenny with moveinright
     show sam with moveinright:
@@ -1443,7 +1468,7 @@ label postFT3:
     j "You know what they say, a watched pot never boils!"
     b "That's just untrue."
     j "Most idioms are."
-    b "Point taken. For real though, if you need help, let me know."
+    b "I guess so. For real though, if you need help, let me know."
     j "Thanks Bert, now go out and party!"
     scene black with fade
     scene bg mansiondining with fade
@@ -1466,7 +1491,7 @@ label postFT4:
     show sid ind:
         xcenter .75
     c "First course is served! We have a charcuterie with various crackers, cheeses, meats, and some fruit to start!"
-    i "Huh... is this what rich people eat?"
+    i "Huh... is this what fancy dinners are like?"
     c "Only part of it! We're going to do multiple rounds of food, with the main part of the meal being in the second to last round."
     c "The idea is to avoid filling you up too early so you can enjoy a variety of dishes."
     i "Oh... ok. I was gonna say, this doesn't seem like a meal."
@@ -1547,13 +1572,13 @@ label postFT4:
     l "I think that and events like this party are overall helping our morale."
     b "That's true, but I worry about how much of us not trying to escape is because we're losing motivation to fight our way out."
     l "Maybe it's because of that, maybe it's just that we're somewhere more relaxing."
-    l "I wouldn't overthink it, not like if we find a way out we'll be able to get Shahar and Stella to help us."
+    l "I wouldn't overthink it, not like if we find a way out Shahar and Stella are going to be the ones to do it."
     b "That is unfortunately true..."
     l "And people like Sam and Dracula only seem to be interested in very extreme ways of helping us get out."
     l "Anyway, the food is only going to keep Freddy entertained for so long."
     l "I should probably go back to talking to him before Shahar and Stella try to do anything stupid around him."
     b "I'll join you."
-    bi "In part because... I somehow forgot to try out the food."
+    bi "In part because I forgot to try out the food."
     show lauren ind:
         xcenter .5
         linear 0.15 xcenter .75
@@ -1586,7 +1611,7 @@ label postFT4:
     l "You know it's only been a few days since this whole game started, right?"
     b "More like a few days too many!"
     l "..."
-    l "C'mon Freddy, let's go sit on the couch and eat."
+    l "C'mon Freddy, let's give Bert some space."
     hide lauren
     hide frog
     with dissolve
@@ -1594,7 +1619,7 @@ label postFT4:
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
     show jenny happy with dissolve
     j "The next course is ready! We have appetizers and salad."
-    j "For the appetizers we have kebabs, and the salad is a kale caesar."
+    j "For the appetizers we have kebabs, and the salad is a kale Caesar."
     b "Wow, Jenny, did you make these?"
     j "Well, Catherine prepped the meat, I just put the kebabs together."
     show jenny ind
@@ -1631,10 +1656,10 @@ label postFT4:
     b "I'd hardly call that an adventure, but sure."
     t "I think I'm going to continue that adventure, want to join?"
     b "Not really... does Shahar not want to join you?"
-    t "Psh, he's carrying a lot of muscle but he's a bit of a weak drunk."
-    t "Says he's still tired from last night and wants to stay down here and keep drinking."
+    t "Psh, he's carrying a lot of muscle but he's a bit of a weak drinker."
+    t "Says he's still tired from last night and wants to stay down here."
     b "I uh... no."
-    t "Psh, killjoy as always."
+    t "Psh, Killjoy as always."
     t "Well, I'm off!"
     j "Wait, Stella, I really don't think it's a good idea for you to..."
     t "Vroom!"
@@ -1765,8 +1790,21 @@ label postFT4:
     bi "Freddy leaned in to whisper."
     f "I think I overheard Mr. Dracula discussing his real job with Sam."
     f "It was hard to hear much."
-    f "But I heard the word \"doctor\" come up. So I think he's a doctor."
-    b "Huh. I guess it's kinda fitting for a doctor to pretend to be someone who drinks blood?"
+    f "But he said he's an expert on the human body. Knows a lot about stab wounds and blood."
+    b "I guess that's expected of a vampire..."
+    f "But not just that. He's done some... expe... expi... expire minting?"
+    b "Experimenting?"
+    f "Yeah, that! He did a lot of that on humans."
+    f "Also uh... suff... suffer catering?"
+    bi "Probably suffocating..."
+    bi "That or Dracula really doesn't like Catherine's food."
+    f "He... expi... expe... tried that out. Also uh... ele... Alex trickery?"
+    bi "Electricity?"
+    f "And uh... fire!"
+    bi "That one's probably fire."
+    bi "Hm... is this real, or is this just Dracula fabricating a vampire story and Sam entertaining him?"
+    bi "This is... very gruesome for a kid to overhear."
+    b "Thanks Freddy, that's really helpful."
     b "Did you get any more details?"
     f "No... and you can't tell anyone I told you this."
     f "Mr. Dracula reminds me of my dad, I'm scared of him."
@@ -1774,7 +1812,8 @@ label postFT4:
     bi "...Does he understand what kind of situation we're in?"
     b "I won't tell anyone you told me."
     bi "...But I might bring this up without saying you told me if it's relevant information later."
-    b "Thanks Freddy. Your secret is safe with me."
+    b "Your secret is safe with me."
+    f "Thanks Bert..."
     hide frog with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
     show catherine nocat with dissolve
@@ -1914,7 +1953,7 @@ label postFT4:
     b "Yeah, it did."
     i "Wh-why am I always the first person to find the body."
     i "I swear it wasn't me."
-    b "I know, there wasn't a moment I didn't have my eyes on you since we last saw Stella."
+    b "I know, there wasn't a moment we weren't together we last saw Stella."
     i "O-ok."
     i "Sorry, I'm just... still shaken up from everyone accusing me of Dan's death."
     b "We're... we're gonna get through this one too Sid."
@@ -1950,6 +1989,8 @@ label trial2a:
     l "Yeah, it was the skewers from the dinner party."
     c "Oh no, did the dinner party get Stella killed?"
     b "I wouldn't view it that way, the skewers would have been in the house regardless of us having a party or not."
+    b "But what makes you so sure it was the skewers?"
+    l "Let me explain..."
     python:
         stabwound = 0
         stabwound2 = 1
@@ -1998,7 +2039,7 @@ label trial2c:
             jump trial2c
 
         "Soon after the party started.":
-            bi "Hmm, Stella left the party after the second course was served."
+            bi "Hmm, Stella left the party only after the second course was served."
             bi "So I know she didn't die until after that."
             jump trial2c
 
@@ -2006,7 +2047,7 @@ label trial2c:
             bi "That's it!"
 
         "Right before we found the body.":
-            bi "No, I have other evidence that shows the body had been dead for a while when we found it"
+            bi "No, I have other evidence that shows the body had been dead for a while when we found it."
             jump trial2c
     b "In the middle of the party?"
     s "Yeah."
@@ -2116,7 +2157,7 @@ label trial2f:
             jump trial2f
 
         "To grab a drink.":
-            bi "That would be in character for Shahar, not Jenny."
+            bi "That would be in character for Shahar or Stella, but not Jenny."
             jump trial2f
     b "Sam's suggesting that the murderer had to have returned the knife to the kitchen after stabbing Stella."
     b "Catherine brought the knife from the kitchen to the dining room later, so the knife must have been in the kitchen at some point after Stella's murder."
@@ -2132,7 +2173,7 @@ label trial2f:
     bi "If Catherine wasn't paying attention and Jenny hid the knife on her while walking around..."
     bi "It wouldn't be that hard to get away with the murder as Sam had described it."
     bi "And Jenny would be the only one that could have done it."
-    bi "Is this really it? Is the person I thought was my closest friend here a murdere-"
+    bi "Is this really it? Is the person I thought was my friend a murdere-"
     hide jenny
     show drac ind:
         xcenter .25
@@ -2236,7 +2277,7 @@ label trial2g:
     show sam with moveinright:
         xcenter .75
     s "Wait, someone should go with you."
-    s "You could be the murderer and be lying about the results of your \"test\""
+    s "You could be the murderer and be lying about the results of your \"test.\""
     d "Me, the murderer? I never left the dining room."
     s "Fine, if you're not the murderer, maybe you're the Game Master trying to spice things up."
     s "I'm just saying, we should have a second person there to confirm."
@@ -2255,7 +2296,7 @@ label trial2g:
         xcenter .75
     h "I'll go, mateys."
     b "Shahar?"
-    h "A stab wound isn't more gross than some of the scurvy dogs ye see on the sea."
+    h "A stab wound isn't more gross than some of the scurvy ye see on the sea."
     d "Works for me. Let's not dilly-dally further."
     scene black
     bi "Dracula grabbed the knife and headed upstairs with Shahar."
@@ -2353,7 +2394,7 @@ label trial2h:
         startMansionTrial("catherine", "Catherine: They clearly {color=#55f}inverted the sheath{/color} and the inside must be pointy enough to stab with!", 1,
         "shahar",  "Shahar: They used {color=#55f}something to make the sheath sharper{/color} before stabbing Stella!", 1,
         "lauren", "Lauren: The killer {color=#55f}used the sheath as a mold{/color} to make a sharp object.", 1,
-        "sam",  "Sam: I found the sheath during the party in the kitchen, and then it stayed here in the dining room. {color=#f00}If you believe that, then the sheath couldn't have gone near Stella's body{/color}.", -1,
+        "sam",  "Sam: I found the sheath during the party in the kitchen, and then it stayed here in the dining room. {color=#f00}If you believe me, then the sheath couldn't have gone near Stella's body{/color}.", -1,
         2, -1, "trial2i")
 label trial2i:
     play music "audio/rush.mp3"
@@ -2377,7 +2418,7 @@ label trial2i:
     l "Freddy, are you okay with talking about this?"
     f "Oh, I was napping."
     f "I just woke up when I heard your voice."
-    show lauren happy:
+    show lauren aw:
         xcenter .25
     l "Aww, that's cute Freddy."
     b "Wait, I wouldn't go that far."
@@ -2387,11 +2428,13 @@ label trial2i:
     show jenny ind with moveinright:
         xcenter .75
     j "Wait, this theory still seems wild to me."
+    show lauren ind:
+        xcenter .25
     l "Jenny, shouldn't you be the one supporting alternate theories?"
     l "You were just accused earlier..."
     j "Look, I want to survive."
     j "But that doesn't just mean not being accused."
-    j "It means finding the truth of what happened."
+    j "It means finding the truth of what happened, even if I make myself look suspicious in doing so."
     b "..."
     b "That was kind of cool, Jenny."
     show jenny happy:
