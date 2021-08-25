@@ -281,7 +281,7 @@ screen pickSpot1:
         ground "pickthespot1"
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
-        hotspot(774, 427, 487, 274):
+        hotspot(958, 469, 29, 92):
             action [Function(shatterNoise), Show("shattered", lab = "trial1c")]
     add "wherewasmurderweapon"
 

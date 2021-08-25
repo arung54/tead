@@ -3030,7 +3030,7 @@ label trial1o:
         xcenter .75
     o "So, the person who accessed the computer is the murderer?"
     t "It seems quite that simple."
-    t "Otherwise, they wouldn't be able to time the murder weapon hitting the tunnel so accurately."
+    t "Otherwise, they wouldn't be able to time the on hitting the tunnel so accurately."
     o "I see..."
     hide stella ind with moveoutleft
     show lauren ind:
