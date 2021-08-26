@@ -1,5 +1,6 @@
 screen mansMap():
     #TODO: Gate rooms for FT4
+    #TODO: Create secret sesame FTE
     imagemap:
         ground "mansMapoverlay.png"
         hotspot(762, 310, 155, 174):
@@ -80,6 +81,33 @@ screen kitchen():
             ypos 20
             idle "catherinechibi.png" at chibizoom
             action [Hide("frontCar", transition = Dissolve(1.0)), Jump("cathAsk2")]
+    if ftecounter == 3:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "catherinechibi.png" at chibizoom
+            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("cathAsk3")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "jennychibi.png" at chibizoom
+            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("jennAsk3")]
+        imagebutton:
+            xpos 20
+            ypos 120
+            idle "samchibi.png" at chibizoom
+            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("samAsk3")]
+    if ftecounter == 4:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "catherinechibi.png" at chibizoom
+            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("cathAsk4")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "jennychibi.png" at chibizoom
+            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("jennAsk4")]
 
 screen dining():
     add "bg mansiondining.png"
