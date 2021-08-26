@@ -351,4 +351,4 @@ screen tryAgain:
     imagemap:
         ground "tryagain.png"
         hotspot(0, 0, 1279, 719):
-             action [Hide("tryAgain", transition=Dissolve(0.2))]
+             action [SetVariable("mistakes", mistakes+1), Hide("tryAgain", transition=Dissolve(0.2))]

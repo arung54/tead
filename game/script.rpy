@@ -379,6 +379,7 @@ label start:
         train_extra = [False, False, False, False, False, False]
         lightscount = 0
         windowcount = 0
+        mistakes = 0
 
 ###########
 #Start
