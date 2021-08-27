@@ -92,7 +92,7 @@ screen frontCar():
             xpos 20
             ypos 170
             idle "samchibi.png" at chibizoom
-            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("samAsk2")]
+            action [Hide("frontCar", transition = Dissolve(1.0)), Jump("samAsk1")]
 
 screen midCar():
     add "bg trainMID.png"
