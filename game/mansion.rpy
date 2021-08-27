@@ -1684,7 +1684,7 @@ label postFT4:
     h "That lass is stashin' a second liver somewhere in here, I swear t' Blackbeard!"
     h "If I open a bottle I'll have hardly a shotful before it's gone!"
     b "Oh, yeah, then you're good to grab it now."
-    h "Aye-aye, to the kitchen, chaaaarge!"
+    h "Aye-aye, to the kitchen for a rum on the rocks, chaaaarge!"
     hide shahar with moveoutleft
     $showchibi("dracula", "freddy", "lauren", "sam", "sid")
     show sam:
@@ -1833,6 +1833,15 @@ label postFT4:
     show sam with dissolve:
         xcenter .75
     s "I guess that means I should get dessert ready."
+    hide sam with moveoutright
+    b "Meeeeeeeeeeeeat."
+    b "Meeeeeeeeeeeeeeeeeeeeeeeeeeat."
+    c "Hey, you know I'm vegetarian right."
+    c "You could at least not rub it in so much."
+    b "...Sorry"
+    show sam with moveinright:
+        xcenter .75
+    s "Hm, there's no knives in the kitchen..."
     s "Catherine, did you see anything else we could use to cut the dessert into slices?"
     c "Hmm, not sure, though there's some cabinets that we haven't looked in because they're high up."
     c "Maybe you could try those?"
@@ -1892,8 +1901,9 @@ label postFT4:
     s "Yeah, there's no more sharp objects in the kitchen, but I found the sheath for the knife Catherine was using."
     s "It's much blunter than a knife, but we can use it to cut slices without getting meat juice on the cake."
     bi "Just like before, I cut myself way too big a slice."
-    bi "Sam must have been very precise with the sheath when he tried it out, my cut with the blunt sheath was much less even than the previous cuts..."
-    bi "Not that the shape of my slice matters, it's all getting digested anyway!"
+    bi "It seemed Sam had already cut one piece out, with rather clean cluts."
+    bi "In contrast, my cut looked more like I beat my slice of cake to death..."
+    bi "Well, good thing the shape of my slice doesn't matter, it's all getting digested anyway!"
     bi "It's so tasty, but I'm so full..."
     bi "But everyone has a dessert stomach."
     s "Well, my work here's done. I'm gonna go party."
@@ -2546,6 +2556,150 @@ label trial2l:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam with dissolve
+    s "Me?"
+    s "Bullshit, you don't have proof."
+    b "True, Shahar and Jenny both could have also pulled it off."
+    b "But think about it, an ice knife would have to be stored in the freezer in the kitchen."
+    b "You also were the one who \"found\" the sheath in the kitchen later."
+    b "Your ice cream cake gave you an excuse to frequently access the freezer."
+    b "And you were the one who was adamant about the sheath not being related to the murder."
+    s "So what, you're going to declare me the murderer just because you have a few vague ideas pointing to me?"
+    s "By that logic you should have voted off Jenny earlier."
+    b "But as far as we know, no one else used the freezer durin-{p=0.5}{nw}."
+    s "No, that's not true."
+    bi "Oh?"
+    bi "Wasn't expecting that."
+    s "Shahar. Care to tell us what drink you got?"
+    show sam:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "Rum on the rocks. What's it matter to ye?"
+    s "On the rocks. As in you had ice in the drink, right?"
+    h "Aye, stop asking me such trifling questions."
+    s "Where'd you get that ice."
+    h "The freeze-{p=0.5}{nw}"
+    show shahar mad:
+        xcenter .25
+    h "Ah. Yer blamin' me, are ye ya landlubber."
+    s "Not blaming you. Just saying, you also went to the freezer."
+    s "And when did you go to the freezer?"
+    h "After Stella went a-plunderin'"
+    s "And Bert, when do you suspect I would have killed Stella?"
+    b "When you left to grab the stepstool from the garage."
+    s "Right, and I was just in the kitchen, but I was in the dining room for a while before that."
+    s "So if the ice knife was used in the murder, I must have grabbed it after Shahar went to the freezer."
+    s "If I got it beforehand, it would have melted while I was waiting around."
+    s "Shahar, did you see any ice knife in the freezer?"
+    h "...Nay, can't say I did."
+    h "All I saw in there was an ice cube tray and Sam's pile o' tooth rot."
+    s "So there you go. If there was an ice knife used, someone else must have done it."
+    s "And they must have taken it out before Shahar went to grab a drink, and then they killed Stella shortly after."
+    bi "..."
+    bi "Damn, we were so close."
+    bi "I really thought we figured everything out."
+    bi "We had such a convincing theory, but I guess there wasn't anywhere for Sam to hide the knife."
+    h "So what now. Are we lynchin' Sam?"
+    s "What? Did you not pay attention."
+    h "I'm not exactly the brightest matey on the poop deck."
+    s "Ugh."
+    bi "..."
+    bi "Wait."
+    b "Sam."
+    s "What now..."
+    b "Just because Shahar didn't see the knife, doesn't mean you couldn't have hidden it in the freezer."
+    s "Oh? Care to tell us where I magically hid the knife?"
+label trial2m:
+    menu:
+        bi "The knife was hidden..."
+
+        "In the cake.":
+            bi "That has to be it."
+
+        "In the ice cube tray.":
+            bi "How would a knife fit in a tray with cube-shaped compartments?"
+            jump trial2m
+
+        "In a hidden compartment.":
+            bi "No one mentioned anything about that."
+            jump trial2m
+
+        "In the fridge.":
+            bi "The ice would melt in the fridge."
+            jump trial2m
+    b "In the cake."
+    b "You could've easily pushed the ice knife into the cake to hide it."
+    h "Ay lad, wouldn't there have been an obvious hole in the cake?"
+    b "Well, when you opened the freezer the hole could have been in the back."
+    b "And before the cake was brought out to serve, Sam had already cut a slice."
+    b "The edge of the slice could have been aligned with the hole the knife was hiding in."
+    b "After the slice was cut, there wouldn't be evidence of a hole in the cake."
+    b "Not to mention, the slice was cut rather cleanly, like you had used a regular knife."
+    b "When I tried using the sheath, the cut was much less flat."
+    b "I think in your attempt to hide the fact that you hid an object in the cake..."
+    b "You gave us evidence you had access to a knife of some sort."
+    b "And we all saw the normal knife in the dining room the whole time."
+    b "So... it must have been the ice knife."
+    s "..."
+    s "Fine, just vote for me."
+    s "Not like any of us have made any progress on figuring out who the Game Master is or how to get out."
+    s "Might as well just all die swiftly by voting the wrong person."
+    bi "I think in a weird way, this is Sam's way of admitting to stabbing Stella."
+    bi "There's no more arguments to be had, only anger."
+    hide shahar with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    i "I knew something was fishy with Sam! You're a jerk {i}and{/i} a murderer!"
+    i "You're really cruel-hearted, you know that?"
+    i "You couldn't just settle for stabbing her! You tortured her for fun, then killed her!"
+    bi "...Huh?"
+    s "What?"
+    bi "Sam's just as confused as I am..."
+    bi "What is Sid talking about?"
+    $burns = 4
+    call screen mansionEvidenceTrial(-1, burns, "trial2n") with dissolve
+label trial2n:
+    play music "audio/rush.mp3"
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sid ind with dissolve:
+        xcenter .25
+    show sam:
+        xcenter .75
+    b "...The burn wounds."
+    i "Yeah! Sam burned Stella's hands, then killed her!"
+    s "Sid, I have no idea what you're talking about."
+    i "You can't lie your way out of this one!"
+    bi "How did none of us think about that until now?"
+    b "Wait, Sid, calm down."
+    b "Let's not settle on the killer being Sam just yet."
+    s "What Bert, realized your conclusions from before were rather silly?"
+    b "If you want us to not suspect you, you should cooperate rather than making quips."
+    s "...Fine."
+    b "The burn wounds. We haven't discussed them at all."
+    hide sid
+    hide sam
+    with dissolve
+    show lauren ind:
+        xcenter .25
+    show jenny ind:
+        xcenter .75
+    l "Burn wounds? What burn wounds?"
+    j "Yeah, I didn't see them either!"
+    show ev2 hand with dissolve
+    b "Stella's hands had what looked like burn wounds on the palms."
+    b "Her corpse's hands were face down when we found her."
+    b "So if you didn't go out of your way to flip her hands over, you wouldn't have see them."
+    j "But is this really relevant to how she died?"
+    j "For all we know they have nothing to do with the murder."
+    hide lauren with moveoutleft
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Yeah! We already know Sam's the murderer! No one else is mean enough to do it!"
+    bi "Oh boy, I'm going to have to get Sid's emotions under control before we make progress..."
+
 
 
 #Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
