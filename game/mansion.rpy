@@ -11,11 +11,14 @@ label mansionGo:
     f "nrg...."
     bi "...no, that's not how I should think about it."
     bi "There were ten people I did help save."
-    bi "Well, nine excluding the Game Master."
+    bi "If we didn't investigate and uncover Kaiser's secrets, we..."#JJJ
+    bi "...we all would have been killed." #JJJ
+    bi "Though, I still feel no closer to figuring out who the game master is..." #JJJ
+    bi "Either way, I need to keep my guard up and protect everyone here."
     show frog ind
     f "Oh, Bert! Are you awake? Feeling okay?"
     bi "This kid's one of them."
-    bi "And I have to keep saving them for as long as this goes."
+    bi "I have to keep him safe."
     b "Yeah, I'm fine. Thanks for asking. How are you?"
     f "Eh, kinda sleepy like always."
     f "We're in a really nice house now though!"
@@ -35,54 +38,74 @@ label mansionGo:
     show lauren ind with moveinleft:
         xcenter .25
     $showchibi("freddy", "lauren")
-    l "Hey Froggy, you doing okay?"
+    l "Hey Freddy, you doing okay?"
     l "You wanna look around and try to find food with me? Everyone's probably hungry after sleeping!"
     f "S-sure..."
     hide lauren with moveoutleft
     hide frog with moveoutright
     $showchibi()
-    bi "Where did she come from?"
+    bi "Thank goodness for Lauren, she's great with the kids." #JJJ
     bi "Oh, everyone else is here too, waking up like us."
     $showchibi("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
     show drac ind with dissolve
-    d "I see Lauren and Freddy have already started exploring."
+    d "Hmm. I see Lauren and Freddy have already started exploring."
     b "Something like that. I think she's just trying to keep him from crying."
     d "Regardless, they have gone to a new area without consulting the rest of us."
     d "Seems somewhat rash."
-    d "Plus, I was hoping we could discuss what little we've learned from Kaiser before his death."
+    d "As well, I was hoping we could discuss what little we've learned from Kaiser before his death."
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .25
     show sam with moveinright:
         xcenter .75
-    s "I agree with the vampire for once."
-    s "It would be good to discuss as a group."
-    d "Well, we may as well discuss it now, and catch those two up later."
+    s "I agree with the vampire."
+    d "We may as well discuss it now, and catch those two up later."
+    s "No time to waste really..."
     d "First, Kaiser mentioned the train we were in is very similar to a train he'd been in before."
     d "It seems we're in some sort of mansion. Perhaps the murderer this time has been in this mansion before?"
-    d "In which case, maybe our focus while exploring should be finding clues that tie specific people to this place."
-    d "That way we can maybe identify the murderer ahead of time."
+    hide sam with moveoutright
+    show catherine ind with moveinright:
+        xcenter .75
+    c "Woah! So you think someone here has been in this mansion before?" #JJJ
+    d "It would make sense, yes?"
+    b "He has a point... If there were direct ties between Kaiser and the train, maybe..."
+    c "Maybe someone his direct ties to this mansion?"
+    d "Precisely."
+    d "In which case, while exploring let's look for clues that tie specific people to this place."
+    d "That way we can identify the murderer ahead of time."
     d "Ideally they would just kill the Game Master and we all escape, but if not we can protect ourselves in this way."
-    bi "A reasonable plan, but maybe a bit optimistic."
-    d "Also, the fact that Kaiser, Stella, and Sam have all admitted to some sort of crime."
+    bi "Dracula's very calm and collected about this."
+    bi "It seems like a pretty good plan, though maybe a bit optimistic."
+    d "Secondly, we know that Kaiser, Stella, and Sam have all admitted to some sort of crime."
     bi "Stella and Sam?"
     bi "Oh right..."
+    scene black
     show bg trainmid
     show stella ind
     show sepia:
         alpha .5
-    with dissolve
+    with fade
     t "I tore down competition, I burned bridges, you name it."
     t "My methods don't always see eye-to-eye with the law, but, c'est la vie."
     hide stella
+    scene bg trainmid
     show sam
     show sepia:
         alpha .5
     with dissolve
     s "I used to sell drugs, mostly to upper-class business people and spoiled rich kids."
-    hide bg trainmid
-    hide sepia
-    with dissolve
+    #hide bg trainmid
+    #hide sam
+    #hide sepia
+    #with dissolve
+
+    scene bg mansiondining
+    $showchibint("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
+    show drac ind:
+        xcenter .25
+    show catherine ind:
+        xcenter .75
+    with fade
     d "And Bert almost admitted something on the train as well."
     d "Remember what the screen said in the first room we met in?"
     show start2
@@ -93,7 +116,7 @@ label mansionGo:
     hide start2
     hide sepia
     with dissolve
-    d "In other words, whoever put us here seems to think if we died, it would be deserved."
+    d "In other words, whoever put us here seems to think we all deserve to die."
     d "Surely you can all finish this train of thought on your own."
     s "We're all criminals."
     bi "Criminal?"
@@ -101,19 +124,41 @@ label mansionGo:
     bi "..."
     bi "But I wasn't ready emotionally to contest that statement."
     bi "So I stayed silent."
-    bi "I wasn't the only one."
-    bi "There were some looks of discomfort, but some time passed before anyone spoke again."
-    d "Based on the lack of response from the group, it seems this conclusion is correct."
+    hide drac ind with moveoutleft
+    show sid ind with moveinleft ###JJJ v this section below
+    i "No way, that doesn't make any sense."
+    i "I mean, I'm only 16, I can't be a criminal."
+    c "Hmm, I'm not sure if you're exempt from the law for being 16, bud."
+    i "Well I didn't do anything wrong, really."
+    i "Er, well, nothing {i}VERY{/i} wrong..."
+    bi "..."
+    i "Well, {i}MAYBE{/i} very wrong, but-"
+    hide catherine ind with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "I think we get the point."
+    j "Based on everyone's reaction, it seems like there's a least some truth to Dracula's point."
+    j "I have some doubts though, especially considering Freddy's a literal child."
+    b "Yeah, it seems unlikely Freddy is a hardened criminal."
+    bi "It's also hard for me to imagine Lauren or Jenny being a criminal..."
+    bi "I wonder what they did..."
+    hide sid ind with moveoutleft
+    show drac ind with moveinleft:
+        xcenter .25
+    #bi "I wasn't the only one."
+    #bi "There were some looks of discomfort, but some time passed before anyone spoke again."
+    d "Based on the lack of evidence against, it seems this conclusion is correct."
     d "Surely anyone who didn't view themselves as a criminal could counter this argument."
     d "So it could be prudent to strategize around this information."
-    hide sam with moveoutright
+    hide jenny ind with moveoutright
     show stella ind with moveinright:
         xcenter .75
     t "Strategize how exactly?"
     d "Maybe we could each continue discussing reasons we could be here and try to find a common link."
     d "And by discussing reasons, I mean confess to our crimes."
     d "That common link could then help us identify the Game Master. The Game Master might even be the common link themselves."
-    d "Then whoever is the killer this round would have better odds of killing the Game Master and ending the game."
+    d "We'd be able to identify and eliminate them, ending this all."
+    #d "Then whoever is the killer this round would have better odds of killing the Game Master and ending the game."
     d "For example, I've committed vampiric manslaughter."
     d "I think it's unfair to call my need for sustenance a crime, but I digress."
     show scary with dissolve:
@@ -133,17 +178,16 @@ label mansionGo:
     t "But we've already discussed this and it won't work."
     d "Hmph, fine. Maybe this is a conversation that should wait for all of us to be present anyway."
     d "But, even if we don't admit to our crimes, maybe we should take precautions like mandatory travelling in pairs."
-    t "Hell no!"
+    t "Rubish!"
     show stella happy:
         xcenter .75
     t "You see the room we're in? This is a palace made for a queen like me."
     t "There's bound to be plenty of high-class booze, stuff you'd find in VIP lounges."
-    bi "I hadn't fully processed it with all the confusion, but we were in what seemed to be a mansion."
-    bi "Hopefully with real food and sleeping arrangements..."
-    bi "Maybe a working stove to cook some meat?"
-    t "I'm not going to let some old fart tell me I can't drink it because I need to watch over him."
+    b "For the first time since the start of all this, Stella makes a great point." #JJJ made him say this outloud and not think it
+    b "Hopefully there's some real food and sleeping arrangements..."
+    t "I'm not going to let some geezer tell me what to do."
     t "I worked hard my whole life to hire bodyguards, not to be one."
-    hide drac with moveoutleft
+    hide drac ind with moveoutleft
     show sam with moveinleft:
         xcenter .25
     s "With all due respect, you're kind of derailing the conversation here."
@@ -165,7 +209,7 @@ label mansionGo:
     show jenny ind with moveinleft:
         xcenter .25
     j "I do have concerns about us all admitting to crimes."
-    j "I know it will sound suspicious, but I think for some of us our crime is something very personal."
+    j "I know it will sound suspicious, but I think for some of us, this very personal."
     j "One of those things that you have to keep bottled up or ignore for your own sanity."
     j "Like the awkward moment from middle school that ruins you when you think of it."
     bi "..."
@@ -175,10 +219,10 @@ label mansionGo:
     b "What?"
     j "Huh?"
     t "What? You're both young, doe-eyed, happy types."
-    t "And it's obvious Bert doesn't want to talk about his crime, and you're saving him."
+    t "And it's obvious Bert doesn't want to talk about his crime, so you're saving him."
     show stella bigsmile:
         xcenter .75
-    t "But hey, if you're not interested in Bert I'll take him."
+    t "But hey, if you're not interested in Bert, I'll take him."
     j "..."
     b "..."
     j "I'm just going to ignore what Stella said."
@@ -186,12 +230,12 @@ label mansionGo:
     show jenny ind:
         xcenter .25
         linear 0.15 xcenter .5
-    j "Anyways, I think if we admit to our crimes it'll create more sadness and distrust than anything."
+    j "Anyways, I think talking about our crimes would create more sadness and distrust than anything."
     j "Besides, look at the crimes we already know."
     j "Stella did some shady business deal, Sam dealt drugs, Bert's is something about driving."
     j "What common theme would those have that we could figure out?"
     bi "No one had a good answer to that."
-    j "Exactly. So let's just keep trucking along like we have."
+    j "Exactly. So let's do something useful and explore this place."
     bi "I looked briefly at Sam and Dracula."
     hide jenny with dissolve
     show sam:
@@ -207,15 +251,15 @@ label mansionGo:
         xcenter .75
         linear 0.15 xcenter .5
     d "Well, one more thing."
-    d "It seems despite not being in a fast-moving train, escape is unlikely."
+    d "It seems that despite not being in a fast-moving train, escape is unlikely."
     d "The windows have been boarded with a thick metal sheet."
     d "Even if they were not there, the chips in our brains would likely kill us upon leaving the building."
     d "And given what happened to Kaiser, it would seem the chips are going to be hard to subvert."
     d "That is all I wished to say. Would hate to see any more unnecessary deaths than we already have."
     hide drac with dissolve
     show sid ind with dissolve
-    i "So um, are we free to go?"
-    i "I... I've never been in a house this big."
+    i "So um, are we free to go explore?"
+    i "I... I've never been in a house this fancy."
     i "I was hoping we'd do what we did on the train and explore."
     show sid ind:
         xcenter .5
@@ -268,7 +312,8 @@ label mansionGo:
     $showchibi("jenny", "freddy", "lauren")
     show lauren ind with dissolve
     l "Hey, what happened in the other room? Heard lots of chatter."
-    b "Well uh... we've concluded everyone's a criminal, basically."
+    b "Well uh..."
+    bi "I'm pretty curious we've concluded everyone's a criminal, basically."
     b "Some people suggested we all admit to our crime. It wasn't received very well."
     b "Now everyone's off exploring."
     l "Ah okay. Well, good news, the kitchen is rather well-stocked."
@@ -618,7 +663,7 @@ label mansionGo:
     b "Alright. So there's four bedrooms upstairs, each with a twin bed, except the master bedroom that has a bigger bed."
     b "So five of us can sleep pretty easily."
     hide sam with moveoutleft
-    show lauren ind with moveineftl:
+    show lauren ind with moveinleft:
         xcenter .25
     l "For what it's worth, Freddy can probably fit in a twin bed with someone, if both Freddy and that person don't mind."
     l "Freddy, that sound okay to you?"
@@ -917,7 +962,7 @@ label postFT2:
     t "Not to mention, with the stress of duh job I spend pretty much all my free time drinking."
     t "Which means I can't really keep a steady boyfriend."
     t "Or even meet a guy while sober."
-    t "The number of guys I've met {i}drunk{i/} though."
+    t "The number of guys I've met {i}drunk{/i} though."
     t "Oh, it helps that I'm a rich businesswoman too."
     t "Lots of guys love to be treated for once."
     t "And they're more likely to follow you to your hotel room when your hotel room is duh presidential suite."

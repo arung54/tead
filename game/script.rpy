@@ -385,4 +385,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump trial1b
+    jump mansionGo
