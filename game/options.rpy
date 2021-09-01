@@ -208,6 +208,7 @@ init python:
 
 # define build.itch_project = "renpytom/test-project"
 
-define config.mouse = { 'default' : [ ('teadcursor.png', 0, 0)], 'ex' : [ ('teadcursorex.png', 0, 0)], 'q' : [ ('teadcursorq.png', 0, 0)]}
+define config.mouse = { 'default' : [ ('teadcursor.png', 0, 0)], 'peed' :  [ ('danfrlgb.png', 0, 0), ('danfrlg2b.png', 0,0), ('danfrlgb.png', 0, 0), ('danfrlg3b.png', 0,0),], 'pee' : [ ('bertfrlgb.png', 0, 0), ('bertfrlg2b.png', 0,0), ('bertfrlgb.png', 0, 0), ('bertfrlg3b.png', 0,0),], 'ex' : [ ('teadcursorex.png', 0, 0)], 'q' : [ ('teadcursorq.png', 0, 0)]}
+
 define config.rollback_enabled = True
 define config.skipping= True

@@ -20,6 +20,17 @@ image darken = "welcomescreenblank.png"
 define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
 image behappy = Image("bhappy.png", xcenter=.729, ycenter=.802)
+image hamster loc:
+    "bertfrlgb.png"
+    pause .1
+    "bertfrlg2b.png"
+    pause .1
+    "bertfrlgb.png"
+    pause .1
+    "bertfrlg3b.png"
+    pause .1
+    repeat
+
 image tracks:
     "tracks1.png"
     pause .05
