@@ -2736,15 +2736,353 @@ label trial2n:
     show ev2 hand with dissolve
     b "Stella's hands had what looked like burn wounds on the palms."
     b "Her corpse's hands were face down when we found her."
-    b "So if you didn't go out of your way to flip her hands over, you wouldn't have see them."
+    b "So if you didn't go out of your way to flip her hands over, you wouldn't have seen them."
+    hide ev2 hand with dissolve
     j "But is this really relevant to how she died?"
     j "For all we know they have nothing to do with the murder."
     hide lauren with moveoutleft
     show sid ind with moveinleft:
         xcenter .25
     i "Yeah! We already know Sam's the murderer! No one else is mean enough to do it!"
-    bi "Oh boy, I'm going to have to get Sid's emotions under control before we make progress..."
+    bi "Oh boy, we're going to have to get Sid's emotions under control before we can make progress..."
+    b "Sid, let's not jump to conclusions."
+    b "We still need to figure out a lot about these burn wounds."
+    b "For example, how do we know they happened before Stella was stabbed?"
+    b "If someone already was planning to stab Stella, why would they put more effort into hurting her?"
+    i "I... uh..."
+    i "Well, if her hands were burned she couldn't defend herself!"
+    b "This is assuming her hands were burned before she was stabbed, which we don't know."
+    i "But do you know her hands were burned after she was stabbed?"
+    b "I don't, but someone else should..."
+    call screen chooseCharMansion("sam", "trial2o", "Who would know if Stella was stabbed or burned first?") with dissolve
+label trial2o:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    bi "..."
+    bi "It comes down to this."
+    bi "Are we going to cooperate?"
+    show sam with dissolve
+    bi "Or will Sam lie and indirectly save someone else in the process..."
+    b "Sam."
+    s "What do you want now?"
+    b "We need to ask you to cooperate with us fully."
+    b "That means owning up to stabbing Stella."
+    s "What reason do I have to do that? Even if I did it, I wouldn't admit to it."
+    b "We have no reason to believe anyone but you was with Stella as she died."
+    b "So unless you help us identify someone else who could have done it..."
+    b "We're going to have to choose you as the murderer."
+    b "But if you can tell us what happened honestly, and that includes evidence it wasn't you..."
+    b "It could get you off the hook. And find the real murderer, saving us all."
+    show sam:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Wait! I don't buy it."
+    bi "What now..."
+    i "The Game Master must have chosen Sam to be the murderer, otherwise nothing makes sense."
+    $location = 5
+    python:
+        startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for him to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think they did.{color=#f00}", -1,
+        "sid", "Sid: Kaiser made it sound like it was pretty clear he was chosen as murderer, so there's {color=#f00}no way Sam was confused about being the murderer.{/color}", -1,
+        "sid", "Sid: The only other possibility is that two people were chosen, but that {color=#f00} can't happen in this game.{/color}", -1,
+        "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#5ff}he must have been chosen as murderer{/color}.", 1,
+        1, location, "trial2p")
+label trial2p:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam:
+        xcenter .75
+    show sid ind:
+        xcenter .25
+    with dissolve
+    b "Wait, remember the discussion we had on the first day here?"
+    b "We said that the murderer was likely to have been in this mansion before."
+    b "We never figured anything else about how the murderer knew they were chosen, because Kaiser died before he could tell us more."
+    b "So it's possible Sam wasn't chosen as the murderer by the Game Master, but has been here before."
+    b "In which case, it would be easy for someone who had been here before to believe they were the murderer this time."
+    b "But nothing rules out multiple people having been here before."
+    b "Someone else could have actually been assigned to be the murderer."
+    b "Also, I guess the Game Master never clarified who we should vote for if the designated murderer isn't actually the one who commits murder."
+    b "So even if Sam was chosen as the murderer, we might still want to vote for someone else."
+    i "This all seems so complicated... isn't there that saying about the simplest explanation usually being the best one?"
+    i "Sam killing Stella just makes so much sense."
+    b "It doesn't explain the burns on Stella's hands though."
+    b "Right now, only Sam can help us find a way to explain that."
+    i "...Fine, but Sam better do a good job or I'm going to vote Sam off anyway!"
+    hide sid with moveoutright
+    show sam:
+        xcenter .75
+        linear 0.15 xcenter .5
+    bi "Ok, Sid's cooperating now, but will Sam confess and tell us what happened?"
+    s "..."
+    s "Okay, I'll talk."
+    s "This... this damn game."
+    s "Bert's right, I've been here before."
+    s "The guy who lived here, Mr. Sydell, he was one of the people I sold drugs to."
+    s "I... I didn't want to murder Stella."
+    s "But I thought I had to."
+    s "We don't know what happens if days go by without a murder."
+    s "Do we starve to death because we run out of food?"
+    s "Does the murderer get killed by the chip in their head for not complying?"
+    s "No offense, but... you're all strangers to me. And now we think you're all criminals."
+    s "I can't in good faith put your lives above mine."
+    s "And even if I could..."
+    s "What if {i}everyone{/i} gets killed if the murderer doesn't comply and kill someone?"
+    bi "..."
+    bi "I... I never thought about it from that perspective."
+    bi "Am I... feeling bad for Sam?"
+    show sam:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show lauren ind with moveinleft:
+        xcenter .25
+    l "Sam I... think all of understand just how messed up this whole situation is."
+    l "You or whoever murdered Stella aren't the enemy. The Game Master is the enemy. I think we can agree with that."
+    hide sam with moveoutright
+    show shahar ind with moveinright:
+        xcenter .75
+    h "Nay."
+    h "Ye blew a defenseless woman down."
+    h "Not to protect yerself from a cutlass, not fer revenge."
+    h "Just a poor defenseless lassie."
+    h "Even if Sam didn't deal the killing blow, I can't fergive a murderer so becalmedly, I'm sorry lads and lassies."
+    l "Shahar, can't we talk this through?"
+    hide shahar with moveoutright
+    show sam with moveinright:
+        xcenter .75
+    s "No, Shahar's right."
+    s "I might as well be a murderer."
+    s "I... hate what I've become."
+    s "I wish it was someone else's turn to murder me instead."
+    b "Look, Sam, what happened happened."
+    b "We... I miss Stella, as much as she annoyed me, but we have to look past that now."
+    b "Our lives are on the line. We can't save Stella now, but we can save the rest of us."
+    b "But you need to tell us what happened in the bathroom."
+    s "..."
+    s "Okay."
+    s "No emotions this time, I guess."
+    hide lauren with moveoutleft
+    show sam:
+        xcenter .75
+        linear 0.15 xcenter .5
+    s "I went in there, with the ice knife."
+    s "She saw me and greeted me kindly."
+    s "I guess she didn't think it was weird I came up there."
+    s "But then she then turned back and was messing with the sink."
+    s "I took that opportunity, pulled the ice knife out, and stabbed her in the back."
+    bi "Several people were starting to look away uncomfortably."
+    bi "We had asked Sam to do it, we had seen the corpse but..."
+    bi "...hearing a murder described so casually wasn't easy."
+    s "She fell hard onto the sink after I stabbed her, trying to brace herself."
+    s "But she let out a scream when she made contact with it."
+    s "I think because of the pain of collapsing onto it so quickly."
+    s "Then her body went limp."
+    s "I checked her pulse and her heart had stopped."
+    s "I thought I got lucky with where I aimed the knife."
+    s "And yeah, I left the knife in her body and that's that."
+    b "Hm..."
+    bi "Something seems... off about Sam's story."
+    bi "Could one stab wound in the back really kill someone so easily and quickly?"
+    bi "I guess we can figure that out later."
+    bi "For now..."
+    b "I think I know precisely what caused the burn wounds."
+    s "Oh?"
+    b "I had a suspicion even before hearing Sam's story."
+    b "But what Sam said makes me even more sure."
+    call screen pickSpot2 with dissolve #pick sink handles
+label trial2q:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam:
+        xcenter .5
+    b "Sam, you said Stella braced herself on the sink, right?"
+    s "Yeah."
+    b "If we look at the shape of the burn wounds, they're very rectangular."
+    b "Just like the sink handles."
+    b "Before hearing Sam's story, from the shape of the sink handles and the position of Stella's corpse..."
+    b "We could have guessed the sink handles caused the burns."
+    b "But Sam's story makes me even more sure, because Stella apparently braced herself using the sink."
+    b "So the short version of events is, Sam stabs Stella, causes her to fall onto the sink."
+    b "She grabs the sink handles trying to brace herself, and then the sink handles somehow burn her."
+    b "Sam, if we can figure out what burned her and if it was lethal, that means you didn't murder her."
+    s "..."
+    bi "Why's Sam so quiet? This is a moment of hope for us..."
+    s "Thanks for trying Bert, but..."
+    s "I don't think the sink handles can be what burned her."
+    s "So it seems like I'm not off the hook..."
+    b "Care to explain?"
+    s "Sure, but we may as well vote me off now..."
+    bi "Sam's giving up."
+    bi "I need to figure this out, and fast."
+    $wires = 6
+    $generator = 7
+    python:
+        startMansionTrial("sam", "Sam: Stella {color=#f00}was messing with the sink handles when I got there.{color=#f00}", -1,
+        "sam", "Sam: If the sink handles are what burned her, {color=#5ff}she should have been in pain before I stabbed her.{color=#5ff}", 1,
+        "sam", "Sam: So the handles would have {color=#f00}had to heat up in the few seconds after I stabbed her.{color=#f00}", -1,
+        "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}nothing could have heated them up in that time.{/color}", -1,
+        1, [wires, generator], "trial2r")
+label trial2r:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam:
+        xcenter .5
+    b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
+    b "There was a generator upstairs, anad when I looked under the sink I saw some wires fed in through a hole in the wall."
+    b "It was hard to tell where the wires connected to, but it was probably the sink handles."
+    b "And they were probably connected to the generator."
+    b "With enough electricity running through them, I'm sure they would get hot enough to burn Stella."
+    s "That still doesn't explain how they were only heated up when Stella fell onto them."
+    b "I think there's someone who could maybe explain that."
+    bi "But... it's not me."
+    call screen chooseCharMansion("dracula", "trial2s", "Who could explain how Stella only got burnt after being stabbed?") with dissolve
+label trial2s:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show drac ind:
+        xcenter .5
+    b "Dracula."
+    d "Yes?"
+    b "What do you know about electricity and the human body?"
+    d "...What are you insinuating?"
+    b "I know you probably know enough to explain how Stella got burnt."
+    b "Since you claim to have conducted \"experiments\" about this kind of thing."
+    d "And who told you that?"
+    b "Let's just say you should mind your volume level at parties."
+    d "Hmph, so you were eavesdropping then?"
+    bi "I wasn't, but I promised Freddy I wouldn't say it was him so..."
+    b "I happened to overhear it."
+    d "A likely story."
+    d "Fine, I'll entertain this line of thought. But no one's allowed to inquire further about what Bert mentioned."
+    b "So much for everyone being an open book about their crimes, huh?"
+    d "..."
+    d "I don't particularly care for you right now Bert."
+    d "But for the sake of escaping, I will pretend this conversation didn't happen until we have solved this mystery."
+    b "Care to explain why you didn't speak up earlier?"
+    d "As Jenny said, we all have reasons to avoid bringing up our past."
+    d "I was hoping you all would solve this organically, without my help, so I didn't reveal more than I needed to."
+    d "If that did not happen, I would have spoken up."
+    bi "I don't believe him."
+    d "Any more questions, or can I finally explain how this may have happened?"
+    b "Fine by me."
+    d "Alright, no interruptions please."
+    bi "He said that in a way that made it seem like it was directed at the group, but it was definitely at me."
+    d "Electrical current can only travel in closed circuits."
+    d "For example, if you take a battery and attach a wire to one end only, current won't flow through the wire."
+    d "But when you attach the other end of that wire to the other end of the battery, current flows."
+    d "Think of the sink handles as ends of a battery, since they were connected to the generator."
+    d "And Stella like a wire, with her hands being the two endpoints."
+    d "The circuit isn't completed when Stella has one hand on a sink handle, so current won't flow through her from the generator."
+    d "But if she grabbed both sink handles to brace herself, she would receive some amount of current."
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Um... I have a question."
+    d "Yes?"
+    i "I've helped my dad replace car batteries before."
+    i "He's grabbed both terminals of a car battery before on accident but he wasn't hurt."
+    d "Well, there's two factors at play that determines how bad an electrical shock is."
+    d "The first is amount of voltage coming from the source of electricity."
+    d "A generator that needs to power a whole house will have a much higher voltage than a car battery."
+    d "The second is the resistance of the circuit the electricity is flowing through."
+    d "The resistance of a human body can vary a lot."
+    d "For example, if your hands are dry, there are lots of dead skin cells on your hand that have high resistance."
+    d "This means you transmit less current when you are touching a source of voltage."
+    d "In contrast, if you recently washed your hands, as Stella may have, your body has very low resistance."
+    i "Ohhhh. Okay, thanks Dracula!"
+    hide sid with moveoutleft
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "Gonna be honest, I savvied none of that ye nerd."
+    d "Did you just call me a nerd?"
+    h "And what if I did, ye lily-livered hag?"
+    d "..."
+    d "I'm just gonna ignore that."
+    d "The point is..."
+    d "It makes sense Stella could have only been lethally shocked, or even shocked at all, by touching both handles."
+    b "Great, so that answers that."
+    b "Dracula, there's one more thing that would be good to know..."
+label trial2t:
+    menu:
+        bi "What should I ask Dracula?"
 
+        "Who killed Stella?":
+            bi "Unless it was him or Sam, how would he know?"
+            jump trial2s
 
+        "What killed Stella?":
+            bi "Yeah, that's the crucial piece of information."
 
-#Notes: Shahar leaves dining room to grab screwdriver to open a bottle. Jenny leaves to grab clock. Sam leaves to grab stepstool.
+        "Why kill Stella?":
+            bi "Why would he know the motive?"
+            jump trial2s
+
+        "How are you so old but so hot?":
+            bi "...did I really just think that?"
+            jump trial2s
+    b "We need to know if Stella died from the stab wound or the shock, Dracula."
+    b "Otherwise, even if we learn who set up the wiring, we can't identify the murderer."
+    d "Hmm, I can't answer for sure."
+    d "But it was pretty likely the shock."
+    d "From what I saw, a stab wound in the back like that wouldn't have killed Stella immediately."
+    d "Even if Sam stabbed a vital organ, Stella would remain conscious for probably at least 15 seconds."
+    d "In contrast, electrocution can kill someone nearly instantly."
+    d "The fact that Stella was both stabbed and shocked, and didn't get up once stabbed..."
+    d "...suggests the shock killed her before she could act while conscious."
+    b "I have one thing to bring up."
+    hide shahar with moveoutleft
+    show drac ind:
+        xcenter .75
+        linear 0.15 xcenter .5
+    b "It doesn't matter much but it's just to be totally sure that we can believe Sam."
+    b "Since this conclusion is partly based on Stella not moving after being stabbed, but only Sam can confirm that."
+    b "Dracula... did you discuss how electrocution works with Sam at all during the party?"
+    b "Are you sure you didn't say anything that could help Sam lie here?"
+    d "...Bert, how much did you eavesdrop?"
+    b "Clearly not enough, because I can't answer the question I just asked you."
+    d "Fine, I'll leak our private conversation to assuage your worries, Bert."
+    d "But know I am doing this with the utmost level of annoyance with you."
+    b "Works for me, wasn't planning on being your friend after this game's over."
+    d "The same goes for you."
+    d "I was trying to collaborate with Sam, who I viewed as the only person possibly as level-headed as me."
+    d "Admittedly, knowing Sam has the willpower to attempt murder, I no longer am sure that is the case."
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sam with moveinleft:
+        xcenter .25
+    bi "Sam visibly winced hearing that..."
+    d "Anyway, Sam did not want to work with someone \"untrustworthy\" however."
+    d "Sam wanted me to confess that I am not a vampire to \"gain my trust,\" even though I clearly am."
+    d "So I had to regale Sam with stories of what I did as a vampire."
+    s "It was very boring, I was looking for some sort of contradiction but there was none, just a bunch of obvious lies."
+    d "I'm going to pretend you didn't say that, for your sake."
+    s "If I'm being honest..."
+    s "I couldn't agree to collaborate with him, because that might involve identifying who the murderer before they murdered."
+    s "And I thought that was me."
+    s "So I figured if Dracula and I kept everyone away from us by claiming to want privacy..."
+    s "And I made Dracula do all the talking while I thought about the murder..."
+    s "We wouldn't have to collaborate, and no one would be able to discern that I was planning a murder."
+    d "Hmph, it appears I was played."
+    d "Regardless, the important part is I brought up that I've experimented with electricity..."
+    d "But not in any level of detail that would let Sam fabricate a story to the level of detail we've seen."
+    d "Between that, and the state of the body..."
+    d "I'd still conclude Sam's story is more likely to be trustworthy than a fabrication."
+    d "And more importantly, that the shock is what killed Stella."
+    b "So we just need to figure out who set it up..."
+    hide sam with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .25
+    l "Well that's straightforward, right?"
+    l "It's probably Jenny."
+    b "Huh?"
+    hide drac with moveoutright
+    show jenny ind with moveinright:
+        xcenter .25
+    j "Huh? Me again?..."
+    l "We found the generator in Jenny's room."
+    l "That room also shares a wall with the bathroom, and that wall is the wall where the sink is."
+    l "So it'd be easiest for her to set it up."
