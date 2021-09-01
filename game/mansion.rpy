@@ -2921,6 +2921,169 @@ label trial2q:
         startMansionTrial("sam", "Sam: Stella {color=#f00}was messing with the sink handles when I got there.{color=#f00}", -1,
         "sam", "Sam: If the sink handles are what burned her, {color=#5ff}she should have been in pain before I stabbed her.{color=#5ff}", 1,
         "sam", "Sam: So the handles would have {color=#f00}had to heat up in the few seconds after I stabbed her.{color=#f00}", -1,
-        "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}that isn't possible.{/color}", -1,
+        "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}nothing could have heated them up in that time.{/color}", -1,
         1, [wires, generator], "trial2r")
 label trial2r:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam:
+        xcenter .5
+    b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
+    b "There was a generator upstairs, anad when I looked under the sink I saw some wires fed in through a hole in the wall."
+    b "It was hard to tell where the wires connected to, but it was probably the sink handles."
+    b "And they were probably connected to the generator."
+    b "With enough electricity running through them, I'm sure they would get hot enough to burn Stella."
+    s "That still doesn't explain how they were only heated up when Stella fell onto them."
+    b "I think there's someone who could maybe explain that."
+    bi "But... it's not me."
+    call screen chooseCharMansion("dracula", "trial2s", "Who could explain how Stella only got burnt after being stabbed?") with dissolve
+label trial2s:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show drac ind:
+        xcenter .5
+    b "Dracula."
+    d "Yes?"
+    b "What do you know about electricity and the human body?"
+    d "...What are you insinuating?"
+    b "I know you probably know enough to explain how Stella got burnt."
+    b "Since you claim to have conducted \"experiments\" about this kind of thing."
+    d "And who told you that?"
+    b "Let's just say you should mind your volume level at parties."
+    d "Hmph, so you were eavesdropping then?"
+    bi "I wasn't, but I promised Freddy I wouldn't say it was him so..."
+    b "I happened to overhear it."
+    d "A likely story."
+    d "Fine, I'll entertain this line of thought. But no one's allowed to inquire further about what Bert mentioned."
+    b "So much for everyone being an open book about their crimes, huh?"
+    d "..."
+    d "I don't particularly care for you right now Bert."
+    d "But for the sake of escaping, I will pretend this conversation didn't happen until we have solved this mystery."
+    b "Care to explain why you didn't speak up earlier?"
+    d "As Jenny said, we all have reasons to avoid bringing up our past."
+    d "I was hoping you all would solve this organically, without my help."
+    d "If that did not happen, I would have happily spoken up."
+    bi "I don't believe him."
+    d "Any more questions, or can I finally explain how this may have happened?"
+    b "Fine by me."
+    d "Alright, no interruptions please."
+    bi "He said that in a way that made it seem like it was directed at the group, but it was definitely at me."
+    d "Electrical current can only travel in closed circuits."
+    d "For example, if you take a battery and attach a wire to one end only, current won't flow through the wire."
+    d "But when you attach the other end of that wire to the other end of the battery, current flows."
+    d "Think of the sink handles as ends of a battery, since they were connected to the generator."
+    d "And Stella like a wire, with her hands being the two endpoints."
+    d "The circuit isn't completed when Stella has one hand on a sink handle, so current won't flow through her from the generator."
+    d "But if she grabbed both sink handles to brace herself, she would receive some amount of current."
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
+    i "Um... I have a question."
+    d "Yes?"
+    i "I've helped my dad replace car batteries before."
+    i "He's grabbed both terminals of a car battery before on accident but he wasn't hurt."
+    d "Well, there's two factors at play that determines how bad an electrical shock is."
+    d "The first is amount of voltage coming from the source of electricity."
+    d "A generator that needs to power a whole house will have a much higher voltage than a car battery."
+    d "The second is the resistance of the circuit the electricity is flowing through."
+    d "The resistance of a human body can vary a lot."
+    d "For example, if your hands are dry, there are lots of dead skin cells on your hand that have high resistance."
+    d "This means you transmit less current when you are touching a source of voltage."
+    d "In contrast, if you recently washed your hands, as Stella may have, your body has very low resistance."
+    i "Ohhhh. Okay, thanks Dracula!"
+    hide sid with moveoutleft
+    show shahar ind with moveinleft:
+        xcenter .25
+    h "Gonna be honest, I savvied none of that ye nerd."
+    d "Did you just call me a nerd?"
+    h "And what if I did, ye lily-livered hag?"
+    d "..."
+    d "I'm just gonna ignore that."
+    d "The point is..."
+    d "It makes sense Stella could have only been lethally shocked, or even shocked at all, by touching both handles."
+    b "Great, so that answers that."
+    b "Dracula, there's one more thing that would be good to know..."
+label trial2t:
+    menu:
+        bi "What should I ask Dracula?"
+
+        "Who killed Stella?":
+            bi "Unless it was him or Sam, how would he know?"
+            jump trial2s
+
+        "What killed Stella?":
+            bi "Yeah, that's the crucial piece of information."
+
+        "Why kill Stella?":
+            bi "Why would he know the motive?"
+            jump trial2s
+
+        "How are you so old but so hot?":
+            bi "...did I really just think that?"
+            jump trial2s
+    b "We need to know if Stella died from the stab wound or the shock, Dracula."
+    b "Otherwise, even if we learn who set up the wiring, we can't identify the murderer."
+    d "Hmm, I can't answer for sure."
+    d "But it was pretty likely the shock."
+    d "From what I saw, a stab wound in the back like that wouldn't have killed Stella immediately."
+    d "Even if Sam stabbed a vital organ, Stella would remain conscious for probably at least 15 seconds."
+    d "In contrast, electrocution can kill someone nearly instantly."
+    d "The fact that Stella didn't get up once stabbed suggests the shock killed her before she could act while conscious."
+    hide shahar with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Wait, that's assuming Sam didn't lie."
+    j "Sam could have deliberately told us a story that makes it sound like Stella died from being shocked instead of being stabbed."
+    d "This is true, but it would require a lot of other things to fall into place."
+    d "Sam would have to know that Stella was shocked by this setup, instead of assuming she was burnt."
+    d "Getting your skin burnt isn't exactly lethal, so the story doesn't work if she was burnt."
+    d "And then Sam would have to know enough about electrocution to tell a convincing story to all of us."
+    d "Also, Sam would have had to in one stab damage Stella in a way that killed her before we found her, which is harder than it sounds."
+    d "Dan getting impaled would have led to a lot of blood loss, so he would die quickly if no vitals were hit by the scythe."
+    d "But we already established Stella didn't suffer much blood loss because the knife plugged the wound."
+    d "Sam had to hit a vital organ in one shot, while dodging the spine, using a shoddy ice knife."
+    d "It all seems very unlikely."
+    j "I... I guess I have no choice but to believe, I don't know enough about this..."
+    b "I have one thing to bring up."
+    b "It doesn't matter much but it's just to be totally sure that Sam couldn't fake a story about electrocution."
+    b "Dracula... did you discuss how electrocution works with Sam at all during the party?"
+    b "Are you sure you didn't tell Sam anything that could help here?"
+    d "...Bert, how much did you eavesdrop?"
+    b "Clearly not enough, because I can't answer the question I just asked you."
+    d "Fine, I'll leak our private conversation to assuage your worries, Bert."
+    d "But know I am doing this with the utmost level of annoyance with you."
+    b "Works for me, wasn't planning on being your friend after this game's over."
+    d "Hmph."
+    d "I was trying to collaborate with Sam, who I viewed as the only person nearly as level-headed as me."
+    d "Sam did not want to work with someone \"untrustworthy\" however."
+    d "Sam wanted me to confess that I am not a vampire to \"gain my trust,\" even though I clearly am."
+    d "So I had to regale Sam with stories of what I did as a vampire."
+    hide jenny
+    show sam with moveinleft:
+        xcenter .25
+    s "It was very boring, I was looking for some sort of contradiction but there was none, just a bunch of obvious lies."
+    d "I'm going to pretend you didn't say that, for your sake."
+    s "If I'm being honest..."
+    s "Really I figured if Dracula and I kept everyone away from us by claiming to want privacy, and I made Dracula do all the talking..."
+    s "No one would be able to discern that I was planning a murder."
+    d "Hmph, it appears I was played."
+    d "Regardless, the important part is I brought up that I've experimented with electricity..."
+    d "But not in any level of detail that would let Sam fabricate a story."
+    d "So I'd still conclude Sam's story is more likely to be trustworthy than a fabrication."
+    d "And more importantly, that the shock is what killed Stella."
+    b "So we just need to figure out who set it up..."
+    hide sam with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .25
+    l "Well that's straightforward, right?"
+    l "It's probably Jenny."
+    b "Huh?"
+    hide drac with moveoutright
+    show jenny ind with moveinright:
+        xcenter .25
+    j "Huh? Me again?..."
+    l "We found the generator in Jenny's room."
+    l "That room also shares a wall with the bathroom, and that wall is the wall where the sink is."
+    l "So it'd be easiest for her to set it up."
