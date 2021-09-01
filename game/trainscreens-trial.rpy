@@ -263,7 +263,7 @@ screen trainEvidenceTrial(s, e, l):
             text "A superficial autopsy suggests Dan's cause of death is the large metal rod in his chest, with no other visible injuries. He seemed to have been looking out the window at the time of death." xcenter 800 yanchor 0.0 ypos 330
 
     if currEvidence >= 0:
-        if (s == statement or s == -1) and e == currEvidence:
+        if (s == statement or s == -1) and (e == currEvidence or (type(e) is list and currEvidence in e)):
             imagebutton:
                 idle "usethis.png"
                 xalign 0.66
