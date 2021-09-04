@@ -3032,57 +3032,55 @@ label trial2t:
     d "In contrast, electrocution can kill someone nearly instantly."
     d "The fact that Stella was both stabbed and shocked, and didn't get up once stabbed..."
     d "...suggests the shock killed her before she could act while conscious."
-    b "I have one thing to bring up."
     hide shahar with moveoutleft
-    show drac ind:
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "I have a question."
+    j "How do we know Dracula and Sam aren't conspiring?"
+    j "They spent a lot of time since we got to the mansion talking to each other in private."
+    d "Hmph, and what would I have to gain from protecting Sam if I didn't believe there was another murderer?"
+    j "I dunno. Maybe you're the Game Master and you know you won't die regardless."
+    d "I sure you I am not."
+    d "And if I was and wanted to kill you all, why wouldn't I just do it myself instead of through this game?"
+    j "Maybe the Game Master is working for someone and has to follow their rules?"
+    d "That seems silly, they aren't the Master then, just a Game Servant."
+    d "If I must tell you, I was trying to persuade Sam to work with me to get out of here."
+    d "But Sam claimed not to trust me since I claimed to be a vampire, so I was mostly trying to prove I was one."
+    hide drac with moveoutright
+    show sam with moveinright:
         xcenter .75
-        linear 0.15 xcenter .5
-    b "It doesn't matter much but it's just to be totally sure that we can believe Sam."
-    b "Since this conclusion is partly based on Stella not moving after being stabbed, but only Sam can confirm that."
-    b "Dracula... did you discuss how electrocution works with Sam at all during the party?"
-    b "Are you sure you didn't say anything that could help Sam lie here?"
-    d "...Bert, how much did you eavesdrop?"
-    b "Clearly not enough, because I can't answer the question I just asked you."
-    d "Fine, I'll leak our private conversation to assuage your worries, Bert."
-    d "But know I am doing this with the utmost level of annoyance with you."
-    b "Works for me, wasn't planning on being your friend after this game's over."
-    d "The same goes for you."
-    d "I was trying to collaborate with Sam, who I viewed as the only person possibly as level-headed as me."
-    d "Admittedly, knowing Sam has the willpower to attempt murder, I no longer am sure that is the case."
-    show drac ind:
-        xcenter .5
-        linear 0.15 xcenter .75
-    show sam with moveinleft:
-        xcenter .25
-    bi "Sam visibly winced hearing that..."
-    d "Anyway, Sam did not want to work with someone \"untrustworthy\" however."
-    d "Sam wanted me to confess that I am not a vampire to \"gain my trust,\" even though I clearly am."
-    d "So I had to regale Sam with stories of what I did as a vampire."
-    s "It was very boring, I was looking for some sort of contradiction but there was none, just a bunch of obvious lies."
-    d "I'm going to pretend you didn't say that, for your sake."
-    s "If I'm being honest..."
-    s "I couldn't agree to collaborate with him, because that might involve identifying who the murderer before they murdered."
-    s "And I thought that was me."
-    s "So I figured if Dracula and I kept everyone away from us by claiming to want privacy..."
-    s "And I made Dracula do all the talking while I thought about the murder..."
-    s "We wouldn't have to collaborate, and no one would be able to discern that I was planning a murder."
-    d "Hmph, it appears I was played."
-    d "Regardless, the important part is I brought up that I've experimented with electricity..."
-    d "But not in any level of detail that would let Sam fabricate a story to the level of detail we've seen."
-    d "Between that, and the state of the body..."
-    d "I'd still conclude Sam's story is more likely to be trustworthy than a fabrication."
-    d "And more importantly, that the shock is what killed Stella."
-    b "So we just need to figure out who set it up..."
-    hide sam with moveoutleft
-    show lauren ind with moveinleft:
-        xcenter .25
+    s "Yeah, I didn't want to work with him because I thought if I did he would find out I was the murderer."
+    s "And talking to him \"in private\" gave me an excuse to not talk to others who might find out."
+    s "Plus he talks a lot, so it gave me time to think."
+    b "Regardless, I think it's unlikely Dracula and Sam are conspiring for now."
+    b "If the Game Master is playing such an active role in setting up a lie..."
+    b "I don't think there's any way we solve this case anyway."
+    b "Plus, we can't really rely on anyone besides Dracula to explain the state of the body."
+    b "So we have to take the chance and trust him."
+    j "..."
+    j "Okay, I trust you Bert."
+    j "So if you trust him, I trust him."
+    bi "Jenny trusts me."
+    bi "I can't let her down."
+    b "Okay, for now our main priority is to figure out who set up the wiring."
+    hide sam with moveoutright
+    show lauren ind with moveinright:
+        xcenter .75
     l "Well that's straightforward, right?"
     l "It's probably Jenny."
     b "Huh?"
-    hide drac with moveoutright
-    show jenny ind with moveinright:
-        xcenter .25
     j "Huh? Me again?..."
     l "We found the generator in Jenny's room."
     l "That room also shares a wall with the bathroom, and that wall is the wall where the sink is."
     l "So it'd be easiest for her to set it up."
+    b "No, I'm pretty sure the generator got moved there later, we can't blame Jenny based on that."
+    b "There's something missing from that room that the murderer would have needed..."
+    call screen mansionEvidenceTrial(-1, evidence, "trial2u") with dissolve
+label trial2u:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
