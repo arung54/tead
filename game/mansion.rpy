@@ -2786,7 +2786,7 @@ label trial2o:
         startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for him to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think they did.{color=#f00}", -1,
         "sid", "Sid: Kaiser made it sound like it was pretty clear he was chosen as murderer, so there's {color=#f00}no way Sam was confused about being the murderer.{/color}", -1,
         "sid", "Sid: The only other possibility is that two people were chosen, but that {color=#f00} can't happen in this game.{/color}", -1,
-        "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#5ff}he must have been chosen as murderer{/color}.", 1,
+        "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#55f}he must have been chosen as murderer{/color}.", 1,
         1, location, "trial2p")
 label trial2p:
     scene bg mansiondining with fade
@@ -2919,7 +2919,7 @@ label trial2q:
     $generator = 7
     python:
         startMansionTrial("sam", "Sam: Stella {color=#f00}was messing with the sink handles when I got there.{color=#f00}", -1,
-        "sam", "Sam: If the sink handles are what burned her, {color=#5ff}she should have been in pain before I stabbed her.{color=#5ff}", 1,
+        "sam", "Sam: If the sink handles are what burned her, {color=#55f}she should have been in pain before I stabbed her.{color=#55f}", 1,
         "sam", "Sam: So the handles would have {color=#f00}had to heat up in the few seconds after I stabbed her.{color=#f00}", -1,
         "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}nothing could have heated them up in that time.{/color}", -1,
         1, [wires, generator], "trial2r")
@@ -3075,7 +3075,7 @@ label trial2t:
     l "So it'd be easiest for her to set it up."
     b "No, I'm pretty sure the generator got moved there later, we can't blame Jenny based on that."
     b "There's something missing from that room that the murderer would have needed..."
-    call screen mansionEvidenceTrial(-1, evidence, "trial2u") with dissolve
+    call screen mansionEvidenceTrial(-1, wires, "trial2u") with dissolve
 label trial2u:
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
@@ -3084,3 +3084,212 @@ label trial2u:
     show lauren ind:
         xcenter .75
     with dissolve
+    b "If the generator was in that room when Stella died..."
+    b "The wires would have needed to go from the generator to the bathroom."
+    l "Well yeah, but the murderer could have just removed the wires later."
+    b "No, it's not just that."
+    b "When I looked under the sink and saw the wires, they fed into the bathroom through a hole in the wall."
+    b "But if you look at the wall of Jenny's bedroom..."
+    b "There's no holes in the wall. So there's no way to feed the wires into the bathroom from there."
+    l "Hm... that makes sense. Sorry Jenny, looks like I fell for the bait of someone framing you."
+    j "It's... okay. I guess I'm used to it now."
+    bi "She didn't sound very okay, but that was a topic for later."
+    l "I'm confused though. If the generator wasn't in Jenny's room, where was it?"
+    b "Well, when you consider that the sink is on the left wall when you enter the bathroom, we can figure that out easily."
+    call screen pickSpot2 with dissolve #pick closet
+label trial2v:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "The generator was in the closet."
+    l "The one in the second floor hallway?"
+    b "Yeah, that's the only other room that shares that wall with the bathroom."
+    j "Wait, isn't that closet locked?"
+    j "How could the killer have gotten in?"
+    b "I'm not sure. Maybe they found the key before the rest of us and didn't tell anyone."
+    b "Maybe they were the first to try opening the closet and locked it from the inside."
+    b "But that's the only place that could have a hole in the wall matching the bathroom's."
+    b "We've seen every other room and found no holes, so by process of elimination that must be it."
+    j "Hm... yeah, I can't think of any other solution for where it could have been."
+    show jenny happy:
+        xcenter .25
+    j "Unless the murderer is a 2D character who can fit between walls!"
+    b "Jenny, none of us are 2D characters... we're all real, 3D humans."
+    j "I know, I know, just making a joke to ease the mood."
+    show jenny ind:
+        xcenter .25
+    j "For real though, I don't see how it's useful to know the generator was in the closet..."
+    j "It's not like anyone's admitted to having access to the closet."
+label trial2w:
+    menu:
+        bi "That's true, but the generator being in the closet still could help us identify the murderer, since..."
+
+        "The murderer moved the generator.":
+            b "Yeah..."
+
+        "The murderer had access to wires.":
+            bi "This is true, but we didn't need to know the generator was in the closet to figure that out."
+            jump trial2w
+
+        "The murderer's capable of moving the generator upstairs.":
+            bi "Hmm, that doesn't really rule anyone out besides Freddy."
+            bi "Also, that would've been true even if the generator killed Stella from Jenny's room."
+            jump trial2w
+
+        "The murderer had access to Jenny's bedroom.":
+            bi "That's something we knew before we decided the generator was in the closet."
+            jump trial2w
+
+    b "If the generator ended up in a bedroom but it was in the closet when Stella died..."
+    b "It must have been moved after Stella died."
+    b "So we just need to figure out who moved it between Stella's death and us finding the body."
+    show sid ind with moveinbottom
+    hide jenny with moveoutleft
+    hide lauren with moveoutright
+    i "Aha!"
+    i "It was Sam all along!"
+    i "Sam would be the only person who could move the generator."
+    show sid ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sam with moveinleft:
+        xcenter .25
+    s "No, I swear it wasn't me."
+    s "I knew nothing about the generator before a few minutes ago..."
+    i "Liar! The murderer would say that too!"
+    bi "Yet again, I'm going to have to calm Sid down..."
+    $rope = 8
+    python:
+        startMansionTrial("sid", "Sid: {color=#f00}Sam was the last person to go upstairs{/color} before we found the body.", -1,
+        "sid",  "Sid: So if the generator moved after Stella died and before we went up, {color=#55f}Sam is the only one who could have done it.{/color}", 1,
+        "sid", "Sid: Sam's in good shape too, so {color=#f00}moving the generator from the closet to Jenny's room wouldn't be difficult.{/color}", -1,
+        "sid",  "Sid: C'mon, admit it, {color=#f00}it makes so much sense{/color} that Sam could move the generator so easily.", -1,
+        1, rope, "trial2x")
+label trial2x:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sid ind with dissolve
+    b "No, actually it doesn't make sense."
+    i "Huh? Are you saying Sam is a weakling?"
+    i "Sam might have weak morals but morals aren't what lift objects."
+    b "No, it's not that, it's the rope we found tied to the generator."
+    b "Why would that be there if the murderer could have easily moved it around?"
+    b "The generator even has wheels, as long as you can reach the handle you can drag it around upstairs."
+    i "So do you think it was someone who couldn't have easily moved it around?"
+    i "That means it must be Freddy!"
+    show sid ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show frog sad with moveinright:
+        xcenter .75
+    f "M-me? But I'm just a frog..."
+    show lauren ind with moveinright:
+        xcenter .5
+    l "Hey, leave Freddy out of this."
+    i "I-I'm just saying..."
+    b "No, I don't think it's Freddy."
+    b "Because the murderer had to lift the generator up the stairs."
+    b "No offense Freddy, but I don't think you could've done that."
+    l "Hey, are you saying I helped him?"
+    b "What? No, where'd you get that idea?"
+    i "I... I don't get it Bert."
+    i "Earlier you said the murderer couldn't move the generator from the closet to the bedroom without the rope."
+    i "But now you're saying the murderer was able to move it up the stairs."
+    i "How can both be true? That just seems like a contradiction."
+    b "Hm, it's true they were able to move it up the stairs, but only before the murder actually happened."
+    i "What, did they suddenly get weaker once the murder happened?"
+    b "No, I think just the circumstances of when Stella died are the key here."
+    b "Remember, we know the generator moved after Stella died."
+    b "And we don't think it's Sam because Sam wouldn't need a rope to move the generator."
+    b "With that in mind, it can only be..."
+    call screen chooseChar("catherine", "trial2y", "Who moved the generator?") with dissolve
+label trial2y:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show catherine ind with dissolve
+    c "Me? C'mon Bert, don't be silly."
+    c "I was in the kitchen or dining room for the whole party, how could I move the generator?"
+    c "C'mon, Stella's dead, now's not the time for jokes!"
+    b "I'm not joking. Maybe you couldn't have directly moved the generator after Stella died..."
+    b "But Sesame could have."
+    c "..."
+    b "It adds up. Sesame was upstairs along with Sam when the murder happened."
+    b "After Sam left, Sesame was the only one up there."
+    b "You would have been able to move the generator upstairs, but you needed Sesame to move it for you during the party."
+    b "Sesame couldn't move the generator without some assistance since, well, he's a cat."
+    b "But the rope would give Sesame something to pull the generator with."
+    b "For most cats and their owners this wouldn't be possible, but as Freddy knows, Sesame is a very talented and well-trained cat."
+    show frog ind with moveinright:
+        rotate 315
+        xcenter 1.1
+        ycenter .5
+    bi "Freddy quickly nodded and then started tying his shoes."
+    hide frog with moveoutright
+    b "I saw him fetch objects for Freddy, he could've easily \"fetched\" the generator to the bedroom."
+    c "Fufufu."
+    b "Huh?"
+    c "That's a good theory Bert. You should try writing a mystery novel if you get out of here!"
+    c "But you still haven't explained one thing."
+    c "Where could I have gotten the wires from?"
+    c "How do you know someone didn't put the wires there later to make it look like the generator killed her?"
+    c "Without knowing that, I'd still believe it's Sam's stab wound that killed her."
+    bi "Why didn't she bring this up earlier?"
+    bi "No, I know why. She's on the defensive. She's grasping for straws to find a way out."
+    bi "Luckily, the answer is pretty obvious."
+    b "The wires... you got them from..."
+    call screen pickSpot4 with dissolve #pick kitchen
+label trial2z:
+    scene bg mansiondining with fade
+    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show catherine ind with dissolve
+    b "You got them from the kitchen."
+    b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
+    b "I thought it was kind of weird at the time, but it makes sense if you remember the murderer needed to get wires from somewhere."
+    b "Why not appliances lying around the house?"
+    b "It also gave the murderer a reason to send Jenny out of the party, setting her up as a potential culprit."
+    b "And you, Catherine, spend the last few hours yesterday in the kitchen, and got up early today and went to the kitchen."
+    b "If anyone would have had an easy time stealing those wires, it would be you."
+    c "..."
+    c "That makes sense, but anyone could've woken up in the middle of the night and stole the wires!"
+    show catherine ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show sid ind with moveinright:
+        xcenter .75
+    i "No! You mean lady!"
+    i "You... you killed Stella, and then made me yell at Sam."
+    i "I'll never forgive you. I'm going to prove you did it!"
+    bi "Will he? Hm, it's nice to have someone else do the work for once."
+    i "Let's go check the rope! If Sesame used it, there must be bite marks or something on the end!"
+    c "Wh... wha?"
+    b "Hm, that's actually a really good idea Sid."
+    c "Bu-but, Sesame used it as a scratching toy!"
+    c "Of course there's gonna be marks on it."
+    c "C'mon guys, I'm Catherine, I'm always so jolly and perky, how could I kill Stella?"
+    i "There could be scratch marks sure..."
+    i "But bite marks would look different!"
+    b "That's true. They'd be single points and probably come in pairs."
+    b "Scratch marks would come in triplets and be longer lines."
+    c "..."
+    b "And I bet if Sesame needed a chew toy to bite on, you would've said he used it as a chew toy, not a scratching toy."
+    b "But you didn't, you've only ever said he could use it as a scratching toy."
+    b "Which makes sense, he's a cat, not a dog. That's probably more his thing."
+    c "..."
+    c "Yeah, you got me."
+    b "Huh?"
+    c "I... I lost. I won't draw it out anymore."
+    show catherine happy:
+        xcenter .25
+    c "Good job guys! You did great, I didn't think anyone would come close to figuring it out."
+    c "I guess I shouldn't have tried to make it look like Jenny did it, otherwise you would've never known it was me."
+    c "Silly me as usual!"
+    c "Should've spent more time thinking about that and less time thinking about recipes."
+    c "Oh well, I didn't live a very honest life. All those houses I burgled, I almost got shot multiple times."
+    b "Burgled?"
+    c "Oh, yeah, I was a burglar for a living. A cat burglar, if you will, teehee."
+    c "C'mon, you really think working in a shelter pays a girl enough to live?"
+    c "They barely feed the cats enough to live as is!"
