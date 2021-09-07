@@ -358,7 +358,7 @@ label mansionGo:
         xcenter .25
     f "O-okay!"
     hide lauren
-    hide freddy
+    hide frog
     with dissolve
     $showchibi("jenny", "shahar", "stella")
     show shahar ind with moveinleft:
@@ -381,7 +381,9 @@ label mansionGo:
     t "A bedroom?"
     j "Jeez, get me out of here."
     scene black with fade
-    scene bg mansiongarage with fade
+    scene bg mansiongarage
+    $ statusnt("Garage", "bert", ch=2, sun=5)
+    with fade
     $showchibi( "jenny", "catherine", "sid")
     show catherine happy with dissolve
     c "Hey guys! Welcome to Catherine's Garage Emporium!"
@@ -415,7 +417,7 @@ label mansionGo:
     c "According to the clock it's early afternoon right now."
     b "It's hard to tell for sure, with all the windows boarded up."
     b "We might as well use that as out time standard for now."
-    #clock time start
+    $ statusnt("Garage", "bert", ch=2, sun=2)
     c "Catherine's Garage Emporium Standard time! CGEST!"
     bi "I heard Jenny giggle behind me. I'm jealous of their lightheardedness sometimes..."
     c "There's also a light generator here, it seems like it's fully fueled."
@@ -430,47 +432,77 @@ label mansionGo:
     c "I used to work as a sous-chef in a kitchen, I could whip us up some nice meals."
     c "Don't have to be vegetarian meals, wouldn't want the meat to go to waste."
     b "Wow, thats awesome of you to offer!"
-    i "Um... Catherine, if you're going to cook, I have an idea."
-    c "Send it at me!"
-    i "I... I've only lived in my parents' cramped apartment."
-    i "Sustaining ourselves off budget meals."
-    i "While we're here, before someone dies, I... thought it'd be nice if we had a fancy dinner party."
-    c "Aww, Sid... that's such a cute idea!"
-    c "Yes, let's do it!"
-    c "Unfortunately I probably need at least a day to prepare, so it would have to be tomorrow evening."
-    i "O-oh..."
-    i "But... what if the kill happens before then?"
-    c "I think that's just a chance we have to take."
+
+    ###########
+    ########### jenny party
+    ###########
+
     hide sid with moveoutleft
     show jenny ind with moveinleft:
         xcenter .25
-    j "That might be a hard sell to the murderer."
-    j "What if they're afraid it will become harder to kill people after the party?"
-    c "This is a bit of a depressing topic."
-    hide jenny with moveoutleft
-    show sid ind with moveinleft:
-        xcenter .25
-    show jenny ind with moveinleft:
-        xcenter .25
-    show catherine happy:
+    j "Hmmm... Catherine, if you're going to cook, I have an idea."
+    c "Send it at me!"
+    j "Well, I think what we all really need right now is something to bring us together."
+    b "Something to bring us together?"
+    j "Yeah, like... a fancy dinner party!"
+
+    c "Aww, Jenny! That's such a cute idea!"
+    c "Yes, let's do it!"
+    c "We'd probably need at least a day to prepare, so it would have to be tomorrow evening."
+    j "That should be fine, and we can all chip in to help!"
+    hide catherine ind with moveoutright
+    show sid ind with moveinright:
         xcenter .75
-    c "Sid, we'll have a dinner party tomorrow, you can count on it."
-    i "Th-th-"
-    show sid happy:
-        xcenter .25
-    i "Thanks Catherine. This is so exciting!"
-    bi "I'm glad something good is coming out of this at least."
-    hide jenny
+    i "Wow, a fancy party?"
+    i "I... I've only ever lived in my parents' cramped apartment."
+    i "Sustaining ourselves off budget meals."
+    i "This is..."
+    show sid smile:
+        xcenter .75
+    i "So exciting!"
+    bi "Wow, and just like that, Sid's in high spirits."
+    b "Sounds good to me!"
+    bi "Honestly, anything to get Sid's mind off of Dan, and this situation as a whole, is welcome in my book."
+
+    #i "O-oh..."
+    #i "But... what if the kill happens before then?"
+    #c "I think that's just a chance we have to take."
+    #hide sid with moveoutleft
+    #show jenny ind with moveinleft:
+    #    xcenter .25
+    #j "That might be a hard sell to the murderer."
+    #j "What if they're afraid it will become harder to kill people after the party?"
+    #c "This is a bit of a depressing topic."
+
+    bi "I'm glad something good is coming out of this."
+    hide catherine
     hide sid
     with dissolve
-    show jenny ind
-    b "Let's move on?"
+    show jenny ind:
+        xcenter .5
+    with dissolve
+    b "Ready to keep exploring?"
     j "Sounds good, Catherine gave us a rundown of this room anyway."
     j "Let's see... We saw the dining room, kitchen, and garage."
     j "It seems like we've explored the entirety of this floor, so let's go upstairs?"
     b "Sure."
     scene black with fade
+    scene bg mansionhall with fade
+    $showchibi("jenny")
+    $ statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
+    show jenny ind with moveinleft:
+        xcenter .5
+    j "Okay, so this is the upstairs, huh?"
+    b "Prety spacious hallway."
+    j "It seems like there are 1,2,3,4,5,6 doors up here!"
+    j "Let's check them out from left to right!"
+    b "I hear some murmuring coming from that room already..."
+    b "Maybe don't-"
+    j "Wahoo!"
+    hide jenny ind with moveoutleft
+    b "-barge in..."
     scene bg mansionmasterbedroom with fade
+    $ statusnt("Master Bedroom", "bert", ch=2, sun=2)
     $showchibi("jenny", "dracula", "sam")
     b "The master bedroom?"
     show sam:
@@ -511,13 +543,76 @@ label mansionGo:
     hide drac
     with dissolve
     show jenny ind with dissolve
-    b "Let's move on?"
+    b "Let's move on? We can check the next room over."
     j "Sounds good."
     scene black with fade
-    scene bg mansionhall with fade
+
+#####
+
+    scene bg mansionbedroom with fade
+    $ statusnt("Bedroom 1", "bert", ch=2, sun=2)
+    $showchibi("jenny", "freddy", "lauren")
+    show lauren ind with dissolve
+    l "Oh, hey guys."
+    l "I thought bouncing on a bed might get Freddy's mind off things."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show frog ind with moveinbottom:
+        xcenter .75
+        ycenter .8
+    show frog ind:
+        xcenter .75
+        ycenter .8
+        linear .15 ycenter .2
+    show frog ind:
+        xcenter .75
+        ycenter .2
+        linear .15 ycenter .8
+    show frog ind:
+        xcenter .75
+        ycenter .8
+        linear .15 ycenter .2
+    show frog ind:
+        xcenter .75
+        ycenter .2
+        linear .15 ycenter .5
+    f "It's fun!"
+    l "It's probably not what he's used to in terms of fun but... it's something."
+    l "Hey Freddy, how high do you think you can go?"
+    b "By the way, we're meeting soon in the living room to discuss who gets to sleep where."
+    b "We can bring you down with us when it's time to start."
+    l "Got it."
+    b "Do you mind if we look around here?"
+    l "Sure, don't mind us."
+    hide lauren
+    hide frog
+    with dissolve
+    show jenny ind with dissolve
+    j "Huh. Looks like they weren't lying about having only small beds outside of the master bedroom."
+    b "Yeah, it's very weird for how luxurious the house is otherwise."
+    b "The room isn't particularly well furnished either."
+    b "Normally there'd be a dresser or something like that in here."
+    j "Hm... maybe the Game Master is trying to minimize how many spots things can be hidden in?"
+    j "After all, searching four fully furnished bedrooms sounds like a chore."
+    b "That'd be awfully considerate for someone who, you know, wants most of us dead."
+    j "That's true. But if they wanted us dead, why not just kill us instead of making us play this game?"
+    b "I wish I knew."
+    j "If you say so."
+    b "...Next room?"
+    j "Yeah."
+    #b "I'm assuming all the bedrooms upstairs look like this, so I think we just need to look at the bathroom."
+    #b "We're about to have that meeting anyway."
+    scene black with fade
+
+###
+
+    scene bg mansionbedroom with fade
     $showchibi("jenny")
+    $ statusnt("Bedroom 2", "bert", ch=2, sun=3)
     show jenny ind
-    j "Hey Bert, while we're alone..."
+    j "Hey Bert, ummm..."
+    j "While we're alone..."
     j "Do the jokes everyone's making about us annoy you as much as they annoy me?"
     b "Yes. Hell yes."
     b "I don't get how people can be saying that kind of stuff while our lives are on the line."
@@ -532,7 +627,6 @@ label mansionGo:
     j "I think that applies to everyone."
     j "Even if someone sharing our crimes could help us..."
     j "I really do think revealing our crimes will just drive in unnecessary wedges."
-    #j "And it's not something everyone's ready to admit to strangers, even if they've accepted it as is."
     b "..."
     bi "I do feel close and comfortable with Jenny, though."
     bi "She has an air about her that's just feels... safe."
@@ -616,77 +710,39 @@ label mansionGo:
     b "Yeah, I'd appreciate that."
     b "..."
     j "..."
-    b "We should look around more."
-    b "There's a closet in this hall, let's see what's inside."
-    b "..."
+    b "Umm, there isn't much to explore in here..."
+    j "Oh, yeah, exploring."
+    j "It's almost like a hotel; this room is nearly identical to the other bedroom."
+    b "We might as well peek into the last bedroom."
+    j "Mhm."
+    scene black with fade
+    bi "We checked the last bedroom door."
+    bi "It seemed to be identical to the rooms."
+    scene bg mansionhall with fade
+    $showchibi("jenny")
+    $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
+    show jenny ind with dissolve
+    j "Alright! So three basic bedrooms, and one master bedroom."
+    j "That leaves 2 more doors up here."
+    j "First up is this closet door..."
+    b "Let's see what's inside."
+    bi "I tried to open the closet door. It was locked."
     b "It won't open..."
     b "Last time there was a closet that was locked, it wasn't good news."
     j "Nothing we can do about it besides keep an eye on it though."
     b "Yeah, guess not."
-    b "In that case, let's check out some of the other bedrooms."
-    b "We are about to have a meeting about them..."
-    j "Sounds good."
-    scene black with fade
-    scene bg mansionbedroom with fade
-    $showchibi("jenny", "freddy", "lauren")
-    show lauren ind with dissolve
-    l "Oh, hey guys."
-    l "I thought bouncing on a bed might get Freddy's mind off things."
-    show lauren ind:
-        xcenter .5
-        linear 0.15 xcenter .25
-    show frog ind with moveinbottom:
-        xcenter .75
-        ycenter .8
-    show frog ind:
-        xcenter .75
-        ycenter .8
-        linear .15 ycenter .2
-    show frog ind:
-        xcenter .75
-        ycenter .2
-        linear .15 ycenter .8
-    show frog ind:
-        xcenter .75
-        ycenter .8
-        linear .15 ycenter .2
-    show frog ind:
-        xcenter .75
-        ycenter .2
-        linear .15 ycenter .5
-    f "It's fun!"
-    l "It's probably not what he's used to in terms of fun but... it's something."
-    l "Hey Freddy, how high do you think you can go?"
-    b "By the way, we're meeting soon in the living room to discuss who gets to sleep where."
-    b "We can bring you down with us when it's time to start."
-    l "Got it."
-    b "Do you mind if we look around here?"
-    l "Sure, don't mind us."
-    hide lauren
-    hide jenny
-    with dissolve
-    show jenny ind with dissolve
-    j "Huh. Looks like they weren't lying about having only small beds outside of the master bedroom."
-    b "Yeah, it's very weird for how luxurious the house is otherwise."
-    b "The room isn't particularly well furnished either."
-    b "Normally there'd be a dresser or something like that in here."
-    j "Hm... maybe the Game Master is trying to minimize how many spots things can be hidden in?"
-    j "After all, searching four fully furnished bedrooms sounds like a chore."
-    b "That'd be awfully considerate for someone who, you know, wants most of us dead."
-    j "That's true. But if they wanted us dead, why not just kill us instead of making us play this game?"
-    b "I wish I knew."
-    j "If you say so."
-    b "I'm assuming all the bedrooms upstairs look like this, so I think we just need to look at the bathroom."
-    b "We're about to have that meeting anyway."
+    j "I guess that just leaves the bathroom."
     j "Um... you mind checking that out without me?"
-    b "Huh?"
-    j "I... don't want Stella to see us walking in there together."
-    b "That's... probably a good idea."
-    j "I'll just keep Freddy and Lauren company, so no need to worry about shady business from me."
+    b "Why's that?"
+    j "Well, it's a bathroom."
+    b "You make a good point."
+    j "I'll go grab Lauren and Freddy so we can go to the meeting."
     b "Sounds good."
     bi "I headed to the bathroom by myself."
     scene black with fade
+label mansion1:
     scene bg mansionbr with fade
+    $ statusnt("Bathroom", "bert", ch=2, sun=3)
     b "So uh..."
     b "Guess this is the bathroom."
     bi "...who am I talking to?"
@@ -696,11 +752,21 @@ label mansionGo:
     bi "There's so much space, the largest bathroom mirror I've ever seen."
     bi "More drawers than I can even think of a use for..."
     bi "I think the knobs on the faucet and in the tub are gold-plated..."
-    bi "...well, I guess I'm done admiring this bathroom."
-    bi "I'll grab Jenny, Lauren, and Freddy and head downstairs, I guess."
+    show bg mansionbr2 with dissolve
+    bi "And this huge mirror."
+    bi "Man, looking at myself, I feel like I've aged 20 years in the past few days."
+    bi "This is such a terrifying situation, but..."
+    show bg mansionbr3
+    bi "I'm hopeful we can get everyone on the same page and keep everyone alive."
+    bi "Especially with news of this party we're going to throw."
+    bi "Maybe It'll give us a chance to chat with people and learn more about our situation."
+    show bg mansionbr with fade
+    bi "...Well, I'm done admiring this bathroom."
+    bi "Time to head downstairs for the meeting."
     scene black with fade
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Dining Room", "bert", ch=2, sun=3)
     show sam with dissolve
     s "So Bert, you called this meeting, right?"
     b "Yeah, mostly to discuss the sleeping arrangements, though Catherine might have an announcement too?"
@@ -733,7 +799,9 @@ label mansionGo:
         xcenter .75
     t "Any young guys want to share the master bedroom with me?"
     t "I think we'd make the best use of it, if you catch my drift."
-    t "Plus a house like this probably has soundproofing."
+    #t "Plus a house like this probably has soundproofing."
+    show lauren ind:
+        xcenter .25
     l "Your libido isn't a valid reason to give you that room."
     t "Fine, the lovebirds should have it then?"
     l "Who?"
@@ -743,12 +811,12 @@ label mansionGo:
     t "You're all such killjoys, I remember why I work long hours now."
     t "At least when I'm on the clock people have to respect my whims and fancies."
     t "Fine, if I can't have the master bedroom, I'll take the living room."
-    t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night."
+    #t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night."
     b "I... okay, fine."
-    b "I'll volunteer too, since I'm the one organizing this meeting."
-    l "You sure you can handle Stella?"
-    b "Can't be worse than anything I had to deal with in college."
-    b "Okay, that leaves one more."
+    b "I'll volunteer to sleep down here too, since I organized this meeting."
+    l "You sure you can deal with Stella?"
+    b "Uh, no, but I'm not sure anyone here really can."
+    b "Okay, that leaves one more person that needs to sleep out on a couch."
     b "Any volunteers?"
     hide stella
     hide lauren
@@ -783,7 +851,7 @@ label mansionGo:
         linear .15 xcenter .25
     show sid ind with moveinright:
         xcenter .75
-    i "Oh... yeah, my family isn't that well off so... this is the nicest building I've ever been in."
+    i "Oh... yeah, my family isn't that well off so... this is the nicest place I've ever been in."
     c "I say we give Sid a treat and let him take the master bedroom!"
     c "He should get to know what a bougie life is like."
     b "That's a really kind idea, Catherine."
@@ -808,10 +876,15 @@ label mansionGo:
     s "Yeah, I was-"
     c "That doesn't involve you getting the master bedroom."
     s "..."
+    show catherine ind:
+        linear .3 xcenter .45
     bi "Catherine got closer to Sam and whispered, just barely loud enough for me to hear."
     c "Do we need to bring up the fact that Sid got close to Dan before he died?"
     s "No..."
     hide sam with moveoutleft
+    show catherine happy:
+        xcenter .45
+        linear .3 xcenter .75
     show sid ind with moveinleft:
         xcenter .25
     c "Room's all yours Sid."
@@ -824,14 +897,15 @@ label mansionGo:
     hide catherine with moveoutright
     show drac ind with moveinright:
         xcenter .75
-    d "I'm not opposed, but do you mind explaining why me?"
-    i "Well, I don't like Sam so that's not an option."
-    i "Also, I don't think I can ask a girl to share a room with me."
-    i "And then Shahar and Bert are already sleeping in the living room."
+    d "I'm not opposed, but why me?"
+    i "Well, I don't like Sam, so that's not an option."
+    bi "Sid started to look uncomfortable."
+    i "Also, I don't think I can share a b-bed with Jenny or Catherine."
+    i "Shahar and Bert are already sleeping in the living room."
     i "So you're pretty much the only option I have."
     bi "Well, I wouldn't mind switching..."
     bi "Not that anyone would be down to take my spot."
-    i "Plus, you claim you don't sleep, so I'd have someone protecting me at night."
+    i "Plus, you claim you don't sleep, so I'd have someone protecting me all night!"
     d "Reasonable enough for me."
     hide drac with moveoutright
     show catherine ind with moveinright:
@@ -839,24 +913,29 @@ label mansionGo:
     c "Wait, if Dracula doesn't sleep, then the big bed isn't getting used."
     c "And surely a gentleman like Dracula would want to protect two of us instead of one?"
     i "Oh, that's true."
-    i "Okay, Catherine, you can join me!"
+    i "Wait, I c-can't share a bed with you though!"
+    i "You're a girl!"
+    ses "Mrow!"
+    c "Sesame's right, it's no big deal!"
+    c "That bed is huge anyway, we can leave a three foot Sesame gap between us."
+    i "O-okay then Catherine, you can join me!"
     show catherine happy:
         xcenter .75
     c "Woo! Party suite!"
-    c "Just me, Sesame, and the boys!"
-    b "...make sure she doesn't try anything funny in there."
-    b "Alright, so Sam and Jenny get their own rooms upstairs."
+    c "Just me, Sesame, and the boys! (^•ﻌ•^)"
+    #b "...make sure she doesn't try anything funny in there."
+    b "Alright, then Sam and Jenny get their own rooms upstairs."
     hide sid
     with dissolve
     show catherine happy:
         xcenter .75
         linear 0.15 xcenter .5
     b "Guess we've figured that out. Catherine, do you want to tell them about your announcement?"
-    c "Yes!"
+    c "Oh yeah!"
     c "So I was thinking tomorrow evening we could have a dinner party!"
     c "It would be a shame to not make good use of all the food in the kitchen."
     c "Plus I'm sure we could all use a mood lifter."
-    c "I can do most of the cooking, but if anyone has anything to contribute they can feel free!"
+    c "I can do most of the cooking, but if anyone can contribute!"
     show catherine happy:
         xcenter .5
         linear .15 xcenter .75
@@ -876,7 +955,7 @@ label mansionGo:
     l "There are still children here."
     t "I'm sure Freddy's parents have gotten drunk around him before."
     l "That doesn't make it any more okay for you to do it."
-    l "As is I'm not very okay with you and Shahar forcing Bert to deal with your debauchery."
+    l "I'm already worried about you and Shahar forcing Bert to deal with your debauchery."
     hide stella with moveoutleft
     show sam with moveinleft:
         xcenter .25
@@ -895,7 +974,7 @@ label mansionGo:
     show drac ind with dissolve
     d "If I may, while everyone's here."
     d "Earlier, we had discussed sharing our crimes and there were some negative reactions."
-    d "Chances are even if people did share, they might lie about it."
+    d "Chances are that even if people did share, they might lie about it."
     d "But to build trust and provide us with information, I still think it would be prudent to share."
     d "Maybe not with the whole group, but in private with someone you trust."
     d "Sam and I have already done this, it would be nice to see others follow our initiative."
@@ -912,15 +991,17 @@ label mansionGo:
     show shahar ind with dissolve
     h "Is that all the business yer gonna jabber about?"
     h "On the sea we don't have meetings, we just sail with the flow."
+    h "..."
     h "I fell asleep fer most of that discussion to be honest."
     b "...you fell asleep?"
-    h "Aye! If I can sleep on a stormy sea I can sleep through anything."
+    h "Aye! If I can sleep on a stormy sea, I can sleep through anything."
     h "Plus, I'm loaded with rum and whiskey."
     bi "...I hope that doesn't stop him from sleeping tonight."
-    b "Yeah, if no one else has anything to bring up everyone can go."
+    b "Yeah, if no one else has anything to bring up, everyone can go."
     hide shahar with dissolve
     bi "Everyone except Catherine and Freddy slowly left."
     $showchibi("catherine", "freddy")
+    $ statusnt("Dining Room", "bert", ch=2, sun=4)
     show frog ind with dissolve:
         xcenter .25
     show catherine happy with dissolve:
@@ -947,7 +1028,9 @@ label mansionGo:
     #FT2 to be inserted here.
 label postFT2:
     $ftecounter = 3
-    scene bg mansiondining with fade
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch=2, sun=4)
+    with fade
     $showchibi("catherine", "dracula", "freddy", "shahar", "sid", "stella")
     bi "Well, guess it's time to sleep."
     bi "Or at least, try to."
@@ -984,22 +1067,22 @@ label postFT2:
     b "...how much have you guys had to drink already?"
     h "Oh, just-ish one shot lad."
     b "Oh, that's not that-"
-    h "One shot every 15 minutes each."
+    h "every 15 minutes, each."
     b "...and it's been roughly two hours."
     t "Math's for duh losers, not for me."
     t "Bert, you're gonna get drunk with us, right?"
     b "I was hoping to sleep soon given, you know, we might need to solve another murder case sometime soon."
     t "Come on, haven't you heard duh saying?"
-    t "All work and no play makes Bert a dull-uh boy."
+    t "All work and no play makes Bert a dull boy."
     h "Yeah, lad, surely y've some stress pent up in ye."
     h "Stress ye can release through the joys of alcohol!"
     b "No, we really should sleep."
-    h "You can sleep when yer in Davy Jones' Locker!"
+    h "You can sleep when yer in Davy Jones' Locker! Aagagagagah!"
     t "If you really want to sleep, you can sneak into bed with one of duh girls upstairs..."
     t "Just don't squish the cat if you get in bed with Catherine."
     b "Why are you so obsessed with... me and romance right now."
-    t "Romance is a cute for word...wait, no, that's wrong... word for it."
-    b "I'm just saying, you talk a lot about me and girls but never yourself and guys."
+    t "Romance is a cute for word it!"
+    b "I'm just saying, you talk a lot about me and my love-life, but never about you and yours."
     t "Do you want to hear about my love life?"
     b "Uh..."
     b "I guess more than I want to hear about you trying to matchmake me."
@@ -1007,39 +1090,36 @@ label postFT2:
     hide shahar with moveoutleft
     show stella drunk:
         xcenter .75
-        linear .15 xcenter .5
+        linear .3 xcenter .5
     t "My job involves a lot of travel."
     t "Not to mention, with the stress of duh job I spend pretty much all my free time drinking."
     t "Which means I can't really keep a steady boyfriend."
     t "Or even meet a guy while sober."
     t "The number of guys I've met {i}drunk{/i} though."
-    t "Oh, it helps that I'm a rich businesswoman too."
-    t "Lots of guys love to be treated for once."
-    t "And they're more likely to follow you to your hotel room when your hotel room is duh presidential suite."
+    t "Oh, it helps that I'm a rich businesswoman too. "
     b "You... don't ever want to settle down?"
-    t "Eh... not really. Life's so much easier and fun this way."
-    t "Maybe one day if I retire."
-    b "Retire? That could be so far away!"
-    t "Nah, I could probably retire now if I wanted."
-    t "I have billions saved up, I could live off duh interest."
+    t "Eh... not really. Life's so much easier and more fun this way."
+    b "Not even if you retire?"
+    t "Well, I could probably retire now if I wanted."
+    t "I have billions saved up already, my bloodline will be forever wealthy."
     b "Billions? You're only a few years older than me..."
     t "Sorry kid, life is unfair. You should've figured that out when one percent of people own 40 percent of duh wealth."
     b "So why don't you retire now?"
-    t "What is this, an interrogation? Did someone commit duh murder while we were drinking?"
+    t "What is this, an interrogation? Did someone commit duh murder while we were drinking? Hahaha!"
     b "Sorry, just trying to make conversation."
     t "Fine. Thing is, kid, retired life's boring if you don't have a passion."
     bi "I don't really like that she keeps calling me kid..."
     t "Right now, my only passion is ruthless business."
-    t "It's a sinister passion but it's the only thing I'm good at."
+    t "It's a sinister passion, but it's the only thing I'm good at."
     t "Well, that and holding my liquor."
     t "And wrapping cute young guys around my thumb."
     t "But my body can only take so much alcohol and so many cute guys."
-    t "So not like I can make a retired life out of those."
-    b "Didn't you have hobbies as a kid?"
-    t "My hobby was investing."
-    t "...and cute guys, even in high school."
-    t "I joined some school clubs but quit them when I realized I could use duh time moving stocks before duh market closed."
-    t "They were honestly such a waste of time."
+    t "So for now, my life is dedicated to my work."
+    #b "Didn't you have hobbies as a kid?"
+    #t "My hobby was investing."
+    #t "...and cute guys, even in high school."
+    #t "I joined some school clubs but quit them when I realized I could use duh time moving stocks before duh market closed."
+    #t "They were honestly such a waste of time."
     bi "She took a big swig after that."
     b "Hey, can I ask..."
     b "Why are you two drinking so much?"
@@ -1055,16 +1135,16 @@ label postFT2:
     b "I... no, but."
     t "If you hadn't stepped up we would've figured out where to sleep eventually."
     t "And exploring the mansion is the bare minimum you can do."
-    t "It's like saying you took a shit today."
+    t "It's like saying you took a shit today, haha!"
     b "..."
-    t "Here, I'll be more useful than you in one sentence."
+    t "Here, I'll be more useful than you were all day, with one sentence."
     t "Duh guy in the painting? His name's Mr. Sydell."
-    b "Huh? Why didn't you mention this before."
+    b "Huh? Why didn't you mention this before?"
     t "I only just remembered his name."
     t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
     t "But I think at at some point my company sunk his into duh ground."
-    t "Knowing what my boys can do, I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
+    t "I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
     t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
     bi "Sydell... I don't think I've heard the name before."
     bi "Would anyone confess to knowing him?"

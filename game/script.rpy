@@ -396,4 +396,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump mansionGo
+    jump mansion1
