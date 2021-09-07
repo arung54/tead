@@ -2532,7 +2532,7 @@ label trial2g:
     i "So to figure out what the murder weapon is, we just need to identify an object that's slightly bigger than the kitchen knife, right?"
     i "There can't be that many of those in the house."
     bi "Hm... what fits that description?"
-    $ sheath = 2
+    $ sheath = 7
     call screen mansionEvidenceTrial(-1, sheath, "trial2h") with dissolve
 label trial2h:
     play music "audio/rush.mp3"
@@ -2646,7 +2646,7 @@ label trial2i:
     bi "...seems like something someone would say in a mystery game to make the player figure it out on their own."
     bi "But fine."
     bi "What explains both the missing weapon and what it was made of?"
-    $water = 3
+    $water = 2
     call screen mansionEvidenceTrial(-1, water, "trial2j") with dissolve
 label trial2j:
     play music "audio/rush.mp3"
@@ -2833,7 +2833,7 @@ label trial2m:
     s "What?"
     bi "Sam's just as confused as I am..."
     bi "What is Sid talking about?"
-    $burns = 4
+    $burns = 3
     call screen mansionEvidenceTrial(-1, burns, "trial2n") with dissolve
 label trial2n:
     play music "audio/rush.mp3"
@@ -2911,7 +2911,7 @@ label trial2o:
     i "Wait! I don't buy it."
     bi "What now..."
     i "The Game Master must have chosen Sam to be the murderer, otherwise nothing makes sense."
-    $location = 5
+    $location = 8
     python:
         startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for him to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think they did.{color=#f00}", -1,
         "sid", "Sid: Kaiser made it sound like it was pretty clear he was chosen as murderer, so there's {color=#f00}no way Sam was confused about being the murderer.{/color}", -1,
@@ -3045,8 +3045,8 @@ label trial2q:
     s "Sure, but we may as well vote me off now..."
     bi "Sam's giving up."
     bi "I need to figure this out, and fast."
-    $wires = 6
-    $generator = 7
+    $wires = 4
+    $generator = 5
     python:
         startMansionTrial("sam", "Sam: Stella {color=#f00}was messing with the sink handles when I got there.{color=#f00}", -1,
         "sam", "Sam: If the sink handles are what burned her, {color=#55f}she should have been in pain before I stabbed her.{color=#55f}", 1,
@@ -3292,7 +3292,7 @@ label trial2w:
     s "I knew nothing about the generator before a few minutes ago..."
     i "Liar! The murderer would say that too!"
     bi "Yet again, I'm going to have to calm Sid down..."
-    $rope = 8
+    $rope = 6
     python:
         startMansionTrial("sid", "Sid: {color=#f00}Sam was the last person to go upstairs{/color} before we found the body.", -1,
         "sid",  "Sid: So if the generator moved after Stella died and before we went up, {color=#55f}Sam is the only one who could have done it.{/color}", 1,

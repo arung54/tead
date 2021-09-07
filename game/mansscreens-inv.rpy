@@ -151,7 +151,7 @@ screen mans_evidence():
 
         if currEvidence == 8:
             image "ev2 wound.png" xcenter 800 yalign 0.1
-            text "We think the murderer is someone who's been in the mansion before this game started." xcenter 800 yanchor 0.0 ypos 330
+            text "Earlier, we discussed Kaiser's death and concluded the murderer is probably someone who's been in this mansion before." xcenter 800 yanchor 0.0 ypos 330
 
 screen kitchenInv():
     default tt = Tooltip("")
