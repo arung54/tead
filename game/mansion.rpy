@@ -1136,14 +1136,14 @@ label postFT2:
     t "Is there anything you've done today you feel like has been useful?"
     b "Well, I figured out our sleeping situation."
     b "Explored around the mansion."
-    t "Jeez, you're so vanilla."
+    t "Jeez, you're so.. helpless."
     b "...What does that mean?"
     t "Were those things really that useful?"
     t "Did they get us any closer to getting out of here?"
     b "I... no, but."
     t "If you hadn't stepped up we would've figured out where to sleep eventually."
     t "And exploring the mansion is the bare minimum you can do."
-    t "It's like saying you took a shit today, haha!"
+    t "It's like saying you used the toilet today, haha!"
     b "..."
     t "Here, I'll be more useful than you were all day, with one sentence."
     t "Duh guy in the painting? His name's Mr. Sydell."
@@ -1156,13 +1156,16 @@ label postFT2:
     t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
     bi "Sydell... I don't think I've heard the name before."
     bi "Would anyone confess to knowing him?"
+    show bg stellasit2
     t "Here, I'll get you started."
     show shahar peek with moveinleft:
-        xcenter .1
+        xcenter .08
+        ycenter .378
     t "Hey Shahar, ever heard of Mr. Sydell?"
     h "Is that a fellow pirate?"
     h "Unless he's a ocean lover like myself, I reckon I don't know him lad."
     bi "As expected."
+    hide shahar with moveoutleft
     t "Anyways, see, in two minutes I've done more for us while drunk than you did in a day while sober."
     t "I'm not trying to be harsh on you, kid."
     t "You didn't do anything useful because there's very little useful to do."
@@ -1170,14 +1173,23 @@ label postFT2:
     t "It's not like we're investing, nothing you do will save them."
     t "If that's the case, why not relax?"
     b "Isn't that too fatalistic?"
+    show bg stellasit1
     t "That's being realistic."
     t "Take it from someone who works 16 hour days."
     t "Sometimes, there's nothing you can do about a shitty thing."
     t "And so duh best thing you can do is whatever has you most ready to deal with duh fallout of duh shitty thing."
     t "And for a gal like me with a robust liver, drinking to relax is that thing."
     b "I... kind of followed until the last part."
-    t "Just drink more, then you'll understand."
-    t "Speaking of drinking more, Shahar, are you alright?"
+    t "I've given up, kiddo."
+    t "I've given up."
+    b "..."
+    t "Hey Pirate boy, whatcha doin over there?"
+    show bg nmansiondining
+    show shahar drunk:
+        xcenter .25
+    with dissolve
+    show stella drunk with dissolve:
+        xcenter .75
     t "Can I get you a shot of something? You've been awfully quiet."
     h "Ay, was I? I kind of dozed off."
     t "Oh c'mon, you're not gonna let this little lady out-drink a buff man like you, are ya?"
@@ -1212,15 +1224,13 @@ label postFT2:
     t "I've gotten in plenty of legal trouble myself."
     t "Granted, when you're rich enough legal trouble is just financial trouble."
     h "Aye, I don't think a rich Shahar would choose to become a pirate."
-    h "He'd probably retire and enjoy life on a yacht, or some other fancy ship."
-    h "Sipping cocktails, enjoying a more intimate relation with the sea."
+    h "He'd probably be sipping cocktails, enjoying a more intimate relation with the sea."
     h "Reading a good book, since I ne'er had time to."
-    h "I bet a yacht sails much more smoothly than a wooden ship!"
-    h "I get motion sickness reading on vehicles."
+    h "But I do get motion sickness reading on vehicles."
     b "...but you're a pirate."
     h "I only said I get motion sickness while reading, lad!"
     h "Do you think a pirate's life is being out on the sea readin' poetry?"
-    b "Yeah but..."
+    b "Yeah, but..."
     b "Never mind."
     bi "Not worth getting into an argument over this."
     t "Speaking of a pirate's life, don't pirates own a lot of jewelry?"
@@ -1230,18 +1240,18 @@ label postFT2:
     h "I do own a chestful of booty!"
     h "But booty's inconvenient to carry round."
     t "Ooh yeah, a fat booty makes walking hard."
-    b "I... don't think that's what he meant."
-    t "Oh trust me hun, I get it."
-    h "Regardless, even if I wanted to show up studded, we had nary a chance to prepare for this game!"
-    t "Ooh don't worry, you're enough of a stud as is."
-    h "Oh, I wonder if this mansion's got anything we can plunder?"
+    #b "I... don't think that's what he meant."
+    #t "Oh trust me hun, I get it."
+    h "Regardless, we had nary a chance to prepare for this game!"
+    #t "Ooh don't worry, you're enough of a stud as is."
+    h "Oh, I wonder if this mansion's got any treasure we can plunder?"
     b "...you want to steal something to bring with you when you get out?"
     h "Aye! Least we can do to pass the time."
-    b "Again, we could pass the time by sleeping."
+    b "Or, we could pass the time by sleeping."
     t "I don't know if I can approve of stealing from duh rich given... well, you know."
     h "Aye lass, it's not like I'm pillaging your village!"
     t "Hmm, that is true."
-    t "After what my boys did this guy's probably too poor now to enjoy his life anyway."
+    t "After what my boys did this guy, he's probably too poor now to enjoy his life anyway."
     t "Alright, let's steal something!"
     t "Woo!"
     hide stella with moveoutright
@@ -1270,17 +1280,19 @@ label postFT2:
     h "Aye lad, you're finally contributing something useful!"
     bi "I mean... not like I helped us all avoid dying in the train by solving the murder or anything."
     t "Let's gooooooo!"
-    hide stella with moveoutright
+    hide stella
+    hide shahar
+    with moveoutright
     bi "Stella was off before we could even get started."
     bi "Dracula's probably not going to be very happy about our noise level after this..."
     scene black with fade
-    scene bg mansionhall with fade
+    scene bg nmansionhall with fade
     $showchibi("shahar", "stella")
     show stella drunk:
         xcenter .75
-    show shahar ind:
+    show shahar drunk:
         xcenter .25
-    with dissolve
+    with moveinleft
     b "Be quiet, we don't want to wake up anyone sleeping."
     h "Plundering isn't about being quiet! CHAAAAAARGE!"
     t "Yay, stealing from duh rich! This must be what Robin Hood felt like."
@@ -1302,13 +1314,13 @@ label postFT2:
     b "Sigh."
     b "Okay, to the bathroom we go."
     scene black with fade
-    scene bg mansionbr with fade
-    $showchibi("shahar", "stella")
+    scene bg mansionbr
     show stella drunk:
         xcenter .75
-    show shahar ind:
+    show shahar drunk:
         xcenter .25
-    with dissolve
+    with fade
+    $showchibi("shahar", "stella")
     h "Ay lad, what took ye so long!"
     b "We should really be quieter, there are people sleeping on the other side of these walls."
     t "Psh, I've fell asleep in duh corners of clubs, they can sleep through a little tomfoolery."
@@ -1325,18 +1337,31 @@ label postFT2:
     b "It looks nicer but still lets a plumber work on the sink."
     b "...aren't you rich Stella? Why didn't you think of this?"
     t "I'm drunk, Killjoy."
-    t "I'm not here for thinking, I'm here for doing."
-    t "If you know what I mean."
-    b "You... don't need to keep saying that."
-    t "Well, it wouldn't be very ladylike of me to bend down and try to look down there."
+    t "I'm not here for thinking, I'm here for doing!"
+    #t "If you know what I mean."
+    #b "You... don't need to keep saying that."
+    b "Shhh, stop screaming!"
+    t "Plus, it wouldn't be very ladylike of me to bend down and try to look down there."
     t "Killjoy, you mind doing it?"
     h "Why not Shahar?"
     t "I don't think his muscles will fit in the cabinet."
     bi "Hm... if I lie about it, maybe they'll give up."
     b "Okay, going in."
     b "..."
+    hide stella
+    hide shahar
+    show scary:
+        alpha .5
+    with dissolve
+    bi "I peeked under the sink, in the cabinet."
     b "Hm, I don't see any way to detach the handles from the sink down here."
     bi "That was a lie. There were some bolts holding the handles in place."
+    hide scary with dissolve
+    show stella drunk:
+        xcenter .75
+    show shahar drunk:
+        xcenter .25
+    with dissolve
     h "By Davy Jones... this plundering mission might be over lads."
     h "Oh well, it was a noble effort! Let's go sleep."
     t "Ugh, fine. I'm starting to come down anyway."
@@ -1345,36 +1370,40 @@ label postFT2:
     bi "With that, we headed downstairs and finally went to sleep."
     pause 1
     blank "The next morning..."
-    scene bg mansiondining
+    scene bg mansiondining with fade
     bi "..."
     bi "What time is it?"
     $showchibi("shahar", "stella")
     bi "Those two are still asleep."
     $showchibi("shahar", "stella", "catherine")
-    show catherine happy with dissolve
+    show catherine nocat happy with dissolve
     c "Oh, morning Bert!"
     b "How... how early is it?"
-    c "I haven't checked the clock in the garage but I think most of us got eight hours of sleep."
+    c "I haven't checked the clock in the garage, but I think most of us got eight hours of sleep."
     c "You probably had less, I heard about your adventures last night from Sam on the way down."
     b "Oh... yeah, that'd explain why I'm so tired."
-    b "What are you doing so early?"
+    b "What are you doing down here before everyone else?"
     c "I'm getting ready for the party tonight!"
     c "Going to be cooking all day pretty much, we have a feast planned."
     c "Freddy offered to \"take care\" of Sesame today, which is great since I don't want his fur or anything getting in the food."
     c "Plus there's some stuff in the kitchen he shouldn't eat..."
     b "Wait, besides alcohol?"
     c "Yeah, raw meat can contain bacteria that can kill cats."
-    c "There's some other stuff that's not lethal but a little bit risky, like yeast and chocolate."
+    #c "There's some other stuff that's not lethal but a little bit risky, like yeast and chocolate."
     b "Well, at least Freddy will be distracted for a bit."
     c "Yeah! Anyway, I should go get started. Have a good day Bert!"
     b "Thanks Catherine, let us know if we can help with cooking."
     c "Will do!"
     b "Oh before you go, one more thing."
     c "Oh?"
-    b "Stella said the guy in the picture is Mr. Sydell. You ever seen or heard of him?"
-    c "Hmm... no, can't say that I do. Unless he was an extra in one of the dramas I watched."
+    hide catherine
+    show catherine nocat
+    b "Stella said the guy in the picture is a Mr. Sydell. You ever seen or heard of him?"
+    c "Hmm... no, can't say that I have. Unless he was an extra in one of the dramas I watched."
     c "But extras probably don't make enough money to live somewhere like here, right?"
     c "Damn, Hollywood is rough."
+    hide catherine
+    show catherine nocat happy
     c "But not as rough as being a red-headed teenager in Creekvale!"
     b "Uh... ok, was just wondering, thanks. See you later Catherine."
     c "Toodaloo!"
@@ -1394,7 +1423,7 @@ label postFT2:
     d "I must say, it was quite loud last night."
     b "Sorry, I can't really do much to control the drunkards."
     b "I did try to at least get them to sleep as early as I could..."
-    d "Not your fault if you tried I guess."
+    d "I suppose it's not your fault if you tried."
     d "Well, that is all I wished to say. I am returning to my room to think."
     d "If you wish to talk, I will be in there, although we should perhaps wait until Sid is awake."
     b "Okay, have a good day."
@@ -1408,7 +1437,7 @@ label postFT2:
     scene black with fade
     scene bg mansionhall with fade
     $showchibi("jenny", "sam")
-    show jenny ind:
+    show jenny happy:
         xcenter .25
     show sam:
         xcenter .75
@@ -1419,16 +1448,16 @@ label postFT2:
     j "Not as experienced as Catherine, but I like being helpful!"
     s "I'm more of a baker. Gonna make some dessert."
     s "Some of my customers prefer to receive their product in brownies or cookies, so I got pretty good at baking."
-    s "Plus, there's not exactly much else to do until the party tonight."
-    b "Well, unless you want to get super drunk like Stella and Shahar did."
-    s "Eh, day drinking's not really my thing."
+    #s "Plus, there's not exactly much else to do until the party tonight."
+    #b "Well, unless you want to get super drunk like Stella and Shahar did."
+    #s "Eh, day drinking's not really my thing."
     j "Oh yeah, how was last night?"
     j "I heard some noise."
     b "They uh... tried to steal the sink knob from the bathroom."
     j "...Why?"
-    b "Drunken boredom, I guess?"
+    b "Boredom, I guess?"
     b "Anyway, it wasn't too bad."
-    b "Once that failed they let me go to sleep, though I'm pretty tired now from having stayed up."
+    b "Once that failed, they let me go to sleep, though I'm pretty tired now from having stayed up."
     s "We really shouldn't be enabling their shenanigans."
     b "I wouldn't say we're enabling them as much as tolerating it..."
     b "Besides, I tried to talk them out of it and they seemed pretty set in their ways."
@@ -1443,7 +1472,8 @@ label postFT2:
     bi "Hm... while no one else is around and it doesn't look suspicious."
     pause 1
     bi "Nope, closet is still locked."
-    bi "Well, I guess I have some time to kill before the party. Everyone's probably awake by now, maybe I can find someone to talk to?"
+    bi "Well, I guess I have some time to kill before the party."
+    bi "Everyone's probably awake by now, maybe I can find someone to talk to?"
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
@@ -1469,8 +1499,7 @@ label postFT3:
     scene bg mansionbedroom with fade
     $showchibi("freddy")
     show frog ind with dissolve
-    f "Oh, hey."
-    f "Are you here to hang out with me?"
+    f "Oh, hi mister!"
     b "Yeah, Lauren had some stuff she wanted to do."
     f "Oh, cool!"
     b "N-not that I wouldn't want to hang out with you normally."
@@ -1498,23 +1527,23 @@ label postFT3:
     f "Clubs?"
     b "Yeah, like, things you do with other students for fun."
     f "Oh, I'm homeschooled."
-    f "My parents pay for a guy to come to our place and teach me."
+    f "My parents pay for a man to come to our house and teach me."
     f "They say it's so I get a better education."
-    f "I think it's really because my dad got upset when I went to school with other kids."
+    f "I think it's really because my dad got upset when I went to school with other kids..."
     b "What happened?"
     f "We had a homework assignment where we had to talk about what our parents did."
     show frog sad
-    f "I tried asking my dad to help and he said it was too hard to explain."
+    f "I tried asking my dad to help but he said it was too hard to explain."
     f "So I uh, didn't turn in the homework."
     f "The teacher got angry during class and then a bunch of the kids started asking me about it at lunch."
     f "My dad wasn't happy people were bullying me so he pulled me out of that school."
     b "That's... huh. {i}Do{/i} you know what your dad does?"
-    f "Nah, after that day I felt like it was better not to ask."
+    f "N-no... after that day I felt like it was better not to ask."
     f "I just know he's not around a lot and is angry all the time."
     b "Do you get to meet other kids still?"
     f "Not really, no."
-    f "When I go out my mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me and bully me."
-    f "I don't mind because I feel like a frog when I'm in it!"
+    f "My mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me..."
+    f "I don't mind though, because I feel like a frog when I'm in it!"
     b "That... isn't that lonely, Freddy?"
     show frog ind
     f "Maybe? It's okay though! My mom loves me a lot."
@@ -1523,12 +1552,12 @@ label postFT3:
     bi "That sounds like a really sad existence."
     bi "I do have to wonder though... is Freddy really a criminal?"
     bi "Maybe he's lying, but if he's stuck at home what crimes could he really do?"
-    b "Freddy, do you use the computer at home often?"
-    f "Yeah! That's how I learned so much about frogs!"
-    b "Do you do anything else on the computer?"
-    f "Uh, I play games and watch other videos sometimes."
-    f "I think that's what most kids do on the computer these days."
-    b "Yeah, makes sense."
+    #b "Freddy, do you use the computer at home often?"
+    #f "Yeah! That's how I learned so much about frogs!"
+    #b "Do you do anything else on the computer?"
+    #f "Uh, I play games and watch other videos sometimes."
+    #f "I think that's what most kids do on the computer these days."
+    #b "Yeah, makes sense."
     f "Bert, can I ask why you're asking me all of this?"
     b "Oh uh, just trying to make small talk."
     bi "...and understand why a kid is in a group of criminals."
@@ -1547,23 +1576,23 @@ label postFT3:
     b "Oh, good, we were just making small talk."
     l "The party's about to start. We should head down if we want to eat while the food is hot."
     f "Sesame, let's go!"
-    l "Oh, Sesame can't come."
+    l "Oh, Sesame shouldn't come."
     show frog sad:
         xcenter .25
     f "Wh...why?"
     l "There's gonna be a lot of stuff Sesame can't eat or drink at the party."
-    l "She asked us to leave him up here."
-    f "Can't Catherine hold onto him?"
-    l "She's hosting the party, she'll probably be too busy worrying about the food."
-    f "But... but I wanna play with Sesame."
-    f "Can't I stay here?"
-    l "Sorry Freddy, I think it's safest if you're with the group."
-    l "Besides, you gotta eat dinner eventually."
-    l "I'm sure you'll have a great time at the party."
+    #l "She asked us to leave him up here."
+    #f "Can't Catherine hold onto him?"
+    #l "She's hosting the party, she'll probably be too busy worrying about the food."
+    #f "But... but I wanna play with Sesame."
+    #f "Can't I stay here?"
+    #l "Sorry Freddy, I think it's safest if you're with the group."
+    #l "Besides, you gotta eat dinner eventually."
+    l "I'm sure you'll have a great time at the party, hanging out with us!"
     f "O-okay..."
     l "Let's head downstairs?"
     f "Yeah..."
-    b "Oh boy, I can't wait to eat!"
+    bi "Oh boy, I can't wait to eat!"
     scene black with fade
     scene bg mansionhall with fade
     bi "..."
@@ -1586,17 +1615,17 @@ label postFT3:
     i "You have a mansion?"
     d "Being a vampire pays well, in its own way."
     d "Anyways, enjoy the party Sid. Well, as much as one can without drinking."
-    i "Why can't I drink? Sam's underage and is going to drink."
-    d "Yes, but you are quite young. You are free to do what you wish but drinking definitely gets riskier the younger you are."
-    d "Not to mention, a scrawny kid such as yourself probably has tolerance more similar to a teenage girl."
-    i "Who're you calling a girl?"
-    d "I'm not calling you a girl, just drawing a comparison."
-    i "Screw you old man!"
-    bi "This can only go poorly... let me interrupt."
+    #i "Why can't I drink? Sam's underage and is going to drink."
+    #d "Yes, but you are quite young. You are free to do what you wish but drinking definitely gets riskier the younger you are."
+    #d "Not to mention, a scrawny kid such as yourself probably has tolerance more similar to a teenage girl."
+    #i "Who're you calling a girl?"
+    #d "I'm not calling you a girl, just drawing a comparison."
+    #i "Screw you old man!"
+    #bi "This can only go poorly... let me interrupt."
     b "Hey guys, has the food been served yet?"
     d "No, I believe the chefs are putting the finishing touches on the first course."
     b "Oh, cool. In that case I'll go see if they need any help."
-    bi "Hopefully I defused that conversation..."
+    #bi "Hopefully I defused that conversation..."
     scene black with fade
     scene bg mansionkitchen with fade
     $showchibi("catherine", "jenny", "sam")
@@ -1605,7 +1634,7 @@ label postFT3:
     b "Just came to see if I could help with finishing dinner."
     j "You just want to be the first to get served, don't you."
     b "...maybe."
-    b "For real though, everything going smoothly here?"
+    b "Regardless, is everything going smoothly here?"
     j "Mostly yeah."
     b "Mostly?"
     j "The display for the clocks on the stove and microwave aren't working anymore for some reason."
@@ -1648,7 +1677,7 @@ label postFT3:
     j "You know what they say, a watched pot never boils!"
     b "That's just untrue."
     j "Most idioms are."
-    b "I guess so. For real though, if you need help, let me know."
+    b "I guess so. If you need help in here, let me know."
     j "Thanks Bert, now go out and party!"
     scene black with fade
     scene bg mansiondining with fade
@@ -1670,9 +1699,10 @@ label postFT4:
         xcenter .25
     show sid ind:
         xcenter .75
-    c "First course is served! We have a charcuterie with various crackers, cheeses, meats, and some fruit to start!"
+    c "First course is served! We have a charcuterie board with various crackers, cheeses, meats, and some fruit to start!"
     i "Huh... is this what fancy dinners are like?"
-    c "Only part of it! We're going to do multiple rounds of food, with the main part of the meal being in the second to last round."
+    c "Only part of it!"
+    c "We're going to do multiple rounds of food, with the main part of the meal being in the second to last round."
     c "The idea is to avoid filling you up too early so you can enjoy a variety of dishes."
     i "Oh... ok. I was gonna say, this doesn't seem like a meal."
     show sid smile:
@@ -1704,7 +1734,7 @@ label postFT4:
         xcenter .25
         linear 0.15 xcenter .75
     show shahar ind with moveinright:
-        xcenter .75
+        xcenter .25
     h "Aye, did someone say time to start drinking?"
     b "I'm... gonna go talk to some other people."
     h "Suit yerself lad, we'll be drinking with ye tonight anyway!"
@@ -1721,10 +1751,11 @@ label postFT4:
     b "Hey, sorry, needed to get away from the drunkards."
     b "Hope I'm not interrupting anything here."
     d "No, you're free to join us."
-    s "Though you should be warned, I believe we both plan to drink at some point."
-    s "If that bothers you maybe you can go see if Catherine and Jenny need help in the kitchen?"
-    b "That's fine with me."
-    s "In that case, maybe you wouldn't mind grabbing us a first round from the kitchen?"
+    #s "Though you should be warned, I believe we both plan to drink at some point."
+    #s "If that bothers you maybe you can go see if Catherine and Jenny need help in the kitchen?"
+    b "That's fine with me, just needed something to do."
+    s "Something to do? Ooo, in that case..."
+    s "Maybe you wouldn't mind grabbing us a round of drinks from the kitchen?"
     b "...I get the message."
     d "Sorry Bert, nothing personal, but trust and time are limited commodities here."
     hide sam
@@ -1741,20 +1772,20 @@ label postFT4:
     l "You asked him about his home life, right? He told me on the way down here."
     b "Oh... yeah, I was just trying to figure out why he's here."
     l "I get that you're trying to be helpful but..."
-    l "Given some of the very innocent crimes people are \"admitting\" to I don't think knowing more about him will accomplish much."
+    l "Given some of the very innocent crimes people are \"admitting\" to, I don't think knowing more about him will accomplish much."
     l "And from I gather his home life wasn't great so maybe it's best not to remind him of that."
-    b "That's fair, sorry."
-    l "Nothing to apologize for, you were just trying to get us out of here in your own way."
-    l "But I don't think you need to do that constantly, we don't need to spend every moment like we did on the train."
+    b "That's true..."
+    #l "Nothing to apologize for, you were just trying to get us out of here in your own way."
+    l "I don't think you need to do that constantly, we don't need to spend every moment like we did on the train."
     b "What do you mean?"
     l "It felt like every moment we spent on the train we were fighting for our lives."
     l "We're still fighting for our lives here, but not as directly, if that makes sense."
-    l "I think that and events like this party are overall helping our morale."
-    b "That's true, but I worry about how much of us not trying to escape is because we're losing motivation to fight our way out."
-    l "Maybe it's because of that, maybe it's just that we're somewhere more relaxing."
-    l "I wouldn't overthink it, not like if we find a way out Shahar and Stella are going to be the ones to do it."
+    l "I think events like this party are overall helping our morale and make sure there's no more... action."
+    b "That's true, but I worry we're giving up, or losing motivation to find a way out of this."
+    l "Maybe it's motivation, maybe it's just that we're somewhere more relaxing."
+    l "I wouldn't overthink it, not like Shahar and Stella are particularly helpful sober anyway."
     b "That is unfortunately true..."
-    l "And people like Sam and Dracula only seem to be interested in very extreme ways of helping us get out."
+    l "And people like Sam and Dracula are reclusive, but I still think they're trying their best, in their own way."
     l "Anyway, the food is only going to keep Freddy entertained for so long."
     l "I should probably go back to talking to him before Shahar and Stella try to do anything stupid around him."
     b "I'll join you."
