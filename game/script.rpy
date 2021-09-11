@@ -397,4 +397,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump mansion1
+    jump postFT2

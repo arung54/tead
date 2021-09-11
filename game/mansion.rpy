@@ -764,9 +764,10 @@ label mansion1:
     bi "...Well, I'm done admiring this bathroom."
     bi "Time to head downstairs for the meeting."
     scene black with fade
-    scene bg mansiondining with fade
+    scene bg nmansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Dining Room", "bert", ch=2, sun=3)
+    b "It's kinda spooky in here with most of the lights off..."
     show sam with dissolve
     s "So Bert, you called this meeting, right?"
     b "Yeah, mostly to discuss the sleeping arrangements, though Catherine might have an announcement too?"
@@ -900,6 +901,8 @@ label mansion1:
     d "I'm not opposed, but why me?"
     i "Well, I don't like Sam, so that's not an option."
     bi "Sid started to look uncomfortable."
+    show sid ind:
+        xcenter .25
     i "Also, I don't think I can share a b-bed with Jenny or Catherine."
     i "Shahar and Bert are already sleeping in the living room."
     i "So you're pretty much the only option I have."
@@ -963,16 +966,16 @@ label mansion1:
     s "A little bit of drinking isn't going to do any damage."
     s "I might drink a bit myself."
     l "...Are you even old enough to drink?"
-    s "Did you forget the part where we're all criminals?"
+    s "Again, all criminals, murder game, trapped here against our will..."
     l "...Fine."
     s "So, that concludes the meeting, right?"
     b "I guess so."
-    b "Uh... yeah, everyone's free to go."
+    b "Uh... yeah, meeting over I guess, everyone's free to go."
     hide lauren
     hide sam
     with dissolve
     show drac ind with dissolve
-    d "If I may, while everyone's here."
+    d "Before people begin to disperse..."
     d "Earlier, we had discussed sharing our crimes and there were some negative reactions."
     d "Chances are that even if people did share, they might lie about it."
     d "But to build trust and provide us with information, I still think it would be prudent to share."
@@ -988,7 +991,7 @@ label mansion1:
     d "I will not bother trying to enforce this request, since I do not expect everyone to be fully cooperative."
     d "That is all."
     hide drac with dissolve
-    show shahar ind with dissolve
+    show shahar drunk with dissolve
     h "Is that all the business yer gonna jabber about?"
     h "On the sea we don't have meetings, we just sail with the flow."
     h "..."
@@ -1028,13 +1031,13 @@ label mansion1:
     #FT2 to be inserted here.
 label postFT2:
     $ftecounter = 3
-    scene bg mansiondining
+    scene bg nmansiondining
     $ statusnt("Dining Room", "bert", ch=2, sun=4)
     with fade
     $showchibi("catherine", "dracula", "freddy", "shahar", "sid", "stella")
     bi "Well, guess it's time to sleep."
     bi "Or at least, try to."
-    show frog happy with dissolve:
+    show frog ind with dissolve:
         xcenter .25
     show catherine happy with dissolve:
         xcenter .75
@@ -1058,7 +1061,7 @@ label postFT2:
     d "Anyway, good night."
     hide drac with dissolve
     $showchibi("shahar", "stella")
-    show shahar ind with dissolve:
+    show shahar drunk with dissolve:
         xcenter .25
     show stella drunk with dissolve:
         xcenter .75
@@ -1110,7 +1113,7 @@ label postFT2:
     t "Fine. Thing is, kid, retired life's boring if you don't have a passion."
     bi "I don't really like that she keeps calling me kid..."
     t "Right now, my only passion is ruthless business."
-    t "It's a sinister passion, but it's the only thing I'm good at."
+    t "It's a sinister passion, but it's duh only thing I'm good at."
     t "Well, that and holding my liquor."
     t "And wrapping cute young guys around my thumb."
     t "But my body can only take so much alcohol and so many cute guys."
@@ -1124,7 +1127,12 @@ label postFT2:
     b "Hey, can I ask..."
     b "Why are you two drinking so much?"
     b "Are you not scared about our current circumstances?"
-    t "Bert, honestly, tell me."
+    t "Bert, come sit with me for a minute."
+    t "Just you and me."
+    hide stella with dissolve
+    b "Um, okay..."
+    show bg stellasit1 with dissolve
+    t "Tell me."
     t "Is there anything you've done today you feel like has been useful?"
     b "Well, I figured out our sleeping situation."
     b "Explored around the mansion."
@@ -1149,11 +1157,8 @@ label postFT2:
     bi "Sydell... I don't think I've heard the name before."
     bi "Would anyone confess to knowing him?"
     t "Here, I'll get you started."
-    show stella drunk:
-        xcenter .5
-        xcenter .75
-    show shahar ind with moveinleft:
-        xcenter .25
+    show shahar peek with moveinleft:
+        xcenter .1
     t "Hey Shahar, ever heard of Mr. Sydell?"
     h "Is that a fellow pirate?"
     h "Unless he's a ocean lover like myself, I reckon I don't know him lad."
