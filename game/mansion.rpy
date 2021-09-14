@@ -1830,16 +1830,16 @@ label postFT4:
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
     show jenny happy with dissolve
     j "The next course is ready! We have appetizers and salad."
-    j "For the appetizers we have kebabs, and the salad is a kale Caesar."
+    j "For the appetizers we have kebabs, and the salad is a kale caesar."
     b "Wow, Jenny, did you make these?"
     j "Well, Catherine prepped the meat, I just put the kebabs together."
     show jenny ind
-    j "And I had a... complicated family situation so I made lots of meals for myself growing up."
+    j "I had a... complicated family situation so I made lots of meals for myself growing up."
     j "Salad is easy to make, so I made a lot of it."
     b "...Is a salad that filling?"
     show jenny happy
-    j "If you pour on enough dressing yeah!"
-    j "I love Caesar dressing... oh, but I didn't add that much this time because there's more courses coming."
+    j "If you eat enough, yeah!"
+    #j "I love Caesar dressing... oh, but I didn't add that much this time because there's more courses coming."
     b "This all looks really good, but are you and Catherine getting a chance to eat?"
     j "We've been taste testing the food throughout the day, and we have some portions saved for ourselves."
     j "No need to worry Bert, we're taking care of ourselves too!"
@@ -1855,17 +1855,17 @@ label postFT4:
     b "Huh? How was that a word that caught your attention?"
     t "That's what a lot of my subordinates called my drunk antics."
     j "Ha, knew it was a good word!"
-    j "Stella, you look like you're having a good time! That's good to see."
+    j "Stella, you look like you're having a good time."
     b "No, don't encourage her!"
     t "Thanks sweetie, you look good too."
     show jenny ind:
         xcenter .25
     j "Huh? That's not what I said..."
     t "Anyway, Bert, you remember our adventure last night?"
-    b "...Adventure?"
-    t "You know, the one upstairs."
-    b "I'd hardly call that an adventure, but sure."
-    t "I think I'm going to continue that adventure, want to join?"
+    #b "...Adventure?"
+    #t "You know, the one upstairs."
+    #b "I'd hardly call that an adventure, but sure."
+    t "I think it's time for act two, want to join?"
     b "Not really... does Shahar not want to join you?"
     t "Psh, he's carrying a lot of muscle but he's a bit of a weak drinker."
     t "Says he's still tired from last night and wants to stay down here."
@@ -1906,12 +1906,12 @@ label postFT4:
     d "Do tell, Bert, what was that all about?"
     b "Well, Stella went upstairs to continue trying to break apart the bathroom."
     b "And Shahar is using the opportunity to have a drink without Stella stealing some."
-    d "Well, as long as the drunkards are gone, we can have peace and quiet."
+    d "Well, as long as they're gone, we can have peace and quiet."
     b "...Aren't you two drinking right now as well?"
     s "Yeah, you didn't get us one so I went to the kitchen and got us a round."
     b "I thought you wanted me to leave you alone, not actually get you a drink."
     s "Well yeah, but a drink would've been nice too."
-    d "Regardless, I have basically infinite tolerance."
+    d "Regardless, I have basically infinite alcohol tolerance."
     d "Vampires' metabolism works differently than the relatively weak human metabolism."
     s "And I'm not going to drink that much, just a casual amount."
     s "Enough to loosen up without causing a ruckus."
@@ -1927,7 +1927,7 @@ label postFT4:
     b "...You know she's in the other room and could walk in any moment."
     s "I'm sure she's heard it before, or figured it out herself."
     b "Regardless, I don't really want to talk about the person selflessly cooking dinner for us behind her back..."
-    s "Fine."
+    s "Hmph."
     show frog ind with moveinright:
         rotate 315
         xcenter 1.1
@@ -1935,9 +1935,9 @@ label postFT4:
     b "Huh?"
     s "Is something the matter?"
     hide frog with moveoutright
-    b "I... nothing, I thought I saw someone pop out behind the couch."
+    b "I... nothing, I thought I saw someone over there."
     s "You haven't gone delirious already, have you?"
-    b "No, I think that's my cue to leave again though."
+    b "No, I think that's my cue to leave you two alone again though."
     hide sam
     hide drac
     with dissolve
@@ -1946,7 +1946,7 @@ label postFT4:
     j "Hey Bert, I found the batteries! Thanks for the help."
     j "The entree should be out soon."
     b "Ooh, what is the entree?"
-    j "Meatloaf with french onion soup!"
+    j "Meatloaf and french onion soup!"
     b "A... a giant slab of meat?"
     b "I'm so in love."
     show jenny ind
@@ -1956,14 +1956,15 @@ label postFT4:
     b "Wait..."
     b "Catherine can't eat meatloaf though, right?"
     j "She can't eat the meatloaf, but she had a pretty hearty portion of french onion soup set aside."
-    j "We just need to heat it in the oven for a few minutes with the sauce on top so it seeps in."
+    j "We just need to heat it in the oven for a few minutes with the sauce on top."
     j "Anyway, I'm off to go hand the clock off to her."
     j "Seeya Bert!"
+    hide jenny ind with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "sid")
     $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar")
     show shahar ind with dissolve
     h "Aye, Bert, I got this bottle of wine but I need help openin' it."
-    h "Unfortunately in my drunken stupor I seem to have lost me corkscrew."
+    h "I seem to have lost me corkscrew."
     h "Do you know if there's any screws I can use to uncork me a bottle?"
     bi "Are Catherine, Sid, and I the only ones who bothered checking the garage?"
     b "Screws?"
@@ -1975,18 +1976,25 @@ label postFT4:
     h "Aye, lad, I knew ye would help me out. To the booty I go!"
     hide shahar with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "sid")
-    show frog ind with dissolve
-    f "Hey Bert, uh... did you see me earlier?"
-    b "See you? Like when you peeked from behind the couch?"
-    f "Yeah... I guess you did see me."
-    f "At home my parents argued a lot and I would eavesdrop while hiding."
+    bi "Hmmm, who should I talk t-"
+    f "Pssst! Bert!"
+    b "Huh?"
+    bi "Freddy said my name from behind the couch."
+    scene black with fade
+    bi "I walked over and sat behind the couch with Freddy."
+    show bg frog couch
+    f "Shh! Don't let anyone see you hide back here with me!"
+    b "I saw you poke your head out earlier, but I don't think anyone else did."
+
     f "My parents always said \"Children are best seen, not heard.\""
     f "But they lied about the seen part."
+    f "At home my parents argued a lot and I would listen while hiding."
     f "My dad would get really angry at me if he found me trying to listen in on him..."
-    f "Anyway, there's some scary men here like my dad, so I thought I should just hide and listen."
-    b "You don't have to justify it to me, parties aren't for everyone, kid."
-    b "I know people who lurk in the corner at parties because that's what most comfortable to them."
-    f "Oh... thanks Bert. But uh, could I ask you not to tell anyone else if they haven't noticed?"
+    bi "This kid really had a weird life, huh."
+    f "Anyway, there's some scary people here like my dad, so I thought I should just hide and listen."
+    b "You don't to tell me twice bud, parties aren't for everyone."
+    #b "I know adults who lurk in the corner at parties because that's what most comfortable to them."
+    f "Oh... thanks Bert. But uh, could I ask you not to tell anyone else I'm hiding back here?"
     b "Sure, but let's make a deal?"
     f "Huh?"
     b "If you hear anything that might be useful, let me know."
@@ -2001,7 +2009,7 @@ label postFT4:
     bi "Freddy leaned in to whisper."
     f "I think I overheard Mr. Dracula discussing his real job with Sam."
     f "It was hard to hear much."
-    f "But he said he's an expert on the human body. Knows a lot about stab wounds and blood."
+    f "But he said he's an expert on the human body. Knows a lot about stab wounds and blood." #checkpoint
     b "I guess that's expected of a vampire..."
     f "But not just that. He's done some... expe... expi... expire minting?"
     b "Experimenting?"
@@ -2025,13 +2033,14 @@ label postFT4:
     bi "...But I might bring this up without saying you told me if it's relevant information later."
     b "Your secret is safe with me."
     f "Thanks Bert..."
+    show bg mansiondining
     hide frog with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
     show catherine nocat with dissolve
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
     c "There should be plenty for everyone, I brought a knife from the kitchen. Use it to cut yourself as much as you want."
-    c "Try not to take it away from the table though, we only have the one!"
+    c "Don't walk away with the knife though, we only have the one!"
     b "Meat?"
     b "Meeeeeeeeeeeeat."
     bi "Like a zombie, I walked to the meatloaf and cut myself a large portion."
@@ -2044,15 +2053,15 @@ label postFT4:
     show sam with dissolve:
         xcenter .75
     s "I guess that means I should get dessert ready."
-    hide sam with moveoutright
+    #hide sam with moveoutright
     b "Meeeeeeeeeeeeat."
-    b "Meeeeeeeeeeeeeeeeeeeeeeeeeeat."
-    c "Hey, you know I'm vegetarian right."
-    c "You could at least not rub it in so much."
+    #c "Hey, you know I'm vegetarian right."
+    #c "You could at least not rub it in so much."
+    s "Weirdo."
     b "...Sorry"
-    show sam with moveinright:
-        xcenter .75
-    s "Hm, there's no knives in the kitchen..."
+    #show sam with moveinright:
+    #    xcenter .75
+    s "Hm, since there are no knives in the kitchen..."
     s "Catherine, did you see anything else we could use to cut the dessert into slices?"
     c "Hmm, not sure, though there's some cabinets that we haven't looked in because they're high up."
     c "Maybe you could try those?"
@@ -2060,7 +2069,7 @@ label postFT4:
     s "I'll go grab that and use it to search."
     c "Sounds good! Jenny is still in there cleaning up so she can help you if needed."
     s "Got it."
-    hide sam with dissolve
+    hide sam with moveoutright
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine")
     show catherine nocat:
         xcenter .25
@@ -2071,7 +2080,7 @@ label postFT4:
     show sid happy with dissolve
     i "I'm so full... how am I supposed to eat this meat loaf..."
     b "Ate too much, big guy?"
-    i "I shouldn't have taken what you said as a challenge... how are you gonna eat that big a slice?"
+    i "I shouldn't have taken what you said as a challenge... Whoa, how are you gonna eat that big a slice?"
     b "I have lots of experience at all-you-can-eat Korean barbeque."
     b "My stomach has slowly expanded over the years through rigorous training."
     bi "By which I mean getting fast food at midnight even after having a big dinner."
@@ -2079,38 +2088,34 @@ label postFT4:
     b "Uh, that might not be the best-"
     i "*burp*"
     b "Oh jeez... pace yourself Sid, don't go overboard."
-    b "And please let us know if you're not feeling okay, overeating is a very real thing."
+    #b "And please let us know if you're not feeling okay, overeating is a very real thing."
     i "I... I will eat this meat loaf... just let me sit down first."
     hide sid with dissolve
     show jenny happy with dissolve
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny")
-    j "Well, I cleaned everything I could for now."
+    j "Well, I cleaned the kitchen up the best I could."
     j "How's the party been Bert?"
     b "Good, it's nice to just make conversation with people."
     b "And eat good food!"
-    b "Did you get a chance to eat yet?"
-    j "Catherine had a separate portion of everything set aside for us."
-    j "So I had my fair share. You should eat more if you want."
-    b "Yes please!"
     bi "I took yet another large slice of meat loaf."
     show jenny ind
-    j "I guess I should go socialize with the others while you have your mouth full Bert..."
+    j "I guess I should go socialize with the others while you have your mouth full..."
     b "Hrm? Erkay, guh uhb fuh wih ereryah!"
     j "...You should learn to swallow before talking at a fancy party."
     hide jenny with dissolve
-    bi "...is she actually upset?"
+    bi "...is she upset?"
     bi "Oh well. I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
-    bi "As I sat and ate, Sam had come back with the stepstool and went to the kitchen."
+    bi "As I sat and ate, Sam had come back with the stepstool and walked through to the kitchen."
     bi "After some more time had passed..."
-    show sam with dissolve
+    show sam with fade
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
     s "Dessert is ready."
     s "Nothing too fancy, just an ice cream layer cake."
     b "Ice cream layer cake?"
     s "Yeah. It's like a normal layer cake, but one of the layers is ice cream."
-    b "It looks like you already cut into it. I assume that means you found something to cut it with?"
+    b "Did you find something to cut it with?"
     s "Yeah, there's no more sharp objects in the kitchen, but I found the sheath for the knife Catherine was using."
-    s "It's much blunter than a knife, but we can use it to cut slices without getting meat juice on the cake."
+    s "It's much blunter than a knife, but it should work fine."
     bi "Just like before, I cut myself way too big a slice."
     bi "It seemed Sam had already cut one piece out, with rather clean cluts."
     bi "In contrast, my cut looked more like I beat my slice of cake to death..."
@@ -2136,9 +2141,24 @@ label postFT4:
     bi "But... my cake's gonna melt..."
     b "Yeah, let's go."
     bi "We each got an arm under one of Sid's shoulders and lugged him up the stairs."
+label mansion2:
     scene black with fade
-    bi "Sid was in a lot of pain, but managed to hold it in the entire trip up."
-    bi "But as soon as we got into the bathroom, he had to sprint to the toilet to vomit."
+    show bg mansionhall
+    $showchibint("lauren", "sid")
+    with dissolve
+    show sid ind:
+        xcenter .75
+    show lauren ind:
+        xcenter .25
+    with dissolve
+    b "Alright, come on buddy. Just a few more steps."
+    i "I swear I'm gunna throw up everywhere."
+    l "Don't throw up in the bathtub, I was hoping to use that at some point."
+    i "No promises ahhhh!"
+    hide sid ind with moveoutright
+    bi "Sid sprinted to the bathroom door and pulled it open."
+    scene black with fade
+    bi "He really had to vomit... but..."
     bi "I can't blame him."
     bi "After seeing what we saw in there, I wanted to vomit too."
     scene bg mansionbr
@@ -2147,7 +2167,7 @@ label postFT4:
         xcenter .37
         ycenter .8
     with Dissolve(2.0)
-    $ showchibi("bert", "lauren", "sid")
+    $ showchibi("lauren", "sid")
     b "..."
     b "Wh-wha?"
     bi "Stella's body lay in front of us, slumped on the sink, a stab would in the dead center of her back."
