@@ -112,7 +112,7 @@ screen mans_evidence():
             textbutton "-" style "button_text"
 
         if mans_evidence[8]:
-            textbutton "Location and the Murderer" style "button_text" action SetVariable("currEvidence", 7)
+            textbutton "Location and the Murderer" style "button_text" action SetVariable("currEvidence", 8)
         else:
             textbutton "-" style "button_text"
 
@@ -158,18 +158,24 @@ screen kitchenInv():
 
     imagemap:
         ground "bg mansionkitchen.png"
-        if train_evidence1[1]:
-            hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'q' hovered tt.Action("Front Window")
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
         else:
-            hotspot(480, 198, 320, 148) action [Hide("frontCarInv"), Jump("trainFrontWindow")] mouse 'ex' hovered tt.Action("Front Window")
-        if train_evidence1[0]:
-            hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q' hovered tt.Action("Computer")
-            hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q' hovered tt.Action("Computer")
-            hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'q' hovered tt.Action("Computer")
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+        if mans_extra[1]:
+            hotspot(111, 522, 482, 168) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(273, 206, 169, 145) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(441, 205, 113, 84) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(556, 211, 145, 139) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
         else:
-            hotspot(342, 100, 97, 250) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex' hovered tt.Action("Computer")
-            hotspot(830, 94, 107, 255) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex' hovered tt.Action("Computer")
-            hotspot(529, 48, 221, 107) action [Hide("frontCarInv"), Jump("trainComputer")] mouse 'ex' hovered tt.Action("Computer")
+            hotspot(111, 522, 482, 168) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(273, 206, 169, 145) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(441, 205, 113, 84) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(556, 211, 145, 139) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+        if mans_extra[2]:
+            hotspot(917, 241, 251, 448) action [Hide("kitchenInv"), Jump("mansFridge")] mouse 'q' hovered tt.Action("Fridge and Freezer")
+        else:
+            hotspot(917, 241, 251, 448) action [Hide("kitchenInv"), Jump("mansFridge")] mouse 'ex' hovered tt.Action("Fridge and Freezer")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -179,7 +185,7 @@ screen kitchenInv():
     add "status.png"
     add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
@@ -194,12 +200,66 @@ screen kitchenInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
+label mansAppliances:
+    scene bg mansionkitchen
+    $mans_extra[0] = True
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
+    bi "Hmm... the microwave and oven's digital clocks aren't working like Jenny said."
+    bi "But Catherine was still able to cook."
+    bi "So the kitchen didn't lose power... did someone mess with them?"
+    if False not in mans_extra[0:2]:
+        bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
+        bi "Maybe I should check elsewhere."
+    call screen backCarInv
+
+label mansCupboards:
+    scene bg mansionkitchen
+    $mans_extra[1] = True
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
+    bi "Let me try looking through the cupboards and drawers."
+    bi "..."
+    bi "Hmm... lots of silverware, fancy glasses, and utensils."
+    bi "But no sharp objects, just like Sam said."
+    if False not in mans_extra[0:2]:
+        bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
+        bi "Maybe I should check elsewhere."
+    call screen backCarInv
+
+label mansFridge:
+    scene bg mansionkitchen
+    $mans_extra[2] = True
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
+    bi "...I wonder if there's any leftovers in here."
+    bi "..."
+    bi "Wow, there's a lot of food in the fridge. We could have stayed here for days."
+    bi "Unfortunately, dead bodies kind of ruin my appetite..."
+    bi "I should check the freezer as well, while I'm here."
+    bi "...Huh, it's pretty empty."
+    bi "Just an ice cube tray. Guess the homeowner isn't a fan of frozen food."
+    if False not in mans_extra[0:2]:
+        bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
+        bi "Maybe I should check elsewhere."
+    call screen backCarInv
+
 screen diningInv():
-    add "bg mansiondining.png"
+    default tt = Tooltip("")
+
+    imagemap:
+        ground "bg mansiondining.png"
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        else:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Dining Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
@@ -215,11 +275,24 @@ screen diningInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 screen garageInv():
-    add "bg mansiongarage.png"
+    default tt = Tooltip("")
+
+    imagemap:
+        ground "bg mansiongarage.png"
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        else:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Garage{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
@@ -235,11 +308,24 @@ screen garageInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 screen hallwayInv():
-    add "bg mansionhall.png"
+    default tt = Tooltip("")
+
+    imagemap:
+        ground "bg mansionhallway.png"
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        else:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
@@ -255,11 +341,24 @@ screen hallwayInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 screen bedroomInv():
-    add "bg mansionbedroom.png"
+    default tt = Tooltip("")
+
+    imagemap:
+        ground "bg mansionbedroom.png"
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        else:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
@@ -295,11 +394,24 @@ screen bedroomFLInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 screen masterBedroomInv():
-    add "bg mansionmasterbedroom.png"
+    default tt = Tooltip("")
+
+    imagemap:
+        ground "bg mansionmasterbedroom.png"
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        else:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Master Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
@@ -315,12 +427,26 @@ screen masterBedroomInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 screen bathroomInv():
-    add "bg mansionmasterbr.png"
+    default tt = Tooltip("")
+
+    imagemap:
+        ground "bg mansionbr.png"
+        if mans_extra[0]:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        else:
+            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Bathroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "stella dead.png" zoom 1.0 xcenter .37 ycenter .8
 
     imagebutton:
         xalign 1.0

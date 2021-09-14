@@ -380,7 +380,7 @@ screen masterBedroom():
             action [Hide("masterBedroom", transition = Dissolve(1.0)), Jump("sidAsk3")]
 
 screen bathroom():
-    add "bg mansionmasterbr.png"
+    add "bg mansionbr.png"
     add "status.png"
     add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0

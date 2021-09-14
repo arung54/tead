@@ -1,2 +1,0 @@
-label mansiongo:
-    scene black
