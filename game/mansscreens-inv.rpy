@@ -210,7 +210,7 @@ label mansAppliances:
     if False not in mans_extra[0:2]:
         bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
         bi "Maybe I should check elsewhere."
-    call screen backCarInv
+    call screen kitchenInv
 
 label mansCupboards:
     scene bg mansionkitchen
@@ -223,7 +223,7 @@ label mansCupboards:
     if False not in mans_extra[0:2]:
         bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
         bi "Maybe I should check elsewhere."
-    call screen backCarInv
+    call screen kitchenInv
 
 label mansFridge:
     scene bg mansionkitchen
@@ -239,17 +239,22 @@ label mansFridge:
     if False not in mans_extra[0:2]:
         bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
         bi "Maybe I should check elsewhere."
-    call screen backCarInv
+    call screen kitchenInv
 
 screen diningInv():
     default tt = Tooltip("")
 
     imagemap:
-        ground "bg mansiondining.png"
-        if mans_extra[0]:
-            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        ground "bg mansiondining knife.png"
+        if mans_evidence[7]:
+            hotspot(829, 524, 138, 27) action [Hide("kitchenInv"), Jump("mansSheath")] mouse 'q' hovered tt.Action("Knife and Sheath")
         else:
-            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+            hotspot(829, 524, 138, 27) action [Hide("kitchenInv"), Jump("mansSheath")] mouse 'q' hovered tt.Action("Knife and Sheath")
+        if mans_extra[3]:
+            hotspot(794, 198, 62, 76) action [Hide("kitchenInv"), Jump("mansSydell")] mouse 'q' hovered tt.Action("Mr. Sydell")
+        else:
+            hotspot(794, 198, 62, 76) action [Hide("kitchenInv"), Jump("mansSydell")] mouse 'q' hovered tt.Action("Mr. Sydell")
+
     if tt.value != "":
         frame:
             xalign 0.5
@@ -274,15 +279,92 @@ screen diningInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "draculachibi.png" at chibizoom
+        action [Hide("diningInv"), Jump("mansDracula")]
+
+label mansSheath:
+    scene bg mansiondining knife
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
+    bi "The knife we used to cut the meatloaf."
+    bi "I don't think Stella was stabbed with it."
+    bi "After all, it was in the kitchen or dining room for the whole party, and there are multiple accounts of this."
+    bi "So it's probably not relevant to the murder."
+    bi "The sheath on the other hand..."
+    bi "Sam claimed to find it in the middle of the party."
+    bi "If Sam was the first person to find it, that means after we found it, it was around us the entire time."
+    bi "In that case it wouldn't be relevant to the murder eitehr."
+    bi "But maybe someone found the sheath beforehand?"
+    bi "I should keep that possibility in mind..."
+    if not mans_evidence[7]:
+        $mans_evidence[7] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Knife Sheath was added to evidence."
+    if False not in mans_evidence[7:8]:
+        bi "Hmm... I think that's everything to find here."
+        bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
+    if False not in mans_evidence:
+        bi "Actually, I think I've found most of the major pieces of evidence..."
+        bi "At least, enough to start discussing with others."
+        bi "Let's go gather everyone."
+        jump mansDone
+    call screen diningInv
+
+label mansDracula:
+    scene bg mansiondining knife
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
+    show drac ind with dissolve
+    d "Hm... unfortunate my ploy didn't work."
+    b "Your ploy?"
+    d "I was hoping someone would admit to a crime that could be tied to this location."
+    d "If so, they would probably be the murderer."
+    bi "Oh, he's referring to the conversation we had earlier."
+    bi "Back then, we concluded as a group the murderer this round is probably someone who's been in this house before."
+    bi "This is the first time we're solving a murder with this information in mind, maybe I should remember it."
+    hide drac with dissolve
+    if not mans_evidence[7]:
+        $mans_evidence[7][1] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Location and the Murderer was added to evidence."
+    if False not in mans_evidence[7:8]:
+        bi "Hmm... I think that's everything to find here."
+        bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
+    if False not in mans_evidence:
+        bi "Actually, I think I've found most of the major pieces of evidence..."
+        bi "At least, enough to start discussing with others."
+        bi "Let's go gather everyone."
+        jump mansDone
+    call screen diningInv
+
+label mansSydell:
+    scene bg mansiondining knife
+    $mans_extra[3] = True
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
+    bi "Mr. Sydell's portrait..."
+    bi "At this point, I doubt anyone will admit to knowing him."
+    bi "Maybe if we catch the murderer and they're feeling nice, they'll tell us about him."
+    bi "For now, I think that's our only lead for finding the mastermind..."
+
 screen garageInv():
     default tt = Tooltip("")
 
     imagemap:
         ground "bg mansiongarage.png"
-        if mans_extra[0]:
-            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        if mans_extra[4]:
+            hotspot(836, 191, 442, 414) action [Hide("kitchenInv"), Jump("mansGarage")] mouse 'q' hovered tt.Action("Missing Items")
         else:
-            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+            hotspot(836, 191, 442, 414) action [Hide("kitchenInv"), Jump("mansGarage")] mouse 'ex' hovered tt.Action("Missing Items")
+        if mans_extra[5]:
+            hotspot(214, 179, 563, 348) action [Hide("kitchenInv"), Jump("mansGarageDoor")] mouse 'q' hovered tt.Action("Garage Door")
+        else:
+            hotspot(214, 179, 563, 348) action [Hide("kitchenInv"), Jump("mansGarageDoor")] mouse 'ex' hovered tt.Action("Garage Door")
+
     if tt.value != "":
         frame:
             xalign 0.5
@@ -306,6 +388,67 @@ screen garageInv():
         yalign 0.275
         idle "evidenceicon.png" at iconzoom
         action [Show("mans_evidence", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "draculachibi.png" at chibizoom
+        action [Hide("garageInv"), Jump("mansGarage")]
+
+label mansGarage:
+    scene bg mansiongarage
+    $mans_extra[4] = True
+    $ statusnt("Garage", "bert", ch = 2, sun = 3)
+    show sid ind with dissolve
+    b "Sid, you explored around here on the first day, right?"
+    b "Do you remember what items were here before that aren't now?"
+    i "Let's see, what's missing..."
+    i "The clock, for one, and some batteries."
+    b "Right, Catherine and Jenny were using the clock because the microwave and oven clocks broke."
+    b "And Catherine asked Jenny to grab the batteries for the clock."
+    i "The stepstool's gone too."
+    b "Sam brought that to the kitchen to search for something to cut the cake with."
+    i "The generator's missing. Also some rope."
+    if mans_evidence[5]:
+        b "Right, I saw the generator and rope in Jenny's room earlier during the investigation."
+    else:
+        b "...Huh?"
+        b "Where did those go?"
+        b "I guess I should work on finding them."
+    i "Besides that, I think everything's here."
+    if mans_evidence[4]:
+        b "Huh... Sid, were there not wires in here before?"
+        i "Wires? Uh... not that I can remember."
+        bi "Interesting... I wonder where the wires I found under the sink came from..."
+    b "Okay, that was actually very useful."
+    if mans_evidence[5]:
+        b "Everything that was in the garage is accounted for, so we don't have to worry about any surprise tools."
+    b "Thanks Sid!"
+    i "Y-yeah."
+    i "Bert... you'll solve this one too, right?"
+    bi "Will I?"
+    bi "I don't know, but..."
+    b "Yeah Sid. I have some theories already, actually."
+    i "Oh. Okay, cool..."
+    hide sid ind with dissolve
+    call screen garageInv
+
+label mansGarageDoor:
+    scene bg mansiongarage
+    $ statusnt("Garage", "bert", ch = 2, sun = 3)
+    if mans_extra[5]:
+        b "Hm... maybe the murderer managed to open the garage door, went to a store, and bought a knife!"
+        show sid ind with dissolve
+        i "That... seems unlikely."
+        b "Oh. Yeah, you're right."
+        bi "Whoops, didn't realize I said that out loud."
+        hide sid ind with dissolve
+    else:
+        bi "As nice as it would be to think about escaping through here..."
+        bi "I don't think this door is going to open anytime soon."
+        bi "Have to focus on the investigation for now."
+        $mans_extra[5] = True
+    call screen garageInv
 
 screen hallwayInv():
     default tt = Tooltip("")
@@ -431,10 +574,14 @@ screen bathroomInv():
 
     imagemap:
         ground "bg mansionbr.png"
-        if mans_extra[0]:
-            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
+        if mans_evidence[4]:
+            hotspot(481, 523, 102, 196) action [Hide("bathroomInv"), Jump("mansSink")] mouse 'q' hovered tt.Action("Under the Sink")
         else:
-            hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
+            hotspot(481, 523, 102, 196) action [Hide("bathroomInv"), Jump("mansSink")] mouse 'ex' hovered tt.Action("Under the Sink")
+        if mans_evidence[3]:
+            hotspot(269, 425, 84, 59) action [Hide("bathroomInv"), Jump("mansHands")] mouse 'q' hovered tt.Action("Stella's Hands")
+        else:
+            hotspot(269, 425, 84, 59) action [Hide("bathroomInv"), Jump("mansHands")] mouse 'q' hovered tt.Action("Stella's Hands")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -459,3 +606,87 @@ screen bathroomInv():
         yalign 0.275
         idle "evidenceicon.png" at iconzoom
         action [Show("mans_evidence", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "shaharchibi.png" at chibizoom
+        action [Hide("kitchenInv"), Jump("mansHands")]
+
+label mansSink:
+    scene bg mansionbr
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
+    show stella dead:
+        zoom 1.0
+        xcenter .37
+        ycenter .8
+    if not mans_evidence[4]:
+        bi "Hm... I wonder if Stella made any progress stealing the sink handle before she died."
+        bi "I doubt it'll lead to anything, but might as well look under there."
+        bi "...Huh?"
+    show ev2 wires with dissolve
+    bi "There's wires under the sink."
+    bi "They seem to be attached to the sink, and they're fed through a hole in the wall."
+    if mans_evidence[5]:
+        bi "I wonder... were they connected to that?"
+    else:
+        bi "These weren't here last night, are they relevant to the murder?"
+    hide ev2 wires with dissolve
+    if not mans_evidence[4]:
+        $mans_evidence[4] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Wires and Hole Under the Sink was added to evidence."
+    if False not in mans_evidence[0:4]:
+        bi "Hmm... I found a lot in the bathroom, but I think that's everything."
+        bi "Though this has brought up more questions than answers..."
+    if False not in mans_evidence:
+        bi "Actually, I think I've found most of the major pieces of evidence..."
+        bi "At least, enough to start discussing with others."
+        bi "Let's go gather everyone."
+    call screen garageInv
+
+label mansHands:
+    scene bg mansionbr
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
+    show stella dead:
+        zoom 1.0
+        xcenter .37
+        ycenter .8
+    if not mans_evidence[3]:
+    show shahar mad with dissolve
+        b "...Shahar, is that Stella's ring on your finger?"
+        h "What? I'm a pirate, I own lots er booty, what makes ye think I stole this one from my good friend?"
+        b "So if I check Stella's hands, there will be a ring there."
+        h "..."
+        b "Okay then, let me look at her hands..."
+        b "..."
+        b "Yup, there's no ring here."
+        h "...I mean, maybe the lass just lost her golden piece at the party?"
+        b "Suuuuuuuure."
+        h "Hey lad, don't deny a grievin' seafarer a memento of a fallen comrade."
+        b "Fine, you can keep the ring..."
+        b "..."
+        b "Huh?"
+        hide shahar with dissolve
+    show ev2 hand with dissolve
+    bi "These look like burns on her palms..."
+    b "Did the killer burn Stella before or after stabbing her?"
+    b "Also, they're shaped like rectangles... I wonder why..."
+    hide ev2 hand with dissolve
+    if False not in mans_evidence[0:4]:
+        bi "Hmm... I found a lot in the bathroom, but I think that's everything."
+        bi "Though this has brought up more questions than answers..."
+    if False not in mans_evidence:
+        bi "Actually, I think I've found most of the major pieces of evidence..."
+        bi "At least, enough to start discussing with others."
+        bi "Let's go gather everyone."
+    jump mansDone
+    if not mans_evidence[3]:
+        $mans_evidence[3] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Burns on Stella's Hands was added to evidence."
+    call screen garageInv
