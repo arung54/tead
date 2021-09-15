@@ -28,17 +28,17 @@ screen mansMap():
             unhovered Hide("mansPreview")
         hotspot(152, 310, 156, 157):
             if ftecounter != 4:
-                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
+                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
             hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
             unhovered Hide("mansPreview")
         hotspot(307, 310, 83, 83):
             if ftecounter != 4:
-                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
+                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
             hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
             unhovered Hide("mansPreview")
         hotspot(497, 310, 218, 158):
             if ftecounter != 4:
-                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
+                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
             hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
             unhovered Hide("mansPreview")
         hotspot(234, 544, 225, 140):
