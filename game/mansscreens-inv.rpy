@@ -2,66 +2,65 @@ screen mansMapInv():
     #TODO: Gate rooms for FT4
     #TODO: Create secret sesame FTE
     imagemap:
-        ground "mansMapoverlay.png"
+        ground "map2ui.png"
         hotspot(762, 310, 155, 174):
-            action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("kitchenInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay1.png")
-            unhovered Hide("mansPreview")
+            action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("kitchenInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay1.png")
+            # unhovered Hide("mansPreview")
         hotspot(920, 311, 329, 175):
-            action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("diningInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+            action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("diningInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(1090, 489, 160, 195):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("garageInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("garageInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(153, 471, 561, 69):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("hallwayInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("hallwayInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(153, 539, 77, 145):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("hallwayInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("hallwayInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(152, 310, 156, 157):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(307, 310, 83, 83):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(497, 310, 218, 158):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(234, 544, 225, 140):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(463, 543, 251, 141):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("masterBedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("masterBedroom", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
         hotspot(393, 310, 101, 158):
             if ftecounter != 4:
-                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bathroomInv", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            unhovered Hide("mansPreview")
+                action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroom"), Hide("bathroomInv"), Show("bathroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mansPreview")]
+            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            # unhovered Hide("mansPreview")
 
     imagemap:
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("mansMapInv", transition=Dissolve(0.3)), Hide("mansPreview")]
-
-
+        
 screen mans_evidence():
     add "eviscroll"
     modal True
@@ -249,11 +248,11 @@ screen diningInv():
         if mans_evidence[7]:
             hotspot(829, 524, 138, 27) action [Hide("kitchenInv"), Jump("mansSheath")] mouse 'q' hovered tt.Action("Knife and Sheath")
         else:
-            hotspot(829, 524, 138, 27) action [Hide("kitchenInv"), Jump("mansSheath")] mouse 'q' hovered tt.Action("Knife and Sheath")
+            hotspot(829, 524, 138, 27) action [Hide("kitchenInv"), Jump("mansSheath")] mouse 'ex' hovered tt.Action("Knife and Sheath")
         if mans_extra[3]:
             hotspot(794, 198, 62, 76) action [Hide("kitchenInv"), Jump("mansSydell")] mouse 'q' hovered tt.Action("Mr. Sydell")
         else:
-            hotspot(794, 198, 62, 76) action [Hide("kitchenInv"), Jump("mansSydell")] mouse 'q' hovered tt.Action("Mr. Sydell")
+            hotspot(794, 198, 62, 76) action [Hide("kitchenInv"), Jump("mansSydell")] mouse 'ex' hovered tt.Action("Mr. Sydell")
 
     if tt.value != "":
         frame:
@@ -295,7 +294,7 @@ label mansSheath:
     bi "The sheath on the other hand..."
     bi "Sam claimed to find it in the middle of the party."
     bi "If Sam was the first person to find it, that means after we found it, it was around us the entire time."
-    bi "In that case it wouldn't be relevant to the murder eitehr."
+    bi "In that case it wouldn't be relevant to the murder either."
     bi "But maybe someone found the sheath beforehand?"
     bi "I should keep that possibility in mind..."
     if not mans_evidence[7]:
@@ -304,10 +303,9 @@ label mansSheath:
         pause 1
         hide newevidencefound with dissolve
         blank "Knife Sheath was added to evidence."
-    if False not in mans_evidence[7:8]:
+    if False not in mans_evidence[7:9]:
         bi "Hmm... I think that's everything to find here."
         bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
-    jump mansDone
     call screen diningInv
 
 label mansDracula:
@@ -322,16 +320,16 @@ label mansDracula:
     bi "Back then, we concluded as a group the murderer this round is probably someone who's been in this house before."
     bi "This is the first time we're solving a murder with this information in mind, maybe I should remember it."
     hide drac with dissolve
-    if not mans_evidence[7]:
-        $mans_evidence[7][1] = True
+    if not mans_evidence[8]:
+        $mans_evidence[8] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
         blank "Location and the Murderer was added to evidence."
-    if False not in mans_evidence[7:8]:
+    if False not in mans_evidence[7:9]:
         bi "Hmm... I think that's everything to find here."
         bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
-    jump mansDone
+    call mansDone
     call screen diningInv
 
 label mansSydell:
@@ -342,6 +340,7 @@ label mansSydell:
     bi "At this point, I doubt anyone will admit to knowing him."
     bi "Maybe if we catch the murderer and they're feeling nice, they'll tell us about him."
     bi "For now, I think that's our only lead for finding the mastermind..."
+    call screen diningInv
 
 screen garageInv():
     default tt = Tooltip("")
@@ -446,7 +445,7 @@ screen hallwayInv():
     default tt = Tooltip("")
 
     imagemap:
-        ground "bg mansionhallway.png"
+        ground "bg mansionhall.png"
         if mans_extra[0]:
             hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
         else:
@@ -592,7 +591,7 @@ label mansGenerator:
         bi "Someone moved the generator up here from the garage, but I'm not sure why."
         bi "And they tied a rope around it, maybe to make it easier to move around."
         bi "Hm..."
-    jump mansDone
+    call mansDone
     call screen bedroomJennInv
 
 screen masterBedroomInv():
@@ -720,6 +719,10 @@ screen bathroomInv():
             hotspot(269, 425, 84, 59) action [Hide("bathroomInv"), Jump("mansHands")] mouse 'q' hovered tt.Action("Stella's Hands")
         else:
             hotspot(269, 425, 84, 59) action [Hide("bathroomInv"), Jump("mansHands")] mouse 'ex' hovered tt.Action("Stella's Hands")
+        if mans_evidence[0]:
+            hotspot(418, 457, 106, 69) action [Hide("bathroomInv"), Jump("mansStella")] mouse 'q' hovered tt.Action("Stab Wound")
+        else:
+            hotspot(418, 457, 106, 69) action [Hide("bathroomInv"), Jump("mansStella")] mouse 'ex' hovered tt.Action("Stab Wound")
         if mans_extra[6]:
             hotspot(756, 392, 523, 326) action [Hide("bathroomInv"), Jump("mansTub")] mouse 'q' hovered tt.Action("Tub")
         else:
@@ -787,10 +790,10 @@ label mansSink:
         pause 1
         hide newevidencefound with dissolve
         blank "Wires and Hole Under the Sink was added to evidence."
-    if False not in mans_evidence[0:4]:
+    if False not in mans_evidence[0:5]:
         bi "Hmm... I found a lot in the bathroom, but I think that's everything."
         bi "Though this has brought up more questions than answers..."
-    jump mansDone
+    call mansDone
     call screen bathroomInv
 
 label mansHands:
@@ -827,10 +830,10 @@ label mansHands:
         hide newevidencefound with dissolve
         blank "Burns on Stella's Hands was added to evidence."
     hide ev2 hand with dissolve
-    if False not in mans_evidence[0:4]:
+    if False not in mans_evidence[0:5]:
         bi "Hmm... I found a lot in the bathroom, but I think that's everything."
         bi "Though this has brought up more questions than answers..."
-    jump mansDone
+    call mansDone
     call screen bathroomInv
 
 label mansShahar:
@@ -849,7 +852,7 @@ label mansShahar:
     h "What?"
     b "Nothing..."
     show shahar mad with dissolve
-    call screen kitchenInv
+    call screen bathroomInv
 
 label mansTub:
     scene bg mansionbr
@@ -861,7 +864,7 @@ label mansTub:
     bi "As much as I would love to take a relaxing bath and just forget everything happening..."
     bi "Now's not the time."
     $mans_extra[6] = True
-    call screen kitchenInv
+    call screen bathroomInv
 
 label mansStella:
     scene bg mansionbr
@@ -921,10 +924,10 @@ label mansStella:
         bi "Also, from what Jenny told me..."
         bi "It's likely the wound was formed a while ago, and something stemmed the bleeding."
         bi "Lastly, there's what seems like water on her back but we're not sure why."
-    if False not in mans_evidence[0:4]:
+    if False not in mans_evidence[0:5]:
         bi "Hmm... I found a lot in the bathroom, but I think that's everything."
         bi "Though this has brought up more questions than answers..."
-    jump mansDone
+    call mansDone
     call screen bathroomInv
 
 label mansJenny:
@@ -959,5 +962,5 @@ label mansDone:
         bi "Actually, I think I've found most of the major pieces of evidence..."
         bi "At least, enough to start discussing with others."
         bi "Let's go gather everyone."
-        jump mansPostInv
+        jump trial2a
     return

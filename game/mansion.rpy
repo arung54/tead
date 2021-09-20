@@ -2200,8 +2200,10 @@ label mansion2:
     b "We're... we're gonna get through this one too Sid."
     b "Let's go outside, I can't handle being in here right now."
     scene black with fade
-    scene bg mansionhall with fade
-
+    blank "Arun will fill in a cleaner transition from the body discovery to the investigation later."
+label mansPreInv:
+    play music "audio/inthefaceofdeath.mp3"
+    call screen diningInv with dissolve
 label trial2a:
     play music "audio/rush.mp3"
     scene black with fade
@@ -2238,7 +2240,7 @@ label trial2a:
         startMansionTrial("lauren", "Lauren: The {color=#f00}knife was in the dining room the whole time{/color}.", -1,
         "lauren",  "Lauren: Plus there's {color=#f00}no evidence suggesting the knife was used{/color} to stab her.", -1,
         "lauren", "Lauren: So it must be the {color=#f00}only other sharp object{/color} we had access to, the skewers.", -1,
-        "lauren",  "Catherine: Would they really have been able to stab her to death with skewers?", 0,
+        "catherine",  "Catherine: Would they really have been able to stab her to death with skewers?", 0,
         1, stabwound, "trial2b")
 label trial2b:
     play music "audio/rush.mp3"
@@ -2331,7 +2333,8 @@ label trial2d:
     i "Didn't you go to get a stepstool during the party?"
     s "Yes, but I only left after the meatloaf had been served, when the knife was in the dining room."
     bi "In that case, the person Sam is talking about must be..."
-    call screen chooseChar("jenny", "trial2e", "Who left the party the same time as Stella, and had been in the kitchen?") with dissolve
+    scene black with dissolve
+    call screen chooseCharMansion("jenny", "trial2e", "Who left the party the same time as Stella, and had been in the kitchen?") with dissolve
 label trial2e:
     play music "audio/rush.mp3"
     scene black with fade
@@ -2433,20 +2436,18 @@ label trial2g:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show drac ind:
-        xcenter .25
+    show sam with dissolve
+    b "Sam, we inspected the wound during the investigation."
+    b "It looks like something was used to plug the wound after Stella was stabbed..."
+    b "What if it was..."
     show sam:
-        xcenter .75
-    with dissolve
-    b "Sam, Dracula inspected the wound during the investigation."
-    b "If the murderer took the knife with them, there would probably be a lot more blood."
-    s "Care to explain more?"
-    hide drac with moveoutleft
+        xcenter .5
+        linear 0.15 xcenter .75
     show catherine happy with moveinleft:
         xcenter .25
     c "Oh, I think I can take it from here, Bert!"
-    b "...Really?"
-    c "Yeah! I watched this detective show that was super popular a few years ago."
+    bi "...man, I hate being interrupted."
+    c "I watched this detective show that was super popular a few years ago."
     c "I think it's called, like... Warlock or something?"
     c "I can't remember the name, maybe because it's copyrighted."
     b "Huh?"
@@ -3076,6 +3077,7 @@ label trial2p:
     s "Oh?"
     b "I had a suspicion even before hearing Sam's story."
     b "But what Sam said makes me even more sure."
+    b "Stella's hands were burned by..."
     call screen pickSpot2 with dissolve #pick sink handles
 label trial2q:
     scene bg mansiondining with fade
@@ -3282,7 +3284,7 @@ label trial2u:
     bi "She didn't sound very okay, but that was a topic for later."
     l "I'm confused though. If the generator wasn't in Jenny's room, where was it?"
     b "Well, when you consider that the sink is on the left wall when you enter the bathroom, we can figure that out easily."
-    call screen pickSpot2 with dissolve #pick closet
+    call screen pickSpot3 with dissolve #pick closet
 label trial2v:
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
@@ -3392,7 +3394,7 @@ label trial2x:
     b "Remember, we know the generator moved after Stella died."
     b "And we don't think it's Sam because Sam wouldn't need a rope to move the generator."
     b "With that in mind, it can only be..."
-    call screen chooseChar("catherine", "trial2y", "Who moved the generator?") with dissolve
+    call screen chooseCharMansion("catherine", "trial2y", "Who moved the generator?") with dissolve
 label trial2y:
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")

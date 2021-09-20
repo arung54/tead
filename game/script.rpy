@@ -389,7 +389,7 @@ label start:
         train_evidence3 = [False, False, False, False]
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [False] * 9
-        mans_extra = [False] * 1
+        mans_extra = [False] * 11
         lightscount = 0
         windowcount = 0
         mistakes = 0
@@ -398,4 +398,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump postFT2
+    jump mansPreInv
