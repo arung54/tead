@@ -60,7 +60,7 @@ screen mansMapInv():
     imagemap:
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("mansMapInv", transition=Dissolve(0.3)), Hide("mansPreview")]
-        
+
 screen mans_evidence():
     add "eviscroll"
     modal True
@@ -576,9 +576,10 @@ label mansGenerator:
         bi "..."
         bi "Oh, the generator has wheels."
         bi "So you can use the rope to tug the generator around more easily."
-        bi "Though I wonder..."
-        bi "If someone was strong enough to lift the generator upstairs, why would they need the rope?"
-        bi "Hm... I'll have to think about this more."
+        bi "Hmm..."
+        #bi "Though I wonder..."
+        #bi "If someone was strong enough to lift the generator upstairs, why would they need the rope?"
+        #bi "Hm... I'll have to think about this more."
         $mans_evidence[6] = True
         show newevidencefound with dissolve
         pause 1
@@ -776,7 +777,9 @@ label mansSink:
         bi "Hm... I wonder if Stella made any progress stealing the sink handle before she died."
         bi "I doubt it'll lead to anything, but might as well look under there."
         bi "...Huh?"
-    show ev2 wires with dissolve
+    show ev2 wires with dissolve:
+        ycenter .5
+        xcenter .5
     bi "There's wires under the sink."
     bi "They seem to be attached to the sink, and they're fed through a hole in the wall."
     if mans_evidence[5]:
@@ -804,7 +807,8 @@ label mansHands:
         xcenter .37
         ycenter .8
     if not mans_evidence[3]:
-        show shahar mad with dissolve
+        show shahar mad with dissolve:
+            xcenter .75
         b "...Shahar, is that Stella's ring on your finger?"
         h "What? I'm a pirate, I own lots er booty, what makes ye think I stole this one from my good friend?"
         b "So if I check Stella's hands, there will be a ring there."
@@ -819,7 +823,9 @@ label mansHands:
         b "..."
         b "Huh?"
         hide shahar with dissolve
-    show ev2 hand with dissolve
+    show ev2 hand with dissolve:
+        xcenter .5
+        ycenter .5
     bi "These look like burns on her palms..."
     b "Did the killer burn Stella before or after stabbing her?"
     b "Also, they're shaped like rectangles... I wonder why..."
@@ -883,13 +889,14 @@ label mansStella:
         pause 1
         hide newevidencefound with dissolve
         blank "Shape of the Wound was added to evidence."
-        show jenny ind with dissolve
+        show jenny ind with dissolve:
+            xcenter .75
         j "Wait... when Dan was stabbed, the wound was pretty wet, and there was much more blood..."
         j "If it's dry, she's probably wasn't stabbed recently."
         j "Also..."
         j "If there's not that much blood here, does that mean Stella was able to stem the bleeding?"
         show jenny happy
-        j "Teehee! That was impressive, wasn't it Bert?"
+        j "That would be pretty impressive, wow. Right Bert?"
         b "Impressive but... not something to be happy about, necessarily."
         show jenny ind
         j "Oh. Right. Dead body."
