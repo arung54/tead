@@ -162,15 +162,15 @@ screen kitchenInv():
         else:
             hotspot(444, 289, 109, 174) action [Hide("kitchenInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
         if mans_extra[1]:
-            hotspot(111, 522, 482, 168) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
-            hotspot(273, 206, 169, 145) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
-            hotspot(441, 205, 113, 84) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
-            hotspot(556, 211, 145, 139) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(111, 522, 482, 168) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(273, 206, 169, 145) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(441, 205, 113, 84) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
+            hotspot(556, 211, 145, 139) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'q' hovered tt.Action("Cupboards and Drawers")
         else:
-            hotspot(111, 522, 482, 168) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
-            hotspot(273, 206, 169, 145) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
-            hotspot(441, 205, 113, 84) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
-            hotspot(556, 211, 145, 139) action [Hide("frontCarInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(111, 522, 482, 168) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(273, 206, 169, 145) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(441, 205, 113, 84) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
+            hotspot(556, 211, 145, 139) action [Hide("kitchenInv"), Jump("mansCupboards")] mouse 'ex' hovered tt.Action("Cupboards and Drawers")
         if mans_extra[2]:
             hotspot(917, 241, 251, 448) action [Hide("kitchenInv"), Jump("mansFridge")] mouse 'q' hovered tt.Action("Fridge and Freezer")
         else:
@@ -383,7 +383,7 @@ screen garageInv():
     imagebutton:
         xpos 20
         ypos 20
-        idle "draculachibi.png" at chibizoom
+        idle "sidchibi.png" at chibizoom
         action [Hide("garageInv"), Jump("mansGarage")]
 
 label mansGarage:
