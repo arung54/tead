@@ -90,50 +90,15 @@ screen mansionEvidenceTrial(s, e, l):
             ground "evidenceui.png"
             hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("mansionEvidenceTrial")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
-        if mans_evidence[0]:
-            textbutton "Shape of the Wound" style "button_text" action SetVariable("currEvidence", 0)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[1]:
-            textbutton "Blood from the Wound" style "button_text" action SetVariable("currEvidence", 1)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[2]:
-            textbutton "Damp Clothing" style "button_text" action SetVariable("currEvidence", 2)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[3]:
-            textbutton "Burns on Stella's Hands" style "button_text" action SetVariable("currEvidence", 3)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[4]:
-            textbutton "Wires and Hole Under the Sink" style "button_text" action SetVariable("currEvidence", 4)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[5]:
-            textbutton "Generator" style "button_text" action SetVariable("currEvidence", 5)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[6]:
-            textbutton "Rope Attached to Generator" style "button_text" action SetVariable("currEvidence", 6)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[7]:
-            textbutton "Knife Sheath" style "button_text" action SetVariable("currEvidence", 7)
-        else:
-            textbutton "-" style "button_text"
-
-        if mans_evidence[8]:
-            textbutton "Location and the Murderer" style "button_text" action SetVariable("currEvidence", 8)
-        else:
-            textbutton "-" style "button_text"
+        textbutton "Shape of the Wound" style "button_text" action SetVariable("currEvidence", 0)
+        textbutton "Blood from the Wound" style "button_text" action SetVariable("currEvidence", 1)
+        textbutton "Damp Clothing" style "button_text" action SetVariable("currEvidence", 2)
+        textbutton "Burns on Stella's Hands" style "button_text" action SetVariable("currEvidence", 3)
+        textbutton "Wires and Hole Under the Sink" style "button_text" action SetVariable("currEvidence", 4)
+        textbutton "Generator" style "button_text" action SetVariable("currEvidence", 5)
+        textbutton "Rope Attached to Generator" style "button_text" action SetVariable("currEvidence", 6)
+        textbutton "Knife Sheath" style "button_text" action SetVariable("currEvidence", 7)
+        textbutton "Location and the Murderer" style "button_text" action SetVariable("currEvidence", 8)
 
     fixed xmaximum 580:
         if currEvidence == 0:

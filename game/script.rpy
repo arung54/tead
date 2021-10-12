@@ -398,4 +398,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump trial2x
+    jump trial2a

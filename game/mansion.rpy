@@ -2177,39 +2177,186 @@ label mansion2:
     with dissolve
     l "..."
     l "Another one so soon?"
+    l "Was Dan not enough..."
     b "H-hold on, maybe she's still alive?"
-    l "I'm sorry Bert, I think she's dead."
+    bi "I nearly ran to Stella's side, trying to feel for a pulse."
+    b "C'mon Stella, don't die on us."
+    b "It's just a cut in your back, right?"
+    l "Bert... I think she's dead."
     b "D-don't say it so casually."
-    l "Sorry."
-    l "Bert, maybe it'd be good if you and Sid stepped outside."
-    l "Take as much as time as you need to calm down. I'm going to go let everyone else know."
+    l "Sorry... I don't know how to handle this either..."
+    l "But... we gotta process it eventually."
+    b "Y-yeah, you're right..."
+    bi "I hate the Game Master."
+    bi "What good does Stella dying do?"
+    bi "And now one of us is a murderer."
+    bi "No one deserves to have that on their hands..."
+    l "..."
+    b "..."
+    l "We... we should... go tell the others."
+    b "...Yeah. Can't give the murderer time to hide evidence."
+    l "I'll go do that... Bert, can you look after Sid and make sure he's okay?"
+    l "Maybe it'd be good if you and Sid stepped outside..."
+    l "I could be imagining it but there's definitely a certain smell a corpse has..."
+    b "Yeah... sounds good. Thanks Lauren."
+    l "Of course Bert. We're gonna get through this together."
     hide lauren with dissolve
-    $ showchibi("bert", "sid")
+    $ showchibi("sid")
     b "Y-yeah."
+    bi "I... can't tell if she said that for me or for herself."
+    bi "Though both of us probably needed to hear it."
     show sid ind:
         xcenter .75
     with dissolve
     i "Bert?"
     i "Did it happen again?"
     b "Yeah, it did."
-    i "Wh-why am I always the first person to find the body."
+    i "Wh-why am I always the first person to find the body?"
     i "I swear it wasn't me."
     b "I know, there wasn't a moment we weren't together we last saw Stella."
     i "O-ok."
     i "Sorry, I'm just... still shaken up from everyone accusing me of Dan's death."
     b "We're... we're gonna get through this one too Sid."
     b "Let's go outside, I can't handle being in here right now."
+    bi "Holding in my tears, I made my way into the hallway with Sid."
     scene black with fade
     blank "Arun will fill in a cleaner transition from the body discovery to the investigation later."
+    scene bg mansionhall with fade
+    $showchibi("sid")
+    bi "As we walked out, others made their way upstairs."
+    $showchibi("sid", "catherine", "dracula", "jenny", "sam", "shahar")
+    show shahar mad with dissolve
+    h "Lad, tell me it's not true."
+    h "Stella could drink a tornado, how could the lassie die so easily?"
+    show shahar mad:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show sam with moveinright:
+        xcenter .75
+    s "The fact that she drank so much might be why she's dead..."
+    h "Scallywag! How could two days of drinking get her shanked if a lifetime didn't?!"
+    s "That's... not what I meant."
+    h "Stella, my matey, I grieve thee!"
+    s "I think that's... old English, not pirate speak."
+    h "Whoever the murderer is, they best be ready for Davy Jones' Locker, even if it takes my own hand to bring them there!"
+    hide shahar with moveoutleft
+    $showchibi("sid", "catherine", "dracula", "jenny", "sam")
+    bi "Shahar exited to the bathroom, presumably to grieve in his own pirate way."
+    show drac ind with moveinleft:
+        xcenter .25
+    d "Perhaps someone should go in there with him?"
+    d "To make sure he doesn't tamper with the body."
+    hide sam with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    j "I'll go... last time we let Bert do all the investigating. I'm so sad Stella died but..."
+    j "This time I want to help. I won't be useless this time."
+    j "Seems like the state of the body would be a crucial bit of evidence, so I'm gonna start there."
+    d "Fine with me."
+    hide jenny with moveoutleft
+    $showchibi("sid", "catherine", "dracula", "sam")
+    d "Hm, it is a shame we were not able to figure out more collectively before this happened."
+    b "What do you mean?"
+    d "I had a plan..."
+    show sam with moveinleft:
+        xcenter .25
+    s "Hey, if we want someone to make sure Shahar's not tampering with evidence..."
+    s "Shouldn't we send someone downstairs to make sure Lauren's not either?"
+    b "Oh yeah, where is Lauren, why didn't she come up here?"
+    s "She's hanging out with Freddy."
+    s "Thinks the kid shouldn't see a dead body."
+    b "That's... reasonable."
+    d "In that case, I'll go."
+    d "I want to investigate downstairs anyway."
+    d "If anyone wants to discuss my plan, come meet me downstairs."
+    hide drac with moveoutright
+    $showchibi("sid", "catherine", "sam")
+    show catherine nocat with moveinright:
+        xcenter .75
+    c "Well, I guess the party's over..."
+    b "I uh... don't know if that's the most pressing concern."
+    c "Oh, shoot, yeah Stella's dead."
+    c "The... party didn't get her killed right?"
+    b "What? What do you mean?"
+    c "Everyone was congregating in one space..."
+    c "When people left they were all alone."
+    c "It's not like the train where Kaiser had to kill Dan while someone was with him."
+    c "Is... is it my fault someone died?"
+    b "I get why you feel that way..."
+    b "But it's not."
+    b "It's the Game Master's, we can't forget that."
+    c "Yeah, I guess..."
+    ses "Mrow!"
+    c "Oh! Sesame!"
+    b "Huh?"
+    c "This is the longest I've been away from him in a while, he must be so lonely..."
+    c "I need to take care of him too, make sure he's fed and groomed and all that."
+    c "Is it okay if I take care of him while the rest of you look around?"
+    b "Uh... why are you asking me?"
+    c "Well you were kind of in charge last time."
+    s "Isn't it kind of suspicious to leave Catherine?"
+    c "But... my kitty..."
+    b "I don't know if it's any more suspicious than Freddy not investigating..."
+    s "Hmph... yeah, I guess."
+    c "Sesame, I'm coming!"
+    hide catherine with moveoutright
+    $showchibi("sid", "sam")
+    show sid ind with moveinright:
+        xcenter .75
+    s "Well if she's allowed to be on her own, I'm gonna go look around as well."
+    i "No! I don't trust you."
+    s "But you trust Catherine over me?"
+    i "Yeah."
+    s "Why?"
+    i "Does that really need explaining?"
+    s "Fine, we can investigate together."
+    s "But keep the talking to a minimum."
+    i "Fine by me. Wanna go to the garage?"
+    s "Sure, I guess."
+    hide sam
+    hide sid
+    with dissolve
+    $showchibi("sid", "sam")
+    show scary with dissolve:
+        alpha .5
+    bi "..."
+    bi "I suddenly started tearing up."
+    bi "I... was I holding it in front of the others?"
+    bi "So we could all seem strong and survive together?"
+    bi "I'd never consider someone like Stella a friend in my normal life but..."
+    bi "As much as I wanted to sleep back then, we had a good talk."
+    bi "Maybe we don't see eye to eye on things, but I got some perspective."
+    bi "Maybe we're not friends but... we were getting there, in one way or another."
+    bi "...This game is cruel."
+    bi "I formed connections to not feel alone, only to have them yanked away."
+    bi "And for what?"
+    bi "So what if we solve this murder? There will be another murder in a few days..."
+    bi "None of us have the power to stop that."
+    bi "..."
+    hide scary with dissolve
+    b "No."
+    b "No, I can't let those thoughts win."
+    b "Gotta distract myself from them somehow. The investigation is the perfect excuse."
+    b "Have to make it to tomorrow even if I don't know what lies ahead."
+    b "It's go time."
 label mansPreInv:
     play music "audio/inthefaceofdeath.mp3"
-    call screen diningInv with dissolve
+    pause .5
+    show investstart with dissolve
+    pause 1
+    hide investstart with dissolve
+    bi "I should definitely check the bathroom at some point but besides that... I'm not really sure where to go."
+    bi "Also, who left the party that could have killed Stella?"
+    bi "Only three people."
+    bi "Jenny, Sam, and Shahar."
+    bi "I have to keep that in mind while investigating."
+    call screen hallwayInv with dissolve
 label trial2a:
     play music "audio/rush.mp3"
     scene black with fade
     bi "Everyone gathered in the dining room."
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
@@ -2245,7 +2392,7 @@ label trial2a:
 label trial2b:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Lauren, I think you missed something because you were watching over Freddy during our investigation."
     b "When we took a close look at the body, the stab wound was the shape you'd expect from using the kitchen knife."
@@ -2310,7 +2457,7 @@ label trial2c:
 label trial2d:
     play music "audio/rush.mp3"
     scene bg mansiondining
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind:
         xcenter .25
     with fade
@@ -2349,7 +2496,7 @@ label trial2e:
     bi "I... I thought we were becoming closer but..."
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
     scene bg mansiondining
-    $showchibint("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam
     with fade
     b "Sam, are you... suggesting Jenny murdered Stella?"
@@ -2450,7 +2597,7 @@ label trial2f:
 label trial2g:
     play music "audio/rush.mp3"
     scene bg mansiondining
-    $showchibint("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam with dissolve
     with fade
     b "Sam, we inspected the wound during the investigation."
@@ -2563,7 +2710,7 @@ label trial2g:
     bi "I wasn't sure why."
     bi "Eventually, Dracula and Shahar returned."
     scene bg mansiondining
-    $showchibint("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind:
         xcenter .25
     show shahar ind:
@@ -2612,7 +2759,7 @@ label trial2g:
 label trial2h:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam:
         xcenter .75
     show sid ind:
@@ -2662,7 +2809,7 @@ label trial2h:
 label trial2i:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Wait, everyone quiet down."
     b "Lauren, say that again?"
@@ -2729,7 +2876,7 @@ label trial2i:
 label trial2j:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind with dissolve
     b "Dracula, I assume you're referring to Stella's clothes being damp?"
     d "Yes. I believe it was water."
@@ -2818,7 +2965,7 @@ label trial2k:
 label trial2l:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam with dissolve
     s "Me?"
     s "Bullshit, you don't have proof."
@@ -2934,7 +3081,7 @@ label trial2m:
 label trial2n:
     play music "audio/rush.mp3"
     scene bg mansiondining
-    $showchibint("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind:
         xcenter .25
     show sam:
@@ -2989,7 +3136,7 @@ label trial2n:
     call screen chooseCharMansion("sam", "trial2o", "Who would know if Stella was stabbed or burned first?") with dissolve
 label trial2o:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     bi "..."
     bi "It comes down to this."
     bi "Are we going to cooperate?" #JULIAN
@@ -3022,7 +3169,7 @@ label trial2o:
         1, location, "trial2p")
 label trial2p:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam:
         xcenter .75
     show sid ind:
@@ -3030,7 +3177,7 @@ label trial2p:
     with dissolve
     b "Wait, remember the discussion we had on the first day here?"
     b "We said that the murderer was likely to have been in this mansion before."
-    b "We never figured out {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
+    b "We never figured {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
     b "So it's possible Sam wasn't chosen as the murderer by the Game Master, but has been here before."
     b "In which case, it would be easy for someone who had been here before to believe they were the murderer this time."
     b "But nothing rules out multiple people having been here before."
@@ -3080,11 +3227,12 @@ label trial2p:
     h "Not to protect yerself from a cutlass, not fer revenge."
     h "Just a poor defenseless lassie."
     h "Even if Sam didn't deal the killing blow, I can't fergive a murderer so becalmedly, I'm sorry lads and lassies."
-    l "Shahar, maybe we can talk it through?"
+    l "Shahar, maybe we can talk this through?"
     hide shahar with moveoutright
     show sam with moveinright:
         xcenter .75
     s "No, Shahar's right."
+    s "I might as well be a murderer."
     s "I... hate what I've become."
     s "I wish it was someone else's turn to murder me instead."
     b "Look, Sam, what happened happened."
@@ -3095,7 +3243,7 @@ label trial2p:
     s "Okay."
     s "No emotions this time, I guess."
     hide lauren with moveoutleft
-    show sam:
+    show sam with dissolve:
         xcenter .75
         linear 0.15 xcenter .5
     s "I went in there, with the knife made out of ice, just like you figured out..."
@@ -3126,8 +3274,8 @@ label trial2p:
     call screen pickSpot2 with dissolve #pick sink handles
 label trial2q:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam with dissolve:
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    show sam:
         xcenter .5
     b "Sam, you said Stella braced herself on the sink, right?"
     s "Yeah."
@@ -3155,10 +3303,10 @@ label trial2q:
         "sam", "Sam: If the sink handles are what burned her, {color=#55f}she should have been in pain before I stabbed her.{color=#55f}", 1,
         "sam", "Sam: So the handles would have {color=#f00}had to heat up in the few seconds after I stabbed her.{color=#f00}", -1,
         "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}nothing could have heated them up in that time.{/color}", -1,
-        1, [wires, generator], "trial2r")
+        3, [wires, generator], "trial2r")
 label trial2r:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam:
         xcenter .5
     b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
@@ -3172,7 +3320,7 @@ label trial2r:
     call screen chooseCharMansion("dracula", "trial2s", "Who could explain how Stella only got burnt after being stabbed?") with dissolve
 label trial2s:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind:
         xcenter .5
     b "Dracula."
@@ -3240,7 +3388,7 @@ label trial2s:
     b "Dracula, there's one more thing that would be good to know..."
     show scary with dissolve:
         alpha .5
-    b "And that is..."
+    bi "And that is..."
 label trial2t:
     menu:
         bi "What should I ask Dracula?"
@@ -3259,7 +3407,7 @@ label trial2t:
         "How are you so old but so hot?":
             bi "...did I really just think that?"
             jump trial2t
-    hide alpha with dissolve
+    hide scary with dissolve
     b "We need to know if Stella died from the stab wound or the shock, Dracula."
     b "Otherwise, even if we learn who set up the wiring, we can't identify the murderer."
     d "Hmm, I can't answer for sure."
@@ -3312,10 +3460,10 @@ label trial2t:
     l "So it'd be easiest for her to set it up."
     b "No, I'm pretty sure the generator got moved there later, we can't blame Jenny based on that."
     b "There's something missing from that room that the murderer would have needed..."
-    call screen mansionEvidenceTrial(-1, wire, "trial2u") with dissolve
+    call screen mansionEvidenceTrial(-1, wires, "trial2u") with dissolve
 label trial2u:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -3336,7 +3484,7 @@ label trial2u:
     call screen pickSpot3 with dissolve #pick closet
 label trial2v:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -3396,8 +3544,8 @@ label trial2w:
     i "Aha!"
     i "It was Sam all along!"
     i "Sam would be the only person who could move the generator."
-    hide lauren ind with moveoutright
-    hide jenny ind with moveoutleft
+    hide jenny with moveoutleft
+    hide lauren with moveoutright
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
@@ -3412,13 +3560,13 @@ label trial2w:
         startMansionTrial("sid", "Sid: {color=#f00}Sam was the last person to go upstairs{/color} before we found the body.", -1,
         "sid",  "Sid: So if the generator moved after Stella died and before we went up, {color=#55f}Sam is the only one who could have done it.{/color}", 1,
         "sid", "Sid: Sam's in good shape too, so {color=#f00}moving the generator from the closet to Jenny's room wouldn't be difficult.{/color}", -1,
-        "sid",  "Sid: C'mon, admit it, {color=#f00}it makes so much sense{/color} that Sam could move the generator so easily.", -1,
-        1, rope, "trial2x")
+        "sid",  "Sid: C'mon, admit it, {color=#f00}Sam could move the generator easily, everything makes sense.{/color}", -1,
+        3, rope, "trial2x")
 label trial2x:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind with dissolve
-    b "No, actually it doesn't make sense."
+    b "No, actually, not everything makes sense if Sam could move the generator easily."
     i "Huh? Are you saying Sam is a weakling?"
     i "Sam might have weak morals but morals aren't what lift objects."
     b "No, it's not that, it's the rope we found tied to the generator."
@@ -3454,11 +3602,11 @@ label trial2x:
     call screen chooseCharMansion("catherine", "trial2y", "Who moved the generator?") with dissolve
 label trial2y:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show catherine ind with dissolve
     c "Me? C'mon Bert, don't be silly."
     c "I was in the kitchen or dining room for the whole party, how could I move the generator?"
-    c "C'mon, Stella's dead, now's not the time for jokes!"
+    c "Stella's dead, now's not the time for jokes!"
     b "I'm not joking. Maybe you couldn't have directly moved the generator after Stella died..."
     b "But Sesame could have."
     c "..."
@@ -3490,7 +3638,7 @@ label trial2y:
     call screen pickSpot4 with dissolve #pick kitchen
 label trial2z:
     scene bg mansiondining with fade
-    $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show catherine ind with dissolve
     b "You got them from the kitchen."
     b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
@@ -3532,8 +3680,7 @@ label trial2z:
     c "Yeah, you got me."
     b "Huh?"
     c "I... I lost. I won't draw it out anymore."
-    show catherine happy:
-        xcenter .5
+    show catherine happy
     c "Good job guys! You did great, I didn't think anyone would come close to figuring it out."
     c "I guess I shouldn't have tried to make it look like Jenny did it, otherwise you would've never known it was me."
     c "Silly me as usual!"
@@ -3546,3 +3693,110 @@ label trial2z:
     c "I robbed to make a living. A cat burglar, if you will, teehee."
     c "C'mon, you really think working in a shelter pays a girl enough to live?"
     c "They barely feed the cats enough to live as is!"
+    hide sid with moveoutright
+    show shahar mad with moveinright:
+        xcenter .75
+    h "Ye wench! Ye've slain my second mate!"
+    show catherine ind:
+        xcenter .25
+    c "Yeah... sorry Shahar. Not much I could do about that one."
+    h "Sorry? Ye think a pitiful apology like that will get you off me pirate hook?"
+    h "Ye could've not killed her!"
+    c "Well uh... the Game Master kind of forced my hand."
+    h "Ye could've killed someone else!"
+    b "Not a great alternative..."
+    bi "..."
+    b "Wait."
+    b "Catherine, the Game Master isn't killing you yet."
+    b "I know these are... well, your last moments but..."
+    b "Tell us as much as you can."
+    c "...?"
+    show catherine happy:
+        xcenter .25
+    c "Oh!"
+    c "I see."
+    c "Resourceful as always, Bert."
+    c "Yeah, fire away!"
+    bi "...Why isn't the Game Master just killing her?"
+    bi "Eh, that doesn't matter. Gotta use this opportunity while we can."
+    b "Ok, let's go quickly, we don't know how much time we have."
+    hide shahar with moveoutright
+    show catherine happy:
+        xcenter .25
+        linear 0.15 xcenter .5
+    $menuset = set()
+label cathGivesInfo:
+    menu:
+        set menuset
+        "The Game Master forced your hand?":
+            b "What do you mean the Game Master forced your hand?"
+            c "The instructions I got telling me to kill someone said there was a deadline."
+            c "They didn't say what the deadline was, but if the deadline arrived everyone would die."
+            c "So... I had to kill someone and hope I got lucky to try to save everyone."
+            show catherine happy:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show shahar ind with moveinright:
+                xcenter .75
+            h "I see... I guess it's hard to blame ye then."
+            h "I apologize for me outburst earlier lassie."
+            c "That's nice of you Shahar!"
+            hide shahar with moveoutright
+            show catherine happy:
+                xcenter .25
+                linear 0.15 xcenter .5
+            if len(menuset) < 4:
+                jump cathGivesInfo
+
+        "How did you open the closet?":
+            c "Oh, when I was given instructions by the Game Master, they gave me a key to the closet."
+            b "A key?"
+            b "Hmm... I wonder if Kaiser had access to the train computer for the same reason."
+            b "Before I thought maybe it was because he had been on the train before."
+            show catherine happy:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show drac ind with moveinright:
+                xcenter .75
+            d "If I may interject, I have a supposition."
+            d "What if the Game Master gives every murderer a location-based advantage?"
+            c "Huh?"
+            b "Hm... it makes sense. Both you and Kaiser got something tied to the location."
+            d "And it \"levels\" the playing field in some sense."
+            b "I think you may be right... something we should look out for in the future."
+            hide drac with moveoutright
+            show catherine happy:
+                xcenter .25
+                linear 0.15 xcenter .5
+            if len(menuset) < 4:
+                jump cathGivesInfo
+
+        "Why Stella?":
+
+            show catherine happy:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show shahar ind with moveinright:
+                xcenter .75
+
+            hide shahar with moveoutright
+            show catherine happy:
+                xcenter .25
+                linear 0.15 xcenter .5
+            if len(menuset) < 4:
+                jump cathGivesInfo
+
+        "Did you commit a crime here?":
+
+            show catherine happy:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show shahar ind with moveinright:
+                xcenter .75
+
+            hide shahar with moveoutright
+            show catherine happy:
+                xcenter .25
+                linear 0.15 xcenter .5
+            if len(menuset) < 4:
+                jump cathGivesInfo

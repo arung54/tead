@@ -312,20 +312,34 @@ label mansDracula:
     scene bg mansiondining knife
     $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
     show drac ind with dissolve
-    d "Hm... unfortunate my ploy didn't work."
+    d "Ah Bert. Are you here to discuss my ploy from earlier?"
     b "Your ploy?"
     d "I was hoping someone would admit to a crime that could be tied to this location."
     d "If so, they would probably be the murderer."
     bi "Oh, he's referring to the conversation we had earlier."
     bi "Back then, we concluded as a group the murderer this round is probably someone who's been in this house before."
     bi "This is the first time we're solving a murder with this information in mind, maybe I should remember it."
-    hide drac with dissolve
     if not mans_evidence[8]:
         $mans_evidence[8] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
         blank "Location and the Murderer was added to evidence."
+    b "Though Dracula, I'm curious..."
+    b "You didn't think it would work so easily, right?"
+    d "What do you mean?"
+    b "Even if people were open to sharing their crimes..."
+    b "Wouldn't the murderer be incentivized to lie if they could?"
+    d "Well, I'd hope they'd be honest with me since I was honest about my crime."
+    b "Honest?"
+    d "Yes. Do you not believe I'm a vampire, Bert?"
+    bi "This again..."
+    bi "I don't really want to try and convince him that his \"crime\" is unbelievable..."
+    bi "Maybe it's best if I just leave him for now."
+    b "Uh... I guess I believe you..."
+    b "Well, let me know if you find anything."
+    d "You as well."
+    hide drac with dissolve
     if False not in mans_evidence[7:9]:
         bi "Hmm... I think that's everything to find here."
         bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
