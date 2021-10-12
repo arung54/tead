@@ -2865,7 +2865,7 @@ label trial2l:
     bi "I really thought we figured everything out."
     bi "We had such a convincing theory, but I guess there wasn't anywhere for Sam to hide the knife."
     h "So what now. Are we lynchin' Sam?"
-    s "What? Did you not pay attention>"
+    s "What? Did you not pay attention?"
     h "I'm not exactly the brightest matey on the poop deck."
     s "Ugh."
     bi "..."
@@ -2903,6 +2903,7 @@ label trial2m:
     b "And before the cake was brought out to serve, Sam had already cut a slice."
     b "The edge of the slice could have been aligned with the hole the knife was hiding in."
     b "After the slice was cut, there wouldn't be evidence of a hole in the cake."
+    s "Hiding a murder weapon in food? That's idiotic."
     b "Not to mention, the slice was cut rather cleanly, like you had used a real knife."
     b "When I tried using the sheath, the cut was much less flat."
     b "I think in your attempt to hide the fact that you hid an object in the cake..."
@@ -2945,10 +2946,10 @@ label trial2n:
     i "You can't lie your way out of this one!"
     bi "How did none of us bring that back up until now?"
     b "Wait, Sid, calm down."
-    b "Let's not settle on the killer being Sam just yet."
+    b "Maybe we can't settle on the killer being Sam just yet."
     s "What Bert, realized your conclusions from before were rather silly?"
     b "If you want us to not suspect you, you should cooperate rather than making quips."
-    s "...Fine."
+    s "...Hmph."
     b "The burn wounds. We haven't discussed them at all."
     b "I need to... think for a moment."
     hide sid
@@ -3029,12 +3030,12 @@ label trial2p:
     with dissolve
     b "Wait, remember the discussion we had on the first day here?"
     b "We said that the murderer was likely to have been in this mansion before."
-    b "We never figured anything else about how the murderer knew they were chosen, because Kaiser died before he could tell us more."
+    b "We never figured out {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
     b "So it's possible Sam wasn't chosen as the murderer by the Game Master, but has been here before."
     b "In which case, it would be easy for someone who had been here before to believe they were the murderer this time."
     b "But nothing rules out multiple people having been here before."
     b "Someone else could have actually been assigned to be the murderer."
-    b "Also, I guess the Game Master never clarified who we should vote for if the designated murderer isn't actually the one who commits murder."
+    b "Also, I guess the Game Master never clarified who we should vote for if the designated murderer isn't actually the murderer."
     b "So even if Sam was chosen as the murderer, we might still want to vote for someone else."
     i "This all seems so complicated... isn't there that saying about the simplest explanation usually being the best one?"
     i "Sam killing Stella just makes so much sense."
@@ -3051,6 +3052,7 @@ label trial2p:
     s "This... this damn game."
     s "Bert's right, I've been here before."
     s "The guy who lived here, Mr. Sydell, he was one of the people I sold drugs to."
+    bi "Sam knows Mr. Sydell!"
     s "I... I didn't want to murder Stella."
     s "But I thought I had to."
     s "We don't know what happens if days go by without a murder."
@@ -3078,12 +3080,11 @@ label trial2p:
     h "Not to protect yerself from a cutlass, not fer revenge."
     h "Just a poor defenseless lassie."
     h "Even if Sam didn't deal the killing blow, I can't fergive a murderer so becalmedly, I'm sorry lads and lassies."
-    l "Shahar, can't we talk this through?"
+    l "Shahar, maybe we can talk it through?"
     hide shahar with moveoutright
     show sam with moveinright:
         xcenter .75
     s "No, Shahar's right."
-    s "I might as well be a murderer."
     s "I... hate what I've become."
     s "I wish it was someone else's turn to murder me instead."
     b "Look, Sam, what happened happened."
@@ -3097,7 +3098,7 @@ label trial2p:
     show sam:
         xcenter .75
         linear 0.15 xcenter .5
-    s "I went in there, with the ice knife."
+    s "I went in there, with the knife made out of ice, just like you figured out..."
     s "She saw me and greeted me kindly."
     s "I guess she didn't think it was weird I came up there."
     s "But then she then turned back and was messing with the sink."
@@ -3126,7 +3127,7 @@ label trial2p:
 label trial2q:
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam:
+    show sam with dissolve:
         xcenter .5
     b "Sam, you said Stella braced herself on the sink, right?"
     s "Yeah."
@@ -3237,24 +3238,28 @@ label trial2s:
     d "It makes sense Stella could have only been lethally shocked, or even shocked at all, by touching both handles."
     b "Great, so that answers that."
     b "Dracula, there's one more thing that would be good to know..."
+    show scary with dissolve:
+        alpha .5
+    b "And that is..."
 label trial2t:
     menu:
         bi "What should I ask Dracula?"
 
         "Who killed Stella?":
             bi "Unless it was him or Sam, how would he know?"
-            jump trial2s
+            jump trial2t
 
         "What killed Stella?":
             bi "Yeah, that's the crucial piece of information."
 
         "Why kill Stella?":
             bi "Why would he know the motive?"
-            jump trial2s
+            jump trial2t
 
         "How are you so old but so hot?":
             bi "...did I really just think that?"
-            jump trial2s
+            jump trial2t
+    hide alpha with dissolve
     b "We need to know if Stella died from the stab wound or the shock, Dracula."
     b "Otherwise, even if we learn who set up the wiring, we can't identify the murderer."
     d "Hmm, I can't answer for sure."
@@ -3272,8 +3277,8 @@ label trial2t:
     j "They spent a lot of time since we got to the mansion talking to each other in private."
     d "Hmph, and what would I have to gain from protecting Sam if I didn't believe there was another murderer?"
     j "I dunno. Maybe you're the Game Master and you know you won't die regardless."
-    d "I sure you I am not."
-    d "And if I was and wanted to kill you all, why wouldn't I just do it myself instead of through this game?"
+    d "I assure you I am not."
+    d "But if I was and wanted to kill you all, why wouldn't I just do it myself instead of through this game?"
     j "Maybe the Game Master is working for someone and has to follow their rules?"
     d "That seems silly, they aren't the Master then, just a Game Servant."
     d "If I must tell you, I was trying to persuade Sam to work with me to get out of here."
@@ -3307,7 +3312,7 @@ label trial2t:
     l "So it'd be easiest for her to set it up."
     b "No, I'm pretty sure the generator got moved there later, we can't blame Jenny based on that."
     b "There's something missing from that room that the murderer would have needed..."
-    call screen mansionEvidenceTrial(-1, wires, "trial2u") with dissolve
+    call screen mansionEvidenceTrial(-1, wire, "trial2u") with dissolve
 label trial2u:
     scene bg mansiondining with fade
     $showchibi("bert", "catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
@@ -3356,6 +3361,8 @@ label trial2v:
         xcenter .25
     j "For real though, I don't see how it's useful to know the generator was in the closet..."
     j "It's not like anyone's admitted to having access to the closet."
+    show scary with dissolve:
+        alpha .5
 label trial2w:
     menu:
         bi "That's true, but the generator being in the closet still could help us identify the murderer, since..."
@@ -3379,12 +3386,18 @@ label trial2w:
     b "If the generator ended up in a bedroom but it was in the closet when Stella died..."
     b "It must have been moved after Stella died."
     b "So we just need to figure out who moved it between Stella's death and us finding the body."
+    show jenny ind:
+        xcenter .25
+        linear 0.3 xcenter .20
+    show lauren ind:
+        xcenter .75
+        linear 0.15 xcenter .8
     show sid ind with moveinbottom
-    hide jenny with moveoutleft
-    hide lauren with moveoutright
     i "Aha!"
     i "It was Sam all along!"
     i "Sam would be the only person who could move the generator."
+    hide lauren ind with moveoutright
+    hide jenny ind with moveoutleft
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
@@ -3420,7 +3433,7 @@ label trial2x:
         xcenter .75
     f "M-me? But I'm just a frog..."
     show lauren ind with moveinright:
-        xcenter .5
+        xcenter .6
     l "Hey, leave Freddy out of this."
     i "I-I'm just saying..."
     b "No, I don't think it's Freddy."
@@ -3457,14 +3470,15 @@ label trial2y:
     b "For most cats and their owners this wouldn't be possible, but as Freddy knows, Sesame is a very talented and well-trained cat."
     show frog ind with moveinright:
         rotate 315
-        xcenter 1.1
+        xcenter 1.01
         ycenter .5
     bi "Freddy quickly nodded and then started tying his shoes."
     hide frog with moveoutright
     b "I saw him fetch objects for Freddy, he could've easily \"fetched\" the generator to the bedroom."
     c "Fufufu."
     b "Huh?"
-    c "That's a good theory Bert. You should try writing a mystery novel if you get out of here!"
+    show catherine happy
+    c "That's a funny theory Bert. You should try writing a mystery novel if you get out of here!"
     c "But you still haven't explained one thing."
     c "Where could I have gotten the wires from?"
     c "How do you know someone didn't put the wires there later to make it look like the generator killed her?"
@@ -3480,10 +3494,10 @@ label trial2z:
     show catherine ind with dissolve
     b "You got them from the kitchen."
     b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
-    b "I thought it was kind of weird at the time, but it makes sense if you remember the murderer needed to get wires from somewhere."
-    b "Why not appliances lying around the house?"
+    b "I thought it was strange at the time, but it makes sense if you know the murderer needed to get wires from somewhere."
+    b "Why not steal them from appliances lying around the house?"
     b "It also gave the murderer a reason to send Jenny out of the party, setting her up as a potential culprit."
-    b "And you, Catherine, spend the last few hours yesterday in the kitchen, and got up early today and went to the kitchen."
+    b "And you, Catherine, spent the last few hours yesterday in the kitchen, and got up early today and went to the kitchen."
     b "If anyone would have had an easy time stealing those wires, it would be you."
     c "..."
     c "That makes sense, but anyone could've woken up in the middle of the night and stole the wires!"
@@ -3511,17 +3525,24 @@ label trial2z:
     b "But you didn't, you've only ever said he could use it as a scratching toy."
     b "Which makes sense, he's a cat, not a dog. That's probably more his thing."
     c "..."
+    hide sid ind with moveoutright
+    show catherine ind:
+        xcenter .25
+        linear 0.15 xcenter .5
     c "Yeah, you got me."
     b "Huh?"
     c "I... I lost. I won't draw it out anymore."
     show catherine happy:
-        xcenter .25
+        xcenter .5
     c "Good job guys! You did great, I didn't think anyone would come close to figuring it out."
     c "I guess I shouldn't have tried to make it look like Jenny did it, otherwise you would've never known it was me."
     c "Silly me as usual!"
     c "Should've spent more time thinking about that and less time thinking about recipes."
-    c "Oh well, I didn't live a very honest life. All those houses I burgled, I almost got shot multiple times."
+    b "You're admitting it? You really killed Stella?"
+    c "Mhm, you heard me right."
+    c "Oh well, I guess I had this coming. All those houses I burgled, I almost got caught a few times."
     b "Burgled?"
-    c "Oh, yeah, I was a burglar for a living. A cat burglar, if you will, teehee."
+    c "Oh, yeah, I forgot you guys didn't know the truth."
+    c "I robbed to make a living. A cat burglar, if you will, teehee."
     c "C'mon, you really think working in a shelter pays a girl enough to live?"
     c "They barely feed the cats enough to live as is!"

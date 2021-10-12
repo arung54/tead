@@ -380,7 +380,7 @@ label start:
 ##################
 #Trial Variables
 ##################
-        currEvidence = -1
+        currEvidence = 1
         phase = 0
         statement = -1
         agree = 0
@@ -388,7 +388,7 @@ label start:
         train_evidence2 = [False, False, False]
         train_evidence3 = [False, False, False, False]
         train_extra = [False, False, False, False, False, False]
-        mans_evidence = [False] * 9
+        mans_evidence = [True] * 9
         mans_extra = [False] * 11
         lightscount = 0
         windowcount = 0
@@ -398,4 +398,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump mansPreInv
+    jump trial2x
