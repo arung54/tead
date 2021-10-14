@@ -3772,14 +3772,29 @@ label cathGivesInfo:
                 jump cathGivesInfo
 
         "Why Stella?":
-
+            c "Um... honestly, I just set the generator up and waited for it to get someone."
+            b "..."
+            b "...Did you have any idea who the Game Master was at least?"
+            c "Nope!"
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show shahar ind with moveinright:
+            show lauren ind with moveinright:
                 xcenter .75
-
-            hide shahar with moveoutright
+            l "Wait... so Freddy could have died to this? You were okay with killing a kid?"
+            show catherine ind:
+                xcenter .25
+            c "I mean... I get it's easy to be angry at me, I had to kill somebody."
+            c "And it's \"easier\" if it's someone random."
+            c "Then I wouldn't feel like I chose to kill someone just because I didn't like them."
+            show catherine happy:
+                xcenter .25
+            c "Oh well, I'm gonna die soon anyway. Maybe it'll be easier for you if you think I'm crazy!"
+            c "Mwahahahaha, that's me, Catherine the kooky catgirl!"
+            l "..."
+            l "I... don't know how to respond to that."
+            c "Good! Better that you're confused than angry."
+            hide lauren with moveoutright
             show catherine happy:
                 xcenter .25
                 linear 0.15 xcenter .5
@@ -3787,16 +3802,36 @@ label cathGivesInfo:
                 jump cathGivesInfo
 
         "Did you commit a crime here?":
-
-            show catherine happy:
-                xcenter .5
-                linear 0.15 xcenter .25
-            show shahar ind with moveinright:
-                xcenter .75
-
-            hide shahar with moveoutright
-            show catherine happy:
-                xcenter .25
-                linear 0.15 xcenter .5
+            c "Oh yeah, I burgled this mansion before while the owner was out."
+            b "You did know Mr. Sydell?"
+            c "Eh, never met the guy. I just overheard from an acquaintance that he was in court that day."
+            c "I waited around that day until his family left for other reasons and made my move."
+            b "So... does that mean you lied to me earlier when I asked?"
+            c "Yup! But c'mon, that's just one of many lies I told you, you won't hold that against me, right?"
+            b "..."
+            c "Well, I guess it's fine if you do, the Game Master's gonna fry my brain or something regardless."
+            b "No, I won't hold it against you, you had to do it I'm sure."
             if len(menuset) < 4:
                 jump cathGivesInfo
+    c "Wait, I just remembered. Before you ask anything else, I have a request."
+    c "Bert, can you take care of Sesame? If he doesn't also get brain-zapped, that is."
+    b "Me?"
+    c "Yeah! You're the one who figured out I was the murderer, it's almost like you killed me."
+    c "To the victor goes the spoils, right?"
+    show catherine happy:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show shahar ind with moveinright:
+        xcenter .75
+    h "Aye lassie, yer finally speaking me language!"
+    hide shahar with moveoutright
+    show catherine happy:
+        xcenter .25
+        linear 0.15 xcenter .5
+    b "Uh... I guess I'm honored?"
+    c "Well, if I'm being honest, I have selfish reasons too."
+    c "I'm kind of mad at you for figuring it out."
+    c "So if you take care of Sesame you'll have to remember how you got me killed!"
+    c "Aren't I so evil? Hehe."
+    b "I... can't tell how serious you're being, but I'll take good care of him."
+    ses "Mew!"
