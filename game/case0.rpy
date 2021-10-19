@@ -192,7 +192,8 @@ label meetStella:
             t "I'm CEO of Cantoire Management."
             t "One of the largest investment firms in the world, surely you've heard of it."
             n "Ah, yeah that rings a bell."
-            ni "I've been in prison for years now, so that does not ring a bell."
+            ni "The truth is I know her but..."
+            ni "No way in hell I can let her know that."
             jump stellaQuestions
 
         "What were you doing before you ended up here?":
@@ -212,7 +213,8 @@ label meetStella:
         "Finish talking to Stella." if len(menuset) > 0:
             jump postMeetStella
 label postMeetStella:
-    ni "Definitely a strange one. Keeping my eye on her."
+    ni "Going to have to keep my eye on her."
+    ni "Hopefully she doesn't know my secret..."
     hide stella with dissolve
     $ meetings[2] = 0
     if 1 not in meetings:

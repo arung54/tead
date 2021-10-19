@@ -1,6 +1,56 @@
 label mansionGo:
     $ftecounter = 2
     scene black
+    $ statusnt("???", "", ch=2, sun=0)
+    blank "A few years ago..."
+    zg "Stop right there. What are you doing here?"
+    z "Oh, me? I'm a new employee here, was just wandering."
+    zb "Wandering into the CEO's floor? That requires the highest level of clearance to access?"
+    z "Does it? Must be a bug with the security system."
+    zg "Cut the bullshit. We know who you are and why you're here."
+    zg "Mr. Dan Scagnelli?"
+    z "..."
+    n "That's my name, but what do you mean why I'm here?"
+    n "I told you already, I'm a new employee."
+    zg "Listen punk, this'll be easier if you stop lying."
+    zg "You're here for the boss, aren't?"
+    n "The boss?"
+    zg "Miss Cantoire."
+    n "What do you mean I'm here for her?"
+    zb "You're here to kill her."
+    n "..."
+    zb "People like you are so short-sighted, it sickens me to be the same species as you."
+    zb "You really think you, a nobody, could kill one of the most influential people on the planet?"
+    n "When did you find out?"
+    zg "You amateurs really suck at this. Information gets around."
+    n "..."
+    zg "I see you looking around."
+    zg "You're not making a break for it and getting out alive."
+    n "Am I getting out alive at all?"
+    zg "No, I think we'll make an example of you."
+    zg "Not that we're afraid of anyone successfully murdering the boss, but..."
+    zg "The less of you that try the more I get to sit on my ass doing nothing for the same pay."
+    zb "Wait, it's not just him we should make an example out of."
+    zg "Hm?"
+    zb "You, Dan. Who hired you?"
+    n "..."
+    zb "Don't make me force it out of you."
+    zb "And we can tell if you're lying, so don't even think about it."
+    n "His name's Sydell..."
+    zb "Sydell?"
+    n "Yeah, he got sued by your company a while ago."
+    zg "We don't do business, we're just security detail."
+    zb "Alright, I don't think you're lying."
+    zb "We'll let you out of here, on one condition."
+    zb "Fail to meet that and our people will find you."
+    n "And that condition is?"
+    zb "That Sydell guy and anyone like him coming for the boss needs to learn a lesson."
+    zb "You're going to teach him that lesson."
+    n "And how do you propose I do that?"
+    zb "Simple."
+    zb "Kill him."
+
+    scene black
     bi "..."
     bi "Two people died..."
     bi "And there's nothing I could do to save them..."
@@ -3835,3 +3885,16 @@ label cathGivesInfo:
     c "Aren't I so evil? Hehe."
     b "I... can't tell how serious you're being, but I'll take good care of him."
     ses "Mew!"
+    show catherine nocat happy with dissolve
+    bi "Sesame's... surprisingly light to carry."
+    bi "If he survives this round, it'll probably take a while to get used to his paws digging into me..."
+    b "So uh, one last thing Catherine."
+    b "How did you receive the \"instructions?\""
+    c "Well, when I woke up in the mansion it wasn't the first time."
+    c "I actually woke up in-{nw}"
+    stop music
+    show braindeath
+    pause .25
+    hide catherine
+    show doom
+    hide braindeath with dissolve

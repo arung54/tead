@@ -75,10 +75,11 @@ label stelHang:
         t "Well, you're pretty muscular and tough, yes?"
         t "Perhaps you'd make a nice addition to the team."
         n "You want {i}me{/i} to be one of your bodyguards?"
+        ni "That's a pretty ironic request considering my history..."
         t "Well, of course you'd have to tryout like everyone else."
         n "Tryout?"
         t "Yes, of course!"
-        t "A 2-acre portion of my Montpellier estate is dedicated to my team's training and recruiting."
+        t "A 2-acre portion of my Montpelier estate is dedicated to my team's training and recruiting."
         ni "Is this chick serious?"
         hide stella happy
         show stella ind

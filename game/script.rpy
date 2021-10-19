@@ -343,6 +343,8 @@ define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice)
 define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice)
 ###
 define z = Character("?????", who_color= "FFFFFF", callback=fillvoice)
+define zg = Character("?????", who_color= "999999", callback=fillvoice)
+define zb = Character("?????", who_color= "000099", callback=fillvoice)
 define zs = Character("?????", who_color= "f3946a", image="sam", callback=samvoice)
 define zc = Character("?????", who_color= "b66baa", callback=fillvoice)
 define zt = Character("?????", who_color= "d4af37", callback=stellavoice)
@@ -398,4 +400,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump trial2a
+    jump trial2z
