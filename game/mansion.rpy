@@ -3898,3 +3898,21 @@ label cathGivesInfo:
     hide catherine
     show doom
     hide braindeath with dissolve
+    b "..."
+    b "She's dead."
+    b "It wasn't Stella..."
+    b "Catherine, I'll take care of-{p=0.5}{nw}"
+    scene black
+    pause 1.0
+    bi "Honestly, I was a little relieved."
+    bi "I thought I had gotten to know Stella at least a little bit."
+    bi "If we suddenly found out she was behind all this..."
+    bi "My heart would tear a little more than it already has through all these deaths."
+    bi "But just as before, with no warning, we were put to sleep."
+    bi "No time to mourn, no time to discuss."
+    bi "Our chances to find the Game Master are running thin..."
+    play music "audio/ominous.mp3" fadein 3.0
+    show endch2 with Dissolve(3.0)
+    pause
+    stop music fadeout 3.0
+    hide endch1 with Dissolve (3.0)
