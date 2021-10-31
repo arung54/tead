@@ -400,4 +400,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump trial2z
+    jump mansPreInv

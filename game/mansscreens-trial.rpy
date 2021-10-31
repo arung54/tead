@@ -11,12 +11,12 @@ init python:
 screen shatteredMans(lab):
     modal True
     add "shot.png"
-    timer 1.0 action [Show("iGotIt", transition=Fade(0.5, 0.0, 0.5), l = lab), Hide("makeyourcase"), Hide("shatteredMans"), Hide("mansionTrial"), Hide("mansionEvidenceTrial"), Hide("pickSpot1"), Hide("chooseChar")]
+    timer 1.0 action [Show("iGotIt", transition=Fade(0.5, 0.0, 0.5), l = lab), Hide("makeyourcase"), Hide("shatteredMans"), Hide("mansionTrial"), Hide("mansionEvidenceTrial"), Hide("pickSpot2"), Hide("pickSpot3"), Hide("pickSpot4"), Hide("chooseCharMansion")]
 
 screen chooseCharMansion(ans, correctLabel, midText):
     add "debatescroll" at cczoom
     imagemap:
-        ground "lineup.png"
+        ground "lineup3dead.png"
         hotspot(46, 70, 172, 257):
             if ans == "bert":
                 action [Function(shatterNoise), Show("shatteredMans", lab = correctLabel)]

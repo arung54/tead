@@ -1,4 +1,5 @@
 screen mansMap():
+    modal True
     #TODO: Gate rooms for FT4
     #TODO: Create secret sesame FTE
     imagemap:
@@ -131,7 +132,7 @@ screen kitchen():
 screen dining():
     add "bg mansiondining.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Dining Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -207,7 +208,7 @@ screen dining():
 screen garage():
     add "bg mansiongarage.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Garage{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -231,7 +232,7 @@ screen garage():
 screen hallway():
     add "bg mansionhall.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -261,7 +262,7 @@ screen hallway():
 screen bedroom():
     add "bg mansionbedroom.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -285,7 +286,7 @@ screen bedroom():
 screen bedroomFL():
     add "bg mansionbedroom.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -331,7 +332,7 @@ screen bedroomFL():
 screen masterBedroom():
     add "bg mansionmasterbedroom.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Master Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -382,7 +383,7 @@ screen masterBedroom():
 screen bathroom():
     add "bg mansionbr.png"
     add "status.png"
-    add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Bathroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
