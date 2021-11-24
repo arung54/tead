@@ -400,4 +400,4 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump mansPreInv
+    jump frontcar1
