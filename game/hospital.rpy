@@ -712,3 +712,123 @@ label hospitalGo:
     l "Not really. Mostly just sitting in the same seat."
     b "That's... a little concerning, to put it lightly."
     l "Yeah. Don't worry about it for now, not much you can do on that end."
+    l "By the way, where's Jenny? Isn't she prepping a meal right now?"
+    bi "Shoot!"
+    b "Uh... yeah, I gotta go take care of that."
+    b "We'll let you guys know when it's ready."
+    hide lauren
+    hide drac
+    with dissolve
+    bi "I turned to the soup and started stirring it."
+    bi "After about 10 minutes, Jenny returned."
+    show jenny happy with dissolve
+    j "Hey Bert! Everything okay here?"
+    b "Yup! Was definitely sitting here making sure nothing burned the whole time!"
+    show jenny ind
+    j "...You're acting suspicious."
+    b "Okay, I may have not stirred the soup until a few minutes after you left."
+    j "Bert, it's tomato soup. Not a steak or anything like that."
+    j "Worst case we just don't serve the burnt soup at the bottom."
+    j "As long as Sesame didn't vomit in the soup or anything like that."
+    b "Oh shoot, I totally forgot about Sesame!"
+    bi "I quickly scanned the room to locate him."
+    bi "Thankfully, Sesame was just curled up on one of the tables sleeping."
+    bi "I guess cats are known for sleeping a lot..."
+    b "Did you find anything?"
+    j "Nope. I thought about looking through the records but then I decided it was too boring."
+    j "Besides, I'm sure if there were something interesting you would have found it."
+    show jenny happy
+    j "Oh! But there is something secret in here!"
+    b "What?"
+    j "Check the fridge, second level from the top."
+    bi "I opened the fridge and found..."
+    bi "A cupcake."
+    bi "Red velvet with what looked like cream cheese frosting..."
+    show jenny ind
+    j "There were two when I found them but uh..."
+    show jenny happy
+    j "Well, one of them magically disappeared!"
+    bi "A likely story."
+    j "Anyway Bert, you should have the other one."
+    j "No one else will know, unless the next guards dig through the trash."
+    j "And you deserve a reward for all the hard work you've put in!"
+    b "Jenny... I don't know, it feels like I'd be lying to the others out there."
+    b "Shouldn't we try to build trust instead of hiding something from them?"
+    show jenny ind
+    j "It's just a cupcake Bert, it's not a big deal."
+    j "It's not like hiding our pasts or how we're criminals."
+    j "You're making me feel bad for having a giant sweet tooth..."
+    b "No, I'm not trying to make you feel bad!"
+    bi "I hate these types of scenarios."
+    bi "Where you don't personally feel like you could do something but can understand why others do."
+    bi "Like being the vegetarian friend who watches their friends eat meat."
+    bi "Or not caring much about social media but your friends are upset when you don't like their posts."
+    menu:
+        "What should I do?"
+
+        "Eat the cupcake":
+            $eat = True
+            b "Okay, you're right, it's not a big deal."
+            b "And I have been \"carrying the team\" so to speak."
+            b "Besides, for all we know the Game Master will restock the fridge tonight."
+            bi "I didn't actually believe that, but I said it to make her feel better."
+            show jenny happy
+            j "Yay! Dig in Bert, you deserve it!"
+            bi "I unpeeled the wrapper and started biting into the cupcake."
+            bi "I won't lie, if only for a split second, the taste of frosting made me feel happy."
+            b "Oh Jenny, I never talked to you about the whole Mr. Sydell thing."
+            b "I take it you never met him?"
+            show jenny ind
+            j "Nope, haven't heard the name until now."
+            j "Do you know anything, Bert?"
+            b "I don't, but Stella told me something while we were in the mansion."
+            b "She said something about how she \"hires suits to step on guys like him.\""
+            j "...What does that mean?"
+            j "..."
+            j "Oh! I remember once seeing on TV something about how Cantoire Holdings sued a smaller company."
+            j "They failed to fulfill an order by one of their clients owned by Cantoire Holdings."
+            j "So Cantoire Holdings sued them."
+            j "They won the lawsuit, and the smaller company couldn't pay out so they went bankrupt."
+            j "Do you think that's what she meant?"
+            b "Maybe... do you think Mr. Sydell owns a company like that?"
+            j "No clue. But it would make sense."
+            j "Maybe this whole game is orchestrated by him as revenge on Stella?"
+            j "If he owns a company he would have the money to put together something like this."
+            b "Why are the rest of us here though?"
+            b "Not like I helped Stella take down any company..."
+            b "I'd never met her before this happened."
+            b "And now Stella's dead, couldn't the game just be over."
+            j "Hm... maybe this theory is wrong then?"
+            b "Maybe. There's other ways to be rich enough to host this kind of game and be upset at Stella."
+            b "I'd imagine many people in the world are already upset at a CEO like Stella anyway."
+            b "For all we know this is some vigilante justice against random criminals with no connection..."
+            j "I don't think it's a coincidence Mr. Sydell keeps coming up though."
+            b "You're right, I'm just... speculating, I guess."
+            j "Oh, looks like the soup is almost done!"
+            j "Want to help me serve it, Bert?"
+            b "Yeah, let's do it."
+            jump postcupcake
+
+        "Tell the others about the cupcake":
+            $eat = False
+            b "Sorry Jenny... I think I'm going to tell the others about it."
+            b "See if any of them want it more than I do."
+            j "Bert... they're all going to hate me if they know I ate it without telling them!"
+            b "If you want I won't tell them you ate one. I'll just say there was only one."
+            b "I don't think they'll have a reason to think we're lying if I give them one cupcake."
+            j "Hmph. Okay."
+            bi "She turned away from me and stirred the soup."
+            bi "I think she was upset, but I don't feel like I did anything that merited it..."
+            bi "We sat there in silence, her cooking, me staring at the wall, until she was done."
+            bi "Well, hopefully this will blow over soon."
+            bi "Time to serve the meal..."
+            jump postcupcake
+label postcupcake:
+    bi "Hm... I should try to find a way to talk to Shahar discreetly while everyone's eating."
+    j "Food's ready!"
+    show jenny ind:
+        xcenter .5
+        linear .15 xcenter .25
+    show sid ind with moveinright:
+        xcenter .75
+    
