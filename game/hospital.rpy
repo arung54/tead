@@ -826,9 +826,114 @@ label hospitalGo:
 label postcupcake:
     bi "Hm... I should try to find a way to talk to Shahar discreetly while everyone's eating."
     j "Food's ready!"
+    bi "The others gathered in a line to get their serving."
     show jenny ind:
         xcenter .5
         linear .15 xcenter .25
-    show sid ind with moveinright:
+    show sid smile with moveinright:
         xcenter .75
-    
+    i "Oh wow! This smells delicious!"
+    j "You don't need to flatter me Sid. It's really simple compared to our last meal..."
+    i "Technically we had sleep for dinner yesterday."
+    show jenny happy:
+        xcenter .25
+    j "I'm sure when you're a guard you'll make something even better Sid."
+    i "Hmm, I only know how to make very simple stuff..."
+    show sid ind:
+        xcenter .75
+    i "We didn't have a very stocked kitchen when I was growing up."
+    i "Sometimes we just got fast food because my parents were too tired from working to cook..."
+    j "Hm... well now's just as good a chance as any to learn to cook!"
+    j "When we get out of here, it's a really useful skill to have."
+    i "I guess so..."
+    j "Plus, you can impress the ladies!"
+    i "Um... you're being weird, Jenny."
+    show jenny ind:
+        xcenter .25
+    j "Oh."
+    j "Never mind then..."
+    hide sid with moveoutright
+    show shahar ind with moveinright:
+        xcenter .75
+    h "Aye lassy, what rations have ye prepped for us?"
+    h "My head's achin', some food ought to get me metabolism back in check."
+    j "Tomato soup, here you go."
+    h "Ah, this reminds me of the soup me mateys would prep on the ship."
+    h "The smell's almost the exact same!"
+    b "Do they stock tomatoes on pirate ships?"
+    b "Seems like they would spoil at sea, I thought pirates mostly ate dry food."
+    h "I don't know lad, I ne'er went into the ship's kitchen."
+    h "Can't defend against buccaneers if yer stuck in there, and I was the strongest man on the ship."
+    bi "Like everything Shahar said, this didn't make a lot of sense, but..."
+    bi "Shahar's head hurt and he got upset last time I kept questioning him."
+    h "Anyway, cheers lassy, I'm off to feast!"
+    hide shahar with moveoutright
+    show lauren ind:
+        xcenter .5
+    show frog ind:
+        xcenter .75
+    with moveinright
+    j "Hey guys, here's your soup!"
+    l "Thanks."
+    f "Thanks! I'm so hungry..."
+    l "Apparently Freddy growing up had a bunch of fruits to snack on."
+    l "There doesn't happen to be any in the kitchen for him, is there?"
+    j "I didn't see any..."
+    show jenny happy:
+        xcenter .25
+    j "Except tomatoes! They're technically fruits!"
+    j "So this soup is like a smoothie if you think about it!"
+    b "..."
+    l "..."
+    f "..."
+    bi "I don't think that was a very convincing argument."
+    l "Sorry Freddy, but this is at least healthy for you."
+    l "We'll need all the energy we can get, right?"
+    f "Yeah... I am tired..."
+    l "Thanks Jenny. Looking forward to the meal."
+    hide lauren
+    hide frog
+    with moveoutright
+    show drac ind with moveinright:
+        xcenter .75
+    d "I am looking forward to this tomato soup."
+    j "Really?"
+    d "Yes, it reminds me of blood."
+    d "A bit more orange than blood is, but still."
+    d "It gives me some nostalgia for before this game."
+    bi "I highly doubt any vampire actually thinks tomatoes look like blood..."
+    d "Good day."
+    j "Good day, Dracula!"
+    hide drac with moveoutright
+    show jenny happy:
+        xcenter .25
+        linear 0.15 xcenter .5
+    b "...wait, there's an extra serving."
+    b "Has anyone not come up yet?"
+    j "I think it's Sam."
+    b "Oh..."
+    bi "I hadn't noticed, but Sam hadn't even come to the windows like the others."
+    bi "Sam was instead sitting in the same seat, staring at the ground."
+    b "Sam needs to eat... maybe we can call Lauren over to help us help Sam?"
+    j "Do you mind taking care of that Bert?"
+    j "I think Sam takes you more seriously than me, and I wanted to clean up the kitchen."
+    b "Uh... yeah, I guess Lauren and I are enough to help Sam out for now."
+    j "Sweet! I'm gonna go to the supply closet and choose a cleaner, if you need me."
+    j "Seeya Bert!"
+    hide jenny with dissolve
+    bi "That's... moderately suspicious."
+    bi "The kitchen's not that dirty, and it's not like we'll be here that long..."
+    bi "Oh well, I have a slightly more important thing... er, person to worry about."
+    b "Lauren! Can you come here?"
+    show lauren ind with dissolve
+    l "Hey Bert, something wrong?"
+    b "Sam never came to grab a bowl of soup."
+    b "Can you help me bring Sam here to eat?"
+    l "Sure, give me a second."
+    hide lauren with dissolve
+    bi "Lauren went over and somewhat forcefully got Sam to stand up and walk to the kitchen window."
+    show lauren ind:
+        xcenter .25
+    show sam:
+        xcenter .75
+    with dissolve
