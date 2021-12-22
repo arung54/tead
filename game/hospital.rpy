@@ -328,7 +328,7 @@ label hospitalGo:
             h "It's more like... I can't remember somethin'."
             h "I feel like I don't know who I am, lad."
             b "Huh."
-            b "You haven't felt this way until now"?
+            b "You haven't felt this way until now?"
             bi "Because I knew I didn't know who you were the whole time..."
             h "Nay lad. Something about this place..."
             h "It feels like this is a room in a pirate ship I've wandered 'round."
