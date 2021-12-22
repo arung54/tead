@@ -271,7 +271,7 @@ label hospitalGo:
         set menuset
         "Who should I talk to?"
 
-        "Talk to Sam."
+        "Talk to Sam.":
             show sam with dissolve
             s "Oh... hey Bert."
             b "Hey Sam... how are you feeling?"
@@ -313,7 +313,7 @@ label hospitalGo:
             bi "Well, I guess that's that..."
             jump samorshahar
 
-        "Talk to Shahar."
+        "Talk to Shahar.":
             show shahar mad with dissolve
             h "Aye lad."
             b "Hey Shahar. Lauren told me you weren't feeling great?"
