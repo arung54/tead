@@ -11,7 +11,7 @@ label hospitalGo:
     bi "Exhausted from the first few, knowing I still had more to go."
     bi "Knowing hat the light at the end of the tunnel was very far away."
     bi "Wanting to cling to the relief of my bed, a temporary escape."
-    bi "Except instead of finals, I had to solve the murders of people I was..."
+    bi "Except instead of exams, I had to solve the murders of people I was..."
     bi "Well, in some cases friends, others acquaintances."
     bi "Regardless, you never really know what death is like until you experience it in person."
     bi "I'm no different than anyone else growing up in the modern age of media and the internet."
@@ -19,7 +19,7 @@ label hospitalGo:
     bi "Not willingly always, but I've seen them."
     bi "Didn't faze me one bit."
     bi "But in person? When it's someone you know?"
-    bi "The smell, the way it looks like they're sleeping but they're not"
+    bi "The smell, the way it looks like they're sleeping but they're not."
     bi "Feeling like you haven't seen them in a while and then the gut punch of remembering why."
     bi "I don't know how doctors, police, and morticians cope."
     bi "It's something I hope I never get used to."
@@ -29,14 +29,18 @@ label hospitalGo:
     bi "Right, I'm an unwilling cat owner now."
     bi "I found the energy to open my eyes."
     scene bg hosproom1 with dissolve
-    show sesame with dissolve
+    $ statusnt("???", "bert", ch=3, sun=0)
+    show sesame with dissolve:
+        ycenter .61
     ses "Mew!"
     b "Hey Sesame... sorry, I'm a bit tired."
     ses "Hssss!"
-    bi "If I had to guess, he was pointing to the doors of the cell."
+    bi "If I had to guess, he was motioning to the doors of the cell."
     bi "...A cell?"
+    $ statusnt("Cell", "bert", ch=3, sun=0)
     bi "Are we in a prison?"
-    bi "There's doors on both sides, I don't think a prison would be like that."
+    bi "There's doors on both sides, both in front of me and behind me..."
+    bi "I don't think a prison would be like that."
     b "You want me to get us out of here?"
     ses "Hsss!"
     bi "Does he... understand the fact that Catherine's dead?"
@@ -45,7 +49,7 @@ label hospitalGo:
     bi "I approached one door and tried opening it."
     bi "...it's locked."
     bi "Am I stuck in here? Did I wake up before I was supposed to?"
-    bi "...Wait, if that's the case, maybe I can find out who the Game Master is!"
+    bi "...Wait, if everyone's still asleep, maybe I can find out who the Game Master is!"
     bi "Maybe I can escape!"
     bi "Those thoughts quickly faded when I tried the second door."
     blank "Click."
@@ -55,18 +59,24 @@ label hospitalGo:
     bi "Sesame wasn't moving."
     b "Lazy cat, Catherine probably carries you everywhere."
     b "Fine, I'll carry you around just for now. But don't get used to it."
-    bi "I gently picked him up, scared he might scratch me."
-    bi "He was gentler now though. Maybe hearing Catherine's name made him think we were going to her."
+    hide sesame with dissolve
+    bi "I gently picked him up and plopped him in my backpack, scared he might scratch me."
+    show bert2 with dissolve
+    bi "He was gentler now though. Almost kinda cute."
+    bi "Maybe hearing Catherine's name made him think we were going to her."
     bi "Eventually I'll have to get him used to me being his owner but..."
     bi "...until this game's over, there's far more important things to worry about."
     scene black with dissolve
     scene bg hosphall1 with dissolve
+    $statusnt("Hallway", "bert", ch=3, sun=0)
     bi "It opened into a hallway."
     bi "There were three other cells in this hallway."
     bi "As I walked past them towards the sound of voices, I noticed they were empty."
     bi "Was I the last one to leave a cell?"
     scene black with dissolve
     scene bg hospcommons with dissolve
+    $showchibi("dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid")
+    $statusnt("Cafeteria", "bert", ch=3, sun=0)
     bi "The hallway opened up into what looked like a middle school cafeteria."
     bi "There, I saw everyone else gathered."
     show jenny happy with dissolve
@@ -81,19 +91,23 @@ label hospitalGo:
     show lauren ind with dissolve
     l "Oh, hey Bert. How's Sesame treating you."
     b "I... think he thinks I stole him."
+    hide lauren ind
+    show lauren aw
     l "I mean, you kind of did in a certain sense."
+    hide lauren aw
+    show lauren ind
     l "Anyway, we were just discussing the rules, you should read them and get up to speed."
     b "Are... are we not going to discuss everything that just happened?"
     b "Catherine and Stella's... passing."
-    bi "I said the last word quietly since Froggy was nearby."
+    bi "I said the last word quietly since Freddy was nearby."
     b "All the new info we learned?"
-    l "Oh, we discussed that sleepyhead."
+    l "Oh, we discussed that already." #idk how i feel about lauren calling him a sleepyhead LMAO
     l "If you woke up earlier you could've joined us."
     l "But the more pressing thing right now is where we are."
     bi "I turned from the group and looked at the sign."
     hide lauren with dissolve
-    blank "Rules of the Mental Hospital"
-    bi "...mental hospital?"
+    blank "Rules of the Latimer Mental Hospital"
+    bi "...Mental hospital?"
     bi "I guess... in a demented sense, a mental hospital is like a prison."
     blank "1. Every day, two guards will be appointed."
     blank "You will know you are a guard if you wake up and the door to the guard's side of this floor is open."
@@ -120,9 +134,9 @@ label hospitalGo:
     l "Thoughts?"
     bi "I moved to join in on the conversation."
     show sid ind:
-        xcenter .25
+        xcenter .175
     show drac ind:
-        xcenter .75
+        xcenter .775
     with dissolve
     b "Well, one line sticks out to me."
     b "The fact that the guards are in charge of feeding people."
@@ -136,7 +150,7 @@ label hospitalGo:
     d "It will be hard for patients to murder each other, given this seems to be the only common area we have."
     d "That, and we can't enter each other's cells."
     d "A patient murdering another patient would likely have to do it in front of others..."
-    d "So despite Bert's argument, it will likely no easier to commit murder as a patient."
+    d "So despite Bert's argument, it will likely be no easier to commit murder as a patient."
     d "But Bert is right that it is unlikely a guard will try to kill another guard."
     d "So the guards need to somehow be able to kill patients."
     d "They could poison someone's food, or starve someone to death..."
@@ -183,7 +197,7 @@ label hospitalGo:
     bi "Well, except the Game Master..."
     b "Hey um... why is Jenny taking care of Freddy right now?"
     l "Oh, uh..."
-    l "Okay, when Dan and Kaiser died I think the reality of the game hadn't really settled in for me."
+    l "Between you and me, when Dan and Kaiser died, I think the reality of the game hadn't really settled in for me."
     l "I barely talked to them, they both had kind of abrasive personalities."
     l "It was easy to process their deaths by telling myself nothing of value was lost."
     l "And even with Stella's dead, I could tell that lie to myself."
@@ -213,7 +227,7 @@ label hospitalGo:
     bi "It just slows down the deaths for a while..."
     bi "Nothing I can do can stop one more person from dying while we're here."
     l "Anyway, we should discuss what we learned from Catherine, like I promised."
-    b "...right, yeah."
+    b "...Right, yeah."
     l "So Bert, have you ever met Mr. Sydell?"
     b "No, I don't think I heard of him until we were in the mansion."
     l "Yeah, figured as much."
@@ -240,9 +254,9 @@ label hospitalGo:
     l "Maybe. It wouldn't be surprising to me if that were the case."
     l "This game isn't exactly fair even if the Game Master is here..."
     b "...do we just keep trying then?"
-    b "What's the point if there's no Game Master to let us end the game?"
-    l "Hey, maybe the whole Sydell theory is wrong."
-    l "And not like we have anything better to do."
+    b "What's the point of all this if there's no Game Master to kill and end the game?"
+    l "Hey, maybe this whole Sydell theory is wrong."
+    l "And not like we have anything better to do than theorize."
     b "No, don't worry, I'm not giving up just..."
     b "Seems kind of useless to consider that possibility, I guess."
     l "Maybe. It's just a possibility."
@@ -251,9 +265,9 @@ label hospitalGo:
     l "Oh, we're also pretty sure there's gonna be another location-based advantage."
     l "Keep that in mind, when we get to explore the guard's side we might have a guess for what it is."
     l "If we can figure it out it might make solving the mystery easier for all of us."
-    bi "She says \"all of us,\" but it's really been me doing most of the solving..."
+    bi "She says \"all of us,\" but it's really only been a handful of us doing most of the solving..." #too cocky without others imo
     b "Sounds like a plan. Anything else I should know?"
-    l "Not really, that's most of the \"strategy\" stuff we discussed a group."
+    l "Not really, that's most of the \"strategy\" stuff we discussed as a group."
     l "There's a lot of emotions running around about Stella and Catherine but..."
     l "Well, I don't want to speak on behalf of anyone emotionally."
     l "Shahar and Sam seem to be the most affected, if you're looking to play shrink to kill some time."
@@ -299,9 +313,9 @@ label hospitalGo:
             b "...No."
             s "Then don't try to act like anything will absolve me of being a murderer for the rest of my life."
             s "We're done talking."
-            s "Just avoid me like everyone else has this whole time."
+            s "Just avoid me like everyone except Dracula has this whole time."
             s "I'm not worth trying to save."
-            s "At best, I'm another warm body that the murderer can kill."
+            s "At best, I'm another warm body that a murderer can kill."
             b "..."
             b "Fine, I'll leave you alone."
             b "But all our lives are on the line here, not just yours."
@@ -317,7 +331,7 @@ label hospitalGo:
             show shahar mad with dissolve
             h "Aye lad."
             b "Hey Shahar. Lauren told me you weren't feeling great?"
-            h "Aye. I feel like my head is made of the ocean mist."
+            h "Aye. I feel like me head is made of the ocean mist."
             b "Wait..."
             b "Because Stella died?"
             h "Oh, that lassie?"
@@ -344,6 +358,8 @@ label hospitalGo:
             h "I ain't got any idea what to do."
             b "That's... frustrating. I don't know what to tell you."
             b "Tomorrow let's ask the guards to see if there's any pain relievers."
+            hide shahar
+            show shahar ind
             h "See lad, that's the kind of thinkin' I need ye fer!"
             bi "Ah yes, the obscure idea of taking medicine to help with a headache."
             b "And maybe we can find out why you think you remember this place if we get out of here?"
@@ -360,9 +376,10 @@ label hospitalGo:
         xcenter .25
     show frog ind:
         xcenter .75
+    with dissolve
     j "Well, guess we should all go sleep."
     f "But... I don't wanna. I wanna play!"
-    j "C'mon Froggy, we only have a few hours where we're allowed to be in bed."
+    j "C'mon Freddy, we only have a few hours where we're allowed to be in bed."
     j "If you don't sleep now, you'll be tired tomorrow."
     f "F-fine..."
     f "Can I at least sleep in Lauren's room?"
@@ -391,7 +408,7 @@ label hospitalGo:
         xcenter .25
     j "So you can be a gentleman and escort me to my room, Bert!"
     b "Very smooth. Sure, let's head that way."
-    b "Good night Froggy. We'll see you very soon!"
+    b "Good night Freddy. We'll see you in the morning!"
     f "G-good night..."
     scene black with fade
     bi "We all made our way back to our rooms."
@@ -400,26 +417,32 @@ label hospitalGo:
     bi "Turns out, she wasn't declawed."
     bi "Which is good, declawing cats is pretty inhumane."
     bi "But so is constantly poking me while I try to sleep."
-    scene bg hosproom1 with dissolve
+    scene bg hosproom1
+    show sesame:
+        ycenter .61
+    $statusnt("Bert's Cell", "bert", ch=3, sun=1)
+    with dissolve
     bi "After what felt like not sleeping at all, I woke up."
     bi "Well, I was woken up."
     bi "By a sound I hoped I wouldn't get used to."
     play sfx "audio/ding.mp3"
     intercom "There are 30 minutes left in nighttime. You must leave your room before nighttime is over."
     bi "I knew if I stayed in bed, I might not make it out of the room in 30 minutes."
-    bi "So I begrudgingly got up and tried opening the door."
+    bi "So I begrudgingly got up and tried opening the door behind me, like I had last night."
     bi "..."
     bi "And, it wouldn't move."
     bi "Was I stuck? Am I getting indirectly murdered already?"
     ses "Mew!"
     show sesame with dissolve
     bi "Sesame was standing near the opposite door."
-    bi "Right, I might be the guard today."
+    bi "Right, maybe I'm one of the guards today."
     b "Thanks Sesame."
+    scene black with dissolve
     bi "I stepped outside into the hallway."
     bi "Guess it's time to explore."
-    scene black with dissolve
     scene bg hosphall1 with dissolve
+    $showchibint("jenny") #copy paste
+    $statusnt("Guard Hallway", "bert", ch=3, sun=1)
     show jenny happy with dissolve
     j "Oh, hey Bert! Hey Sesame!"
     j "Guess we're on guard duty today!"
@@ -435,7 +458,11 @@ label hospitalGo:
     b "Okay, let's see what's at the end of this hallway..."
     scene black with dissolve
     scene bg hospfancy with dissolve
-    show jenny ind with dissolve
+    $showchibint("jenny") #copy paste
+    $statusnt("Guard Lounge", "bert", ch=3, sun=1)
+    show jenny ind with dissolve:
+        xcenter .5
+        linear 0.3 xcenter .75
     j "Huh, what's this?"
     b "It looks like it's a common area for the guards."
     j "It's... so much nicer than the common area for the patients."
@@ -509,6 +536,7 @@ label hospitalGo:
     hide jenny with dissolve
     bi "Alright, let's see what's behind door number one..."
     scene black with dissolve
+    $statusnt("Security Room", "bert", ch=3, sun=1)
     scene bg hospsecurity with dissolve
     b "..."
     b "What is this?"
@@ -598,6 +626,7 @@ label hospitalGo:
     scene black with dissolve
     bi "I made my way through the common area to the other room."
     scene bg hospcloset
+    $statusnt("Supply Closet", "bert", ch=3, sun=1)
     b "Huh, a supply closet."
     b "I guess even a mental hospital needs to get cleaned every now and then."
     b "It's a bit dark in here, let me turn on the lights."
@@ -619,6 +648,8 @@ label hospitalGo:
     b "I think that's all I have to explore here, time to head to the kitchen."
     scene black with dissolve
     scene bg hospkitchen with dissolve
+    $showchibint("jenny") #copy paste
+    $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
     j "Hey Bert, what'd you find?"
     b "Well, there's what looks like a control or security room."
@@ -655,6 +686,7 @@ label hospitalGo:
     b "Got it, let me know if you find anything I missed."
     j "Will do, seeya Bert!"
     hide jenny with dissolve
+    $showchibint() #copy paste
     bi "I guess I haven't talked to the others yet..."
     bi "I turned to the window and started chatting with the first person I saw."
     show drac ind with dissolve
@@ -668,7 +700,7 @@ label hospitalGo:
     show frog sad
     f "I got worried because Jenny showed up but you didn't."
     f "And I thought... well..."
-    bi "Freddy looked like he was on the verge of tears."
+    bi "Freddy sounded like he was on the verge of tears."
     bi "Despite us trying to keep death away from him, he might have been thinking about it as much as the rest of us."
     bi "Though maybe he didn't grasp how obvious it would be if Jenny murdered me on the first day..."
     b "I'm here Freddy, don't worry!"
