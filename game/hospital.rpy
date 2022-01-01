@@ -408,8 +408,8 @@ label hospitalGo:
     bi "Having talked to Sam and Shahar, I went to go join the others."
     bi "But a noise interrupted."
     play sfx "audio/ding.mp3"
-    intercom "It is now nighttime. Please feel free to return to your rooms."
-    intercom "You may still roam freely, but remember that you must leave your cell before night ends."
+    intercom "It is now twilight. Please feel free to return to your rooms."
+    intercom "You may still roam freely, but remember that you must return to your cell before night begins."
     show jenny ind:
         xcenter .25
     show frog ind:
@@ -417,8 +417,8 @@ label hospitalGo:
     with dissolve
     j "Well, guess we should all go sleep."
     f "But... I don't wanna. I wanna play!"
-    j "C'mon Freddy, we only have a few hours where we're allowed to be in bed."
-    j "If you don't sleep now, you'll be tired tomorrow."
+    j "C'mon Freddy, we can't stay out here forver."
+    j "Plus if you don't sleep now, you'll be tired tomorrow."
     f "F-fine..."
     f "Can I at least sleep in Lauren's room?"
     j "No Freddy, we all have to sleep in our own rooms."
@@ -464,7 +464,7 @@ label hospitalGo:
     bi "Well, I was woken up."
     bi "By a sound I hoped I wouldn't get used to."
     play sfx "audio/ding.mp3"
-    intercom "There are 30 minutes left in nighttime. You must leave your room before nighttime is over."
+    intercom "Twilight has begun. You must leave your room before daytime."
     bi "I knew if I stayed in bed, I might not make it out of the room in 30 minutes."
     bi "So I begrudgingly got up and tried opening the door behind me, like I had last night."
     bi "..."
@@ -490,7 +490,7 @@ label hospitalGo:
     b "Please don't."
     j "Don't worry, I wouldn't even know how."
     j "So, whaddya wanna do first?"
-    b "I think we have to make food for the others, but nighttime isn't even over yet."
+    b "I think we have to make food for the others, but twilight isn't even over yet."
     b "So I was thinking we should explore and tell the others what we find."
     j "Sounds like a plan!"
     b "Okay, let's see what's at the end of this hallway..."
@@ -552,11 +552,11 @@ label hospitalGo:
     show jenny happy
     j "You're so silly."
     play sfx "audio/ding.mp3"
-    intercom "There are 5 minutes left in nighttime. You must leave your room before nighttime is over."
+    intercom "There are 5 minutes left in twilight. You must leave your room before twilight is over."
     show jenny ind
     j "Hm, seems like someone hasn't left their room yet."
     b "How do you know that?"
-    j "The rules said we'd only hear the 5 minute and 2 minute announcement if someone was still in their room."
+    j "The rules said we'd only hear the 5 minute announcement if someone was still in their room."
     b "Oh, that's true."
     b "I wonder who it is..."
     j "Oh, that probably means we should get working on food."
@@ -680,7 +680,7 @@ label hospitalGo:
     b "That's not ominous at all..."
     b "Should I hide it? It's such an obvious choice for a murder weapon."
     b "No, there's a rule that says it needs to be returned here."
-    b "I don't really want to be the one to test if hiding it gets me killed..."
+    b "I don't really want to be the one to test if hiding it gets me \"punished\"..."
     b "I guess... I'll just leave it here and let the others know so we're all vigilant about it."
     b "It can be like the kitchen knife in the mansion. If everyone's keeping an eye on it it's not a threat."
     b "I think that's all I have to explore here, time to head to the kitchen."
@@ -705,12 +705,12 @@ label hospitalGo:
     b "Oh."
     b "Ohhhhh. This place just got a lot darker."
     j "Should we take the bat and put it somewhere where everyone can see it?"
-    b "There's a sign in the closet that says to return everything... I'm afraid if we move it we die."
-    b "That's what seems to be the punishment for not following the rules in the cafeteria."
+    b "There's a sign in the closet that says to return everything... I'm afraid if we move it we get punished."
+    b "After all, there was a punishment for not following the rules in the cafeteria."
     j "That sucks. Well, guess we'll just tell everyone."
     b "How's cooking going?"
     j "It's okay. This kitchen is not nearly as well stocked as the mansion was."
-    j "The fridge only has the bare minimum, basic veggies like tomatoes and onion, a few broths."
+    j "The fridge only has the bare minimum, basic veggies like tomatoes and onions, a few broths."
     j "The pots and pans are huge though, I guess because they're used to cooking for a large group."
     j "So I'm cooking a big pot of tomato soup right now."
     j "Nothing too fancy but that's about all I know how to do."
@@ -727,12 +727,15 @@ label hospitalGo:
     $showchibint() #copy paste
     bi "I guess I haven't talked to the others yet..."
     bi "I turned to the window and started chatting with the first person I saw."
-    show drac ind with dissolve
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
+    show drac ind behind hospwindowoverlay
+    with dissolve
     d "Hello Bert. Are you here to brief us on the other side?"
     b "Uh... I guess I can, yeah."
     d "Let me gather the others then, so you don't have to reexplain anything."
     hide drac with dissolve
-    show frog ind with dissolve
+    show frog ind behind hospwindowoverlay with dissolve
     f "Bert! Are you okay?"
     b "Oh, hey Freddy. Yeah I'm fine."
     show frog sad
@@ -745,10 +748,10 @@ label hospitalGo:
     show frog ind
     f "Oh. Okay. Is the food almost ready?"
     bi "Children really are whimsical."
-    show frog ind:
+    show frog ind behind hospwindowoverlay:
         xcenter .5
         linear 0.15 xcenter .25
-    show drac ind:
+    show drac ind behind hospwindowoverlay:
         xcenter .75
     with dissolve
     bi "Dracula had gathered the others, except for Sam, and returned to the window."
@@ -770,7 +773,7 @@ label hospitalGo:
     d "Perhaps if you feel like helping the group, you could sift through the records with the rest of your free time today?"
     b "Uh..."
     hide frog with moveoutleft
-    show lauren ind with moveinleft:
+    show lauren ind behind hospwindowoverlay with moveinleft:
         xcenter .25
     l "Don't make him waste his time, you've done enough for him already Bert."
     l "If you really wanna know, you can check on your own time Dracula."
@@ -789,6 +792,7 @@ label hospitalGo:
     hide lauren
     hide drac
     with dissolve
+    scene bg hospkitchen with dissolve
     bi "I turned to the soup and started stirring it."
     bi "After about 10 minutes, Jenny returned."
     show jenny happy with dissolve
@@ -897,11 +901,12 @@ label postcupcake:
     bi "Hm... I should try to find a way to talk to Shahar discreetly while everyone's eating."
     j "Food's ready!"
     bi "The others gathered in a line to get their serving."
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
     show jenny ind:
-        xcenter .5
-        linear .15 xcenter .25
-    show sid smile with moveinright:
-        xcenter .75
+        xcenter .25
+    with dissolve
+    show sid smile behind hospwindowoverlay with moveinright
     i "Oh wow! This smells delicious!"
     j "You don't need to flatter me Sid. It's really simple compared to our last meal..."
     i "Technically we had sleep for dinner yesterday."
@@ -909,8 +914,7 @@ label postcupcake:
         xcenter .25
     j "I'm sure when you're a guard you'll make something even better Sid."
     i "Hmm, I only know how to make very simple stuff..."
-    show sid ind:
-        xcenter .75
+    show sid ind behind hospwindowoverlay
     i "We didn't have a very stocked kitchen when I was growing up."
     i "Sometimes we just got fast food because my parents were too tired from working to cook..."
     j "Hm... well now's just as good a chance as any to learn to cook!"
@@ -922,9 +926,8 @@ label postcupcake:
         xcenter .25
     j "Oh."
     j "Never mind then..."
-    hide sid with moveoutright
-    show shahar ind with moveinright:
-        xcenter .75
+    hide sid with moveoutleft
+    show shahar ind behind hospwindowoverlay with moveinright
     h "Aye lassy, what rations have ye prepped for us?"
     h "My head's achin', some food ought to get me metabolism back in check."
     j "Tomato soup, here you go."
@@ -937,10 +940,10 @@ label postcupcake:
     bi "Like everything Shahar said, this didn't make a lot of sense, but..."
     bi "Shahar's head hurt and he got upset last time I kept questioning him."
     h "Anyway, cheers lassy, I'm off to feast!"
-    hide shahar with moveoutright
-    show lauren ind:
+    hide shahar with moveoutleft
+    show lauren ind behind hospwindowoverlay:
         xcenter .5
-    show frog ind:
+    show frog ind behind hospwindowoverlay:
         xcenter .75
     with moveinright
     j "Hey guys, here's your soup!"
@@ -967,6 +970,8 @@ label postcupcake:
         b "Hey Freddy, do you want a cupcake?"
         b "We found one in the fridge, you should take it."
         b "We're all old adults, so we don't appreciate sweet food as much as you do."
+        show jenny ind:
+            xcenter .25
         bi "Jenny turned away as I was saying this."
         f "Cupcake?"
         b "Yeah. It's all yours."
@@ -975,13 +980,16 @@ label postcupcake:
         f "But I wanna eat the cupcake!"
         l "If you eat it first you'll ruin your appetite..."
         l "Thanks Jenny and Bert. Looking forward to the meal."
+        show jenny happy:
+            xcenter .25
+        j "You're welcome!"
     else:
         l "Thanks Jenny. Looking forward to the meal."
+        j "You're welcome!"
     hide lauren
     hide frog
-    with moveoutright
-    show drac ind with moveinright:
-        xcenter .75
+    with moveoutleft
+    show drac ind behind hospwindowoverlay with moveinright
     d "I am looking forward to this tomato soup."
     j "Really?"
     d "Yes, it reminds me of blood."
@@ -990,7 +998,7 @@ label postcupcake:
     bi "I highly doubt any vampire actually thinks tomatoes look like blood..."
     d "Good day."
     j "Good day, Dracula!"
-    hide drac with moveoutright
+    hide drac with moveoutleft
     show jenny happy:
         xcenter .25
         linear 0.15 xcenter .5
@@ -1011,18 +1019,18 @@ label postcupcake:
     bi "The kitchen's not that dirty, and it's not like we'll be here that long..."
     bi "Oh well, I have a slightly more important thing... er, person to worry about."
     b "Lauren! Can you come here?"
-    show lauren ind with dissolve
+    show lauren ind behind hospwindowoverlay with moveinright
     l "Hey Bert, something wrong?"
     b "Sam never came to grab a bowl of soup."
     b "Can you help me bring Sam here to eat?"
     l "Sure, give me a second."
-    hide lauren with dissolve
+    hide lauren behind hospwindowoverlay with moveoutright
     bi "Lauren went over and somewhat forcefully got Sam to stand up and walk to the kitchen window."
-    show lauren ind:
+    show lauren ind behind hospwindowoverlay:
         xcenter .25
-    show sam:
+    show sam behind hospwindowoverlay:
         xcenter .75
-    with dissolve
+    with moveinright
     s "What do you want..."
     b "We wanted you to eat your meal."
     s "What's the point..."
@@ -1074,7 +1082,7 @@ label postcupcake:
     s "..."
     bi "Without a word, Sam took a bowl of soup and went to go sit and eat."
     hide sam with moveoutright
-    show lauren ind:
+    show lauren ind behind hospwindowoverlay:
         xcenter .25
         linear 0.15 xcenter .5
     bi "..."
@@ -1113,6 +1121,7 @@ label postcupcake:
     bi "I should've said something, but I didn't."
     bi "Taking that as a cue, Lauren walked off."
     hide lauren with moveoutright
+    scene bg hospkitchen with dissolve
     show jenny ind with dissolve
     j "Hey Bert, I'm gonna start cleaning the kitchen up."
     j "You don't have to do anything, I enjoy cleaning!"
@@ -1133,8 +1142,10 @@ label postcupcake:
     bi "Forget Freddy, does Jenny comprehend how serious this situation is?"
     hide jenny with dissolve
     bi "Hm... this is my chance, I think."
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
     b "Hey Shahar, can I talk to you for a second?"
-    show shahar ind with dissolve
+    show shahar ind behind hospwindowoverlay with dissolve
     h "Mate, what's on yer mind?"
     b "I wanted to tell you something."
     b "I think we should keep it a secret though. It's something that might make you look suspicious."
@@ -1156,7 +1167,7 @@ label postcupcake:
     b "It only said \"patient thinks he is a pirate,\" nothing else."
     b "It's almost like someone wiped most of your information."
     h "\"Thinks he is a pirate?\""
-    show shahar mad
+    show shahar mad behind hospwindowoverlay
     h "Lad, I think I'm a pirate because I am a pirate!"
     h "How can I trust ye lad, ye might be thinkin' I'm an addle you can swindle and kill."
     b "Trust me?"
@@ -1218,3 +1229,8 @@ label postcupcake:
         bi "Something... or someone, made Shahar think he was a pirate, and he was admitted here."
         bi "It's nowhere near figuring out who the Game Master is, but..."
         bi "It's progress."
+    bi "After Shahar left, I left the kitchen."
+    bi "No one seemed to keen to talk through the window, understandably."
+    bi "So might as well talk to Jenny with no windows involved."
+    scene black with dissolve
+    scene

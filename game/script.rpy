@@ -401,4 +401,5 @@ label start:
 #Start
 ###########
     $ _skipping = True
-    jump midcar2
+    $ eat = True
+    jump postcupcake
