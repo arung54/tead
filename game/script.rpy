@@ -64,6 +64,11 @@ image eviscroll:
         ypos -2.0
         linear 80.0 ypos .01
         repeat
+
+transform inwindow:
+    truecenter zoom .8
+    yalign .45
+
 transform blink:
         "eye.png"
         alpha 1.0
@@ -331,7 +336,7 @@ define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=Tr
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
 define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True) #Bert Internal, name and text italics
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox)
-define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice)
+define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="bert")
 define s = Character("Sam Lee", who_color= "f3946a", image="sam", callback=samvoice)
 define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice)
 define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice)
@@ -402,4 +407,4 @@ label start:
 ###########
     $ _skipping = True
     $ eat = True
-    jump postcupcake
+    jump hospitalGo

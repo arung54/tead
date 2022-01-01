@@ -121,7 +121,7 @@ screen say(who, what):
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.13 yalign .9
 
 
 ## Make the namebox available for styling through the Character object.
@@ -154,10 +154,10 @@ style bertbox:
     background Image("gui/textbox2.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos gui.name_xpos
+    xpos .3 #JULIANCHANGED THIS PENIS
     xanchor gui.name_xalign
     xsize gui.namebox_width
-    ypos gui.name_ypos
+    ypos 0.05 #JULIANCHANGED THIS PENIS
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
@@ -171,7 +171,7 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
-    xpos gui.dialogue_xpos
+    xpos .305 #JULIANCHANGED THIS PENIS
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
     line_spacing 8 ##########################################################################################################
@@ -1364,7 +1364,7 @@ screen nvl(dialogue, items=None):
                 action i.action
                 style "nvl_button"
 
-    add SideImage() xalign 0.0 yalign 1.0
+    add SideImage() xalign .0 yalign 1
 
 
 screen nvl_dialogue(dialogue):

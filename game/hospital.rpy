@@ -33,7 +33,7 @@ label hospitalGo:
     show sesame with dissolve:
         ycenter .61
     ses "Mew!"
-    b "Hey Sesame... sorry, I'm a bit tired."
+    b happy "Hey Sesame... sorry, I'm a bit tired."
     ses "Hssss!"
     bi "If I had to guess, he was motioning to the doors of the cell."
     bi "...A cell?"
@@ -906,7 +906,7 @@ label postcupcake:
     show jenny ind:
         xcenter .25
     with dissolve
-    show sid smile behind hospwindowoverlay with moveinright
+    show sid smile at inwindow behind hospwindowoverlay with moveinright
     i "Oh wow! This smells delicious!"
     j "You don't need to flatter me Sid. It's really simple compared to our last meal..."
     i "Technically we had sleep for dinner yesterday."
@@ -927,7 +927,7 @@ label postcupcake:
     j "Oh."
     j "Never mind then..."
     hide sid with moveoutleft
-    show shahar ind behind hospwindowoverlay with moveinright
+    show shahar ind at inwindow behind hospwindowoverlay with moveinright
     h "Aye lassy, what rations have ye prepped for us?"
     h "My head's achin', some food ought to get me metabolism back in check."
     j "Tomato soup, here you go."
@@ -941,9 +941,9 @@ label postcupcake:
     bi "Shahar's head hurt and he got upset last time I kept questioning him."
     h "Anyway, cheers lassy, I'm off to feast!"
     hide shahar with moveoutleft
-    show lauren ind behind hospwindowoverlay:
+    show lauren ind at inwindow behind hospwindowoverlay:
         xcenter .5
-    show frog ind behind hospwindowoverlay:
+    show frog ind at inwindow behind hospwindowoverlay:
         xcenter .75
     with moveinright
     j "Hey guys, here's your soup!"
@@ -989,7 +989,7 @@ label postcupcake:
     hide lauren
     hide frog
     with moveoutleft
-    show drac ind behind hospwindowoverlay with moveinright
+    show drac ind at inwindow behind hospwindowoverlay with moveinright
     d "I am looking forward to this tomato soup."
     j "Really?"
     d "Yes, it reminds me of blood."
@@ -1019,17 +1019,17 @@ label postcupcake:
     bi "The kitchen's not that dirty, and it's not like we'll be here that long..."
     bi "Oh well, I have a slightly more important thing... er, person to worry about."
     b "Lauren! Can you come here?"
-    show lauren ind behind hospwindowoverlay with moveinright
+    show lauren ind at inwindow behind hospwindowoverlay with moveinright
     l "Hey Bert, something wrong?"
     b "Sam never came to grab a bowl of soup."
     b "Can you help me bring Sam here to eat?"
     l "Sure, give me a second."
     hide lauren behind hospwindowoverlay with moveoutright
     bi "Lauren went over and somewhat forcefully got Sam to stand up and walk to the kitchen window."
-    show lauren ind behind hospwindowoverlay:
-        xcenter .25
-    show sam behind hospwindowoverlay:
-        xcenter .75
+    show lauren ind at inwindow behind hospwindowoverlay:
+        xcenter .33
+    show sam at inwindow behind hospwindowoverlay:
+        xcenter .66
     with moveinright
     s "What do you want..."
     b "We wanted you to eat your meal."
@@ -1082,8 +1082,8 @@ label postcupcake:
     s "..."
     bi "Without a word, Sam took a bowl of soup and went to go sit and eat."
     hide sam with moveoutright
-    show lauren ind behind hospwindowoverlay:
-        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay:
+        xcenter .33
         linear 0.15 xcenter .5
     bi "..."
     bi "I don't know what to say."
@@ -1145,7 +1145,7 @@ label postcupcake:
     scene bg hospkitchenwindow
     show hospwindowoverlay
     b "Hey Shahar, can I talk to you for a second?"
-    show shahar ind behind hospwindowoverlay with dissolve
+    show shahar ind at inwindow behind hospwindowoverlay with dissolve
     h "Mate, what's on yer mind?"
     b "I wanted to tell you something."
     b "I think we should keep it a secret though. It's something that might make you look suspicious."
@@ -1167,7 +1167,7 @@ label postcupcake:
     b "It only said \"patient thinks he is a pirate,\" nothing else."
     b "It's almost like someone wiped most of your information."
     h "\"Thinks he is a pirate?\""
-    show shahar mad behind hospwindowoverlay
+    show shahar mad at inwindow behind hospwindowoverlay
     h "Lad, I think I'm a pirate because I am a pirate!"
     h "How can I trust ye lad, ye might be thinkin' I'm an addle you can swindle and kill."
     b "Trust me?"
