@@ -332,6 +332,7 @@ init python:
 ##################
 image side bert = ConditionSwitch('mood==0', 'side bert happy', 'mood==1', 'side bert thought', xalign=0.13, yalign=0.9)
 image side notbert = ConditionSwitch('mood==0', 'side bert happy dark', 'mood==1', 'side bert thought dark', xalign=0.13, yalign=0.9)
+
 define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF", image="bert")
 define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
 define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF", image="bert")
