@@ -21,7 +21,8 @@ define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
 image behappy = Image("bhappy.png", xcenter=.729, ycenter=.802)
 init python:
-    mood = 0
+    mood = "happy"
+    cat = False
 image hamster loc:
     "bertfrlgb.png"
     pause .1
@@ -330,8 +331,14 @@ init python:
 ##################
 #Character Defines
 ##################
-image side bert = ConditionSwitch('mood==0', 'side bert happy', 'mood==1', 'side bert thought', xalign=0.13, yalign=0.9)
-image side notbert = ConditionSwitch('mood==0', 'side bert happy dark', 'mood==1', 'side bert thought dark', xalign=0.13, yalign=0.9)
+image side bert = ConditionSwitch('mood==\"happy\" and not cat', 'bhappy', 'mood==\"ind\" and not cat', 'bind',
+'mood==\"sad\" and not cat', 'bsad', 'mood==\"shock\" and not cat', 'bshock',
+'mood==\"happy\" and cat', 'bchappy', 'mood==\"ind\" and cat', 'bcind',
+'mood==\"sad\" and cat', 'bcsad', 'mood==\"shock\" and cat', 'bcshock', xalign=0.13, yalign=0.9)
+image side notbert = ConditionSwitch('mood==\"happy\" and not cat', 'bdhappy', 'mood==\"ind\" and not cat', 'bdind',
+'mood==\"sad\" and not cat', 'bdsad', 'mood==\"shock\" and not cat', 'bdshock',
+'mood==\"happy\" and cat', 'bcdhappy', 'mood==\"ind\" and cat', 'bcdind',
+'mood==\"sad\" and cat', 'bcdsad', 'mood==\"shock\" and cat', 'bcdshock', xalign=0.13, yalign=0.9)
 
 define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF", image="bert")
 define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
