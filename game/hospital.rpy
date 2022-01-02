@@ -1,16 +1,4 @@
 label hospitalGo:
-    $mood = 0
-    b "I'm happy!"
-    ses "Mrow!"
-    $mood = 1
-    b "Now I'm thinking!"
-    ses "Mrow!"
-    $mood = 0
-    b "Now I'm happy!"
-    ses "Mrow!"
-    $mood = 1
-    b "Now I'm thinking!"
-    ses "Mrow!"
     $ftecounter = 5
     blank "TODO: Spicy scene from the past here."
     scene black
