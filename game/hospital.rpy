@@ -1,4 +1,16 @@
 label hospitalGo:
+    $mood = 0
+    b "I'm happy!"
+    ses "Mrow!"
+    $mood = 1
+    b "Now I'm thinking!"
+    ses "Mrow!"
+    $mood = 0
+    b "Now I'm happy!"
+    ses "Mrow!"
+    $mood = 1
+    b "Now I'm thinking!"
+    ses "Mrow!"
     $ftecounter = 5
     blank "TODO: Spicy scene from the past here."
     scene black
@@ -1233,4 +1245,124 @@ label postcupcake:
     bi "No one seemed to keen to talk through the window, understandably."
     bi "So might as well talk to Jenny with no windows involved."
     scene black with dissolve
-    scene
+    scene bg hospfancy
+    $showchibint("jenny")
+    with dissolve
+    show jenny happy with dissolve
+    j "Hey Bert! Guess what I found?"
+    b "A way out?"
+    show jenny ind
+    j "Oh... no, you're gonna be disappointed if you expected that."
+    b "I was joking."
+    j "Oh."
+    show jenny happy
+    j "Good old Bert, always a jokester!"
+    j "But no, I found a chess set!"
+    j "It was tucked under one of the couches, I guess we didn't search this room deeply enough."
+    j "You wanna play a round to kill some time?"
+    b "Yeah, I'm down."
+    b "Feels like everything's been sad since we got here, a game would be a nice change of pace."
+    bi "I'm a beast at chess, Jenny better be ready."
+    show bg jennymonika ind
+    bi "..."
+    bi "Hm, a few moves in she's way better than I expected."
+    j "Do you play much Bert?"
+    j "You're pretty good."
+    b "I used to play online in my free time in college."
+    b "And you?"
+    j "Oh, I was a tournament player in high school."
+    j "Everyone needs a hobby, right?"
+    bi "Tournament player? Jeez, maybe I'm outmatched."
+    b "How well did you do in tournaments?"
+    j "I made top five in the state for high schoolers."
+    bi "Yeah, I'm outmatched."
+    bi "Let's see... should I play a safe move or try something weird?"
+    bi "If she's better maybe she won't expect the deviation?"
+    $goodmoves = 0
+    menu:
+        "Play a safe move":
+            bi "I stuck with the usual way this opening played out."
+            j "You're playing pretty solid for someone who doesn't go to tournaments!"
+            b "It's only the first few moves..."
+            b "I feel like once you play enough games you know what works."
+            j "Hmm, I guess that's true when we're playing something like an Italian Game."
+            j "Maybe I should have chosen a more obscure opening to throw you off."
+            b "No please."
+            $goodmoves = goodmoves + 1
+            jump chess1
+
+        "Try a weird deviation":
+            bi "I moved my f-pawn forward to protect a piece."
+            j "..."
+            j "Interesting..."
+            bi "Did it catch her off guard?"
+            j "That was an unusual move Bert, did you think it through?"
+            bi "She moved a bishop in response."
+            bi "Oh..."
+            bi "She had pinned my knight since the pawn wasn't in the way..."
+            bi "And if I try to protect it she can threaten it with a pawn next turn..."
+            bi "Looks like I blundered."
+            jump chess1
+label chess1:
+    bi "We played a few more moves..."
+    bi "Hmm, okay, it's midgame, our rook pairs are protecting each other."
+    bi "We both have one on the open e-file, I could force a rook trade here..."
+    bi "Or just let them awkwardly stare at each other and make a move elsewhere."
+    bi "What should I do?"
+    menu:
+        "Trade rooks":
+            bi "I captured her rook, and she captured mine back."
+            bi "Okay, now let me move my knight onto the e-file."
+            bi "...wait, her rook is on the file now and mine isn't."
+            bi "I think that trade just gave her free control of the file..."
+            j "Frustrated?"
+            b "Yeah, I don't think I should have made that trade."
+            j "It's a common mistake, don't worry."
+            jump chess2
+
+        "Move a different piece.":
+            $goodmoves = goodmoves + 1
+            bi "Nah, I can take some space with my knight in that file."
+            j "Ooh, that's a good move Bert."
+            j "I'll have to think about this next one..."
+            bi "She was complementing me, but I was still losing slightly..."
+            bi "I guess I'm holding up okay for our respective skill levels though."
+            jump chess2
+label chess2:
+    bi "We kept playing, slowly narrowing down to endgame..."
+    if goodmoves > 1:
+        bi "She was threatening to back rank mate."
+        bi "...Wait."
+        bi "I think I see a mating sequence."
+        bi "I could win this game!"
+        bi "I haven't thought this through, but I should go for it, right?"
+        menu:
+            "Go for mate":
+                bi "I made a bold sacrifice to open up her king."
+                bi "Yes, it's going exactly as I planned."
+                bi "Just one move and I win!"
+                b "Aha!"
+                j "Huh?"
+                b "I won! Checkmate!"
+                j "Bert... my bishop can capture your queen."
+                j "When you moved your pawn my bishop started protecting that square."
+                j "It was a good try though!"
+                jump chess3
+
+            "Stop her back rank mate":
+                $goodmoves = goodmoves + 1
+                bi "No, she's way too good a player."
+                bi "She definitely would've seen it if I could win in three moves, right?"
+                bi "I pushed a pawn that was next to my king, to at least last one more move..."
+                jump chess3
+label chess3:
+    if goodmoves < 3:
+        bi "Unfortunately, my efforts weren't enough."
+        bi "She had a win in two moves."
+        bi "Knowing what was coming, I made a useless move and..."
+        b "Huh?"
+        j "Everything okay?"
+        b "Yeah, just..."
+        bi "She's not going for it?"
+        bi "She played what was instead a pretty useless move."
+        bi "She could still beat me in two moves..."

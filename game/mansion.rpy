@@ -2270,7 +2270,6 @@ label mansion2:
     b "Let's go outside, I can't handle being in here right now."
     bi "Holding in my tears, I made my way into the hallway with Sid."
     scene black with fade
-    blank "Arun will fill in a cleaner transition from the body discovery to the investigation later."
     scene bg mansionhall with fade
     $showchibi("sid")
     bi "As we walked out, others made their way upstairs."

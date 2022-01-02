@@ -20,6 +20,8 @@ image darken = "welcomescreenblank.png"
 define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
 image behappy = Image("bhappy.png", xcenter=.729, ycenter=.802)
+init python:
+    mood = 0
 image hamster loc:
     "bertfrlgb.png"
     pause .1
@@ -328,7 +330,8 @@ init python:
 ##################
 #Character Defines
 ##################
-
+image side bert = ConditionSwitch('mood==0', 'side bert happy', 'mood==1', 'side bert thought', xalign=0.13, yalign=0.9)
+image side notbert = ConditionSwitch('mood==0', 'side bert happy dark', 'mood==1', 'side bert thought dark', xalign=0.13, yalign=0.9)
 define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF")
 define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF")
 define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF")
@@ -350,7 +353,7 @@ define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice)
 define z = Character("?????", who_color= "FFFFFF", callback=fillvoice)
 define zg = Character("?????", who_color= "999999", callback=fillvoice)
 define zb = Character("?????", who_color= "000099", callback=fillvoice)
-define zs = Character("?????", who_color= "f3946a", image="sam", callback=samvoice)
+define zs = Character("?????", who_color= "f3946a", callback=samvoice)
 define zc = Character("?????", who_color= "b66baa", callback=fillvoice)
 define zt = Character("?????", who_color= "d4af37", callback=stellavoice)
 define zd = Character("?????", who_color= "ff9483", callback=dracvoice)
@@ -359,7 +362,7 @@ define zi = Character("?????", who_color= "4f90b0", callback=fillvoice)
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice)
-define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice)
+define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice, image="notbert")
 define warden = Character("Warden", who_color= "ffffff", callback=mevoice) #used in chapter 0
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice) #used in chapter 0
 define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
