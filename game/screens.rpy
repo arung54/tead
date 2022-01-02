@@ -270,6 +270,7 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
+            textbutton _("Hide") action HideInterface()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Save") action ShowMenu('save')
             textbutton _("Load") action ShowMenu('load')
