@@ -332,42 +332,42 @@ init python:
 ##################
 image side bert = ConditionSwitch('mood==0', 'side bert happy', 'mood==1', 'side bert thought', xalign=0.13, yalign=0.9)
 image side notbert = ConditionSwitch('mood==0', 'side bert happy dark', 'mood==1', 'side bert thought dark', xalign=0.13, yalign=0.9)
-define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF")
-define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF")
-define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF")
-define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=True, who_color = "FFFFFF") #Dan Internal, name and text italics
-define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox)
-define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True) #Bert Internal, name and text italics
-define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox)
+define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF", image="bert")
+define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
+define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF", image="bert")
+define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert") #Dan Internal, name and text italics
+define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox, image="bert")
+define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True, image="bert") #Bert Internal, name and text italics
+define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox, image="notbert")
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="bert")
-define s = Character("Sam Lee", who_color= "f3946a", image="sam", callback=samvoice)
-define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice)
-define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice)
-define f = Character("Freddy Ogden", who_color= "76d352", image="frog ind", callback=frogvoice)
-define j = Character("Jenny Flowers", who_color= "e50548", callback=jennyvoice)
-define l = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice)
-define o = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice)
-define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice)
-define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice)
+define s = Character("Sam Lee", who_color= "f3946a", image="notbert", callback=samvoice)
+define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice, image="notbert")
+define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice, image="notbert")
+define f = Character("Freddy Ogden", who_color= "76d352", image="notbert", callback=frogvoice)
+define j = Character("Jenny Flowers", who_color= "e50548", callback=jennyvoice, image="notbert")
+define l = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="notbert")
+define o = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="notbert")
+define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice, image="notbert")
 ###
-define z = Character("?????", who_color= "FFFFFF", callback=fillvoice)
-define zg = Character("?????", who_color= "999999", callback=fillvoice)
-define zb = Character("?????", who_color= "000099", callback=fillvoice)
-define zs = Character("?????", who_color= "f3946a", callback=samvoice)
-define zc = Character("?????", who_color= "b66baa", callback=fillvoice)
-define zt = Character("?????", who_color= "d4af37", callback=stellavoice)
-define zd = Character("?????", who_color= "ff9483", callback=dracvoice)
-define zf = Character("?????", who_color= "76d352", callback=frogvoice)
-define zi = Character("?????", who_color= "4f90b0", callback=fillvoice)
+define z = Character("?????", who_color= "FFFFFF", callback=fillvoice, image="notbert")
+define zg = Character("?????", who_color= "999999", callback=fillvoice, image="notbert")
+define zb = Character("?????", who_color= "000099", callback=fillvoice, image="notbert")
+define zs = Character("?????", who_color= "f3946a", callback=samvoice, image="notbert")
+define zc = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
+define zt = Character("?????", who_color= "d4af37", callback=stellavoice, image="notbert")
+define zd = Character("?????", who_color= "ff9483", callback=dracvoice, image="notbert")
+define zf = Character("?????", who_color= "76d352", callback=frogvoice, image="notbert")
+define zi = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
 
-define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice)
-define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice)
+define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice, image="notbert")
+define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice, image="notbert")
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice, image="notbert")
-define warden = Character("Warden", who_color= "ffffff", callback=mevoice) #used in chapter 0
-define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice) #used in chapter 0
-define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
-define intercom = Character("Intercom", what_italic=True, callback=fillvoice) #blank text, always italics
-define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
+define warden = Character("Warden", who_color= "ffffff", callback=mevoice, image="notbert") #used in chapter 0
+define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice, image="notbert") #used in chapter 0
+define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00", image="notbert") #used in chapter 0
+define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
+define blank = Character(" ", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
 
 label start:
 
