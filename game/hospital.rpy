@@ -1394,3 +1394,84 @@ label chess3:
         show bg jennymonikablush with dissolve
         j "I'm not a sadist or anything, so I don't want to force that on you."
         j "Good game Bert! You did really well for someone with your experience level."
+    scene bg hospfancy
+    show jenny ind
+    with dissolve
+    j "Oh shoot, we really took a long time playing that game."
+    j "I'm getting hungry again... maybe because lunch was just soup."
+    j "I think it's time to go plan dinner."
+    b "Sounds good, I can take the lead this time."
+    b "I can't cook much but you shouldn't have to do all the work..."
+    j "Your call Bert!"
+    scene bg hospkitchen with fade
+    show jenny happy with dissolve
+    b "Okay, what do we have..."
+    j "Well, it's just veggies like tomatoes and onions, and broths basically..."
+    b "Okay, sounds like enough to make... tomato soup."
+    show jenny ind
+    j "Which we had for lunch."
+    b "...Onion soup?"
+    b "Is that even a thing?"
+    j "Uh... it is now!"
+    b "Onion soup it is."
+    bi "We cut some veggies, boiled them in broth..."
+    bi "About thirty minutes later we had made... something."
+    bi "I took a taste and..."
+    b "It's... edible."
+    b "...Maybe I should have let you cook again."
+    j "It's fine Bert, not like we can make a gourmet meal in this kitchen."
+    j "Let's get everyone fed before bedtime."
+    j "Food's ready!"
+    bi "The others gathered in a line again..."
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
+    show jenny ind:
+        xcenter .25
+    with dissolve
+    show sid smile at inwindow behind hospwindowoverlay with moveinright
+    i "Oh wow! This smells... wait, what is that smell?"
+    bi "Sid took a sip."
+    i "Um... thanks guys."
+    j "Do you like it, Sid?"
+    i "Uh... yeah, I like not being hungry I guess."
+    i "Seeya."
+    hide sid with moveoutleft
+    show shahar ind at inwindow behind hospwindowoverlay with moveinright
+    h "Aye, after that scrumptious soup me stomach's been rumbling for another meal!"
+    h "Whatche got fer me lad?"
+    h "..."
+    h "Er, sorry lad, I must have confused hunger fer being full to the rim."
+    hide shahar with moveoutleft
+    scene black with dissolve
+    bi "One by one, it was the same story."
+    bi "My meal, if you could call it that, had put everyone off."
+    scene bg hospfancy
+    show jenny ind
+    with dissolve
+    b "Well, that was a disaster."
+    b "I guess I'll stick to eating in the company cafeteria in the future..."
+    j "Aww, at least you tried Bert."
+    bi "Just then..."
+    play sfx "audio/ding.mp3"
+    intercom "It is now twilight. Please feel free to return to your rooms."
+    intercom "You may still roam freely, but remember that you must return to your cell before night begins."
+    bi "Through the window, we saw the others get up and head to their respectively hallways."
+    j "I guess we should head back..."
+    j "If we try to clean up again we might... well... get \"punished.\""
+    b "Yeah, not exactly a risk I'm willing to take..."
+    scene black with dissolve
+    bi "We made our way back to the cells."
+    scene bg hosphall1
+    show jenny ind
+    with dissolve
+    j "Well, looks like that's it for our guard shift, Bert."
+    show jenny happy
+    j "I'd like to think we did a pretty good job!"
+    b "Collectively maybe I uh... may have indirectly led to one or two people starving to death."
+    j "Oh, don't worry about it."
+    j "Remember the train? We were barely scraping by in terms of food."
+    j "Everyone will forget about it by the time we're fed tomorrow."
+    j "Anyway, we should really get back into our cells. Good night Bert!"
+    hide jenny with dissolve
+    b "Well, Sesame, let's get some sleep."
+    scene black with dissolve
