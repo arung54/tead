@@ -2,6 +2,7 @@ label mansionGo:
     $ftecounter = 2
     scene black
     $ statusnt("???", "", ch=2, sun=0)
+    $mood = "ind"
     blank "A few years ago..."
     zg "Stop right there. What are you doing here?"
     z "Oh, me? I'm a new employee here, was just wandering."
@@ -71,8 +72,9 @@ label mansionGo:
     f "Oh, Bert! Are you awake? Feeling okay?"
     bi "This kid's one of them."
     bi "I have to keep him safe."
+    $mood = "happy"
     b "Yeah, I'm fine. Thanks for asking. How are you?"
-    f "Eh, kinda sleepy like always."
+    f "Eh, kinda sleepy, like always."
     f "We're in a really nice house now though!"
     bi "For a kid he doesn't seem that shaken up about what just happened..."
     bi "But looking around, I had to agree."
@@ -81,6 +83,7 @@ label mansionGo:
     f "Wait, Bert?"
     f "I... I thought you were just someone in my dream."
     f "Does that mean..."
+    $mood = "sad"
     show frog sad
     f "Dan... Kaiser..."
     bi "Oh no. He's audibly tearing up."
@@ -97,6 +100,7 @@ label mansionGo:
     hide lauren with moveoutleft
     hide frog with moveoutright
     $showchibi()
+    $mood = "ind"
     bi "Thank goodness for Lauren, she's great with the kids." #JJJ
     bi "Oh, everyone else is here too, waking up like us."
     $showchibi("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
@@ -172,10 +176,12 @@ label mansionGo:
     with dissolve
     d "In other words, whoever put us here seems to think we all deserve to die."
     d "Surely you can all finish this train of thought on your own."
+    $mood = "shock"
     s "We're all criminals."
     bi "Criminal?"
     bi "I wouldn't call myself that..."
     bi "..."
+    $mood = "ind"
     bi "But I wasn't ready emotionally to contest that statement."
     bi "So I stayed silent."
     hide drac ind with moveoutleft
@@ -185,6 +191,7 @@ label mansionGo:
     i "I mean, I'm only 16, I can't be a criminal."
     c "Hmm, I'm not sure if you're exempt from the law for being 16, bud."
     i "Well I didn't do anything wrong, really."
+    $mood = "happy"
     i "Er, well, nothing {i}VERY{/i} wrong..."
     bi "..."
     i "Well, {i}MAYBE{/i} very wrong, but-"
@@ -192,6 +199,7 @@ label mansionGo:
     show jenny ind with moveinright:
         xcenter .75
     j "I think we get the point."
+    $mood = "ind"
     j "Based on everyone's reaction, it seems like there's a least some truth to Dracula's point."
     j "I have some doubts though, especially considering Freddy's a literal child."
     b "Yeah, it seems unlikely Freddy is a hardened criminal."
@@ -222,11 +230,13 @@ label mansionGo:
     bi "No... I think I understood what Dracula was trying to do, but it was best not to say it out loud and he must know that."
     bi "We already concluded there's a reasonable chance the murderer this round is tied to the mansion."
     bi "If people honestly admitted to their pasts, we could rule out suspects who hadn't been near this mansion."
+    $mood = "sad"
     bi "But again, the murderer has no incentive to admit to a crime that could tie them to this location."
     bi "So Dracula must be hoping the murderer isn't so wise."
     bi "Better yet, he's suggesting that the murderer's task, identifying and killing the Game Master, could be aided by this process."
     bi "If they took his words to heart, they would indirectly out themselves, and think that was the right thing to do..."
     bi "But will Dracula's plan really work?"
+    $mood = "ind"
     hide scary with dissolve
     t "Babe, you're just coming off as senile."
     t "The idea of admitting to our crimes would be much more enticing from a younger guy..."
@@ -256,6 +266,7 @@ label mansionGo:
     show shahar mad with moveinleft:
         xcenter .25
     h "What d'ye mean pretend? Ain't nothing pretend about me."
+    $mood = "sad"
     t "Alright, if it means getting to see those abs, I can agree that you're a pirate."
     show shahar ind:
         xcenter .25
@@ -263,6 +274,7 @@ label mansionGo:
     hide shahar with moveoutleft
     show jenny ind with moveinleft:
         xcenter .25
+    $mood = "ind"
     j "I do have some concerns about us all admitting to crimes..."
     j "I know it will sound suspicious, but I think for some of us, this very personal."
     j "One of those things that you have to keep bottled up or ignore for your own sanity."
@@ -271,6 +283,7 @@ label mansionGo:
     bi "..."
     t "I agree with the belle. I'm sure some of you have fetishes you wouldn't admit to, what makes a crime so different?"
     t "That being said, are you sure you aren't just trying to get on Bert's good side?"
+    $mood = "shock"
     bi "Suddenly, all eyes were either on me or Jenny."
     b "What?"
     j "Huh?"
@@ -282,6 +295,7 @@ label mansionGo:
     t "But hey, if you're not interested in Bert, I'll take him."
     j "..."
     b "..."
+    $mood = "ind"
     j "I'm just going to ignore what Stella said."
     hide stella with moveoutright
     show jenny ind:
@@ -327,6 +341,7 @@ label mansionGo:
     c "There's bound to be some new information here we can use."
     ses "Mrow!"
     c "Oh, true, and maybe mice to catch!"
+    $mood = "happy"
     bi "She's as scatterbrained as usual, but it's probably good right now."
     bi "Sid is probably the most shaken up about Dan's death. It's good to get his mind off that."
     b "Yeah, plus we have to figure out what there is to eat and where to sleep."
@@ -335,6 +350,7 @@ label mansionGo:
     hide catherine
     with dissolve
     show jenny ind with dissolve
+    $mood = "ind"
     bi "I approached Jenny and made sure Stella wasn't within earshot."
     b "Hey Jenny, want to explore together?"
     j "Oh?"
@@ -362,22 +378,27 @@ label mansionGo:
     j "You might be onto something."
     j "Maybe it's the Game Master? And this is their mansion?"
     b "Well, that would contradict what the screen told us about one of us being the Game Master."
+    $mood = "sad"
     b "But maybe we'd be naive to trust that."
     j "Unless someone's met this person before, I don't know if we'll get much information out of this."
     j "Let's look somewhere else. Looks like this room connects to the kitchen and a bedroom."
+    $mood = "happy"
     b "Let's head to the kitchen, I'm hungry!"
     scene bg mansionkitchen with fade
     $showchibi("jenny", "freddy", "lauren")
     $ statusnt("Kitchen", "bert", ch=2, sun=5)
     show lauren ind with dissolve
     l "Hey, what happened in the other room? Heard lots of chatter."
+    $mood = "sad"
     b "Well uh..."
     bi "I'm pretty curious how she'll react to the whole, \" we're all criminals\" news."
     b "we've concluded everyone here's a uh, criminal, basically."
     b "Some people suggested we all admit to our crime, but that wasn't very well received."
     l "Ah, okay. Well, good news, the kitchen is rather well-stocked."
+    $mood = "shock"
     bi "....."
     bi "... is she not at all fazed by the fact that we're all criminals?"
+    $mood = "ind"
     l "Basically what you'd expect from a kitchen in a mansion!"
     l "Plenty of tools, cutlery, and cookware."
     l "Though there seems to be only one knife..."
@@ -429,6 +450,7 @@ label mansionGo:
     show stella bigsmile:
         xcenter .75
     t "A bedroom?"
+    $mood = "sad"
     j "Jeez, get me out of here."
     scene black with fade
     scene bg mansiongarage
@@ -437,6 +459,7 @@ label mansionGo:
     $showchibi( "jenny", "catherine", "sid")
     show catherine happy with dissolve
     c "Hey guys! Welcome to Catherine's Garage Emporium!"
+    $mood = "ind"
     b "Catherine's Garage Emporium?"
     c "Just something I made up, haha."
     c "There's no car, otherwise we could make a sick getaway!"
@@ -469,7 +492,9 @@ label mansionGo:
     b "We might as well use that as out time standard for now."
     $ statusnt("Garage", "bert", ch=2, sun=2)
     c "Catherine's Garage Emporium Standard time! CGEST!"
+    $mood = "sad"
     bi "I heard Jenny giggle behind me. I'm jealous of their lightheardedness sometimes..."
+    $mood = "ind"
     c "There's also a light generator here, it seems like it's fully fueled."
     c "We have running power so we shouldn't need it, but it's nice to know that won't be an issue."
     show catherine ind
@@ -480,6 +505,7 @@ label mansionGo:
     show catherine happy
     c "Oh, nice! Do you happen to know if the kitchen is well stocked?"
     c "I used to work as a sous-chef in a kitchen, I could whip us up some nice meals."
+    $mood = "shock"
     c "Don't have to be vegetarian meals, wouldn't want the meat to go to waste."
     b "Wow, thats awesome of you to offer!"
 
@@ -494,6 +520,7 @@ label mansionGo:
     c "Send it at me!"
     j "Well, I think what we all really need right now is something to bring us together."
     b "Something to bring us together?"
+    $mood = "happy"
     j "Yeah, like... a fancy dinner party!"
 
     c "Aww, Jenny! That's such a cute idea!"
@@ -512,6 +539,7 @@ label mansionGo:
     i "So exciting!"
     bi "Wow, and just like that, Sid's in high spirits."
     b "Sounds good to me!"
+    $mood = "ind"
     bi "Honestly, anything to get Sid's mind off of Dan, and this situation as a whole, is welcome in my book."
 
     #i "O-oh..."
@@ -550,10 +578,12 @@ label mansionGo:
     b "Maybe don't-"
     j "Wahoo!"
     hide jenny ind with moveoutleft
+    $mood = "sad"
     b "-barge in..."
     scene bg mansionmasterbedroom with fade
     $ statusnt("Master Bedroom", "bert", ch=2, sun=2)
     $showchibi("jenny", "dracula", "sam")
+    $mood = "ind"
     b "The master bedroom?"
     show sam:
         xcenter .25
@@ -599,7 +629,7 @@ label mansionGo:
 
 #####
 
-    scene bg mansionbedroom with fade
+    scene bg mansionbedroom1 with fade
     $ statusnt("Bedroom 1", "bert", ch=2, sun=2)
     $showchibi("jenny", "freddy", "lauren")
     show lauren ind with dissolve
@@ -657,7 +687,7 @@ label mansionGo:
 
 ###
 
-    scene bg mansionbedroom with fade
+    scene bg mansionbedroom2 with fade
     $showchibi("jenny")
     $ statusnt("Bedroom 2", "bert", ch=2, sun=3)
     show jenny ind
@@ -665,12 +695,14 @@ label mansionGo:
     j "While we're alone..."
     j "Do the jokes everyone's making about us annoy you as much as they annoy me?"
     b "Yes. Hell yes."
+    $mood = "sad"
     b "I don't get how people can be saying that kind of stuff while our lives are on the line."
     j "Okay, just wanted to make sure we were on the same page."
     b "I'll speak up next time it happens."
     b "..and you should join me in doing so, since I don't think they all take me seriously."
     b "Mostly Dracula, since I'm not admitting my crime."
     b "Even though he's still claiming to be a vampire..."
+    $mood = "ind"
     j "Don't worry about him. He's just a grumpy old man."
     j "He thinks that since he's stuck here with a bunch of \"young\" people he's in charge."
     j "You don't need to tell anyone what your crime is, I wasn't just saying that to protect you."
@@ -743,6 +775,7 @@ label mansionGo:
         bi "Wow, my heart's racing."
     b "Mine's much less... exciting?"
     b "I was 17, driving home after tutoring."
+    $mood = "sad"
     b "This lady was walking on the sidewalk and suddenly walked into the road, without looking..."
     b "The next light was green, so I was going pretty fast, and had barely any time to react."
     b "And... well, I ran into her."
@@ -753,6 +786,7 @@ label mansionGo:
     b "I... moved after that, not wanting to be near that city or that memory."
     b "Moved somewhere where I could take the train to work."
     b "Haven't driven since."
+    $mood = "ind"
     j "..."
     j "I'm so sorry you went through that."
     j "Thank you for telling me. I won't tell anyone else."
@@ -767,7 +801,7 @@ label mansionGo:
     j "Mhm."
     scene black with fade
     bi "We checked the last bedroom door."
-    bi "It seemed to be identical to the rooms."
+    bi "It seemed to be identical to the previous two rooms."
     scene bg mansionhall with fade
     $showchibi("jenny")
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
@@ -778,9 +812,11 @@ label mansionGo:
     b "Let's see what's inside."
     bi "I tried to open the closet door. It was locked."
     b "It won't open..."
+    $mood = "sad"
     b "Last time there was a closet that was locked, it wasn't good news."
     j "Nothing we can do about it besides keep an eye on it though."
     b "Yeah, guess not."
+    $mood = "ind"
     j "I guess that just leaves the bathroom."
     j "Um... you mind checking that out without me?"
     b "Why's that?"
@@ -803,9 +839,11 @@ label mansion1:
     bi "More drawers than I can even think of a use for..."
     bi "I think the knobs on the faucet and in the tub are gold-plated..."
     show bg mansionbr2 with dissolve
+    $mood = "sad"
     bi "And this huge mirror."
     bi "Man, looking at myself, I feel like I've aged 20 years in the past few days."
     bi "This is such a terrifying situation, but..."
+    $mood = "happy"
     show bg mansionbr3
     bi "I'm hopeful we can get everyone on the same page and keep everyone alive."
     bi "Especially with news of this party we're going to throw."
@@ -817,6 +855,7 @@ label mansion1:
     scene bg nmansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Dining Room", "bert", ch=2, sun=3)
+    $mood = "ind"
     b "It's kinda spooky in here with most of the lights off..."
     show sam with dissolve
     s "So Bert, you called this meeting, right?"
@@ -826,7 +865,9 @@ label mansion1:
         linear 0.15 xcenter .25
     show catherine happy with moveinright:
         xcenter .75
+    $mood = "happy"
     c "Yessir! But I'll wait until you're done Bert."
+    $mood = "ind"
     b "Alright. So there's four bedrooms upstairs, each with a twin bed, except the master bedroom that has a bigger bed."
     b "So five of us can sleep pretty easily."
     hide sam with moveoutleft
@@ -848,21 +889,24 @@ label mansion1:
     hide frog with moveoutright
     show stella drunk with moveinright:
         xcenter .75
+    $mood = "sad"
     t "Any young guys want to share the master bedroom with me?"
     t "I think we'd make the best use of it, if you catch my drift."
     #t "Plus a house like this probably has soundproofing."
     show lauren ind:
         xcenter .25
     l "Your libido isn't a valid reason to give you that room."
+    $mood = "shock"
     t "Fine, the lovebirds should have it then?"
     l "Who?"
+    $mood = "ind"
     b "You better not mean me and Jenny."
     b "Just because you're drunk doesn't mean it's any less callous to matchmake people in the middle of a life-or-death scenario."
     t "..."
     t "You're all such killjoys, I remember why I work long hours now."
     t "At least when I'm on the clock people have to respect my whims and fancies."
     t "Fine, if I can't have the master bedroom, I'll take the living room."
-    #t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night."
+    #t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night." #julian break point
     b "I... okay, fine."
     b "I'll volunteer to sleep down here too, since I organized this meeting."
     l "You sure you can deal with Stella?"

@@ -339,6 +339,10 @@ image side notbert = ConditionSwitch('mood==\"happy\" and not cat', 'bdhappy', '
 'mood==\"sad\" and not cat', 'bdsad', 'mood==\"shock\" and not cat', 'bdshock',
 'mood==\"happy\" and cat', 'bcdhappy', 'mood==\"ind\" and cat', 'bcdind',
 'mood==\"sad\" and cat', 'bcdsad', 'mood==\"shock\" and cat', 'bcdshock', xalign=0.13, yalign=0.9)
+#image side dan = ConditionSwitch('mood==\"happy\"', 'dhappy', 'mood==\"ind\"', 'dind',
+#'mood==\"sad\"', 'sad', 'mood==\"mad\"', 'dmad', xalign=0.13, yalign=0.9)
+#image side dan = ConditionSwitch('mood==\"happy\"', 'dhappy', 'mood==\"ind\"', 'dind',
+#'mood==\"sad\"', 'sad', 'mood==\"mad\"', 'dmad', xalign=0.13, yalign=0.9)
 
 define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF", image="bert")
 define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
@@ -418,4 +422,4 @@ label start:
 ###########
     $ _skipping = True
     $ eat = True
-    jump hospitalGo
+    jump mansionGo

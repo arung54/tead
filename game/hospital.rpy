@@ -731,13 +731,13 @@ label hospitalGo:
     bi "I turned to the window and started chatting with the first person I saw."
     scene bg hospkitchenwindow
     show hospwindowoverlay
-    show drac ind behind hospwindowoverlay
+    show drac ind at inwindow behind hospwindowoverlay
     with dissolve
     d "Hello Bert. Are you here to brief us on the other side?"
     b "Uh... I guess I can, yeah."
     d "Let me gather the others then, so you don't have to reexplain anything."
     hide drac with dissolve
-    show frog ind behind hospwindowoverlay with dissolve
+    show frog ind at inwindow behind hospwindowoverlay with dissolve
     f "Bert! Are you okay?"
     b "Oh, hey Freddy. Yeah I'm fine."
     show frog sad
@@ -750,12 +750,12 @@ label hospitalGo:
     show frog ind
     f "Oh. Okay. Is the food almost ready?"
     bi "Children really are whimsical."
-    show frog ind behind hospwindowoverlay:
+    show frog ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show drac ind behind hospwindowoverlay:
+    show drac ind at inwindow behind hospwindowoverlay:
         xcenter .75
-    with dissolve
+    with fade
     bi "Dracula had gathered the others, except for Sam, and returned to the window."
     d "Bert, you may begin your explanation."
     b "Alright..."
@@ -775,7 +775,7 @@ label hospitalGo:
     d "Perhaps if you feel like helping the group, you could sift through the records with the rest of your free time today?"
     b "Uh..."
     hide frog with moveoutleft
-    show lauren ind behind hospwindowoverlay with moveinleft:
+    show lauren ind at inwindow behind hospwindowoverlay with moveinleft:
         xcenter .25
     l "Don't make him waste his time, you've done enough for him already Bert."
     l "If you really wanna know, you can check on your own time Dracula."
@@ -1250,14 +1250,20 @@ label postcupcake:
     j "But no, I found a chess set!"
     j "It was tucked under one of the couches, I guess we didn't search this room deeply enough."
     j "You wanna play a round to kill some time?"
+    $mood = "happy"
     b "Yeah, I'm down."
     b "Feels like everything's been sad since we got here, a game would be a nice change of pace."
     bi "I'm a beast at chess, Jenny better be ready."
-    show bg jennymonika ind
+    hide jenny with dissolve
+    show bg jennymonikaind with fade
     bi "..."
+    $mood = "ind"
+    bi "....."
+    $mood = "sad"
     bi "Hm, a few moves in she's way better than I expected."
     j "Do you play much Bert?"
     j "You're pretty good."
+    $mood = "ind"
     b "I used to play online in my free time in college."
     b "And you?"
     j "Oh, I was a tournament player in high school."
@@ -1303,9 +1309,11 @@ label chess1:
         "Trade rooks":
             bi "I captured her rook, and she captured mine back."
             bi "Okay, now let me move my knight onto the e-file."
+            $mood = "shock"
             bi "...wait, her rook is on the file now and mine isn't."
             bi "I think that trade just gave her free control of the file..."
             j "Frustrated?"
+            $mood = "ind"
             b "Yeah, I don't think I should have made that trade."
             j "It's a common mistake, don't worry."
             jump chess2
@@ -1313,8 +1321,10 @@ label chess1:
         "Move a different piece.":
             $goodmoves = goodmoves + 1
             bi "Nah, I can take some space with my knight in that file."
+            show bg jennymonikablush
             j "Ooh, that's a good move Bert."
             j "I'll have to think about this next one..."
+            show bg jennymonikaind
             bi "She was complementing me, but I was still losing slightly..."
             bi "I guess I'm holding up okay for our respective skill levels though."
             jump chess2
@@ -1329,14 +1339,17 @@ label chess2:
         menu:
             "Go for mate":
                 bi "I made a bold sacrifice to open up her king."
+                $mood = "happy"
                 bi "Yes, it's going exactly as I planned."
                 bi "Just one move and I win!"
                 b "Aha!"
                 j "Huh?"
                 b "I won! Checkmate!"
+                $mood = "shock"
                 j "Bert... my bishop can capture your queen."
                 j "When you moved your pawn my bishop started protecting that square."
                 j "It was a good try though!"
+                $mood = "ind"
                 jump chess3
 
             "Stop her back rank mate":
@@ -1350,8 +1363,10 @@ label chess3:
         bi "Unfortunately, my efforts weren't enough."
         bi "She had a win in two moves."
         bi "Knowing what was coming, I made a useless move and..."
+        $mood = "shock"
         b "Huh?"
         j "Everything okay?"
+        $mood = "ind"
         b "Yeah, just..."
         bi "She's not going for it?"
         bi "She played what was instead a pretty useless move."
@@ -1395,8 +1410,8 @@ label chess3:
         j "I'm not a sadist or anything, so I don't want to force that on you."
         j "Good game Bert! You did really well for someone with your experience level."
     scene bg hospfancy
-    show jenny ind
-    with dissolve
+    show jenny happy
+    with fade
     j "Oh shoot, we really took a long time playing that game."
     j "I'm getting hungry again... maybe because lunch was just soup."
     j "I think it's time to go plan dinner."
@@ -1409,15 +1424,20 @@ label chess3:
     j "Well, it's just veggies like tomatoes and onions, and broths basically..."
     b "Okay, sounds like enough to make... tomato soup."
     show jenny ind
+    $mood = "sad"
     j "Which we had for lunch."
     b "...Onion soup?"
     b "Is that even a thing?"
     j "Uh... it is now!"
+    show jenny happy
+    $mood = "ind"
     b "Onion soup it is."
     bi "We cut some veggies, boiled them in broth..."
+    hide jenny happy with dissolve
     bi "About thirty minutes later we had made... something."
     bi "I took a taste and..."
     b "It's... edible."
+    show jenny happy with dissolve
     b "...Maybe I should have let you cook again."
     j "It's fine Bert, not like we can make a gourmet meal in this kitchen."
     j "Let's get everyone fed before bedtime."
@@ -1425,15 +1445,19 @@ label chess3:
     bi "The others gathered in a line again..."
     scene bg hospkitchenwindow
     show hospwindowoverlay
-    show jenny ind:
+    show jenny happy:
         xcenter .25
     with dissolve
-    show sid smile at inwindow behind hospwindowoverlay with moveinright
+    show sid ind at inwindow behind hospwindowoverlay with moveinright
     i "Oh wow! This smells... wait, what is that smell?"
     bi "Sid took a sip."
+    show sid smile at inwindow behind hospwindowoverlay
     i "Um... thanks guys."
     j "Do you like it, Sid?"
     i "Uh... yeah, I like not being hungry I guess."
+    $mood = "sad"
+    show jenny ind:
+        xcenter .25
     i "Seeya."
     hide sid with moveoutleft
     show shahar ind at inwindow behind hospwindowoverlay with moveinright
@@ -1460,6 +1484,7 @@ label chess3:
     j "If we try to clean up again we might... well... get \"punished.\""
     b "Yeah, not exactly a risk I'm willing to take..."
     scene black with dissolve
+    $mood = "ind"
     bi "We made our way back to the cells."
     scene bg hosphall1
     show jenny ind
@@ -1467,11 +1492,12 @@ label chess3:
     j "Well, looks like that's it for our guard shift, Bert."
     show jenny happy
     j "I'd like to think we did a pretty good job!"
-    b "Collectively maybe I uh... may have indirectly led to one or two people starving to death."
+    b "Collectively maybe. I uh... may have indirectly led to one or two people starving to death."
     j "Oh, don't worry about it."
     j "Remember the train? We were barely scraping by in terms of food."
     j "Everyone will forget about it by the time we're fed tomorrow."
     j "Anyway, we should really get back into our cells. Good night Bert!"
     hide jenny with dissolve
     b "Well, Sesame, let's get some sleep."
+    ses "mrrrrrrrrrrrrrowww"
     scene black with dissolve
