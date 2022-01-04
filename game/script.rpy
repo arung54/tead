@@ -21,6 +21,8 @@ define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
 image behappy = Image("bhappy.png", xcenter=.729, ycenter=.802)
 init python:
+    blank = False
+    dan = True
     mood = "happy"
     cat = False
 image hamster loc:
@@ -331,11 +333,19 @@ init python:
 ##################
 #Character Defines
 ##################
-image side bert = ConditionSwitch('mood==\"happy\" and not cat', 'bhappy', 'mood==\"ind\" and not cat', 'bind',
+image side bert = ConditionSwitch(
+'blank', 'blank',
+'mood==\"happy\" and dan', 'dhappy', 'mood==\"ind\" and dan', 'dind',
+'mood==\"sad\" and dan', 'dsad', 'mood==\"mad\" and dan', 'dmad',
+'mood==\"happy\" and not cat', 'bhappy', 'mood==\"ind\" and not cat', 'bind',
 'mood==\"sad\" and not cat', 'bsad', 'mood==\"shock\" and not cat', 'bshock',
 'mood==\"happy\" and cat', 'bchappy', 'mood==\"ind\" and cat', 'bcind',
 'mood==\"sad\" and cat', 'bcsad', 'mood==\"shock\" and cat', 'bcshock', xalign=0.13, yalign=0.9)
-image side notbert = ConditionSwitch('mood==\"happy\" and not cat', 'bdhappy', 'mood==\"ind\" and not cat', 'bdind',
+image side notbert = ConditionSwitch(
+'blank', 'blank',
+'mood==\"happy\" and dan', 'ddhappy', 'mood==\"ind\" and dan', 'ddind',
+'mood==\"sad\" and dan', 'ddsad', 'mood==\"mad\" and dan', 'ddmad',
+'mood==\"happy\" and not cat', 'bdhappy', 'mood==\"ind\" and not cat', 'bdind',
 'mood==\"sad\" and not cat', 'bdsad', 'mood==\"shock\" and not cat', 'bdshock',
 'mood==\"happy\" and cat', 'bcdhappy', 'mood==\"ind\" and cat', 'bcdind',
 'mood==\"sad\" and cat', 'bcdsad', 'mood==\"shock\" and cat', 'bcdshock', xalign=0.13, yalign=0.9)
