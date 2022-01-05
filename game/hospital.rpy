@@ -33,7 +33,7 @@ label hospitalGo:
     show sesame with dissolve:
         ycenter .61
     ses "Mew!"
-    b happy "Hey Sesame... sorry, I'm a bit tired."
+    b  "Hey Sesame... sorry, I'm a bit tired."
     ses "Hssss!"
     bi "If I had to guess, he was motioning to the doors of the cell."
     bi "...A cell?"
@@ -686,11 +686,17 @@ label hospitalGo:
     b "I guess... I'll just leave it here and let the others know so we're all vigilant about it."
     b "It can be like the kitchen knife in the mansion. If everyone's keeping an eye on it it's not a threat."
     b "I think that's all I have to explore here, time to head to the kitchen."
+label testwindow:
     scene black with dissolve
     scene bg hospkitchen with dissolve
-    $showchibint("jenny") #copy paste
+    $showchibiwindow(["jenny"], [])#copy paste
     $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
+    bi "As I entered the kitchen, I looked through the window to the cafeteria, just to make sure..."
+    $showchibiwindow(["jenny"], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    with dissolve
+    bi "Phew, no one's been punished yet..."
+    bi "They were all there."
     j "Hey Bert, what'd you find?"
     b "Well, there's what looks like a control or security room."
     b "Giant computer, can look at the cafeteria from there."
@@ -725,8 +731,9 @@ label hospitalGo:
     j "Thanks Bert! Just to be safe, if it feels like 20 minutes have passed since I've left turn off the stove then."
     b "Got it, let me know if you find anything I missed."
     j "Will do, seeya Bert!"
-    hide jenny with dissolve
-    $showchibint() #copy paste
+    hide jenny
+    $showchibiwindow([], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    with dissolve
     bi "I guess I haven't talked to the others yet..."
     bi "I turned to the window and started chatting with the first person I saw."
     scene bg hospkitchenwindow
@@ -1325,7 +1332,7 @@ label chess1:
             j "Ooh, that's a good move Bert."
             j "I'll have to think about this next one..."
             show bg jennymonikaind
-            bi "She was complementing me, but I was still losing slightly..."
+            bi "She was complimenting me, but I was still losing slightly..."
             bi "I guess I'm holding up okay for our respective skill levels though."
             jump chess2
 label chess2:
@@ -1501,3 +1508,52 @@ label chess3:
     b "Well, Sesame, let's get some sleep."
     ses "mrrrrrrrrrrrrrowww"
     scene black with dissolve
+    blank "The next day..."
+    intercom "Twilight has begun. You must leave your room before daytime."
+    scene bg hosproom1 with dissolve
+    $ statusnt("Cell", "bert", ch=3, sun=0)
+    $cat = False
+    $mood = "ind"
+    b "Yawn..."
+    bi "The intercom wouldn't have been necessary, my stomach rumbling was about as loud..."
+    b "Damn, I'm hungry."
+    b "Neither meal yesterday was really that filling..."
+    show sesame with dissolve:
+        ycenter .61
+    ses "Mew!"
+    b "Morning Sesame."
+    b "I'm weirdly excited for today... being on the guard side was quite lonely."
+    b "Not that Jenny isn't good company, but it often felt like it was just the two of us..."
+    b "Now we can actually talk to everyone without a literal wall between us."
+    ses "Mew?"
+    b "Um... do cats understand how windows work?"
+    b "...Do you even understand what I'm saying?"
+    ses "Prrr."
+    b "I guess not..."
+    b "Well, let's get going, don't want to get punished!"
+    hide sesame with dissolve
+    $cat = True
+    b "Wait... is there a chance I'm a guard today?"
+    b "The rules never said someone couldn't be a guard twice..."
+    bi "I tried the guard door, but it was firmly in place."
+    bi "Which means..."
+    b "I guess we're off to the cafeteria."
+    scene bg hospcommons with fade
+    $showchibiwindow(["lauren", "freddy"], [])
+    with dissolve
+    show lauren ind:
+        xcenter .25
+    show frog ind:
+        xcenter .75
+    with dissolve
+    l "Morning Bert, you're up earlier than last time."
+    b "My stomach served as an alarm clock today."
+    l "Yeah, whoever made dinner yesterday didn't make a very filling meal."
+    f "Sheeeeeesh!"
+    b "Har har. Very funny."
+    bi "Others slowly started filtering in."
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], [])
+    with dissolve
+    b "That's all but two of us, which means..."
+    l "Dracula and Sid are guards."
+    l "Poor Sid, I wouldn't want to be alone for an extended period of time."

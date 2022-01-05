@@ -20,11 +20,6 @@ image darken = "welcomescreenblank.png"
 define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
 image behappy = Image("bhappy.png", xcenter=.729, ycenter=.802)
-init python:
-    blank = False
-    dan = True
-    mood = "happy"
-    cat = False
 image hamster loc:
     "bertfrlgb.png"
     pause .1
@@ -115,6 +110,11 @@ $ passattempts = 1
 #Toggle Dev
 ##############
 
+init python:
+        noside = False
+        dan = False
+        mood = "happy"
+        cat = False
 init python:
     config.developer = True
     config.debug_sound = False
@@ -330,11 +330,55 @@ init python:
             renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
             y += 50
 
+
+    def showchibiwindow(inlist, outlist):
+        inchibi = [j + "chibi" for j in inlist]
+        outchibi = [j + "chibi" for j in outlist]
+        currchibis = list()
+        for i in renpy.get_showing_tags():
+            if i.endswith("chibi"):
+                currchibis.append(i)
+
+        toremove = list()
+        for i in currchibis:
+            if i not in inchibi + outchibi:
+                toremove.append(i)
+        toadd = list()
+        for i in inchibi + outchibi:
+            if i not in currchibis:
+                toadd.append(i)
+        tostay = list()
+        for i in inchibi + outchibi:
+            if i in currchibis:
+                tostay.append(i)
+
+        for i in toremove:
+            renpy.hide(i)
+
+        yin = 20
+        yout = 20
+        for i in tostay:
+            renpy.hide(i)
+            if i in inchibi:
+                renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, yin))])
+                yin += 50
+            if i in outchibi:
+                renpy.show(i, at_list = [Transform(zoom=1.5, pos=(70, yout))])
+                yout += 50
+
+        for i in toadd:
+            if i in inchibi:
+                renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, yin))])
+                yin += 50
+            if i in outchibi:
+                renpy.show(i, at_list = [Transform(zoom=1.5, pos=(70, yout))])
+                yout += 50
+
 ##################
 #Character Defines
 ##################
 image side bert = ConditionSwitch(
-'blank', 'blank',
+'noside', 'blank',
 'mood==\"happy\" and dan', 'dhappy', 'mood==\"ind\" and dan', 'dind',
 'mood==\"sad\" and dan', 'dsad', 'mood==\"mad\" and dan', 'dmad',
 'mood==\"happy\" and not cat', 'bhappy', 'mood==\"ind\" and not cat', 'bind',
@@ -342,7 +386,7 @@ image side bert = ConditionSwitch(
 'mood==\"happy\" and cat', 'bchappy', 'mood==\"ind\" and cat', 'bcind',
 'mood==\"sad\" and cat', 'bcsad', 'mood==\"shock\" and cat', 'bcshock', xalign=0.13, yalign=0.9)
 image side notbert = ConditionSwitch(
-'blank', 'blank',
+'noside', 'blank',
 'mood==\"happy\" and dan', 'ddhappy', 'mood==\"ind\" and dan', 'ddind',
 'mood==\"sad\" and dan', 'ddsad', 'mood==\"mad\" and dan', 'ddmad',
 'mood==\"happy\" and not cat', 'bdhappy', 'mood==\"ind\" and not cat', 'bdind',
@@ -430,6 +474,4 @@ label start:
 ###########
 #Start
 ###########
-    $ _skipping = True
-    $ eat = True
-    jump mansionGo
+    jump testwindow
