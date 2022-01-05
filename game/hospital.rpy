@@ -1556,4 +1556,7 @@ label chess3:
     with dissolve
     b "That's all but two of us, which means..."
     l "Dracula and Sid are guards."
-    l "Poor Sid, I wouldn't want to be alone for an extended period of time."
+    l "Poor Sid, I wouldn't want to be alone with Dracula for an extended period of time."
+    b "I mean, Sam did it for a bit and lived..."
+    l "Yeah, but Sam's more... spunky."
+    l "Or at least, was."

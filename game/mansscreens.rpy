@@ -6,57 +6,57 @@ screen mansMap():
         ground "map2ui.png"
         hotspot(762, 310, 155, 174):
             action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("kitchen", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay1.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay3.png")
+            unhovered Hide("mansPreview")
         hotspot(920, 311, 329, 175):
             action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("dining", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay1.png")
+            unhovered Hide("mansPreview")
         hotspot(1090, 489, 160, 195):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("garage", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
+            unhovered Hide("mansPreview")
         hotspot(153, 471, 561, 69):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("hallway", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay4.png")
+            unhovered Hide("mansPreview")
         hotspot(153, 539, 77, 145):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("hallway", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay4.png")
+            unhovered Hide("mansPreview")
         hotspot(152, 310, 156, 157):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay6.png")
+            unhovered Hide("mansPreview")
         hotspot(307, 310, 83, 83):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay6.png")
+            unhovered Hide("mansPreview")
         hotspot(497, 310, 218, 158):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay6.png")
+            unhovered Hide("mansPreview")
         hotspot(234, 544, 225, 140):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay6.png")
+            unhovered Hide("mansPreview")
         hotspot(463, 543, 251, 141):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("masterBedroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay8.png")
+            unhovered Hide("mansPreview")
         hotspot(393, 310, 101, 158):
             if ftecounter != 4:
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bathroom", transition=Dissolve(0.3)), Hide("mansMap"), Hide("mansPreview")]
-            # hovered ShowTransient("mansPreview", img="mansMapoverlay2.png")
-            # unhovered Hide("mansPreview")
+            hovered ShowTransient("mansPreview", img="mansMapoverlay5.png")
+            unhovered Hide("mansPreview")
 
     imagemap:
         idle "trainMapoverlayleft.png"
