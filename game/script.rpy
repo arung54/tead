@@ -474,4 +474,4 @@ label start:
 ###########
 #Start
 ###########
-    jump testwindow
+    jump mansion1

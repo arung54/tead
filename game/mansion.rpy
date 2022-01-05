@@ -571,7 +571,7 @@ label mansionGo:
     show jenny ind with moveinleft:
         xcenter .5
     j "Okay, so this is the upstairs, huh?"
-    b "Prety spacious hallway."
+    b "Prety spacious ."
     j "It seems like there are 1,2,3,4,5,6 doors up here!"
     j "Let's check them out from left to right!"
     b "I hear some murmuring coming from that room already..."
@@ -906,11 +906,13 @@ label mansion1:
     t "You're all such killjoys, I remember why I work long hours now."
     t "At least when I'm on the clock people have to respect my whims and fancies."
     t "Fine, if I can't have the master bedroom, I'll take the living room."
-    #t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night." #julian break point
+    #t "I plan to stay up drinking, a couch to crash on is the perfect ending to that sort of night."
     b "I... okay, fine."
     b "I'll volunteer to sleep down here too, since I organized this meeting."
     l "You sure you can deal with Stella?"
+    $mood = "sad"
     b "Uh, no, but I'm not sure anyone here really can."
+    $mood = "ind"
     b "Okay, that leaves one more person that needs to sleep out on a couch."
     b "Any volunteers?"
     hide stella
@@ -923,6 +925,7 @@ label mansion1:
     hide jenny
     show shahar ind
     h "Arr, I'll do it!"
+    $mood = "sad"
     h "Stella's got a point, the living room's right next to the kitchen and the kitchen has drinks!"
     bi "...guess I'm sleeping with the drunkards."
     show shahar ind:
@@ -940,6 +943,7 @@ label mansion1:
     with dissolve
     show catherine happy
     c "Oh, I had an idea about that!"
+    $mood = "ind"
     c "Sid, you seemed really excited to be in a nice house."
     show catherine happy:
         xcenter .5
@@ -949,6 +953,7 @@ label mansion1:
     i "Oh... yeah, my family isn't that well off so... this is the nicest place I've ever been in."
     c "I say we give Sid a treat and let him take the master bedroom!"
     c "He should get to know what a bougie life is like."
+    $mood = "happy"
     b "That's a really kind idea, Catherine."
     show sid happy:
         xcenter .75
@@ -957,6 +962,7 @@ label mansion1:
     show sam with moveinleft:
         xcenter .25
     s "Wait, are we really going to trust what Sid says at face value?"
+    $mood = "ind"
     s "He could just be lying about being poor so we're nicer to him."
     show sid ind:
         xcenter .75
@@ -974,6 +980,7 @@ label mansion1:
     show catherine ind:
         linear .3 xcenter .45
     bi "Catherine got closer to Sam and whispered, just barely loud enough for me to hear."
+    $mood = "shock"
     c "Do we need to bring up the fact that Sid got close to Dan before he died?"
     s "No..."
     hide sam with moveoutleft
@@ -982,6 +989,7 @@ label mansion1:
         linear .3 xcenter .75
     show sid ind with moveinleft:
         xcenter .25
+    $mood = "ind"
     c "Room's all yours Sid."
     c "Well, yours and one other person's."
     show sid happy:
@@ -1000,8 +1008,10 @@ label mansion1:
     i "Also, I don't think I can share a b-bed with Jenny or Catherine."
     i "Shahar and Bert are already sleeping in the living room."
     i "So you're pretty much the only option I have."
+    $mood = "sad"
     bi "Well, I wouldn't mind switching..."
     bi "Not that anyone would be down to take my spot."
+    $mood = "ind"
     i "Plus, you claim you don't sleep, so I'd have someone protecting me all night!"
     d "Reasonable enough for me."
     hide drac with moveoutright
@@ -1027,6 +1037,7 @@ label mansion1:
     show catherine happy:
         xcenter .75
         linear 0.15 xcenter .5
+    $mood = "happy"
     b "Guess we've figured that out. Catherine, do you want to tell them about your announcement?"
     c "Oh yeah!"
     c "So I was thinking tomorrow evening we could have a dinner party!"
@@ -1045,6 +1056,7 @@ label mansion1:
     hide catherine with moveoutright
     show lauren ind with moveinright:
         xcenter .75
+    $mood = "ind"
     l "Don't overdo it."
     t "Girly, I've never drank too much in my life."
     t "I have a liver of iron."
@@ -1090,15 +1102,17 @@ label mansion1:
     h "On the sea we don't have meetings, we just sail with the flow."
     h "..."
     h "I fell asleep fer most of that discussion to be honest."
+    $mood = "sad"
     b "...you fell asleep?"
     h "Aye! If I can sleep on a stormy sea, I can sleep through anything."
     h "Plus, I'm loaded with rum and whiskey."
     bi "...I hope that doesn't stop him from sleeping tonight."
+    $mood = "ind"
     b "Yeah, if no one else has anything to bring up, everyone can go."
     hide shahar with dissolve
     bi "Everyone except Catherine and Freddy slowly left."
     $showchibi("catherine", "freddy")
-    $ statusnt("Dining Room", "bert", ch=2, sun=4)
+    $statusnt("Dining Room", "bert", ch=2, sun=4) #Bug julian
     show frog ind with dissolve:
         xcenter .25
     show catherine happy with dissolve:
@@ -1109,10 +1123,12 @@ label mansion1:
     c "Sesame will eat pretty much anything left out, and there's... stuff in there cats shouldn't eat or drink."
     f "Yeah!"
     bi "Catherine turned and whispered to me."
+    $mood = "shock"
     c "Alcohol can kill cats in small doses, and I expect Shahar and Stella might have left an open bottle around."
     bi "With that dark comment, she went to the kitchen."
     hide catherine with dissolve
     $showchibi("freddy")
+    $mood = "ind"
     bi "Seems like there's still some time before we're going to sleep."
     bi "Guess I should find someone to talk to."
     play sfx "audio/beep.mp3"
@@ -1161,10 +1177,13 @@ label postFT2:
         xcenter .75
     h "Well lad, looks like it's just you, me, the lady, and the rum!"
     t "And duh vodka, tequila, and all duh other drinks."
+    $mood = "sad"
     b "...how much have you guys had to drink already?"
     h "Oh, just-ish one shot lad."
+    $mood = "happy"
     b "Oh, that's not that-"
     h "every 15 minutes, each."
+    $mood = "sad"
     b "...and it's been roughly two hours."
     t "Math's for duh losers, not for me."
     t "Bert, you're gonna get drunk with us, right?"
@@ -1183,6 +1202,7 @@ label postFT2:
     t "Do you want to hear about my love life?"
     b "Uh..."
     b "I guess more than I want to hear about you trying to matchmake me."
+    $mood = "ind"
     t "Alright, but if you fall asleep we're slapping you awake."
     hide shahar with moveoutleft
     show stella drunk:
@@ -1205,8 +1225,10 @@ label postFT2:
     t "What is this, an interrogation? Did someone commit duh murder while we were drinking? Hahaha!"
     b "Sorry, just trying to make conversation."
     t "Fine. Thing is, kid, retired life's boring if you don't have a passion."
+    $mood = "sad"
     bi "I don't really like that she keeps calling me kid..."
     t "Right now, my only passion is ruthless business."
+    $mood = "ind"
     t "It's a sinister passion, but it's duh only thing I'm good at."
     t "Well, that and holding my liquor."
     t "And wrapping cute young guys around my thumb."
@@ -1221,11 +1243,9 @@ label postFT2:
     b "Hey, can I ask..."
     b "Why are you two drinking so much?"
     b "Are you not scared about our current circumstances?"
-    t "Bert, come sit with me for a minute."
-    t "Just you and me."
-    hide stella with dissolve
-    b "Um, okay..."
-    show bg stellasit1 with dissolve
+    show stella drunkind
+    t "Bert, Bert, Bert..."
+    bi "She came a bit closer to me."
     t "Tell me."
     t "Is there anything you've done today you feel like has been useful?"
     b "Well, I figured out our sleeping situation."
@@ -1234,12 +1254,15 @@ label postFT2:
     b "...What does that mean?"
     t "Were those things really that useful?"
     t "Did they get us any closer to getting out of here?"
+    $mood = "sad"
     b "I... no, but."
     t "If you hadn't stepped up we would've figured out where to sleep eventually."
     t "And exploring the mansion is the bare minimum you can do."
+    show stella drunk
     t "It's like saying you used the toilet today, haha!"
     b "..."
     t "Here, I'll be more useful than you were all day, with one sentence."
+    $mood = "shock"
     t "Duh guy in the painting? His name's Mr. Sydell."
     b "Huh? Why didn't you mention this before?"
     t "I only just remembered his name."
@@ -1248,13 +1271,14 @@ label postFT2:
     t "But I think at at some point my company sunk his into duh ground."
     t "I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
     t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
+    $mood = "ind"
     bi "Sydell... I don't think I've heard the name before."
     bi "Would anyone confess to knowing him?"
-    show bg stellasit2
     t "Here, I'll get you started."
-    show shahar peek with moveinleft:
-        xcenter .08
-        ycenter .378
+    show shahar drunk with moveinleft:
+        rotate 30
+        xcenter .05
+        ycenter .5
     t "Hey Shahar, ever heard of Mr. Sydell?"
     h "Is that a fellow pirate?"
     h "Unless he's a ocean lover like myself, I reckon I don't know him lad."
@@ -1266,8 +1290,9 @@ label postFT2:
     t "Someone already has been assigned to murder, someone's going to have to be their victim."
     t "It's not like we're investing, nothing you do will save them."
     t "If that's the case, why not relax?"
+    $mood = "sad"
     b "Isn't that too fatalistic?"
-    show bg stellasit1
+    show stella drunkind
     t "That's being realistic."
     t "Take it from someone who works 16 hour days."
     t "Sometimes, there's nothing you can do about a shitty thing."
@@ -1278,12 +1303,11 @@ label postFT2:
     t "I've given up."
     b "..."
     t "Hey Pirate boy, whatcha doin over there?"
-    show bg nmansiondining
+    show stella drunk:
+        linear .3 xcenter .75
     show shahar drunk:
         xcenter .25
-    with dissolve
-    show stella drunk with dissolve:
-        xcenter .75
+    with moveinleft
     t "Can I get you a shot of something? You've been awfully quiet."
     h "Ay, was I? I kind of dozed off."
     t "Oh c'mon, you're not gonna let this little lady out-drink a buff man like you, are ya?"
@@ -1291,6 +1315,7 @@ label postFT2:
     t "I thought you needed to find one a while ago."
     t "Don't pirates drink a lot? This feels very uncharacteristic for one."
     h "Aye, I just... haven't been out to sea in a while."
+    $mood = "ind"
     b "Oh? Why's that?"
     h "I'd rather not talk about it laddy, you don't ask a man why he hasn't had a lover in a while."
     h "And the sea is my love."
@@ -1341,6 +1366,7 @@ label postFT2:
     h "Oh, I wonder if this mansion's got any treasure we can plunder?"
     b "...you want to steal something to bring with you when you get out?"
     h "Aye! Least we can do to pass the time."
+    $mood = "sad"
     b "Or, we could pass the time by sleeping."
     t "I don't know if I can approve of stealing from duh rich given... well, you know."
     h "Aye lass, it's not like I'm pillaging your village!"
@@ -1361,6 +1387,7 @@ label postFT2:
     t "C'mon, let's go steal something!"
     h "Aye, a good pirate adventure!"
     b "If I join will you let me sleep after this?"
+    $mood = "ind"
     h "Fine with me lad."
     t "Fine, buzzkill. Have it your way."
     b "So uh... what exactly are we stealing?"
@@ -1377,11 +1404,13 @@ label postFT2:
     hide stella
     hide shahar
     with moveoutright
+    $mood = "sad"
     bi "Stella was off before we could even get started."
     bi "Dracula's probably not going to be very happy about our noise level after this..."
     scene black with fade
     scene bg nmansionhall with fade
     $showchibi("shahar", "stella")
+    $statusnt("Upstairs Hallway", "bert", ch=2, sun=4)
     show stella drunk:
         xcenter .75
     show shahar drunk:
@@ -1405,15 +1434,18 @@ label postFT2:
     $showchibi()
     bi "You know, I could just go to sleep now."
     bi "But I get the feeling Stella will force me awake if I try."
+    $mood = "ind"
     b "Sigh."
     b "Okay, to the bathroom we go."
     scene black with fade
     scene bg mansionbr
+
     show stella drunk:
         xcenter .75
     show shahar drunk:
         xcenter .25
     with fade
+    $statusnt("Bathroom", "bert", ch=2, sun=4)
     $showchibi("shahar", "stella")
     h "Ay lad, what took ye so long!"
     b "We should really be quieter, there are people sleeping on the other side of these walls."
@@ -1431,13 +1463,15 @@ label postFT2:
     b "It looks nicer but still lets a plumber work on the sink."
     b "...aren't you rich Stella? Why didn't you think of this?"
     t "I'm drunk, Killjoy."
-    t "I'm not here for thinking, I'm here for doing!"
+    t "I'm not here for thinking, I'm here for DOING!"
     #t "If you know what I mean."
     #b "You... don't need to keep saying that."
+    $mood = "shock"
     b "Shhh, stop screaming!"
     t "Plus, it wouldn't be very ladylike of me to bend down and try to look down there."
     t "Killjoy, you mind doing it?"
     h "Why not Shahar?"
+    $mood = "ind"
     t "I don't think his muscles will fit in the cabinet."
     bi "Hm... if I lie about it, maybe they'll give up."
     b "Okay, going in."
@@ -1459,12 +1493,15 @@ label postFT2:
     h "By Davy Jones... this plundering mission might be over lads."
     h "Oh well, it was a noble effort! Let's go sleep."
     t "Ugh, fine. I'm starting to come down anyway."
+    $mood = "happy"
     bi "Finally..."
     scene black with fade
     bi "With that, we headed downstairs and finally went to sleep."
     pause 1
+    $mood = "ind"
     blank "The next morning..."
     scene bg mansiondining with fade
+    $statusnt("Dining Room", "bert", ch=2, sun=1)
     bi "..."
     bi "What time is it?"
     $showchibi("shahar", "stella")
@@ -1475,8 +1512,10 @@ label postFT2:
     b "How... how early is it?"
     c "I haven't checked the clock in the garage, but I think most of us got eight hours of sleep."
     c "You probably had less, I heard about your adventures last night from Sam on the way down."
+    $mood = "sad"
     b "Oh... yeah, that'd explain why I'm so tired."
     b "What are you doing down here before everyone else?"
+    $mood = "ind"
     c "I'm getting ready for the party tonight!"
     c "Going to be cooking all day pretty much, we have a feast planned."
     c "Freddy offered to \"take care\" of Sesame today, which is great since I don't want his fur or anything getting in the food."
@@ -1485,6 +1524,7 @@ label postFT2:
     c "Yeah, raw meat can contain bacteria that can kill cats."
     #c "There's some other stuff that's not lethal but a little bit risky, like yeast and chocolate."
     b "Well, at least Freddy will be distracted for a bit."
+    $mood = "happy"
     c "Yeah! Anyway, I should go get started. Have a good day Bert!"
     b "Thanks Catherine, let us know if we can help with cooking."
     c "Will do!"
@@ -1492,6 +1532,7 @@ label postFT2:
     c "Oh?"
     hide catherine
     show catherine nocat
+    $mood = "ind"
     b "Stella said the guy in the picture is a Mr. Sydell. You ever seen or heard of him?"
     c "Hmm... no, can't say that I have. Unless he was an extra in one of the dramas I watched."
     c "But extras probably don't make enough money to live somewhere like here, right?"
@@ -1509,6 +1550,7 @@ label postFT2:
     bi "If that's the truth, what reason would she have to come to his mansion? She'd probably send a henchman."
     bi "Plus, it might make me look more suspicious if I seem to know about the guy..."
     bi "Catherine's lighthearted enough to not really care if I ask, but someone like Dracula might be."
+    $mood = "sad"
     bi "Speaking of which..."
     $showchibi("shahar", "stella", "dracula")
     show drac ind with dissolve
@@ -1518,6 +1560,7 @@ label postFT2:
     b "Sorry, I can't really do much to control the drunkards."
     b "I did try to at least get them to sleep as early as I could..."
     d "I suppose it's not your fault if you tried."
+    $mood = "ind"
     d "Well, that is all I wished to say. I am returning to my room to think."
     d "If you wish to talk, I will be in there, although we should perhaps wait until Sid is awake."
     b "Okay, have a good day."
@@ -1530,6 +1573,7 @@ label postFT2:
     bi "Wouldn't want to distract Shahar and Stella's beauty sleep..."
     scene black with fade
     scene bg mansionhall with fade
+    $statusnt("Upstairs Hallway", "bert", ch=2, sun=1)
     $showchibi("jenny", "sam")
     show jenny happy:
         xcenter .25
@@ -1578,6 +1622,7 @@ label postFT2:
 label postFT3:
     $ftecounter = 4
     scene bg mansiondining with fade
+    $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibi("shahar", "stella")
     bi "Well, I still have a tiny amount of time to kill before the party."
     $showchibi("shahar", "stella", "lauren")
@@ -1590,7 +1635,8 @@ label postFT3:
     l "Cool, thanks. They both should still be in our bedroom right now."
     l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on the party right now."
     scene black with fade
-    scene bg mansionbedroom with fade
+    scene bg mansionbedroom1 with fade
+    $statusnt("Bedroom", "bert", ch=2, sun=2)
     $showchibi("freddy")
     show frog ind with dissolve
     f "Oh, hi mister!"
@@ -1600,6 +1646,7 @@ label postFT3:
     f "Huh?"
     b "Never mind."
     f "Check out all these tricks Sesame can do!"
+    $mood = "shock"
     b "Tricks?"
     f "Yeah! Catherine trained Sesame really well!"
     bi "Turns out, Sesame was trained more like a dog than a cat."
@@ -1607,6 +1654,7 @@ label postFT3:
     f "Sesame and Catherine are really close!"
     f "So he's much easier to train than other cats, she says."
     b "That's rather impressive."
+    $mood = "ind"
     bi "And convenient for keeping Freddy's mind distracted."
     b "So uh..."
     bi "I'm still not great at making conversation with the kid..."
@@ -1634,6 +1682,7 @@ label postFT3:
     b "That's... huh. {i}Do{/i} you know what your dad does?"
     f "N-no... after that day I felt like it was better not to ask."
     f "I just know he's not around a lot and is angry all the time."
+    $mood = "sad"
     b "Do you get to meet other kids still?"
     f "Not really, no."
     f "My mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me..."
@@ -1642,6 +1691,7 @@ label postFT3:
     show frog ind
     f "Maybe? It's okay though! My mom loves me a lot."
     f "And if I behave my dad gets me whatever I want!"
+    $mood = "ind"
     b "Well, as long as you're happy..."
     bi "That sounds like a really sad existence."
     bi "I do have to wonder though... is Freddy really a criminal?"
@@ -1682,6 +1732,7 @@ label postFT3:
     #f "Can't I stay here?"
     #l "Sorry Freddy, I think it's safest if you're with the group."
     #l "Besides, you gotta eat dinner eventually."
+    $mood = "happy"
     l "I'm sure you'll have a great time at the party, hanging out with us!"
     f "O-okay..."
     l "Let's head downstairs?"
@@ -1689,6 +1740,7 @@ label postFT3:
     bi "Oh boy, I can't wait to eat!"
     scene black with fade
     scene bg mansionhall with fade
+    $statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
     bi "..."
     bi "Should I check the closet again?"
     bi "Nah, I'm probably just being paranoid. Besides, there's food waiting for me!"
@@ -1697,11 +1749,13 @@ label postFT3:
     scene black with fade
     scene bg mansiondining with fade
     $showchibi("dracula", "freddy", "lauren", "shahar", "sid", "stella")
+    $statusnt("Dining Room", "bert", ch=2, sun=2)
     show sid ind:
         xcenter .25
     show drac ind:
         xcenter .75
     with dissolve
+    $mood = "ind"
     i "My first dinner party, I'm so excited!"
     d "Hopefully your first of many. I've hosted quite a few in my lair before."
     i "Your lair?"
@@ -1722,14 +1776,17 @@ label postFT3:
     #bi "Hopefully I defused that conversation..."
     scene black with fade
     scene bg mansionkitchen with fade
+    $statusnt("Kitchen", "bert", ch=2, sun=2)
     $showchibi("catherine", "jenny", "sam")
     show jenny happy with dissolve
+    $mood = "happy"
     j "Hey Bert! Whatcha up to?"
     b "Just came to see if I could help with finishing dinner."
     j "You just want to be the first to get served, don't you."
     b "...maybe."
     b "Regardless, is everything going smoothly here?"
     j "Mostly yeah."
+    $mood = "ind"
     b "Mostly?"
     j "The display for the clocks on the stove and microwave aren't working anymore for some reason."
     j "So we've been using the clock from the garage to manually time everything."
@@ -1775,6 +1832,7 @@ label postFT3:
     j "Thanks Bert, now go out and party!"
     scene black with fade
     scene bg mansiondining with fade
+    $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
     bi "Hm... I guess I have nothing to do besides mingle until food gets here."
     bi "Who should I talk to?"
@@ -1785,7 +1843,7 @@ label postFT3:
     pause 2
     hide freetime with dissolve
     bi "I don't want to miss the food getting served, so I probably should stay in the dining room and kitchen."
-    #FT4 to be inserted here.
+    #FT4 to be inserted here. This is what Julian got up to for STATUS and MOODS
 label postFT4:
     scene bg mansiondining with fade
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
@@ -3232,7 +3290,7 @@ label trial2o:
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     bi "..."
     bi "It comes down to this."
-    bi "Are we going to cooperate?" #JULIAN
+    bi "Are we going to cooperate?"
     show sam with dissolve
     bi "Or will Sam lie and indirectly save someone else in the process..."
     b "Sam."
