@@ -1555,8 +1555,144 @@ label chess3:
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], [])
     with dissolve
     b "That's all but two of us, which means..."
-    l "Dracula and Sid are guards."
+    l "Dracula and Sid are the guards."
     l "Poor Sid, I wouldn't want to be alone with Dracula for an extended period of time."
     b "I mean, Sam did it for a bit and lived..."
     l "Yeah, but Sam's more... spunky."
     l "Or at least, was."
+    l "Sid'll stand up for himself, don't get me wrong, but I don't think he can..."
+    l "Well, control Dracula at all."
+    b "Speaking of Sid..."
+    bi "Sid had entered the kitchen."
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    b "Looks like he wants to talk to us."
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind at inwindow behind hospwindowoverlay2
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    with dissolve
+    i "Hey guys."
+    b "Where's Dracula?"
+    i "Oh, is he the other guard today?"
+    b "You didn't know?"
+    i "I just woke up and came here because I was hungry, and assumed you all were too..."
+    i "I didn't see him on my way here."
+    b "Maybe he hasn't woken up yet?"
+    b "You're in the same hallway as me, Dracula is in the other, so..."
+    b "If he hasn't left his cell, you wouldn't have seen him."
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    l "I doubt he's still asleep, we haven't heard an announcement yet..."
+    l "Maybe he's exploring?"
+    b "Explore? Me and Jenny checked everything..."
+    l "Dracula might not trust what you said..."
+    l "Or even if he does, he's the type who wants to double-check it."
+    l "Remember in the trial when he knew what happened but made you say it?"
+    l "So that he could be sure you arrived at that conclusion independently."
+    b "I guess..."
+    l "I think we should establish a system where the guards meet up in the morning."
+    l "So we can keep an eye on everyone and make sure no one's planning a murder..."
+    i "Anyway um... what should I make for lunch?"
+    show jenny ind:
+        xcenter .25
+    with dissolve
+    j "Have you looked in the fridge yet?"
+    i "No, I wanted to talk to you guys first..."
+    j "It's mostly just very basic ingredients..."
+    i "I don't know if I want soup for a third meal in a row..."
+    j "Well if you don't want to use the broths you basically just have veggies..."
+    i "You can make a salad from just veggies, right?"
+    j "I guess... it probably won't be very appetizing, but it'll be healthy."
+    i "There has to be {i}something{/i} I can use to add flavor, right?"
+    i "Like, I dunno, ranch dressing? Hot sauce?"
+    j "If you find some by all means!"
+    i "Okay, guess I'll get started."
+    hide sid with dissolve
+    scene bg hospcommons
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    j "I hope he finds something... it sounds like his salad won't have much flavor."
+    l "He's just a kid from a not-so-great upbringing, we can't expect gourmet meals."
+    l "Plus we're in a death game, I'm not too fussed about our meals."
+    bi "Didn't she criticize my cooking?"
+    l "Unless it gives me a shot to make a joke at Bert's expense, of course..."
+    b "Har har."
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
+    b "Oh, Dracula's here?"
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show drac ind at inwindow behind hospwindowoverlay2
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
+    with dissolve
+    d "Hello, all."
+    b "Hey Dracula, where were you this morning?"
+    d "What do you mean? I was on this side of the floor."
+    b "No, I got that..."
+    bi "How dumb does he think I am?"
+    b "Sid said he didn't see you this morning on this way here."
+    d "Oh, I was looking around, making sure you and Jenny hadn't missed anything."
+    d "I'm pretty sure I checked everything."
+    d "Well, except the entirety of the records."
+    d "I looked through the first 30 or so records and increasingly felt it was not a good use of time."
+    d "Bert, you said you saw no recognizable names in there, right?"
+    d "If not I will not pursue that line of investigation further."
+    bi "Right, have to keep Shahar a secret."
+    bi "Better to prevent him from continuting to search..."
+    b "No, I didn't see anything noticable."
+    d "Alright, that settles it then."
+    d "I will remain here from the time being until lunch is ready, I see Sid has started."
+    d "In fairness' sake I will make dinner then."
+    d "In the mean time, if you wish to talk, I will be here."
+    scene bg hospcommons
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    with dissolve
+    b "Well, I guess I have some time to kill until lunch..."
+    b "Who to talk to?"
+    blank "FREE TIME 6 HERE"
+    scene bg hospcommons
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    with dissolve
+    bi "After chatting a bit, Sid talked to us through the window."
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind at inwindow behind hospwindowoverlay2
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
+    with dissolve
+    i "Hey, I want to go check out that computer."
+    i "I'm pretty good with tech, maybe there's some hidden files or something I can find."
+    show drac ind at inwindow behind hospwindowoverlay2 with moveinright:
+        xcenter .75
+    d "You're awfully good at computers for someone nominally from a poor family..."
+    show lauren ind:
+        xcenter .25
+    l "Hey, back off."
+    l "Don't shame him for his past."
+    d "I wasn't shaming him for being poor. There is nothing wrong with that."
+    d "Just making an observation."
+    l "Make less observations like that then."
+    i "No, no, Lauren, it's okay..."
+    i "I... think I should explain."
+    i "Just so people don't suspect me of anything."
+    i "My family was actually doing pretty well when I was born."
+    i "Back then I had a lot of free time so I played games on the computer a lot."
+    i "There was one game where you could make custom game modes."
+    i "When I was playing that game, I learned to code."
+    i "I wasn't very good at school but I was good at coding."
+    i "I eventually started doing it on the side to make some pocket money."
+    i "At first it was just stuff like making small apps, but..."
+    i "Eventually I got into ethical hacking."
+    i "That's how I learned about coding."
+    l "Ethical hacking?"
+    i "Well, normally hackers are bad."
+    i "Stealing credit card numbers from websites..."
+    i "DDOSing servers to take down services."
+    i "Ethical hacking is about finding those vulnerabilities too..."
+    i "But telling developers about them and how to fix them."
+    i "It was a fun challenge, like trying to invade a fortress."
+    i "Didn't pay as well, not every company will pay you for it."
+    i "Some just send you a thank you and never talk to you."
