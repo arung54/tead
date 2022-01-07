@@ -1548,6 +1548,7 @@ label chess3:
     with dissolve
     l "Morning Bert, you're up earlier than last time."
     b "My stomach served as an alarm clock today."
+    b "I'm really hungry..."
     l "Yeah, whoever made dinner yesterday didn't make a very filling meal."
     f "Sheeeeeesh!"
     b "Har har. Very funny."
@@ -1663,7 +1664,7 @@ label chess3:
     show sid ind at inwindow behind hospwindowoverlay2
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     with dissolve
-    i "Hey, I want to go check out that computer."
+    i "Hey, I finished making a salad, I want to go check out that computer."
     i "I'm pretty good with tech, maybe there's some hidden files or something I can find."
     show drac ind at inwindow behind hospwindowoverlay2 with moveinright:
         xcenter .75
@@ -1675,17 +1676,21 @@ label chess3:
     d "I wasn't shaming him for being poor. There is nothing wrong with that."
     d "Just making an observation."
     l "Make less observations like that then."
+    d "We need to trust each other fully to narrow down who the Game Master is, yes?"
+    d "I don't trust Sid based on this seeming contradiction."
+    l "And no one trusts that you're a vam{nw}"
     i "No, no, Lauren, it's okay..."
     i "I... think I should explain."
     i "Just so people don't suspect me of anything."
-    i "My family was actually doing pretty well when I was born."
+    l "Only if you want to, Sid"
+    i "I... I do."
+    i "My family was actually doing okay when I was born."
     i "Back then I had a lot of free time so I played games on the computer a lot."
     i "There was one game where you could make custom game modes."
     i "When I was playing that game, I learned to code."
     i "I wasn't very good at school but I was good at coding."
     i "I eventually started doing it on the side to make some pocket money."
-    i "At first it was just stuff like making small apps, but..."
-    i "Eventually I got into ethical hacking."
+    i "I got into this thing called ethical hacking."
     i "That's how I learned about coding."
     l "Ethical hacking?"
     i "Well, normally hackers are bad."
@@ -1694,5 +1699,112 @@ label chess3:
     i "Ethical hacking is about finding those vulnerabilities too..."
     i "But telling developers about them and how to fix them."
     i "It was a fun challenge, like trying to invade a fortress."
-    i "Didn't pay as well, not every company will pay you for it."
+    i "But I wasn't doing it to hurt people."
+    i "Didn't pay as well as being a normal developer, not every company will pay you for it."
     i "Some just send you a thank you and never talk to you."
+    d "I see. And this all happened before your family became poor?"
+    i "Yeah, we got in some... legal trouble."
+    i "We had to pay for lawyers and lost a lawsuit, so we were in a lot of debt."
+    i "My dad had to sell the house and rent a small place to make the first few payments..."
+    i "I started working for him for free so he could pay the debt with the money he would have paid me."
+    bi "Legal trouble? Wait..."
+    b "Sid, when you say legal trouble, was it with Stella's company?"
+    b "She mentioned her company often sued smaller companies."
+    i "No, it wasn't with her company..."
+    i "It would be kind of nice if it was, then I'd know more about why I'm here..."
+    i "Well, I guess Stella's not the Game Master, so maybe not..."
+    l "Sid... you didn't have to say all that."
+    l "Especially given how little {i}some{/i} people are saying about their pasts."
+    d "Agree, I'd like to hear more about Bert's past at some point."
+    l "Not who I was referring to."
+    i "So uh... can I go check out the control room now?"
+    l "Yeah, go ahead Sid."
+    l "You've been very helpful already."
+    i "Seeya! Dracula can serve you all food, I assume."
+    hide sid with dissolve
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
+    with dissolve
+    d "Hmph, I guess I've been volunteered involuntarily..."
+    l "Guess that kid has more spunk than I gave him credit for..."
+    d "Well, I guess I'll serve whatever he made."
+    scene bg hospcommons
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
+    with dissolve
+    bi "We ate our salads quietly."
+    bi "Thankfully, Sid had made a huge amount, I was no longer hungry."
+    bi "Looking at the cafeteria, twenty or thirty people could easily fit here."
+    bi "The kitchen probably had enough food and cookware to make a meal for that many people too."
+    bi "Why did we only have access to eight cells?"
+    bi "How powerful is this Game Master?"
+    bi "They must have heavily modified this building just for this game..."
+    bi "Man, after that feast in the mansion..."
+    bi "I would kill for a proper meal. Hell, even the turkey sandwiches from the train sound great."
+    bi "Well, maybe \"kill for\" is a poor choice of words."
+    b "Man, if I make it out of here the first thing I'm doing is getting a big fat bowl of pasta."
+    show frog ind with dissolve
+    f "Pasta? That's what you want if you get out of here?"
+    b "Oh... I mean, I guess I'd like to see my family too of course..."
+    f "No silly, you should get nachos instead!"
+    f "Nachos are way better than pasta!"
+    b "Is that the first thing you'd do if you got out of here Freddy?"
+    f "Hmm, probably not, there are bigger things than food."
+    show frog ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show lauren ind with moveinright:
+        xcenter .75
+    l "Like what Freddy? Family? Friends?"
+    f "There's a water park near where I live."
+    l "A... a water park?"
+    f "It's so fun!"
+    f "There's a ride called the Frog Hopper where it launches you up and down."
+    f "And up and down and up and down and up and down and up and down and up and down and..."
+    l "I think we get it Freddy..."
+    f "Oh and there's a wave pool!"
+    f "My family doesn't have time to take me to the beach but I can pretend I'm at the beach!"
+    f "Waves are fun but my mom doesn't let me get too close to the wave maker..."
+    f "What about you Lauren, what do you wanna do when you get out?"
+    l "Well... {i}if{/i} I get out, I think I'm going to give my parents a big hug."
+    f "That's... boring."
+    b "Yeah Lauren, I'm sure everyone wants to see their family."
+    b "What's something only {i}you{/i} might want to do?"
+    l "Something only I might want to do?"
+    l "Bert, if that's the prompt your answer was cheating."
+    l "Everyone wants to eat good food when they get out I'm sure."
+    b "Yeah, but only I want to eat specifically at the Pagliacci Pastaria!"
+    l "Sigh..."
+    l "Okay, fine, your pastaria counts."
+    l "I... want to apply for my MBA."
+    f "What's... what's an MBA?"
+    l "It's uh... school for if you want to own a business."
+    f "Oh. Did my dad go to an MBA?"
+    l "The MBA is the degree not the..."
+    l "Never mind."
+    l "Does he run a business?"
+    f "He runs something, I'm not sure what it's called..."
+    l "He might have one then."
+    b "What kind of business do you want to run?"
+    l "I want to run a day care."
+    l "I have a lot of babysitting experience, I feel like I'm pretty good with kids."
+    l "I can't imagine anything else I'd want to spend my life on, honestly..."
+    f "Can I go to your day care Lauren?"
+    show lauren happy:
+        xcenter .75
+    l "I think you're a bit old for that Freddy."
+    hide frog with moveoutleft
+    show jenny ind:
+        xcenter .25
+    j "Wait, Lauren... you said apply, did you not apply for one already?"
+    show lauren ind:
+        xcenter .75
+    l "I guess... I wasn't sure until now."
+    j "Why now?"
+    l "Uh... I learned life is too short?"
+    l "I don't know, this game has done all sorts of stuff to my head."
+    l "Probably yours too. But it just feels right, I guess?"
+    l "But who knows, I might leave and realize I was just being overly optimistic."
+    l "Maybe I realize I hate running a business."
+    j "Ha, can't give the Game Master credit for giving you confidence, right?"
+    show lauren happy:
+        xcenter .75
+    l "Right."
