@@ -266,6 +266,8 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
+#            yoffset -30
+#            xoffset +300
 
             xalign 0.5
             yalign 1.0

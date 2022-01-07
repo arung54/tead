@@ -31,6 +31,22 @@ image hamster loc:
     pause .1
     repeat
 
+image poprace = anim.Filmstrip("poprace.png", (300,300), (2,1), .05, loop=True)
+image popham = anim.Filmstrip("popham.png", (300,300), (2,1), .15, loop=True)#ycenter .205, ycenter is -.013
+image poprain = anim.Filmstrip("popcloud3.png", (300,300), (5,2), .075, loop=True)
+image pophearts = anim.Filmstrip("pophearts.png", (300,300), (5,2), .075, loop=False)
+image popwow = anim.Filmstrip("popwow.png", (300,300), (5,2), .085, loop=False)
+image pophuh = anim.Filmstrip("pophuh.png", (300,300), (5,2), .085, loop=False)
+
+#image poprain:
+#    "popcloud1.png"
+#    .5
+#    contains:
+#        "popcloud2.png"
+#        yalign .2
+#        linear 2.0 yalign .4
+#        linear 2.0 alpha 0
+
 image tracks:
     "tracks1.png"
     pause .05
@@ -68,6 +84,10 @@ image eviscroll:
 transform inwindow:
     truecenter zoom .8
     yalign .45
+
+#show expression AlphaMask("testerdog", At("sid ind")) as mask
+#transform wiggle:
+#    linear .05 ypos+=
 
 transform blink:
         "eye.png"
@@ -474,4 +494,4 @@ label start:
 ###########
 #Start
 ###########
-    jump mansion1
+    jump trainGo

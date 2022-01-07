@@ -1,5 +1,6 @@
 label trainGo:
-
+    $dan = True
+    $mood="ind"
     #jump frontcar1
     #show screen button_overlay
     scene black
@@ -16,8 +17,20 @@ label trainGo:
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
     o "Hey, wake up already."
+    show popwow:
+        zoom .75
+        xcenter .35
+        ycenter .25
     o "How'd you manage to stay knocked out even longer than the kid?"
+    hide popwow
+    show pophearts with dissolve:
+        xcenter .46
+        ycenter .
     n "..."
+    show pophuh:
+        zoom .75
+        xcenter .35
+        ycenter .25
     n "Where are we now?"
     show lauren ind:
         xcenter .5
@@ -55,9 +68,14 @@ label trainGo:
     h "Laddies, is it just me, or does it feels like the whole room is moving?"
     n "That's how trains work."
     n "Have you never been on a train before?"
+    show popham with dissolve:
+        xcenter .487
+        ycenter .205
     h "Blimey, yer right! We {i}are{/i} movin'!"
     h "It be like a land boat!"
-    hide shahar ind with moveoutright
+    hide shahar ind
+    hide popham
+    with moveoutright
     n "..."
     show catherine ind with dissolve
     c "Oh, Dan's finally awake?"

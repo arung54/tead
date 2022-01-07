@@ -2303,7 +2303,26 @@ label mansion2:
     show lauren ind:
         xcenter .25
     with dissolve
+
+#    show poprain with dissolve:
+#        zoom .75
+#        xcenter .75
+#        ycenter .2
+
     b "Alright, come on buddy. Just a few more steps."
+#    show pophuh:
+#        zoom .75
+#        xcenter .15
+#        ycenter .25
+
+#    show poprace behind sid:
+#        zoom 2
+#        xcenter .75
+#        ycenter .5
+#    show popwow:
+#        zoom .75
+#        xcenter .65
+#        ycenter .25
     i "I swear I'm gunna throw up everywhere."
     l "Don't throw up in the bathtub, I was hoping to use that at some point."
     i "No promises ahhhh!"
@@ -2372,7 +2391,9 @@ label mansion2:
     b "Let's go outside, I can't handle being in here right now."
     bi "Holding in my tears, I made my way into the hallway with Sid."
     scene black with fade
-    scene bg mansionhall with fade
+    scene bg mansionhall
+    $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
+    with fade
     $showchibi("sid")
     bi "As we walked out, others made their way upstairs."
     $showchibi("sid", "catherine", "dracula", "jenny", "sam", "shahar")
@@ -2389,6 +2410,9 @@ label mansion2:
     s "That's... not what I meant."
     h "Stella, my matey, I grieve thee!"
     s "I think that's... old English, not pirate speak."
+#    show popham with dissolve:
+#        xcenter .237
+#        ycenter .205
     h "Whoever the murderer is, they best be ready for Davy Jones' Locker, even if it takes my own hand to bring them there!"
     hide shahar with moveoutleft
     $showchibi("sid", "catherine", "dracula", "jenny", "sam")
