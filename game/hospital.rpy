@@ -547,6 +547,30 @@ label hospitalGo:
     b "Don't people die getting crushed by vending machines?"
     j "That's just a risk you'll have to take."
     b "..."
+    j "If you get injured, you can use the first aid kit on the wall."
+    b "Oh, we should probably check that out, huh..."
+    j "Yeah, if someone else dies we can patch up their wounds with it!"
+    b "Well... that wasn't what I had in mind."
+    b "Just like, we should see if there's poison in here or anything."
+    b "If there's a way to poison someone's food like Dracula said, it's probably in here."
+    j "Oh. Yeah, I guess that makes sense."
+    b "Okay, what do we have here..."
+    b "Some band-aids, gauze, pills for treating things like headaches."
+    b "A thermometer, gloves, tweezers..."
+    b "...Huh, what's medical glue? There's a container of it here."
+    j "Never heard of it, what does the bottle say?"
+    b "Usage: Closing thin wounds."
+    b "Directions: Squeeze the wound shut, then apply glue."
+    b "Continue to squeeze wound until glue dries."
+    b "Peel glue off in two to three days."
+    b "Glue has low melting point. Avoid hot areas while glue remains on wound."
+    b "If the glue needs to be removed early, take a towel and dip it in near-boiling water."
+    b "Then, apply the towel to the glue. It will melt and the towel will absorb it."
+    b "Wash towel afterwards in hot water to remove glue."
+    j "I don't understand, why wouldn't you just use a bandage to seal a wound?"
+    b "The first aid kit seems kinda old, maybe it's not used much anymore?"
+    j "Shouldn't a hospital be keeping its first aid kit up to date?"
+    b "Yeah, but a hospital also probably shouldn't be used for a killing game..."
     b "Anyway, doesn't seem like there's much else in here?"
     b "Just some couches we could maybe take a nap on..."
     j "What, did you want to play video games or something in here?"
@@ -1804,7 +1828,76 @@ label chess3:
     l "Probably yours too. But it just feels right, I guess?"
     l "But who knows, I might leave and realize I was just being overly optimistic."
     l "Maybe I realize I hate running a business."
+    show jenny happy:
+        xcenter .25
     j "Ha, can't give the Game Master credit for giving you confidence, right?"
     show lauren happy:
         xcenter .75
     l "Right."
+    l "What about you Jenny. What do you wanna do when you get out?"
+    show jenny ind:
+        xcenter .25
+    j "I dunno, I haven't really thought about it."
+    j "I've mentioned this before I think, but my parents aren't really around often."
+    j "And I'm an only child."
+    j "So it wouldn't be spending time with family really..."
+    j "And we've been pretty well off so I've gotten to do most of what I want to do in life."
+    j "I think I want to just sit on a couch and watch TV, honestly."
+    j "I'd love to just be a normal boring person."
+    hide lauren with moveoutright
+    show shahar mad with moveinright:
+        xcenter .25
+    b "And what about you Shah-"
+    b "Oh."
+    bi "He doesn't even know what he has to go back to..."
+    h "No, lad, it's okay."
+    h "I'll have to think about it at one point or 'nother."
+    h "I don't know, what do people do when they don't know who they are?"
+    b "..."
+    j "..."
+    b "I think the rest of us don't know."
+    b "But I'm sure there's resources out there."
+    bi "Hell, maybe a place like this would be able to help you..."
+    h "Well, I think that's what I wanna do, ladies and laddies."
+    h "I'm gonna find out who the real Shahar Syed be."
+    h "Figure there's nary a thing I could do before I do that."
+    h "Ye all have families, I don't know if I do."
+    h "Ye all have favorite foods, I don't know if I do."
+    h "Or at least, if landlubbers eat me favorite foods."
+    h "Do they have dried beans on land?"
+    b "Um... yes, but there's better ways to eat beans."
+    b "Burritos, chili, bean salad, dip..."
+    h "What's a \"burrito\", lad?"
+    b "Oh boy."
+    b "Okay Shahar, second thing you're doing after you figure out who you are?"
+    b "Eating a burrito."
+    show shahar ind:
+        xcenter .25
+    h "I'm looking forward to it lad."
+    hide jenny
+    hide shahar
+    with dissolve
+    bi "With that, the only person we hadn't asked was..."
+    show sam with dissolve
+    bi "Sam."
+    b "You want to join in Sam?"
+    s "..."
+    s "Drugs."
+    b "Huh?"
+    s "Going to get rid of my drugs."
+    b "..."
+    show sam:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show lauren ind with moveinright:
+        xcenter .75
+    l "Not a bad answer Sam."
+    s "...Thanks."
+    hide sam with moveoutleft
+    show lauren ind:
+        xcenter .75
+        linear 0.15 xcenter .5
+    bi "Lauren leaned in to whisper."
+    l "It's not ideal, but it's progress."
+    l "It's conversation, instead of not wanting to talk."
+    
