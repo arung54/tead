@@ -763,6 +763,7 @@ label testwindow:
     scene bg hospkitchenwindow
     show hospwindowoverlay
     show drac ind at inwindow behind hospwindowoverlay
+    $showchibiwindow([], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
     with dissolve
     d "Hello Bert. Are you here to brief us on the other side?"
     b "Uh... I guess I can, yeah."
@@ -1900,4 +1901,106 @@ label chess3:
     bi "Lauren leaned in to whisper."
     l "It's not ideal, but it's progress."
     l "It's conversation, instead of not wanting to talk."
-    
+    b "Should I ask more? Get Sam to keep talking?"
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sam with moveinleft:
+        xcenter .25
+    s "Life was fine before I tried to kill Stella."
+    s "If I don't try to kill anyone else, that's the only way life will be fine after."
+    s "Hard drugs can kill people."
+    s "So... if I sell them to people, it's like I'm trying to kill them."
+    b "..."
+    s "..."
+    s "Thanks for asking."
+    hide sam with moveoutleft
+    show lauren ind:
+        xcenter .75
+        linear 0.15 xcenter .5
+    l "Okay, I know that last one sounded sarcastic, but I think Sam meant it."
+    l "Even if... Sam's current outlook on life seems to be based on not killing people."
+    l "It's still progress."
+    b "I mean, that's respectable, I aspire not to kill people either."
+    l "Knock it off."
+    b "Sorry..."
+    bi "Just then, Dracula knocked on the window to beckon us over."
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show drac ind at inwindow behind hospwindowoverlay2
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
+    with dissolve
+    d "Hello all, just wanted to let you know I'll have dinner ready soon."
+    d "I think I have something more appetizing than before."
+    d "It's simple, but I'm making pasta with marinara sauce."
+    d "Well, not really marinara sauce, just some crushed and cooked tomatoes."
+    d "This kitchen is very stark. If I were staying here, I would leave a poor review."
+    show jenny ind with dissolve:
+        xcenter .25
+    j "Pasta? Where did you find pasta?"
+    d "There was a box on top of the fridge."
+    j "A box? I didn't see a box..."
+    d "It was pretty far back. I'd guess only myself and Shahar could have seen it up there."
+    d "Not to insult anyone's stature, but the rest of you are average height at best."
+    b "Hey man, you're not {i}that{/i} tall."
+    d "I'm six feet and five inches. That's more than 99.5% of men."
+    bi "Damn, he is that tall."
+    b "Well being five foot nine doesn't make me a manlet!"
+    j "Bert, is this a sensitive topic?"
+    d "Nothing wrong with that Bert."
+    d "Anyway, it should be ready in roughly thirty minutes."
+    show jenny happy:
+        xcenter .25
+    j "Thanks Dracula!"
+    show sid ind at inwindow behind hospwindowoverlay2 with moveinright:
+        xcenter .75
+    b "Hey Sid, you find anything interesting?"
+    i "Um... well, I wasn't able to really hack into anything."
+    i "It was probably made in the 90s like a lot of the software medical centers use."
+    i "And the people running this place got too used to it."
+    i "So there's better software out there, but the staff doesn't want to learn it."
+    i "So they stick with the 90s software."
+    show jenny ind:
+        xcenter .25
+    j "Bummer, so you didn't learn anything?"
+    i "Well, I learned something."
+    i "I uh... saw the name of the prosecuting attorney that got my family in trouble."
+    i "They were a patient here."
+    i "Their record was empty, unlike most of the others."
+    i "Just a name..."
+    bi "Wait."
+    bi "Just like Shahar..."
+    bi "It has to be related, right?"
+    b "Sid, can I ask..."
+    b "Is there any way that attorney is related to this game?"
+    b "There's no way it's a coincidence we're in the same hospital a lawyer you knew was in, right?"
+    i "..."
+    j "Sid, you don't have to answer if you don't want to..."
+    j "It's a very personal question."
+    i "..."
+    i "I think it's related, yeah."
+    i "Um... when I said my family got in legal trouble, it's because of something I did."
+    i "I pirated a movie online."
+    b "They sent a lawyer after you for that?"
+    i "Kind of..."
+    i "A lawyer... {i}that lawyer{/i} sent me an email telling me he knew."
+    i "And if I didn't do some work for him he'd rat me out."
+    i "So... I did the dirty work."
+    j "Dirty work?"
+    i "It was to get some files from a private server."
+    i "Belong to Inside Electronics."
+    b "Inside Electronics?"
+    i "Spelled with a Y. I-n-s-y-d-e."
+    i "S-y-d-e like Sydell."
+    i "He owned the company."
+    i "That's why I think it's related."
+    b "That's what caused your legal trouble?"
+    i "Yeah. The lawyer said if I told anyone he'd expose me for hacking too."
+    i "And well, I didn't know what to do."
+    i "I'm still a child..."
+    bi "Sid's eyes noticably teared up."
+    b "Sid, you can stop if you wa{nw}"
+    i "So I told my dad and he told the police we were getting blackmailed but..."
+    i "I dunno, these lawyers were way more than we could imagine."
+    i "I... I ruined my family."
+    i "I should have never downloaded that movie."
