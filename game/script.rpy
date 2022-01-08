@@ -31,6 +31,9 @@ image hamster loc:
     pause .1
     repeat
 
+
+image poptear = anim.Filmstrip("poptear.png", (300,300), (5,2), .1, loop=False)
+image popmad = anim.Filmstrip("popmad.png", (300,300), (5,2), .125, loop=True)
 image poprace = anim.Filmstrip("poprace.png", (300,300), (2,1), .05, loop=True)
 image popham = anim.Filmstrip("popham.png", (300,300), (2,1), .15, loop=True)#ycenter .205, ycenter is -.013
 image poprain = anim.Filmstrip("popcloud3.png", (300,300), (5,2), .075, loop=True)

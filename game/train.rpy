@@ -25,12 +25,11 @@ label trainGo:
     hide popwow
     show pophearts with dissolve:
         xcenter .46
-        ycenter .
+        ycenter .5
     n "..."
-    show pophuh:
-        zoom .75
-        xcenter .35
-        ycenter .25
+    show poptear:
+        xcenter .525
+        ycenter .3
     n "Where are we now?"
     show lauren ind:
         xcenter .5
