@@ -1534,6 +1534,7 @@ label chess3:
     ses "mrrrrrrrrrrrrrowww"
     scene black with dissolve
     blank "The next day..."
+    play sfx "audio/ding.mp3"
     intercom "Twilight has begun. You must leave your room before daytime."
     scene bg hosproom1 with dissolve
     $ statusnt("Cell", "bert", ch=3, sun=0)
@@ -1755,7 +1756,7 @@ label chess3:
     scene bg hospcommons
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
     with dissolve
-    bi "We ate our salads quietly."
+    bi "Time passed as we ate our salads quietly."
     bi "Thankfully, Sid had made a huge amount, I was no longer hungry."
     bi "Looking at the cafeteria, twenty or thirty people could easily fit here."
     bi "The kitchen probably had enough food and cookware to make a meal for that many people too."
@@ -1924,7 +1925,14 @@ label chess3:
     b "I mean, that's respectable, I aspire not to kill people either."
     l "Knock it off."
     b "Sorry..."
-    bi "Just then, Dracula knocked on the window to beckon us over."
+    hide lauren with dissolve
+    bi "Well, have to kill time somehow."
+    bi "I guess I should strike up a conversation with someone..."
+    bi "Unfortunately, it seems Sid is busy, so it can't be him."
+    blank "FREE TIME 7 HERE"
+    bi "What felt like a few hours passed with some idle chit-chat, but it was hard to tell."
+    bi "It could have been minutes, or a full day."
+    bi "After some time, Dracula knocked on the window to beckon us over."
     scene bg hospkitchenwindow2
     show hospwindowoverlay2
     show drac ind at inwindow behind hospwindowoverlay2
@@ -1952,8 +1960,11 @@ label chess3:
     show jenny happy:
         xcenter .25
     j "Thanks Dracula!"
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula", "sid"])
+    with dissolve
     show sid ind at inwindow behind hospwindowoverlay2 with moveinright:
         xcenter .75
+    i "Hey guys."
     b "Hey Sid, you find anything interesting?"
     i "Um... well, I wasn't able to really hack into anything."
     i "It was probably made in the 90s like a lot of the software medical centers use."
@@ -1997,10 +2008,174 @@ label chess3:
     b "That's what caused your legal trouble?"
     i "Yeah. The lawyer said if I told anyone he'd expose me for hacking too."
     i "And well, I didn't know what to do."
-    i "I'm still a child..."
+    i "I was so young and knew nothing..."
     bi "Sid's eyes noticably teared up."
     b "Sid, you can stop if you wa{nw}"
     i "So I told my dad and he told the police we were getting blackmailed but..."
     i "I dunno, these lawyers were way more than we could imagine."
     i "I... I ruined my family."
     i "I should have never downloaded that movie."
+    i "I'm just a stupid child, my parents should have never had me."
+    i "I deserve to be part of an evil game like this."
+    hide jenny with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .25
+    l "No, Sid..."
+    l "That lawyer should have never blackmailed you."
+    l "You made an innocent mistake, no one should lose their freedom over that."
+    i "I guess but..."
+    i "Well, I did."
+    i "The real world isn't fair."
+    i "It'd be nice to play fair rules, but you don't get to decide the rules."
+    i "You just have to play by them."
+    l "But should you feel bad for getting punished by unfair rules?"
+    i "I dunno Lauren, wouldn't you feel bad if everyone here got killed because you didn't play by the rules?"
+    l "..."
+    i "Didn't think so."
+    hide sid with dissolve
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
+    with dissolve
+    bi "Sid walked off."
+    bi "Did I push too far by asking him?"
+    bi "No, I tried to stop him..."
+    d "Well, the pasta will be done soon. Would you all please get ready to eat?"
+    bi "Dracula, seemingly missing the mood, prepared plates for us all."
+    scene bg hospcommons
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
+    with dissolve
+    show scary with dissolve:
+        alpha .5
+    bi "We ate, this time mostly in silence."
+    bi "Jenny was talking to Freddy to keep him occupied while Lauren was lost in thought."
+    bi "Probably upset about how she couldn't console Sid?"
+    bi "And Shahar and Sam weren't really the types to start conversations."
+    bi "Despite how isolated and claustrophobic this place felt..."
+    bi "Up until a few minutes ago, it seemed like we were making the best of it."
+    bi "Maintaining smiles and hope by going in a circle and talking about what we want to do."
+    bi "But then... Sid's story hit us like a truck."
+    bi "And this was after recovering from Shahar's, and Sam's, and Lauren's experiences."
+    bi "The curtains were starting to pull back."
+    bi "Everyone's personal history, fears, problems..."
+    bi "The nature of this game was getting harder and harder to ignore."
+    bi "Not to mention..."
+    bi "It's easy when you're part of a large group to believe if a rare event happens, it won't happen to you."
+    bi "I should have been enjoying the novelty of pasta, after two days of simple soups and salads."
+    bi "Instead I felt like, cliche as it was, the air was so thick I could cut it with a knife."
+    bi "..."
+    bi "If Sid weren't so upset, and the mood were different, I'd love to know..."
+    bi "Was the lawyer he was talking about Shahar?"
+    bi "Did Sid also see that file?"
+    bi "Does Sid know Shahar, and he just failed to mention it?"
+    hide scary with dissolve
+    play sfx "audio/ding.mp3"
+    intercom "It is now twilight. Please feel free to return to your rooms."
+    intercom "You may still roam freely, but remember that you must return to your cell before night begins."
+    bi "..."
+    b "Guess we should go sleep."
+    bi "No one really had much to say to that..."
+    bi "Everyone got up and walked their own ways."
+    scene bg hosproom1 with fade
+    show sesame with dissolve
+    ses "Mew?"
+    b "Hey Sesame, weird day, huh?"
+    ses "Prrrrr."
+    b "Do cats even understand what murder is?"
+    ses "Ssssss."
+    bi "She was leaning and bowing her head."
+    b "Do you... want head scratches?"
+    ses "Prrr."
+    bi "I scratched Sesame's head."
+    bi "..."
+    bi "Maybe this is the mood-lifter I need for now."
+    bi "A super cute cat."
+    bi "It's like Lauren said, baby steps."
+    bi "Just have to keep my spirit up for the next five minutes."
+    bi "Five minutes at a time."
+    b "Good night Sesame."
+    ses "Mew!"
+    scene black with dissolve
+    blank "The next day..."
+    play sfx "audio/ding.mp3"
+    intercom "Twilight has begun. You must leave your room before daytime."
+    scene bg hosproom1 with dissolve
+    b "Yawn."
+    bi "Maybe I should really squeeze every minute out of twilight."
+    bi "It's the only time I can just lay in my bed peacefully, worry-free."
+    bi "..."
+    bi "I nearly fell back asleep."
+    bi "It was a blissful few minutes, until..."
+    ses "Scrchhhh."
+    b "OW!"
+    b "Sesame, why'd you scratch me?"
+    show sesame with dissolve
+    ses "Mew mew mew mew mew!"
+    b "You're mewing a lot..."
+    b "I must be pushing my limits with how long I'm staying here."
+    b "Sesame, you're way too much of a good influence."
+    b "Off to face another day..."
+    scene bg hospcommons with fade
+    $showchibiwindow(["freddy", "jenny", "sam", "sid", "dracula"], [])
+    show frog ind with dissolve
+    f "Morning Bert!"
+    b "Hey Freddy..."
+    f "What took you so long?"
+    b "I uh... was sleepy."
+    f "C'mon Bert! Gotta rise and shine early every day!"
+    bi "As naive as he is, it's nice that Freddy can lighten the mood at times like these."
+    b "..."
+    b "Wait, we're still short a person, right?"
+    show frog ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show jenny ind with moveinright:
+        xcenter .75
+    j "Yeah. Lauren, Sam, and Shahar are all missing."
+    b "Is it possible there's three guards today?"
+    j "Hmm... the rules say two."
+    j "So it's unlikely."
+    b "Has the intercom announced there are five minutes remaining yet?"
+    j "No. There's no clocks in here though, so it's hard to tell if it should have."
+    $showchibiwindow(["freddy", "jenny", "sam", "sid", "dracula"], ["lauren", "sam"])
+    with dissolve
+    b "Oh, there's Lauren and Sam."
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .5
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .75
+    $showchibiwindow(["freddy", "jenny", "sam", "sid", "dracula"], ["lauren", "sam"])
+    with dissolve
+    l "Hey everyone."
+    j "What took you guys so long?"
+    j "We were worried..."
+    l "I waited outside Sam's cell so we could come here together."
+    l "Sam took a while to get out, so that's why we're kind of late."
+    s "...Sorry."
+    b "Wait, there's something more pressing."
+    b "If you two are here, where's Shahar?"
+    l "He didn't show up yet?"
+    b "No..."
+    l "Did anyone see him sleeping still?"
+    b "He's at the end of the hall, no one walked past his cell to get here."
+    l "..."
+    l "I feel like it's been almost 30 minutes."
+    l "Sam, let's go check on him."
+    s "Okay..."
+    hide lauren
+    hide sam
+    with dissolve
+    play sfx "audio/ding.mp3"
+    show scary with dissolve:
+        alpha 0.5
+    bi "Soon after they left, the intercom rang."
+    bi "I hoped it was to tell us there were 5 minutes left in twilight."
+    bi "But no, there was a more obvious explanation."
+    bi "One I didn't want to be true."
+    bi "But sure enough..."
+    hide scary with dissolve
+    intercom "The murderer has completed their murder, and the body has been found."
+    intercom "To assist in the investigation, all cell doors except the victim's will be opened."
+    intercom "Everyone may move freely, however you are still forbidden from entering others' cells."
