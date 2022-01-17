@@ -33,13 +33,13 @@ image hamster loc:
 
 
 image poptear = anim.Filmstrip("poptear.png", (300,300), (5,2), .1, loop=False)
-image popmad = anim.Filmstrip("popmad.png", (300,300), (5,2), .125, loop=True)
+image popmad = anim.Filmstrip("popmad.png", (300,300), (5,2), .125, loop=False)
 image poprace = anim.Filmstrip("poprace.png", (300,300), (2,1), .05, loop=True)
-image popham = anim.Filmstrip("popham.png", (300,300), (2,1), .15, loop=True)#ycenter .205, ycenter is -.013
+image popham = anim.Filmstrip("popham.png", (300,300), (2,1), .15, loop=True)#ycenter .205, xcenter is -.013
 image poprain = anim.Filmstrip("popcloud3.png", (300,300), (5,2), .075, loop=True)
 image pophearts = anim.Filmstrip("pophearts.png", (300,300), (5,2), .075, loop=False)
-image popwow = anim.Filmstrip("popwow.png", (300,300), (5,2), .085, loop=False)
-image pophuh = anim.Filmstrip("pophuh.png", (300,300), (5,2), .085, loop=False)
+image popwow = anim.Filmstrip("popwow.png", (300,300), (5,2), .085, loop=False)#ycenter .25, xcenter   , zoom .75
+image pophuh = anim.Filmstrip("pophuh.png", (300,300), (5,2), .085, loop=False)#ycenter .25, xcenter -.1, zoom .75
 
 #image poprain:
 #    "popcloud1.png"
@@ -135,7 +135,7 @@ $ passattempts = 1
 
 init python:
         noside = False
-        dan = False
+        dan = True
         mood = "happy"
         cat = False
 init python:
@@ -404,6 +404,7 @@ image side bert = ConditionSwitch(
 'noside', 'blank',
 'mood==\"happy\" and dan', 'dhappy', 'mood==\"ind\" and dan', 'dind',
 'mood==\"sad\" and dan', 'dsad', 'mood==\"mad\" and dan', 'dmad',
+'mood==\"shock\" and dan', 'dshock',
 'mood==\"happy\" and not cat', 'bhappy', 'mood==\"ind\" and not cat', 'bind',
 'mood==\"sad\" and not cat', 'bsad', 'mood==\"shock\" and not cat', 'bshock',
 'mood==\"happy\" and cat', 'bchappy', 'mood==\"ind\" and cat', 'bcind',
@@ -412,6 +413,7 @@ image side notbert = ConditionSwitch(
 'noside', 'blank',
 'mood==\"happy\" and dan', 'ddhappy', 'mood==\"ind\" and dan', 'ddind',
 'mood==\"sad\" and dan', 'ddsad', 'mood==\"mad\" and dan', 'ddmad',
+'mood==\"shock\" and dan', 'ddshock',
 'mood==\"happy\" and not cat', 'bdhappy', 'mood==\"ind\" and not cat', 'bdind',
 'mood==\"sad\" and not cat', 'bdsad', 'mood==\"shock\" and not cat', 'bdshock',
 'mood==\"happy\" and cat', 'bcdhappy', 'mood==\"ind\" and cat', 'bcdind',
@@ -497,4 +499,4 @@ label start:
 ###########
 #Start
 ###########
-    jump trainGo
+    jump midcar4

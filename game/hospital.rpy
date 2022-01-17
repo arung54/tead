@@ -1951,7 +1951,7 @@ label chess3:
     d "It was pretty far back. I'd guess only myself and Shahar could have seen it up there."
     d "Not to insult anyone's stature, but the rest of you are average height at best."
     b "Hey man, you're not {i}that{/i} tall."
-    d "I'm six feet and five inches. That's more than 99.5% of men."
+    d "I'm six feet and five inches. That's more than 99.5 percent of men."
     bi "Damn, he is that tall."
     b "Well being five foot nine doesn't make me a manlet!"
     j "Bert, is this a sensitive topic?"
