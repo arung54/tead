@@ -30,7 +30,7 @@ init python:
 
         renpy.show("makeyourcase")
         renpy.with_statement(Dissolve(1.0))
-        renpy.pause(1.0, hard = True)
+        renpy.pause(1.50, hard = True)
         renpy.hide("makeyourcase")
         renpy.show("debatescroll")
         renpy.show("debateui")

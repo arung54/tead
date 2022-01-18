@@ -2103,6 +2103,8 @@ label preinvest:
 ################################################################################
 
 label trial1a:
+    $dan = False
+    $mood = "ind"
     play music "audio/coming_together.mp3"
     scene black with fade
     blank "Everyone was brought to the bar car."
@@ -2140,9 +2142,11 @@ label trial1a:
     c "A bunch of us watched the two of them go."
     s "So it had to have happened sometime between then and when we made our way to the back car to check on them."
     s "Which honestly wasn't a very long time... maybe 20 minutes."
+    $mood = "sad"
     c "Putting a time to it somehow makes this even more disturbing."
     b "Also, we did all go check up in the front car first."
-    c "Yeah so for a few minutes, this car had to have been completely empty."
+    c "Yeah, so for a few minutes, this car had to have been completely empty."
+    $mood = "ind"
     b "Well, Sid could have come into this car while everyone was up front, and we would have no way of knowing."
     b "But aside from that, yes."
     s "I don't think there's any time trickery going on here, it seems pretty clear-cut."
@@ -2189,8 +2193,14 @@ label trial1a:
     hide catherine ind with moveoutleft
     show stella ind with moveinleft:
         xcenter .25
-    b "Wait, slow down!"
-    t "Please, child... Think more clearly."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .325
+        ycenter .25
+        zoom .75
+    t "You're not the fastest learner Sid."
+    b "Hey wait, slow down!"
+    t "I suppose you are just a child... Think more clearly."
     stop music fadeout 1.0
     tut "You're about to take part in your first debate."
     tut "Four statements will appear. Statements with blue text can be agreed with."
@@ -2249,6 +2259,11 @@ label trial1b:
     show jenny ind with moveinleft:
         xcenter .25
     j "Yeah. Let's talk about the uh, stabby stick."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .625
+        ycenter .25
     o "The stabby stick?"
     j "The murder pole! Whatever we're calling it."
     b "The murder weapon?"
