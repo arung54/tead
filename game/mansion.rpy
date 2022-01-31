@@ -4025,8 +4025,11 @@ label cathGivesInfo:
     hide braindeath with dissolve
     b "..."
     b "She's dead."
-    b "It wasn't Stella..."
-    b "Catherine, I'll take care of-{p=0.5}{nw}"
+    b "The Game Master wasn't Stella..."
+    show sam with dissolve
+    s "..."
+    s "It should be me who's dead now..."
+    b "Sam, that's not-{p=0.5}{nw}"
     scene black
     pause 1.0
     bi "Honestly, I was a little relieved."
