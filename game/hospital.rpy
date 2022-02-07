@@ -166,10 +166,10 @@ label hospitalGo:
             bi "Not that I should, it's from a year before I was born..."
             bi "I read through a few more, but didn't recognize any of the names or faces."
             bi "Huh?"
-            bi "There's one from seven years ago, and five years ago..."
-            bi "But not six years ago."
+            bi "There's one from four years ago, and two years ago..."
+            bi "But not three years ago."
             bi "There's even an empty spot in the line where one should be..."
-            b "Sid, did you see a photo composite from six years ago?"
+            b "Sid, did you see a photo composite from three years ago?"
             i "Um... no, but they're chronologically ordered, so it should be easy to find it?"
             b "I think it's missing..."
             i "Huh. Do you think one of us got rid of it?"
@@ -182,17 +182,17 @@ label hospitalGo:
             i "Hm... maybe the person whose turn it is to murder is on the missing composite?"
             i "Or maybe it's the Game Master and they deliberately removed it!"
             b "Yeah, there's gotta be a reason that specific year's is missing..."
-            i "Maybe we should ask everyone if anything significant happened six years ago?"
+            i "Maybe we should ask everyone if anything significant happened three years ago?"
             show scary with dissolve:
                 alpha 0.5
-            bi "Six years ago? What was I doing?"
-            bi "I was seventeen, so, that would be the year I-"
+            bi "Three years ago? What was I doing?"
+            bi "I was twenty, so, that would be the year I-"
             bi "Got in the driving accident..."
             bi "I talked to Jenny about this but..."
             bi "Am I ready to talk to everyone about it?"
             hide scary with dissolve
             b "Nah, probably not worth it."
-            b "If anyone has something revealing about them from six years ago, they're just gonna lie about it."
+            b "If anyone has something revealing about them from three years ago, they're just gonna lie about it."
             bi "Hopefully that stops Sid from pursuing this line of-"
             i "Well, then we can use people's reactions to gauge what's happening!"
             bi "...Or that."
@@ -328,12 +328,29 @@ label hospitalGo:
     bi "That's... not really something to be cheery about."
     b "Hey Jenny. How's it going?"
     j "Oh, I'm doing as good as I can be!"
-    show jenny ind with dissolve
+    show jenny ind
     j "But doesn't seem like everyone else is."
     b "Huh?"
     j "Well, Sam is pretty torn up about trying to kill Stella."
     j "And Shahar says he's been having a headache since we got here."
-    #END REWRITE
+    j "You mind talking to Shahar?"
+    b "Huh? Why me..."
+    j "Well, you did spend a lot of time with him in the mansion, like it or not."
+    j "And I think we need to keep everyone... well, as happy as they can be, you know."
+    j "Not just for their sake."
+    j "If we have people too sad to think or help out, well..."
+    j "It's going to be harder solve a murder mystery with less brainpower."
+    j "Or even just find out more about why we're here and who the Game Master is."
+    bi "I don't know if I'd classify Shahar's contributions as \"brainpower\" but..."
+    b "That's true... yeah, I can talk to Shahar."
+    show jenny happy
+    j "Great! So you'll talk to both Shahar and Sam!"
+    b "Wha-"
+    j "Thanks Bert, that's really nice of you!"
+    hide jenny with dissolve
+    bi "She left before I could even respond..."
+    bi "I'm not the best at cheering people up, why can't someone like Lauren do this?"
+    bi "Sigh. Okay, might as well bite the bullet."
     bi "Let's see, Shahar or Sam..."
     $menuset = set()
     menu samorshahar:
@@ -459,17 +476,102 @@ label hospitalGo:
             hide shahar with dissolve
             jump samorshahar
     bi "Having talked to Sam and Shahar, I went to go join the others."
-    bi "But a noise interrupted."
+    show drac ind with dissolve
+    d "So, has everyone read the rules?"
+    d "We should make sure we all understand them before progressing."
+    show drac ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "I did have one question..."
+    j "The rules say we'll be \"punished\" if we follow them."
+    j "Do we know what punished means?"
+    hide drac with moveoutright:
+    show frog ind with moveinright:
+        xcenter .75
+    f "Punished? Isn't that like time out?"
+    b "Uh..."
+    f "You know, when you have to go sit in the corner and face the wall."
+    f "And you can't even play video games or listen to music."
+    show frog sad:
+        xcenter .75
+    f "And your mom and dad are arguing but you're not allowed to go to your room."
+    f "So you have to listen the whole time."
+    b "Uhhh....."
+    hide jenny with moveoutleft
+    show lauren with moveinleft:
+        xcenter .25
+    l "That's... one kind of punishment, yeah Freddy."
+    l "But I think what the sign means is something worse than that."
+    f "Worse than time out? That's not possible!"
+    f "What could be worse than time out?"
+    l "Uhhhhhhh........"
+    l "Hey guys, wasn't there something else we wanted to discuss?"
+    hide frog with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "Oh yeah, I had something I wanted to discuss."
+    i "There's photos of all the people who got discharged from this hospital in the past."
+    i "They have one photo composite per year, but the one from three years ago is missing."
+    i "Is it possible someone important was on that composite?"
+    l "Like one of us?"
+    i "Maybe. But it could also be somenoe related to one of us?"
+    i "Or maybe that was an important year for why this game happened."
+    b "Important year?"
+    i "Yeah, after Bert and I talked about the photos I was thinking..."
+    i "I haven't really done anything that bad in the past three years."
+    i "If I was chosen to be a part of this game, it has to be for something that happened before that, right?"
+    i "I was wondering..."
+    i "Did any of your crimes happen in the past three years?"
+    i "You don't have to say what your crimes were, I know some of you can't really talk about it."
+    i "But just that one bit of info might reveal a whole lot."
+    bi "Thank you, Sid..."
+    l "Mine was... a long time ago, but nothing in the last three years."
+    bi "One by one, the others chimed in to agree."
+    bi "No one remembered committing a crime in the past three years..."
+    show lauren ind:
+        xcenter .25
+        linear 0.15 xcenter .5
+    show sam with dissolve:
+        xcenter .25
+    bi "Except for one person."
+    s "I guess... I've been committing crimes perpetually..."
+    s "Not like I ever stopped dealing drugs..."
+    l "Well... when did you deal drugs to Mr. Sydell?"
+    bi "Right, Sam mentioned that in the mansion."
+    s "...I lost contact with him about three years ago..."
+    b "Lost contact?"
+    s "He just never reached out to me again..."
+    s "And well, not like I personally knew the guy..."
+    s "I had no reason to reach out to him..."
+    b "I wonder... did something happen to him three years ago?"
+    l "Maybe he disappeared to start planning this game?"
+    i "I thought the Game Master was one of us?"
+    i "None of us look like him..."
+    i "But I think you're right Bert."
+    i "There's no way what Sam said isn't related to the missing photo composite."
+    i "Maybe Mr. Sydell was on it."
+    i "Maybe whatever happened to him three years ago is the reason for this game!"
+    bi "A noise interrupted."
     play sfx "audio/ding.mp3"
     intercom "It is now twilight. Please feel free to return to your rooms."
     intercom "You may still roam freely, but remember that you must return to your cell before night begins."
+    hide sam
+    hide lauren
+    with dissolve
     show jenny ind:
         xcenter .25
+    with dissolve
+    j "I think we should all go sleep."
+    i "Wait, we were making so much progress!"
+    j "Yeah, but I don't really want to find out what being \"punished\" means."
+    i "...Fair enough."
+    hide sid with dissolve
     show frog ind:
         xcenter .75
     with dissolve
-    j "Well, guess we should all go sleep."
-    f "But... I don't wanna. I wanna play!"
+    f "I don't wanna sleep. I wanna play!"
     j "C'mon Freddy, we can't stay out here forver."
     j "Plus if you don't sleep now, you'll be tired tomorrow."
     f "F-fine..."
@@ -486,7 +588,7 @@ label hospitalGo:
     f "O...okay..."
     b "Oh, that reminds me."
     b "What's the room arrangement?"
-    j "Oh yeah, I guess you were the last to arrive."
+    j "Oh yeah, I guess you were looking around while we discussed this."
     show map3ui with dissolve:
         alpha 0.5
         xcenter .5
@@ -1898,34 +2000,19 @@ label chess3:
     j "I think I want to just sit on a couch and watch TV, honestly."
     j "I'd love to just be a normal boring person."
     hide lauren with moveoutright
-    show shahar mad with moveinright:
+    show shahar ind with moveinright:
         xcenter .25
-    b "And what about you Shah-"
-    b "Oh."
-    bi "He doesn't even know what he has to go back to..."
-    h "No, lad, it's okay."
-    h "I'll have to think about it at one point or 'nother."
-    h "I don't know, what do people do when they don't know who they are?"
-    b "..."
-    j "..."
-    b "I think the rest of us don't know."
-    b "But I'm sure there's resources out there."
-    bi "Hell, maybe a place like this would be able to help you..."
-    h "Well, I think that's what I wanna do, ladies and laddies."
-    h "I'm gonna find out who the real Shahar Syed be."
-    h "Figure there's nary a thing I could do before I do that."
-    h "Ye all have families, I don't know if I do."
-    h "Ye all have favorite foods, I don't know if I do."
-    h "Or at least, if landlubbers eat me favorite foods."
-    h "Do they have dried beans on land?"
-    b "Um... yes, but there's better ways to eat beans."
-    b "Burritos, chili, bean salad, dip..."
+    b "And what about you Shahar?"
+    h "I'm returning to the sea, lad."
+    h "The smell o' salt water runnin' through your nose."
+    h "The squiffy feeling from the ship rockin' port and starboard."
+    h "Pirate cuisine. Sea biscuits, grog...."
+    h "And me favorite, dried beans."
+    b "Dried beans? There's way better ways to eat beans..."
+    b "Burritos, chili, bean salad, seven layer dip..."
     h "What's a \"burrito\", lad?"
     b "Oh boy."
-    b "Okay Shahar, second thing you're doing after you figure out who you are?"
-    b "Eating a burrito."
-    show shahar ind:
-        xcenter .25
+    b "Okay Shahar, after you get out, add eating a burrito to that list."
     h "I'm looking forward to it lad."
     hide jenny
     hide shahar

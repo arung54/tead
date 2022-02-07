@@ -1505,7 +1505,7 @@ label midcar4:
         linear .3 xcenter .5
     b "I guess I can't think of anything else."
     ni "This kid just bailed me out of speaking up..."
-    b "I was only 17, too. It feels like so long ago but I think about it every day."
+    b "I was only twenty, too. It feels like so long ago but I think about it every day."
     b "I was driving after tutoring, same as always."
     b "It was spring..."
     b "And this lady... She just... Walked out..."
