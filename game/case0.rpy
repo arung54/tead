@@ -77,9 +77,9 @@ label ligma:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show bert happy with dissolve
-    b "Hey Dan, you ever think about removing the A from your first name?"
+    bt "Hey Dan, you ever think about removing the A from your first name?"
     n "My name would be D-N? What does that even mean?"
-    b "DEEZ NUTZ!"
+    bt "DEEZ NUTZ!"
     n "..."
     ni "Damn, he got me."
     hide bert with dissolve
@@ -90,7 +90,7 @@ label meetBert:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show bert happy with dissolve
-    b "Hi, my name's Bert Kim."
+    bt "Hi, my name's Bert Kim."
     n "Hey, I'm Dan."
     $menuset = set()
     menu bertQuestions:
@@ -98,24 +98,24 @@ label meetBert:
         "What should I ask Bert?"
 
         "What do you do for a living?":
-            b "I graduated pretty recently, I'm a software engineer now."
+            bt "I graduated pretty recently, I'm a software engineer now."
             n "Damn, you must be pretty smart."
-            b "That's nice of you to say! But I think these days most people can pick up coding if they try really hard."
+            bt "That's nice of you to say! But I think these days most people can pick up coding if they try really hard."
             jump bertQuestions
 
         "What were you doing before you ended up here?":
-            b "I was at this really great Italian restaurant just enjoying some pasta."
-            b "Tortellini with pesto... man I'm sad I didn't get to finish it."
-            b "Well, I guess that's the last thing I remember."
-            b "I imagine there's more between then and now that I don't remember."
+            bt "I was at this really great Italian restaurant just enjoying some pasta."
+            bt "Tortellini with pesto... man I'm sad I didn't get to finish it."
+            bt "Well, I guess that's the last thing I remember."
+            bt "I imagine there's more between then and now that I don't remember."
             n "Yeah, same for me..."
             jump bertQuestions
 
         "Why do you think we're here?":
-            b "Hmm, I honestly have no idea."
-            b "If I were still in college I'd think I was getting hazed by some frat."
-            b "Maybe everyone here knows something the government doesn't want us to."
-            b "And they brought everyone here to mind wipe us or something?"
+            bt "Hmm, I honestly have no idea."
+            bt "If I were still in college I'd think I was getting hazed by some frat."
+            bt "Maybe everyone here knows something the government doesn't want us to."
+            bt "And they brought everyone here to mind wipe us or something?"
             n "That's... a theory."
             ni "I think the government would've just left me in prison if that were the case."
             jump bertQuestions

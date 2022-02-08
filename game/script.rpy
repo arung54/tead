@@ -128,6 +128,14 @@ image gotit:
         xpos .25
         linear 2 xpos .0
 
+init python:
+    $greyscale = False
+    def replacement_show(name, *args, **kwargs):
+        if getattr(renpy.store, 'greyscale', False):
+            renpy.show(name + ('greyscale',), *args, **kwargs)
+        else:
+            renpy.show(name, *args, **kwargs)
+        config.show = replacement_show
 
 $ passattempts = 1
 ##############

@@ -2234,86 +2234,87 @@ label chess3:
     scene black with dissolve
     blank "The next day..."
     play sfx "audio/ding.mp3"
+    $noside = True
     intercom "Twilight has begun. You must leave your room before daytime."
-    scene bg hosproom1 with dissolve
-    b "Yawn."
-    bi "Maybe I should really squeeze every minute out of twilight."
-    bi "It's the only time I can just lay in my bed peacefully, worry-free."
-    bi "..."
-    bi "I nearly fell back asleep."
-    bi "It was a blissful few minutes, until..."
-    ses "Scrchhhh."
-    b "OW!"
-    b "Sesame, why'd you scratch me?"
-    show sesame with dissolve
-    ses "Mew mew mew mew mew!"
-    b "You're mewing a lot..."
-    b "I must be pushing my limits with how long I'm staying here."
-    b "Sesame, you're way too much of a good influence."
-    b "Off to face another day..."
-    scene bg hospcommons with fade
-    $showchibiwindow(["freddy", "jenny", "sam", "sid", "dracula"], [])
-    show frog ind with dissolve
-    f "Morning Bert!"
-    b "Hey Freddy..."
-    f "What took you so long?"
-    b "I uh... was sleepy."
-    f "C'mon Bert! Gotta rise and shine early every day!"
-    bi "As naive as he is, it's nice that Freddy can lighten the mood at times like these."
-    b "..."
-    b "Wait, we're still short a person, right?"
-    show frog ind:
-        xcenter .5
-        linear 0.15 xcenter .25
-    show jenny ind with moveinright:
-        xcenter .75
-    j "Yeah. Lauren, Sam, and Shahar are all missing."
-    b "Is it possible there's three guards today?"
-    j "Hmm... the rules say two."
-    j "So it's unlikely."
-    b "Has the intercom announced there are five minutes remaining yet?"
-    j "No. There's no clocks in here though, so it's hard to tell if it should have."
-    $showchibiwindow(["freddy", "jenny", "sam", "sid", "dracula"], ["lauren", "sam"])
+    li "C'mon Sam."
+    li "Of all the times to be mopey, this isn't a good one."
+    $laur = True
+    $noside = False
+    $greyscale = True
+    scene bg hosphall2
+    $showchibint("sam")
     with dissolve
-    b "Oh, there's Lauren and Sam."
-    scene bg hospkitchenwindow2
-    show hospwindowoverlay2
-    show jenny ind:
-        xcenter .25
-    show lauren ind at inwindow behind hospwindowoverlay2:
-        xcenter .5
-    show sam at inwindow behind hospwindowoverlay2:
-        xcenter .75
-    $showchibiwindow(["freddy", "jenny", "sam", "sid", "dracula"], ["lauren", "sam"])
-    with dissolve
-    l "Hey everyone."
-    j "What took you guys so long?"
-    j "We were worried..."
-    l "I waited outside Sam's cell so we could come here together."
-    l "Sam took a while to get out, so that's why we're kind of late."
-    s "...Sorry."
-    b "Wait, there's something more pressing."
-    b "If you two are here, where's Shahar?"
-    l "He didn't show up yet?"
-    b "No..."
-    l "Did anyone see him sleeping still?"
-    b "He's at the end of the hall, no one walked past his cell to get here."
-    l "..."
-    l "I feel like it's been almost 30 minutes."
-    l "Sam, let's go check on him."
-    s "Okay..."
-    hide lauren
-    hide sam
-    with dissolve
-    play sfx "audio/ding.mp3"
+    lf "Sam."
+    lf "Get up, you can't stay in there forever."
+    s "..."
+    s "There's thirty minutes, I can lay in bed a bit longer..."
+    li "They say you can't take care of other people if you don't take care of yourself first."
+    li "Well, they haven't met the me that's playing this game."
+    lf "Sam, let's go. We have to make food."
+    s "Sigh..."
+    lf "If not for me, can you get up for Freddy?"
+    lf "He'll be hungry..."
+    s "Sigh... okay..."
+    pause 1.0
     show scary with dissolve:
         alpha 0.5
-    bi "Soon after they left, the intercom rang."
-    bi "I hoped it was to tell us there were 5 minutes left in twilight."
-    bi "But no, there was a more obvious explanation."
-    bi "One I didn't want to be true."
-    bi "But sure enough..."
+    lf "I'm getting tired of it."
+    lf "Dracula's two-faced way of asking us to open up while lying to us."
+    lf "Bert trying so hard to solve everything to the point of making Freddy sad."
+    lf "Jenny's need to act like a ditz in a killing game and get away with it because she's cute."
+    lf "And now... Sam acting like no other innocent people tried to kill someone in this game."
+    lf "At least before I could kind of ignore Sam..."
+    lf "I'm glad there are some children around to keep me sane."
+    lf "It feels like they're the only truly innocent ones."
+    lf "Well, and Shahar."
+    lf "He has the mind of a child, so I guess he counts."
     hide scary with dissolve
-    intercom "The murderer has completed their murder, and the body has been found."
-    intercom "To assist in the investigation, all cell doors except the victim's will be opened."
-    intercom "Everyone may move freely, however you are still forbidden from entering others' cells."
+    show sam with dissolve
+    s "Let's go..."
+    scene black with dissolve
+    scene bg hospfancy
+    $showchibint("sam")
+    with dissolve
+    lf "Wow, this room is so much nicer than the cafeteria."
+    lf "Ooh, a vending machine."
+    lf "None of the previous guards mentioned this..."
+    show sam with dissolve
+    s "..."
+    lf "Sam's... not one for many words."
+    lf "Hey Sam, is there a cherry soda in there?"
+    s "...Can't you see for yourself?"
+    lf "I uh... can't really tell."
+    s "...But they're all clear, brown, or green..."
+    lf "So no cherry soda?"
+    lf "Bummer."
+    lf "Well, you want a drink?"
+    s "..."
+    lf "No? More for me, I guess."
+    lf "..."
+    lf "Huh, it requires money."
+    lf "But it seems like someone has taken a drink from here already."
+    lf "Maybe from way back when this place was operational?"
+    s "...Yeah, maybe..."
+    lf "These sodas might be very old..."
+    s "...Didn't you want to make food quickly?"
+    s "...Why are we wasting time here?..."
+    lf "You're right, my bad."
+    lf "Let's go to the kitchen."
+    scene black with dissolve
+    scene bg hospkitchen
+    $showchibint("sam")
+    with dissolve
+    lf "Alright, let's see what there is to cook wi-{p=0.5}{nw}"
+    j "Lauren! Sam!"
+    li "Jenny?"
+    li "Right, there are people on the other side."
+    with dissolve
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
+    show jenny ind at inwindow behind hospwindowoverlay
+    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "bert", "freddy"])
+    with dissolve
+    li "...There's only five of them?"
+    lf "Where's Shahar?"
+    j "We were... hoping you had an answer to that."
+    

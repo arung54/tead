@@ -110,12 +110,12 @@ label trainGo:
         linear .3 xcenter .75
     show bert sad with dissolve:
         xcenter .25
-    b "I don't think so... Those rooms were pretty wide."
-    b "I don't think they could have fit in any reasonable train car."
+    bt "I don't think so... Those rooms were pretty wide."
+    bt "I don't think they could have fit in any reasonable train car."
     hide jenny ind with moveoutright
     show bert sad:
         linear .3 xcenter .5
-    b "Dan, what do you think?"
+    bt "Dan, what do you think?"
     show scary with dissolve:
         alpha .5
     n "Me? Hmm..."
@@ -205,12 +205,12 @@ label trainGo:
         xcenter .15
         ycenter .25
         zoom .75
-    b "Maybe we can find the conductor!"
+    bt "Maybe we can find the conductor!"
     hide popwow
-    b "They could stop the train for us."
+    bt "They could stop the train for us."
     ni "That seems a little optimistic..."
     s "It's worth a shot."
-    b "That's the spirit! Poggers!"
+    bt "That's the spirit! Poggers!"
     s "Plus, it's not like we're going to just sit around here."
     s "If anything we'd better hurry, otherwise the murderer might have time to plan a murder before we find a way out."
     ni "..."
@@ -224,7 +224,7 @@ label trainGo:
     f "Wh-what should I do?"
     f "I'm just a frog..."
     s "I keep forgetting there's a kid here too..."
-    b "It's probably best if Freddy doesn't get involved."
+    bt "It's probably best if Freddy doesn't get involved."
     hide sam with moveoutright
     hide bert happy with moveoutleft
     show frog ind:
@@ -252,13 +252,13 @@ label trainGo:
     t "I'll check behind the bar."
     hide stella ind with moveoutright
     show bert sad with dissolve
-    b "..."
+    bt "..."
     hide bert sad
     play sfx "audio/sfxmoodup.mp3"
     show bert happy
-    b "Her motives may be skewed, but it's still helpful."
-    b "There might be food back there though, and we're going to need to eat."
-    b "I'll look with her."
+    bt "Her motives may be skewed, but it's still helpful."
+    bt "There might be food back there though, and we're going to need to eat."
+    bt "I'll look with her."
 
     hide bert happy with moveoutright
     show shahar ind with dissolve
@@ -436,8 +436,8 @@ label midcar2:
         linear 0.3 xcenter .75
     show bert sad with dissolve:
         xcenter .25
-    b "Hey, woah!"
-    b "Stella might be a little drunk. I tried to tell her not to drink, but..."
+    bt "Hey, woah!"
+    bt "Stella might be a little drunk. I tried to tell her not to drink, but..."
     t "Anyone need a beer? There's a lot ba-"
     hide bert sad  with dissolve
     show sam with dissolve:
@@ -568,7 +568,7 @@ label frontcar1:
         zoom .9 xcenter .5 ycenter .46
     show bert sad with moveinright:
         xcenter .75
-    b "What do you mean by, nothing useful?"
+    bt "What do you mean by, nothing useful?"
     k "Well, we can see some technical aspects of the train."
     k "For example, I can tell you we're going 143 MPH."
     show sidstand:
@@ -726,8 +726,8 @@ label frontcar2:
     hide kaiser ind with dissolve
     $ showchibi("bert", "shahar", "catherine", "dracula")
     show bert sad with dissolve
-    b "I haven't yet either, but I want to spend a little more time up here first."
-    b "This feels like where we'll find the most answers."
+    bt "I haven't yet either, but I want to spend a little more time up here first."
+    bt "This feels like where we'll find the most answers."
     n "I'd like to take a closer look too."
     show bert sad:
         xcenter .5
@@ -741,15 +741,15 @@ label frontcar2:
     hide bert sad
     show bert happy:
         xcenter .75
-    b "Yeah, of course! I just noticed a panel over here that seemed interesting."
-    b "It seems like there are three accessible switches, and a button."
+    bt "Yeah, of course! I just noticed a panel over here that seemed interesting."
+    bt "It seems like there are three accessible switches, and a button."
     n "Ah, that makes sense."
     n "Jenny mentioned the button earlier."
     n "She pressed it up here, and it played the \"closing doors\" message over the intercom in the bar car."
-    b "True! And these switches..."
+    bt "True! And these switches..."
     $mood = "shock"
     n "We probably shouldn't try them haphazardl-"
-    b "Let's try them!"
+    bt "Let's try them!"
     blank "Bert flipped the first switch."
     play sfx "audio/butt.mp3"
     show bg otrainfront
@@ -762,12 +762,12 @@ label frontcar2:
     show drac ind:
         xcenter .25
     d "Interesting. It seems this car {i}does{/i} control the rest of the train."
-    b "Yeah. I think the three light switches correspond to the three train cars."
-    b "Plus, there's this little button that must be for the PA system that Jenny mentioned."
+    bt "Yeah. I think the three light switches correspond to the three train cars."
+    bt "Plus, there's this little button that must be for the PA system that Jenny mentioned."
     blank "Bert flipped the first switch back."
     play sfx "audio/butt.mp3"
     show bg trainfront1
-    b "We're making progress already! Let's keep looking around."
+    bt "We're making progress already! Let's keep looking around."
 label frontcar3:
     scene black with fade
     $noside = True
@@ -785,14 +785,14 @@ label frontcar3:
         xcenter .25
     with fade
 
-    b "Well, it seems like the others were right."
+    bt "Well, it seems like the others were right."
     play sfx "audio/poptear.mp3" volume .5
     show poptear:
         xcenter .775
         ycenter .275
         zoom .75
-    b "Despite all the stuff up here, it all seems password protected."
-    b "Hmm... maybe the Game Master is using this computer to control the game?"
+    bt "Despite all the stuff up here, it all seems password protected."
+    bt "Hmm... maybe the Game Master is using this computer to control the game?"
     d "If anyone knows the password, it's probably the Game Master."
     d "It seems unlikely they would give the password to any of us."
     d "I am particularly intrigued by something."
@@ -800,15 +800,15 @@ label frontcar3:
     d "For example..."
     show welcomescreenblank with dissolve
     d "What does 'users: 0' mean?"
-    b "Yeah, I was confused about that."
-    b "Nobody is logged in, so maybe that's what it means?"
+    bt "Yeah, I was confused about that."
+    bt "Nobody is logged in, so maybe that's what it means?"
     n "But if we were logged in, we would know it, we wouldn't need it to say 'users: 1'."
-    b "Also, what is 'Tead'?"
-    b "How am I even supposed to pronounce that? Like read or {i}read?{/i}"
+    bt "Also, what is 'Tead'?"
+    bt "How am I even supposed to pronounce that? Like read or {i}read?{/i}"
     n "......."
     hide welcomescreenblank with dissolve
-    b "Either way, we can't log in, so it doesn't matter much."
-    b "We should head back to the bar car and meet up with the others."
+    bt "Either way, we can't log in, so it doesn't matter much."
+    bt "We should head back to the bar car and meet up with the others."
     d "Agreed."
     hide bert sad
     hide drac ind
@@ -913,8 +913,8 @@ label midcar3:
     hide jenny ind with moveoutleft
     show bert sad with moveinleft:
         xcenter .25
-    b "There are five more chairs in this car, and then a bed and a bench in the caboose."
-    b "So that leaves... two people's beds unaccounted for."
+    bt "There are five more chairs in this car, and then a bed and a bench in the caboose."
+    bt "So that leaves... two people's beds unaccounted for."
     hide kaiser ind with moveoutright
     show drac ind with moveinright:
         xcenter .75
@@ -923,9 +923,9 @@ label midcar3:
     n "Why's that?"
     d "I simply do not sleep."
     n "..."
-    b "..."
+    bt "..."
     d "..."
-    b "Okay, so only one more bed to account for."
+    bt "Okay, so only one more bed to account for."
     hide drac ind with moveoutright
     $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "kaiser")
 
@@ -938,7 +938,7 @@ label midcar3:
     hide kaiser ind with moveoutright
     $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine")
 
-    b "Well, as long as that's taken care of. G'night Dan!"
+    bt "Well, as long as that's taken care of. G'night Dan!"
     hide bert with moveoutleft
     show sid ind with dissolve:
         xcenter .25
@@ -1189,14 +1189,14 @@ label testft:
     s "She was up late with Freddy making sure he wasn't freaking out too much."
     show bert happy with dissolve:
         xcenter .25
-    b "It was pretty heartwarming, all things considered."
-    b "I'm glad we're all still staying optimistic."
-    b "We're gonna figure this out and get off this train!"
+    bt "It was pretty heartwarming, all things considered."
+    bt "I'm glad we're all still staying optimistic."
+    bt "We're gonna figure this out and get off this train!"
     s "Agreed."
     ni "..."
     s "We should wait for everyone to wake up and have a meeting."
     s "We've explored the train, but we need to figure out a plan."
-    b "Let's meet back here in 30 minutes! Break!"
+    bt "Let's meet back here in 30 minutes! Break!"
     hide bert happy
     hide sam
     with dissolve
@@ -1225,19 +1225,19 @@ label testft:
     call screen midCar with dissolve
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
-    # b "Well, we should get to know each other."
+    # bt "Well, we should get to know each other."
     # t "Hmph. I don't {i}mind{/i} that, but don't get the wrong idea."
     # t "I'm not into younger men."
-    # b "Oh, I didn't mean like th-"
+    # bt "Oh, I didn't mean like th-"
     # hide stella ind
     # show stella happy
     # t "Okay, okay, you caught me, so I {i}am{/i} into younger men."
     # t "But we just met! Wine and wine me a little first, huh?"
-    # b "Don't you mean wine and {i}dine{/i}?"
+    # bt "Don't you mean wine and {i}dine{/i}?"
     # hide stella happy
     # show stella bigsmile
     # t "Deal!"
-    # b "Wait, I-"
+    # bt "Wait, I-"
     # t "You're a sweetheart. It's a shame someone like you is stuck in a situation like this."
     # hide stella bigsmile
     # show stella happy
@@ -1273,9 +1273,9 @@ label midcar4:
         xcenter .5
         linear .3 xcenter .75
     $mood = "ind"
-    b "Alright, I think everyone's here."
-    b "It's starting to seem like we've exhausted our resources."
-    b "I've searched every inch of this train and feel no closer to finding anything useful."
+    bt "Alright, I think everyone's here."
+    bt "It's starting to seem like we've exhausted our resources."
+    bt "I've searched every inch of this train and feel no closer to finding anything useful."
     show kaiser ind with moveinleft:
         xcenter .25
     k "Or even an indication of where we're going."
@@ -1417,11 +1417,11 @@ label midcar4:
     hide catherine ind with moveoutright
     show bert happy with moveinright:
         xcenter .75
-    b "As interesting as that stuff is, maybe we should be focused more on... More extreme things."
+    bt "As interesting as that stuff is, maybe we should be focused more on... More extreme things."
     hide bert happy
     show bert sad:
         xcenter .75
-    b "Reasons why someone might want to kidnap us, for example."
+    bt "Reasons why someone might want to kidnap us, for example."
     ni "..."
 
     #############################################################################################################################################################################
@@ -1437,7 +1437,7 @@ label midcar4:
     t "I tore down competition, I burned bridges, you name it."
     t "My methods don't always see eye-to-eye with the law, but, c'est la vie."
     ni "Is this lady for real?"
-    b "That... Definitely seems like a reason to have enemies."
+    bt "That... Definitely seems like a reason to have enemies."
     $mood = "ind"
     show stella happy:
         xcenter .25
@@ -1448,7 +1448,7 @@ label midcar4:
         ycenter .25
         zoom .75
     t "\"Ms. Cantoire! Put down the vodka!\" \"Ms. Cantoire, don't put your head out the limousine sunroof!\""
-    b "..."
+    bt "..."
     n "..."
     show stella ind:
         xcenter .25
@@ -1458,8 +1458,8 @@ label midcar4:
     t "And sadly, I have no insight on who it might be."
     t "I'm rich enough to put this together, but there are... easier ways to entertain oneself with money."
     hide stella ind with moveoutleft
-    b "..."
-    b "Well at least she's being open about it."
+    bt "..."
+    bt "Well at least she's being open about it."
     show sam with moveinleft:
         xcenter .25
     s "If we're airing out our past, I can go next."
@@ -1468,7 +1468,7 @@ label midcar4:
     $mood = "sad"
     s "I'd like to say I don't regret it, but..."
     s "The drugs weren't always safe."
-    b "Not safe? What do you mean?"
+    bt "Not safe? What do you mean?"
     s "A lot of the stuff I moved was untested and highly experimental."
     s "But those dumb suits didn't know that, so they bought it."
     n "Did it ever end up killing anyone?"
@@ -1477,10 +1477,10 @@ label midcar4:
     s "But I do know I at {i}least{/i} pissed some people off. I wouldn't be surprised if that's part of why I'm here."
     s "It's hard to come to terms with some of this stuff..."
     s "Maybe I deserve this."
-    b "Hey, don't say that! No way."
-    b "We've all made mistakes, and owning up to it now can help us figure this out."
-    b "Any information we can gather is progress."
-    b "Does anyone else have anything they want to bring up?"
+    bt "Hey, don't say that! No way."
+    bt "We've all made mistakes, and owning up to it now can help us figure this out."
+    bt "Any information we can gather is progress."
+    bt "Does anyone else have anything they want to bring up?"
     ni "..."
     show scary with dissolve:
         alpha .2
@@ -1497,20 +1497,20 @@ label midcar4:
         linear .3 alpha .95
     ni "Maybe I should speak up."
     hide scary
-    b "I guess I'll go next."
+    bt "I guess I'll go next."
     $mood = "ind"
-    b "It's not exactly the same as Stella's or Sam's, but..."
+    bt "It's not exactly the same as Stella's or Sam's, but..."
     hide sam with moveoutleft
     show bert sad:
         linear .3 xcenter .5
-    b "I guess I can't think of anything else."
+    bt "I guess I can't think of anything else."
     ni "This kid just bailed me out of speaking up..."
-    b "I was only twenty, too. It feels like so long ago but I think about it every day."
-    b "I was driving after tutoring, same as always."
-    b "It was spring..."
-    b "And this lady... She just... Walked out..."
-    b "Into the road..."
-    b "......."
+    bt "I was only twenty, too. It feels like so long ago but I think about it every day."
+    bt "I was driving after tutoring, same as always."
+    bt "It was spring..."
+    bt "And this lady... She just... Walked out..."
+    bt "Into the road..."
+    bt "......."
     ni "He's all choked up."
     show bert sad:
         linear .3 xcenter .75
