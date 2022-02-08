@@ -487,7 +487,7 @@ label hospitalGo:
     j "I did have one question..."
     j "The rules say we'll be \"punished\" if we follow them."
     j "Do we know what punished means?"
-    hide drac with moveoutright:
+    hide drac with moveoutright
     show frog ind with moveinright:
         xcenter .75
     f "Punished? Isn't that like time out?"
@@ -2232,6 +2232,7 @@ label chess3:
     b "Good night Sesame."
     ses "Mew!"
     scene black with dissolve
+label laurentime:
     blank "The next day..."
     play sfx "audio/ding.mp3"
     $noside = True
@@ -2271,7 +2272,7 @@ label chess3:
     hide scary with dissolve
     show sam with dissolve
     s "Let's go..."
-    scene black with dissolve
+    scene scary with dissolve
     scene bg hospfancy
     $showchibint("sam")
     with dissolve
@@ -2300,7 +2301,7 @@ label chess3:
     s "...Why are we wasting time here?..."
     lf "You're right, my bad."
     lf "Let's go to the kitchen."
-    scene black with dissolve
+    scene scary with dissolve
     scene bg hospkitchen
     $showchibint("sam")
     with dissolve
@@ -2317,4 +2318,3 @@ label chess3:
     li "...There's only five of them?"
     lf "Where's Shahar?"
     j "We were... hoping you had an answer to that."
-    

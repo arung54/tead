@@ -129,13 +129,22 @@ image gotit:
         linear 2 xpos .0
 
 init python:
-    $greyscale = False
+    grey_images = {}
+    for i in renpy.display.image.images:
+        try:
+            grey_im_name = i + ('greyscale',)
+            grey_images[grey_im_name] = im.Grayscale(renpy.display.image.images[i])
+        except:
+            pass
+    for i in grey_images:
+        renpy.image(i, grey_images[i])
     def replacement_show(name, *args, **kwargs):
+        print(name)
         if getattr(renpy.store, 'greyscale', False):
-            renpy.show(name + ('greyscale',), *args, **kwargs)
+            renpy.show(name+('greyscale',), *args, **kwargs)
         else:
             renpy.show(name, *args, **kwargs)
-        config.show = replacement_show
+    config.show = replacement_show
 
 $ passattempts = 1
 ##############
@@ -516,4 +525,4 @@ label start:
 ###########
 #Start
 ###########
-    jump trainGo
+    jump laurentime
