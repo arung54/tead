@@ -500,4 +500,4 @@ label start:
 ###########
 #Start
 ###########
-    jump trial1a
+    jump trainGo
