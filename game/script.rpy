@@ -137,6 +137,7 @@ $ passattempts = 1
 init python:
         noside = False
         dan = True
+        laur = False
         mood = "happy"
         cat = False
 init python:
@@ -403,6 +404,8 @@ init python:
 ##################
 image side bert = ConditionSwitch(
 'noside', 'blank',
+'mood==\"happy\" and laur', 'lhappy', 'mood==\"ind\" and laur', 'lind',
+'mood==\"sigh\" and laur', 'lsigh', 'mood==\"smile\" and laur', 'lsmile',
 'mood==\"happy\" and dan', 'dhappy', 'mood==\"ind\" and dan', 'dind',
 'mood==\"sad\" and dan', 'dsad', 'mood==\"mad\" and dan', 'dmad',
 'mood==\"shock\" and dan', 'dshock',
@@ -412,6 +415,8 @@ image side bert = ConditionSwitch(
 'mood==\"sad\" and cat', 'bcsad', 'mood==\"shock\" and cat', 'bcshock', xalign=0.13, yalign=0.9)
 image side notbert = ConditionSwitch(
 'noside', 'blank',
+'mood==\"happy\" and laur', 'ldhappy', 'mood==\"ind\" and laur', 'ldind',
+'mood==\"sigh\" and laur', 'ldsigh', 'mood==\"smile\" and laur', 'ldsmile',
 'mood==\"happy\" and dan', 'ddhappy', 'mood==\"ind\" and dan', 'ddind',
 'mood==\"sad\" and dan', 'ddsad', 'mood==\"mad\" and dan', 'ddmad',
 'mood==\"shock\" and dan', 'ddshock',
@@ -430,7 +435,10 @@ define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF", 
 define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox, image="bert")
 define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True, image="bert") #Bert Internal, name and text italics
+define li = Character("{i}Lauren Palmer{/i}", who_color= "fbe55c", callback=laurenvoice, image="bert")
+define lf = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="bert") #First person Lauren
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox, image="notbert")
+define bt = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="notbert") #Third person Bert
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="bert")
 define s = Character("Sam Lee", who_color= "f3946a", image="notbert", callback=samvoice)
 define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice, image="notbert")
