@@ -525,4 +525,4 @@ label start:
 ###########
 #Start
 ###########
-    jump laurentime
+    jump twitter
