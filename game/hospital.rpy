@@ -2241,14 +2241,16 @@ label laurentime:
     li "Of all the times to be mopey, this isn't a good one."
     $laur = True
     $noside = False
-    $greyscale = True
+    $rg = True
     scene bg hosphall2
     $showchibint("sam")
     with dissolve
     lf "Sam."
     lf "Get up, you can't stay in there forever."
     s "..."
-    s "There's thirty minutes, I can lay in bed a bit longer..."
+    s "There's thirty minutes, I can stay in here a bit longer..."
+    li "I gave Sam as disappointed but caring a look as I could."
+    li "Unlike the patient hallway, you could make eye contact with someone in bed from the guard hallway."
     li "They say you can't take care of other people if you don't take care of yourself first."
     li "Well, they haven't met the me that's playing this game."
     lf "Sam, let's go. We have to make food."
@@ -2308,13 +2310,116 @@ label laurentime:
     lf "Alright, let's see what there is to cook wi-{p=0.5}{nw}"
     j "Lauren! Sam!"
     li "Jenny?"
-    li "Right, there are people on the other side."
-    with dissolve
+    li "Right, I should check in with people on the other side..."
     scene bg hospkitchenwindow
     show hospwindowoverlay
     show jenny ind at inwindow behind hospwindowoverlay
-    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "bert", "freddy"])
+    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
     with dissolve
+    lf "What's up?"
+    j "Not much. Sid woke up with a pretty rough cough this morning."
+    li "Wait."
     li "...There's only five of them?"
     lf "Where's Shahar?"
-    j "We were... hoping you had an answer to that."
+    j "We thought you would know..."
+    lf "What?"
+    j "He hasn't shown up yet."
+    lf "None of you went to check his cell?"
+    j "Well, if he's in bed we won't see him..."
+    j "Also, we were trying to figure out how to help Sid..."
+    li "Idiots..."
+    li "Without thinking I ran."
+    scene scary with dissolve
+    li "I'm not sure why I ran."
+    li "It's not like me running was going to affect anything."
+    li "I felt like those idiots who speed towards a red light."
+    li "Sure enough, I was greeted by... well, what I thought was a pool of red."
+    scene bg shahardead with dissolve
+    lf "No."
+    lf "No no no no no no no no no no no no no no no."
+    lf "Why did no one but me think to check?"
+    $showchibint("sam")
+    show sam:
+        xcenter .75
+    with dissolve
+    s "...He's dead..."
+    lf "...Yeah."
+    s "...In some ways, he's lucky..."
+    s "...Doesn't have to play this game anymore..."
+    li "Really not helping right now, Sam."
+    li "Keep it together Lauren."
+    li "Oh god, with the smell of blood I might vomit."
+    li "Hold it in, hold it in, hold it in..."
+    li "I need to get away from here."
+    lf "...We should go tell the others."
+    s "...Kay..."
+    scene scary with dissolve
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
+    show sam:
+        xcenter .75
+    show jenny ind at inwindow behind hospwindowoverlay:
+        xcenter .5
+    show bert ind at inwindow behind hospwindowoverlay:
+        xcenter .25
+    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
+    with dissolve
+    j "Did you find him?"
+    lf "...He's dead."
+    show bert sad:
+        xcenter .25
+    bt "...Dead?"
+    lf "Yeah. He's leaning against one of the bars in his cell."
+    lf "He's bleeding on his forehead where it looks like he hit the bar."
+    bt "How could he have died? We saw him go into his cell yesterday."
+    bt "He should have been safe in there..."
+    bt "I... I can't believe it. He died before he could-"
+    bt "Uh, never mind."
+    li "Huh? Does Bert know something we don't?"
+    bt "I'm gonna go check something."
+    hide bert with moveoutleft
+    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy"])
+    with dissolve
+    lf "What could he possibly want to go check..."
+    li "And where was this urgency when we thought Shahar might be dead?"
+    li "Just a few seconds later, Bert returned."
+    show bert sad with moveinleft:
+        xcenter .75
+    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
+    with dissolve
+    bt "The guard-side door in my cell is still locked."
+    lf "Uh... how is that relevant to Shahar dying?"
+    bt "It means you and Sam are the only ones who can investigate over there."
+    lf "Oh."
+    lf "...I guess we can do that, right Sam?"
+    s "...Fine..."
+    lf "In the meantime..."
+    lf "Don't tell Freddy anything you don't need to."
+    lf "And uh... I guess we won't be cooking anything for now."
+    j "No food?!"
+    li "Jenny... now's not the time."
+    lf "Well, guess it's time to investigate."
+    j "Sure. We'll also investigate as much as we can here."
+    bt "Though I doubt it'll be a lot..."
+    bt "Lauren, Sam, remember everything you find in as much detail as possible."
+    bt "Once you think you've found everything you can tell us about it."
+    bt "It's not ideal, but we'll have to make do."
+    bt "Oh, and come back here if you want to ask us anything."
+    lf "Got it."
+    li "Why do I feel like Bert thinks he's my manager..."
+    lf "Come on Sam, let's go."
+    scene bg hospkitchen
+    $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
+    with dissolve
+label mansPreInv:
+    play music "audio/inthefaceofdeath.mp3"
+    pause .5
+    show investstart with dissolve
+    pause 1
+    hide investstart with dissolve
+    li "We haven't even really had a chance to explore this side, and now we have to investigate it."
+    li "I say \"we\" but to be honest, I'm not sure how much Sam will help."
+    li "It's all on me. My life, and the life of everyone else here..."
+    li "Alright Lauren, you can do this..."
+    call screen hospkitchenInv with dissolve
+label trial2a:

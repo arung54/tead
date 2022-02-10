@@ -130,18 +130,42 @@ image gotit:
 
 init python:
     grey_images = {}
+    sep_images = {}
+    rg_images = {}
     for i in renpy.display.image.images:
         try:
             grey_im_name = i + ('greyscale',)
             grey_images[grey_im_name] = im.Grayscale(renpy.display.image.images[i])
         except:
             pass
+        try:
+            sep_im_name = i + ('sepia',)
+            sep_images[sep_im_name] = im.Sepia(renpy.display.image.images[i])
+        except:
+            pass
+        try:
+            rg_im_name = i + ('rg',)
+            rg_images[rg_im_name] = im.MatrixColor(renpy.display.image.images[i],
+                        [ 0.5, 0.5, 0.0, 0.0, 0.0,
+                         0.5, 0.5, 0.0, 0.0, 0.0,
+                         0.0, 0.0, 1.0, 0.0, 0.0,
+                         0.0, 0.0, 0.0, 1.0, 0.0 ])
+        except:
+            pass
     for i in grey_images:
         renpy.image(i, grey_images[i])
+    for i in sep_images:
+        renpy.image(i, sep_images[i])
+    for i in rg_images:
+        renpy.image(i, rg_images[i])
     def replacement_show(name, *args, **kwargs):
         print(name)
         if getattr(renpy.store, 'greyscale', False):
             renpy.show(name+('greyscale',), *args, **kwargs)
+        elif getattr(renpy.store, 'sep', False):
+            renpy.show(name+('sepia',), *args, **kwargs)
+        elif getattr(renpy.store, 'rg', False):
+            renpy.show(name+('rg',), *args, **kwargs)
         else:
             renpy.show(name, *args, **kwargs)
     config.show = replacement_show
@@ -525,4 +549,4 @@ label start:
 ###########
 #Start
 ###########
-    jump twitter
+    jump laurentime
