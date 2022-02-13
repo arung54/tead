@@ -1,6 +1,5 @@
 screen mansMap():
     modal True
-    #TODO: Gate rooms for FT4
     #TODO: Create secret sesame FTE
     imagemap:
         ground "map2ui.png"

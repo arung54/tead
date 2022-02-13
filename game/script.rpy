@@ -132,6 +132,7 @@ init python:
     grey_images = {}
     sep_images = {}
     rg_images = {}
+    blend = 0.6
     for i in renpy.display.image.images:
         try:
             grey_im_name = i + ('greyscale',)
@@ -146,8 +147,8 @@ init python:
         try:
             rg_im_name = i + ('rg',)
             rg_images[rg_im_name] = im.MatrixColor(renpy.display.image.images[i],
-                        [ 0.5, 0.5, 0.0, 0.0, 0.0,
-                         0.5, 0.5, 0.0, 0.0, 0.0,
+                        [blend, 1-blend, 0.0, 0.0, 0.0,
+                         1-blend, blend, 0.0, 0.0, 0.0,
                          0.0, 0.0, 1.0, 0.0, 0.0,
                          0.0, 0.0, 0.0, 1.0, 0.0 ])
         except:
@@ -476,7 +477,7 @@ define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF", 
 define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox, image="bert")
 define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True, image="bert") #Bert Internal, name and text italics
-define li = Character("{i}Lauren Palmer{/i}", who_color= "fbe55c", callback=laurenvoice, image="bert")
+define li = Character("{i}Lauren Palmer{/i}", who_color= "fbe55c", callback=laurenvoice, what_italic = True, image="bert")
 define lf = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="bert") #First person Lauren
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox, image="notbert")
 define bt = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="notbert") #Third person Bert

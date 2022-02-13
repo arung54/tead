@@ -1316,6 +1316,7 @@ label postcupcake:
     j "There's some time to go until we have to make another meal, have to kill that time somehow."
     b "I'd talked to Lauren and Sam, but I guess I could talk to them more or talk to someone else."
     hide jenny ind with dissolve
+    $ftecounter = 5
     blank "FREE TIME 5 HERE"
     show jenny ind with dissolve
     j "And, all done with cleaning!"
@@ -1833,6 +1834,7 @@ label chess3:
     with dissolve
     b "Well, I guess I have some time to kill until lunch..."
     b "Who to talk to?"
+    $ftecounter = 6
     blank "FREE TIME 6 HERE"
     scene bg hospcommons
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
@@ -2067,6 +2069,7 @@ label chess3:
     bi "Well, have to kill time somehow."
     bi "I guess I should strike up a conversation with someone..."
     bi "Unfortunately, it seems Sid is busy, so it can't be him."
+    $ftecounter = 7
     blank "FREE TIME 7 HERE"
     bi "What felt like a few hours passed with some idle chit-chat, but it was hard to tell."
     bi "It could have been minutes, or a full day."
@@ -2411,7 +2414,7 @@ label laurentime:
     scene bg hospkitchen
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
     with dissolve
-label mansPreInv:
+label hospPreInv:
     play music "audio/inthefaceofdeath.mp3"
     pause .5
     show investstart with dissolve
@@ -2422,4 +2425,4 @@ label mansPreInv:
     li "It's all on me. My life, and the life of everyone else here..."
     li "Alright Lauren, you can do this..."
     call screen hospkitchenInv with dissolve
-label trial2a:
+label trial3a:
