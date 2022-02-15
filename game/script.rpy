@@ -84,6 +84,13 @@ image eviscroll:
         linear 80.0 ypos .01
         repeat
 
+image menubgscroll:
+    contains:
+        "menubg.png"
+        xpos -1.0
+        linear 70.0 xpos 0.0
+        repeat
+
 transform inwindow:
     truecenter zoom .8
     yalign .45
@@ -550,4 +557,4 @@ label start:
 ###########
 #Start
 ###########
-    jump laurentime
+    jump trainGo
