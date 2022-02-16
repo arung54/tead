@@ -711,16 +711,16 @@ label hospitalGo:
     b "Some band-aids, gauze, pills for treating things like headaches."
     b "A thermometer, gloves, tweezers..."
     b "...Huh, what's medical glue? There's a container of it here."
-    j "Never heard of it, what does the bottle say?"
-    b "Usage: Closing thin wounds."
-    b "Directions: Squeeze the wound shut, then apply glue."
-    b "Continue to squeeze wound until glue dries."
-    b "Peel glue off in two to three days."
-    b "Glue has low melting point. Avoid hot areas while glue remains on wound."
-    b "If the glue needs to be removed early, take a towel and dip it in near-boiling water."
-    b "Then, apply the towel to the glue. It will melt and the towel will absorb it."
-    b "Wash towel afterwards in hot water to remove glue."
-    j "I don't understand, why wouldn't you just use a bandage to seal a wound?"
+    j "Never heard of it."
+    # b "Usage: Closing thin wounds."
+    # b "Directions: Squeeze the wound shut, then apply glue."
+    # b "Continue to squeeze wound until glue dries."
+    # b "Peel glue off in two to three days."
+    # b "Glue has low melting point. Avoid hot areas while glue remains on wound."
+    # b "If the glue needs to be removed early, take a towel and dip it in near-boiling water."
+    # b "Then, apply the towel to the glue. It will melt and the towel will absorb it."
+    # b "Wash towel afterwards in hot water to remove glue."
+    # j "I don't understand, why wouldn't you just use a bandage to seal a wound?"
     b "The first aid kit seems kinda old, maybe it's not used much anymore?"
     j "Shouldn't a hospital be keeping its first aid kit up to date?"
     b "Yeah, but a hospital also probably shouldn't be used for a killing game..."
@@ -982,7 +982,9 @@ label testwindow:
     scene bg hospkitchen with dissolve
     bi "I turned to the soup and started stirring it."
     bi "After about 10 minutes, Jenny returned."
-    show jenny happy with dissolve
+    show jenny happy
+    $showchibiwindow(["jenny"], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    with dissolve
     j "Hey Bert! Everything okay here?"
     b "Yup! Was definitely sitting here making sure nothing burned the whole time!"
     show jenny ind
@@ -1830,14 +1832,14 @@ label chess3:
     d "In fairness' sake I will make dinner then."
     d "In the mean time, if you wish to talk, I will be here."
     scene bg hospcommons
-    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     with dissolve
     b "Well, I guess I have some time to kill until lunch..."
     b "Who to talk to?"
     $ftecounter = 6
     blank "FREE TIME 6 HERE"
     scene bg hospcommons
-    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
+    $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     with dissolve
     bi "After chatting a bit, Sid talked to us through the window."
     scene bg hospkitchenwindow2
@@ -2336,7 +2338,14 @@ label laurentime:
     li "I'm not sure why I ran."
     li "It's not like me running was going to affect anything."
     li "I felt like those idiots who speed towards a red light."
-    li "Sure enough, I was greeted by... well, what I thought was a pool of red."
+    scene bg hosphalltopright 2 with dissolve
+    l "...There's something in front of Shahar's cell."
+    l "What looks like glass and... either celery juice or..."
+    li "I slowly approached Shahar's cell."
+    li "I don't know why I thought I would see anything different when I got there."
+    li "Maybe he had a cup of juice and spilled it."
+    li "My brain was reaching for every other explanation."
+    li "But sure enough..."
     scene bg shahardead with dissolve
     lf "No."
     lf "No no no no no no no no no no no no no no no."
@@ -2390,10 +2399,13 @@ label laurentime:
         xcenter .75
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
     with dissolve
-    bt "The guard-side door in my cell is still locked."
+    bt "The guard-side door in my cell is still closed."
     lf "Uh... how is that relevant to Shahar dying?"
-    bt "It means you and Sam are the only ones who can investigate over there."
+    bt "Well, I'm guessing that means the rules haven't changed."
+    bt "We can't walk into our cells, much less cross over to the other side."
+    bt "Which means..."
     lf "Oh."
+    lf "Sam and I are the only ones who can investigate this side."
     lf "...I guess we can do that, right Sam?"
     s "...Fine..."
     lf "In the meantime..."
@@ -2409,7 +2421,7 @@ label laurentime:
     bt "It's not ideal, but we'll have to make do."
     bt "Oh, and come back here if you want to ask us anything."
     lf "Got it."
-    li "Why do I feel like Bert thinks he's my manager..."
+    li "I hate that Bert talks like he's my manager..."
     lf "Come on Sam, let's go."
     scene bg hospkitchen
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
