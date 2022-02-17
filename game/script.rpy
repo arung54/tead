@@ -549,6 +549,7 @@ label start:
         train_evidence3 = [True, True, True, True]
         train_extra = [True, True, True, True, True, True]
         mans_evidence = [True] * 9
+        hosp_evidence = [False] * 11
         mans_extra = [False] * 11
         lightscount = 0
         windowcount = 0

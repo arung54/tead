@@ -47,7 +47,7 @@ screen hosp_evidence():
             textbutton "-" style "button_text"
 
         if hosp_evidence[1]:
-            textbutton "Security Room" style "button_text" action SetVariable("currEvidence", 1)
+            textbutton "Computer in the Security Room" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
@@ -103,7 +103,7 @@ screen hosp_evidence():
 
         if currEvidence == 1:
             image "ev2 shape.png" xcenter 800 yalign 0.1
-            text "The security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Cycling hot water through plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
+            text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Cycling hot water through plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "ev2 shape.png" xcenter 800 yalign 0.1
@@ -147,9 +147,9 @@ screen securityInv():
     imagemap:
         ground "bg hospsecurity.png"
         if train_evidence3[2]:
-            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'q' hovered tt.Action("Closet")
+            hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
         else:
-            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'ex' hovered tt.Action("Closet")
+            hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'ex' hovered tt.Action("Computer")
     add "status.png"
     add Text("{b}Security{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -167,6 +167,75 @@ screen securityInv():
         yalign 0.275
         idle "evidenceicon.png" at iconzoom
         action [Show("train_evidence", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "samchibi.png" at chibizoom
+        action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSamSecurity")]
+
+label hospInvSamSecurity:
+    scene bg hospsecurity
+    $ statusnt("Security", "bert", ch = 3, sun = 1)
+    show sam with dissolve
+    lf "Notice anything Sam?"
+    s "...Not really..."
+    li "Talkative as always."
+    hide sam with dissolve
+    call screen securityInv
+
+label securityComputer:
+    scene bg hospsecurity
+    $ statusnt("Security", "bert", ch = 3, sun = 1)
+        if not hosp_evidence[1]:
+        lf "Hm, looks like a computer the guards can use to control things on this floor."
+        lf "I should take a look and see what I can do from here."
+        lf "..."
+        lf "Okay, first thing is a security camera system."
+        lf "I can see everyone but Sam and I looking around in the cafeteria."
+        lf "And I can see..."
+        lf "None of the other rooms."
+        lf "Seems like the camera system is limited to the cafeteria."
+        lf "Weird, you'd think they might want some in the cells."
+        lf "Okay, what else..."
+        lf "Huh, what does this program do? It has a list of all the rooms in this floor."
+        blank "Click."
+        lf "What was that noise?"
+        show sam with dissolve
+        s "...The lights in the room next to us turned off..."
+        lf "Okay, so you can control the lights on the floor from here."
+        s "...Yeah..."
+        hide sam with dissolve
+        lf "What else... there's a function called Hot Water Cycling."
+        lf "Let me click the info button."
+        lf "It says hot water cycles through the pipes here weekly to clean them out."
+        lf "You can also schedule a hot water cycle for the future."
+        lf "Seems like an antiquated way to clean things, but this whole building seems kinda old..."
+        lf "And lastly, a thermostat feature."
+        lf "You can control the temperature in all the rooms."
+        lf "I guess they can't let the patients control their own temperature for safety reasons?"
+        lf "Well, you can't set the temperature higher than 75 degrees anyway, no way that's killing anyone..."
+        lf "Let's see, anything else?"
+        lf "..."
+        lf "No, can't find anything else I have access to."
+        lf "So to recap, this computer has security cameras, lights, hot water cycling, and a thermostat."
+        lf "Maybe one of those is relevant..."
+        $hosp_evidence[1] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Computer in the Security Room was added to evidence."
+        lf "Well, this room doesn't have much besides this computer."
+        lf "I should go look elsewhere."
+        call hospDone
+    else:
+        lf "Let me recall..."
+        lf "This computer has security cameras, lights, hot water cycling, and a thermostat."
+        lf "The camera only sees the cafeteria."
+        lf "The hot water cycles every week, and you can also schedule cycles."
+        lf "And the thermostat controls each room individually, but can't go higher than 75 degrees."
+        lf "As far as I can tell, those are the only features we have access to."
+    call screen securityInv
 
 screen closetInv():
     default tt = Tooltip("")
@@ -302,7 +371,7 @@ screen hospKitchenInv():
         xpos 20
         ypos 20
         idle "samchibi.png" at chibizoom
-        action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSam")]
+        action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSamKitchen")]
     imagebutton:
         xpos 70
         ypos 20
@@ -328,3 +397,11 @@ screen hospKitchenInv():
         ypos 20
         idle "bertchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvBert")]
+
+label mansDone:
+    if False not in hosp_evidence[1:]:
+        lf "Actually, I'm not really used to this investigating thing but..."
+        lf "I don't think there's any places left to check."
+        lf "I guess I should go back and tell everyone what I've found."
+        jump trial3a
+    return
