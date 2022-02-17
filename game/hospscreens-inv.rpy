@@ -77,21 +77,26 @@ screen hosp_evidence():
             textbutton "-" style "button_text"
 
         if hosp_evidence[7]:
-            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 7)
+            textbutton "Closet Rules" style "button_text" action SetVariable("currEvidence", 4)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[8]:
-            textbutton "Glass Shards" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 7)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[9]:
-            textbutton "Pipes in the Hallway" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Glass Shards" style "button_text" action SetVariable("currEvidence", 8)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[10]:
+            textbutton "Pipes in the Hallway" style "button_text" action SetVariable("currEvidence", 8)
+        else:
+            textbutton "-" style "button_text"
+
+        if hosp_evidence[11]:
             textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 8)
         else:
             textbutton "-" style "button_text"
@@ -127,17 +132,21 @@ screen hosp_evidence():
 
         if currEvidence == 7:
             image "ev2 shape.png" xcenter 800 yalign 0.1
-            text "Shahar's corpse was found kneeling, with his forehead resting on a bar of his cell. His forehead is bleeding where it touches the bar, and the blood is running down the bar. No other injuries are visible." xcenter 800 yanchor 0.0 ypos 330
+            text "The closet has two rules: \n1)Return everything to where it once was\n2)Do not leave the supply closet lights on" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
             image "ev2 shape.png" xcenter 800 yalign 0.1
-            text "A number of glass shards were found in front of Shahar's corpse." xcenter 800 yanchor 0.0 ypos 330
+            text "Shahar's corpse was found kneeling, with his forehead resting on a bar of his cell. His forehead is bleeding where it touches the bar, and the blood is running down the bar. No other injuries are visible." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev2 shape.png" xcenter 800 yalign 0.1
-            text "Several pipes run along the ceiling of the hallway where Shahar's body was found." xcenter 800 yanchor 0.0 ypos 330
+            text "A number of glass shards were found in front of Shahar's corpse." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
+            image "ev2 shape.png" xcenter 800 yalign 0.1
+            text "Several pipes run along the ceiling of the hallway where Shahar's body was found." xcenter 800 yanchor 0.0 ypos 330
+
+        if currEvidence == 11:
             image "ev2 shape.png" xcenter 800 yalign 0.1
             text "Sid woke up with a bad cough this morning." xcenter 800 yanchor 0.0 ypos 330
 
@@ -146,7 +155,7 @@ screen securityInv():
     default tt = Tooltip("")
     imagemap:
         ground "bg hospsecurity.png"
-        if train_evidence3[2]:
+        if hosp_evidence[1]:
             hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
         else:
             hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'ex' hovered tt.Action("Computer")
@@ -154,7 +163,7 @@ screen securityInv():
     add Text("{b}Security{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "laurenchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0
@@ -176,7 +185,7 @@ screen securityInv():
 
 label hospInvSamSecurity:
     scene bg hospsecurity
-    $ statusnt("Security", "bert", ch = 3, sun = 1)
+    $ statusnt("Security", "lauren", ch = 3, sun = 1)
     show sam with dissolve
     lf "Notice anything Sam?"
     s "...Not really..."
@@ -186,8 +195,8 @@ label hospInvSamSecurity:
 
 label securityComputer:
     scene bg hospsecurity
-    $ statusnt("Security", "bert", ch = 3, sun = 1)
-        if not hosp_evidence[1]:
+    $ statusnt("Security", "lauren", ch = 3, sun = 1)
+    if not hosp_evidence[1]:
         lf "Hm, looks like a computer the guards can use to control things on this floor."
         lf "I should take a look and see what I can do from here."
         lf "..."
@@ -241,15 +250,31 @@ screen closetInv():
     default tt = Tooltip("")
     imagemap:
         ground "bg hospcloset.png"
-        if train_evidence3[2]:
-            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'q' hovered tt.Action("Closet")
+        if hosp_evidence[4]:
+            hotspot(154, 452, 116, 264) action [Hide("closetInv"), Jump("baseballBat")] mouse 'q' hovered tt.Action("Baseball Bat")
         else:
-            hotspot(484, 104, 70, 230) action [Hide("backCarInv"), Jump("traincloset")] mouse 'ex' hovered tt.Action("Closet")
+            hotspot(154, 452, 116, 264) action [Hide("closetInv"), Jump("baseballBat")] mouse 'ex' hovered tt.Action("Baseball Bat")
+        if hosp_evidence[5]:
+            hotspot(344, 472, 134, 197) action [Hide("closetInv"), Jump("stepstool")] mouse 'q' hovered tt.Action("Stepstool")
+        else:
+            hotspot(344, 472, 134, 197) action [Hide("closetInv"), Jump("stepstool")] mouse 'ex' hovered tt.Action("Stepstool")
+        if hosp_evidence[6]:
+            hotspot(240, 154, 328, 221) action [Hide("closetInv"), Jump("cleaningSupplies")] mouse 'q' hovered tt.Action("Cleaning Supplies")
+        else:
+            hotspot(240, 154, 328, 221) action [Hide("closetInv"), Jump("cleaningSupplies")] mouse 'ex' hovered tt.Action("Cleaning Supplies")
+        if hosp_evidence[7]:
+            hotspot(722, 152, 319, 298) action [Hide("closetInv"), Jump("closetRules")] mouse 'q' hovered tt.Action("Rules of the Closet")
+        else:
+            hotspot(722, 152, 319, 298) action [Hide("closetInv"), Jump("closetRules")] mouse 'ex' hovered tt.Action("Rules of the Closet")
+        if hosp_extra[0]:
+            hotspot(1096, 328, 28, 50) action [Hide("closetInv"), Jump("closetLightSwitch")] mouse 'q' hovered tt.Action("Closet Light Switch")
+        else:
+            hotspot(1096, 328, 28, 50) action [Hide("closetInv"), Jump("closetLightSwitch")] mouse 'ex' hovered tt.Action("Closet Light Switch")
     add "status.png"
     add Text("{b}Closet{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "laurenchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0
@@ -263,6 +288,110 @@ screen closetInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("train_evidence", transition=Dissolve(0.3))]
 
+    imagebutton:
+        xpos 20
+        ypos 20
+        idle "samchibi.png" at chibizoom
+        action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSamCloset")]
+
+label hospInvSamCloset:
+    scene bg hospcloset
+    $ statusnt("Closet", "lauren", ch = 3, sun = 1)
+    show sam with dissolve
+    lf "Notice anything Sam?"
+    s "...Not really..."
+    li "Talkative as always."
+    hide sam with dissolve
+    call screen closetInv
+
+label baseballBat:
+    scene bg hospcloset
+    $ statusnt("Closet", "lauren", ch = 3, sun = 1)
+    if not hosp_evidence[4]:
+
+        $hosp_evidence[4] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Baseball Bat was added to evidence."
+        if False not in hosp_evidence[4:7]:
+            lf "I think that's everything interesting in here."
+            lf "Unless I want to waste time looking at the light switch, but no one would do that, right?"
+        call hospDone
+    else:
+
+    call screen closetInv
+
+label stepstool:
+    scene bg hospcloset
+    $ statusnt("Closet", "lauren", ch = 3, sun = 1)
+    if not hosp_evidence[5]:
+
+        $hosp_evidence[5] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Stepstool was added to evidence."
+        if False not in hosp_evidence[4:7]:
+            lf "I think that's everything interesting in here."
+            lf "Unless I want to waste time looking at the light switch, but no one would do that, right?"
+        call hospDone
+    else:
+
+    call screen closetInv
+
+label cleaningSupplies:
+    scene bg hospcloset
+    $ statusnt("Closet", "lauren", ch = 3, sun = 1)
+    if not hosp_evidence[6]:
+
+        $hosp_evidence[6] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Cleaning Supplies was added to evidence."
+        if False not in hosp_evidence[4:7]:
+            lf "I think that's everything interesting in here."
+            lf "Unless I want to waste time looking at the light switch, but no one would do that, right?"
+        call hospDone
+    else:
+
+    call screen closetInv
+
+label closetRules:
+    scene bg hospcloset
+    $ statusnt("Closet", "lauren", ch = 3, sun = 1)
+    if not hosp_evidence[7]:
+
+        $hosp_evidence[7] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Closet Rules was added to evidence."
+        if False not in hosp_evidence[4:7]:
+            lf "I think that's everything interesting in here."
+            lf "Unless I want to waste time looking at the light switch, but no one would do that, right?"
+        call hospDone
+    else:
+
+    call screen closetInv
+
+label closetLightSwitch:
+    scene bg hospcloset
+    $ statusnt("Closet", "lauren", ch = 3, sun = 1)
+    blank "Flick."
+    lf "Hm? The light didn't turn on."
+    if hosp_evidence[1]:
+        lf "Oh, it might be because the computer in the security room controls the lights."
+        if hosp_evidence[7]:
+            lf "That does make the second rule on that sign a bit weird, though..."
+        else:
+            lf "The last person to use the computer must have turned the lights here permanently off."
+    else:
+        lf "I wonder why..."
+    $hosp_extra[0] = True
+    call screen closetInv
+
 screen guardroomInv():
     default tt = Tooltip("")
     imagemap:
@@ -275,7 +404,7 @@ screen guardroomInv():
     add Text("{b}Guards' Commons{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "laurenchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0
@@ -301,7 +430,7 @@ screen hallwayTLInv():
     add Text("{b}Guards' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "laurenchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0
@@ -327,7 +456,7 @@ screen hallwayTRInv():
     add Text("{b}Guards' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "laurenchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0
@@ -353,7 +482,7 @@ screen hospKitchenInv():
     add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "laurenchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0
@@ -398,7 +527,7 @@ screen hospKitchenInv():
         idle "bertchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvBert")]
 
-label mansDone:
+label hospDone:
     if False not in hosp_evidence[1:]:
         lf "Actually, I'm not really used to this investigating thing but..."
         lf "I don't think there's any places left to check."
