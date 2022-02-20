@@ -310,6 +310,8 @@ init python:
             renpy.show("danchibi2", at_list = chibilist)
         if person == "bert":
             renpy.show("bertchibi2", at_list = chibilist)
+        if person == "lauren":
+            renpy.show("laurenchibi2", at_list = chibilist)
 
     def scenent(bg, name, person, ch, sun):
         sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
@@ -540,7 +542,7 @@ label start:
 ##################
 #Trial Variables
 ##################
-        currEvidence = 1
+        currEvidence = -1
         phase = 0
         statement = -1
         agree = 0
@@ -549,7 +551,7 @@ label start:
         train_evidence3 = [True, True, True, True]
         train_extra = [True, True, True, True, True, True]
         mans_evidence = [True] * 9
-        hosp_evidence = [False] * 11
+        hosp_evidence = [False] * 13
         mans_extra = [False] * 11
         lightscount = 0
         windowcount = 0
@@ -558,4 +560,4 @@ label start:
 ###########
 #Start
 ###########
-    jump trainGo
+    call screen hosp_evidence
