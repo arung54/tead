@@ -108,55 +108,55 @@ screen hosp_evidence():
 
     fixed xmaximum 580:
         if currEvidence == 0:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 guards.png" xcenter 800 yalign 0.1
             text "Sam claims to have woken up before the intercom went off and stared out the door on the guard side of his door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 computer.png" xcenter 800 yalign 0.1
             text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Cycling hot water through plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 glue.png" xcenter 800 yalign 0.1
             text "The bottle of medical glue in the first aid kit had a bit of residue on the nozzle. According to the instructions, medical glue is used for sealing glue and hardened medical glue can be cleaned up by applying a towel dipped in near-boiling water." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 3:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 rules.png" xcenter 800 yalign 0.1
             text "The rules of the hospital state \n1) Two guards are appointed every day\n2) During the day, we cannot be in our cells\n3) At night, we must be in our cells\n4) No one may enter another person's cell\n5)Guards cannot be on the patients' side of the floor and vice-versa\n6) Guards are responsible for feeding patients" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 stool.png" xcenter 800 yalign 0.1
             text "The baseball bat was still in the closet and looked like it was in mint condition." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 stool.png" xcenter 800 yalign 0.1
             text "There is a stepstool in the supply closet, but the highest step is only a few feet off the ground." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 cleaning.png" xcenter 800 yalign 0.1
             text "The closet has a number of cleaning supplies, including ammonia, bleach, ethanol, and hydrogen peroxide." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 closet.png" xcenter 800 yalign 0.1
             text "The closet has two rules: \n1) Return everything to where it once was\n2) Do not leave the supply closet lights on" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 body.png" xcenter 800 yalign 0.1
             text "Shahar's corpse was found kneeling, with his forehead resting on a bar of his cell. His forehead is bleeding where it touches the bar, and the blood is running down the bar. No other injuries are visible." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 shards.png" xcenter 800 yalign 0.1
             text "A number of glass shards were found in front of Shahar's corpse." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 pipes.png" xcenter 800 yalign 0.1
             text "Several pipes run along the ceiling of the hallway where Shahar's body was found, roughly twelve feet off the ground." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 11:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 cells.png" xcenter 800 yalign 0.1
             text "From left to right, the order of the cells is: Lauren, Sam, Dracula, Freddy, Jenny, Bert, Sid, Shahar." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 12:
-            image "ev2 shape.png" xcenter 800 yalign 0.1
+            image "ev3 sid.png" xcenter 800 yalign 0.1
             text "Sid woke up in the middle of the night with a bad cough. There were no signs of illness prior to today." xcenter 800 yanchor 0.0 ypos 330
 
 
