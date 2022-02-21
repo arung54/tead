@@ -40,14 +40,14 @@ screen hosp_evidence():
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
         hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("hosp_evidence", transition=Dissolve(0.3))]
-    vbox xalign 0.15 yalign 0.75 spacing 25:
+    vbox xalign 0.15 yalign 0.75 spacing 18:
         if hosp_evidence[0]:
-            textbutton "Sam and Lauren's Account" style "button_text" action SetVariable("currEvidence", 0)
+            textbutton "Guards' Accounts" style "button_text" action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[1]:
-            textbutton "Computer in the Security Room" style "button_text" action SetVariable("currEvidence", 1)
+            textbutton "Computer" style "button_text" action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
@@ -77,32 +77,32 @@ screen hosp_evidence():
             textbutton "-" style "button_text"
 
         if hosp_evidence[7]:
-            textbutton "Closet Rules" style "button_text" action SetVariable("currEvidence", 4)
+            textbutton "Closet Rules" style "button_text" action SetVariable("currEvidence", 7)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[8]:
-            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 7)
+            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 8)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[9]:
-            textbutton "Glass Shards" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Glass Shards" style "button_text" action SetVariable("currEvidence", 9)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[10]:
-            textbutton "Pipe in the Hallway" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Pipe in the Hallway" style "button_text" action SetVariable("currEvidence", 10)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[11]:
-            textbutton "Order of the Cells" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Order of the Cells" style "button_text" action SetVariable("currEvidence", 11)
         else:
             textbutton "-" style "button_text"
 
         if hosp_evidence[12]:
-            textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 12)
         else:
             textbutton "-" style "button_text"
 
@@ -137,7 +137,7 @@ screen hosp_evidence():
 
         if currEvidence == 7:
             image "ev2 shape.png" xcenter 800 yalign 0.1
-            text "The closet has two rules: \n1)Return everything to where it once was\n2)Do not leave the supply closet lights on" xcenter 800 yanchor 0.0 ypos 330
+            text "The closet has two rules: \n1) Return everything to where it once was\n2) Do not leave the supply closet lights on" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
             image "ev2 shape.png" xcenter 800 yalign 0.1
@@ -157,7 +157,7 @@ screen hosp_evidence():
 
         if currEvidence == 12:
             image "ev2 shape.png" xcenter 800 yalign 0.1
-            text "Sid woke up with a bad cough this morning." xcenter 800 yanchor 0.0 ypos 330
+            text "Sid woke up in the middle of the night with a bad cough. There were no signs of illness prior to today." xcenter 800 yanchor 0.0 ypos 330
 
 
 screen securityInv():
@@ -242,7 +242,7 @@ label securityComputer:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Computer in the Security Room was added to evidence."
+        blank "Computer was added to evidence."
         li "Well, this room doesn't have much besides this computer."
         li "I should go look elsewhere."
         call hospDone
@@ -1051,7 +1051,6 @@ label hospInvSid:
         li "Hang in there Sid, we'll get out of here soon."
         hide sid with dissolve
     call screen hospKitchenInv with dissolve
-
 
 label hospDone:
     if False not in hosp_evidence[1:]:
