@@ -121,7 +121,7 @@ screen hosp_evidence():
 
         if currEvidence == 3:
             image "ev3 rules.png" xcenter 800 yalign 0.1
-            text "The rules of the hospital state \n1) Two guards are appointed every day\n2) During the day, we cannot be in our cells\n3) At night, we must be in our cells\n4) No one may enter another person's cell\n5)Guards cannot be on the patients' side of the floor and vice-versa\n6) Guards are responsible for feeding patients" xcenter 800 yanchor 0.0 ypos 330
+            text "The rules of the hospital state \n1) Two guards are appointed every day\n2) During the day, we cannot be in our cells\n3) At night, we must be in our cells\n4) No one may enter another person's cell\n5) Guards cannot be on the patients' side of the floor and vice-versa\n6) Guards are responsible for feeding patients" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
             image "ev3 stool.png" xcenter 800 yalign 0.1
@@ -1007,6 +1007,58 @@ label hospInvBert:
     li "What I'd give to trade places with him right now..."
     li "I'm sure he'd be happy to do that too..."
     hide bert with dissolve
+    call screen hospKitchenInv with dissolve
+
+label hospInvFreddy:
+    scene bg hospkitchen with Dissolve(0.0)
+    scene bg hospkitchenwindow
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
+    with dissolve
+    show frog sad at inwindow behind hospwindowoverlay with dissolve
+    f "Lauren... why are you over there?"
+    f "When are you gonna come back and play with me?"
+    lf "Soon Freddy. I have some imoprtant work to do..."
+    f "Important work?"
+    lf "Uh, remember all those debates we've had since we got here?"
+    lf "You know, before we fall asleep and wake up somewhere else."
+    lf "We spend a lot of time asking each other questions and stuff like that?"
+    f "Oh. Yeah, I remember those."
+    lf "Well uh, before the debates, while you and I were playing, the others would usually find stuff for us."
+    lf "Stuff we needed to talk about."
+    lf "But now it's my turn to do it."
+    lf "Taking turns is fair, right Freddy?"
+    f "Yeah... Lauren?"
+    lf "Yeah?"
+    f "Why does no one ever tell me anything?"
+    f "It's like the rest of you have secrets and I don't like it."
+    f "I... I know what \"murder\" means. I've watched TV, you know."
+    f "That's what the superheroes do to the bad guys!"
+    li "He's right, we're being dishonest with him by trying to hide the dead bodies."
+    li "And then still having him sit through us trying to solve the murders."
+    li "And kids catch on to more than we think."
+    li "He probably knows someone is dead but knows we don't want to talk to him about it."
+    li "Who knows, maybe he's seen a dead body before."
+    li "But... I can't let him be like me."
+    li "Those weeks after the murder."
+    li "No, not weeks. Years."
+    li "I wouldn't want him to go through that."
+    lf "Freddy, there's some... stuff that kids shouldn't see."
+    f "Oh, like when daddy and his nurse locked the door and wouldn't let me in?"
+    lf "Uh... not quite."
+    lf "Look, you... have a long life ahead of you."
+    lf "One you should get to enjoy as much as possible."
+    lf "Find lots of frogs, have lots of cake."
+    f "I do like cake and frogs."
+    lf "Right. You'll have less fun if you see some of the things we're hiding."
+    lf "We're old, we don't have our childhood anymore, so we don't need to worry about that."
+    lf "Does that make sense?"
+    f "...I think so."
+    lf "Sorry Freddy, I know it's no fun when others know more than you do."
+    f "It's okay... I trust you Lauren."
+    f "But you're taking me to a zoo when this is done!"
+    lf "Deal."
+    hide frog with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospInvSid:
