@@ -2429,3 +2429,37 @@ label hospPreInv:
     li "Alright Lauren, you can do this..."
     call screen hospkitchenInv with dissolve
 label trial3a:
+    $laur = False
+    $rg = False
+    $noside = True
+    scene black with dissolve
+    bi "..."
+    bi "I've never really felt like my life was out of my control."
+    bi "I guess I was lucky to be born to good parents, that wasn't under my control."
+    bi "But the rest of my life was to some extent."
+    bi "Stuff like college admissions are kind of random, but you have some control."
+    bi "Even the accident..."
+    bi "That was out of my control, but I had ways to keep it from ruining the rest of my life."
+    bi "But now..."
+    $noside = False
+    scene bg hospcommons
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], [])
+    with dissolve
+    bi "It's all on Lauren."
+    bi "And I guess Sam. But mostly Lauren."
+    bi "If she misses a crucial piece of evidence..."
+    bi "If she misspeaks and we all believe something wrong..."
+    bi "Or even worse, if she did it and lies to us all..."
+    bi "We're all dead.{p=1.0} Simple as that."
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "They're back. Lauren and Sam."
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
+    with dissolve
+    show lauren ind at inwindow behind hospwindowoverlay:
+        xcenter .33
+    show sam at inwindow behind hospwindowoverlay:
+        xcenter .67
+    with dissolve
