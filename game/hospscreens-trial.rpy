@@ -89,7 +89,7 @@ screen hospitalEvidenceTrial(s, e, l):
         imagemap:
             ground "evidenceui.png"
             hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("hospitalEvidenceTrial")]
-    vbox xalign 0.15 yalign 0.75 spacing 30:vbox xalign 0.15 yalign 0.75 spacing 18:
+    vbox xalign 0.15 yalign 0.75 spacing 18:
         textbutton "Guards' Accounts" style "button_text" action SetVariable("currEvidence", 0)
         textbutton "Computer" style "button_text" action SetVariable("currEvidence", 1)
         textbutton "Bottle of Medical Glue" style "button_text" action SetVariable("currEvidence", 2)
@@ -207,7 +207,7 @@ screen hospitalTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stat
                 yalign 0.04
                 action [Function(shatterNoise), Show("shatteredHosp", lab = corrL)]#, Hide("hospitalTrial"), Hide("hospitalEvidenceTrial"), Jump(l)]
         else:
-            imagebutton:W
+            imagebutton:
                 idle "agree.png"
                 xpos 0.55
                 yalign 0.04
