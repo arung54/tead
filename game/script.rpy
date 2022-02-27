@@ -561,4 +561,4 @@ label start:
 ###########
 #Start
 ###########
-    call screen hosp_evidence
+    jump bankGo
