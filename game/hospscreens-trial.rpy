@@ -138,7 +138,7 @@ screen hospitalEvidenceTrial(s, e, l):
 
         if currEvidence == 8:
             image "ev3 body.png" xcenter 800 yalign 0.1
-            text "Shahar's corpse was found kneeling, with his forehead resting on a bar of his cell. His forehead is bleeding where it touches the bar, and the blood is running down the bar. No other injuries are visible." xcenter 800 yanchor 0.0 ypos 330
+            text "Shahar's corpse was found kneeling, with his forehead resting against a bar of his cell. His forehead is bleeding where it touches the bar, and the blood is running down the bar. No other injuries are visible." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1

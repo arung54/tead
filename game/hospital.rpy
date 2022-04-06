@@ -2463,3 +2463,231 @@ label trial3a:
     show sam at inwindow behind hospwindowoverlay:
         xcenter .67
     with dissolve
+    l "I think we found everything."
+    l "I uh, didn't really have a way to take notes or anything so this is all off the top of my head..."
+    show scary:
+        alpha .5
+    with dissolve
+    bi "Lauren proceeded to tell us everything she observed."
+    bi "I did my best to picture everything she described."
+    bi "There's a memory trick called building a memory palace, also called The Roman Room."
+    bi "For some reason, humans are better at memorizing objects after visualizing them in familiar locations."
+    bi "Even if those objects are totally unrelated. For example..."
+    bi "If you want to memorize a long sequence of letters, it's easier if you attach each one to an object."
+    bi "Then, you picture those objects laid in order around a familiar room."
+    bi "By just picturing myself walking around the guard side, seeing the things Lauren described..."
+    bi "I felt like I was able to remember a lot of the minor details of what Lauren said."
+    bi "It took a while, but eventually Lauren had managed to tell us everything."
+    hide scary with dissolve
+    blank "All evidence found by Lauren has been transferred to Bert."
+    bi "...Can I trust her though?"
+    b "Hey Lauren, Sam..."
+    b "Tell me what you did this morning on your own."
+    l "Huh?"
+    b "You came here earlier and asked us questions..."
+    b "I'm just returning the favor."
+    b "The things you did together don't really matter, just the alone parts."
+    l "I... guess that makes sense."
+    l "I woke up as soon as the intercom went off."
+    l "Got up and immediately went to Sam's cell, and then waited there until Sam came out."
+    l "And then we spent the rest of the time until now together."
+    b "Sam?"
+    s "...Lauren just told you."
+    b "Yeah, but tell me things from your perspective."
+    s "...Fine."
+    s "...I woke up before the intercom."
+    s "Then I just sat in bed and stared out the guard-side door until Lauren showed up."
+    s "And then like she said, we spent the rest of the together."
+    b "Thanks, that's useful."
+    $hosp_evidence[0] = True
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    blank "Guards' Accounts was added to evidence."
+    scene bg hospcommons
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    show jenny ind with dissolve
+    b "Okay, first things first, we should try to figure out how Shahar died."
+    j "Well, isn't that obvious?"
+    j "I mean, if you consider the state of the body, there's really only one explanation..."
+    python:
+        startHospitalTrial("jenny", "Jenny: According to Lauren, {color=#f00}Shahar's body had no injuries besides the one on his head{/color}.", -1,
+        "jenny",  "Jenny: So {color=#f00}Shahar must have died from whatever caused that injury{/color}.", -1,
+        "jenny",  "Jenny: He was on the guard side of his cell, so a {color=#f00}guard must have killed him{/color}.", -1,
+        "jenny", "Jenny: They did it by {color=#f00}striking Shahar hard in the forehead through the bars{/color} with some sort of object.", -1,
+        3, 8, "trial3b")
+label trial3b:
+    scene bg hospcommons
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    show jenny ind
+    with dissolve
+    b "No, I don't think Shahar was struck in the forehead."
+    j "But he has no other injuries... why would he be bleeding on his forehead if he wasn't struck there by someone?"
+    b "I agree he has no other injuries, but think about the way his body is positioned."
+    scene bg shaharhead with dissolve
+    b "He's kneeling, and leaning forward."
+    b "If someone hit him from the front, and that was the killing blow..."
+    b "It's more likely he would have fell over backwards."
+    b "So we would have found him on his back."
+    b "Even if they hit him on the forehead, and he didn't fall, and then fell later..."
+    b "What are the odds that his head would land exactly on his injury?"
+    j "Hm... that's true, but..."
+    j "If that isn't what killed, what else could have?"
+    j "After all, Lauren said he has no other visible injuries."
+    show jenny ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show sid ind with moveinright:
+        xcenter .75
+    i "Wait, but *cough* Lauren didn't see the back side of him, right?"
+    i "Just because there are no other {i}visible{/i} injuries *cough* doesn't mean there aren't some we can't see."
+    i "Shahar could have a *cough* injury on the back of him."
+    j "Oh, that's a good point!"
+    j "In which case, it's obvious what happened!"
+    bi "Anytime someone says this, it usually means I'm going to have to prove them wrong..."
+    python:
+        startHospitalTrial("jenny", "Jenny: The injury on Shahar's forehead was {color=#f00}caused by him slamming his head into the bars{/color}.", -1,
+        "jenny",  "Jenny: Which means, he must have been {color=#f00}hit from behind{/color} into the bars.", -1,
+        "jenny",  "Jenny: If he was hit into the bars, {color=#f00}that would explain why his injury is exactly where he's leaning on the bar{/color}.", -1,
+        "sid", "Sid: *cough* It makes sense, but {color=#55f}I don't think there was anything they could use to hit him{/color}.", 1,
+        1, 3, "trial3c")
+label trial3c:
+    scene bg hospcommons
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    show jenny ind:
+        xcenter .25
+    show sid ind:
+        xcenter .75
+    with dissolve
+    b "Jenny, if you look at the rules of the hospital..."
+    b "It's pretty clear Shahar wasn't hit from behind into the bars."
+    j "Really? It's not clear to me..."
+    j "Then again, there are a lot of rules, I might be forgetting an important one."
+    b "Well, the important rule is..."
+    show scary with dissolve:
+        alpha 0.5
+label trial3c2:
+    menu:
+        bi "Which rule proves Shahar wasn't hit from behind?"
+
+        "Two guards are appointed every day.":
+            bi "Even if there was only one guard, they could have hit Shahar if not for the other rules..."
+            jump trial3c2
+        "During the day, we cannot be in our cells.":
+            bi "Well, the crime could have happened at twilight. So this doesn't really rule anything out."
+            jump trial3c2
+        "At night, we must be in our cells":
+            bi "Well, the crime could have happened at twilight. So this doesn't really rule anything out."
+            jump trial3c2
+        "No one may enter another person's cell.":
+            bi "Yeah, that's it!"
+        "Guards cannot be on the patients' side of the floor and vice-versa.":
+            bi "This rule doesn't say anything about the cells, which aren't really on either side..."
+            jump trial3c2
+        "Guards are responsible for feeding patients.":
+            bi "Unless Shahar sha-starved to death, I don't see how that's relevant."
+            jump trial3c2
+    hide scary with dissolve
+    b "The rules say no one may enter another person's cell."
+    b "So for someone to hit Shahar from behind into the bars, they would have to break that rule."
+    b "Which means they'd be \"punished.\""
+    j "Maybe they just hit him really hard from the patients' side across his cell!"
+    b "...They hit him once hard enough to send him all the way across his cell?"
+    j "Oh... yeah, they would have had to enter his cell and get punished..."
+    i "*Cough* we don't know what the punishment is though!"
+    j "Yeah! Maybe the punishment is just having to eating the end slice of bread!"
+    b "Um..."
+    b "I mean, okay, maybe the punishment is something none of us would notice."
+    bi "Which given how psychotic the Game Master is, probably isn't the case..."
+    b "But would anyone really risk their life over figuring that out?"
+    i "*cough* We're all already risking our lives by-{p=0.5}{nw}"
+    hide jenny
+    hide sid
+    show drac ind
+    d "Enough."
+    d "This meaningless speculation is going nowhere."
+    d "Obviously the killer is..."
+    show hospwindowoverlay2
+    show drac ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    d "Either Lauren or Sam."
+    s "...Idiot..."
+    d "Call me what you wish, but..."
+    d "We don't need to conjecture about whether someone entered his cell from the patients' side."
+    d "There is irreconcilable evidence the murder happened on the guard side."
+    d "And the only people who have been on that side since last night, when Shahar was alive, are Lauren and Sam."
+    bi "Evidence the murder happened on the guard side?"
+    bi "Dracula must be talking about..."
+    call screen hospEvidenceTrial(-1, 9, "trial3d") with dissolve
+label trial3d:
+    show hospwindowoverlay2
+    show drac ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "Dracula... are you talking about the glass shards?"
+    d "Precisely."
+    l "Wait, how is that proof no one entered Shahar's cell from the patient side?"
+    l "They could have just thrown them through the cell door afterwards as a diversion."
+    d "And pray tell, where would a patient have acquired that glass from?"
+    l "Well there are bottles in..."
+    l "...The vending machine on the guard's side."
+    l "Which only Sam and I have had access to since last night."
+    s "...A previous guard could have brought a bottle with them..."
+    l "Oh, that's true."
+    l "There's no rules against stealing anything from the guards' side and bringing it over."
+    l "So the murderer brought a bottle with them to create a diversion."
+    l "Then they entered Shahar's cell, killed him, and threw the bottle through the cell bars."
+    l "It broke when it landed."
+    d "...I see Lauren is grasping for straws, as they say."
+    d "It would be extremely difficult to hide a bottle for that long a period of time."
+    l "Okay, fine, maybe the bottles never left the guards' side."
+    l "But I can prove I didn't do it!"
+    python:
+        startHospitalTrial("lauren", "Lauren: Sam and I were together {color=#f00}the entire time since Sam left the cell this morning.{/color}.", -1,
+        "lauren",  "Lauren: Sam woke up before the intercom, so {color=#f00}I couldn't have secretly killed Shahar before meeting Sam{/color}.", -1,
+        "dracula",  "Dracula: No, {color=#f00}you could have snuck off on your own{/color} while Sam was awake but still in the cell.", -1,
+        "dracula", "Dracula: Sam only would have {color=#f00}only waited a few minutes{/color} while you killed Shahar.", -1,
+        2, [0, 11], "trial3e")
+label trial3e:
+    show hospwindowoverlay2
+    show drac ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "Wait, according to Sam's account, Sam stared out the cell door the entire morning."
+    b "From before the intercom went off, until Lauren arrived at Sam's cell."
+    d "So? I already covered this, Lauren could have made her first appearance after the murder."
+    d "Sam would be none the wiser as to Lauren's activities prior to her meeting Sam this morning."
+    b "Well, no, Sam claimed to be staring out the cell door at the guard side the entire morning."
+    b "And Lauren's cell is at the end of hall containing Sam's cell."
+    l "Yeah, that's true!"
+    l "For me to leave my cell and the hallway, I'd have to pass by Sam's cell."
+    l "So if I killed Shahar, Sam would've seen me walk past."
+    l "Me meeting Sam at the cell would've been the second time Sam saw me this morning."
+    s "...Yeah, that didn't happen..."
+    s "...Dumb vampire..."
+    d "Hmph fine. So Lauren couldn't have left without Sam noticing..."
+    d "But that means Sam could have left without Lauren noticing."
+    b "No, Lauren said she went to Sam's cell basically as soon as the intercom went off..."
+    b "That would mean Sam would have to go to across the floor to Shahar's cell, kill him..."
+    b "And then return, all in the time it took Lauren to walk roughly ten feet over to Sam's cell."
+    d "...Alright, I guess this case is not as clear-cut as I assumed."
+    d "Apologies for the diversion."
+    b "No, this was good."
+    b "We established that Lauren and Sam couldn't have done it."
+    l "But... doesn't that mean Dracula or Sid did it?"
+    l "If Bert or Jenny did it, Dracula or Sid would have found the broken bottle."
+    
