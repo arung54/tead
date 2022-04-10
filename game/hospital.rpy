@@ -2689,5 +2689,106 @@ label trial3e:
     b "No, this was good."
     b "We established that Lauren and Sam couldn't have done it."
     l "But... doesn't that mean Dracula or Sid did it?"
-    l "If Bert or Jenny did it, Dracula or Sid would have found the broken bottle."
-    
+    l "If Bert or Jenny did it, Dracula or Sid would have found the broken bottle yesterday."
+    l "Dracula claimed earlier that Sam and I were the only ones on the guard side since we last saw Shahar..."
+    l "But that's not necessarily true. Dracula or Sid could have killed Shahar during twilight..."
+    l "After we all went to our cells, including Shahar."
+    d "I don't think that's a line of questioning you wish to pursue."
+    l "Why not? You'd want to say that, being the accused."
+    d "Well, I can prove I didn't attack Shahar yesterday."
+    d "Which would mean, according to your theory, Sid did it."
+    show sid mad with moveinright:
+        xcenter .75
+    i "Hey! Screw you old man!"
+    d "Don't direct your hatred at me. Direct it at Lauren."
+    d "It's her theory that places guilt onto you."
+    i "You don't have proof! You're lying!"
+    d "If I killed him yesterday during twilight, there would have been at least one witness."
+    d "Either someone who was nearby or who would have had evidence I did it."
+    d "Sigh... I can't deal with your incompetence any longer."
+    d "Bert, you know who I'm talking about, right?"
+    d "Please explain it to the child."
+    b "Why me?"
+    d "So that I don't have to."
+    b "..."
+    bi "I hate Dracula sometimes but..."
+    bi "If it's going to get us closer to the truth, I'll have to figure out what he's talking about."
+    bi "Let's see, who would have been a witness to Dracula assaulting Shahar yesterday..."
+    call screen chooseCharHospital("sid", trial3f, "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
+label trial3f:
+    show hospwindowoverlay2
+    show drac ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .75
+    show sid mad:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "...Sid, if Dracula killed Shahar during twilight yesterday..."
+    b "You would have known."
+    i "What?"
+    b "Did you see any shards of glass in front of Shahar's cell when you returned to your cell last night?"
+    show sid ind:
+        xcenter .75
+    i "...No."
+    b "So that means he didn't kill Shahar before you went to your cell yesterday."
+    i "Oh... but wait, he could have killed Shahar when I was in my cell!"
+    b "Sure, but then he would have had to pass your cell."
+    i "What if I wasn't looking when he walked by?"
+    b "Well, you would have probably heard something too."
+    b "Shahar's cell is next to yours, and the cell door lets sound through freely."
+    b "Not to mention, even if somehow you missed Dracula passing twice and the sound of glass..."
+    b "Jenny and I are also in that hallway."
+    b "Do we really think Dracula snuck past all three of us twice, and none of us heard that sound?"
+    i "..."
+    show sid mad:
+        xcenter .75
+    i "So... are you accusing me?"
+    b "What?"
+    i "Well Lauren said it had to either be Dracula or I..."
+    i "And you just said Dracula couldn't do it..."
+    i "Seems like you're accusing me..."
+    i "I'm gonna die, and you're all gonna die!"
+    show lauren at inwindow behind hospwindowoverlay2:
+        xcenter .5
+        linear 0.15 xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .75
+        linear 0.15 xcenter .6
+    s "Shut up..."
+    i "What?"
+    s "That's not what Bert proved..."
+    s "...All he said was you're the only one that could have hit Shahar with the bottle..."
+    i "Screw you! That's just accusing me again!"
+    b "!"
+    b "Wait... Sam, that's a great point."
+    i "What? No it's not!"
+    b "Sid, just listen for a second."
+    b "What Sam said is true, you're the only one that could have hit Shahar with the bottle."
+    b "But we don't know that the bottle was used to hit Shahar."
+    b "Until we figure out what the bottle's connection to the murder is, we can't accuse anyone."
+    show sid ind:
+        xcenter .75
+    i "..."
+    i "Oh! I get it!"
+    i "I'm gonna think really hard about what the bottle's purpose is!"
+    i "..."
+    b "..."
+    i "...Okay, I got nothing."
+    d "I don't understand... how else would a bottle be used in the murder besides as a weapon?"
+    l "Maybe it was just randomly there?"
+    b "Well Shahar was never on the guard side, so a guard must have brought it there."
+    b "If it was just randomly dropped... wouldn't that guard have told us about it by now?"
+    b "Or even just cleaned it up?"
+    l "Hm... that's a good point."
+    hide drac with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Wait, something's weird about how Lauren described the glass shards she found..."
+    j "I think we can rule out Shahar being hit by the bottle!"
+    b "Oh?"
+    show ev3 shards with dissolve:
+        xcenter .5 ycenter .5
+    j "Think about it, if Shahar was hit with the bottle through the cell, something is missing..."
