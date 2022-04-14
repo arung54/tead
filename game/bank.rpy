@@ -14,7 +14,7 @@ label bankGo:
     bi "Shahar... and Dracula."
     bi "No, not Dracula. Ivan."
     bi "Even after his death he deserves to be called his real name."
-    bi "Despite everything, I don't hate him."
+    bi "Despite everything, I don't hate him." #Arun: He lobotomized Shahar, they probably should kind of hate him
     $mood = "ind"
     bi "I can't hate him."
     bi "None of us here have options, all we can do is keep pushing forward."
@@ -40,7 +40,7 @@ label bankGo:
     s "This nightmare continues."
     s "Tsk... what a disaster."
     b "Is everyone okay?"
-    show lauren ind with moveinleft:
+    show lauren ind with moveinleft: #Arun: Sam first
         xcenter .25
     show sam:
         linear .3 xcenter .75
@@ -101,7 +101,7 @@ label bankGo:
     show bankposter with dissolve
     b "Oh wow, this is interesting!"
     s "Why do you say?"
-    b "None of the other places we've been put have given us a map."
+    b "None of the other places we've been put have given us a map." #Arun: Map shouldn't be "publicly available"
     b "With this, we know what we're getting into, at least a little bit."
     l "That star must indicate our current location."
     l "It says we're in the \"lounge\" right now, which makes sense."
@@ -117,7 +117,7 @@ label bankGo:
     b "But-"
     i "See ya!"
     hide sid happy with moveoutright
-    $ showchibint("lauren", "freddy", "jenny", "sam")
+    $ showchibi("lauren", "freddy", "jenny", "sam")
     bi "Sigh."
     bi "We should probably go after him."
     show jenny happy:
@@ -187,7 +187,7 @@ label bankGo:
     j "This room's about what I'd expect."
     j "A sink, coffee machine, and a fridge with some snacks."
     bi "I could go for some coffee and snacks right about now..."
-    b "That poster on the wall seems like it's mocking us..."
+    b "That poster on the wall seems like it's mocking us..." #Arun: Maybe move Jenny so poster is visible
     ses "Mrow..."
     l "The Game Master has some sick sense of humor."
     show jenny happy
@@ -195,7 +195,7 @@ label bankGo:
     j "It's your cousin, Sesame!"
     l "Anyway, having access to food is nice."
     l "Maybe not a nutritious meal, but I'll see if I can grab something for Freddy."
-    hide lauren ind with moveoutright
+    hide lauren ind with moveoutright #Arun: Dissolve instead?
     show jenny ind:
         linear .3 xcenter .5
     j "Pretty dinky kitchen for how fancy the lobby was, huh?"
@@ -271,7 +271,7 @@ label bank2:
         xcenter .75
     show sam angry with moveinleft:
         xcenter .25
-    i "HEY! Back off, this is gunna by MY MONEY!"
+    i "HEY! Back off, this is gunna be MY MONEY!"
     i "I've got sharp teeth and I WILL bite you!"
     b "Whoa, Sid, it's just us!"
     s "What are you talking about?"
@@ -329,7 +329,7 @@ label bank2:
     i "The poster says all of us have a code, and we can use any three in any order."
     i "Let's see, carry the two... multiple this by that... oh wait..."
     b "There are only six of us, which means there are... 120 correct passcodes."
-    i "20! See, I figured it out myself."
+    i "47! See, I figured it out myself."
     i "That seems like a bunch, right?"
     b "There are 31 days in a month though, and you'd have to guess two numbers, so..."
     i "Two? The safe needs three numbers!"
@@ -670,7 +670,7 @@ label bank4:
     b "Gerald? Not Freddy, Fred, Fredrick?"
     s "Take a look for yourself."
     blank "Sam handed me a file."
-    show geraldfile with dissolve
+    show geraldfile with dissolve #Arun: Maybe add a pause here so they can quickly digest the file?
     b "Gerald Ogden... interesting."
     b "There's even a picture of him."
     b "Very... powerful eyebrows and mustache."
@@ -803,7 +803,7 @@ label bank4:
     show jennysleep:
         xcenter .195
         ycenter .5
-    show frogsit2:
+    show frogsit2: #Arun: Mask is gone here
         xcenter .44
         ycenter .48
     with dissolve
@@ -1108,6 +1108,7 @@ label bank6:
     f "3... 2... 1..."
     hide frog ind
     show frog2 ind
+    with dissolve
     f "Ta-da!"
     bi "Oh boy..."
     l "Aw! Freddy, your hair is so cute!"
@@ -1145,7 +1146,7 @@ label bank6:
     show lauren ind:
         xcenter .25
         linear .3 xcenter .5
-    l "I guess that means that frog boy really is filthy rich."
+    l "I guess that means that frog boy really is filthy rich." #Arun: Frog boy
     l "And that means the bank records are most likely real."
     l "It makes me wonder how much money really is in the vault..."
     b "Not enough to risk dying to get into it."
@@ -1170,7 +1171,7 @@ label bank6:
     i "Yeah, yeah..."
     i "Anyway, I don't think I can get into the vault without the birthdays."
     i "This bank tech is way too much for me."
-    i "And that stell is really hard..."
+    i "And that steel is really hard..."
     b "It's good that you tried, though."
     b "But until we run out of food we shouldn't even think about it."
     b "It's way too risky."

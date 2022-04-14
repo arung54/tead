@@ -230,3 +230,19 @@ screen hospitalTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, stat
             idle "refutegrey.png"
             xpos 0.775
             yalign 0.04
+
+screen pickSpot5:
+    imagemap:
+        ground "bg shahardead.png"
+        hotspot(0, 0, 1279, 719):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(524, 569, 210, 51):
+            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3f")]
+
+screen pickSpot6:
+    imagemap:
+        ground "bg shahardead.png"
+        hotspot(0, 0, 1279, 719):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(556, 625, 170, 60):
+            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3g")]

@@ -2207,7 +2207,7 @@ label chess3:
     bi "..."
     b "Guess we should go sleep."
     bi "No one really had much to say to that..."
-    bi "Everyone got up and walked their own ways."
+    bi "Everyone got up and walked towards their cells."
     scene bg hosproom1 with fade
     show sesame with dissolve
     ses "Mew?"
@@ -2596,7 +2596,7 @@ label trial3c2:
     b "...They hit him once hard enough to send him all the way across his cell?"
     j "Oh... yeah, they would have had to enter his cell and get punished..."
     i "*Cough* we don't know what the punishment is though!"
-    j "Yeah! Maybe the punishment is just having to eating the end slice of bread!"
+    j "Yeah! Maybe the punishment is just having to eating the end slice of a loaf of bread!"
     b "Um..."
     b "I mean, okay, maybe the punishment is something none of us would notice."
     bi "Which given how psychotic the Game Master is, probably isn't the case..."
@@ -2608,6 +2608,7 @@ label trial3c2:
     d "Enough."
     d "This meaningless speculation is going nowhere."
     d "Obviously the killer is..."
+    scene bg hospkitchenwindow2
     show hospwindowoverlay2
     show drac ind:
         xcenter .25
@@ -2619,50 +2620,33 @@ label trial3c2:
     d "Either Lauren or Sam."
     s "...Idiot..."
     d "Call me what you wish, but..."
-    d "We don't need to conjecture about whether someone entered his cell from the patients' side."
-    d "There is irreconcilable evidence the murder happened on the guard side."
-    d "And the only people who have been on that side since last night, when Shahar was alive, are Lauren and Sam."
-    bi "Evidence the murder happened on the guard side?"
-    bi "Dracula must be talking about..."
-    call screen hospEvidenceTrial(-1, 9, "trial3d") with dissolve
-label trial3d:
-    show hospwindowoverlay2
-    show drac ind:
-        xcenter .25
-    show lauren ind at inwindow behind hospwindowoverlay2:
-    show sam at inwindow behind hospwindowoverlay2:
-        xcenter .75
-    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
-    with dissolve
-    b "Dracula... are you talking about the glass shards?"
-    d "Precisely."
-    l "Wait, how is that proof no one entered Shahar's cell from the patient side?"
-    l "They could have just thrown them through the cell door afterwards as a diversion."
-    d "And pray tell, where would a patient have acquired that glass from?"
-    l "Well there are bottles in..."
-    l "...The vending machine on the guard's side."
-    l "Which only Sam and I have had access to since last night."
-    s "...A previous guard could have brought a bottle with them..."
-    l "Oh, that's true."
-    l "There's no rules against stealing anything from the guards' side and bringing it over."
-    l "So the murderer brought a bottle with them to create a diversion."
-    l "Then they entered Shahar's cell, killed him, and threw the bottle through the cell bars."
-    l "It broke when it landed."
-    d "...I see Lauren is grasping for straws, as they say."
-    d "It would be extremely difficult to hide a bottle for that long a period of time."
-    l "Okay, fine, maybe the bottles never left the guards' side."
+    d "If someone attacked Shahar in his cell from the patient's side, they would have walked past three cells."
+    d "Bert, Jenny, and Sid's."
+    d "Granted, Sid was on the guard's side with me."
+    d "You all cannot be sure what time he returned to his cell."
+    d "But if I recall, you all returned to your cells at roughly the same time last night."
+    d "The cells doors are well... not doors. You can hear and see through them easily."
+    d "It would have been very difficult for a patient to reach Shahar's cell during twilight..."
+    d "At least, without being noticed by Jenny or Bert."
+    l "That's true, but isn't the same true of me and Sam?"
+    d "No, because there was some time today everyone was in the cafeteria..."
+    d "Except for you, Sam, or Shahar."
+    d "Furthermore, none of us could have seen movement on the guard side from the cafeteria."
+    d "It would be the perfect window of opportunity to kill Shahar."
+    l "It's true that Sam and I had a window to kill Shahar..."
     l "But I can prove I didn't do it!"
     python:
         startHospitalTrial("lauren", "Lauren: Sam and I were together {color=#f00}the entire time since Sam left the cell this morning.{/color}.", -1,
         "lauren",  "Lauren: Sam woke up before the intercom, so {color=#f00}I couldn't have secretly killed Shahar before meeting Sam{/color}.", -1,
         "dracula",  "Dracula: No, {color=#f00}you could have snuck off on your own{/color} while Sam was awake but still in the cell.", -1,
         "dracula", "Dracula: Sam only would have {color=#f00}only waited a few minutes{/color} while you killed Shahar.", -1,
-        2, [0, 11], "trial3e")
-label trial3e:
+        2, [0, 11], "trial3d")
+label trial3d:
+    scene bg hospkitchenwindow2
     show hospwindowoverlay2
     show drac ind:
         xcenter .25
-    show lauren ind at inwindow behind hospwindowoverlay2:
+    show lauren ind at inwindow behind hospwindowoverlay2
     show sam at inwindow behind hospwindowoverlay2:
         xcenter .75
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
@@ -2688,14 +2672,14 @@ label trial3e:
     d "Apologies for the diversion."
     b "No, this was good."
     b "We established that Lauren and Sam couldn't have done it."
-    l "But... doesn't that mean Dracula or Sid did it?"
+    l "But... if someone killed Shahar using the bottle, doesn't that mean Dracula or Sid did it?"
     l "If Bert or Jenny did it, Dracula or Sid would have found the broken bottle yesterday."
     l "Dracula claimed earlier that Sam and I were the only ones on the guard side since we last saw Shahar..."
     l "But that's not necessarily true. Dracula or Sid could have killed Shahar during twilight..."
     l "After we all went to our cells, including Shahar."
     d "I don't think that's a line of questioning you wish to pursue."
     l "Why not? You'd want to say that, being the accused."
-    d "Well, I can prove I didn't attack Shahar yesterday."
+    d "Well, I can prove I didn't attack Shahar last night with the bottle."
     d "Which would mean, according to your theory, Sid did it."
     show sid mad with moveinright:
         xcenter .75
@@ -2714,12 +2698,13 @@ label trial3e:
     bi "I hate Dracula sometimes but..."
     bi "If it's going to get us closer to the truth, I'll have to figure out what he's talking about."
     bi "Let's see, who would have been a witness to Dracula assaulting Shahar yesterday..."
-    call screen chooseCharHospital("sid", trial3f, "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
-label trial3f:
+    call screen chooseCharHospital("sid", trial3e, "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
+label trial3e:
+    scene bg hospkitchenwindow2
     show hospwindowoverlay2
     show drac ind:
         xcenter .25
-    show lauren ind at inwindow behind hospwindowoverlay2:
+    show lauren ind at inwindow behind hospwindowoverlay2
     show sam at inwindow behind hospwindowoverlay2:
         xcenter .75
     show sid mad:
@@ -2739,7 +2724,7 @@ label trial3f:
     i "What if I wasn't looking when he walked by?"
     b "Well, you would have probably heard something too."
     b "Shahar's cell is next to yours, and the cell door lets sound through freely."
-    b "Not to mention, even if somehow you missed Dracula passing twice and the sound of glass..."
+    b "Not to mention, even if somehow you missed Dracula passing twice and the sound of glass breaking..."
     b "Jenny and I are also in that hallway."
     b "Do we really think Dracula snuck past all three of us twice, and none of us heard that sound?"
     i "..."
@@ -2766,8 +2751,14 @@ label trial3f:
     b "Wait... Sam, that's a great point."
     i "What? No it's not!"
     b "Sid, just listen for a second."
-    b "What Sam said is true, you're the only one that could have hit Shahar with the bottle."
+    b "What Sam said is true, you're the only one that could have hit Shahar with the bottle last night."
+    b "At least, without anyone seeing you do it."
     b "But we don't know that the bottle was used to hit Shahar."
+    b "I kind of doubt it was, because even if Jenny and I didn't see Sid walk to Shahar's cell..."
+    b "Why didn't we hear the bottle break last night?"
+    d "Maybe you both fell asleep before twilight ended, and Sid did it right at the end of twilight."
+    b "Maybe, but that's stretching a bit..."
+    b "And that would also mean you could have done it while we were asleep."
     b "Until we figure out what the bottle's connection to the murder is, we can't accuse anyone."
     show sid ind:
         xcenter .75
@@ -2779,16 +2770,148 @@ label trial3f:
     i "...Okay, I got nothing."
     d "I don't understand... how else would a bottle be used in the murder besides as a weapon?"
     l "Maybe it was just randomly there?"
-    b "Well Shahar was never on the guard side, so a guard must have brought it there."
-    b "If it was just randomly dropped... wouldn't that guard have told us about it by now?"
-    b "Or even just cleaned it up?"
-    l "Hm... that's a good point."
     hide drac with moveoutleft
     show jenny ind with moveinleft:
         xcenter .25
-    j "Wait, something's weird about how Lauren described the glass shards she found..."
+    j "Wait... something's weird about how Lauren described the glass shards she found..."
     j "I think we can rule out Shahar being hit by the bottle!"
     b "Oh?"
     show ev3 shards with dissolve:
         xcenter .5 ycenter .5
     j "Think about it, if Shahar was hit with the bottle through the cell, something is missing..."
+    bi "Missing?"
+    bi "Let me try to visualize what Lauren described about the scene of Shahar's death..."
+    bi "If Shahar was hit with the bottle through the cell, what spot is missing something?"
+    call screen pickSpot5 with dissolve
+label trial3f:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show sid ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "Lauren, where were all the glass shards when you found them?"
+    l "They were all on the floor in front of Shahar's cell."
+    b "So there were none inside the cell?"
+    l "Not that I remember, no..."
+    j "Yeah, that's what I was getting at!"
+    j "If someone hit Shahar with a bottle through the cell door..."
+    show drac ind with moveinright:
+        rotate 315
+        xcenter 1.1
+        ycenter .5
+    d "And by someone, you mean Sid."
+    show sid mad:
+        xcenter .75
+    hide drac with moveoutright
+    j "...If {i}Sid{/i} hit Shahar with a bottle through the cell door."
+    j "That means the bottle broke inside the cell, with momentum going into the cell."
+    j "So how did all the shards end up outside the cell?"
+    l "Perhaps the murderer cleaned up the shards inside the cell..."
+    j "Oh, you mean to like, hide the evidence?"
+    l "That would be the most likely reason, yeah."
+    b "I don't think that's it."
+    b "Because then something else is out-of-place at the murder scene..."
+    bi "This one should be obvious, but I'll spell it out anyway..."
+    bi "If someone cleaned up the shards inside the cell, what doesn't make sense?"
+    call screen pickSpot6 with dissolve
+label trial3g:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show sid ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "Dracula, if the murderer cleaned up the shards inside the cell..."
+    b "Why are there still shards outside the cell?"
+    b "It makes no sense to me. A guard could have easily cleaned those as well."
+    j "Oh yeah! If someone was trying to clean up the shards to hide the evidence..."
+    j "They could have easily cleaned up the shards outside as well!"
+    l "I was thinking the same thing, but..."
+    l "Well, there's one possible killer who wouldn't have cleaned up the shards outside."
+    j "What?"
+    l "Just think about it for a second..."
+    call screen chooseCharHospital("shahar", trial3h, "Who wouldn't have cleaned up the shards outside the cell?") with dissolve
+label trial3h:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show sid ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "You think... Shahar did it?"
+    b "He... he..."
+    bi "I couldn't bring myself to say it."
+    bi "The words \"killed himself.\""
+    l "I mean... it would explain why the shards outside the cell couldn't be cleaned."
+    l "Shahar wasn't allowed to leave his cell on the guard side."
+    l "So he could move shards from inside his cell to outside, but not move them from there."
+    b "But... why?"
+    j "Why what?"
+    b "Why would he do that?"
+    j "My guess is he moved the shards to conceal the nature of how he di-"
+    l "I think Bert meant why would he commit suicide."
+    j "...Oh."
+    b "Yeah, that..."
+    bi "As usual, Lauren not afraid to do what I can't..."
+    b "It's just... why would you waste your shot at stopping the Game Master?"
+    b "And potentially risk everyone else's lives in the process?"
+    l "Did Shahar have any reason to... well, have a negative outlook on life?"
+    l "People can make... well, irrational decisions when they're pushed to the edge."
+    bi "...I don't want to, but... I have to tell them."
+    b "...Yeah, I think Shahar had a reason."
+    b "I hid some information from the rest of you."
+    b "Remember how I said the computer has some patient records?"
+    b "When I first checked it out I lied when I said I didn't recognize any of the names."
+    b "Shahar's name was in there. And the only thing on his record was..."
+    b "\"Patient thinks he is a pirate\"."
+    l "Why didn't you tell us?"
+    b "I... I thought given what we learned about Catherine and the mansion..."
+    b "People might wrongly accuse him of being the Game Master."
+    b "It might get him killed and waste an opportunity to get out of here."
+    i "But how did you know he wasn't the Game Master?"
+    b "I didn't."
+    b "But I thought there was no way the Game Master would leave such an obvious clue."
+    b "And I felt bad for him. If he really thinks he's a pirate and it's not all an act..."
+    l "That's... understandable."
+    l "Regardless, you told us now when it mattered."
+    l "And it explains why Shahar may have taken such extreme actions."
+    l "I can't imagine any of us would feel very good if we knew our life was a lie."
+    l "It also explains the locked room murder aspect of Shahar's death."
+    tut "Not all players may be familiar with the term locked room murder."
+    menu:
+        tut "Would you like an explanation?"
+        "Yes.":
+            jump trial3hb
+        "Yes."
+            jump trial3hb
+label trial3hb:
+    j "Locked room murder? What's that?"
+    b "Good question Jenny!"
+    b "A locked room murder is a type of crime that is especially difficult to solve."
+    b "It's a murder where seemingly the killer could not have committed the crime and left the scene."
+    b "There are four basic types of locked room murde-"
+    j "Okay, I don't think I care anymore."
+    i "This sounds like the type of explanation that would be very boring if you were already a mystery fan."
+    i "And even if you aren't, it's kind of obvious what it means."
+    i "A locked room murder is a murder where the room is locked."
+    b "..."
+    b "Okay, yeah, it's a bit silly of a concept to explain..."
