@@ -1,0 +1,48 @@
+i "..."
+hide sid with moveoutright
+$ showchibi("lauren", "sam")
+b "W-wait!"
+show lauren ind with moveinleft:
+    xcenter .25
+l "Where's he going?"
+b "I think he's going to show Freddy the file."
+show sam angry
+s "We should follow him."
+scene black with dissolve
+blank "Bert, Lauren, and Sam ran back to the break room."
+scene bg bankbreak
+$ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
+$ showchibint("freddy", "jenny", "lauren", "sam", "sid")
+show sid ind:
+    xcenter .4
+show frog sad:
+    xcenter .7
+with dissolve
+f "S-sid? What are y-you talking about?"
+i "Don't worry little frog kid!"
+show sid ind:
+    xcenter .4
+    linear .3 xcenter .45
+i "I don't want to hurt you..."
+b "Sid!"
+b "What are you doing!"
+show sid ind:
+    xcenter .45
+    linear .3 xcenter .5
+i "I just want to..."
+i "See something!"
+show sid ind:
+    xcenter .5
+    linear .3 xcenter .55
+blank "Sid grabbed Freddy's face mask and ripped it off!"
+show sid ind:
+    xcenter .55
+    linear .3 xcenter .25
+show frog sad2:
+    xcenter .7
+    linear .3 xcenter .75
+i "A-ha!"
+i "So THAT'S what you look like!"
+f "W-why did you do that! Give it back!"
+b "Sid! What are you doing?!"
+i "It's "

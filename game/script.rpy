@@ -185,7 +185,7 @@ $ passattempts = 1
 
 init python:
         noside = False
-        dan = True
+        dan = False
         laur = False
         mood = "happy"
         cat = False
@@ -561,4 +561,4 @@ label start:
 ###########
 #Start
 ###########
-    jump bankGo
+    jump bank4
