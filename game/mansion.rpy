@@ -1,5 +1,6 @@
 label mansionGo:
     $ftecounter = 2
+    $noside = True
     scene black
     $ statusnt("???", "", ch=2, sun=0)
     $mood = "ind"
@@ -50,8 +51,10 @@ label mansionGo:
     n "And how do you propose I do that?"
     zb "Simple."
     zb "Kill him."
+    $noside = False
 
     scene black
+    blank "In the present..."
     bi "..."
     bi "Two people died..."
     bi "And there's nothing I could do to save them..."

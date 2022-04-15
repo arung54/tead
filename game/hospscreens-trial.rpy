@@ -142,7 +142,7 @@ screen hospitalEvidenceTrial(s, e, l):
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "A number of glass shards were found in front of Shahar's corpse." xcenter 800 yanchor 0.0 ypos 330
+            text "A number of glass shards were found in front of Shahar's corpse. They look like the glass of the bottles in the vending machine." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
             image "ev3 pipes.png" xcenter 800 yalign 0.1

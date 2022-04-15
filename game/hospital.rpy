@@ -1,7 +1,59 @@
 label hospitalGo:
-    $ftecounter = 5
-    blank "TODO: Spicy scene from the past here."
+    $noside = True
     scene black
+    $ statusnt("???", "", ch=2, sun=0)
+    $mood = "ind"
+    blank "A few years ago..."
+    zr "Let me get this straight."
+    zr "With the evidence we have right now, we can't win the lawsuit."
+    zh "No, I'm afraid there's no shot."
+    zh "This Sydell guy? He's a small business owner."
+    zh "The jury's going to have sympathy for him because of that."
+    zr "Bullshit. The man has millions of dollars, he's not a rural hometown hero."
+    zh "No, but neither is Cantoire."
+    zh "More importantly, Insyde isn't even guilty."
+    zh "It was a third-party company was shipping the goods when they were stolen."
+    zh "Why aren't we suing the third-party company?"
+    zr "You say all this as if I wasn't the one who assigned you the case..."
+    zr "The transit company is one of Cantoire Management's subsidiaries."
+    zr "We sue them, it's basically the company suing itself."
+    zh "Honestly? I think we should drop the case. There's no legal grounds for it."
+    zh "And isn't a bad look to go after someone like this?"
+    zr "You're new here, let me explain how things work."
+    zr "Will it destroy his life if we get the settlement we want? Easily."
+    zr "Is it right to do this? Probably not."
+    zr "But that's just how the world works."
+    zr "Guys like you, me, and him are just pawns in the scheme."
+    zr "The bottom line of the company is all that matters."
+    zr "We take our orders happily or we get replaced."
+    zr "So you either figure out how to win this case or someone else will."
+    zr "Either way, someone representing us is going to end Insyde."
+    zr "But if you do it, at least you get paid nicely."
+    zr "The world is burning into a hellscape anyway."
+    zr "Might as well make enough money to enjoy it while it lasts."
+    zh "..."
+    zr "What? You backing out?"
+    zh "No, I know how to win."
+    zh "But sir?"
+    zr "Yes?"
+    zh "I'm turning in my resignation after this case."
+    zh "I'm only doing this because... I get the impression you won't allow me not to."
+    zr "Something like that is true. You're wiser than you seem."
+    zr "So. Cough it up, how do we win?"
+    zh "We just need emails leaked about the train heist."
+    zh "With the right contents, they'd shift the blame back onto Insyde."
+    zr "Ah. And we haven't discussed this emails before because?"
+    zh "They don't exist. We'd need a hacker to plant them as evidence."
+    zr "Say no more, our support staff can arrange for that."
+    zh "Won't having a Cantoire employee do it leave a paper trail?"
+    zr "Yes. That's why a Cantoire employee won't do it."
+    zr "I know a kid. Good with computers. We have some dirt on him, but he doesn't know it."
+    zr "A few emails, and I think he'll do what we need..."
+    $noside = False
+
+    $ftecounter = 5
+    scene black
+    blank "In the present..."
     bi "..."
     bi "As I slowly gained consciousness, I resisted opening my eyes."
     bi "Was I a child with no sense of object permanence?"
@@ -2132,7 +2184,7 @@ label chess3:
     i "And if I didn't do some work for him he'd rat me out."
     i "So... I did the dirty work."
     j "Dirty work?"
-    i "It was to get some files from a private server."
+    i "It was to inject some fake emails into a private email server."
     i "Belong to Inside Electronics."
     b "Inside Electronics?"
     i "Spelled with a Y. I-n-s-y-d-e."
@@ -2910,8 +2962,55 @@ label trial3hb:
     b "It's a murder where seemingly the killer could not have committed the crime and left the scene."
     b "There are four basic types of locked room murde-"
     j "Okay, I don't think I care anymore."
-    i "This sounds like the type of explanation that would be very boring if you were already a mystery fan."
+    i "This explanation would be very boring if you were already a mystery fan."
     i "And even if you aren't, it's kind of obvious what it means."
     i "A locked room murder is a murder where the room is locked."
     b "..."
-    b "Okay, yeah, it's a bit silly of a concept to explain..."
+    b "Okay, yeah, it's a bit silly of a concept to explain."
+    l "Anyways, yeah, that's my theory."
+    l "It cleanly explains why the glass outside his cell wasn't cleaned, because he couldn't leave."
+    l "And it explains why none of Jenny, Bert, or Sid saw or heard anyone pass by them."
+    l "The person who would have the easiest time \"sneaking\" to Shahar's cell is, well... Shahar."
+    show scary with dissolve:
+        alpha 0.5
+    bi "..."
+    bi "Did knowing his life was a lie push him over the edge?"
+    bi "Should I not have told him anything?"
+    bi "Am I the reason he's dead?"
+    bi "After all, that info about his past... it's something only a guard could have given him."
+    bi "..."
+    bi "Wait."
+    bi "It's something only a guard could have given him..."
+    hide scary with dissolve
+    b "No. Shahar didn't kill himself."
+    bi "My voice was shaking as I said it out loud for the first time."
+    b "Lauren... even if your theory is correct."
+    b "Something you told us about the evidence doesn't add up with Shahar being the culprit."
+    l "What?"
+    b "Yeah, just remember what you told us about..."
+    call screen mansionEvidenceTrial(-1, 9, "trial3i") with dissolve
+label trial3i:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show sid ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "The glass shards. You said they looked like they came from the vending machine."
+    b "Which only the guards could access per the rules."
+    b "Shahar was never a guard, so he couldn't have gotten the bottle on his own."
+    b "I'm not aware of any other way to get glass bottles on this floor."
+    l "Hm... that's true, but what if he didn't use the bottle?"
+    l "Maybe he just beat his head in, or used something hidden in his cell, or..."
+    b "Then why are the glass shards there?"
+    l "Maybe... a guard dropped it there on accident?"
+    b "Did anyone drop a bottle there on accident?"
+    b "...Who didn't clean it up and never told us about it?"
+    b "..."
+    b "No response, so I'm guessing that wasn't the case."

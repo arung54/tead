@@ -145,7 +145,7 @@ screen hosp_evidence():
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "A number of glass shards were found in front of Shahar's corpse." xcenter 800 yanchor 0.0 ypos 330
+            text "A number of glass shards were found in front of Shahar's corpse. They look like the glass of the bottles in the vending machine." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
             image "ev3 pipes.png" xcenter 800 yalign 0.1
@@ -764,7 +764,6 @@ label glassshards:
         li "It looks like the bottles from the vending machine but..."
         li "When I looked earlier, I noticed the vending machine requires cash."
         li "Something I don't think we have."
-        li "Plus Shahar was never a guard, so he never got near the vending machine."
         li "So why are these there?"
         li "Also... something is weird about the way these shards look."
         li "But I can't quite put my finger on what..."
@@ -780,6 +779,7 @@ label glassshards:
         call hospDone
     else:
         li "Glass shards, in front of Shahar's corpse."
+        li "They look like the ones from the vending machine."
         li "It's not clear how they got here."
         li "There's also something that bothers me about them..."
     call screen hallwayTRInv
