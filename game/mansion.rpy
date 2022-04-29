@@ -1271,7 +1271,7 @@ label postFT2:
     t "I only just remembered his name."
     t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
-    t "But I think at at some point my company sunk his into duh ground."
+    t "But I think at at some point my company sunk his company into duh ground."
     t "I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
     t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
     $mood = "ind"

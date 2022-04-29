@@ -2735,7 +2735,7 @@ label trial3d:
     d "Which would mean, according to your theory, Sid did it."
     show sid mad with moveinright:
         xcenter .75
-    i "Hey! Screw you old man!"
+    i "Hey! *cough* Screw you old man!"
     d "Don't direct your hatred at me. Direct it at Lauren."
     d "It's her theory that places guilt onto you."
     i "You don't have proof! You're lying!"
@@ -2771,9 +2771,9 @@ label trial3e:
         xcenter .75
     i "...No."
     b "So that means he didn't kill Shahar before you went to your cell yesterday."
-    i "Oh... but wait, he could have killed Shahar when I was in my cell!"
+    i "Oh... but *cough* wait, he could have killed Shahar when I was in my cell!"
     b "Sure, but then he would have had to pass your cell."
-    i "What if I wasn't looking when he walked by?"
+    i "What if I *cough* wasn't looking when he walked by?"
     b "Well, you would have probably heard something too."
     b "Shahar's cell is next to yours, and the cell door lets sound through freely."
     b "Not to mention, even if somehow you missed Dracula passing twice and the sound of glass breaking..."
@@ -2782,12 +2782,12 @@ label trial3e:
     i "..."
     show sid mad:
         xcenter .75
-    i "So... are you accusing me?"
+    i "So... are you accusing *cough* me?"
     b "What?"
     i "Well Lauren said it had to either be Dracula or I..."
-    i "And you just said Dracula couldn't do it..."
-    i "Seems like you're accusing me..."
-    i "I'm gonna die, and you're all gonna die!"
+    i "And you just said *cough*  Dracula couldn't do it..."
+    i "*cough* Seems like you're accusing me..."
+    i "I'm gonna die, and you're all gonna *cough* die!"
     show lauren at inwindow behind hospwindowoverlay2:
         xcenter .5
         linear 0.15 xcenter .4
@@ -2798,10 +2798,10 @@ label trial3e:
     i "What?"
     s "That's not what Bert proved..."
     s "...All he said was you're the only one that could have hit Shahar with the bottle..."
-    i "Screw you! That's just accusing me again!"
+    i "Screw you! *cough* That's just accusing me again!"
     b "!"
     b "Wait... Sam, that's a great point."
-    i "What? No it's not!"
+    i "What? No *cough* it's not!"
     b "Sid, just listen for a second."
     b "What Sam said is true, you're the only one that could have hit Shahar with the bottle last night."
     b "At least, without anyone seeing you do it."
@@ -2816,10 +2816,10 @@ label trial3e:
         xcenter .75
     i "..."
     i "Oh! I get it!"
-    i "I'm gonna think really hard about what the bottle's purpose is!"
+    i "I'm gonna think really hard about *cough* what the bottle's purpose is!"
     i "..."
     b "..."
-    i "...Okay, I got nothing."
+    i "...Okay, I got *cough* nothing."
     d "I don't understand... how else would a bottle be used in the murder besides as a weapon?"
     l "Maybe it was just randomly there?"
     hide drac with moveoutleft
@@ -2962,9 +2962,9 @@ label trial3hb:
     b "It's a murder where seemingly the killer could not have committed the crime and left the scene."
     b "There are four basic types of locked room murde-"
     j "Okay, I don't think I care anymore."
-    i "This explanation would be very boring if you were already a mystery fan."
-    i "And even if you aren't, it's kind of obvious what it means."
-    i "A locked room murder is a murder where the room is locked."
+    i "This explanation *cough* would be very boring if you were already a mystery fan."
+    i "And even if you aren't, it's kind of *cough* obvious what it means."
+    i "A locked room murder is a murder *cough* where the room is locked."
     b "..."
     b "Okay, yeah, it's a bit silly of a concept to explain."
     l "Anyways, yeah, that's my theory."
@@ -3014,3 +3014,97 @@ label trial3i:
     b "...Who didn't clean it up and never told us about it?"
     b "..."
     b "No response, so I'm guessing that wasn't the case."
+    l "Damn... I guess we're back to square one then."
+    b "I guess..."
+    bi "Ugh, I hate feeling stuck."
+    bi "We just need one thing..."
+    bi "One hint, one clue, one piece of evidence."
+    bi "It could be the difference between life and-"
+    i "*cough*"
+    i "*cough cough cough*"
+    l "Oh no, Sid, is your cough getting worse?"
+    i "No, it's actually gotten better from this morning..."
+    i "It was definitely the worst right when I woke up."
+    bi "..."
+    b "This could be a clue."
+    l "A clue?"
+    l "Bert, is this really the time to make light of Sid's illness?"
+    b "It's not making light. Sid's cough might be what saves us all."
+    b "I want to figure out what's causing it..."
+    $twopieces = [False, False]
+    python:
+        startHospitalTrial("lauren", "Lauren: Why would the cause of his cough be relevant? I bet {color=#55f}it's just some virus{/color}. ", 1,
+        "jenny",  "Jenny: Ooh, I had asthma as a kid. {color=#55f}Maybe Sid was just having an asthma attack{/color}?", 1,
+        "sid",  "Sid: I don't think I have asthma *cough* and {color=#f00}I don't think you can suddenly get asthma{/color}.", -1,
+        "dracula", "Dracula: This is a waste of time... {color=#f00}Sid's cough clearly has no connection with Shahar's death{/color}.", -1,
+        3, [11, 12], "trial3j")
+label trial3j:
+label trial3k:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show sid ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    if currEvidence == 11:
+        $twopieces[0] = True
+        b "If you look at the order of the cells..."
+        b "Sid's cell is neighboring Shahar's, and it's the only one neighboring Shahar."
+        b "It's possible whatever the cause of Sid's cough is was something tied to Shahar's death."
+        b "And Sid was caught in the crossfire."
+        j "You think Sid is coughing because a bullet meant for Shahar hit Sid?"
+        b "Um... it's an expression."
+        b "Basically, Sid was an accidental victim of whatever killed Shahar."
+        b "But the rest of us were far away to not be."
+    if currEvidence == 12:
+        $twopieces[1] = True
+        b "Sid said his cough started last night, but has only been getting better since."
+        b "And I don't think Sid was feeling sick at all yesterday."
+        i "No, I wasn't... I felt perfectly healthy."
+        b "So whatever caused Sid's cough probably happened last night."
+        b "Which, incidentally, is when Shahar likely died."
+        b "This would easily be explained if the cause of Shahar's death was also the cause of Sid's cough."
+    if False in twopieces:
+        d "Hm, that could just be coincidental."
+        d "Without more evidence connecting the two events, I still think they're unrelated."
+        b "Well, that's the not the only thing..."
+        b "There's one more reason I think Sid's cough could be related to Shahar's death..."
+        if twopieces[0]:
+            $other = 12
+        else:
+            $other = 11
+        call screen mansionEvidenceTrial(-1, other, "trial3k") with dissolve
+    l "Okay, I thought you weren't serious before but..."
+    l "I think you're onto something."
+    l "But I still feel like we're at a dead end..."
+    b "What? Why? We just made a big leap, I think..."
+    l "Well, even if we know that Sid's cough and Shahar's death share a cause..."
+    l "We don't know what the cause is."
+    b "Maybe not right now, but we can narrow it down based on our hypotheses."
+    b "It had to be able to affect Sid somehow."
+    b "And from the earlier conversation, we think it also had to be related to the bottle."
+label trial3l:
+    menu:
+        b "Given that, I think what most likely killed Shahar was..."
+
+        "The bottle while it was intact."
+            bi "I don't see how an intact bottle would have affected Sid..."
+            bi "Much less made him start coughing."
+        "The bottle shards.":
+            bi "The shards were only found in front of Shahar's cell..."
+            bi "I don't know how they'd affect Sid or make him start coughing."
+            jump trial3l
+        "The contents of the bottle.":
+            bi "Yeah, that's it!"
+        "Food poisoning.":
+            bi "That could have killed Shahar, but how was Sid also affected? And how is the bottle related?"
+            jump trial3l
+    b "The only thing that makes sense is the bottle had something in it that killed Shahar."
+    b "All the pieces of the bottle we found were in front of Shahar's cell."
+    b "And based on our earlier discussion, the bottle itself didn't kill Shahar."
+    b "But whatever was in the bottle..."
