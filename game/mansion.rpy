@@ -17,7 +17,6 @@ label mansionGo:
     zg "Listen punk, this'll be easier if you stop lying."
     zg "You're here for the boss, aren't?"
     n "The boss?"
-    zg "Miss Cantoire."
     n "What do you mean I'm here for her?"
     zb "You're here to kill her."
     n "..."

@@ -42,7 +42,7 @@ label hospitalGo:
     zr "So. Cough it up, how do we win?"
     zh "We just need emails leaked about the train heist."
     zh "With the right contents, they'd shift the blame back onto Insyde."
-    zr "Ah. And we haven't discussed this emails before because?"
+    zr "Ah. And we haven't discussed these emails before because?"
     zh "They don't exist. We'd need a hacker to plant them as evidence."
     zr "Say no more, our support staff can arrange for that."
     zh "Won't having a Cantoire employee do it leave a paper trail?"
@@ -568,7 +568,7 @@ label hospitalGo:
     i "They have one photo composite per year, but the one from three years ago is missing."
     i "Is it possible someone important was on that composite?"
     l "Like one of us?"
-    i "Maybe. But it could also be somenoe related to one of us?"
+    i "Maybe. But it could also be someone related to one of us?"
     i "Or maybe that was an important year for why this game happened."
     b "Important year?"
     i "Yeah, after Bert and I talked about the photos I was thinking..."
@@ -2486,6 +2486,11 @@ label trial3a:
     $noside = True
     scene black with dissolve
     bi "..."
+    bi "There was a tingling in my throat this morning."
+    bi "I think if I had some water to drink, it would go away."
+    bi "But I needed Lauren or Sam to hand me one, and they had more important things to do."
+    bi "Nothing I could do but just sit here and wait..."
+    bi "..."
     bi "I've never really felt like my life was out of my control."
     bi "I guess I was lucky to be born to good parents, that wasn't under my control."
     bi "But the rest of my life was to some extent."
@@ -3051,6 +3056,7 @@ label trial3k:
     show sid ind:
         xcenter .75
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
     if currEvidence == 11:
         $twopieces[0] = True
         b "If you look at the order of the cells..."
@@ -3060,7 +3066,15 @@ label trial3k:
         j "You think Sid is coughing because a bullet meant for Shahar hit Sid?"
         b "Um... it's an expression."
         b "Basically, Sid was an accidental victim of whatever killed Shahar."
-        b "But the rest of us were far away to not be."
+        j "But Bert, your cell is the next-closest to Shahar."
+        j "And you seem to be unaffected."
+        b "That's not quite true..."
+        b "This morning I had a tingling in my throat."
+        b "It was like the beginning of a sore throat."
+        b "I didn't think much of it, but..."
+        b "It might also be caused by the same thing."
+        d "You could just be making that up to support your theory."
+        b "Unless I'm the killer, there's really no reason for me to do that..."
     if currEvidence == 12:
         $twopieces[1] = True
         b "Sid said his cough started last night, but has only been getting better since."
@@ -3070,7 +3084,7 @@ label trial3k:
         b "Which, incidentally, is when Shahar likely died."
         b "This would easily be explained if the cause of Shahar's death was also the cause of Sid's cough."
     if False in twopieces:
-        d "Hm, that could just be coincidental."
+        d "Hm, I'm not fully convinced. This could just be a coincidence."
         d "Without more evidence connecting the two events, I still think they're unrelated."
         b "Well, that's the not the only thing..."
         b "There's one more reason I think Sid's cough could be related to Shahar's death..."
@@ -3102,9 +3116,110 @@ label trial3l:
         "The contents of the bottle.":
             bi "Yeah, that's it!"
         "Food poisoning.":
-            bi "That could have killed Shahar, but how was Sid also affected? And how is the bottle related?"
+            bi "How is the bottle related?"
             jump trial3l
     b "The only thing that makes sense is the bottle had something in it that killed Shahar."
     b "All the pieces of the bottle we found were in front of Shahar's cell."
     b "And based on our earlier discussion, the bottle itself didn't kill Shahar."
-    b "But whatever was in the bottle..."
+    b "But whatever was in the bottle is unaccounted for."
+    b "The bottle shards couldn't have moved, but the contents of the bottle could have."
+    b "If it's something that could have spread around, then it could have reached Sid."
+    l "You think it poisoned Shahar somehow?"
+    b "Maybe..."
+    l "And maybe Sid somehow got poisoned too?"
+    i "This seems like a bit of a stretch..."
+    i "*cough* Not to mention, wasn't the bottle empty when it broke?"
+    b "Why do you say that?"
+    i "If the bottle had something inside *cough* wouldn't Lauren or Sam have found evidence of it?"
+    b "Evidence?"
+    i "Like... *cough* the floor would've been wet, or stained, or it would have smelled bad."
+    l "I mean... I didn't exactly bother to sniff the floor when I was there..."
+    l "Because, well, it would have smelled like blood."
+    i "Oh, *cough*, I guess that's true..."
+    i "But still, there should have been some *cough* sign of something being spilled."
+    b "Hm... that is a good point."
+    b "But I don't think that completely rules this theory out, as long as we can find an explanation."
+label trial3m:
+    menu:
+        b "Let me think, how could the contents of the liquid have disappeared..."
+
+        "They vanished into thin air."
+            bi "It's a weird way to phrase it, but..."
+        "They were cleaned up.":
+            bi "No, if someone cleaned them up, they could have cleaned up the bottle too..."
+            jump trial3m
+        "They're invisible."
+            bi "They could have been clear but..."
+            bi "Wouldn't they still leave a puddle or make the floor damp?"
+            jump trial3m
+        "Shahar drank them."
+            bi "That could explain it if it were poisoned, but then why is Sid coughing?"
+            jump trial3m
+    b "What if the contents vaporized?"
+    j "Vaporized?"
+    b "Yeah, what if when they left the bottle they turned into gas?"
+    b "And that's why there was no trace of them."
+    b "It would also explain how they spread to Sid."
+    b "Gas naturally spreads out, so if they created some sort of gas..."
+    b "It would have spread to Sid's cell."
+    b "But because gases become less concentrated as they spread out, Sid got a smaller dose than Shahar."
+    b "And I got an smaller dose than Sid, and Jenny an even smaller dose, since the gases would have spread out further."
+    b "That would explain why Shahar died, Sid is sick, I was barely affected, and Jenny wasn't."
+    hide sid ind with moveoutright
+    show drac ind with moveinright:
+        xcenter .75
+    d "This isn't a very scientific theory."
+    d "Why would the contents of the bottle suddenly vaporize when they left the bottle?"
+    j "Perhaps they were already a gas when they were in the bottle?"
+    d "That seems highly unlikely."
+    d "Lauren did not describe finding anything like a bottle cap or plastic seal."
+    d "So before the bottle broke, it was still open."
+    d "Remember, we're operating under the assumption that the bottle broke after last night."
+    d "Since otherwise Sid would have found the shards..."
+    d "Or the murderer would have come back and clean them up."
+    b "...That's a good point."
+    bi "Damn, we were so close too."
+    bi "I thought we had a good theory for how Shahar died, but..."
+    l "Maybe if we can figure out what was in the bottle, it would help us figure out how it vaporized."
+    d "Hmph. That's obvious."
+    d "If we knew what it was, we'd know chemically the possible reasons it could have \"disappeared.\""
+    l "Okay, let me phrase that differently."
+    l "I think it's pretty easy to figure out what was in the bottle."
+    l "After, all, there's really only thing that fits our theory so far..."
+    bi "Only one thing? Then this should be obvious..."
+    call screen mansionEvidenceTrial(-1, 6, "trial3n") with dissolve
+label trial3n:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "The cleaning supplies?"
+    l "Ammonia, bleach, ethanol, and hydrogen peroxide."
+    l "One of the things you learn when you first do chores..."
+    l "You don't mix clean a surface using ammonia if you just used bleach."
+    l "When the two mix, they react and form a deadly gas."
+    d "Chloramine gas."
+    d "Though to be precise, usually the gas isn't deadly."
+    d "If you only have trace amounts of bleach on a surface and then wash it with ammonia..."
+    d "At worst, you'll walk away with a mild cough."
+    l "This is true when the amount of bleach that's there is small..."
+    l "But what about, say, a whole bottleful of bleach and ammonia?"
+    d "I'd have to do the math, but..."
+    d "Yes, that could be a lethal concentration if you were close to them mixing."
+    l "Which, judging by the position of Shahar's corpse, he was, at least for a little bit."
+    d "This still doesn't address my issue."
+    d "If they were mixed in the bottle, they would form a gas while they were in the bottle."
+    d "And it doesn't seem like the killer sealed the bottle."
+    l "That's true..."
+    l "But when I looked at the glass shards, I thought something was off."
+    b "Off?"
+    l "Yeah, something about the shards didn't make sense."
+    l "Specifically..."
