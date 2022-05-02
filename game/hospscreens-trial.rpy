@@ -246,3 +246,13 @@ screen pickSpot6:
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(556, 625, 170, 60):
             action [Function(shatterNoise), Show("shattedHosp", lab = "trial3g")]
+
+screen pickSpot7:
+    imagemap:
+        ground "bg shahardead.png"
+        hotspot(0, 0, 1279, 719):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(593, 656, 35, 24):
+            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3o")]
+        hotspot(687, 625, 35, 24):
+            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3o")]

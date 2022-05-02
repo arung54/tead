@@ -2958,7 +2958,7 @@ label trial3h:
         tut "Would you like an explanation?"
         "Yes.":
             jump trial3hb
-        "Yes."
+        "Yes.":
             jump trial3hb
 label trial3hb:
     j "Locked room murder? What's that?"
@@ -3106,7 +3106,7 @@ label trial3l:
     menu:
         b "Given that, I think what most likely killed Shahar was..."
 
-        "The bottle while it was intact."
+        "The bottle while it was intact.":
             bi "I don't see how an intact bottle would have affected Sid..."
             bi "Much less made him start coughing."
         "The bottle shards.":
@@ -3143,16 +3143,16 @@ label trial3m:
     menu:
         b "Let me think, how could the contents of the liquid have disappeared..."
 
-        "They vanished into thin air."
+        "They vanished into thin air.":
             bi "It's a weird way to phrase it, but..."
         "They were cleaned up.":
             bi "No, if someone cleaned them up, they could have cleaned up the bottle too..."
             jump trial3m
-        "They're invisible."
+        "They're invisible.":
             bi "They could have been clear but..."
             bi "Wouldn't they still leave a puddle or make the floor damp?"
             jump trial3m
-        "Shahar drank them."
+        "Shahar drank them.":
             bi "That could explain it if it were poisoned, but then why is Sid coughing?"
             jump trial3m
     b "What if the contents vaporized?"
@@ -3203,7 +3203,8 @@ label trial3n:
     with dissolve
     b "The cleaning supplies?"
     l "Ammonia, bleach, ethanol, and hydrogen peroxide."
-    l "One of the things you learn when you first do chores..."
+    l "None of them is really lethal on its own."
+    l "But one of the things you learn when you first do chores..."
     l "You don't mix clean a surface using ammonia if you just used bleach."
     l "When the two mix, they react and form a deadly gas."
     d "Chloramine gas."
@@ -3223,3 +3224,290 @@ label trial3n:
     b "Off?"
     l "Yeah, something about the shards didn't make sense."
     l "Specifically..."
+    call screen pickSpot7 with dissolve
+label trial3o:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show jenny ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    l "If you look at the glass shards..."
+    show ev3 shards with dissolve:
+        xcenter .5
+        ycenter .5
+    l "Two different shards look like the neck of a bottle."
+    l "Which means..."
+    hide ev3 shards with dissolve
+    b "Two bottles actually broke, not one."
+    j "That or the killer found a bottle that has two necks for some reason!"
+    l "...I don't think that's very likely."
+    l "Anyway, based on this information and our current theory, this is what I think happened."
+    l "There was a bottle of ammonia, and a bottle of bleach."
+    l "Somehow, both broke at the same time."
+    l "When both broke, the ammonia and bleach were no longer isolated in their own bottles."
+    l "So they mixed and reacted to form the chloranime gas."
+    d "Chloramine, not chloranime."
+    l "Whatever. The point is, they formed a deadly gas."
+    l "And that's how the gas formed only at the moment the bottle broke."
+    l "In fact, there's a very easy way to check if this could have been what happened..."
+    hide lauren with dissolve
+    b "Uh... where did she go?"
+    j "I'm sure she'll be back soon!"
+    d "Or she's busy hiding evidence she just thought about..."
+    s "...Shut up Dracula."
+    d "That was rather rude."
+    s "...Whatever."
+    s "...Lauren's... a good person."
+    s "...She's trying to save us all. If not for her we'd all be dead."
+    s "...You still suggesting it could be her is a dick move."
+    d "Hmph. There are no dick moves when ignoring a possibility could get us all killed."
+    s "...Whatever."
+    bi "Huh. Sam is... back to being kind of feisty now."
+    bi "Well, as feisty as one can be while talking quietly and slowly."
+    bi "And not in an angsty way."
+    show lauren at inwindow behind hospwindowoverlay2 with dissolve:
+        xcenter .4
+    l "I checked the bottles of cleaning supplies in the closet."
+    l "Sure enough, the ethanol and hydrogen peroxide bottles are both full."
+    l "But the ammonia and bleach bottles are missing some."
+    l "I can't really check how much they're missing, but-"
+    b "It's probably reasonable to assume all the bottles were full when we came."
+    b "Based on the ethanol and hydrogen peroxide bottles being full."
+    b "So it's likely someone removed some at some point."
+    j "Are we sure no one used them to do any cleaning?"
+    bi "I looked around at Jenny, Dracula, and Sid..."
+    bi "The other three guards."
+    bi "None of them were claiming anything."
+    bi "I also glanced at Lauren... she was giving me a bit of a glare."
+    bi "...Is she mad I spoke over her?"
+    j "Huh, I thought for sure someone would lie and say they did!"
+    s "...I think if someone claims to have used them..."
+    s "...It makes them look suspicious..."
+    s "...Since no one mentioned using them before..."
+    j "Okay, so we figured out how Shahar died!"
+    j "...Now what?"
+    b "Huh?"
+    j "I mean..."
+    j "The goal isn't to figure out how Shahar died."
+    j "The goal is to figure out who did it."
+    j "I think anyone who was a guard could have done this."
+    j "Well, except for Lauren and Sam."
+    l "That's true..."
+    l "Anyone could have set this up."
+    d "Anyone?"
+    d "I disagree."
+    d "I think this just establishes that Sid did it."
+    hide jenny with moveoutleft
+    show sid mad with moveinleft:
+        xcenter .25
+    i "What? I told you *cough* it wasn't me?"
+    i "What's the deal with trying to *cough* pin it on me?"
+    i "Did you not like my *cough* cooking or something?"
+    i "My simple upbringing is no reason to try to *cough* get me killed!"
+    d "Quiet, urchin. Let me finish speaking, then you can respond."
+    bi "Urchin?"
+    i "Urchin?!?!"
+    d "I said, let me finish speaking."
+    python:
+        startHospitalTrial("dracula", "Dracula: {color=#f00}Sid was the last person to walk past the guard side of Shahar's cell{/color} before he died.", -1,
+        "dracula",  "Dracula: If someone else set up the bottles, {color=#55f}Sid must have seen the bottles last night{/color}.", 1,
+        "dracula",  "Dracula: After all, {color=#f00}there's nowhere to hide the bottles{/color} in the hallway.", -1,
+        "dracula", "Dracula: {color=#f00}If the bottles weren't there before Sid went to sleep, only Sid could have placed the bottles{/color}.", -1,
+        2, 10, "trial3p")
+label trial3p:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid mad:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    i "Yeah, old man, you're wrong!"
+    i "..."
+    show sid ind:
+        xcenter .25
+    i "Wait, I don't *cough* get it."
+    b "The claim is that there was nowhere to hide the bottles."
+    b "If that were true, then yes, Sid would be the only possible culprit."
+    b "Otherwise he would have seen the bottles on the way to bed."
+    show sid mad:
+        xcenter .25
+    i "Grrr... I don't like how you're *cough* wording this, Bert!"
+    b "Hold on Sid."
+    b "The thing is, there is somewhere in the hallway where one could hide the bottles."
+    show ev3 pipes with dissolve:
+        xcenter .5
+        ycenter .5
+    b "On top of the pipes."
+    b "If the bottles sat directly on top of the pipe, they'd be easy to miss."
+    b "You'd have to look up at the ceiling, and even then you'd have to be not directly below the pipes."
+    b "Otherwise, they might not be visible."
+    b "So I think we can't immediately conclude that Sid did it."
+    hide ev3 pipes with dissolve
+    show sid ind:
+        xcenter .25
+    i "Oh. That makes sense."
+    i "Sorry Bert, I shouldn't have interrupted you."
+    l "But if that's true, then we still don't know if you, Jenny, Dracula, or Sid did it..."
+    d "Also, I think that is a bit too simplistic an answer."
+    show scary with dissolve:
+        alpha .5
+    bi "...This is it, Bert."
+    bi "We're nearing the end."
+    bi "I can feel it."
+    bi "We're on the right path."
+    bi "Just one more train of thought to resolve, and I think we'll have done it again."
+    bi "The rest of the pieces fall into place on their own."
+    hide scary with dissolve
+    b "Tell me Dracula."
+    b "Why is it too simplistic?"
+    show ev3 pipes with dissolve:
+        xcenter .5
+        ycenter .5
+    d "The pipes are circular."
+    d "You can look in the patient hallway if you don't believe me, they're the same on both sides."
+    d "Lauren can confirm, if you still don't believe me."
+    l "He's right, the pipes are circular... as most pipes are."
+    i "Why does that matter?"
+    d "Sigh... I get that to some of you I seem dismissive but you must understand..."
+    d "If you think about this even for a second, the issue is obvious."
+    python:
+        startHospitalTrial( "dracula",  "Dracula: You would {color=#55f}need some way to hold the bottle in place{/color} on top of the pipe, otherwise it would fall off too easily.", 1,
+        "dracula", "Dracula: When you place a flat-bottom object on a cylinder, {color=#f00}if it's not perfectly balanced, it falls off{/color}. That's just basic physics.", 0,
+        "dracula",  "Dracula: Even if it's perfectly balanced, if the pipe moved slightly, the vibrations would {color=#f00}knock the bottle off the circular pipe{/color}.", -1,
+        "dracula", "Dracula: Given that we've been drinking water and taking showers, {color=#f00}water must regularly be moving through the pipes{/color}.", -1,
+        1, -1, "trial3q")
+label trial3q:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    b "Dracula's right..."
+    b "The killer would need some way to hold the bottle in place on top of the pipe, to make sure it didn't fall off immediately."
+    b "There's no other way to keep the bottle up there for more than a few seconds."
+    i "So... the bottles weren't hidden on the pipe?"
+    show sid mad:
+        xcenter .25
+    i "Screw you Bert! How many times *cough* are you going to accuse me of being the killer!"
+    l "Sid... you need to let Bert finish explaining himself."
+    l "Every time you've been angry at him, when he finished talking you weren't angry anymore."
+    i "..."
+    show sid ind:
+        xcenter .25
+    i "Sorry, it's just... a lot of pressure being accused constantly by people like Dracula."
+    d "\"People like Dracula?\""
+    i "First my parents, then Dan, and now Shahar's cell being next to mine..."
+    i "I feel like I'm a bad luck charm."
+    bi "Man, is it annoying having to soothe him every time I try to explain something."
+    b "Anyway, as I was saying..."
+    b "The killer would need a way to hold the bottle in place, but who says such a way doesn't exist?"
+    b "Thinking about the list of evidence Lauren found, it's pretty obvious what it is..."
+    call screen mansionEvidenceTrial(-1, 2, "trial3r") with dissolve
+label trial3r:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    b "The \"medical glue\" in the first aid kit."
+    i "Wait... there's a first aid kit?"
+    i "Why didn't anyone get me medication for my sore throat?"
+    b "Um... Sid, we found Shahar dead this morning, remember?"
+    b "We've kind of been busy with that..."
+    l "Sorry Sid, I should have grabbed you something while investigating."
+    l "I'll go see if there's anything in there you can use."
+    hide lauren with dissolve
+    bi "Lauren has much more patience than I do."
+    bi "On the one hand I find that admirable, on the other hand..."
+    bi "If I had that much patience, I might have to be the one dealing with Sid."
+    bi "No thank you."
+    s "...Aren't there other things in the first aid kit?"
+    s "...We saw bandages, aren't those an adhesive too?"
+    b "That's true, but there's a few reasons to believe the medical glue was used but not the bandages."
+label trial3s:
+    menu:
+        "The main reason being..."
+
+        "The packaging.":
+            bi "That's it!"
+        "The strength of the adhesive.":
+            bi "Yeah! Bandages use a weak adhesive!"
+            bi "That's why it doesn't hurt to rip them off!"
+            bi "...Wait, no it definitely hurts."
+            bi "Also, if one bandage wasn't strong enough, you could always use more..."
+            bi "That's not a very satisfactory explanation."
+            jump trial3s
+        "The contents of the bottle.":
+            bi "What do the contents of the bottle have to do with anything?"
+            bi "The adhesive would only have touched the bottle itself..."
+        "The expertise needed to use them.":
+            bi "I think most people have used a bandage at least once in their life."
+            bi "Really, I would have chosen the bandages over the medical glue if ease of use were the only concern."
+            jump trial3s
+    b "Lauren said that nothing in first aid kit actually looked like it had been used..."
+    b "Except for the medical glue."
+    b "Lauren said there was a bit of residue on the bottle."
+    b "Besides the first aid kit, I can't think of any other adhesives in this place."
+    b "So I think if the killer used an adhesive, it had to-{p=0.5}{nw}"
+    show lauren ind at inwindow behind hospwindowoverlay2 with dissolve:
+        xcenter .4
+    l "Hey Sid, there's not really any cough drops or anything like that in here."
+    l "The only things that might help are some generic over-the-counter medicine."
+    l "Let me pour you a cup of water, and then you can use whichever you want."
+    i "Thanks Lauren!"
+    b "...As I was saying, it had to-{p=0.5}{nw}"
+    i "*Swish swish swish*"
+    b "...Do you have to swish water in order to take pills?"
+    i "It's a habit I built..."
+    i "It helps to get crumbs and stuff out of your teeth if you swish water before drinking it."
+    l "I like that Sid! Dental hygeine is important!"
+    b "...Okay, so again, what I was saying is it had to-{p=0.5}{nw}"
+    d "Hm, yes, I guess the medical glue is the most likely way one would hide the bottles on the pipe."
+    b "...{size=-8}He just said what I was going to say...{/size}"
+    b "...{size=-8}Just because you're taller than me doesn't mean you get to speak over me...{/size}"
+    d "Sorry Bert, were you saying something?"
+    bi "Let me show you who's the boss around here..."
+    b "Yeah! We still need to figure out how the bottles came free from the pipe!"
+    d "I see. So you're saying maybe the bottles weren't hidden on top of the pipe after all."
+    d "A bit of an unexpected argument from you, Bert, given that it's your own theory they were hidden up there."
+    b "...{size=-8}I hate Dracula so much right now.{/size}"
+    d "What was that?"
+    b "Um... I'm just trying to poke holes in my own theory to make sure it's correct."
+    b "Yeah, that's it."
+    b "If we can figure out how the bottles came free from the pipe, then we can be pretty sure about this explanation."
+    b "...Any ideas?"
+    l "Well..."
+    i "Well..."
+    s "...Well......"
+    d "If I may."
+    bi "Oh boy."
+    bi "Seems like I'm about to hear ten theories and have to pick out one of them..."
+    python:
+        startHospitalTrial( "lauren",  "Lauren: You would {color=#55f}need some way to hold the bottle in place{/color} on top of the pipe, otherwise it would fall off too easily.", 1,
+        "sid", "Sid: When you place a flat-bottom object on a cylinder, {color=#f00}if it's not perfectly balanced, it falls off{/color}. That's just basic physics.", 0,
+        "sam",  "Sam: Even if it's perfectly balanced, if the pipe moved slightly, the vibrations would {color=#f00}knock the bottle off the circular pipe{/color}.", -1,
+        "dracula", "Dracula: Given that we've been drinking water and taking showers, {color=#f00}water must regularly be moving through the pipes{/color}.", -1,
+        1, -1, "trial3q")
