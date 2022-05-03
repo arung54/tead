@@ -742,6 +742,8 @@ label hospitalGo:
     j "Hey, that's something!"
     bi "I... could've guessed that without seeing this vending machine."
     b "Well, there is cola in here, I'm gonna grab some!"
+    b "At least, I think it's cola. None of the bottles are labelled."
+    b "For all I know it could be root beer, which is gross..."
     play sfx "audio/beep.mp3"
     b "Huh? It's not vending..."
     show jenny ind
@@ -1070,7 +1072,7 @@ label testwindow:
     bi "Like being the vegetarian friend who watches their friends eat meat."
     bi "Or not caring much about social media but your friends are upset when you don't like their posts."
     menu:
-        "What should I do?"
+        bi "What should I do?"
 
         "Eat the cupcake":
             $eat = True
@@ -2335,6 +2337,7 @@ label laurentime:
     lf "Hey Sam, is there a cherry soda in there?"
     s "...Can't you see for yourself?"
     lf "I uh... can't really tell."
+    lf "None of the bottles are labelled."
     s "...But they're all clear, brown, or green..."
     lf "So no cherry soda?"
     lf "Bummer."
@@ -2993,7 +2996,7 @@ label trial3hb:
     b "Something you told us about the evidence doesn't add up with Shahar being the culprit."
     l "What?"
     b "Yeah, just remember what you told us about..."
-    call screen mansionEvidenceTrial(-1, 9, "trial3i") with dissolve
+    call screen hospitalEvidenceTrial(-1, 9, "trial3i") with dissolve
 label trial3i:
     scene bg hospkitchenwindow2
     show hospwindowoverlay2
@@ -3092,7 +3095,7 @@ label trial3k:
             $other = 12
         else:
             $other = 11
-        call screen mansionEvidenceTrial(-1, other, "trial3k") with dissolve
+        call screen hospitalEvidenceTrial(-1, other, "trial3k") with dissolve
     l "Okay, I thought you weren't serious before but..."
     l "I think you're onto something."
     l "But I still feel like we're at a dead end..."
@@ -3187,7 +3190,7 @@ label trial3m:
     l "I think it's pretty easy to figure out what was in the bottle."
     l "After, all, there's really only thing that fits our theory so far..."
     bi "Only one thing? Then this should be obvious..."
-    call screen mansionEvidenceTrial(-1, 6, "trial3n") with dissolve
+    call screen hospitalEvidenceTrial(-1, 6, "trial3n") with dissolve
 label trial3n:
     scene bg hospkitchenwindow2
     show hospwindowoverlay2
@@ -3385,7 +3388,7 @@ label trial3p:
     d "If you think about this even for a second, the issue is obvious."
     python:
         startHospitalTrial( "dracula",  "Dracula: You would {color=#55f}need some way to hold the bottle in place{/color} on top of the pipe, otherwise it would fall off too easily.", 1,
-        "dracula", "Dracula: When you place a flat-bottom object on a cylinder, {color=#f00}if it's not perfectly balanced, it falls off{/color}. That's just basic physics.", 0,
+        "dracula", "Dracula: When you place a flat-bottom object on a cylinder, {color=#f00}if it's not perfectly balanced, it falls off{/color}. That's just basic physics.", -1,
         "dracula",  "Dracula: Even if it's perfectly balanced, if the pipe moved slightly, the vibrations would {color=#f00}knock the bottle off the circular pipe{/color}.", -1,
         "dracula", "Dracula: Given that we've been drinking water and taking showers, {color=#f00}water must regularly be moving through the pipes{/color}.", -1,
         1, -1, "trial3q")
@@ -3400,6 +3403,8 @@ label trial3q:
         xcenter .6
     show drac ind:
         xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
     b "Dracula's right..."
     b "The killer would need some way to hold the bottle in place on top of the pipe, to make sure it didn't fall off immediately."
     b "There's no other way to keep the bottle up there for more than a few seconds."
@@ -3420,7 +3425,7 @@ label trial3q:
     b "Anyway, as I was saying..."
     b "The killer would need a way to hold the bottle in place, but who says such a way doesn't exist?"
     b "Thinking about the list of evidence Lauren found, it's pretty obvious what it is..."
-    call screen mansionEvidenceTrial(-1, 2, "trial3r") with dissolve
+    call screen hospitalEvidenceTrial(-1, 2, "trial3r") with dissolve
 label trial3r:
     scene bg hospkitchenwindow2
     show hospwindowoverlay2
@@ -3432,6 +3437,8 @@ label trial3r:
         xcenter .6
     show drac ind:
         xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
     b "The \"medical glue\" in the first aid kit."
     i "Wait... there's a first aid kit?"
     i "Why didn't anyone get me medication for my sore throat?"
@@ -3440,6 +3447,8 @@ label trial3r:
     l "Sorry Sid, I should have grabbed you something while investigating."
     l "I'll go see if there's anything in there you can use."
     hide lauren with dissolve
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["sam"])
+    with dissolve
     bi "Lauren has much more patience than I do."
     bi "On the one hand I find that admirable, on the other hand..."
     bi "If I had that much patience, I might have to be the one dealing with Sid."
@@ -3449,7 +3458,7 @@ label trial3r:
     b "That's true, but there's a few reasons to believe the medical glue was used but not the bandages."
 label trial3s:
     menu:
-        "The main reason being..."
+        b "The main reason being..."
 
         "The packaging.":
             bi "That's it!"
@@ -3463,6 +3472,7 @@ label trial3s:
         "The contents of the bottle.":
             bi "What do the contents of the bottle have to do with anything?"
             bi "The adhesive would only have touched the bottle itself..."
+            jump trial3s
         "The expertise needed to use them.":
             bi "I think most people have used a bandage at least once in their life."
             bi "Really, I would have chosen the bandages over the medical glue if ease of use were the only concern."
@@ -3472,6 +3482,8 @@ label trial3s:
     b "Lauren said there was a bit of residue on the bottle."
     b "Besides the first aid kit, I can't think of any other adhesives in this place."
     b "So I think if the killer used an adhesive, it had to-{p=0.5}{nw}"
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["sam", "lauren"])
+    with dissolve
     show lauren ind at inwindow behind hospwindowoverlay2 with dissolve:
         xcenter .4
     l "Hey Sid, there's not really any cough drops or anything like that in here."
@@ -3498,16 +3510,258 @@ label trial3s:
     b "Um... I'm just trying to poke holes in my own theory to make sure it's correct."
     b "Yeah, that's it."
     b "If we can figure out how the bottles came free from the pipe, then we can be pretty sure about this explanation."
-    b "...Any ideas?"
-    l "Well..."
-    i "Well..."
-    s "...Well......"
-    d "If I may."
-    bi "Oh boy."
-    bi "Seems like I'm about to hear ten theories and have to pick out one of them..."
+    d "Au contraire."
+    b "What?"
+    d "It means, \"on the contrary.\""
+    d "I think it's pretty clear that the bottles couldn't have come free from the pipe last night..."
+    d "In other words, your theory is still full of holes, Bert."
     python:
-        startHospitalTrial( "lauren",  "Lauren: You would {color=#55f}need some way to hold the bottle in place{/color} on top of the pipe, otherwise it would fall off too easily.", 1,
-        "sid", "Sid: When you place a flat-bottom object on a cylinder, {color=#f00}if it's not perfectly balanced, it falls off{/color}. That's just basic physics.", 0,
-        "sam",  "Sam: Even if it's perfectly balanced, if the pipe moved slightly, the vibrations would {color=#f00}knock the bottle off the circular pipe{/color}.", -1,
-        "dracula", "Dracula: Given that we've been drinking water and taking showers, {color=#f00}water must regularly be moving through the pipes{/color}.", -1,
-        1, -1, "trial3q")
+        startHospitalTrial( "dracula",  "Dracula: Medical glue {color=#f00}is meant to seal wounds{/color} while they heal, so it needs to last a few days. But the bottle fell off in at most two days.", -1,
+        "dracula", "Dracula: There's {color=#f00}no way to remotely dislodge the bottle{/color} while it's on top of the pipe.", -1,
+        "dracula", "Dracula: You {color=#f00}wouldn't be able to throw something at it from a cell{/color}, since you'd have to curve the projectile around the pipe.",-1,
+        "dracula",  "Dracula: So someone had to be on the guard side to dislodge the bottle, but {color=#f00}no one was allowed to be in the hallway at the time the bottle fell{/color}.", -1,
+        1, 1, "trial3t")
+label trial3t:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "There's one way to remotely dislodge the bottle, if it was held in place using medical glue..."
+    b "Using the computer in the security room."
+    d "Bert, did you not hear the last thing I said?"
+    d "No one could be on the guard side last night, when you propose that the bottle fell."
+    d "The computer is on the guard side."
+    b "That's true, but one of the functions the computer has gets around this issue..."
+    b "It also uniquely is useful for getting rid of the medical glue holding the bottle in place."
+label trial3u:
+    menu:
+    b "That function is..."
+
+        "The camera viewing the cafeteria.":
+            bi "Yeah! If you stare at the cafeteria hard enough, the bottle will crack under the pressure!"
+            bi "Wait... that made no sense."
+            bi "You'd have to be the kind of person who deliberately tries wrong answers in a video game to think that."
+            jump trial3u
+        "Controlling the lights.":
+            bi "Hm, maybe if the medical glue were right next to a light, the heat from the light could melt it..."
+            bi "But there's some space between the pipes and the ceiling, so that seems unlikely."
+            jump trial3u
+        "Scheduled cycling of hot water through the plumbing.":
+            bi "That's it!"
+        "Changing the temperature throughout the building.":
+            bi "It's true that if you could make the building hot enough, the glue would melt..."
+            bi "But there's no way a thermostat can get the building to be that hot without us boiling to death."
+            jump trial3u
+    b "The hot water cycling."
+    b "The medical glue is made to be easily removable by applying a towel dipped in boiling water to it."
+    b "If you cycled hot water through the pipes, the glue, which would be attached to the pipes, could melt right off."
+    d "But that still doesn't answer my concern."
+    d "How would you activate such a feature without entering the guard side of the floor at night?"
+    i "*cough* Oh, I remember..."
+    i "There was a *cough* option to schedule a hot water cycle for the future."
+    i "The program also tells you when the last *cough* cycle was..."
+    i "Lauren or Sam, if go check the program right now, we can see if one happened last night..."
+    s "...I'll go. I'm not doing much here..."
+    hide sam with dissolve
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren"])
+    with dissolve
+    l "Okay, not to be a Dracula, but I have one more concern..."
+    l "The pipes are pretty high up."
+    l "And I think it's pretty unlikely anyone here could have thrown the bottle up and got it to stick."
+    l "If the bottle was placed on top of the pipe, how did it get up there?"
+    bi "Well, I think this one's pretty simple to answer..."
+    bi "There's a glaringly simple method to do this."
+    call screen hospitalEvidenceTrial(-1, 5, "trial3v") with dissolve
+label trial3v:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show drac ind:
+        xcenter .75
+    with dissolve
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren"])
+    with dissolve
+    b "There's a stepstool in the supply closet."
+    b "With that it should be pretty easy to place the bottle in a high location."
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    show sam at inwindow behind hospwindowoverlay2 with dissolve:
+        xcenter .6
+    s "...Just like Sid said, the computer shows hot water cycled about an hour before we woke up..."
+    i "*cough* I think the theory is right then!"
+    i "We just need to also see if *cough* the stepstool is enough to reach the top of the pipe."
+    l "I can do that, just give me a minute..."
+    hide lauren with dissolve
+    b "..."
+    show scary with dissolve:
+        alpha 0.5
+    bi "We waited for a bit in silence."
+    bi "My heart was pounding."
+    bi "It was like I had just all-in'd at a poker table..."
+    bi "No matter how good your hand is, until the cards are shown, you can rarely be sure you've won."
+    bi "Your King pair might lose to an Ace pair, the one card that loses you the hand might appear on the river..."
+    bi "Or, in our case..."
+    bi "One mistake, one thing we overlooked, and we'd be back to square one."
+    bi "With no clue who killed Shahar or how they did it."
+    hide scary with dissolve
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    show lauren at inwindow behind hospwindowoverlay2 with dissolve:
+        xcenter .4
+    l "I tried placing the stepstool under the pipe and reaching, but..."
+    l "I couldn't do it standing. I would have to jump a bit to touch the top of the pipe."
+    l "I don't think I could have placed anything on top without it falling if I tried."
+    l "Unless there's a ladder somewhere that we don't know about, well..."
+    l "I don't think the bottle could have been hidden on top of the pipe."
+    i "Are you sure? *cough* I thought we were about to nab the killer!"
+    l "Well, not exactly."
+    l "At best we were about to find out how they did it, but not who did it."
+    l "Regardless, we're back to square one."
+    b "..."
+    b "No, this is perfect, actually."
+    l "Um... Bert?"
+    l "Saying \"this is perfect\" when we're back to square one on solving a murder..."
+    l "Not exactly a good look."
+    b "Sorry, let me explain."
+    b "Lauren, you said you would have to jump a bit, right?"
+    b "Exactly how far away were you from reaching the top of the pipe?"
+    l "Well, standing and reaching up, my hand was about a foot short of the pipe."
+    b "So that just means you couldn't have placed the bottle safely."
+    b "But someone else could have."
+    b "And with that, I think we've found the killer."
+    b "The killer is..."
+    call screen chooseCharHospital("dracula", trial3w, "Who could have placed the bottle?") with dissolve
+label trial3w:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "Dracula."
+    b "The rest of us are about Lauren's height, or less."
+    i "Who are you talking about when you say *cough* less?..."
+    b "Uh... Freddy."
+    i "Oh. Yeah, that makes sense."
+    b "But Dracula... he's almost a foot taller than the rest of us."
+    b "So if Lauren was about a foot short of the pipe..."
+    b "Between Dracula's height and his longer arms, with the stepstool..."
+    b "He's the perfect height to place something on the pipes."
+    d "..."
+    d "I see. This must be how Sid felt this entire time."
+    b "Huh?"
+    d "He was also falsely accused earlier, as I am now."
+    d "However, I am not nearly as reactionary as he is."
+    d "I have good reason to remain calm."
+    d "There is still a hole in your theory."
+    d "You have been lucky that the first few were patched up."
+    d "But this one I am not sure how you will work your way past."
+    b "A hole?"
+    show scary with dissolve:
+        alpha .5
+    bi "I can feel it... he's on the defensive."
+    bi "If he's right and I'm falsely accusing him... well, I got us all killed."
+    bi "But I can tell. He had been fighting so hard against this theory the moment we came up with it."
+    bi "Far moreso than anyone else."
+    bi "In the mansion, he played a more passive role."
+    bi "But this time... he's been aggressively trying to blame others."
+    bi "So I don't think I'm going to get us all killed here..."
+    bi "No... I'm going to save everyone."
+    d "Bert, you're staring into space again. It's quite rude to do that while I'm fighting for my life."
+    hide scary with dissolve
+    b "Oh sorry. Yes, the hole in my theory?"
+    d "Please listen without spacing out this time, I beseech you..."
+    python:
+        startHospitalTrial( "dracula",  "Dracula: The {color=#f00}root beer bottles that were in front of Shahar's body{/color}.", -1,
+        "dracula", "Dracula: When I tried to use the vending machine, {color=#f00}it required change to dispense any drinks{/color}", -1,
+        "dracula", "Dracula: There's {color=#f00}no change accessible on this floor{/color}.",-1,
+        "dracula",  "Dracula: So the only way to get a bottle from the machine would be to break into it. But there's {color=#f00}no signs of the vending machine being broken into{/color}.", -1,
+        0, 9, "trial3x")
+label trial3x:
+    scene bg hospkitchenwindow2
+    show hospwindowoverlay2
+    show sid ind:
+        xcenter .25
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
+    show sam at inwindow behind hospwindowoverlay2:
+        xcenter .6
+    show drac ind:
+        xcenter .75
+    $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
+    with dissolve
+    b "One annoying thing about this game that we learned..."
+    b "The killer always seems to get some sort of location-based advantage."
+    b "Kaiser could somehow operate the train computer in ways the rest of us could not."
+    b "Catherine had access to a closet the rest of us thought was locked."
+    b "And the killer here..."
+    b "Could have been given a few coins."
+    b "A modest advantage compared to the others."
+    b "Because of this, it's harder to know what the truth behind the murder is."
+    b "There may be another theory for Shahar's death easily explained by a different advantage."
+    b "So I don't think that's really a hole in our current understanding of things."
+    d "So you're relying on speculation about this advantage to pin the blame on me."
+    b "I would have before. But you let something loose."
+    b "You said root beer bottles were found in front of Shahar's body."
+    d "Were they not?"
+    l "I never said they were root beer bottles."
+    l "In fact, I had no idea what they were... there wasn't a label or anything when we found them."
+    l "Just glass shards."
+    b "Yet Dracula still knew what type of bottle it was, despite Lauren and Sam being the only ones to see it."
+    b "Well... not the only ones."
+    b "The killer saw the bottle too. They may have even seen it before the drink was emptied out."
+    d "Hmph. So what if I said root beer. As far as I know, root beer is the only drink in that vending machine."
+    l "No, it's not."
+    l "I asked Sam about the drinks in the vending machine since I'm colorblind."
+    l "There's clear, green, and brown drinks in there."
+    l "You would have known that too with a single glance."
+    d "Okay, but root beer is brown."
+    d "I must have had a slip of the tongue and just said root beer because I remembered the brown drink."
+    b "But cola is brown."
+    d "I'm really getting tired of this."
+    d "So what if cola is brown? Root beer was in the vending machine."
+    b "How could you tell it wasn't cola?"
+    d "By the taste."
+    b "..."
+    d "..."
+    show drac oh:
+        xcenter .75
+    d "Oh."
+    d "...It appears I have erred."
+    i "Um... can someone explain what just happened?"
+    b "The bottles in the vending machine weren't labelled."
+    blank "Yes, because labels would break copyright law and make this game unpublishable."
+    l "...Did you guys hear something?"
+    b "Huh? No, just me talking."
+    b "Anyway, unless your eyes are UV scanners or something like that..."
+    b "I don't think with a single glance you could tell the drink was cola."
+    b "It could have been any of the many brown sodas out there."
+    b "In fact, I thought it was cola when I first saw it."
+    b "The only way to know... would be to taste it, as Dracula just inadvertently admitted that he did."
+    b "But to taste it, you'd have to get the bottle out of the vending machine."
+    b "Which is seemingly impossible to do without breaking into the vending machine..."
+    b "Unless you're the killer and have a location-based advantage."
+    b "So, am I right?"
+    d "..."
+    d "Yes, you're right. Though it's annoying the way you seem to be rubbing it in my face."
+    bi "Huh?"
+    bi "His accent suddenly changed."
+    d "Oh well. If I get one bit of respite before I die, it's that I don't have to keep up that fake Romanian accent."
+    

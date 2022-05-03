@@ -113,7 +113,7 @@ screen hosp_evidence():
 
         if currEvidence == 1:
             image "ev3 computer.png" xcenter 800 yalign 0.1
-            text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Cycling hot water through plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
+            text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Scheduled cycling of hot water through the plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "ev3 glue.png" xcenter 800 yalign 0.1
