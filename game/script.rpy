@@ -561,4 +561,4 @@ label start:
 ###########
 #Start
 ###########
-    jump bank4
+    jump bank7

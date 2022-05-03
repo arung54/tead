@@ -2901,7 +2901,7 @@ label trial3h:
         tut "Would you like an explanation?"
         "Yes.":
             jump trial3hb
-        "Yes."
+        "Yes.":
             jump trial3hb
 label trial3hb:
     j "Locked room murder? What's that?"
