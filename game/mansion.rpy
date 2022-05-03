@@ -1,5 +1,6 @@
 label mansionGo:
     $ftecounter = 2
+    $noside = True
     scene black
     $ statusnt("???", "", ch=2, sun=0)
     $mood = "ind"
@@ -16,7 +17,6 @@ label mansionGo:
     zg "Listen punk, this'll be easier if you stop lying."
     zg "You're here for the boss, aren't?"
     n "The boss?"
-    zg "Miss Cantoire."
     n "What do you mean I'm here for her?"
     zb "You're here to kill her."
     n "..."
@@ -50,8 +50,10 @@ label mansionGo:
     n "And how do you propose I do that?"
     zb "Simple."
     zb "Kill him."
+    $noside = False
 
     scene black
+    blank "In the present..."
     bi "..."
     bi "Two people died..."
     bi "And there's nothing I could do to save them..."
@@ -1281,7 +1283,7 @@ label postFT2:
     t "I only just remembered his name."
     t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
-    t "But I think at at some point my company sunk his into duh ground."
+    t "But I think at at some point my company sunk his company into duh ground."
     t "I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
     t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
     $mood = "ind"

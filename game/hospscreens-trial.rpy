@@ -110,7 +110,7 @@ screen hospitalEvidenceTrial(s, e, l):
 
         if currEvidence == 1:
             image "ev3 computer.png" xcenter 800 yalign 0.1
-            text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Cycling hot water through plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
+            text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Scheduled cycling of hot water through the plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "ev3 glue.png" xcenter 800 yalign 0.1
@@ -142,7 +142,7 @@ screen hospitalEvidenceTrial(s, e, l):
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "A number of glass shards were found in front of Shahar's corpse." xcenter 800 yanchor 0.0 ypos 330
+            text "A number of glass shards were found in front of Shahar's corpse. They look like the glass of the bottles in the vending machine." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
             image "ev3 pipes.png" xcenter 800 yalign 0.1
@@ -246,3 +246,13 @@ screen pickSpot6:
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(556, 625, 170, 60):
             action [Function(shatterNoise), Show("shattedHosp", lab = "trial3g")]
+
+screen pickSpot7:
+    imagemap:
+        ground "bg shahardead.png"
+        hotspot(0, 0, 1279, 719):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(593, 656, 35, 24):
+            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3o")]
+        hotspot(687, 625, 35, 24):
+            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3o")]
