@@ -14,9 +14,11 @@ label bankGo:
     bi "Shahar... and Dracula."
     bi "No, not Dracula. Ivan."
     bi "Even after his death he deserves to be called his real name."
-    bi "Despite everything, I don't hate him." #Arun: He lobotomized Shahar, they probably should kind of hate him
+    bi "Do I hate him? I think so."
+    bi "I think I have to." #Arun: He lobotomized Shahar, they probably should kind of hate him
+    bi "What he did to Shahar is horrible."
     $mood = "ind"
-    bi "I can't hate him."
+    bi "But..."
     bi "None of us here have options, all we can do is keep pushing forward."
     bi "I won't let them, or anyone else, die in vain."
     bi "..."
@@ -40,10 +42,10 @@ label bankGo:
     s "This nightmare continues."
     s "Tsk... what a disaster."
     b "Is everyone okay?"
-    show lauren ind with moveinleft: #Arun: Sam first
-        xcenter .25
     show sam:
         linear .3 xcenter .75
+    show lauren ind with moveinleft: #Arun: Sam first
+        xcenter .25
     l "Okay as I could be, I guess."
     l "It looks like we've been moved again."
     b "As crazy as it sounds, I am starting to get used to it."
@@ -96,7 +98,7 @@ label bankGo:
     s "We need to know what we're dealing with here."
     b "Agreed."
     b "This room seems like... a lobby? For some type of business."
-    s "There looks like a floor-plan on the wall over there."
+    s "There looks like a floor-plan on the wall over there, behind the counter."
     hide sam with dissolve
     show bankposter with dissolve
     b "Oh wow, this is interesting!"
@@ -108,12 +110,16 @@ label bankGo:
     i "Wait a minute, does that say... vault?"
     i "Like, a BANK VAULT?"
     b "Yeah, I think we must be in a bank."
+    b "I wonder why this is here in the first place."
+    l "It's probably a safety thing? So the bank employees know where the exits are."
+    s "Yeah, or it was just put here for this... situation."
     hide bankposter with dissolve
     show sid happy with dissolve
     i "So if I go out this door and down the hallway..."
     i "There's a bank vault?"
-    i "That nobody's guarding, probably?"
     b "Uhhh, that is what this map says..."
+    i "That nobody's guarding, probably?"
+
     b "But-"
     i "See ya!"
     hide sid happy with moveoutright
@@ -172,8 +178,14 @@ label bankGo:
     show lauren ind with dissolve:
         xcenter .5
         linear .3 xcenter .75
-    l "They're probably in that next room on the left."
-    l "If the map was accurate, that should be..."
+    l "I hear them chatting in that next room on the left."
+    b "Hmm, Lauren? Do you see that too?"
+    l "See what?"
+    b "There's a red light coming from further down the hallway."
+    b "It must be really bright if we can see it around the corner."
+    l "Huh, you're right."
+    b "Well, we'll do a full tour anyway, might as well go in order."
+    b "If the map was accurate, this next room should be..."
     hide lauren ind with dissolve
     show bg bankbreak with dissolve
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
@@ -187,6 +199,9 @@ label bankGo:
     j "This room's about what I'd expect."
     j "A sink, coffee machine, and a fridge with some snacks."
     bi "I could go for some coffee and snacks right about now..."
+    show jenny ind:
+        xcenter .25
+        linear .3 xcenter .3
     b "That poster on the wall seems like it's mocking us..." #Arun: Maybe move Jenny so poster is visible
     ses "Mrow..."
     l "The Game Master has some sick sense of humor."
@@ -195,7 +210,7 @@ label bankGo:
     j "It's your cousin, Sesame!"
     l "Anyway, having access to food is nice."
     l "Maybe not a nutritious meal, but I'll see if I can grab something for Freddy."
-    hide lauren ind with moveoutright #Arun: Dissolve instead?
+    hide lauren ind with dissolve #Arun: Dissolve instead?
     show jenny ind:
         linear .3 xcenter .5
     j "Pretty dinky kitchen for how fancy the lobby was, huh?"
@@ -329,8 +344,9 @@ label bank2:
     i "The poster says all of us have a code, and we can use any three in any order."
     i "Let's see, carry the two... multiple this by that... oh wait..."
     b "There are only six of us, which means there are... 120 correct passcodes."
-    i "47! See, I figured it out myself."
+    i "47! Uh, I mean, 120!"
     i "That seems like a bunch, right?"
+    i "Most locks only have one correct combo, 120 is a lot of options!"
     b "There are 31 days in a month though, and you'd have to guess two numbers, so..."
     i "Two? The safe needs three numbers!"
     s "Yeah but you know your own birthday, right?"
@@ -510,7 +526,8 @@ label bank3:
     show jenny ind
     b "..."
     bi "She is right though, there isn't much of anything in here."
-    bi "Lots of insignificant papers, office supplies, and benches."
+    bi "Lots of insignificant office supplies."
+    bi "We found paper, a small amount of cash, some pens, a few small burlap bags."
     b "This is quite a big space we're trapped in, but there's not much happening."
     b 'Also, thankfully, there\'s no convoluted "prisoner-guard" dynamic this time.'
     b "We get to all work together a bit easier."
@@ -671,6 +688,7 @@ label bank4:
     s "Take a look for yourself."
     blank "Sam handed me a file."
     show geraldfile with dissolve #Arun: Maybe add a pause here so they can quickly digest the file?
+    pause 1
     b "Gerald Ogden... interesting."
     b "There's even a picture of him."
     b "Very... powerful eyebrows and mustache."
@@ -701,52 +719,145 @@ label bank4:
     b "What do you mean?"
     s "I was worried about presenting this to everyone."
     s "I don't know how they would react."
+    s "Honestly, I don't know how {i}I{/i} would have reacted to this if we found before the mansion."
+    b "It's not the same for you now?"
+    s "Now I'm just... going through the motions."
+    s "Doing what I can."
+    s "But for someone like Sid or Lauren, or even yourself..."
+    s "That's more than life changing money."
+    s "Plus, I think showing Freddy would scare the hell out of him."
+    b "Yeah, you're right."
+    b "It's smart to be hesitant about showing people."
+    b "Still, I think talking to Jenny or even Lauren about it would be fine."
+    b "I just... don't know what to do with this information yet."
+    b "Should we confront Freddy? He's just a kid..."
+    s "Well, we don't even know if they're related."
+    s "They might just have the same last name."
+    s "What if we just ask him his dad's name?"
+    b "That's true. If he says his dad's name is Gerald, we can go from there."
+    s "But I can't be the one to do it."
+    b "What do you mean?"
+    s "I think Freddy's scared of me."
+    s "And honestly, fair enough."
+    bi "Yeah..."
+    s "But you, Jenny, or even Lauren could ask him."
+    b "Hmm, I don't think he {i}likes{/i} me, but we can make it work."
+    bi "The last time I talked to him alone was really awkward..."
+    b "Maybe Jenny can help me break the ice."
     show sam:
         xcenter .5
         linear .3 xcenter .75
     show jenny happy with moveinleft:
         xcenter .25
     $ showchibint("jenny", "sam")
-    j "React to what?"
-    b "Hey Jenny."
+    j "Someone say Jenny?"
+    s "Speak of the barbie."
     j "Find something juicy?"
     s "We found... something."
-    blank "Bert and Sam told Jenny about the file."
+    #########blank "Bert and Sam told Jenny about the file."
     show jenny ind
-    j "$10.3 million? I didn't even know numbers went that high..."
-    b "I just don't know what to do with this information yet."
-    b "Should we confront Freddy? He's just a kid..."
-    j "Well, we don't even know if they're related."
-    j "They might just have the same last name."
-    s "We could just ask him."
-    s "If he knows who this is we can go from there."
-    s "But I can't be the one to do it."
-    b "What do you mean?"
-    s "I think Freddy's scared of me."
-    s "And honestly, fair enough."
-    bi "Yeah..."
-    s "But Bert, or you, Jenny, or even Lauren could ask him."
-    b "Hmm, I don't think he {i}likes{/i} me, but we can make it work."
-    bi "The last time I talked to him alone was really awkward..."
-    b "Jenny, can you help me break the ice with him?"
-    b "Just to make sure we don't worry him?"
-    show jenny happy
-    j "Of course!"
-    j "It might have to be in the morning though, I think he's already asleep."
-    b "Okay, sounds like a good plan to me."
-    show jenny ind
-    s "One more thing."
+    b "There's a file about someone who could be related to Freddy."
+    b "A guy named Gerald Ogden."
+    s "He's insanely rich, too."
+    s "Easily one of the largest accounts in this whole bank."
+    j "How big we talking?"
+    b "Last year his main account gained over 10 million dollars."
+    j "So Freddy might be... the richest frog ever..."
+    b "We're not sure if they're actually related."
+    b "Jenny, do you think you can help me talk to Freddy tomorrow?"
+    b "I don't want to scare him, but it can't hurt to ask him what his dad's name is."
+    j "Sounds like a plan."
+    s "Great."
     s "Half of us know about this now, but I still think we should hide the file."
+    j "May I take a look?"
+    blank "Bert handed Jenny the file."
+    show jenny scared
+    j "Wait... there's a picture here."
+    s "Yeah, he's got a goofy mustache and really unique facial hair color..."
+    j "No, no, not that... th-this doesn't make any sense."
+    b "What's wrong Jenny?"
+    j "The man in this picture... it's unmistakable."
+    j "Gerald Ogden? No..."
+    j "He's the man that I was... I was arrested for protesting."
+    bi "Jenny's story back at the mansion came streaming back to me."
+    scene bg mansionbedroom2
+    $showchibint("jenny")
+    $ statusnt("Bedroom 2", "bert", ch=2, sun=3)
+    show jenny ind
+    show sepia:
+        alpha .3
+    with fade
+    j "From day one it was so clear he was guilty."
+    j "And I mean, guilty guilty."
+    j "They had several eye witnesses for tons of different felonies."
+    j "And then guess what happened?"
+    b "I'm... kinda scared to know."
+    j "He was found not guilty, walked out with not even a slap on the wrist."
+    j "Everyone at townhall went ballistic... it was the craziest thing I've ever seen."
+    j "People started screaming, fighting, crying."
+    j "And ya know, I've always been a bit of a loudmouth..."
+    j "I may or may not have... screamed some choice words at the judge and jury."
+
+    scene bg bankoffice with dissolve
+    $ statusnt("Director's Office", "bert", ch=4, sun=4)
+    $ showchibint("jenny", "sam")
+    show sam:
+        xcenter .75
+    show jenny scared:
+        xcenter .25
+    with fade
+
+    j "This can't be right! His name isn't Gerald Odgen..."
+    j "At least, it wasn't back then..."
+    s "Slow down, what the hell are you talking about?"
+    j "My crime... it after protesting a court decision about... this guy."
+    b "Are you sure that's him in the picture?"
+    j "I'm positive."
+    b "But that's not his name?"
+    j "No... he must have been under an alias for some reason."
+    j "He definitely had enough money to pull some strings and hide a name."
+    s "Well if this really is him, that file's proof of his wealth."
+    b "So, the man you were enraged over might be... Freddy's dad."
+    j "Th-that doesn't make sense either!"
+    j "He didn't have a family, it was even mentioned in his defense."
+    s "Maybe that's why he was using a fake name."
+    s "If Freddy really is his son, maybe he used a fake name to protect Freddy."
+    b "Or protect himself, using that in his defense."
+    s "Yeah."
+    b "Jenny, are you alright?"
+    j "S-sorry, I'm just a little shook..."
+    j "I never wanted to see that face again."
+    j "And maybe... that's why I'm here. Stuck in this messed up game."
+    j "He's taking revenge on me..."
+    b "You don't need to scare yourself like that..."
+    b "After all, he wasn't even found guilty."
+    b "There'd be no reason to hold a grudge against some random girl."
+    show jenny ind
+    j "That's true, I suppose..."
+    j "With all that said..."
+    j "I really hope this guy isn't Freddy's dad."
+    s "He'd have to be a pretty bad father to outweigh that money."
+    j "He's the slimiest businessman I can think of, that's for sure."
+    j "His level of corruption would put even Stella's to shame."
+    bi "Stella's memory lives on, it seems."
+    b "We can hope it's not his dad, but I guess we'll find out soon enough."
+    b "It could be important to our situation in this game."
+    b "Things just keep getting more intertwined..."
+    s "Anyway, we need to do something about this file."
     s "I doubt Sid, Lauren, or Freddy will go looking through the records, but..."
     b "We don't know for sure how they'd react if they did see it."
     s "Yeah."
     s "Is there somewhere we could hide this, just for the night?"
     j "Hmm..."
+    show jenny happy
     j "Oh!"
     j "Bert, we could hide the record in one of the locker room lockers!"
     b "That's true, I still have all the keys in my backpack."
     b "I'll drop it off in there when we leave here."
     j "And we can chat with Freddy in the morning."
+    j "It might be awkward, but he's just a little kid after all!"
+    bi "Seems like she's back in a good mood."
+    bi "That's Jenny for you."
     j "Sam, let's head back to the lounge before someone else comes looking for us."
     s "Right."
     hide sam
@@ -793,7 +904,6 @@ label bank4:
     with dissolve
     bi "What secrets?"
     bi "After all these terrible deaths, I need answers..."
-
     bi "Time to get back to the lobby."
     scene black with dissolve
     blank "Bert walked back to the lobby, making sure not to wake up Sid on the way."
@@ -803,9 +913,9 @@ label bank4:
     show jennysleep:
         xcenter .195
         ycenter .5
-    show frogsit2: #Arun: Mask is gone here
-        xcenter .44
-        ycenter .48
+    #show frogsit2: #Arun: Mask is gone here
+    #    xcenter .44
+    #    ycenter .48
     with dissolve
     bi "I think everyone's asleep."
     bi "It's not {i}that{/i} late, but I guess everyone's tired out."
@@ -844,9 +954,10 @@ label bank4:
     f "Yeah! Like a baby!"
     bi "She scared me for a second..."
     j "Here, eat up."
+    j "And then let's hang out with Fr-Freddy for a while!"
+    bi "Jenny stuttered a bit. I can tell she's a bit uneasy being near Freddy."
+    bi "After what we learned, I can't really fault her."
     bi "Jenny handed me a peanut butter protein bar."
-    j "And then let's hang out with Freddy for a while!"
-    bi "Jenny gave me a super obvious wink, but Freddy didn't see."
     b "Thanks Jenny, I love peanut butter bars."
     f "I picked it!"
     ses "Mrow!"
@@ -861,11 +972,15 @@ label bank45:
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
     $ showchibint("freddy", "lauren", "jenny", "sam", "sid")
-    show jenny ind with dissolve
+    show jenny ind
+    with dissolve
     j "Alright, you ready to talk to Freddy with me?"
     b "Yeah, let's go to the break room."
     b "A little privacy and some more snacks."
     j "Okay."
+    b "Are you sure you're up for it?"
+    b "We might found out Gerald is Freddy's dad..."
+    j "I'll be okay. He's just a little kid."
     show jenny happy
     j "Hey Freddyyyyyyyyyyyyyyyy?"
     show jenny happy:
@@ -926,10 +1041,11 @@ label bank5:
     f 'She calls him "Dear"!'
     j "........................."
     bi "This is an unexpected problem..."
-    b "Freddy, want to play with Sesame for a minute?"
+    b "Freddy, can you take Sesame back into the lobby for me?"
     f "Always!"
     ses "Mrow!"
     hide frog happy with moveoutleft
+    $ showchibint("jenny")
     show jenny ind:
         xcenter .75
         linear .3 xcenter .5
@@ -944,18 +1060,17 @@ label bank5:
     b "But... I was hoping to avoid that."
     b "I don't want to scare him by showing him a picture of his dad in this situation."
     j "Hmm... that's fair."
-    j "Maybe we should talk to the others, which is just Lauren and Sid at this point."
-    j "I know we were worried about them finding out, but they'll need to eventually."
-    b "Lauren does know Freddy pretty well by now..." #julian doesn't like this part dislike bad cringe
-    b "Let's just make sure we keep an eye on Sid."
-    b "If Freddy is related to this guy, it might spook him a bit."
-    j "Five heads are better than two!"
-    j "Besides, I don't think we're going to make much progress here."
+    j "Maybe we should talk to the others."
+    j "I know you were worried about telling them, but I think we have to."
+    j "It's just Sid and Lauren."
+    b "Well..."
+    j "Besides, if Gerald does end up being Freddy's dad, they deserve to know."
+    j "Any information that can help us piece this together all is important right now."
     b "...Alright."
-    j "I'll play with Freddy and Sesame for a bit."
-    j "You go back to the lobby and tell them everything."
+    b "Let's just make sure we keep an eye on Sid."
+    b "I'll go back to the lobby and fill them in."
     j "Oh! We might want to show them the file, though."
-    j "I'll take Freddy and go grab it."
+    j "I'll go grab it."
     b "Oh, you're right... okay."
     b "I have the key to the locker in my bag."
     bi "I peaked into my backpack and realized my mistake."
@@ -963,12 +1078,10 @@ label bank5:
     b "But I know it was the bottom left locker on the wall."
     j "That's fine, I'll just try them until it works."
     show jenny happy
-    j "Alright, Team Mystery Busters, let's meet back here in 10 minutes!"
+    j "Alright, Team Mystery Busters, let's meet back in the lobby in 10 minutes!"
     b "Team Mystery Busters?"
     j "That's us!"
-    j "Come on Freddy and Sesame! Mission time!"
     hide jenny with moveoutright
-    bi "She's as excitable as always."
     scene black with dissolve
     blank "Bert walked back to the lobby."
     show bg banklobby
@@ -991,7 +1104,7 @@ label bank5:
     i "This changes everything!"
     i "I say we kill the runt and use his bones to pry open the vault!"
     b "Calm down, we're going to figure this all out."
-    b "We don't even know if they're related, it's just the same last name."
+    b "We don't even know if they're related, it might just be the same last name."
     l "Plus, it's not like Freddy has the money himself."
     l "He is just a kid, after all."
     i "Well, I... I could get him to tell me his birthday!"
@@ -1024,15 +1137,17 @@ label bank5:
         xcenter .25
     b "Lauren, what do you think?"
     b "This way, maybe we wouldn't have to tell him we found his dad's file."
-    l "If myself of Jenny asks him, he might be open to it."
+    l "If I ask him, he might be open to it."
     s "I guess it's worth a shot then."
     b "Jenny's grabbing the file from the locker room right now."
-    b "We can meet her in the break room in a minute."
-    l "I guess that's the plan then."
+    b "She'll be back in a minute."
     l "Poor Freddy either way, he's just a kid... This situation is so messed up."
     s "Yeah..."
-    show scary with dissolve:
+    hide lauren
+    hide sam
+    show scary:
         alpha .5
+    with dissolve
     bi "Getting Freddy to take off his mask..."
     bi "It does seem like the most painless solution."
     bi "It's going to be so strange though... I've gotten so used to him being a frog boy."
@@ -1043,29 +1158,23 @@ label bank5:
     bi "He's probably just a harmless little kid, but now I'm nervous..."
     bi "The most important thing is that we can protect him, whether he's related to Gerald or not."
     hide scary with dissolve
-    b "Alright, let's head over."
-label bank6:
-    scene black with dissolve
-    blank "Bert, Lauren, Sam, and Sid walked to the break room."
-    show bg bankbreak
-    $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
     $ showchibint("freddy", "jenny", "lauren", "sam", "sid")
-    show jenny happy
+    show jenny happy with moveinright
     with dissolve
     j "Mission success!"
-    j "We got the file, and we made it back alive!"
+    j "I got the file, and we made it back alive!"
     bi "Usually that expression is an exaggeration, but given the circumstances..."
     b "Great, thanks Jenny."
     b "Anyway, here's the plan."
     show jenny ind
-    b "You and Lauren are going to ask Freddy to take his mask off."
+    b "Lauren's going to ask Freddy to take his mask off."
+    b "Maybe he has some distinct features that look like Gerald's."
     b "That way, we can infer if him and Gerald are related without telling him everything."
     j "What?!"
     j "That's scary... how do we know if he's even a kid under there?"
     j "What if he's a robot, or a really smart monkey?"
     b "."
-    j "But you are right, it's a good plan... alright, I'll do it."
-    b "Thanks Jenny."
+    j "But you are right, it's a good plan..."
     show jenny ind:
         xcenter .5
         linear .3 xcenter .75
@@ -1087,9 +1196,9 @@ label bank6:
     f "B-but... please?"
     bi "Curiousity really is something."
     l "Okay, okay, fine."
-    l "Jenny and I were wondering..."
+    l "I was wondering..."
     l "What you looked like under your mask!"
-    j "You said the face portion is removable, right?"
+    l "You said the face portion is removable, right?"
     f "Y-yes..."
     j "If you're too shy, you don't have to show us!"
     l "But I bet you're reaaaaaaally cute!"
@@ -1117,36 +1226,39 @@ label bank6:
     j "I could just pinch your little cheeks!"
     f "Hehe! You'll have to catch me first!"
     hide frog2 smile with moveoutleft
-    $ showchibint("jenny", "lauren", "sam", "sid")
     b "..."
     show lauren ind
     show jenny ind
     j "Okay, so they're definitely related."
     l "Yeah, the hair is a dead giveaway..."
+    l "Who has naturally mint colored hair..."
+    show jenny scared
     j "What do we do now?"
     b "I was really hoping it would just be a coincidence..."
     b "But it doesn't seem like it."
     b "In any case, we need to protect him."
-    b "We already do a pretty good job keeping him occupied, but we have to try even harder now."
-    b "I think one of us three should be with him at all times."
-    l "I can't imagine Sid actually planning to hurt the kid..."
-    j "Sam either, to be honest."
-    b "Yeah, it does seem like Sam's turned a corner and wants to be helpful."
-    bi "Unless that's an act?"
-    b "But either way, for right now, we are responsible for this kid."
-    j "That's true, but..."
+    #b "We already do a pretty good job keeping him occupied, but we have to try even harder now."
+    #l "For right now, we are responsible for him, regardless of everything."
+    b "I'll stick with him for the rest of the night."
+    j "I can't believe I'm stuck here with that man's son..."
+    j "It's like some sick joke."
+    b "For all intents and purposes, he's just a kid."
+    b "It doesn't even seem like he likes his father."
     show jenny happy
-    j "At least he really is cute!"
+    j "Yeah, and at least he really is cute!"
     j "Some kids his age are butt ugly, haha!"
     j "Let's get everyone together again and meet up to talk in a bit."
-    j "Say, two hours in the lounge?"
-    j "I'll go catch up with Freddy for now!"
+    j "Say, an hour in the lounge?"
     hide jenny happy with moveoutright
     $ showchibint("lauren", "sam", "sid")
     show lauren ind:
         xcenter .25
         linear .3 xcenter .5
-    l "I guess that means that frog boy really is filthy rich." #Arun: Frog boy
+    l "Jenny seems pretty shaken by this."
+    l "I can't blame her, but... maybe she should keep an eye on her."
+    b "There's a lot to take."
+    b "Two more people dead, Gerald's file, the vault..."
+    l "Speaking of the vault, I guess that means Freddy really is filthy rich." #Arun: Frog boy
     l "And that means the bank records are most likely real."
     l "It makes me wonder how much money really is in the vault..."
     b "Not enough to risk dying to get into it."
@@ -1185,16 +1297,12 @@ label bank6:
     #FTE 3 goes here
 label bank7:
     scene black
-    blank "After some free time, Bert head to the lobby to meet with the others."
+    blank "After some free time, Bert met with the others in the lobby."
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("lauren", "freddy", "jenny", "sid", "sam")
-    show frogsit:
-        xzoom -1
-        xcenter .345
-        ycenter .475
+    show sam
     with dissolve
-    show sam with dissolve
     s "I think everyone's here."
     s "Do you really have any plan to protect Freddy?"
     b "Well..."
@@ -1216,13 +1324,187 @@ label bank7:
     j "Remember back on the train, when Dan's murder happened?"
     j "I was holding Freddy's hand the whole time the lights were out."
     b "I do remember, you two were right next to me."
-    b "I think we need a system like that to make sure someone can always be there for him."
+    b "Maybe that's the solution we need."
+    show jenny happy
+    j "Or a leash!"
+    b "A leash? For Freddy?"
+    j "I mean, it would work!"
+    show jenny ind
+    b "Hmmm, mayne not the best idea."
+    b "But for now, keeping him within arm's reach is a good plan."
+    b "I'll keep him joined at my hip for the rest of the night."
+    b "Lauren, can you take over in the morning? Then we can plan from there."
+    l "Sure."
+    bi "It'd be great to have a third person to watch him, but..."
+    bi "Maybe I shouldn't force Jenny alone with him."
+    j "Alright, if we're settled here, I'm gunna hit the locker room!"
+    j "A nice hot shower would hit the spot right now."
+    j "Lauren, wanna come with me?"
+    l "I won't join you in the shower, but I would like to explore this place a bit more."
+    hide jenny ind
+    hide lauren ind
+    with moveoutright
+    $ showchibi("freddy", "sid", "sam")
+    show sam:
+        xcenter .75
+    show sid ind:
+        xcenter .25
+    with moveinleft
+    i "Why didn't Jenny invite me to go shower..."
+    s "You're such a dork."
+    s "Anyway, I'm going to follow Lauren."
+    s "I've only gotten a quick look at the locker room."
+    s "We'll try not to wake you and Freddy up if you're sleeping when we get back."
+    b "Thanks Sam."
+    hide sam with moveoutright
+    $ showchibi("freddy", "sid")
+    show sid ind:
+        xcenter .25
+        linear .3 xcenter .5
+    i "I'm beat."
+    i "Imagine, money and a solution to all this. It's so close, but out of reach..."
+    i "I get this whole Gerald thing is important, but it's hard not to think about the vault."
+    b "I'll tell you what, Sid."
+    b "If we get into the vault, you can have my share too."
+    i "Thanks Bert. I was already planning on taking it, but thanks."
+    bi "This kid..."
+    i "I'm gunna hit the hay."
+    i "That couch in the hallway was super cozy last night, gotta go claim it again!"
+    hide sid with moveoutright
+    $ showchibi("freddy")
+    show frog2 ind
+    f "Let's do arts and crafts!"
+    b "Aren't you tired?"
+    b "It's pretty late Freddy!"
+    f "Not tired not tired!"
+    f "Bedtimes are for little kids."
+    bi "I guess there's no reason to force him to bed early."
+    b "Hmm... I think there are some supplies in the office."
+    b "Let's go do some arts and crafts!"
+    show frog2 smile
+    f "Yay yay yay yay!"
+    scene black
+    blank "Bert and Freddy walked to the Director's Office."
+    scene bg bankoffice
+    $ statusnt("Director's Office", "bert", ch=4, sun=4)
+    $ showchibint("freddy")
+    show frog2 smile
+    with dissolve
+    b "Alright, there's some crayons, paper, and pencils here."
+    b "Go crazy."
+    f "Yay!"
+    hide frog2 with moveoutleft
+    bi "He's right to work, drawing something that looks like a... large chicken?"
+    bi "I'm amazed how cheerful this kid can stay, given everything."
+    bi "I don't think I'd be able to handle all this trauma at his age."
+    bi "I... hope that doesn't mean he's used to it."
+    bi "In any case, I should try to make myself useful."
+    bi "Let's see..."
+    blank "Bert sat down at the desk with a peice of paper."
+    show bg bertmap
+    bi "So. Time to arrange some thoughts."
+    bi "We're learning more and more about how everyone is related."
+    bi "Maybe mapping it all out can help me make a plan to keep everyone safe."
+    bi "I'll start by..."
+    show bg bertmap1 with dissolve
+    bi "Writing everyone out."
+    bi "The twelve of us that we started with."
+    bi "And a spot in the middle for what might be tying us all together."
+    show bg bertmap2 with dissolve
+    bi "Mr. Sydell."
+    bi "Too many of us have connections to him to ignore."
+    bi "Alright. Freddy and Jenny."
+    show bg bertmap3 with dissolve
+    bi "Freddy's dad's case kinda sorta lead to Jenny's arrest."
+    bi "Jenny hates Freddy's dad, and maybe his dad knows about Jenny?"
+    bi "Unfortunately, that's all we really know about them."
+    bi "No direct connection to Mr. Sydell that we know of."
+    bi "Next up is..."
+    show bg bertmap4 with dissolve
+    bi "Sid."
+    bi "Sid got blackmailed into hacking InSyde Electronics, Mr. Sydell's company."
+    bi "I don't think he's personally met Mr. Sydell, but there's a clear connection."
+    bi "The same situation had him caught up with Shahar, pre-lobotomy."
+    bi "Speaking of Shahar..."
+    show bg bertmap5 with dissolve
+    bi "This is where it all starts to get messy."
+    bi "Shahar, Ivan, and Stella were all pretty intertwined."
+    bi "Stella's company was suing Insyde."
+    bi "Shahar was a lawyer hired to bring down Insyde Electronics."
+    bi "If Mr. Sydell is behind all this, it makes a lot of sense for them to be here..."
+    bi "And of course, Ivan is responsible for Shahar's lobotomy."
+    bi "I don't think she had met either of them personally at the time, though."
+    bi "I think that's the most complicated bit..."
+    bi "From there..."
+    show bg bertmap6 with dissolve
+    bi "Catherine and Sam."
+    bi "Both of them had been in Mr. Sydell's mansion before."
+    bi "Catherine had robbed the place, in and out only one time."
+    bi "Clear connection, but not much for us to go off of."
+    bi "Sam on the other hand had been there multiple times to sell him drugs."
+    bi "And I think..."
+    show bg bertmap7 with dissolve
+    bi "That's all the prior connections."
+    bi "We don't have an clear connections between myself, Lauren, Dan, or Kaiser."
+    bi "Though, it's pretty easy to imagine how we could have upset Mr. Sydell..."
+    bi "Lauren and I have both accidentally... killed someone."
+    bi "They could have been people close to Mr. Sydell, or whoever the Game Master is."
+    bi "Kaiser was responsible for a massive train heist, and Dan had just come from jail."
+    bi "I'm sure we all have some type of relation, we just haven't uncovered everything yet."
+    bi "Unfortunately, doing so will be hard..."
+    show bg bertmap8 with dissolve
+    bi "...with 6 of us dead."
+    bi "The only ones still alive with connections to Mr. Sydell are Sid and Sam."
+    bi "Sid's is pretty one sided though; it's not like he ever met Mr. Sydell."
+    bi "He just caused the company some trouble."
+    bi "Sam, however..."
+    show bg bertmap9 with dissolve
+    bi "...may have actually met Mr. Sydell."
+    bi "We don't actually know the full extent of their relationship."
+    bi "Maybe this is the missing link I've been ignoring!"
+    bi "Sam might have useful information about Mr. Sydell, even if it's small."
+    bi "Ever since Ivan's died, Sam's been struggling a bit, but has been helpful."
+    bi "I think they'd be supportive and tell me anything they could."
+    bi "Maybe this is a breakthrough!"
+    bi "I'll talk to Sam ASAP, and we'll all get out of here alive."
+    f "Hey Bert dad?"
+    b "Oh! Freddy."
+    show bg bankoffice
+    show frog2 ind
+    with dissolve
+    f "Bert, I'm starting to get tired..."
+    f "Can we go back to the sleeping room now?"
+    b "Yes, of course Freddy."
+    b "Thanks for hanging out with me Freddy, this time has been really helpful."
+    f "Huh?"
+    b "Let's head back to the lobby."
+    scene black
+    blank "Bert and Freddy walked back to the lobby."
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ showchibint("freddy")
+    show frogsit2: #Arun: Mask is gone here
+        xcenter .44
+        ycenter .48
+    with dissolve
+    bi "He passed out almost instantly when we got back in here."
+    bi "...I guess, Jenny's right, he is kinda cute."
+    bi "Anyway, it feels great having {i}some{/i} direction, however small."
+    bi "If Sam really can give us any new information about Mr. Sydell, we'd be in a good spot."
+    bi "A small weight feels lifted off my shoulders."
+    bi "And there's a new feeling... almost... excitement?"
+    bi "We're getting closer to learning the secrets of this game."
+    bi "We're getting closer to getting out of here aliv-"
+    show bg banklobby1 #music change
+    show lauren pixel:
+        xcenter .85
+        ycenter .52
+        zoom 1.3
+    blank "POW POW POW POW!!!"
 
 
 
-
-    # meet back up
-    # discuss protecting freddy
-    # bert ends up with freddy in lounge
-    # jenny in the showers
-    # lauren and sam MIA
+    #map out all interactions
+    #we'll talk to sam
+    #go back to lounge, wait a bit
+    #BARGE IN
