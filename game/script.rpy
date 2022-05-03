@@ -494,6 +494,7 @@ define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image
 define s = Character("Sam Lee", who_color= "f3946a", image="notbert", callback=samvoice)
 define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice, image="notbert")
 define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice, image="notbert")
+define dr = Character("Ivan Nepomniachtchi", who_color= "ff9483", callback=dracvoice, image="notbert")
 define f = Character("Freddy Ogden", who_color= "76d352", image="notbert", callback=frogvoice)
 define j = Character("Jenny Flowers", who_color= "e50548", callback=jennyvoice, image="notbert")
 define l = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="notbert")
@@ -518,7 +519,7 @@ define warden = Character("Warden", who_color= "ffffff", callback=mevoice, image
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice, image="notbert") #used in chapter 0
 define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00", image="notbert") #used in chapter 0
 define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
-define blank = Character(" ", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
+define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
 
 label start:
 

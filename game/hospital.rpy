@@ -3764,4 +3764,163 @@ label trial3x:
     bi "Huh?"
     bi "His accent suddenly changed."
     d "Oh well. If I get one bit of respite before I die, it's that I don't have to keep up that fake Romanian accent."
-    
+    d "Yes, I killed Shahar."
+    d "Do me one last favor, let's not waste time with you guys telling me how bad I am for killing someone."
+    d "That routine is getting old, and will waste precious time."
+    bi "Different accent, same level of contempt for everyone..."
+    i "What?"
+    show sid mad:
+        xcenter .25
+    i "Hey! You can't just kill him and act all cool!"
+    i "He was a person with hopes and dreams! He was our friend!"
+    d "I doubt Shahar was really friends with anyone here."
+    d "At least, the real Shahar wasn't."
+    l "I suspect you know more about Shahar that you haven't disclosed until now..."
+    d "Indeed. I'm not sure how these chips work..."
+    d "No, I don't need to lie anymore. The Game Master can kill me at a moment's notice."
+    bi "...He knows how the chips work?"
+    d "I'll get to how I know that later."
+    d "I only have a few minutes left, I should tell you as much as you can."
+    d "As much as I don't care for you all, I greatly dislike the Game Master."
+    d "So in this game, I would rather you all win."
+    d "And I will NOT have children yelling at me reduce the chances of that happening."
+    i "Did you just call me a child?! Now I wish you'd die sooner!"
+    l "Sid, enough."
+    l "He's right. When Catherine died we learned some useful information from her."
+    l "I... I'm angry too. But we have to remember Dracula only did what he was forced to do."
+    d "If anything, me killing Shahar, who was living a lie, was the most altruistic choice."
+    l "Not helping..."
+    l "Sid, everyone... let's be angry at him tomorrow."
+    l "We need to listen now."
+    i "..."
+    show sid ind:
+        xcenter .25
+    i "Okay. But if he doesn't say anything useful I'm gonna bite his nose off!"
+    play sfx "audio/whirr.mp3"
+    pause 1.0
+    l "What was that noise?"
+    hide lauren with dissolve
+    pause 1.0
+    show lauren with dissolve
+    l "The cell doors just opened on both sides."
+    l "I guess... so we can reunite before we go to sleep?"
+    d "Hmph. The Game Master acting like they're extending us a courtesy for our... well, your victory."
+    d "Well, given our newfound freedom, I propose we all gather in the guard lobby, where it is most comfortable."
+    d "I am a man of luxurious needs."
+    d "I'll speak my final words there... and there is something I have hidden in my cell I should bring."
+    l "Fine with me."
+    i "I hate cafeterias any, they *cough* remind me of school..."
+    hide lauren with dissolve
+    hide sam with dissolve
+    hide drac with moveoutright
+    hide sid with moveoutright
+    bi "..."
+    show scary with dissolve:
+        alpha 0.5
+    bi "I was suddenly very tired."
+    bi "I felt like I just had an adrenaline rush."
+    bi "Even if we were just standing still and talking, we were fighting for our lives."
+    bi "I wanted to be mad at Dracula, but I knew what Lauren said was correct."
+    bi "He might have been like the rest of us. A decent person outside the game. Or at least trying to be."
+    bi "And he was trying to help us, even if only for his selfish reasons..."
+    bi "So yeah, I guess I'll listen to what he has to say."
+    scene black with dissolve
+    scene bg hospfancy
+    $showchibint(["jenny", "dracula", "sid", "freddy", "lauren", "sam"])
+    show lauren happy:
+        xcenter .75
+    show frog happy:
+        xcenter .25
+    with dissolve
+    f "Lauren! You're finally back!"
+    l "Freddy! I missed you!"
+    l "Did you sleep okay last night?"
+    f "Not really... I don't like sleeping alone."
+    f "At home I have a giant frog plushie to sleep with, and here I've had you."
+    l "Aww."
+    f "It's okay, I slept while the adults were talking."
+    f "I was bored."
+    ses "Mew!"
+    show sesame with moveinbottom
+    f "Kitty!"
+    ses "Mew mew mew!"
+    bi "Oh, I almost forgot about Sesame."
+    bi "I guess once the trial started, I was only thinking about that..."
+    f "Let's go play!"
+    hide frog
+    hide sesame
+    with moveoutright
+    l "I'm gonna go keep an eye on them, I'll listen though."
+    hide lauren with moveoutleft
+    show drac ind with moveinright
+    d "Alright, let's begin."
+    d "First, this isn't exactly a surprise, but my name isn't Dracula."
+    show jenny ind with moveinright:
+        rotate 315
+        xcenter 1.1
+        ycenter .5
+    j "Whaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat?!?!?!?!?!?!?!"
+    hide jenny with moveoutright
+    dr "It is Ivan Nepomniachtchi."
+    dr "I kept a false name because I thought some of the other people here might recognize me."
+    dr "For reasons I will hopefully have time to cover before I pass."
+    dr "I was once a surgeon. I'd like to think a respected one."
+    dr "One night, towards the end of a 24-hour shift, I botched a surgery for a rich patient."
+    dr "I was sued, medical malpractice insurance didn't want to cover."
+    dr "I lost my license."
+    dr "I was unable to find legitimate work, so I turned to more seedy practices."
+    dr "Organ harvesting, selling prescription pills illegally..."
+    dr "Truth be told, I only wanted to do it until I could find proper work."
+    dr "But the money was good. Too good."
+    dr "Eventually, a legal team reached out to me."
+    dr "They worked for one of the largest companies in the world..."
+    dr "Cantoire Management."
+    bi "!"
+    dr "I know what you're thinking. But no, Stella never met me."
+    dr "Cantoire Management is... extremely large."
+    dr "In the hierarchy of the company, I was probably at least five rungs below her."
+    dr "But I obviously knew about her coming into the game."
+    dr "Anyway, the legal team reached out to me for one purpose."
+    dr "One of the services I offered was lobotomy."
+    dr "I could forcibly give people amnesia."
+    dr "Essentially, they used me as a \"cleaner\" for some of their lawyers."
+    dr "The company had some shady tactics, to put it simply, and they felt it was useful to tie up loose ends."
+    dr "Make people's memories of what the company did disappear without killing them."
+    dr "Murder is easy to sue someone for, brain damage that could be caused by a simple accident?"
+    dr "That is the crime that ties me to this location. Many of my victims ended up here."
+    dr "For enough of a bribe, they asked no questions about the patients' conditions."
+    dr "I'm sure you can see where this is going now."
+    dr "In his former life, Shahar was a young doe-eyed lawyer who started working for Cantoire Management."
+    dr "I lobotomized him afterwards."
+    b "Wha-"
+    b "Sorry, I didn't mean to speak, I'm just... shocked, I guess."
+    dr "Understandable. The people I've worked with..."
+    dr "They live in a world far beyond what most of you can comprehend."
+    dr "If I'm right about who is behind the game, even they are an angel compared to those people."
+    bi "...Right about who's behind the game?"
+    dr "Anyway, as Bert managed to figure out before I got to access the computer, Shahar was a patient here."
+    dr "It was here he developed his false belief that he was a pirate."
+    dr "The cafeteria we were just in, he believed was his ship. His fellow patients his crewmates."
+    dr "Anyway, I'm sure many of you are shocked..."
+    dr "This is perhaps where if this was a college lecture, I would stop to answer questions."
+    dr "So, have at it."
+    bi "This... it's almost too much to handle."
+    bi "We always knew we were all criminals but..."
+    bi "I didn't think anyone this deeply involved in crime was a participant."
+    bi "...But as gruesome and shocking as it is..."
+    bi "This is maybe our first chance to really learn the truth behind the game."
+    bi "For the others... for Shahar, even. I can't pass that opportunity up."
+    $menuset = set()
+    menu:
+        set menuset
+        bi "What to ask..."
+
+        "Why kill Shahar?":
+            dr "When I got to the computer, I deleted his record, believing what Bert had said."
+            dr "I thought no one would see it after that, but I was wrong."
+            dr "Also, when we arrived here, I was the first to the cafeteria."
+            dr "I was able to remove Shahar's picture from the wall, and hide it in my cell."
+
+        "Why did Shahar have to be lobotomized?":
+
+        "Who do you think is behind the game?":
