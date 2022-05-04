@@ -4058,4 +4058,4 @@ label cathGivesInfo:
     show endch2 with Dissolve(3.0)
     pause
     stop music fadeout 3.0
-    hide endch1 with Dissolve (3.0)
+    hide endch2 with Dissolve (3.0)

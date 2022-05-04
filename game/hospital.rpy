@@ -3543,7 +3543,7 @@ label trial3t:
     b "It also uniquely is useful for getting rid of the medical glue holding the bottle in place."
 label trial3u:
     menu:
-    b "That function is..."
+        b "That function is..."
 
         "The camera viewing the cafeteria.":
             bi "Yeah! If you stare at the cafeteria hard enough, the bottle will crack under the pressure!"
@@ -3763,8 +3763,14 @@ label trial3x:
     d "Yes, you're right. Though it's annoying the way you seem to be rubbing it in my face."
     bi "Huh?"
     bi "His accent suddenly changed."
-    d "Oh well. If I get one bit of respite before I die, it's that I don't have to keep up that fake Romanian accent."
     d "Yes, I killed Shahar."
+    d "If only I hadn't blundered."
+    d "I was going to press you on how Shahar ended up bloody and leaning against his cell door."
+    d "That was in fact, not part of my plan, so I don't think you would have found the answer."
+    d "I think I got lucky and he walked towards his cell door when he heard the bottle break."
+    d "That or he was trying to identify the cause of the odor the gas has."
+    d "Or perhaps that was unlucky. After all, him dying by the bottle brought more attention to it..."
+    d "Oh well. If I get one bit of respite before I die, it's that I don't have to keep up that fake Romanian accent."
     d "Do me one last favor, let's not waste time with you guys telling me how bad I am for killing someone."
     d "That routine is getting old, and will waste precious time."
     bi "Different accent, same level of contempt for everyone..."
@@ -3801,7 +3807,8 @@ label trial3x:
     l "What was that noise?"
     hide lauren with dissolve
     pause 1.0
-    show lauren with dissolve
+    show lauren ind at inwindow behind hospwindowoverlay2:
+        xcenter .4
     l "The cell doors just opened on both sides."
     l "I guess... so we can reunite before we go to sleep?"
     d "Hmph. The Game Master acting like they're extending us a courtesy for our... well, your victory."
@@ -3826,7 +3833,7 @@ label trial3x:
     bi "So yeah, I guess I'll listen to what he has to say."
     scene black with dissolve
     scene bg hospfancy
-    $showchibint(["jenny", "dracula", "sid", "freddy", "lauren", "sam"])
+    $showchibint("jenny", "dracula", "sid", "freddy", "lauren", "sam")
     show lauren happy:
         xcenter .75
     show frog happy:
@@ -3855,12 +3862,12 @@ label trial3x:
     show drac ind with moveinright
     d "Alright, let's begin."
     d "First, this isn't exactly a surprise, but my name isn't Dracula."
-    show jenny ind with moveinright:
-        rotate 315
-        xcenter 1.1
+    show jenny scared with moveinleft:
+        rotate 45
+        xcenter -0.1
         ycenter .5
     j "Whaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat?!?!?!?!?!?!?!"
-    hide jenny with moveoutright
+    hide jenny with moveoutleft
     dr "It is Ivan Nepomniachtchi."
     dr "I kept a false name because I thought some of the other people here might recognize me."
     dr "For reasons I will hopefully have time to cover before I pass."
@@ -3911,16 +3918,148 @@ label trial3x:
     bi "This is maybe our first chance to really learn the truth behind the game."
     bi "For the others... for Shahar, even. I can't pass that opportunity up."
     $menuset = set()
+label dracAsk:
     menu:
         set menuset
         bi "What to ask..."
 
         "Why kill Shahar?":
-            dr "When I got to the computer, I deleted his record, believing what Bert had said."
+            dr "Well... the human brain is a very complicated machine."
+            dr "Despite my best efforts, the ways I make people forget the past are imperfect."
+            dr "One time I came to this hospital while Shahar was a patient here."
+            dr "He recognized me, when I stared at him through his door."
+            dr "So when we got here, I thought..."
+            dr "Perhaps he regained his memory. And this was all his doing."
+            dr "He may have remembered the events leading to his lobotomy."
+            dr "So he'd have a reason to put us through this game"
+            dr "And even if he wasn't the Game Master, if he remembered who I was, you all would kill me regardless."
+            dr "So I set about destroying the evidence, as it were."
+            dr "When I got to the computer, I deleted his record from there, believing what Bert had said."
             dr "I thought no one would see it after that, but I was wrong."
             dr "Also, when we arrived here, I was the first to the cafeteria."
             dr "I was able to remove Shahar's picture from the wall, and hide it in my cell."
+            dr "And the last move... was to delete Shahar's memory in the only foolproof manner."
+            b "...By killing him."
+            dr "Yes, though it's less romantic when you put it that way."
+            bi "I'm not sure romance is of importance here..."
+            jump dracAsk
 
         "Why did Shahar have to be lobotomized?":
+            dr "Sid mentioned a case earlier, where he planted fake emails on Sydell's servers."
+            dr "Shahar was on the legal team for that case."
+            bi "!"
+            dr "He wasn't the one who reached out to Sid, I believe, which is why Sid didn't know him."
+            dr "But he is the one who suggested planting the fake emails to tank Sydell's company."
+            dr "Someone else on the team blackmailed Sid."
+            show drac ind:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show sid mad with moveinright:
+                xcenter .75
+            i "He did what?"
+            i "Grr. Never mind, I'm glad he's dead!"
+            dr "You shouldn't be glad he's dead."
+            dr "Even if by some moral code that Shahar deserved to die... the Shahar you met was a different one."
+            show sid ind:
+                xcenter .75
+            i "Hmph. I hate when adults tell me how to feel."
+            dr "Listen, Shahar was a fairly admirable lawyer."
+            dr "He didn't know what he was getting into when he joined Cantoire Management."
+            dr "The case you helped with was his first case with the company, and he was planning to resign right after."
+            dr "Unfortunately for him... well, I came into the picture."
+            dr "They were afraid that if he left the company, he could leak the fact that the emails were fake."
+            dr "He had a strong sense of justice, according to his bosses. They though he would have taken the risk."
+            dr "No competitive firm would be willing to work with a whistleblower like that, which is normally enough."
+            dr "Cantoire Management has connections and that threat keeps most of their employees silent."
+            dr "But they thought he was the exception."
+            b "...Did he end up telling anyone?"
+            dr "No. They kidnapped him and brought him to me too quickly."
+            dr "No better time than the present, as they say."
+            b "Hmm... so you, Shahar, Sid, Mr. Sydell, were all connected through this lawsuit and the resulting events."
+            b "And indirectly, Stella was too."
+            b "Surely this ties to the game, right?"
+            dr "You'd be foolish to think it didn't."
+            dr "That's part of why I killed Shahar; he seemed like the most likely to seek some sort of revenge"
+            jump dracAsk
 
-        "Who do you think is behind the game?":
+        "Who do you think is behind the game?" if len(menuset) >= 2:
+            dr "My best guess until now was Shahar."
+            dr "But he's dead. And as far as I can tell, I am about to die."
+            dr "So that means it wasn't him."
+            dr "Stella is also dead, Catherine inadvertently made a good choice in who to kill."
+            dr "Clearly it's not me, and Sid is a child."
+            dr "But I'm fairly sure that lawsuit is part of, if not the key reason for this game."
+            dr "The only person related to that case who isn't ruled out is..."
+            dr "Sydell."
+            b "You think he's the Game Master?"
+            b "But he's not here with us..."
+            dr "Correct."
+            dr "I'm not sure how we are meant to win if we can't kill him, as he is not a participant."
+            dr "But that is my best theory."
+            dr "Maybe the bitter reality is, he will kill us one by one in this game."
+            dr "The game is not winnable, it is just entertainment for him."
+            dr "We are but gladiators in his empire, our sole purpose fight each other to the death."
+            bi "..."
+            bi "No."
+            bi "I refuse to believe that..."
+            bi "Because... if that's true, then we'll all die."
+            dr "People like to believe things that are false if it makes them comfortable."
+            dr "It's why we don't own up to our mistakes."
+            bi "Ok, so maybe I'm human."
+            bi "But still... if there is a way for us to win this game, for us to live..."
+            bi "We won't find it if we give up."
+            dr "Perhaps."
+            dr "That is no longer my concern, anyway."
+            dr "Whether you all live, die trying, or die having given up."
+            dr "It would be foolish to waste my last breaths worrying about that."
+
+        "How do you know how the chips work?" if len(menuset) >= 3:
+            dr "Simple."
+            dr "I installed them."
+            bi "?!"
+            b "You... what?"
+            b "You could have prevented this game?"
+            dr "Perhaps. It might have cost me my life."
+            dr "I was blackmailed by an individual, whose identity I don't know."
+            dr "They got in touch with me through a mutual contact."
+            dr "They had incriminating information about me."
+            dr "Information that, if it was leaked to the wrong people..."
+            dr "At least two major crime syndicates would have put me on a hit list if they knew."
+            b "Which was?"
+            dr "It's not relevant to this game."
+            dr "And I'm not denigrating myself further unnecessarily."
+            dr "Anyway, I didn't think I would be a part of this game when I installed them."
+            dr "Had I known, I would have obviously acted differently."
+            b "Wait, if you were the one who installed the chips..."
+            b "How did you end up with one in your head?"
+            dr "It's... compli-{p=0.5}{nw}"
+            show braindeath
+            pause .25
+            hide drac
+            show doom
+            hide braindeath with dissolve
+            bi "..."
+            bi "Numb."
+            bi "Perhaps it was because of what we learned about Dracula and his horrible past."
+            bi "Perhaps it was because this was the sixth death we had witnessed, and we were used to it."
+            bi "Perhaps it was because Dracula said this game wasn't winnable."
+            bi "But this was the least impactful death by far."
+            show sid mad with moveinright
+            i "So... can we be angry at him now?"
+            i "That dude was a jerk!"
+            i "I don't care if he's dead, it's the truth!"
+            i "What kind of person-{p=0.5}{nw}"
+            scene black
+            pause 1.0
+            bi "I think what Dracula speculated was true, at least part of it."
+            bi "This was all just entertainment to someone."
+            bi "If this was serious business, they would let us mourn."
+            bi "Give us time to recoup. Give us a chance."
+            bi "I still wanted to live... to win."
+            bi "But when my brain can be turned off with a flip of a switch..."
+            bi "Winning seems impossible."
+            play music "audio/ominous.mp3" fadein 3.0
+            show endch3 with Dissolve(3.0)
+            pause
+            stop music fadeout 3.0
+            hide endch3 with Dissolve (3.0)
