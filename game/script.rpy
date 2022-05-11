@@ -517,7 +517,7 @@ define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice, 
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice, image="notbert")
 define warden = Character("Warden", who_color= "ffffff", callback=mevoice, image="notbert") #used in chapter 0
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice, image="notbert") #used in chapter 0
-define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00", image="notbert") #used in chapter 0
+define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
 define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
 define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
 
@@ -562,4 +562,4 @@ label start:
 ###########
 #Start
 ###########
-    jump bank7
+    jump trainGo

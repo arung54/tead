@@ -52,6 +52,7 @@ label mansionGo:
     zb "Kill him."
     $noside = False
 
+label Mansionuno:
     scene black
     blank "In the present..."
     bi "..."

@@ -200,7 +200,7 @@ label trainGo:
         linear 0.3 xcenter .75
     show bert happy with moveinleft:
         xcenter .25
-    #play sfx "audio/popwow.mp3" volume .5
+    play sfx "audio/popwow.mp3" volume .5
     show popwow:
         xcenter .15
         ycenter .25
@@ -357,7 +357,7 @@ label backcar1:
     show drac ind with dissolve:
         xcenter .75
     d "I'd bet nobody's used this car in decades, though."
-    d "There's dust coating nearly every surface."
+    d "There's dust coating nearly every surface... it reminds me of an old coffin."
     n "Maybe we can open a window or something."
     hide drac ind with dissolve
     show sam with dissolve:
@@ -369,8 +369,14 @@ label backcar1:
         xcenter .75
     s "No such luck - it definitely isn't designed to be opened."
     $mood = "shock"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
     s "Also, this is the back of the train."
     n "Wait, we're at the backmost car already?"
+    hide popwow
     hide sam with dissolve
     ni "Dracula and I checked the window as well."
     ni "Sure enough, the window was riveted on and there was nothing behind us."
@@ -449,6 +455,7 @@ label midcar2:
         zoom .75
     s "I don't think you're taking this seriously enough."
     s "Plus, there are kids here. You really shouldn't be getting drunk."
+    hide popwow
     t "You don't like alcohol?"
     s "I don't think that's relevant."
     $mood = "ind"
@@ -462,7 +469,7 @@ label midcar2:
     s "I can already tell she's going to get on my nerves."
     s "Anyway, it's interesting how smooth of a ride this is."
     s "This train car looks like it's from the 60s, but it's the smoothest train I've ever been on."
-    n "You do have a point... maybe it's a very modern car, just decorated like this?"
+    n "Maybe it's a very modern car, just decorated like this?"
     play sfx "audio/beep.mp3" volume .3
     show text "Attention!" with moveintop:
         ycenter .1
@@ -523,7 +530,7 @@ label midcar2:
     ses "mowwww!"
     $mood = "shock"
     n "Should we do anything about Stella? She's passed out behind the bar."
-    h "A nap might do her some good."
+    h "A nap might do the lass some good."
     $mood = "ind"
     n "...Okay."
     ni "I hope we don't regret that leaving her here alone."
@@ -553,7 +560,7 @@ label frontcar1:
     s "Wow, you guys were not joking... There are screens everywhere."
     n "There must be over 20 monitors in this train car."
     n "Is that even practical? What are they showing?"
-    show kaiser ind:
+    show kaiser ind with moveinleft:
         xcenter .25
     k "It is quite an interesting setup..."
     k "There is a lot of information, but nothing useful for us."
@@ -563,10 +570,20 @@ label frontcar1:
     i "I'm pretty good with technology, for a high schooler at least..."
     i "Let me have a go!"
     k "Good luck."
+    k "These systems are much too advanced for a kid like you."
+    show sid mad
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .25
+        #zoom .75
+    i "Tsk..."
+    i "I'll show you..."
     hide sid ind with dissolve
+    hide popmad
     show sidstand with dissolve:
         zoom .9 xcenter .5 ycenter .46
-    show bert sad with moveinright:
+    show bert ind with moveinright:
         xcenter .75
     bt "What do you mean by, nothing useful?"
     k "Well, we can see some technical aspects of the train."
@@ -617,9 +634,12 @@ label frontcar2:
     c "Or are we doomed to crash if a murder doesn't happen... that would be spicy!"
     c "Hmm.. if I were the Game Master, what would I do... would I make it boring or spicy?"
     ses "Mrow..."
+    ni "What's with this girl..."
     show shahar ind with moveinleft:
         xcenter .25
     h "Arg. I say we crack a window n' make a jump for it!"
+    ni "Is everyone here crazy?"
+    h "Walk the plank, as ye say."
     hide catherine ind with moveoutright
     show lauren ind with moveinright:
         xcenter .8
@@ -689,11 +709,17 @@ label frontcar2:
     show sam:
         xcenter .25
         linear 0.15 xcenter .15
-    show sid ind with moveinbottom
+    show sid mad with moveinbottom
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .5
+        ycenter .25
+        #zoom .75
     i "Hey! Who are you callin' a kid?!"
     i "I'm an honors student and I work four hours after school every day!"
     i "I'm a man!"
     s "Oh yeah? Any luck with the controls panel big guy?"
+    show sid ind
     i "..."
     hide poptear
     play sfx "audio/poptear.mp3" volume .5
@@ -816,6 +842,7 @@ label frontcar3:
     $ showchibi()
     ni "......"
     ni "Now that I'm alone..."
+    ni "Maybe I can figure this out before the rest of them."
     play music "audio/invest1.wav" fadein 1.0
 label passwording:
     show welcomescreenblank with dissolve
@@ -868,12 +895,19 @@ label midcar3:
     hide jenny happy
     show jenny ind:
         xcenter .75
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .765
+        ycenter .25
+        zoom .75
     j "I feel a little bad for Catherine..."
     j "She's a vegetarian, so she's only been eating the nuts and bread."
     o "Plus, there's no cat food. Sesame's been eating the turkey from the sandwiches."
     hide lauren ind with dissolve
     show catherine happy with dissolve:
         xcenter .25
+    c "We're the perfect match! He eats the meat, I eat the rest!"
+    ses "Mrow!"
     c "Don't worry about us!"
     c "It's still nice to relax and eat for a bit."
     ses "mewmewmewmew!"
@@ -905,9 +939,11 @@ label midcar3:
     ##    xcenter .75
     k "Needlessly searching will do no good. We'll just exhaust ourselves."
     k "Maybe we should follow in Stella's footsteps here."
+    show jenny happy
     j "Get black out drunk and pass out on the floor?"
+    show jenny ind
     k "Well, sleep. It is getting late, and we've been at it all day."
-    k "Both Freddy and the pirate guy have already fallen asleep over there."
+    k "Both the frog kid and the pirate guy have already fallen asleep over there."
     k "We should figure out the rest of the sleeping arrangements."
     n "The train is pretty cramped, there definitely aren't nine more chairs or beds for us."
     hide jenny ind with moveoutleft
@@ -925,6 +961,7 @@ label midcar3:
     n "..."
     bt "..."
     d "..."
+    show bert ind
     bt "Okay, so only one more bed to account for."
     hide drac ind with moveoutright
     $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "kaiser")
@@ -983,12 +1020,15 @@ label midcar3:
     hide sid ind
     show sid happy
     $mood = "happy"
-
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     i "Exciting!"
     i "I wish I could travel and live on cool trains like this."
     n "You're still young, Sid, maybe you can one day."
-    hide sid happy
-    show sid ind
+    hide pophearts
+    show sid mad
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
         xcenter .4
@@ -1001,6 +1041,7 @@ label midcar3:
     show scary with dissolve:
         alpha .5
     ni "It's kinda funny... this punk reminds me of myself when I was his age."
+    ni "Back and forth in the snap of a finger."
     ni "Taking myself way too seriously, blatant disrespect for authority..."
     ni "Kinda badass. I can respect that."
     hide scary with dissolve
@@ -1132,7 +1173,8 @@ label day2:
     show tracks with dissolve
     ni "Damn... There really isn't anything out there..."
     ni "It'd be a lot easier to be hopeful if there were {i}any{/i} signs of life."
-    ni "I might have to take this into my own hands..."
+    ni "But it's hard to be hopeful in the middle of nowhere..."
+    ni "If nothing changes, maybe I need to take this into my own hands..."
     hide tracks with dissolve
     ni "But for now, I should go meet the others."
 label testft:
@@ -1212,6 +1254,8 @@ label testft:
    #############
    #FREE TIME ONE
    #############
+   #JULIAN note to self
+
     tut "Throughout the game, there will be free time segments."
     tut "In these segments, you will have the opportunity to talk with other participants and get to know them better."
     tut "You can use the map icon, in the top right, to navigate around the train and find people."
