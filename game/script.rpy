@@ -539,6 +539,7 @@ label start:
         fte_shah = -1
         fte_cath = -1
         fte_kais = -1
+        pers = ""
 
 ##################
 #Trial Variables
@@ -562,4 +563,4 @@ label start:
 ###########
 #Start
 ###########
-    jump trainGo
+    call screen freeTimeCounter
