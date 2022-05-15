@@ -48,219 +48,219 @@ init:
     image catcardF:
         "cardcatf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image catcardFtoB:
         "cardcatf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardcatb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image catcardBtoF:
         "cardcatb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardcatf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image bercardF:
         "cardberf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image bercardFtoB:
         "cardberf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardberb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image bercardBtoF:
         "cardberb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardberf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image dancardF:
         "carddanf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image dancardFtoB:
         "carddanf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "carddanb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image dancardBtoF:
         "carddanb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "carddanf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image dracardF:
         "carddraf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image dracardFtoB:
         "carddraf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "carddrab.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image dracardBtoF:
         "carddrab.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "carddraf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image frecardF:
         "cardfref.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image frecardFtoB:
         "cardfref.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardfreb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image frecardBtoF:
         "cardfreb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardfref.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image jencardF:
         "cardjenf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image jencardFtoB:
         "cardjenf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardjenb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image jencardBtoF:
         "cardjenb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardjenf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image kaicardF:
         "cardkaif.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image kaicardFtoB:
         "cardkaif.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardkaib.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image kaicardBtoF:
         "cardkaib.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardkaif.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image laucardF:
         "cardlauf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image laucardFtoB:
         "cardlauf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardlaub.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image laucardBtoF:
         "cardlaub.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardlauf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image samcardF:
         "cardsamf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image samcardFtoB:
         "cardsamf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardsamb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image samcardBtoF:
         "cardsamb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardsamf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image shacardF:
         "cardshaf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image shacardFtoB:
         "cardshaf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardshab.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image shacardBtoF:
         "cardshab.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardshaf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image sidcardF:
         "cardsidf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image sidcardFtoB:
         "cardsidf.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardsidb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image sidcardBtoF:
         "cardsidb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardsidf.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image stecardF:
         "cardstef.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image stecardFtoB:
         "cardstef.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardsteb.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
     image stecardBtoF:
         "cardsteb.png"
         xzoom 1.0 xanchor 0.5
-        linear 0.6 xzoom 0.0
+        linear 0.3 xzoom 0.0
         "cardstef.png"
         xzoom 0.01 xanchor 0.5
-        linear 0.6 xzoom 1.0
+        linear 0.3 xzoom 1.0
 
 label postFTEHandler:
     $renpy.jump("postFT"+str(ftecounter))
@@ -318,121 +318,157 @@ screen freeTimeCounter():
                 action[SetVariable("pers", "ste"), Function(hideCards), Show("cardstef")]
 
 screen cardcatf():
+    add "catcardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "catcardF" xpos 1000 ycenter 0.5 action[Hide("cardcatf"), Show("cardcatftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardcatf"), Show("cardcatftob")]
 screen cardcatftob():
+    add "catcardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "catcardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardcatftob"), Show("cardcatbtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardcatftob"), Show("cardcatbtof")]
 screen cardcatbtof():
+    add "catcardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "catcardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardcatbtof"), Show("cardcatftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardcatbtof"), Show("cardcatftob")]
 
 screen cardberf():
+    add "bercardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "bercardF" xpos 1000 ycenter 0.5 action[Hide("cardberf"), Show("cardberftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardberf"), Show("cardberftob")]
 screen cardberftob():
+    add "bercardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "bercardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardberftob"), Show("cardberbtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardberftob"), Show("cardberbtof")]
 screen cardberbtof():
+    add "bercardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "bercardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardberbtof"), Show("cardberftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardberbtof"), Show("cardberftob")]
 
 screen carddanf():
+    add "dancardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "dancardF" xpos 1000 ycenter 0.5 action[Hide("carddanf"), Show("carddanftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("carddanf"), Show("carddanftob")]
 screen carddanftob():
+    add "dancardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "dancardFtoB" xpos 1000 ycenter 0.5 action[Hide("carddanftob"), Show("carddanbtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("carddanftob"), Show("carddanbtof")]
 screen carddanbtof():
+    add "dancardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "dancardBtoF" xpos 1000 ycenter 0.5 action[Hide("carddanbtof"), Show("carddanftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("carddanbtof"), Show("carddanftob")]
 
 screen carddraf():
+    add "dracardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "dracardF" xpos 1000 ycenter 0.5 action[Hide("carddraf"), Show("carddraftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("carddraf"), Show("carddraftob")]
 screen carddraftob():
+    add "dracardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "dracardFtoB" xpos 1000 ycenter 0.5 action[Hide("carddraftob"), Show("carddrabtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("carddraftob"), Show("carddrabtof")]
 screen carddrabtof():
+    add "dracardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "dracardBtoF" xpos 1000 ycenter 0.5 action[Hide("carddrabtof"), Show("carddraftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("carddrabtof"), Show("carddraftob")]
 
 screen cardfref():
+    add "frecardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "frecardF" xpos 1000 ycenter 0.5 action[Hide("cardfref"), Show("cardfreftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardfref"), Show("cardfreftob")]
 screen cardfreftob():
+    add "frecardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "frecardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardfreftob"), Show("cardfrebtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardfreftob"), Show("cardfrebtof")]
 screen cardfrebtof():
+    add "frecardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "frecardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardfrebtof"), Show("cardfreftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardfrebtof"), Show("cardfreftob")]
 
 screen cardjenf():
+    add "jencardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "jencardF" xpos 1000 ycenter 0.5 action[Hide("cardjenf"), Show("cardjenftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardjenf"), Show("cardjenftob")]
 screen cardjenftob():
+    add "jencardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "jencardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardjenftob"), Show("cardjenbtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardjenftob"), Show("cardjenbtof")]
 screen cardjenbtof():
+    add "jencardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "jencardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardjenbtof"), Show("cardjenftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardjenbtof"), Show("cardjenftob")]
 
 screen cardkaif():
+    add "kaicardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "kaicardF" xpos 1000 ycenter 0.5 action[Hide("cardkaif"), Show("cardkaiftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardkaif"), Show("cardkaiftob")]
 screen cardkaiftob():
+    add "kaicardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "kaicardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardkaiftob"), Show("cardkaibtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardkaiftob"), Show("cardkaibtof")]
 screen cardkaibtof():
+    add "kaicardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "kaicardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardkaibtof"), Show("cardkaiftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardkaibtof"), Show("cardkaiftob")]
 
 screen cardlauf():
+    add "laucardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "laucardF" xpos 1000 ycenter 0.5 action[Hide("cardlauf"), Show("cardlauftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardlauf"), Show("cardlauftob")]
 screen cardlauftob():
+    add "laucardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "laucardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardlauftob"), Show("cardlaubtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardlauftob"), Show("cardlaubtof")]
 screen cardlaubtof():
+    add "laucardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "laucardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardlaubtof"), Show("cardlauftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardlaubtof"), Show("cardlauftob")]
 
 screen cardsamf():
+    add "samcardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "samcardF" xpos 1000 ycenter 0.5 action[Hide("cardsamf"), Show("cardsamftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsamf"), Show("cardsamftob")]
 screen cardsamftob():
+    add "samcardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "samcardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardsamftob"), Show("cardsambtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsamftob"), Show("cardsambtof")]
 screen cardsambtof():
+    add "samcardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "samcardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardsambtof"), Show("cardsamftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsambtof"), Show("cardsamftob")]
 
 screen cardshaf():
+    add "shacardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "shacardF" xpos 1000 ycenter 0.5 action[Hide("cardshaf"), Show("cardshaftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardshaf"), Show("cardshaftob")]
 screen cardshaftob():
+    add "shacardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "shacardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardshaftob"), Show("cardshabtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardshaftob"), Show("cardshabtof")]
 screen cardshabtof():
+    add "shacardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "shacardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardshabtof"), Show("cardshaftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardshabtof"), Show("cardshaftob")]
 
 screen cardsidf():
+    add "sidcardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "sidcardF" xpos 1000 ycenter 0.5 action[Hide("cardsidf"), Show("cardsidftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsidf"), Show("cardsidftob")]
 screen cardsidftob():
+    add "sidcardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "sidcardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardsidftob"), Show("cardsidbtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsidftob"), Show("cardsidbtof")]
 screen cardsidbtof():
+    add "sidcardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "sidcardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardsidbtof"), Show("cardsidftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsidbtof"), Show("cardsidftob")]
 
 screen cardstef():
+    add "stecardF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "stecardF" xpos 1000 ycenter 0.5 action[Hide("cardstef"), Show("cardsteftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardstef"), Show("cardsteftob")]
 screen cardsteftob():
+    add "stecardFtoB" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "stecardFtoB" xpos 1000 ycenter 0.5 action[Hide("cardsteftob"), Show("cardstebtof")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardsteftob"), Show("cardstebtof")]
 screen cardstebtof():
+    add "stecardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
-        idle "stecardBtoF" xpos 1000 ycenter 0.5 action[Hide("cardstebtof"), Show("cardsteftob")]
+        idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardstebtof"), Show("cardsteftob")]
