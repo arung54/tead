@@ -528,17 +528,17 @@ label start:
 ##################
     python:
         ftecounter = 0
-        fte_bert = -2
-        fte_sam = -1
-        fte_stel = -1
-        fte_drac = -1
-        fte_frog = -1
-        fte_jenn = -1
-        fte_laur = -1
-        fte_sid = -1
-        fte_shah = -1
-        fte_cath = -1
-        fte_kais = -1
+        fte_bert = 0
+        fte_sam = 0
+        fte_stel = 0
+        fte_drac = 0
+        fte_frog = 0
+        fte_jenn = 0
+        fte_laur = 0
+        fte_sid = 0
+        fte_shah = 0
+        fte_cath = 0
+        fte_kais = 0
         pers = ""
 
 ##################

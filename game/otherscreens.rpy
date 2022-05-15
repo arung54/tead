@@ -280,6 +280,8 @@ screen skipFT():
 screen freeTimeCounter():
     imagemap:
         ground "characterscreen.png"
+        hotspot(47, 38, 99, 41):
+            action [Hide("freeTimeCounter", transition=Dissolve(0.3))]
         if pers != "ber":
             hotspot(41, 418, 112, 41):
                 action[SetVariable("pers", "ber"), Function(hideCards), Show("cardberf")]
@@ -299,10 +301,10 @@ screen freeTimeCounter():
             hotspot(43, 655, 120, 33):
                 action[SetVariable("pers", "jen"), Function(hideCards), Show("cardjenf")]
         if pers != "kai":
-            hotspot(444, 470, 127, 32):
+            hotspot(443, 426, 133, 30):
                 action[SetVariable("pers", "kai"), Function(hideCards), Show("cardkaif")]
         if pers != "lau":
-            hotspot(443, 426, 133, 30):
+            hotspot(444, 470, 127, 32):
                 action[SetVariable("pers", "lau"), Function(hideCards), Show("cardlauf")]
         if pers != "sam":
             hotspot(445, 512, 108, 36):
@@ -316,6 +318,92 @@ screen freeTimeCounter():
         if pers != "ste":
             hotspot(440, 653, 127, 36):
                 action[SetVariable("pers", "ste"), Function(hideCards), Show("cardstef")]
+    if ftecounter < 2:
+        if fte_bert > -2:
+            add "redheart.png" xpos 242 ypos 444 xanchor 0.5 yanchor 0.5
+        if fte_bert > -1:
+            add "redheart.png" xpos 277 ypos 444 xanchor 0.5 yanchor 0.5
+        if fte_cath > -1:
+            add "redheart.png" xpos 242 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_drac > -1:
+            add "redheart.png" xpos 242 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_frog > -1:
+            add "redheart.png" xpos 242 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_jenn > -1:
+            add "redheart.png" xpos 242 ypos 674 xanchor 0.5 yanchor 0.5
+        if fte_kais > -1:
+            add "redheart.png" xpos 612 ypos 444 xanchor 0.5 yanchor 0.5
+        if fte_laur > -1:
+            add "redheart.png" xpos 612 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_sam > -1:
+            add "redheart.png" xpos 612 ypos 536 xanchor 0.5 yanchor 0.5
+        if fte_shah > -1:
+            add "redheart.png" xpos 612 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_sid > -1:
+            add "redheart.png" xpos 612 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_stel > -1:
+            add "redheart.png" xpos 612 ypos 674 xanchor 0.5 yanchor 0.5
+    else:
+        if fte_cath > 0:
+            add "redheart.png" xpos 242 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_cath > 1:
+            add "redheart.png" xpos 277 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_cath > 2:
+            add "redheart.png" xpos 312 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_drac > 0:
+            add "redheart.png" xpos 242 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_drac > 1:
+            add "redheart.png" xpos 277 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_drac > 2:
+            add "redheart.png" xpos 312 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_frog > 0:
+            add "redheart.png" xpos 242 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_frog > 1:
+            add "redheart.png" xpos 277 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_frog > 2:
+            add "redheart.png" xpos 312 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_jenn > 0:
+            add "redheart.png" xpos 242 ypos 674 xanchor 0.5 yanchor 0.5
+        if fte_jenn > 1:
+            add "redheart.png" xpos 277 ypos 674 xanchor 0.5 yanchor 0.5
+        if fte_jenn > 2:
+            add "redheart.png" xpos 312 ypos 674 xanchor 0.5 yanchor 0.5
+        if fte_kais > 0:
+            add "redheart.png" xpos 612 ypos 444 xanchor 0.5 yanchor 0.5
+        if fte_kais > 1:
+            add "redheart.png" xpos 647 ypos 444 xanchor 0.5 yanchor 0.5
+        if fte_kais > 2:
+            add "redheart.png" xpos 682 ypos 444 xanchor 0.5 yanchor 0.5
+        if fte_laur > 0:
+            add "redheart.png" xpos 612 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_laur > 1:
+            add "redheart.png" xpos 647 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_laur > 2:
+            add "redheart.png" xpos 682 ypos 490 xanchor 0.5 yanchor 0.5
+        if fte_sam > 0:
+            add "redheart.png" xpos 612 ypos 536 xanchor 0.5 yanchor 0.5
+        if fte_sam > 1:
+            add "redheart.png" xpos 647 ypos 536 xanchor 0.5 yanchor 0.5
+        if fte_sam > 2:
+            add "redheart.png" xpos 682 ypos 536 xanchor 0.5 yanchor 0.5
+        if fte_shah > 0:
+            add "redheart.png" xpos 612 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_shah > 1:
+            add "redheart.png" xpos 647 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_shah > 2:
+            add "redheart.png" xpos 682 ypos 582 xanchor 0.5 yanchor 0.5
+        if fte_sid > 0:
+            add "redheart.png" xpos 612 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_sid > 1:
+            add "redheart.png" xpos 647 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_sid > 2:
+            add "redheart.png" xpos 682 ypos 628 xanchor 0.5 yanchor 0.5
+        if fte_stel > 0:
+            add "redheart.png" xpos 612 ypos 674 xanchor 0.5 yanchor 0.5
+        if fte_stel > 1:
+            add "redheart.png" xpos 647 ypos 674 xanchor 0.5 yanchor 0.5
+        if fte_stel > 2:
+            add "redheart.png" xpos 682 ypos 674 xanchor 0.5 yanchor 0.5
 
 screen cardcatf():
     add "catcardF" xpos 1000 ycenter 0.5
