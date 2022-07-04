@@ -316,24 +316,31 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        #xpos .5 #julikan
+        #ypos 0.75
+        #xalign 0.5
+        #yalign 0.5
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start()
+            xpos .5 #julikan
+            ypos 0.75
+            xalign 0.5
+            yalign 0.5
+            textbutton _("{b}Start{/b}") action Start()
 
         else:
+            xalign 0
+            yoffset 300
+            xoffset 60
+            textbutton _("{b}History{/b}") action ShowMenu("history")
 
-            textbutton _("History") action ShowMenu("history")
+            textbutton _("{b}Save{/b}") action ShowMenu("save")
 
-            textbutton _("Save") action ShowMenu("save")
+        textbutton _("{b}Load{/b}") action ShowMenu("load")
 
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("{b}Settings{/b}") action ShowMenu("preferences")
 
         #textbutton _("Characters") action ShowMenu("Characters")
 
@@ -343,20 +350,20 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("{b}Main Menu{/b}") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("{b}About{/b}") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            #textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -368,6 +375,10 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign .5
+
+
+
 
 
 ## Main Menu screen ############################################################

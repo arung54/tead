@@ -563,4 +563,6 @@ label start:
 ###########
 #Start
 ###########
-    call screen freeTimeCounter
+
+    jump go
+#    call screen freeTimeCounter

@@ -736,6 +736,7 @@ label go: #Add silhouttes here?
     ni "Last thing I remember... I was in my cell being told I'd get out."
     ni "The warden called for me and told me I was being released..."
     ni "...why can't I remember anything past that?"
+    ni "Now I'm on the floor in what looks like a little cell."
     ni "Hmmm... I don't have anything with me."
     ni "Not even ID in my pockets. Someone must have taken it from me."
     ni "What's going on here?"
@@ -745,7 +746,8 @@ label go: #Add silhouttes here?
     ni "Oh, it came from that door. It sounds like it unlocked..."
     ni "Let's see what's on the other side..."
     scene black with fade
-    ni "I walked into a very similar room, at the same time as eleven other people."
+    ni "I pushed the door open into a larger, circular room."
+    ni "Just as I did, so did eleven other people."
     ni "It seems like they all came from their own room, like myself."
     play music "audio/coming_together.mp3"
     scene bg startmeet
