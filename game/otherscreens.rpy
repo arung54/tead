@@ -281,7 +281,7 @@ screen freeTimeCounter():
     imagemap:
         ground "characterscreen.png"
         hotspot(47, 38, 99, 41):
-            action [Hide("freeTimeCounter", transition=Dissolve(0.3))]
+            action [Function(hideCards), Hide("freeTimeCounter", transition=Dissolve(0.3))]
         if pers != "ber":
             hotspot(41, 418, 112, 41):
                 action[SetVariable("pers", "ber"), Function(hideCards), Show("cardberf")]
