@@ -325,7 +325,7 @@ screen navigation():
 
         if main_menu:
             xpos .5 #julikan
-            ypos 0.75
+            ypos 0.7
             xalign 0.5
             yalign 0.5
             textbutton _("{b}Start{/b}") action Start()
