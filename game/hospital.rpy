@@ -2482,7 +2482,7 @@ label hospPreInv:
     li "I say \"we\" but to be honest, I'm not sure how much Sam will help."
     li "It's all on me. My life, and the life of everyone else here..."
     li "Alright Lauren, you can do this..."
-    call screen hospkitchenInv with dissolve
+    call screen hospKitchenInv with dissolve
 label trial3a:
     $laur = False
     $rg = False

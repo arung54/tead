@@ -861,7 +861,7 @@ screen hospKitchenInv():
     imagebutton:
         xpos 70
         ypos 20
-        idle "sidhibi.png" at chibizoom
+        idle "sidchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSid")]
     imagebutton:
         xpos 70

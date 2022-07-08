@@ -564,5 +564,5 @@ label start:
 #Start
 ###########
 
-    jump trainGo
+    jump laurentime
 #    call screen freeTimeCounter
