@@ -2394,7 +2394,7 @@ label laurentime:
     li "But sure enough..."
     scene bg shahardead with dissolve
     lf "No."
-    lf "No no no no no no no no no no no no no no no."
+    lf "No no no no no no no no no no no no no no no..."
     lf "Why did no one but me think to check?"
     $showchibint("sam")
     show sam:
@@ -2441,8 +2441,8 @@ label laurentime:
     lf "What could he possibly want to go check..."
     li "And where was this urgency when we thought Shahar might be dead?"
     li "Just a few seconds later, Bert returned."
-    show bert sad with moveinleft:
-        xcenter .75
+    show bert ind at inwindow behind hospwindowoverlay:
+        xcenter .25 with moveinleft:
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
     with dissolve
     bt "The guard-side door in my cell is still closed."
@@ -2453,7 +2453,7 @@ label laurentime:
     lf "Oh."
     lf "Sam and I are the only ones who can investigate this side."
     lf "...I guess we can do that, right Sam?"
-    s "...Fine..."
+    s "Yeah..."
     lf "In the meantime..."
     lf "Don't tell Freddy anything you don't need to."
     lf "And uh... I guess we won't be cooking anything for now."
