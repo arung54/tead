@@ -163,7 +163,7 @@ screen hosp_evidence():
 screen securityInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg hospsecurity.png"
+        ground "bg hospsecurity rg"
         if hosp_evidence[1]:
             hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
         else:
@@ -258,7 +258,7 @@ label securityComputer:
 screen closetInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg hospcloset.png"
+        ground "bg hospcloset rg"
         if hosp_evidence[4]:
             hotspot(154, 452, 116, 264) action [Hide("closetInv"), Jump("baseballBat")] mouse 'q' hovered tt.Action("Baseball Bat")
         else:
@@ -450,7 +450,7 @@ label closetLightSwitch:
 screen guardroomInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg hospfancy.png"
+        ground "bg hospfancy rg"
         if hosp_evidence[2]:
             hotspot(1080, 320, 66, 72) action [Hide("guardroomInv"), Jump("firstaidkit")] mouse 'q' hovered tt.Action("First Aid Kit")
         else:
@@ -596,7 +596,7 @@ label vendingmachine:
 screen hallwayTLInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg hosphalltopleft.png"
+        ground "bg hosphalltopleft rg"
         if hosp_evidence[11]:
             hotspot(330, 225, 130, 425) action [Hide("hallwayTLInv"), Jump("cellorder")] mouse 'q' hovered tt.Action("Freddy's Cell")
         else:
@@ -679,7 +679,7 @@ label cellorder:
 screen hallwayTRInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg shahar dead.png"
+        ground "bg shahar dead rg"
         if hosp_evidence[8]:
             hotspot(573, 358, 114, 265) action [Hide("hallwayTRInv"), Jump("shaharbody")] mouse 'q' hovered tt.Action("Shahar's Corpse")
         else:
@@ -810,7 +810,7 @@ label pipe:
 screen hospKitchenInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg hospkitchen.png"
+        ground "bg hospkitchen rg"
         if hosp_extra[3]:
             hotspot(595, 318, 135, 256) action [Hide("hospKitchenInv"), Jump("hospfridge")] mouse 'q' hovered tt.Action("Fridge")
         else:
@@ -855,27 +855,27 @@ screen hospKitchenInv():
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvJenny")]
     imagebutton:
         xpos 70
-        ypos 20
+        ypos 70
         idle "draculachibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvDracula")]
     imagebutton:
         xpos 70
-        ypos 20
+        ypos 120
         idle "sidchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSid")]
     imagebutton:
         xpos 70
-        ypos 20
+        ypos 170
         idle "freddychibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvFreddy")]
     imagebutton:
         xpos 70
-        ypos 20
+        ypos 220
         idle "bertchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvBert")]
 
 label hospfridge:
-    scene bg hospfancy
+    scene bg hospkitchen
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     li "I wish we had time to cook a meal."
     li "I'm so hungry..."
@@ -884,20 +884,20 @@ label hospfridge:
     li "Anyway, I don't think the liquid dripping from Shahar's head was tomato juice."
     li "So no need to search the fridge."
     $hosp_extra[3] = True
-    call screen guardroomInv
+    call screen hospKitchenInv
 
 label hospstove:
-    scene bg hospfancy
+    scene bg hospkitchen
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     li "For what seems like an old mental hospital, this oven is pretty fancy."
     li "...Yet another thing that could harm Freddy if no one was watching him."
     li "I hope he's been doing okay while I've been running around investigating."
     li "Well, the sooner we solve this case, the sooner I can reunite with him."
     $hosp_extra[4] = True
-    call screen guardroomInv
+    call screen hospKitchenInv
 
 label hospcabinets:
-    scene bg hospfancy
+    scene bg hospkitchen
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     li "Let me see, is there anything in the cabinets..."
     li "Well, there's the bare essentials you'd find a kitchen."
@@ -916,7 +916,7 @@ label hospcabinets:
     li "Anyway, I don't think it's worth worrying about the knife in here."
     li "Well, unless we find some other reason to believe a knife is important..."
     $hosp_extra[5] = True
-    call screen guardroomInv
+    call screen hospKitchenInv
 
 label hospInvSamKitchen:
     scene bg hospkitchen

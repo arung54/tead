@@ -2442,7 +2442,7 @@ label laurentime:
     li "And where was this urgency when we thought Shahar might be dead?"
     li "Just a few seconds later, Bert returned."
     show bert ind at inwindow behind hospwindowoverlay:
-        xcenter .25 with moveinleft:
+        xcenter .25
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
     with dissolve
     bt "The guard-side door in my cell is still closed."

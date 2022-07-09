@@ -36,7 +36,7 @@ label bankGo:
     bi "Freddy, Jenny, Sid, Sam, Lauren, and myself."
     b "Yeah, let's get them up."
     hide sid ind with dissolve
-    blank "Everyone else slowly woke up."
+    bi "One by one, we slowly woke everyone up."
     show sam with moveinleft
     s "You'd think waking up would stop it, but no."
     s "This nightmare continues."
@@ -87,7 +87,11 @@ label bankGo:
     show sid happy
     j "We're slowly getting a more complete picture about why we're all here."
     b "You're right Jenny."
-    ###summary of crimes that they know of so far goes here!!! arun
+    b "We know Sid, Shahar, Dracula, Stella, and Mr. Sydell are all connected via this one lawsuit."
+    b "Catherine robbed Mr. Sydell."
+    b "And Sam has interacted with him before."
+    b "Though it's still not clear how Freddy, Jenny, Kaiser, Dan, Lauren, and I are connected..."
+    b "That's a whole lot of us that have seemingly no connection to the rest..."
     hide jenny ind
     hide sid happy
     with dissolve
@@ -112,14 +116,15 @@ label bankGo:
     b "Yeah, I think we must be in a bank."
     b "I wonder why this is here in the first place."
     l "It's probably a safety thing? So the bank employees know where the exits are."
-    s "Yeah, or it was just put here for this... situation."
+    l "You know, like how schools have maps for evacuation in case of a fire."
+    b "Though as far as I can tell, there's only one exit..."
+    s "Maybe it was just put here for this... situation."
     hide bankposter with dissolve
     show sid happy with dissolve
     i "So if I go out this door and down the hallway..."
     i "There's a bank vault?"
     b "Uhhh, that is what this map says..."
     i "That nobody's guarding, probably?"
-
     b "But-"
     i "See ya!"
     hide sid happy with moveoutright
@@ -158,7 +163,8 @@ label bankGo:
     show lauren ind
     l "It was really difficult to work with Stella, Dracula, or Shahar..."
     l "Everyone in this core group is cooperative and pretty... normal?"
-    l "Other than Sam - who's seemingly turned a corner - I'm not scared of anyone here."
+    l "Well, Sid is normal when stuff like the safe isn't involved..."
+    l "But other than Sam - who's seemingly turned a corner - I'm not scared of anyone here."
     b "Yeah, you're right."
     show scary with dissolve:
         alpha .5
@@ -190,7 +196,7 @@ label bankGo:
     show bg bankbreak with dissolve
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
     show lauren ind with dissolve
-    l "...the staff kitchen."
+    l "...the kitchen."
     $ showchibi("freddy", "jenny", "lauren", "sam")
     show lauren ind:
         linear .3 xcenter .75
@@ -198,24 +204,30 @@ label bankGo:
         xcenter .25
     j "This room's about what I'd expect."
     j "A sink, coffee machine, and a fridge with some snacks."
-    bi "I could go for some coffee and snacks right about now..."
+    b "I could go for some coffee and snacks right about now..."
+    j "Well, there is some."
+    b "Hm... but it might be like the train where it only will last us a few days..."
+    b "We just \"woke up\" so maybe not now."
     show jenny ind:
         xcenter .25
         linear .3 xcenter .3
-    b "That poster on the wall seems like it's mocking us..." #Arun: Maybe move Jenny so poster is visible
+    b "That poster on the wall seems like it's mocking us..."
     ses "Mrow..."
     l "The Game Master has some sick sense of humor."
     show jenny happy
     j "Aww, really? I think it's cute!"
     j "It's your cousin, Sesame!"
+    ses "Hssssss"
+    b "He seems... a bit combative towards the cartoon cat."
     l "Anyway, having access to food is nice."
     l "Maybe not a nutritious meal, but I'll see if I can grab something for Freddy."
-    hide lauren ind with dissolve #Arun: Dissolve instead?
+    hide lauren ind with dissolve
     show jenny ind:
         linear .3 xcenter .5
     j "Pretty dinky kitchen for how fancy the lobby was, huh?"
     j "I guess it doesn't have to look pretty if the customers don't come in here."
-    b "Yeah, but any place with food is good enough for me."
+    b "The boss here probably doesn't want the workers spending too much time here..."
+    b "Regardless, any place with food is good enough for me."
     b "Still, I can't help but wonder..."
     b "Why a bank? Why did the Game Master bring us here?"
     j "What do you mean?"
@@ -225,20 +237,25 @@ label bankGo:
     j "Huh?!"
     j "No way! Nobody here is capable of that."
     b "I'd agree, if it wasn't for the circumstances..."
-    b "but that's definitely my first impression."
+    b "But that's definitely my first impression."
     show jenny happy
     j "Hmmm, I'm not sold."
-    j "There's probably a more reasonable explanation."
+    j "There's probably a more reasonable explanation than robbery."
     j "Maybe someone just... stole some of the snacks from the break room!"
     j "That's a crime too, ya know!"
     hide jenny happy with moveoutright
     show scary with dissolve:
         alpha .5
-    b "Jenny might be right, I don't think anyone here could have robbed a bank."
-    b "But I also wouldn't have thought the others were capable of what they did..."
-    b "Plus, we already know Sid and Jenny were in tough financial situations, so..."
-    b "Thinking they did something extreme isn't out of the question."
-    b "It's worth remembering."
+    bi "Jenny might be right, I don't think anyone here could have robbed a bank."
+    bi "Well, except for one person..."
+    bi "Sid. Just the thought of money turns him into another person."
+    bi "But if he's robbed this bank before, why is he so excited?"
+    bi "Is it just bad acting?"
+    bi "But I also wouldn't have thought the others were capable of what they did..."
+    bi "Plus, we already know Sid was in a tough financial situation, so..."
+    bi "Thinking he did something extreme isn't out of the question."
+    bi "It's worth remembering."
+    bi "Speaking of Sid..."
     hide scary with dissolve
     show lauren ind:
         xcenter .25
@@ -249,9 +266,10 @@ label bankGo:
     l "Freddy said he ran ahead when everyone else came in here."
     f "Yup! He kept saying \"money money money money money\" and left us behind."
     b "We should really be sticking together..."
-    b "I'm gunna go look for him."
+    b "I'm gonna go look for him."
     l "We'll stay here for a bit and check out all these cabinets."
     f "And snacks!"
+    bi "Hey, that's normally my job..."
     hide lauren ind
     hide frog ind
     with dissolve
@@ -262,16 +280,18 @@ label bankGo:
     b "I think this is the first time you've actively tried to spend time with me."
     show sam angry
     s "..."
+    s "I spent some time thinking about what Lauren said to me at the hospital."
     s "I think after everything, the least I can do is try to be helpful."
     b "I... appreciate that."
     b "We all do."
     b "You know, we still trust you."
-    s "Yeah, yeah, let's go find Sid."
+    b "We understand that you just did what you thought you had to do."
+    s "Yeah, yeah, whatever. Let's just go find Sid."
     hide sam with moveoutright
     bi "Well, progress."
-    scene black with fade
-    blank "Sam and Bert walked out into the hallway and heard Sid's voice."
-    blank "They followed the voice down the hallway."
+    scene black with dissolve
+    bi "We walked out into the hallway and heard Sid's voice."
+    bi "Following it led us to..."
 label bank2:
     scene bg bankvault
     $ statusnt("Bank Hallway", "bert", ch=4, sun=2)
@@ -302,8 +322,8 @@ label bank2:
     bi "There's a poster on the wall next to the vault."
     show bankposter2 with dissolve
     b "Huh? What's it say..."
-    b '"Each of you possesses one third of the bank vault passcode"'
-    b '"the day of the month you were born on."'
+    b '"Each of you possesses one third of the bank vault passcode..."'
+    b '"The day of the month you were born on."'
     bi "!!!"
     b '"Use any three of your birthdates, in any order, to unlock the safe."'
     b "Seems easy enough..."
@@ -326,13 +346,19 @@ label bank2:
     i "I mean, it's a little scary, but all we need is three people's birthdays!"
     i "The three of us could crack this bad boy open right now!"
     s "It's not that simple..."
-    s "How can I trust you to give me your correct number?"
+    s "How can I trust you to give me your correct birthdate?"
     s "How can you trust me to give you mine?"
     b "If someone lied, the user would die..."
     s "Yeah, and we wouldn't know who the killer is."
     b "Huh?"
     s "Since you need three numbers, there are two people who could've lied about their number."
     s "So if someone died inputting the wrong code, we would have no way to know who lied."
+    b "Well, if we knew whose three birthdays were used, we'd have a 50/50 shot, right?"
+    s "Yeah, but with six of us left..."
+    s "Well, five after a murder."
+    s "50/50 isn't that much of an improvement over random guessing."
+    s "Hell, given our track record of solving these murders..."
+    s "50/50 is better odds for the murderer than any other setup."
     b "It seems like the perfect setup to kill Sid, huh..."
     i "Hey! I-I knew all that..."
     i "Maybe..."
@@ -342,9 +368,10 @@ label bank2:
     s "What a mess..."
     i "Ummm... maybe we could... guess?"
     i "The poster says all of us have a code, and we can use any three in any order."
-    i "Let's see, carry the two... multiple this by that... oh wait..."
+    i "Let's see, carry the two... multiply this by that... oh wait..."
     b "There are only six of us, which means there are... 120 correct passcodes."
     i "47! Uh, I mean, 120!"
+    b "And that's assuming we all have different birthdates."
     i "That seems like a bunch, right?"
     i "Most locks only have one correct combo, 120 is a lot of options!"
     b "There are 31 days in a month though, and you'd have to guess two numbers, so..."
@@ -352,11 +379,15 @@ label bank2:
     s "Yeah but you know your own birthday, right?"
     s "...Right?"
     i "Oh, yes! So you'd only have to guess two numbers!"
-    b "In total, your odds are about 20/961 to guess correctly."
+    b "In total, your odds are 20/961 to guess correctly if I'm doing the math right."
     i "WHAT?! Are you sure?!"
     i "Math is so lame dude..."
-    s "I think Bert's right though. It's not something to chance."
-    i "...Okay."
+    s "Sid, did you have a locker in school?"
+    i "Yeah! That's where I hid my... um, my homework."
+    s "I take it you've never messed up the locker combo before?"
+    i "What? Everyone messes it up sometimes... I always scroll past the second number on accident."
+    i "...Oh."
+    s "Yeah, would be a real shame if you messed up this locker combo."
     i "So what do we do, just ignore it?"
     b "It can be our last resort."
     b "If we go a few days with no other progress, maybe we can try it."
@@ -372,10 +403,15 @@ label bank2:
     i "There's this red light around all four walls of the vault."
     b "We noticed that too."
     i "It could just be for the vibe?"
-    s "Seems like a weird design choice if it's just for looks."
-    b "I agree, it's probably useful somehow."
+    s "Right, the same people who made that grungy kitchen want to decorate the bank."
+    b "I agree, it's probably for function over form somehow."
     b "Maybe it's a way to show the vault is locked?"
-    b "Or maybe that the security system is armed?"
+    i "Oh, maybe it's in case the lights go off!"
+    i "Like those lights on planes!"
+    s "How do you know planes have lights?"
+    i "Hey, my family wasn't always poor..."
+    b "C'mon, focus."
+    b "Maybe it's an indicator that the security system is armed?"
     b "That would make it easier for workers to know the status of the vault, from any side."
     s "Maybe the lights would turn off if we managed to get into the vault?"
     b "We should keep it in mind."
@@ -385,26 +421,31 @@ label bank2:
     s "Punk..."
     hide sam with moveoutleft
     scene black with fade
-    blank "Bert and Sam walked back toward the only room they passed by."
+    bi "We walked back to an entrance we passed while trying to find Sid..."
 label bank3:
     scene bg bankoffice
     $ statusnt("???", "bert", ch=4, sun=2)
     $ showchibint("sam")
     show sam
     with dissolve
-    b "So according to the map in the lobby, this should be... the Director's Office."
+    b "So according to the map in the lobby, this should be... the director's office."
     $ statusnt("Director's Office", "bert", ch=4, sun=2)
     s "What's a bank director anyway?"
     b "I have no idea."
-    b "Let's snoop around, maybe we can find out."
+    b "Not like I've ever worked at a bank before..."
+    s "Sounds like something the murderer would say."
+    b "Har har."
+    b "Seriously though, let's look around, maybe we can find out more about this place."
     s "You'd think there would be a computer in here..."
     b "It looks like there was one on the desk."
     b "I can see the marks where a monitor and a mousepad must have been."
     b "Surely most banking stuff is done electronically rather than with paper these days?"
-    s "Your guess is as good as mine."
+    s "If their business was anything like mine..."
+    s "They probably had some stuff they didn't want a permanent record of."
+    bi "Right. I keep forgetting Sam dealt drugs once."
     s "There is a filing cabinet over there, though."
     hide sam with dissolve
-    blank "Sam took a peek in the filing cabinet."
+    bi "Sam took a peek in the filing cabinet."
     show sam with dissolve
     s "Damn, there are a ton of records in here."
     s "Family records, transaction history, mortgage info..."
@@ -420,10 +461,10 @@ label bank3:
     $ showchibint("sam", "jenny")
     j "Hey, I caught up with you guys."
     j "Anything fun I missed?"
-    blank "Bert told Jenny about the bank vault."
+    bi "I quickly got Jenny up to speed on the bank vault."
     j "That's terrifying! Maybe we can have Sid enter the passcode."
     s "That's what I said too."
-    b "We've agreed not to touch it unless it's our last resort."
+    b "We've agreed not to touch it unless we can't make progress otherwise."
     j "Gotcha!"
     b "Anyway, digging through these filing cabinets could be useful."
     b "Sounds incredibly tedious though."
@@ -432,16 +473,21 @@ label bank3:
     s "I'll sift through this stuff."
     b "You sure?"
     s "Yeah, if there's anything important I'll let everyone know."
-    s "Honestly, I'm kinda hoping there isn't anything useful."
-    s "Digging up more details about people's pasts is so... messy."
+    j "Shouldn't two of us go through it?"
+    j "Dracula deleted some crucial info about Shahar in the hospital..."
+    s "Do you want to dig through the cabinet with me?"
+    j "..."
+    j "You know what, I think I trust Sam!"
+    s "Yeah, figured as much."
+    b "Thanks Sam."
+    s "Yeah, if you don't see me in a few hours make sure I haven't fallen asleep."
+    s "It's gonna take hours to get through this..."
     b "I agree, but if it can help us get out of here alive, it's worth it."
     s "Yeah. I guess we'll see."
-    b "Only one way to find out, I suppose."
     j "There should be one more room we can get into at the end of this hallway."
     j "Come on Bert, let's go check it out."
     b "Alright."
     scene black with dissolve
-    blank "Bert and Jenny walked down the hallway to the last room."
     scene bg banklocker
     $ statusnt("Locker Room", "bert", ch=4, sun=2)
     $ showchibint("jenny")
@@ -454,31 +500,36 @@ label bank3:
     j "Why does a bank need a locker room with full sized communal showers?"
     b "Yeah, it's a bit odd."
     j "Also, there are tons of lockers with keys in the locks."
-    b 'It seems like a "first come, first served" situation to grab any locker you want.'
+    b "Maybe this building used to be a gym and they repurposed it?"
+    b 'And they just used a "first come, first served" situation to grab any locker you want.'
     j "I'm a bit worried about people coming here to hide stuff in a locker..."
     j "Maybe we should take out all the keys and put them somewhere?"
     b "That's a good idea."
     hide jenny ind with dissolve
-    blank "Jenny grabbed all 16 locker keys."
+    bi "Jenny grabbed all 16 locker keys."
     show jenny ind with dissolve:
         xcenter .75
     j "Bert! Look at this."
-    blank "Jenny held up a grey worksuit."
+    bi "She held up a grey worksuit."
     b "Huh? What is that?"
     j "It looks like there's one in each locker."
-    j "They must be the security uniforms."
+    j "They must be the security guards' uniforms."
     b "They definitely don't look like something you'd want a customer to see."
     j "Yeah, way too tacky."
     b "No no, I mean like, they're not professional looking."
     b "Very utiliarian design."
     b "The fact that the bank has 16 of these must mean they used them a lot..."
-    j "Huh. They don't seem very useful for us, so I'll put this one back."
+    j "Or they just had a lot of guards on payroll."
+    b "True..."
+    j "Well, they don't seem very useful for us, so I'll put this one back."
     j "Anyway, do you want to hold onto these locker keys?"
     j "My skirt doesn't have any pockets."
     b "Me? I guess I could, but are you sure you can trust me?"
     j "More than anyone else here."
-    blank "Jenny handed Bert all 16 locker keys."
-    bi "I'll keep these in my backpack."
+    j "Here you go!"
+    bi "I'll keep these in my backpack..."
+    bi "..."
+    b "Alright, now hopefully no one asks what's in here."
     b "Looking around, we've got showers, towels, lockers, you name it."
     b "I can't help but feel grateful to have the necessities here for us."
     b "Between this room for hygiene and the break room for food, we should be okay for now."
@@ -513,7 +564,7 @@ label bank3:
     b "Or eating all the snacks in the break room..."
     j "Either way, we have some time to look around in here."
     hide jenny ind with dissolve
-    blank "Bert and Jenny spent about 10 minutes looking around the lobby."
+    bi "We spent some time looking around the lobby, then regrouped."
     show jenny ind with dissolve
     j "Well, I've got good news and bad news."
     j "The bad news is that there's definitely no way to get out of here."
@@ -540,33 +591,38 @@ label bank3:
     ### FTE 1 goes here
 label bank4:
     scene black with dissolve
-    blank "After a while, people returned to the lobby."
-    blank "Everyone rested and ate staff kitchen food if they hadn't already."
-    blank "Bert shared everything he learned with the group."
+    bi "After a while, everyone returned to the lobby."
+    bi "We brought some food from the kitchen and recapped what we found."
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=3)
     $ showchibint("freddy", "lauren", "jenny", "sam", "sid")
     with dissolve
+    b "So the big rooms are this lobby, the kitchen, a director's office, and a locker room."
+    b "The keys for the lockers are missing, but they're all open anyway."
+    bi "Well, not exactly, but that's effectively the truth."
+    b "There's also a safe we can supposedly open using three of our birthdates."
+    b "But whoever inputs a code dies if they input the wrong code."
+    b "Which means someone could lie about their birthday to murder someone else."
     show lauren ind with moveinleft
-    l "Based on everything we've found, this place feels like a mystery..."
     l "Sid, did you have any luck finding a vault key or code somewhere?"
     show lauren ind:
         xcenter .5
         linear .3 xcenter .75
     show sid ind with moveinleft:
         xcenter .25
-    i "I don't think it'll open without a code."
-    i "Are you all suuure you won't tell me your birthdays?"
+    i "I don't think it'll open unless we use our birthdates..."
+    i "Are you all suuure you won't tell me them?"
     l "No shot."
+    l "If I did I'd tell you the truth, but I'm not risking anyone else lying to you."
     l "Who's to say there's even anything in there?"
     i "Alright..."
     l "And besides, there are only six of us here."
     l "It seems pretty unlikely someone plots a whole murder without us noticing."
-    b "There are so few of us less."
+    b "There are so few of us."
     b "We can even all sleep in the same room now, since this place is pretty big."
     i "Huh? Do I have to? There's a cozy looking sofa out in the hallway."
     l "Where?"
-    blank "Sid grabbed a pen and started drawing on the map."
+    bi "Sid grabbed a pen and started drawing on the map."
     show bankposter with dissolve
     i "I think it was in this corner."
     show banksofa with dissolve:
@@ -594,8 +650,6 @@ label bank4:
     hide bankdoordoodle
     hide bankduck
     with dissolve
-
-
     show jenny ind:
         xcenter .75
     show frog ind:
@@ -603,6 +657,9 @@ label bank4:
     with dissolve
     j "So Freddy, what did we talk about?"
     f "Coffee pods are bad for the environment!"
+    f "Unless you use reusable ones!"
+    f "But you're too lazy to do that!"
+    f "So you just use a coffee maker instead!"
     show jenny happy
     j "Exactly! Wait, I mean, about the safe though."
     f "Oh!"
@@ -614,7 +671,6 @@ label bank4:
     show jenny ind
     bi "Maybe not the most elegant solution, but it's a good idea."
     bi "We don't want anyone dying because because they trust Freddy and one other person."
-    bi "Having Freddy keep his birthday to himself is a good start."
     f "Bert? Can I play with Sesame?"
     ses "Mrowwwwwwwwwwww!"
     b "Sure Freddy, have fun."
@@ -653,9 +709,10 @@ label bank4:
     bi "No, no way. Sam isn't going to kill me."
     bi "I should go to the director's office."
     bi "........"
-    bi "Yeah, I should."
+    bi "No, we were alone in there earlier."
+    bi "Sam could've killed me then."
+    bi "I should go there."
     scene black with dissolve
-    blank "Bert walked to the Director's Office."
     scene bg bankoffice with dissolve
     $ statusnt("Director's Office", "bert", ch=4, sun=4)
     $ showchibint("sam")
@@ -669,7 +726,7 @@ label bank4:
     b "Are you going to kill me?"
     s "No, of course not."
     s "Why did you come if you thought I was going to kill you?"
-    b "."
+    b "..."
     b "I want to trust that you have all of our best interests at heart."
     s "I do..."
     s "Look, I lied back there in the lounge."
@@ -683,11 +740,12 @@ label bank4:
     s "It's Freddy's name."
     s "Well, kinda."
     b "Freddy?! He's just a little kid, why was his name in the bank records?"
-    s 'Well, it wasn\'t exactly - There\'s someone in here with the name "Gerald Ogden"'
+    s 'Well, it wasn\'t exactly - There\'s someone in here with the name "Gerald Ogden."'
     b "Gerald? Not Freddy, Fred, Fredrick?"
+    s "Well, it's not Freddy."
+    s "Unless Freddy is an old midget acting as a child."
     s "Take a look for yourself."
-    blank "Sam handed me a file."
-    show geraldfile with dissolve #Arun: Maybe add a pause here so they can quickly digest the file?
+    show geraldfile with dissolve
     pause 1
     b "Gerald Ogden... interesting."
     b "There's even a picture of him."
@@ -695,37 +753,47 @@ label bank4:
     b "Do you think this guy is related to Freddy?"
     s "I'd never heard the last name Ogden before, it can't be a coincidence..."
     s "Besides, I didn't see anyone else's name in the files."
-    s "If they have any use to us, this is it."
+    s "If they're of any use to us, this is it."
     b "Hmm... Let's see what the file says about him."
     s "Let me know when you see it."
     b "It?"
     show geraldfile2 with dissolve
     hide geraldfile
-    b "Wait... $10.3 million..."
+    b "Wait... 10.3 million dollars..."
     b "Is this how much money he has in his account?"
-    s "No, that's how much he made last year."
+    s "No, that's how much his balance increased last year."
     b "HE MADE $10.3 MILLION IN ONE YEAR?!"
     s "That's what the document says."
     b "Why is so much stuff crossed out?"
+    s "If the artist filled in those details they'd be wasting their time."
+    b "Huh?"
+    s "I mean, uh..."
     s "It could be a file only used for specific things, like an audit or taxes."
     s "In cases like that, the bankers will block out everything they don't need."
     b "That makes sense..."
-    b "But the $10.3 is clear as day..."
+    b "But the change in balance isn't crossed out..."
     hide geraldfile2
     b "That's... a lot of... wow."
     b "Freddy comes from a family of multimillionaires?"
-    b "No wonder this was put here as motivation..."
+    s "Honestly, the dude is probably a billionaire."
+    s "He probably has multiple accounts, and other places he keeps his money for tax purposes."
+    s "Not to mention whatever business assets he has that aren't liquid income."
+    b "I can't believe Freddy's dad... well, the guy we think is his dad is that kind of person."
+    b "He seems like any other goofy kid to me..."
     s "That's why I asked you to come."
     b "What do you mean?"
     s "I was worried about presenting this to everyone."
     s "I don't know how they would react."
-    s "Honestly, I don't know how {i}I{/i} would have reacted to this if we found before the mansion."
+    s "Honestly, I don't know how {i}I{/i} would have reacted to this if we found before... well, Stella died."
     b "It's not the same for you now?"
     s "Now I'm just... going through the motions."
     s "Doing what I can."
-    s "But for someone like Sid or Lauren, or even yourself..."
+    s "But for someone like Sid..."
     s "That's more than life changing money."
+    s "Sid would definitely turn against Freddy if he thought he could get some of it."
     s "Plus, I think showing Freddy would scare the hell out of him."
+    s "He might not even know his dad is this rich, given what he's said."
+    s "Sounds like he lives a pretty sheltered life."
     b "Yeah, you're right."
     b "It's smart to be hesitant about showing people."
     b "Still, I think talking to Jenny or even Lauren about it would be fine."
@@ -754,7 +822,6 @@ label bank4:
     s "Speak of the barbie."
     j "Find something juicy?"
     s "We found... something."
-    #########blank "Bert and Sam told Jenny about the file."
     show jenny ind
     b "There's a file about someone who could be related to Freddy."
     b "A guy named Gerald Ogden."
@@ -763,14 +830,16 @@ label bank4:
     j "How big we talking?"
     b "Last year his main account gained over 10 million dollars."
     j "So Freddy might be... the richest frog ever..."
-    b "We're not sure if they're actually related."
+    j "Well, except for maybe that prince that turned into a frog..."
+    b "To be clear, we're not sure if they're actually related."
+    b "We're hoping to figure that out."
     b "Jenny, do you think you can help me talk to Freddy tomorrow?"
     b "I don't want to scare him, but it can't hurt to ask him what his dad's name is."
     j "Sounds like a plan."
     s "Great."
     s "Half of us know about this now, but I still think we should hide the file."
     j "May I take a look?"
-    blank "Bert handed Jenny the file."
+    bi "I handed her the file. After just a quick glance..."
     show jenny scared
     j "Wait... there's a picture here."
     s "Yeah, he's got a goofy mustache and really unique facial hair color..."
@@ -824,6 +893,14 @@ label bank4:
     s "If Freddy really is his son, maybe he used a fake name to protect Freddy."
     b "Or protect himself, using that in his defense."
     s "Yeah."
+    b "Not to mention, Freddy's told us he doesn't really see his dad much."
+    b "Maybe, well... you know, his dad doesn't want the public to know about them for other reasons."
+    s "Maybe Freddy's mom is a mistress of his?"
+    b "Um... I don't think that's the kind of thing you just lightly suggest."
+    s "Hey, it's not uncommon for rich guys."
+    b "Yeah, but it's still rude to Freddy, right Je-"
+    b "Jenny?"
+    bi " Jenny had turned noticably paler."
     b "Jenny, are you alright?"
     j "S-sorry, I'm just a little shook..."
     j "I never wanted to see that face again."
@@ -856,6 +933,7 @@ label bank4:
     b "I'll drop it off in there when we leave here."
     j "And we can chat with Freddy in the morning."
     j "It might be awkward, but he's just a little kid after all!"
+    j "Kids are 76% awkward!"
     bi "Seems like she's back in a good mood."
     bi "That's Jenny for you."
     j "Sam, let's head back to the lounge before someone else comes looking for us."
@@ -885,9 +963,12 @@ label bank4:
     bi "As long as I have the key, nobody else can get in anyway."
     bi "They keys don't say which locker they go to, so..."
     bi "I guess I'll just try one key until it works."
-    blank "Bert used the same key a few times until it fit into a lock."
-    blank "He shut the files in the locker and put the key back in his bag."
-    bi "All locked up."
+    bi "..."
+    bi "Nope, not this one."
+    bi "Sigh, I hate menial tasks like this..."
+    bi "..."
+    bi "Okay, ninth try's the charm, I guess. You go in here, and... locked."
+    bi "I'll put this key in a different pocket so I don't have to figure this out again."
     bi "Sigh. What a weird situation."
     bi "Between the vault's three-person password and Freddy's name in the file..."
     bi "I'm hoping nobody does anything rash."
@@ -906,7 +987,6 @@ label bank4:
     bi "After all these terrible deaths, I need answers..."
     bi "Time to get back to the lobby."
     scene black with dissolve
-    blank "Bert walked back to the lobby, making sure not to wake up Sid on the way."
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "lauren", "jenny", "sam")
@@ -992,7 +1072,6 @@ label bank45:
     j "Want to come get more snacks with me and Bert?"
     f "Do I!"
     scene black with dissolve
-    blank "The three of them walked over to the next room."
 label bank5:
     show bg bankbreak
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
@@ -1083,7 +1162,7 @@ label bank5:
     j "That's us!"
     hide jenny with moveoutright
     scene black with dissolve
-    blank "Bert walked back to the lobby."
+    bi "After \"Team Mystery Busters\" split up, I made my way back to the lobby."
     show bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
     $ showchibint("lauren", "sid", "sam")
@@ -1092,13 +1171,22 @@ label bank5:
     show lauren ind:
         xcenter .75
     with dissolve
-    blank 'Bert told Sid and Lauren about the "Gerald Ogden" file.'
+    b "Hey, I need to tell you guys something. It's about Freddy."
+    l "Oh?"
+    i "Is it his birthday?"
+    b "No, not that..."
+    b "We found some info about his dad. Well, we think it's his dad, at least."
+    b "It might just be a coincidence, but..."
+    b "It's a guy with the name Gerald Ogden."
+    l "Just like Freddy Ogden..."
+    b "Exactly. He has an account here..."
+    b "And the balance increased by 10.3 million dollars in just one year."
     b "..."
     b "... Well? Say something!"
     i "..."
     i "..........."
     show sid mad
-    i "What the hell?! $10.3 million?!"
+    i "What the hell?! Ten million?!"
     l "In a year..."
     l "That's... an insane amount of money."
     i "This changes everything!"
@@ -1109,7 +1197,7 @@ label bank5:
     l "He is just a kid, after all."
     i "Well, I... I could get him to tell me his birthday!"
     i "And we could ALL open the safe!"
-    i "$10.3 million... I'll even share a bit to whoever gives me the third birthday!"
+    i "10.3 million dollars... I'll even share a bit to whoever gives me the third birthday!"
     b "This is why we didn't want to tell you..."
     b "We just want to figure out if they're actually related."
     b "If they are, we'd need to put extra protection on Freddy from a murder attempt."
@@ -1120,7 +1208,8 @@ label bank5:
     show sam with moveinright:
         xcenter .75
     s "You're such an idiot, Sid..."
-    s "Like Bert said, we don't even know if Freddy's related to Gerald."
+    s "Like Bert said, we don't even know if Freddy's related to Gerald. It could just be chance."
+    s "Or worse... a ploy by the Game Master to confuse us."
     show sid happy
     i "Wait a minute - you said there's a picture of this Gerald guy?"
     b "Yeah, in the file... why?"
@@ -1297,7 +1386,7 @@ label bank5:
     #FTE 3 goes here
 label bank7:
     scene black
-    blank "After some free time, Bert met with the others in the lobby."
+    bi "After spending some time chatting, I went back to the lobby."
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("lauren", "freddy", "jenny", "sid", "sam")
@@ -1330,7 +1419,7 @@ label bank7:
     b "A leash? For Freddy?"
     j "I mean, it would work!"
     show jenny ind
-    b "Hmmm, mayne not the best idea."
+    b "Hmmm, maybe not the best idea."
     b "But for now, keeping him within arm's reach is a good plan."
     b "I'll keep him joined at my hip for the rest of the night."
     b "Lauren, can you take over in the morning? Then we can plan from there."
@@ -1384,7 +1473,6 @@ label bank7:
     show frog2 smile
     f "Yay yay yay yay!"
     scene black
-    blank "Bert and Freddy walked to the Director's Office."
     scene bg bankoffice
     $ statusnt("Director's Office", "bert", ch=4, sun=4)
     $ showchibint("freddy")
@@ -1400,7 +1488,7 @@ label bank7:
     bi "I... hope that doesn't mean he's used to it."
     bi "In any case, I should try to make myself useful."
     bi "Let's see..."
-    blank "Bert sat down at the desk with a peice of paper."
+    bi "There's some paper here."
     show bg bertmap
     bi "So. Time to arrange some thoughts."
     bi "We're learning more and more about how everyone is related."
@@ -1479,7 +1567,6 @@ label bank7:
     f "Huh?"
     b "Let's head back to the lobby."
     scene black
-    blank "Bert and Freddy walked back to the lobby."
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy")
