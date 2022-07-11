@@ -564,5 +564,5 @@ label start:
 #Start
 ###########
 
-    jump hospPreInv
+    jump laurentime
 #    call screen freeTimeCounter
