@@ -1,36 +1,35 @@
 screen hospMapInv():
     modal True
     #TODO: Create secret sesame FTE
-    if ftecounter == 5:
-        imagemap:
-            ground "map3uiGUARD.png"
-            hotspot(460, 273, 108, 78):
-                action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("securityInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay8.png")
-                unhovered Hide("hospPreview")
-            hotspot(567, 275, 287, 177):
-                action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("guardroomInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay9.png")
-                unhovered Hide("hospPreview")
-            hotspot(851, 273, 90, 78):
-                action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("closetInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay1.png")
-                unhovered Hide("hospPreview")
-            hotspot(568, 451, 285, 87):
-                action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("hospKitchenInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay5.png")
-                unhovered Hide("hospPreview")
-            hotspot(202, 376, 367, 53):
-                action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("hallwayTLInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay4.png")
-                unhovered Hide("hospPreview")
-            hotspot(853, 376, 363, 51):
-                action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("hallwayTRInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay4b.png")
-                unhovered Hide("hospPreview")
+    imagemap:
+        ground "map3uiGUARD.png"
+        hotspot(460, 273, 108, 78):
+            action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("securityInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="hospmapoverlay8.png")
+            unhovered Hide("mapPreview")
+        hotspot(567, 275, 287, 177):
+            action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("guardroomInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="hospmapoverlay9.png")
+            unhovered Hide("mapPreview")
+        hotspot(851, 273, 90, 78):
+            action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("closetInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="hospmapoverlay1.png")
+            unhovered Hide("mapPreview")
+        hotspot(568, 451, 285, 87):
+            action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("hospKitchenInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="hospmapoverlay5.png")
+            unhovered Hide("mapPreview")
+        hotspot(202, 376, 367, 53):
+            action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("hallwayTLInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="hospmapoverlay4.png")
+            unhovered Hide("mapPreview")
+        hotspot(853, 376, 363, 51):
+            action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("hallwayTRInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="hospmapoverlay4b.png")
+            unhovered Hide("mapPreview")
     imagemap:
         idle "trainMapoverlayleft.png"
-        hotspot(0, 0, 119, 719) action [Hide("hospMapInv", transition=Dissolve(0.3)), Hide("hospPreview")]
+        hotspot(0, 0, 119, 719) action [Hide("hospMapInv", transition=Dissolve(0.3)), Hide("mapPreview")]
 
 screen hosp_evidence():
     add "eviscroll"
@@ -168,6 +167,11 @@ screen securityInv():
             hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
         else:
             hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'ex' hovered tt.Action("Computer")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
     add "status.png"
     add Text("{b}Security{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -279,6 +283,11 @@ screen closetInv():
             hotspot(1096, 328, 28, 50) action [Hide("closetInv"), Jump("closetLightSwitch")] mouse 'q' hovered tt.Action("Closet Light Switch")
         else:
             hotspot(1096, 328, 28, 50) action [Hide("closetInv"), Jump("closetLightSwitch")] mouse 'ex' hovered tt.Action("Closet Light Switch")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
     add "status.png"
     add Text("{b}Closet{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -467,6 +476,11 @@ screen guardroomInv():
             hotspot(1167, 257, 112, 396) action [Hide("guardroomInv"), Jump("vendingmachine")] mouse 'q' hovered tt.Action("Vending Machine")
         else:
             hotspot(1167, 257, 112, 396) action [Hide("guardroomInv"), Jump("vendingmachine")] mouse 'ex' hovered tt.Action("Vending Machine")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
     add "status.png"
     add Text("{b}Guards' Commons{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -540,7 +554,7 @@ label firstaidkit:
         li "Or, you can use hot water to melt it."
     call screen guardroomInv
 
-label hospRules:
+label hosprules:
     scene bg hospfancy
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[3]:
@@ -613,6 +627,11 @@ screen hallwayTLInv():
             hotspot(856, 357, 14, 98) action [Hide("hallwayTLInv"), Jump("cellorder")] mouse 'q' hovered tt.Action("Lauren's Cell")
         else:
             hotspot(856, 357, 14, 98) action [Hide("hallwayTLInv"), Jump("cellorder")] mouse 'ex' hovered tt.Action("Lauren's Cell")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
     add "status.png"
     add Text("{b}Guards' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -679,7 +698,7 @@ label cellorder:
 screen hallwayTRInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg shahar dead rg"
+        ground "bg shahardead rg"
         if hosp_evidence[8]:
             hotspot(573, 358, 114, 265) action [Hide("hallwayTRInv"), Jump("shaharbody")] mouse 'q' hovered tt.Action("Shahar's Corpse")
         else:
@@ -692,6 +711,11 @@ screen hallwayTRInv():
             hotspot(219, 0, 1060, 52) action [Hide("hallwayTRInv"), Jump("pipe")] mouse 'q' hovered tt.Action("Pipe")
         else:
             hotspot(219, 0, 1060, 52) action [Hide("hallwayTRInv"), Jump("pipe")] mouse 'ex' hovered tt.Action("Pipe")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
     add "status.png"
     add Text("{b}Guards' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -717,7 +741,7 @@ screen hallwayTRInv():
         action [Hide("hallwayTRInv", transition = Dissolve(1.0)), Jump("hospInvSamTR")]
 
 label hospInvSamTR:
-    scene bg shahar dead
+    scene bg shahardead
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     show sam with dissolve:
         xcenter .25
@@ -728,7 +752,7 @@ label hospInvSamTR:
     call screen hallwayTLInv
 
 label shaharbody:
-    scene bg shahar dead
+    scene bg shahardead
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[8]:
         li "Ugh."
@@ -756,7 +780,7 @@ label shaharbody:
     call screen hallwayTRInv
 
 label glassshards:
-    scene bg shahar dead
+    scene bg shahardead
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[9]:
         li "Huh?"
@@ -785,7 +809,7 @@ label glassshards:
     call screen hallwayTRInv
 
 label pipe:
-    scene bg shahar dead
+    scene bg shahardead
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[10]:
         li "Y'know, I never really noticed these pipes on the ceiling."
@@ -825,6 +849,11 @@ screen hospKitchenInv():
         else:
             hotspot(506, 450, 37, 158) action [Hide("hospKitchenInv"), Jump("hospcabinets")] mouse 'ex' hovered tt.Action("Kitchen Storage")
             hotspot(775, 420, 203, 218) action [Hide("hospKitchenInv"), Jump("hospcabinets")] mouse 'ex' hovered tt.Action("Kitchen Storage")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
     add "status.png"
     add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0

@@ -553,7 +553,7 @@ label start:
         train_evidence3 = [True, True, True, True]
         train_extra = [True, True, True, True, True, True]
         mans_evidence = [True] * 9
-        hosp_evidence = [True] * 13
+        hosp_evidence = [False] * 13
         mans_extra = [False] * 11
         hosp_extra = [False] * 6
         lightscount = 0
@@ -564,5 +564,5 @@ label start:
 #Start
 ###########
 
-    jump laurentime
+    jump hospPreInv
 #    call screen freeTimeCounter
