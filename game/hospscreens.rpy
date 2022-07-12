@@ -5,47 +5,47 @@ screen hospMap():
         imagemap:
             ground "map3uiGUARD.png"
             hotspot(460, 273, 108, 78):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("security", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay8.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("security", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay8.png")
+                unhovered Hide("mapPreview")
             hotspot(567, 275, 287, 177):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("guardroom", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay9.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("guardroom", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay9.png")
+                unhovered Hide("mapPreview")
             hotspot(851, 273, 90, 78):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("closet", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay1.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("closet", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay1.png")
+                unhovered Hide("mapPreview")
             hotspot(568, 451, 285, 87):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hospKitchen", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay5.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hospKitchen", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay5.png")
+                unhovered Hide("mapPreview")
             hotspot(202, 376, 367, 53):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayTL", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay4.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayTL", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay4.png")
+                unhovered Hide("mapPreview")
             hotspot(853, 376, 363, 51):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayTR", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay4b.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayTR", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay4b.png")
+                unhovered Hide("mapPreview")
     else:
         imagemap:
             ground "map3uiPRISONER.png"
             hotspot(203, 568, 365, 47):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayBL", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay3.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayBL", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay3.png")
+                unhovered Hide("mapPreview")
             hotspot(851, 569, 367, 49):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayBR", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay3b.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayBR", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay3b.png")
+                unhovered Hide("mapPreview")
             hotspot(566, 535, 289, 122):
-                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("patientcommons", transition=Dissolve(0.3)), Hide("hospMap"), Hide("hospPreview")]
-                hovered ShowTransient("hospPreview", img="hospmapoverlay2.png")
-                unhovered Hide("hospPreview")
+                action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("patientcommons", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="hospmapoverlay2.png")
+                unhovered Hide("mapPreview")
     imagemap:
         idle "trainMapoverlayleft.png"
-        hotspot(0, 0, 119, 719) action [Hide("hospMap", transition=Dissolve(0.3)), Hide("hospPreview")]
+        hotspot(0, 0, 119, 719) action [Hide("hospMap", transition=Dissolve(0.3)), Hide("mapPreview")]
 
 screen security():
     add "bg hospsecurity.png"
