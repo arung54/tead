@@ -2384,7 +2384,7 @@ label laurentime:
     li "I'm not sure why I ran."
     li "It's not like me running was going to affect anything."
     li "I felt like those idiots who speed towards a red light."
-    scene bg hosphalltopright 2 with dissolve
+    scene bg hosphalltopright2 with dissolve
     l "...There's something in front of Shahar's cell."
     l "What looks like glass and... either celery juice or..."
     li "I slowly approached Shahar's cell."
