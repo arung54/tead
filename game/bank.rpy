@@ -15,7 +15,7 @@ label bankGo:
     bi "No, not Dracula. Ivan."
     bi "Even after his death he deserves to be called his real name."
     bi "Do I hate him? I think so."
-    bi "I think I have to." #Arun: He lobotomized Shahar, they probably should kind of hate him
+    bi "I think I have to."
     bi "What he did to Shahar is horrible."
     $mood = "ind"
     bi "But..."
@@ -107,7 +107,7 @@ label bankGo:
     show bankposter with dissolve
     b "Oh wow, this is interesting!"
     s "Why do you say?"
-    b "None of the other places we've been put have given us a map." #Arun: Map shouldn't be "publicly available"
+    b "None of the other places we've been put have given us a map."
     b "With this, we know what we're getting into, at least a little bit."
     l "That star must indicate our current location."
     l "It says we're in the \"lounge\" right now, which makes sense."
@@ -751,7 +751,7 @@ label bank4:
     b "There's even a picture of him."
     b "Very... powerful eyebrows and mustache."
     b "Do you think this guy is related to Freddy?"
-    s "I'd never heard the last name Ogden before, it can't be a coincidence..."
+    s "It's a very unique name, it can't be a coincidence..."
     s "Besides, I didn't see anyone else's name in the files."
     s "If they're of any use to us, this is it."
     b "Hmm... Let's see what the file says about him."
@@ -778,6 +778,11 @@ label bank4:
     s "Honestly, the dude is probably a billionaire."
     s "He probably has multiple accounts, and other places he keeps his money for tax purposes."
     s "Not to mention whatever business assets he has that aren't liquid income."
+    s "This isn't really that much money in the grand scheme of things."
+    b "Sorry, you said ten million isn't that much money?"
+    s "{i}In the grand scheme of things{/i}."
+    s "It's a lot more than I'll ever have, that's for sure, but..."
+    s "Most big bank chains hold trillions of dollars."
     b "I can't believe Freddy's dad... well, the guy we think is his dad is that kind of person."
     b "He seems like any other goofy kid to me..."
     s "That's why I asked you to come."
@@ -858,11 +863,11 @@ label bank4:
     with fade
     j "From day one it was so clear he was guilty."
     j "And I mean, guilty guilty."
-    j "They had several eye witnesses for tons of different felonies."
+    j "They had several eye witnesses for tons of different crimes."
     j "And then guess what happened?"
     b "I'm... kinda scared to know."
     j "He was found not guilty, walked out with not even a slap on the wrist."
-    j "Everyone at townhall went ballistic... it was the craziest thing I've ever seen."
+    j "Everyone at town hall went ballistic... it was the craziest thing I've ever seen."
     j "People started screaming, fighting, crying."
     j "And ya know, I've always been a bit of a loudmouth..."
     j "I may or may not have... screamed some choice words at the judge and jury."
@@ -876,24 +881,32 @@ label bank4:
         xcenter .25
     with fade
 
-    j "This can't be right! His name isn't Gerald Odgen..."
-    j "At least, it wasn't back then..."
+    j "This can't be right! His name isn't Gerald Ogden..."
+    j "At least, it wasn't back then... his name was Jereldino Ogarian."
     s "Slow down, what the hell are you talking about?"
-    j "My crime... it after protesting a court decision about... this guy."
+    j "My crime... it's after protesting a court decision about... this guy."
     b "Are you sure that's him in the picture?"
     j "I'm positive."
-    b "But that's not his name?"
-    j "No... he must have been under an alias for some reason."
-    j "He definitely had enough money to pull some strings and hide a name."
-    s "Well if this really is him, that file's proof of his wealth."
+    s "Maybe he got a name change?"
+    b "\"Jereldino Ogarian\" and \"Gerald Ogden\"... they're pretty similar."
+    b "It's not uncommon for people with difficult to pronounce names to adopt a more \"normal\" name."
+    b "Especially immigrants trying to improve their chances or their kids' chances in society."
+    b "My birth name isn't actually \"Bert\" believe it or not..."
+    j "I don't think that was why he did it..."
+    j "He was already pretty successful when that court case happened."
+    s "Yeah, there's a much more obvious reason."
+    s "He just changed his name to avoid the bad publicity."
+    j "But... but he's still the same person!"
+    s "Yeah, but the public has a short attention span."
+    s "Anyway, if this really is him, that file's proof of his wealth."
     b "So, the man you were enraged over might be... Freddy's dad."
     j "Th-that doesn't make sense either!"
     j "He didn't have a family, it was even mentioned in his defense."
-    s "Maybe that's why he was using a fake name."
-    s "If Freddy really is his son, maybe he used a fake name to protect Freddy."
-    b "Or protect himself, using that in his defense."
-    s "Yeah."
-    b "Not to mention, Freddy's told us he doesn't really see his dad much."
+    s "He might have been keeping them a secret."
+    b "Why?"
+    s "Maybe for their own safety."
+    s "Being the wife and son of a well-known criminal probably makes life hard."
+    b "Freddy has told us he doesn't really see his dad much."
     b "Maybe, well... you know, his dad doesn't want the public to know about them for other reasons."
     s "Maybe Freddy's mom is a mistress of his?"
     b "Um... I don't think that's the kind of thing you just lightly suggest."
@@ -917,6 +930,29 @@ label bank4:
     j "He's the slimiest businessman I can think of, that's for sure."
     j "His level of corruption would put even Stella's to shame."
     bi "Stella's memory lives on, it seems."
+    j "Not to mention, there were tons of rumors that his company was a front for black market business."
+    j "They sold guns, drugs, some people even thought they were involved in human trafficking..."
+    s "Did you say drugs?"
+    j "Yeah, it's just a rumor, but-"
+    s "You said he was using an alias, right?"
+    s "What was his name again?"
+    j "Jereldino Ogarian."
+    s "Is that with a G or a J?"
+    j "A G as in gesundheit."
+    s "JO... that..."
+    s "That's the alias of the kingpin I worked under."
+    s "And apparently the true initials of Gerald Ogden."
+    j "You knew him?"
+    s "Not directly... he was several rungs up the ladder from me."
+    s "I pretty much only needed to talk to the guy who supplied me my goods and took the organization's cut."
+    s "But it's like how people who worked in the Sinaloa Cartel never met El Chapo."
+    b "The what?"
+    s "It's an infamous crime syndicate responsible for most of the cocaine and heroin smuggled into the states."
+    j "What the hell! How could you work for a guy like that?"
+    s "Don't be stupid. I never met the guy. And it might not even be Ogden."
+
+
+
     b "We can hope it's not his dad, but I guess we'll find out soon enough."
     b "It could be important to our situation in this game."
     b "Things just keep getting more intertwined..."
@@ -1388,7 +1424,7 @@ label bank7:
     scene black
     bi "After spending some time chatting, I went back to the lobby."
     scene bg banklobby
-    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=3)
     $ showchibint("lauren", "freddy", "jenny", "sid", "sam")
     show sam
     with dissolve
@@ -1417,11 +1453,12 @@ label bank7:
     show jenny happy
     j "Or a leash!"
     b "A leash? For Freddy?"
-    j "I mean, it would work!"
+    b "That seems like child abuse..."
     show jenny ind
+    j "I mean, it would work!"
     b "Hmmm, maybe not the best idea."
     b "But for now, keeping him within arm's reach is a good plan."
-    b "I'll keep him joined at my hip for the rest of the night."
+    b "I'll keep him joined at my hip for the rest of the day."
     b "Lauren, can you take over in the morning? Then we can plan from there."
     l "Sure."
     bi "It'd be great to have a third person to watch him, but..."
@@ -1443,7 +1480,7 @@ label bank7:
     s "You're such a dork."
     s "Anyway, I'm going to follow Lauren."
     s "I've only gotten a quick look at the locker room."
-    s "We'll try not to wake you and Freddy up if you're sleeping when we get back."
+    s "I can come back to help you watch Freddy once I've explored a bit more."
     b "Thanks Sam."
     hide sam with moveoutright
     $ showchibi("freddy", "sid")
@@ -1457,30 +1494,48 @@ label bank7:
     b "If we get into the vault, you can have my share too."
     i "Thanks Bert. I was already planning on taking it, but thanks."
     bi "This kid..."
-    i "I'm gunna hit the hay."
+    i "I'm gunna take a nap."
     i "That couch in the hallway was super cozy last night, gotta go claim it again!"
     hide sid with moveoutright
     $ showchibi("freddy")
     show frog2 ind
-    f "Let's do arts and crafts!"
+    bi "I'm tired too..."
+    bi "It's been a while since we had anything of substance to eat."
+    bi "If that tomato soup I made in the hospital even counts as food..."
+    f "Bert I wanna play!"
     b "Aren't you tired?"
-    b "It's pretty late Freddy!"
     f "Not tired not tired!"
-    f "Bedtimes are for little kids."
-    bi "I guess there's no reason to force him to bed early."
+    f "This is the first time I've been without my parents for this long."
+    f "I wanna have fun! And play with all the things I'm not allowed to touch!"
+    bi "It's weird hearing him talk about his home life knowing who his dad is..."
     b "Hmm... I think there are some supplies in the office."
-    b "Let's go do some arts and crafts!"
+    b "How does arts and crafts sound?"
     show frog2 smile
     f "Yay yay yay yay!"
+    bi "Ok, phew, something that doesn't require me to really supervise him."
+    bi "This will give me some much needed time to think..."
     scene black
     scene bg bankoffice
-    $ statusnt("Director's Office", "bert", ch=4, sun=4)
+    $ statusnt("Director's Office", "bert", ch=4, sun=3)
     $ showchibint("freddy")
     show frog2 smile
     with dissolve
-    b "Alright, there's some crayons, paper, and pencils here."
-    b "Go crazy."
+    b "Alright, there's some paper, and pens here."
+    f "Are there markers or crayons?"
+    b "Um.. this room belongs to an old adult."
+    b "Adults are boring so they don't like to use markers or crayons."
+    f "Oh, that makes sense. Adults are boring."
+    f "Why do people grow up to become adults when they could become frogs?"
+    bi "...He did mention he was taken out of the school system by his parents."
+    f "Anyway, I want colors!"
+    b "Okay, let's compromise."
+    f "Compro-... what?"
+    b "Uh. Make a deal."
+    b "I can't give you markers or crayons but..."
+    b "You can draw for as long as you want!"
     f "Yay!"
+    bi "Kids are easy, you just have to trick them into thinking they want what you want."
+    bi "The longer he draws the less I have to entertain him with something else."
     hide frog2 with moveoutleft
     bi "He's right to work, drawing something that looks like a... large chicken?"
     bi "I'm amazed how cheerful this kid can stay, given everything."
@@ -1521,7 +1576,7 @@ label bank7:
     bi "Shahar was a lawyer hired to bring down Insyde Electronics."
     bi "If Mr. Sydell is behind all this, it makes a lot of sense for them to be here..."
     bi "And of course, Ivan is responsible for Shahar's lobotomy."
-    bi "I don't think she had met either of them personally at the time, though."
+    bi "I don't think Stella had met either of them personally at the time, though."
     bi "I think that's the most complicated bit..."
     bi "From there..."
     show bg bertmap6 with dissolve
@@ -1541,7 +1596,7 @@ label bank7:
     bi "I'm sure we all have some type of relation, we just haven't uncovered everything yet."
     bi "Unfortunately, doing so will be hard..."
     show bg bertmap8 with dissolve
-    bi "...with 6 of us dead."
+    bi "...with six of us dead."
     bi "The only ones still alive with connections to Mr. Sydell are Sid and Sam."
     bi "Sid's is pretty one sided though; it's not like he ever met Mr. Sydell."
     bi "He just caused the company some trouble."
