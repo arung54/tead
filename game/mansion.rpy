@@ -3180,7 +3180,7 @@ label trial2l:
     h "Rum on the rocks. What's it matter to ye?"
     s "On the rocks. As in you had ice in the drink, right?"
     h "Aye, stop asking me such trifling questions."
-    s "Where'd you get that ice."
+    s "Where'd you get that ice?"
     h "The freeze-{p=0.5}{nw}"
     show shahar mad:
         xcenter .25

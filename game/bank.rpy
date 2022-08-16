@@ -913,7 +913,7 @@ label bank4:
     s "Hey, it's not uncommon for rich guys."
     b "Yeah, but it's still rude to Freddy, right Je-"
     b "Jenny?"
-    bi " Jenny had turned noticably paler."
+    bi "Jenny had turned noticably paler."
     b "Jenny, are you alright?"
     j "S-sorry, I'm just a little shook..."
     j "I never wanted to see that face again."
@@ -950,16 +950,29 @@ label bank4:
     s "It's an infamous crime syndicate responsible for most of the cocaine and heroin smuggled into the states."
     j "What the hell! How could you work for a guy like that?"
     s "Don't be stupid. I never met the guy. And it might not even be Ogden."
-
-
-
-    b "We can hope it's not his dad, but I guess we'll find out soon enough."
+    s "You said it yourself, they were just rumors."
+    j "Hmph. Yeah, you're right."
+    s "..."
+    j "..."
+    s "Aren't you gonna say sorry?"
+    j "Yeah sorry you got caught up in drug dealing!"
+    show jenny happy
+    j "Suckerrrr!"
+    bi "Seems like she's back in a good mood."
+    s "Sigh... I don't know what I expected."
+    b "Anyway, we should focus on the more direct connection this Ogden guy might have..."
+    b "We can hope it's not Freddy's dad, but I guess we'll find out soon enough."
     b "It could be important to our situation in this game."
     b "Things just keep getting more intertwined..."
     s "Anyway, we need to do something about this file."
     s "I doubt Sid, Lauren, or Freddy will go looking through the records, but..."
     b "We don't know for sure how they'd react if they did see it."
     s "Yeah."
+    s "No offense... well, some offense, but..."
+    s "I'm not trying to tame three people reacting like Jenny might have."
+    show jenny ind
+    j "Hmph."
+    s "Especially Sid..."
     s "Is there somewhere we could hide this, just for the night?"
     j "Hmm..."
     show jenny happy
@@ -970,7 +983,6 @@ label bank4:
     j "And we can chat with Freddy in the morning."
     j "It might be awkward, but he's just a little kid after all!"
     j "Kids are 76% awkward!"
-    bi "Seems like she's back in a good mood."
     bi "That's Jenny for you."
     j "Sam, let's head back to the lounge before someone else comes looking for us."
     s "Right."
@@ -1029,9 +1041,6 @@ label bank4:
     show jennysleep:
         xcenter .195
         ycenter .5
-    #show frogsit2: #Arun: Mask is gone here
-    #    xcenter .44
-    #    ycenter .48
     with dissolve
     bi "I think everyone's asleep."
     bi "It's not {i}that{/i} late, but I guess everyone's tired out."
@@ -1149,7 +1158,7 @@ label bank5:
     j "..."
     f "That's what I call him!"
     j "That's not... Dad is..."
-    b "."
+    b "..."
     b "Well, what does your Mom call your Dad?"
     show frog happy
     f "Oh! I get it."
@@ -1362,8 +1371,6 @@ label bank5:
     b "I was really hoping it would just be a coincidence..."
     b "But it doesn't seem like it."
     b "In any case, we need to protect him."
-    #b "We already do a pretty good job keeping him occupied, but we have to try even harder now."
-    #l "For right now, we are responsible for him, regardless of everything."
     b "I'll stick with him for the rest of the night."
     j "I can't believe I'm stuck here with that man's son..."
     j "It's like some sick joke."
@@ -1383,7 +1390,7 @@ label bank5:
     l "I can't blame her, but... maybe she should keep an eye on her."
     b "There's a lot to take."
     b "Two more people dead, Gerald's file, the vault..."
-    l "Speaking of the vault, I guess that means Freddy really is filthy rich." #Arun: Frog boy
+    l "Speaking of the vault, I guess that means Freddy really is rich."
     l "And that means the bank records are most likely real."
     l "It makes me wonder how much money really is in the vault..."
     b "Not enough to risk dying to get into it."
@@ -1615,17 +1622,19 @@ label bank7:
     show bg bankoffice
     show frog2 ind
     with dissolve
-    f "Bert, I'm starting to get tired..."
+    f "Bert, I wanna take a nap..."
     f "Can we go back to the sleeping room now?"
     b "Yes, of course Freddy."
     b "Thanks for hanging out with me Freddy, this time has been really helpful."
     f "Huh?"
+    f "My turkey was helpful, yay!"
+    b "Um... yeah!"
     b "Let's head back to the lobby."
     scene black
     scene bg banklobby
-    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=3)
     $ showchibint("freddy")
-    show frogsit2: #Arun: Mask is gone here
+    show frogsit2:
         xcenter .44
         ycenter .48
     with dissolve
@@ -1633,6 +1642,104 @@ label bank7:
     bi "...I guess, Jenny's right, he is kinda cute."
     bi "Anyway, it feels great having {i}some{/i} direction, however small."
     bi "If Sam really can give us any new information about Mr. Sydell, we'd be in a good spot."
+    bi "I need to talk to Sam now."
+    bi "...But is it safe to leave Freddy alone?"
+    bi "Not like I can stop anyone from killing him, but I'll at least be a witness."
+    bi "I could wait, but..."
+    bi "Every minute I spend not working on this mystery is a minute closer to someone else dying."
+    bi "I have an idea..."
+    bi "I approached the hallway door, and..."
+    b "HEY!"
+    b "..."
+    b "Shoot, I was hoping someone would come..."
+    b "Maybe one more try..."
+    b "HEY!"
+    bi "A few seconds later..."
+    $ showchibint("freddy", "jenny")
+    show jenny ind
+    with dissolve
+    j "Bert! Is Freddy dead?"
+    b "What?"
+    j "You were yelling! I assumed you found a body..."
+    b "Oh. Yeah, I guess that's a natural conclusion..."
+    b "No, I just wanted someone to take over Freddy duty."
+    j "Is there something you need to do?"
+    bi "Hm... I need to be careful."
+    bi "It might not be a good idea to broadcast that I'm talking to Sam..."
+    b "I uh, need to use the bathroom."
+    j "Oh. Yeah, makes sense, nature calls and all that."
+    b "Also, do you know where Sam is?"
+    j "Huh?"
+    j "Why do you need to know where Sam is to use the bathroom?"
+    b "Um..."
+    bi "Shoot, I blew it."
+    bi "Quick, I need an excuse..."
+    b "Sam has shy bladder syndrome!"
+    j "Huh?"
+    b "If anyone is even near the bathroom Sam has trouble... you know..."
+    b "So I didn't want to inter-"
+    j "Bert, it's not exactly sexy to talk about peeing."
+    j "You could've just made something up."
+    j "Just go, I'll look over Freddy."
+    bi "How is it that the most awkward conversations of my life happen while I'm at risk of death..."
+    b "Great, thanks Jenny!"
+    scene black with dissolve
+    bi "I ran off before she could respond."
+    scene bg bankhall2
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=3)
+    $ showchibint("sam", "sid")
+    with dissolve
+    bi "After searching for a bit, I found Sam."
+    show sam with dissolve:
+        xcenter .75
+    s "Bert, you look like someone spilled red paint on your cheeks."
+    b "I uh... let's not talk about it."
+    s "Out of shape?"
+    b "Something like that..."
+    bi "Sid is sleeping on the couch... we should really talk in private."
+    b "Hey, can I talk to you in the office? Just us two?"
+    s "Sure."
+    b "You're really going along with this that easily?"
+    s "I asked you to do the same earlier."
+    s "Besides, I'm not the one who's out of shape."
+    s "I think I can handle myself just fine against you."
+    bi "I should be offended but now's not really the time..."
+    b "Okay, let's talk before anyone sees us..."
+    scene bg bankoffice
+    $ statusnt("Director's Office", "bert", ch=4, sun=3)
+    $ showchibint("sam", "sid")
+    show sam
+    with dissolve
+    s "So, did you find anything?"
+    b "No, but... I realized something."
+    b "Something you haven't told us much about..."
+    b "Your relationship with Mr. Sydell."
+    b "And more generally, any information about him that could help us."
+    s "That's because there's nothing to tell."
+    s "It was strictly a business relationship."
+    b "But surely you knew something about the guy!"
+    b "Aren't you supposed to build rapport with customers?"
+    s "What do you think I am, a mom and pop shop?"
+    s "It's drugs Bert, the product does all the selling."
+    s "Not to mention, it's not exactly a good idea to tell a drug dealer about your personal life."
+    s "You ever watch Oughta Call Paul?"
+    s "There's a guy smuggling pills to the local cartel."
+    s "One day he gets too relaxed and they find his address..."
+    s "Next thing he knows, he's getting robbed."
+    s "Sydell would be a fool to let me know who his family was, where he lived, anything like that."
+    b "Wait, but I thought you'd been to his house?"
+    s "I never said that."
+    b "But you knew where we were!"
+    s "Yes."
+    s "Because of the big painting of the guy I'd met in the living room."
+    b "...Oh."
+    s "I must say..."
+    s "I'm trying to be less snappy and more nice but..."
+    s "Things like this make it hard."
+    
+
+
+
     bi "A small weight feels lifted off my shoulders."
     bi "And there's a new feeling... almost... excitement?"
     bi "We're getting closer to learning the secrets of this game."
@@ -1643,10 +1750,3 @@ label bank7:
         ycenter .52
         zoom 1.3
     blank "POW POW POW POW!!!"
-
-
-
-    #map out all interactions
-    #we'll talk to sam
-    #go back to lounge, wait a bit
-    #BARGE IN
