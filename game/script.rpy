@@ -10,10 +10,25 @@
 #    image cchibi = Image("catherinechibi.png", zoom = 1.5)
 #    image dchibi = Image("draculachibi.png", zoom = 1.5)
 #    image ochibi = Image("laurenchibi.png", zoom=1.5)
-
-
-# scream ONLY heard in mid car
-
+define config.gl2 = True
+############################################################################# LIVE2D DEFINES ##################
+#image Sidv = Live2D("Resources/Sidv", base=.9, loop=True) #test
+#define Sidv = Character("Sidv")
+#image Dracv = Live2D("Resources/Dracv", base=.999, loop=True) #test
+#define Dracv = Character("Dracv")
+image drac = Live2D("Resources/drac", base=.999, loop=True, seamless=True) #good format
+define drac = Character("drac")
+image bert = Live2D("Resources/bert", base=.999, loop=True, seamless=True)
+define bert = Character("bert")
+image stella = Live2D("Resources/stella", base=.999, loop=True, seamless=True)
+define stella = Character("stella")
+image sam = Live2D("Resources/sam", base=.999, loop=True, seamless=True)
+define sam = Character("sam")
+image sid = Live2D("Resources/sid", base=.999, loop=True, seamless=True)
+define sid = Character("sid")
+image catherine = Live2D("Resources/catherine", base=.999, loop=True, seamless=True)
+define catherine = Character("catherine")
+############################################################################# LIVE2D DEFINES ##################
 
 image splash = "tead.png"
 image darken = "welcomescreenblank.png"
@@ -564,5 +579,5 @@ label start:
 #Start
 ###########
 
-    jump laurentime
+    jump trainGo
 #    call screen freeTimeCounter
