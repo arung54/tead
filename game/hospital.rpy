@@ -1110,7 +1110,7 @@ label testwindow:
             b "Maybe. There's other ways to be rich enough to host this kind of game and be upset at Stella."
             b "I'd imagine many people in the world are already upset at a CEO like Stella anyway."
             b "For all we know this is some vigilante justice against random criminals with no connection..."
-            j "I don't think it's a coincidence Mr. Sydell keeps coming up though."
+            j "I don't think it's a coincidence he keeps coming up though."
             b "You're right, I'm just... speculating, I guess."
             j "Oh, looks like the soup is almost done!"
             j "Want to help me serve it, Bert?"
@@ -2384,7 +2384,7 @@ label laurentime:
     li "I'm not sure why I ran."
     li "It's not like me running was going to affect anything."
     li "I felt like those idiots who speed towards a red light."
-    scene bg hosphalltopright 2 with dissolve
+    scene bg hosphalltopright2 with dissolve
     l "...There's something in front of Shahar's cell."
     l "What looks like glass and... either celery juice or..."
     li "I slowly approached Shahar's cell."
