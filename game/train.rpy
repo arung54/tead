@@ -16,6 +16,30 @@ label trainGo:
     show lauren ind
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
+
+    #show Sidv m01 with moveinleft:
+    #    xcenter .25
+    #show drac ind with moveinleft:
+    #    xcenter .25
+    #show Dracv m02 with moveinleft:
+    #    xcenter .75
+
+    #d "Sid... I will drink your blood."
+    #show Dracv m01
+    #i "Bruh..........."
+    #show Dracv m03
+
+
+
+
+
+
+
+
+
+
+
+
     o "Hey, wake up already."
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
@@ -42,7 +66,7 @@ label trainGo:
     o "And we're {i}moving.{/i}"
     n "Wow, really?"
     hide lauren ind with moveoutright
-    show sam with moveoutright
+    show sam ind with moveinleft
     $mood = "mad"
     s "I mean, take a look for yourself, genius."
     s "We're going somewhere..."
@@ -108,7 +132,7 @@ label trainGo:
     j "And just got moved to a different train car?"
     show jenny ind:
         linear .3 xcenter .75
-    show bert sad with dissolve:
+    show bert ind with dissolve: ###########################
         xcenter .25
     bt "I don't think so... Those rooms were pretty wide."
     bt "I don't think they could have fit in any reasonable train car."
@@ -181,7 +205,7 @@ label trainGo:
     hide kaiser ind
     hide lauren ind
     with dissolve
-    show sam with dissolve
+    show sam ind with dissolve
     s "I can't think of any other solutions..." #Arunj: Maybe use another word for explanation here to avoid redundancy
     n "Does that mean... we actually have to play this game?"
     ni "This isn't all a bad dream?"
@@ -195,7 +219,7 @@ label trainGo:
     ni "We know the Game Master is one of us... would they really allow that?"
     ni "Well, perhaps they have their reasons for giving us a way out."
     n "Right. We should start exploring the train."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.3 xcenter .75
     show bert happy with moveinleft:
@@ -214,7 +238,7 @@ label trainGo:
     s "Plus, it's not like we're going to just sit around here."
     s "If anything we'd better hurry, otherwise the murderer might have time to plan a murder before we find a way out."
     ni "..."
-    show sam:
+    show sam ind:
         xcenter .75
         linear 0.3 xcenter .85
     show bert happy:
@@ -303,10 +327,10 @@ label trainGo:
     $ showchibi("bert", "lauren", "freddy", "sam", "stella", "dracula")
 
     ni "What a strange bunch."
-    show sam with dissolve
+    show sam ind with dissolve
     s "Okay, the rest of us can check the next car back."
     s "It looks like it's just the three of us."
-    show sam:
+    show sam ind:
         linear .3 xcenter .75
     show drac ind with moveinleft:
         xcenter .25
@@ -347,7 +371,7 @@ label backcar1:
     $ statusnt("Caboose", "dan", ch = 1, sun = 3)
     $ showchibint("dracula", "sam")
     with fade
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .5
         linear 0.3 xcenter .75
     s "Hmmm... it seems awfully run down back here."
@@ -360,12 +384,12 @@ label backcar1:
     d "There's dust coating nearly every surface... it reminds me of an old coffin."
     n "Maybe we can open a window or something."
     hide drac ind with dissolve
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .75
     s "It seems like the only window is on the back door."
     hide sam with dissolve
     blank "Sam checked out the back window."
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .75
     s "No such luck - it definitely isn't designed to be opened."
     $mood = "shock"
@@ -380,7 +404,7 @@ label backcar1:
     hide sam with dissolve
     ni "Dracula and I checked the window as well."
     ni "Sure enough, the window was riveted on and there was nothing behind us."
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .75
     s "The back door might open, but there's no platform to stand on. Let's wait for the others before doing that."
     $mood = "ind"
@@ -393,13 +417,13 @@ label backcar1:
     n "........"
     show drac oh:
         xcenter .75
-    show sam with move:
+    show sam ind with move:
         xcenter .25
     s "Anyway."
 
     hide drac oh with moveoutright
 
-    show sam:
+    show sam ind:
         xcenter .25
         linear 0.3 xcenter .75
     s "We should head back up and tell the others it's a dead end."
@@ -412,7 +436,7 @@ label backcar1:
         xcenter .75
     d "The door is locked. Maybe one of the others has found a key."
     hide drac ind  with dissolve
-    show sam  with dissolve:
+    show sam ind  with dissolve:
         xcenter .75
     s "It's probably only for custodians. Maybe they'd have the key?"
     s "Either way, there's nothing more for us back here."
@@ -446,7 +470,7 @@ label midcar2:
     bt "Stella might be a little drunk. I tried to tell her not to drink, but..."
     t "Anyone need a beer? There's a lot ba-"
     hide bert sad  with dissolve
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .25
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
@@ -463,7 +487,7 @@ label midcar2:
     hide stella drunk with moveoutright
     show stellapassed with dissolve
     hide sam
-    show sam:
+    show sam ind:
         xcenter .25
         linear 0.3 xcenter .5
     s "I can already tell she's going to get on my nerves."
@@ -514,7 +538,7 @@ label midcar2:
     i "So it's a run down little caboose? That's kind of ironic."
     hide drac ind with moveoutleft
     hide pophuh
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "What do you mean 'ironic?'"
     s "What did you guys find up ahead?"
@@ -555,7 +579,7 @@ label frontcar1:
     $ showchibint("sam", "lauren", "bert", "jenny", "shahar", "sid", "catherine", "dracula", "freddy", "kaiser")
     $ statusnt("Front Car", "dan", ch = 1, sun = 3)
     with dissolve
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .8
     s "Wow, you guys were not joking... There are screens everywhere."
     n "There must be over 20 monitors in this train car."
@@ -598,7 +622,7 @@ label frontcar1:
         xcenter .25
     c "This is also the frontmost car, which means..."
     hide bert with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Nobody else is on the train. Damn."
     s "I guess expecting the Game Master to let someone else on the train to save us was too much..."
@@ -691,7 +715,7 @@ label frontcar2:
     ni "For all I know he's a super smart kid hellbent on killing us all as the Game Master."
     ni "Best to keep my guard up."
     hide scary with dissolve
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "In any case..."
     s "We should make a plan."
@@ -706,7 +730,7 @@ label frontcar2:
     show lauren ind:
         xcenter .75
         linear 0.3 xcenter .85
-    show sam:
+    show sam ind:
         xcenter .25
         linear 0.15 xcenter .15
     show sid mad with moveinbottom
@@ -735,7 +759,7 @@ label frontcar2:
     show lauren ind:
         xcenter .85
         linear 0.3 xcenter .75
-    show sam:
+    show sam ind:
         xcenter .15
         linear 0.15 xcenter .25
     o "That was a little harsh."
@@ -979,7 +1003,7 @@ label midcar3:
     hide bert with moveoutleft
     show sid ind with dissolve:
         xcenter .25
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .75
     i "So, two of us three are in the back car?"
     s "It's so dusty back there... Maybe we should all just squeeze in here somehow?"
@@ -993,7 +1017,7 @@ label midcar3:
         linear .3 xcenter .45
     i "I'm used to sharing one bed with my whole family! This is a practically an upgrade!"
     hide sid ind with moveoutleft
-    show sam:
+    show sam ind:
         linear .3 xcenter .5
     s "Well, that settles it I guess."
     s "And Dan?"
@@ -1224,7 +1248,7 @@ label testft:
     hide catherine nocat with moveoutright
     i "..."
     hide sid ind with moveoutleft
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .5
         linear .3 xcenter .75
     s "I wouldn't worry about her being upset with you."
@@ -1350,7 +1374,7 @@ label midcar4:
         xcenter .25
     o "Do you really think the person behind the messages is here right now?"
     hide jenny ind with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "I'm worried that Jenny's right."
     play sfx "audio/popwow.mp3" volume .5
@@ -1504,7 +1528,7 @@ label midcar4:
     hide stella ind with moveoutleft
     bt "..."
     bt "Well at least she's being open about it."
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "If we're airing out our past, I can go next."
     s "I don't have quite the same pedigree, but..."
@@ -1624,7 +1648,7 @@ label midcar5:
         linear .3 xcenter .75
     o "I think I'm going to spend some time on the computers in the front car."
     o "Who knows, maybe with a little luck we can figure out the passwords."
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Yeah, I'll come too. I'm not very tired yet."
     hide sam
@@ -1860,7 +1884,7 @@ label midcar6:
     o "What's going on?"
     show lauren ind:
         linear .3 xcenter .75
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Did your car go dark too?"
     hide lauren ind with moveoutright
@@ -1923,14 +1947,14 @@ label midcar6:
     i "I... I..."
     b "Sid..."
     b "What happened..."
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "What the hell..."
     s "Is he... dead?"
     s "Sid, you... did you kill Dan?"
     i "No! I was asleep, I... I didn't do anything..."
     s "Everyone, back away from Sid!"
-    show sam:
+    show sam ind:
         linear .2 xcenter .8
     s "I can't believe it..."
     play sfx "audio/popwow.mp3" volume .5
@@ -2019,9 +2043,9 @@ label midcar6:
     b "Jenny and I can talk to Sid about what happened and we'll go from there."
     bi "I probably shouldn't be alone with him."
     bi "And hopefully Jenny's presence will calm him down a bit."
-    show sam with moveinleft
+    show sam ind with moveinleft
     s "So who made you the leader here?"
-    show sam:
+    show sam ind:
         linear .3 xcenter .75
     show kaiser ind with moveinleft:
         xcenter .25
@@ -2175,7 +2199,7 @@ label trial1a:
     b "That's a good question..."
     b "I think the most logical thing to start with is... when it happened."
     hide lauren ind with moveoutleft
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Hmm, when the four of us went to the front car, Dan was still here in the bar car."
     k "Yes, it's true."
@@ -2344,7 +2368,7 @@ label trial1c:
     b "That's it!"
     b "It had to have been in the caboose closet."
     hide lauren ind with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Hm? That closet was locked."
     s "Dracula checked it when we first explored the back car."
@@ -2464,7 +2488,7 @@ label trial1d:
     blank "Nobody spoke up."
     i "Does... does that finally prove I'm innocent?"
     hide catherine ind with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "More than anything, it shows we're not getting anywhere."
     s "You were basically our only lead."
@@ -2486,7 +2510,7 @@ label trial1d:
     s "What are you on about? Who cares if someone screamed?"
     s "Dan got stabbed through the chest, of course people are going to be screaming."
     t "Hmmm, with all due respect - which isn't much - you don't know what you're talking about."
-    show sam:
+    show sam ind:
         linear .05 xcenter .7
     s "What did you just say to me?"
     hide stella ind
@@ -2511,7 +2535,7 @@ label trial1e:
     with dissolve
     show stella ind:
         xcenter .25
-    show sam:
+    show sam ind:
         xcenter .75
     with dissolve
     b "Hey, look!"
@@ -2714,7 +2738,7 @@ label trial1h:
     b "...That is true..."
     k "It feels like we're uncovering some things, but no closer to a real answer."
     hide lauren ind with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "I agree with Kaiser and Lauren."
     s "I don't think we're getting anywhere."
@@ -2736,7 +2760,7 @@ label trial1h:
     show sid ind:
         xcenter .25
         linear 0.15 xcenter .15
-    show sam:
+    show sam ind:
         xcenter .75
         linear 0.15 xcenter .85
     show frog ind with moveinbottom
@@ -2917,7 +2941,7 @@ label trial1ib:
     b "We can just... lock them in one of the cars alone or something."
     b "But now's not the time to worry about that, we don't know who did it yet."
     hide kaiser ind with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Hey! Do you guys feel that?"
     s "We're turning."
@@ -3054,7 +3078,7 @@ label trial1l:
     i "Someone could have set up a mechanism to BONK the scythe off the tunnel entrance,"
     i "and swing down to stab through the back car window!"
     hide traindoodle4
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "That is a batshit insane theory."
     i "Wait, bu-"
@@ -3182,7 +3206,7 @@ label trial1n:
     t "Someone must have stolen it from me."
     show stella ind:
         linear .3 xcenter .75
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Or they just asked for it while you were blackout drunk."
     s "If you don't remember who you gave it to -"
@@ -3424,7 +3448,7 @@ label trial1p:
     bi "Let's settle this!"
     hide scary with dissolve
     b "Okay! Sam, Shahar, Kaiser, and Lauren."
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .125
     show shahar ind with dissolve:
         xcenter .38
