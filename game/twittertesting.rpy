@@ -1,11 +1,12 @@
 #twittertesting
 
 label twitter:
+    play music "audio/rush.mp3" fadein 1.0
     $ftecounter = 2
-    scene bg black with fade
+    scene bg bankoffice with fade
     $showchibint("dracula", "lauren", "sid")
-    $statusnt("Hi Twitter", "bert", ch=2, sun=3)
+    $statusnt("Hi Twitter", "Dan", ch=2, sun=3)
     $mood = "ind"
-    show menubgscroll
-    show menufg
-    b "wow"
+    show frog happy:
+        xcenter .4
+    f "It's Freddy Friday!!!"
