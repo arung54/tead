@@ -7,7 +7,7 @@ screen trainPreview(img):
     add img pos (25, 20)
 
 screen mapPreview(img):
-    add img pos (25, 20)
+    add img pos (0, 0)
 
 ##############################################
 
