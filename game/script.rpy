@@ -578,5 +578,5 @@ label start:
 #Start
 ###########
 
-    jump mansionGo
+    jump mansion2
 #    call screen freeTimeCounter
