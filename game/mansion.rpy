@@ -94,9 +94,9 @@ label Mansionuno:
     show frog sad:
         xcenter .5
         linear 0.15 xcenter .75
+    $showchibint("freddy", "lauren")
     show lauren ind with moveinleft:
         xcenter .25
-    $showchibi("freddy", "lauren")
     l "Hey Freddy, you doing okay?"
     l "You wanna look around and try to find food with me? Everyone's probably hungry after sleeping!"
     f "S-sure..."
@@ -116,7 +116,7 @@ label Mansionuno:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "I agree with the vampire."
     d "We may as well discuss it now, and catch those two up later."
@@ -149,7 +149,7 @@ label Mansionuno:
     t "My methods don't always see eye-to-eye with the law, but, c'est la vie."
     hide stella
     scene bg trainmid
-    show sam
+    show sam ind
     show sepia:
         alpha .5
     with dissolve
@@ -256,7 +256,7 @@ label Mansionuno:
     t "I'm not going to let some geezer tell me what to do."
     t "I worked hard my whole life to hire bodyguards, not to be one."
     hide drac ind with moveoutleft
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Again... you're kind of derailing the conversation here."
     s "The point is that we have information, and we should use it to maximize our chance of escaping."
@@ -312,7 +312,7 @@ label Mansionuno:
     j "Exactly. So let's do something useful and explore this place."
     bi "I looked briefly at Sam and Dracula."
     hide jenny with dissolve
-    show sam:
+    show sam ind:
         xcenter .25
     show drac ind:
         xcenter .75
@@ -588,7 +588,7 @@ label Mansionuno:
     $showchibi("jenny", "dracula", "sam")
     $mood = "ind"
     b "The master bedroom?"
-    show sam:
+    show sam ind:
         xcenter .25
     show drac ind:
         xcenter .75
@@ -873,10 +873,10 @@ label mansion1:
     $ statusnt("Dining Room", "bert", ch=2, sun=3)
     $mood = "ind"
     b "It's kinda spooky in here with most of the lights off..."
-    show sam with dissolve
+    show sam ind with dissolve
     s "So Bert, you called this meeting, right?"
     b "Yeah, mostly to discuss the sleeping arrangements, though Catherine might have an announcement too?"
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .25
     show catherine happy with moveinright:
@@ -975,7 +975,7 @@ label mansion1:
         xcenter .75
     i "You... you're all okay with that?"
     hide catherine with moveoutleft
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Wait, are we really going to trust what Sid says at face value?"
     $mood = "ind"
@@ -1082,7 +1082,7 @@ label mansion1:
     l "That doesn't make it any more okay for you to do it."
     l "I'm already worried about you and Shahar forcing Bert to deal with your debauchery."
     hide stella with moveoutleft
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "In her defense, the point of the party is to lift our moods, right?"
     s "A little bit of drinking isn't going to do any damage."
@@ -1308,7 +1308,7 @@ label postFT2:
     t "If that's the case, why not relax?"
     $mood = "sad"
     b "Isn't that too fatalistic?"
-    show stella drunkind
+    #show stella drunkind
     t "That's being realistic."
     t "Take it from someone who works 16 hour days."
     t "Sometimes, there's nothing you can do about a shitty thing."
@@ -1440,7 +1440,7 @@ label postFT2:
     with moveoutright
     $showchibi()
     $showchibi("sam")
-    show sam with dissolve
+    show sam ind with dissolve
     s "Didn't expect the noise out here to be you."
     b "Sorry, you probably heard Shahar yelling... they're not letting me sleep and are a bit hard to control."
     s "Think you can keep them quieter? Some of us are trying to sleep."
@@ -1593,7 +1593,7 @@ label postFT2:
     $showchibi("jenny", "sam")
     show jenny happy:
         xcenter .25
-    show sam:
+    show sam ind:
         xcenter .75
     with dissolve
     j "Oh, Bert."
@@ -1826,7 +1826,7 @@ label postFT3:
     c "Don't worry, I'll be able to party once everything besides dessert is done."
     b "Oh, who's making dessert?"
     hide jenny with moveinright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Me, I'll be out in the living room soon."
     b "What did you make?"
@@ -1910,7 +1910,7 @@ label postFT4:
     hide stella
     with dissolve
     bi "I made my way to chat with Sam and Dracula."
-    show sam:
+    show sam ind:
         xcenter .25
     show drac ind:
         xcenter .75
@@ -2066,7 +2066,7 @@ label postFT4:
     h "Aye-aye, to the kitchen for a rum on the rocks, chaaaarge!"
     hide shahar with moveoutleft
     $showchibi("dracula", "freddy", "lauren", "sam", "sid")
-    show sam:
+    show sam ind:
         xcenter .25
     show drac ind:
         xcenter .75
@@ -2218,7 +2218,7 @@ label postFT4:
     show catherine nocat:
         xcenter .5
         linear .15 xcenter .25
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .75
     s "I guess that means I should get dessert ready."
     #hide sam with moveoutright
@@ -2227,7 +2227,7 @@ label postFT4:
     #c "You could at least not rub it in so much."
     s "Weirdo."
     b "...Sorry"
-    #show sam with moveinright:
+    #show sam ind with moveinright:
     #    xcenter .75
     s "Hm, since there are no knives in the kitchen..."
     s "Catherine, did you see anything else we could use to cut the dessert into slices?"
@@ -2275,7 +2275,7 @@ label postFT4:
     bi "Oh well. I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
     bi "As I sat and ate, Sam had come back with the stepstool and walked through to the kitchen."
     bi "After some more time had passed..."
-    show sam with fade
+    show sam ind with fade
     $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
     s "Dessert is ready."
     s "Nothing too fancy, just an ice cream layer cake."
@@ -2419,7 +2419,7 @@ label mansion2:
     show shahar mad:
         xcenter .5
         linear 0.15 xcenter .25
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "The fact that she drank so much might be why she's dead..."
     h "Scallywag! How could two days of drinking get her shanked if a lifetime didn't?!"
@@ -2449,7 +2449,7 @@ label mansion2:
     d "Hm, it is a shame we were not able to figure out more collectively before this happened."
     b "What do you mean?"
     d "I had a plan..."
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Hey, if we want someone to make sure Shahar's not tampering with evidence..."
     s "Shouldn't we send someone downstairs to make sure Lauren's not either?"
@@ -2606,7 +2606,7 @@ label trial2b:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "C'mon, Sid, isn't it obvious?"
     i "Huh?"
@@ -2665,7 +2665,7 @@ label trial2d:
     d "In my... \"line of work\" I see a lot of human blood."
     b "...Anyway, this suggests Stella died a while ago."
     hide drac ind with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "It also makes it pretty clear who the killer should be."
     i "Huh?"
@@ -2688,10 +2688,10 @@ label trial2e:
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
     scene bg mansiondining
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam
+    show sam ind
     with fade
     b "Sam, are you... suggesting Jenny murdered Stella?"
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
     show jenny ind with moveinleft:
@@ -2718,7 +2718,7 @@ label trial2e:
         xcenter .75
     h "Aye, I don't really follow what yer all discussin', but, I got a riddle for ye."
     hide jenny with moveoutleft
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Riddle? This isn't the time for games, we might as well move to vote Jenny."
     b "Do you mean a question Shahar?"
@@ -2789,12 +2789,12 @@ label trial2g:
     play music "audio/rush.mp3"
     scene bg mansiondining
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam with dissolve
+    show sam ind with dissolve
     with fade
     b "Sam, we inspected the wound during the investigation."
     b "It looks like something was used to plug the wound after Stella was stabbed..."
     b "What if it was..."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
     show catherine happy with moveinleft:
@@ -2871,7 +2871,7 @@ label trial2g:
     d "Anyways, I don't need anyone to follow me."
     d "I'm happy to do the test on my own."
     hide catherine with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Wait, someone should go with you."
     s "You could be the murderer and be lying about the results of your \"test.\""
@@ -2934,7 +2934,7 @@ label trial2g:
         xcenter .25
     i "Um... I have an idea."
     hide jenny with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Here we go with another Sid idea..."
     i "Hey, screw you, your idea was wrong beforehand."
@@ -2951,7 +2951,7 @@ label trial2h:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam:
+    show sam ind:
         xcenter .75
     show sid ind:
         xcenter .25
@@ -2988,7 +2988,7 @@ label trial2h:
     show lauren ind
     l "I think I get it as well!"
     hide lauren
-    show sam
+    show sam ind
     s "I think you're all about to speak over each other and spout some crazy theories..."
     bi "...are they really all on the same page?"
     python:
@@ -3157,7 +3157,7 @@ label trial2l:
     play music "audio/rush.mp3"
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam with dissolve
+    show sam ind with dissolve
     s "Me?"
     s "Bullshit, you don't have proof."
     b "True, Shahar and Jenny both could have also pulled it off."
@@ -3172,7 +3172,7 @@ label trial2l:
     bi "Oh?"
     bi "Wasn't expecting that."
     s "Shahar. Care to tell us what drink you got?"
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
     show shahar ind with moveinleft:
@@ -3275,7 +3275,7 @@ label trial2n:
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind:
         xcenter .25
-    show sam:
+    show sam ind:
         xcenter .75
     with fade
     b "...The burn wounds."
@@ -3331,7 +3331,7 @@ label trial2o:
     bi "..."
     bi "It comes down to this."
     bi "Are we going to cooperate?"
-    show sam with dissolve
+    show sam ind with dissolve
     bi "Or will Sam lie and indirectly save someone else in the process..."
     b "Sam."
     s "What do you want now?"
@@ -3343,7 +3343,7 @@ label trial2o:
     b "We're going to have to choose you as the murderer."
     b "But if you can tell us what happened honestly, and that includes evidence it wasn't you..."
     b "It could get you off the hook. And find the real murderer, saving us all."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
     show sid ind with moveinleft:
@@ -3361,7 +3361,7 @@ label trial2o:
 label trial2p:
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam:
+    show sam ind:
         xcenter .75
     show sid ind:
         xcenter .25
@@ -3381,7 +3381,7 @@ label trial2p:
     b "Right now, only Sam can help us find a way to explain that."
     i "...Fine, but Sam better do a good job or I'm going to vote Sam off anyway!"
     hide sid with moveoutright
-    show sam:
+    show sam ind:
         xcenter .75
         linear 0.15 xcenter .5
     bi "Ok, Sid's cooperating now, but will Sam confess and tell us what happened?"
@@ -3403,7 +3403,7 @@ label trial2p:
     bi "..."
     bi "I... I never thought about it from that perspective."
     bi "Am I... feeling bad for Sam?"
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
     show lauren ind with moveinleft:
@@ -3420,7 +3420,7 @@ label trial2p:
     h "Even if Sam didn't deal the killing blow, I can't fergive a murderer so becalmedly, I'm sorry lads and lassies."
     l "Shahar, maybe we can talk this through?"
     hide shahar with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "No, Shahar's right."
     s "I might as well be a murderer."
@@ -3434,7 +3434,7 @@ label trial2p:
     s "Okay."
     s "No emotions this time, I guess."
     hide lauren with moveoutleft
-    show sam with dissolve:
+    show sam ind with dissolve:
         xcenter .75
         linear 0.15 xcenter .5
     s "I went in there, with the knife made out of ice, just like you figured out..."
@@ -3466,7 +3466,7 @@ label trial2p:
 label trial2q:
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam:
+    show sam ind:
         xcenter .5
     b "Sam, you said Stella braced herself on the sink, right?"
     s "Yeah."
@@ -3498,7 +3498,7 @@ label trial2q:
 label trial2r:
     scene bg mansiondining with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam:
+    show sam ind:
         xcenter .5
     b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
     b "There was a generator upstairs, anad when I looked under the sink I saw some wires fed in through a hole in the wall."
@@ -3623,7 +3623,7 @@ label trial2t:
     d "If I must tell you, I was trying to persuade Sam to work with me to get out of here."
     d "But Sam claimed not to trust me since I claimed to be a vampire, so I was mostly trying to prove I was one."
     hide drac with moveoutright
-    show sam with moveinright:
+    show sam ind with moveinright:
         xcenter .75
     s "Yeah, I didn't want to work with him because I thought if I did he would find out I was the murderer."
     s "And talking to him \"in private\" gave me an excuse to not talk to others who might find out."
@@ -3740,7 +3740,7 @@ label trial2w:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "No, I swear it wasn't me."
     s "I knew nothing about the generator before a few minutes ago..."
@@ -4042,7 +4042,7 @@ label cathGivesInfo:
     b "..."
     b "She's dead."
     b "The Game Master wasn't Stella..."
-    show sam with dissolve
+    show sam ind with dissolve
     s "..."
     s "It should be me who's dead now..."
     b "Sam, that's not-{p=0.5}{nw}"

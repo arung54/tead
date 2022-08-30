@@ -1,21 +1,8 @@
 
-#    image kchibi = Image([Transform(zoom=1.5"kaiserchibi.png", zoom = 3.5)
-#    image bchibi = Image("bertchibi.png", zoom = 1.5)
-#    image schibi = Image("samchibi.png", zoom = 1.5)
-#    image tchibi = Image("stellachibi.png", zoom = 1.5)
-#    image ichibi = Image("sidchibi.png", zoom = 1.5)
-#    image fchibi = Image("freddychibi.png", zoom = 1.5)
-#    image hchibi = Image("shaharchibi.png", zoom = 1.5)
-#    image jchibi = Image("jenbychibi.png", zoom = 1.5)
-#    image cchibi = Image("catherinechibi.png", zoom = 1.5)
-#    image dchibi = Image("draculachibi.png", zoom = 1.5)
-#    image ochibi = Image("laurenchibi.png", zoom=1.5)
+
 define config.gl2 = True
 ############################################################################# LIVE2D DEFINES ##################
-#image Sidv = Live2D("Resources/Sidv", base=.9, loop=True) #test
-#define Sidv = Character("Sidv")
-#image Dracv = Live2D("Resources/Dracv", base=.999, loop=True) #test
-#define Dracv = Character("Dracv")
+
 image drac = Live2D("Resources/drac", base=.999, loop=True, seamless=True) #good format
 define drac = Character("drac")
 image bert = Live2D("Resources/bert", base=.999, loop=True, seamless=True)
@@ -591,5 +578,5 @@ label start:
 #Start
 ###########
 
-    jump trainGo
+    jump mansionGo
 #    call screen freeTimeCounter
