@@ -523,13 +523,6 @@ label mansGarageDoor:
 
 screen hallwayInv():
     default tt = Tooltip("")
-
-    imagemap:
-        ground "bg mansionhall.png"
-        if mans_extra[0]:
-            hotspot(444, 289, 109, 174) action [Hide("hallwayInv"), Jump("mansAppliances")] mouse 'q' hovered tt.Action("Microwave and Oven")
-        else:
-            hotspot(444, 289, 109, 174) action [Hide("hallwayInv"), Jump("mansAppliances")] mouse 'ex' hovered tt.Action("Microwave and Oven")
     if tt.value != "":
         frame:
             xalign 0.5

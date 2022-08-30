@@ -1,7 +1,7 @@
 label hospitalGo:
     $noside = True
     scene black
-    $ statusnt("???", "", ch=2, sun=0)
+    $ statusnt("???", "", ch=3, sun=0)
     $mood = "ind"
     blank "A few years ago..."
     zr "Let me get this straight."
@@ -3949,6 +3949,7 @@ label dracAsk:
             dr "Sid mentioned a case earlier, where he planted fake emails on Sydell's servers."
             dr "Shahar was on the legal team for that case."
             bi "!"
+            dr "I only heard about it secondhand when I was given the job, but this is my understanding."
             dr "He wasn't the one who reached out to Sid, I believe, which is why Sid didn't know him."
             dr "But he is the one who suggested planting the fake emails to tank Sydell's company."
             dr "Someone else on the team blackmailed Sid."
