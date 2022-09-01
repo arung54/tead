@@ -760,7 +760,7 @@ label shaharbody:
         li "Poor Shahar. I'll never know if he really thought he was a pirate or if it was an act but..."
         li "If he thought that, it's really sad."
         li "Okay, no more stalling, have to look at him eventually."
-        li "He's kneeling and leaning against the bar, as if he fell foreward"
+        li "He's kneeling and leaning against the bar, as if he fell forward."
         li "Hm... he's only bleeding from the forehead, at the point where his head is leaning against the bar."
         li "I don't really see any wounds or bruises or anything besides that."
         li "That's weird... did one blow to the forehead kill Shahar?"

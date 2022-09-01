@@ -316,7 +316,7 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        #xpos .5 #julikan
+        #xpos .5 #julian
         #ypos 0.75
         #xalign 0.5
         #yalign 0.5
@@ -334,13 +334,13 @@ screen navigation():
             xalign 0
             yoffset 300
             xoffset 60
-            textbutton _("{b}History{/b}") action ShowMenu("history")
+            textbutton _("{b}History{/b}") action ShowMenu("history") text_hover_color "#929292"
 
-            textbutton _("{b}Save{/b}") action ShowMenu("save")
+            textbutton _("{b}Save{/b}") action ShowMenu("save") text_hover_color "#929292"
 
-        textbutton _("{b}Load{/b}") action ShowMenu("load")
+        textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
 
-        textbutton _("{b}Settings{/b}") action ShowMenu("preferences")
+        textbutton _("{b}Settings{/b}") action ShowMenu("preferences") text_hover_color "#929292"
 
         #textbutton _("Characters") action ShowMenu("Characters")
 
@@ -350,9 +350,9 @@ screen navigation():
 
         elif not main_menu:
 
-            textbutton _("{b}Main Menu{/b}") action MainMenu()
+            textbutton _("{b}Main Menu{/b}") action MainMenu() text_hover_color "#929292"
 
-        textbutton _("{b}About{/b}") action ShowMenu("about")
+        textbutton _("{b}About{/b}") action ShowMenu("about") text_hover_color "#929292"
 
         #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -363,7 +363,7 @@ screen navigation():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu)
+            textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu) text_hover_color "#929292"
 
 
 style navigation_button is gui_button
@@ -508,9 +508,9 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return"):
+    textbutton _("{i}back{/i}"):
         style "return_button"
-
+        text_hover_color "#929292"
         action Return()
 
     label title
@@ -567,7 +567,7 @@ style game_menu_label_text:
 
 style return_button:
     xpos gui.navigation_xpos
-    yalign 1.0
+    yalign .19
     yoffset -30
 
 
@@ -586,7 +586,7 @@ screen about():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("About"), scroll="viewport"):
+    use game_menu(_(" "), scroll="viewport"): #removed about
 
         style_prefix "about"
 
@@ -644,14 +644,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_("Save"))
+    use file_slots(_(" ")) #removed save
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_(" ")) #removed load
 
 
 screen file_slots(title):
@@ -772,8 +772,8 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-
-    use game_menu(_("Preferences"), scroll="viewport"):
+#Preferences
+    use game_menu(_(" "), scroll="viewport"):
 
         vbox:
 
@@ -943,7 +943,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    use game_menu(_(" "), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0): #removed history
 
         style_prefix "history"
 
