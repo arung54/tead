@@ -28,7 +28,7 @@ define sid = Character("sid")
 image catherine = Live2D("Resources/catherine", base=.999, loop=True, seamless=True)
 define catherine = Character("catherine")
 
-###############
+############### RED GREEN COLORBLIND VERSIONS OF EVERYTHING!!!!!!!!!!!!!!!!!!!!
 
 image dracrg = Live2D("Resources/dracrg", base=.999, loop=True, seamless=True) #good format
 define dracrg = Character("dracrg")
@@ -42,6 +42,34 @@ image samrg = Live2D("Resources/samrg", base=.999, loop=True, seamless=True)
 define samrg = Character("samrg")
 image sidrg = Live2D("Resources/sidrg", base=.999, loop=True, seamless=True)
 define sidrg = Character("sidrg")
+
+############### SEPIAAAAAAAAAAAAAAA!!!!!!!!!
+
+image dracsep = Live2D("Resources/dracsep", base=.999, loop=True, seamless=True) #good format
+define dracsep = Character("dracsep")
+image bertsep = Live2D("Resources/bertsep", base=.999, loop=True, seamless=True)
+define bertsep = Character("bertsep")
+image jennysep = Live2D("Resources/jennysep", base=.999, loop=True, seamless=True)
+define jennysep = Character("jennysep")
+image shaharsep = Live2D("Resources/shaharsep", base=.999, loop=True, seamless=True)
+define shaharsep = Character("shaharsep")
+image frogsep = Live2D("Resources/frogsep", base=.999, loop=True, seamless=True)
+define frogsep = Character("frogsep")
+image dansep = Live2D("Resources/dansep", base=.999, loop=True, seamless=True)
+define dansep = Character("dansep")
+image stellasep = Live2D("Resources/stellasep", base=.999, loop=True, seamless=True)
+define stellasep = Character("stellasep")
+image laurensep = Live2D("Resources/laurensep", base=.999, loop=True, seamless=True)
+define laurensep = Character("laurensep")
+image kaisersep = Live2D("Resources/kaisersep", base=.999, loop=True, seamless=True)
+define kaisersep = Character("kaisersep")
+image samsep = Live2D("Resources/samsep", base=.999, loop=True, seamless=True)
+define samsep = Character("samsep")
+image sidsep = Live2D("Resources/sidsep", base=.999, loop=True, seamless=True)
+define sidsep = Character("sid")
+image catherinesep = Live2D("Resources/catherinesep", base=.999, loop=True, seamless=True)
+define catherinesep = Character("catherinesep")
+
 ############################################################################# LIVE2D DEFINES ##################
 
 image splash = "tead.png"
@@ -600,5 +628,5 @@ label start:
 #Start
 ###########
 
-    jump traingo
+    jump trainGo
 #    call screen freeTimeCounter
