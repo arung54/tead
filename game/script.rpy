@@ -27,6 +27,21 @@ image sid = Live2D("Resources/sid", base=.999, loop=True, seamless=True)
 define sid = Character("sid")
 image catherine = Live2D("Resources/catherine", base=.999, loop=True, seamless=True)
 define catherine = Character("catherine")
+
+###############
+
+image dracrg = Live2D("Resources/dracrg", base=.999, loop=True, seamless=True) #good format
+define dracrg = Character("dracrg")
+image bertrg = Live2D("Resources/bertrg", base=.999, loop=True, seamless=True)
+define bertrg = Character("bertrg")
+image frogrg = Live2D("Resources/frogrg", base=.999, loop=True, seamless=True)
+define frogrg = Character("frogrg")
+image jennyrg = Live2D("Resources/jennyrg", base=.999, loop=True, seamless=True)
+define jennyrg = Character("jennyrg")
+image samrg = Live2D("Resources/samrg", base=.999, loop=True, seamless=True)
+define samrg = Character("samrg")
+image sidrg = Live2D("Resources/sidrg", base=.999, loop=True, seamless=True)
+define sidrg = Character("sidrg")
 ############################################################################# LIVE2D DEFINES ##################
 
 image splash = "tead.png"
@@ -585,5 +600,5 @@ label start:
 #Start
 ###########
 
-    jump laurentime
+    jump traingo
 #    call screen freeTimeCounter
