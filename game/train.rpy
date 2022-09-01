@@ -41,6 +41,7 @@ label trainGo:
 
 
     o "Hey, wake up already."
+    $ renpy.movie_cutscene("ch2guilty.webm")
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
         zoom .75
@@ -3567,6 +3568,9 @@ label trial1r:
     o "I... can't believe it, Kaiser, did you really do this?"
     b "..."
     k "..."
+    play movie "ch1guilty.webm"
+    $ renpy.pause(3, hard=True)
+    hide movie "ch1guilty.webm" with dissolve
     play music "audio/ominous.mp3" fadein 1.0
     k "Yes, you've figured it all out."
     k "I'm impressed, quite frankly."

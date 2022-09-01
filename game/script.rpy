@@ -628,5 +628,5 @@ label start:
 #Start
 ###########
 
-    jump trainGo
+    jump startg
 #    call screen freeTimeCounter

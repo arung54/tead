@@ -9,6 +9,66 @@ init offset = -1
 ## Styles
 ################################################################################
 
+screen simple_menu():
+    modal True
+    default x = renpy.get_mouse_pos()[0]
+    default y = renpy.get_mouse_pos()[1]
+    if x+420 >=  1280:
+        $x = 880
+    if y+310 >=  720:
+        $y = 450
+    imagebutton:
+        idle "bigtrans.png"
+        action Hide("simple_menu")
+    imagemap:
+        pos (x,y)
+        idle "rightclickidle.png"
+        hover "rightclickhover.png"
+        ground "rightclick.png"
+
+    frame:
+        style "frame2"
+        pos (x + 20, y + 65)
+        has vbox:
+            textbutton "Open Full Menu":
+                text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),ShowMenu("preferences")]
+            textbutton "History":
+                text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),ShowMenu("history")]
+            textbutton "Button 3":
+                text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+            hbox:
+                textbutton "{i}Quicksave   {/i}":
+                    text_color "#5D5D5D" text_hover_color "#5D5D5D" action Hide("simple_menu")
+                textbutton "1":
+                    text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+                textbutton "2":
+                    text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+                textbutton "3":
+                    text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+            hbox:
+                textbutton "{i}Volume  {/i}":
+                    text_color "#5D5D5D" text_hover_color "#5D5D5D" action Hide("simple_menu")
+                bar value Preference("music volume") xmaximum 180 yoffset 7
+
+screen items():
+    vbox:
+        align (0, 0)
+        for i in range(10):
+            hbox:
+                for j in range(20):
+                    textbutton "ligma":
+                        action Show("simple_menu")
+
+label startg:
+    #play music "audio/rush.mp3"
+    #b "why i aughta"
+    show bg backoffice
+    call screen items
+
+
+
+
+
 style default:
     properties gui.text_properties()
     language gui.language
@@ -74,6 +134,9 @@ style vslider:
 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+
+style frame2:
+    padding gui.frame_borders.padding
 
 
 
