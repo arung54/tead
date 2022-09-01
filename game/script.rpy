@@ -182,7 +182,14 @@ init python:
         renpy.image(i, rg_images[i])
     def replacement_show(name, *args, **kwargs):
         print(name)
-        if getattr(renpy.store, 'greyscale', False):
+        live = False
+        for element in name:
+            if element.endswith('rg') or element.endswith('sep'):
+                    live = True
+                    break
+        if live:
+            renpy.show(name, *args, **kwargs)
+        elif getattr(renpy.store, 'greyscale', False):
             renpy.show(name+('greyscale',), *args, **kwargs)
         elif getattr(renpy.store, 'sep', False):
             renpy.show(name+('sepia',), *args, **kwargs)
