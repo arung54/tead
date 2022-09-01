@@ -585,5 +585,5 @@ label start:
 #Start
 ###########
 
-    jump mansion2
+    jump laurentime
 #    call screen freeTimeCounter
