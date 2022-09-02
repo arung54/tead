@@ -11,6 +11,7 @@ init offset = -1
 
 screen simple_menu():
     modal True
+    zorder 100
     default x = renpy.get_mouse_pos()[0]
     default y = renpy.get_mouse_pos()[1]
     if x+420 >=  1280:
@@ -18,13 +19,18 @@ screen simple_menu():
     if y+310 >=  720:
         $y = 450
     imagebutton:
-        idle "bigtrans.png"
+        idle "bigtransl.png" xcenter (x-1280) ycenter (y+10)
         action Hide("simple_menu")
-    imagemap:
-        pos (x,y)
-        idle "rightclickidle.png"
-        hover "rightclickhover.png"
-        ground "rightclick.png"
+    imagebutton:
+        idle "bigtranst.png" xcenter (x+200) ycenter (y-710)          #all this shit is just to dissapear when u click somewhere else
+        action Hide("simple_menu")
+    imagebutton:
+        idle "bigtransr.png" xcenter (x+1680) ycenter (y+150)
+        action Hide("simple_menu")
+    imagebutton:
+        idle "bigtransb.png" xcenter (x+200) ycenter(y+265)
+        action Hide("simple_menu")
+    add "rightclick.png" pos (x,y)
 
     frame:
         style "frame2"
@@ -59,11 +65,11 @@ screen items():
                     textbutton "ligma":
                         action Show("simple_menu")
 
-label startg:
+#label startg:
     #play music "audio/rush.mp3"
     #b "why i aughta"
-    show bg backoffice
-    call screen items
+#    show bg backoffice
+#    call screen items
 
 
 

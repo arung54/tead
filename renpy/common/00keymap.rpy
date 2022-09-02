@@ -29,7 +29,8 @@ init -1600 python:
         screenshot = [ 's', 'alt_K_s', 'alt_shift_K_s', 'noshift_K_s' ],
         toggle_afm = [ ],
         toggle_fullscreen = [ 'f', 'alt_K_RETURN', 'alt_K_KP_ENTER', 'K_F11', 'noshift_K_f' ],
-        game_menu = [ 'K_ESCAPE', 'K_MENU', 'K_PAUSE', 'mouseup_3' ],
+        game_menu = [ 'K_ESCAPE', 'K_MENU', 'K_PAUSE', 'mousedown_3'], #removed mouseup_3
+        #renpy.show_screen("simple_menu") = [ 'mousedown_3'],
         hide_windows = [ 'mouseup_2', 'h', 'noshift_K_h' ],
         launch_editor = [ 'E', 'shift_K_e' ],
         dump_styles = [ ],

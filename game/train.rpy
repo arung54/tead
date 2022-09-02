@@ -41,7 +41,7 @@ label trainGo:
 
 
     o "Hey, wake up already."
-    $ renpy.movie_cutscene("ch2guilty.webm")
+    $ renpy.movie_cutscene("ch1guilty.webm")
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
         zoom .75

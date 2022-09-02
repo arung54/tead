@@ -71,6 +71,21 @@ image catherinesep = Live2D("Resources/catherinesep", base=.999, loop=True, seam
 define catherinesep = Character("catherinesep")
 
 ############################################################################# LIVE2D DEFINES ##################
+init python:
+    config.keymap['game_menu'].remove('mouseup_3')
+
+init python:
+    # Define function to open the menu
+    def show_simple_menu():
+        renpy.show_screen("simple_menu")
+
+    # Add key to 'open_pause_menu', this case is 'a' on keyboard
+    config.keymap["open_simple_menu"] = ["mouseup_3"]
+    config.underlay.append(renpy.Keymap(open_simple_menu=show_simple_menu))
+
+#label simple_menu:
+#    call screen simple_menu
+
 
 image splash = "tead.png"
 image darken = "welcomescreenblank.png"
@@ -628,5 +643,5 @@ label start:
 #Start
 ###########
 
-    jump startg
+    jump trainGo
 #    call screen freeTimeCounter
