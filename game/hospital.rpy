@@ -2228,7 +2228,7 @@ label chess3:
     bi "Did I push too far by asking him?"
     bi "No, I tried to stop him..."
     d "Well, the pasta will be done soon. Would you all please get ready to eat?"
-    bi "Dracula, seemingly missing the mood, prepared plates for us all."
+    bi "Dracula, failing to read the room, prepared plates for us all."
     scene bg hospcommons
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
     with dissolve
