@@ -95,15 +95,9 @@ label trainGo:
     h "Laddies, is it just me, or does it feels like the whole room is moving?"
     n "That's how trains work."
     n "Have you never been on a train before?"
-    play sfx "audio/popham.mp3" volume .5 #copy sfx
-    show popham with dissolve:
-        xcenter .487
-        ycenter .205
     h "Blimey, yer right! We {i}are{/i} movin'!"
-    hide popham with dissolve
     h "It be like a land boat!"
     hide shahar ind
-    hide popham
     with moveoutright
     n "..."
     show catherine ind with dissolve
@@ -3568,8 +3562,11 @@ label trial1r:
     o "I... can't believe it, Kaiser, did you really do this?"
     b "..."
     k "..."
-    play movie "ch1guilty.webm"
-    $ renpy.pause(3, hard=True)
+    show screen killuser
+    play sound "audio/ch1guilty.mp3" volume .75
+    $renpy.movie_cutscene("ch1guilty.webm")
+#    $ renpy.pause(3, hard=True)
+    hide screen killuser
     hide movie "ch1guilty.webm" with dissolve
     play music "audio/ominous.mp3" fadein 1.0
     k "Yes, you've figured it all out."

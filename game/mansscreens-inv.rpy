@@ -400,7 +400,7 @@ screen garageInv():
     default tt = Tooltip("")
 
     imagemap:
-        ground "bg mansiongarage.png"
+        ground "bg mansiongarage2.png"
         if mans_extra[4]:
             hotspot(836, 191, 442, 414) action [Hide("garageInv"), Jump("mansGarage")] mouse 'q' hovered tt.Action("Missing Items")
         else:
@@ -448,7 +448,7 @@ screen garageInv():
 
 
 label mansSam:
-    scene bg mansiongarage
+    scene bg mansiongarage2
     $ statusnt("Garage", "bert", ch = 2, sun = 3)
     show sam with dissolve
     b "Sam, you find anything yet?"
@@ -467,7 +467,7 @@ label mansSam:
     call screen garageInv
 
 label mansGarage:
-    scene bg mansiongarage
+    scene bg mansiongarage2
     $mans_extra[4] = True
     $ statusnt("Garage", "bert", ch = 2, sun = 3)
     show sid ind with dissolve
@@ -505,7 +505,7 @@ label mansGarage:
     call screen garageInv
 
 label mansGarageDoor:
-    scene bg mansiongarage
+    scene bg mansiongarage2
     $ statusnt("Garage", "bert", ch = 2, sun = 3)
     if mans_extra[5]:
         b "Hm... maybe the murderer managed to open the garage door, went to a store, and bought a knife!"
@@ -522,18 +522,18 @@ label mansGarageDoor:
     call screen garageInv
 
 screen hallwayInv():
-    default tt = Tooltip("")
-    if tt.value != "":
-        frame:
-            xalign 0.5
-            yalign 0.0
-            text "{i}"+tt.value+"{/i}"
-
-    add "status.png"
-    add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
-    add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+#    default tt = Tooltip("")
+#    if tt.value != "":
+#        frame:
+#            xalign 0.5
+#            yalign 0.0
+#            text "{i}"+tt.value+"{/i}"
+#
+#    add "status.png"
+#    add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+#    add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+#    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+#    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0

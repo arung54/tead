@@ -93,6 +93,7 @@ label meetBert:
     bt "Hi, my name's Bert Kim."
     n "Hey, I'm Dan."
     $menuset = set()
+    show bert ind
     menu bertQuestions:
         set menuset
         "What should I ask Bert?"
@@ -133,7 +134,7 @@ label postMeetBert:
 label meetSam:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
-    show sam with dissolve
+    show sam ind with dissolve
     s "Not really one for formalities, but I'm Sam. Sam Lee."
     n "Hey, I'm Dan."
     $menuset = set()
@@ -215,6 +216,7 @@ label meetStella:
 label postMeetStella:
     ni "Going to have to keep my eye on her."
     ni "Hopefully she doesn't know my secret..."
+    t "Don't stray too far, cutie."
     hide stella with dissolve
     $ meetings[2] = 0
     if 1 not in meetings:
@@ -255,11 +257,18 @@ label meetSid:
             jump postMeetSid
 label postMeetSid:
     ni "Seems like a pretty headstrong kid."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        xcenter .4
+        ycenter .25
+        zoom .75
     i "Hey, what about you? Tell me more about you."
     ni "I was hoping I wouldn't really have to talk about myself."
+    hide pophuh
     n "Not much to say. I'm just a regular guy."
     i "You seem kinda like a punk."
     ni "Haha... I guess he's not wrong."
+    ni "Takes one to know one."
     hide sid with dissolve
     $ meetings[3] = 0
     if 1 not in meetings:
@@ -270,8 +279,13 @@ label meetJenny:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show jenny happy with dissolve
-    j "Hey! I'm Jenny Flowers."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
+    j "Hiya! I'm Jenny Flowers."
     n "Hey, I'm Dan."
+    hide pophearts
     $menuset = set()
     menu jennyQuestions:
         set menuset
@@ -350,6 +364,13 @@ label meetCatherine:
             jump postMeetCatherine
 label postMeetCatherine:
     ni "She's kinda... weird? Her cat is cute though."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
+    c "Good to meet you Dan!"
+    hide pophearts
+    ni "Maybe a bit too bubbly, given the circumstances..."
     hide catherine with dissolve
     $ meetings[5] = 0
     if 1 not in meetings:
@@ -400,7 +421,7 @@ label meetDracula:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show drac ind with dissolve
-    d "Hi, I'm Dracula."
+    d "Hello. I'm Dracula."
     n "...Like the vampire?"
     d "Yes."
     ni "...I don't know if I believe him."
@@ -432,12 +453,15 @@ label meetDracula:
             d "Wouldn't surprise me if it were one of those."
             d "But our kidnapper did put a lot of effort into this setup."
             d "Usually human trafficking is much less... elegant."
+            ni "Bro?"
+            n "Haha... yeah."
             jump dracQuestions
 
         "Finish talking to Dracula." if len(menuset) > 0:
             jump postMeetDracula
 label postMeetDracula:
     ni "Is this guy really {i}the{/i} Dracula? Hmmm..."
+    d "It is truly a pleasure to meet you, Dan."
     hide drac with dissolve
     $ meetings[7] = 0
     if 1 not in meetings:
@@ -577,6 +601,9 @@ label postMeetShahar:
 
 label go: #Add silhouttes here?
     scene black
+    $mood = "ind"
+    $dan = True
+    $noside = True
     warden "Dan Scagnelli, wake up."
     mi "Another morning being woken up by the prison loudspeaker."
     mi "It's gotten to the point where the sound of a loud alarm clock would be music to my ears."
@@ -603,7 +630,7 @@ label go: #Add silhouttes here?
     ni "What's going on? Who could possibly be coming to bail me out?"
     ni "Did someone get the money? There's no way."
     ni "Maybe it's a mistake?"
-    show myster ind behind cellwindow
+    show shadowyfigure ind behind cellwindow
     $ showchibint("myster")
     with dissolve
     z "Dan Scagnelli, I take it?"
@@ -616,13 +643,13 @@ label go: #Add silhouttes here?
     hide cellwindow with dissolve
     ni "They unlocked my cell and threw my old clothes in."
     ni "I changed quickly."
-    show myster ind:
+    $ statusnt("Prison", "dan", ch = 0, sun = 0)
+    $ showchibint("myster")
+    show shadowyfigure ind:
         linear .3 xcenter .75
     show dan ind with moveinleft:
         xcenter .25
-    $ statusnt("Prison", "dan", ch = 0, sun = 0)
-    $ showchibint("myster")
-    with dissolve
+    #with dissolve
     z "Much better."
     ni "I could barely remember how long it had been since I last wore these..."
     #ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
@@ -632,14 +659,16 @@ label go: #Add silhouttes here?
     n "Now tell me... who are you?"
     z "Look, Dan."
     hide dan ind with moveoutleft
-    show myster ind:
-        linear .3 xcenter .5
+    $noside = False
     z "I'll be the one asking the questions for now."
     show bg debatescroll:
         zoom 1.1 ycenter .3
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with dissolve
     play music "audio/ominous.mp3" fadein 1.0
+    show shadowyfigure scary:
+        linear .3 xcenter .5
+    $mood = "shock"
     ni "Wh-what's going on?"
     z "Dan... do you feel guilty?"
     n "Guilty?"
@@ -674,10 +703,12 @@ label go: #Add silhouttes here?
 
         "Yes.":
             n "..."
+            $mood = "ind"
             n "Okay."
             ni "I reached out and grabbed the hand."
 
         "No.":
+            $mood = "ind"
             n "I... don't trust you."
             z "I'm sorry."
             z "But it is not an option."
@@ -731,12 +762,14 @@ label go: #Add silhouttes here?
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with fade
     ni "{i}.....!{/i}"
+    $mood = "shock"
     ni "Where... am I?"
     ni "How did I get here?"
     ni "Last thing I remember... I was in my cell being told I'd get out."
     ni "The warden called for me and told me I was being released..."
     ni "...why can't I remember anything past that?"
     ni "Now I'm on the floor in what looks like a little cell."
+    $mood = "ind"
     ni "Hmmm... I don't have anything with me."
     ni "Not even ID in my pockets. Someone must have taken it from me."
     ni "What's going on here?"
@@ -761,7 +794,7 @@ label go: #Add silhouttes here?
     ni "First was a guy with a backpack. He looked like... just a regular guy."
     ni "Nothing wrong with that. Definitely a much better first impression than I probably gave."
     ni "Not the most intimidating but not meek either, I could work with that."
-    show sam:
+    show sam ind:
         xcenter .5
     with dissolve
     ni "Second, there was someone who looked to be in their early 20s."
@@ -809,15 +842,16 @@ label go: #Add silhouttes here?
     show drac ind:
         xcenter .5
     with dissolve
-    ni "And then there was definitely the oldest one here, a... vampire?"
-    ni "Not that any of us knew what was going on, but he definitely gave off a vibe of being too cool to be here."
-    ni "...Seriously though, what was with the outfit? Is it Halloween today?"
+    ni "And then there was definitely the oldest one here, a... vampire looking dude?"
+    ni "Not that any of us knew what was going on, but he definitely gave off a creepy vibe."
+    ni "...Seriously though, what's with the outfit?"
+    ni "It's like a cross between a Halloween costume and high fashion."
     show lauren ind:
         xcenter .83
     with dissolve
-    ni "Moving on, another woman. She gave off \"warm\" vibes."
-    ni "She seemed like she could be a very caring person, not quite as bubbly as the other girls."
-    ni "Her cropped hoodie says \"SAB\", very very faintly."
+    ni "Moving on, another woman. She gave off much more chill vibes."
+    ni "She doesn't look as airheaded as the other girls."
+    ni "Her cropped hoodie says \"SAB\", very very faintly. I wonder what that means."
     hide kaiser
     hide drac
     hide lauren
@@ -837,11 +871,11 @@ label go: #Add silhouttes here?
     hide shahar
     with dissolve
     ni "My people watching session was quickly interrupted by someone finally finding the courage to speak up."
-    show sam with dissolve
+    show sam ind with dissolve
     #Make this section longer/make them conclude they kidnapped
     zs "I'm assuming you're all as confused as I am, so let's get straight to figuring things out."
     zs "Anyone know where we are or why we're here?"
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
@@ -850,32 +884,38 @@ label go: #Add silhouttes here?
     zc "After that, my memory is a haze. It's like I suddenly took a nap and woke up here."
     ni "A few people spoke up at once agreeing."
     hide catherine with moveoutright
-    show sam:
+    show sam ind:
         xcenter .25
         linear 0.3 xcenter .5
     zs "So no one knows how they got here, and there's probably gaps in our memory..."
     zs "Does anyone recognize anyone else in here?"
     ni "A few people were starting to raise their hands..."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
     show stella ind with moveinright:
         xcenter .75
     zt "Besides the world-famous businesswoman, who I'm sure we've all seen on TV."
-    ni "Well, not all of us..."
-    ni "But after that clarification the hands shot back down."
+    ni "A bunch of people were staring at her."
+    ni "After that clarification the hands shot back down."
     hide stella with moveoutright
-    show sam:
+    show sam ind:
         xcenter .25
         linear 0.3 xcenter .5
     zs "So no one personally knows each other, I see. Not even as friends of friends or connections of that sort."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .4
+        ycenter .25
+        zoom .75
     zs "In that case, I think it's fair to assume we've been placed here against our will then."
     zs "That is to say, we've probably been kidnapped by someone with an unknown motive."
+    hide popwow
     ni "I think we all knew this on some level, but several people's expressions sunk upon hearing that."
     ni "Mine not so much. This wasn't much more hopeless than being in a jail cell."
     ni "But at least... some of these people seemed to be ordinary people."
     ni "This was probably the first time most of them had been trapped in a situation like this."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.3 xcenter .75
     show sid ind with moveinleft:
@@ -887,7 +927,7 @@ label go: #Add silhouttes here?
     zs "Yeah, same. Someone must have taken all of our belongings."
     zi "Th-that's... yeah."
     hide sid ind with moveoutleft
-    show sam:
+    show sam ind:
         xcenter .75
         linear .3 xcenter .5
     zs "Hmmm..."
@@ -908,47 +948,55 @@ label go: #Add silhouttes here?
     ni "The only really notable feature of this building seemed to be there was no exit."
     ni "At least, none we could use."
     hide scary with dissolve
-    show sam with dissolve
+    show sam ind with dissolve
     zs "Anyone have anything to report?"
-    show sam:
+    show sam ind:
         linear .3 xcenter .75
-    show frog ind with moveinbottom:
+    show frog sad with moveinbottom:
         xcenter .25
+    play sfx "audio/poprain.mp3" volume .5
+    zf "Umm... kinda."
+    show poprain:
+        xcenter .25
+        ycenter .1
+    with dissolve
     zf "I'm scared... I miss my mom..."
     zs "Not sure that counts as finding something..."
+    hide poprain with dissolve
     ni "So it is a little boy in the frog suit."
     n "Why are you wearing that anyway, kid?"
     zf "It makes me feel safe... I'm just a little frog."
     zs "Just try to stay calm for now and the adults will figure this out."
     zf "O-okay."
     hide frog ind with moveoutbottom
-    show sam:
+    show sam ind:
         linear .3 xcenter .5
     zs "Anyway, it doesn't seem like anyone found anything useful."
     zs "In that case, does anyone have a particularly good sense of hearing?"
     zs "Perhaps if we listen closely to the walls we will get a sense of whether we're in civilization or not."
     zs "If so, then we could reason about our chances of getting help from the authorities."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
     show catherine ind with moveinright:
         xcenter .75
-    zc "Wait, I wanna get to know everyone."
-    zc "It doesn't seem like we're gonna get out of here anytime soon, it'd be good to know who we're stuck with."
+    zc "I think first we should all introduce ourselves!"
+    zc "It seems like we're stuck in here for the moment, it'd be good to know who we're stuck with."
     hide catherine with moveoutright
     show drac ind with moveinright:
         xcenter .75
-    zd "I agree with the girl. I don't even know any of your names."
+    zd "I agree. I don't know how to address any of you."
     zd "It'll be hard for us to work together without some sense of camaraderie."
     hide drac with moveoutright
-    show sam:
+    show sam ind:
         xcenter .25
         linear 0.3 xcenter .5
     zs "Alright, let's take some time to talk to each other."
-    ni "Hmm... while we're introducing ourselves, I should see if anyone knows anything."
+    ni "Hmm... I don't love making small talk, but I need to blend in at least."
+    ni "Let's meet everyone."
     hide sam with dissolve
     tut "Throughout the game, when a character is present in a room, their icon will appear in the top left."
-    tut "In some segments you gain control of the story, and can choose who to talk to."
+    tut "In some segments you will gain control of the story, and can choose who to talk to."
     tut "To talk to a character, click on their icon in the top left."
     tut "Ask everyone at least one question to progress the story. You can ask more if you're interested."
     $ meetings = [1] * 11
@@ -959,7 +1007,7 @@ label postMeetings:
     $ statusnt("???", "dan", ch = 0, sun = 0)
     ni "And I've met everyone. Looks like the group is reconvening to discuss now."
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
-    show sam with dissolve
+    with dissolve
     s "Okay, now that that's done, I think we should look around and try-"
     hide sam with moveoutright
     stop music fadeout 1.0
@@ -970,6 +1018,7 @@ label postMeetings:
     with dissolve
     stop sfx fadeout 1.0
     blank "A screen slowly lowered, and everyone's attention turned to it."
+    $mood = "shock"
     scr "Welcome."
     scr "The game you all have been brought here to play will now be explained."
     ni "...game?"
@@ -1038,22 +1087,35 @@ label postMeetings:
     ni "There's no clear path to victory."
     ni "Looking around, it was clear others were just as shocked."
     show shahar mad with dissolve
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .5
+        ycenter .25
     h "A... a game where we all have to bloody kill each other?"
+    h "Not me cup o' booze."
+    hide popmad
     hide shahar with dissolve
     show drac oh with dissolve
     d "This is... inhumane, to say the least."
-    d "Surely no one here is capable of murder."
-    ni "..."
+    ni "Is this really happening?"
     hide drac with dissolve
     scr "You may be scared to kill someone who isn't the mastermind."
     scr "You may feel sorry when someone dies."
     scr "Let me assure you of one thing."
     scr "Everyone who dies in the course of the game..."
 label testmontage:
-    scr "Their endings are deserved."
+    #scr "Their endings are deserved."
     scene black with fade
+    show text "{color=#FFFFFF}Their Endings Are Deserved.{/color}" with dissolve:
+        ycenter .5
+        xcenter .5
+    pause(1)
+    hide text with dissolve
     $_game_menu_screen = None
-    play movie "montage.mpeg"
-    $ renpy.pause(72.5, hard=True)
+    show screen killuser
+    play sound "<from 0.1 to 12.2>audio/welcome.mp3"
+    $renpy.movie_cutscene("ch1trailer.webm")
+    hide screen killuser
     $_game_menu_screen = "save_screen"
+    stop sound fadeout 1
     jump trainGo

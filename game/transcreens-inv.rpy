@@ -222,7 +222,7 @@ screen midCarInv():
             hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex' hovered tt.Action("Bar Car Windows")
         ###
         if train_extra[0]:
-            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar")
+            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar") 
             hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar")
         else:
             hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex' hovered tt.Action("Train Bar")

@@ -27,6 +27,9 @@ image sid = Live2D("Resources/sid", base=.999, loop=True, seamless=True)
 define sid = Character("sid")
 image catherine = Live2D("Resources/catherine", base=.999, loop=True, seamless=True)
 define catherine = Character("catherine")
+image shadowyfigure = Live2D("Resources/shadowyfigure", base=.999, loop=True, seamless=True)
+define shadowyfigure = Character("shadowyfigure")
+
 
 ############### RED GREEN COLORBLIND VERSIONS OF EVERYTHING!!!!!!!!!!!!!!!!!!!!
 
@@ -78,6 +81,7 @@ init python:
     # Define function to open the menu
     def show_simple_menu():
         renpy.show_screen("simple_menu")
+        renpy.restart_interaction()
 
     # Add key to 'open_pause_menu', this case is 'a' on keyboard
     config.keymap["open_simple_menu"] = ["mouseup_3"]
@@ -87,7 +91,6 @@ init python:
 #    call screen simple_menu
 
 
-image splash = "tead.png"
 image darken = "welcomescreenblank.png"
 define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
@@ -369,6 +372,14 @@ init python:
 #Show Chibi
 ###########
 
+screen killuser:
+    #key "mousedown_3" action Hide("nonexistent_screen")
+    key "mousedown_1" action Hide("nonexistent_screen")
+    #key "mouseup_3" action Hide("nonexistent_screen")
+    key "mouseup_1" action Hide("nonexistent_screen")
+
+
+
 init python:
     def statusnt(name, person, ch, sun):
         sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
@@ -643,5 +654,5 @@ label start:
 #Start
 ###########
 
-    jump trainGo
-#    call screen freeTimeCounter
+    jump trial1r
+    #    call screen freeTimeCounter

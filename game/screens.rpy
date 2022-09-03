@@ -14,47 +14,60 @@ screen simple_menu():
     zorder 100
     default x = renpy.get_mouse_pos()[0]
     default y = renpy.get_mouse_pos()[1]
-    if x+420 >=  1280:
-        $x = 880
-    if y+310 >=  720:
-        $y = 450
+    if x+360 >=  1280:
+        $x = 920
+    if y+190 >=  720:
+        $y = 530
     imagebutton:
-        idle "bigtransl.png" xcenter (x-1280) ycenter (y+10)
+        idle "bigtransl.png" xcenter (x-1275) ycenter (y+10)
         action Hide("simple_menu")
     imagebutton:
-        idle "bigtranst.png" xcenter (x+200) ycenter (y-710)          #all this shit is just to dissapear when u click somewhere else
+        idle "bigtranst.png" xcenter (x+200) ycenter (y-713)          #all this shit is just to dissapear when u click somewhere else
         action Hide("simple_menu")
     imagebutton:
-        idle "bigtransr.png" xcenter (x+1680) ycenter (y+150)
+        idle "bigtransr.png" xcenter (x+1632) ycenter (y+150)
         action Hide("simple_menu")
     imagebutton:
-        idle "bigtransb.png" xcenter (x+200) ycenter(y+265)
+        idle "bigtransb.png" xcenter (x+200) ycenter(y+907) #150+
         action Hide("simple_menu")
     add "rightclick.png" pos (x,y)
 
     frame:
         style "frame2"
-        pos (x + 20, y + 65)
+        pos (x + 20, y + 17)
         has vbox:
-            textbutton "Open Full Menu":
-                text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),ShowMenu("preferences")]
-            textbutton "History":
-                text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),ShowMenu("history")]
-            textbutton "Button 3":
-                text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+            first_spacing 10
+            textbutton "{i}Quick Menu{/i}":
+                text_color "#5D5D5D" text_hover_color "#5D5D5D"
             hbox:
-                textbutton "{i}Quicksave   {/i}":
-                    text_color "#5D5D5D" text_hover_color "#5D5D5D" action Hide("simple_menu")
+                textbutton "Settings  ":
+                    text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),ShowMenu("preferences")]
+                textbutton "  History  ":
+                    text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),ShowMenu("history")]
+                textbutton "  Hide":
+                    text_color "#929292" text_hover_color "#EDEDED" action [Hide("simple_menu"),HideInterface()]
+            hbox:
+                textbutton "{i}Save:  {/i}":
+                    text_color "#5D5D5D" text_hover_color "#5D5D5D"
                 textbutton "1":
-                    text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+                    text_color "#929292" text_hover_color "#EDEDED" action QuickSave(1)
                 textbutton "2":
-                    text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+                    text_color "#929292" text_hover_color "#EDEDED" action QuickSave(2)
                 textbutton "3":
-                    text_color "#929292" text_hover_color "#EDEDED" action Hide("simple_menu")
+                    text_color "#929292" text_hover_color "#EDEDED" action QuickSave(3)
+
+                textbutton "{i}  Load:  {/i}":
+                    text_color "#5D5D5D" text_hover_color "#5D5D5D"
+                textbutton "1":
+                    text_color "#929292" text_hover_color "#EDEDED" action QuickLoad(1)
+                textbutton "2":
+                    text_color "#929292" text_hover_color "#EDEDED" action QuickLoad(2)
+                textbutton "3":
+                    text_color "#929292" text_hover_color "#EDEDED" action QuickLoad(3)
             hbox:
                 textbutton "{i}Volume  {/i}":
-                    text_color "#5D5D5D" text_hover_color "#5D5D5D" action Hide("simple_menu")
-                bar value Preference("music volume") xmaximum 180 yoffset 7
+                    text_color "#5D5D5D" text_hover_color "#5D5D5D"
+                bar value Preference("music volume") xmaximum 200 yoffset 7
 
 screen items():
     vbox:
@@ -335,7 +348,7 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
-#            yoffset -30
+            yoffset +3000
 #            xoffset +300
 
             xalign 0.5
@@ -353,7 +366,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+default quick_menu = False
 
 style quick_button is default
 style quick_button_text is button_text
@@ -1385,7 +1398,7 @@ screen notify(message):
     style_prefix "notify"
 
     frame at notify_appear:
-        text "[message!tq]"
+        text "{i}Quicksaved in slot [message!tq]{/i}"
 
     timer 3.25 action Hide('notify')
 
