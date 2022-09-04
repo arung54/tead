@@ -125,10 +125,15 @@ label frogHang:
         f "The... frog thing?"
         n "Yeah like... you're wearing a frog costume, and you like being called Froggy."
         f "Oh..."
-        show frog ind
+        show frog happy
+        play sfx "audio/pophearts.mp3" volume .25
+        show pophearts:
+            xcenter .5
+            ycenter .5
         f "Well, I really like frogs!"
         f "My favorite is the poison dart frog!"
-        f "It's deadly but has really pretty colors."
+        hide pophearts
+        f "It's deadly, but has really pretty colors."
         f "Some other frogs evolved to have similar skin to poison dart frogs."
         f "That way, even though they're not poisonous they look like they are."
         f "So predators will leave them alone."
@@ -144,12 +149,14 @@ label frogHang:
         f "The moral of the story is to be way of seemingly small changes that turn into big ones."
         f "But really, frogs will just jump out of boiling water."
         n "Have you tested this theory on your own?"
+        show frog ind
         f "What? No!"
         f "I'd never a harm an innocent frog like that."
         n "Maybe that's a good lesson for us. Maybe we're the frogs in water."
         n "Even if things feel \"warm\" now they may become boiling later."
         f "That seems like something for adults to think about, not kids like me."
         ni "...so much for trying to relate."
+        show frog happy
         f "There's a pair of frogs that once mated for four months straight!"
         f "Though my parents don't want me to learn much about that right now."
         f "They say when I'm older I can."

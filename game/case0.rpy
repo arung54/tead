@@ -1,3 +1,5 @@
+$dan = True
+
 screen intros():
     imagemap:
         ground "bg startmeet.png"

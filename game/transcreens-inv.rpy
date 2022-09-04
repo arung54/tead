@@ -39,52 +39,52 @@ screen train_evidence():
         hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("train_evidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
-            textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
+            textbutton "Login Screen" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence1[1]:
-            textbutton "Front Car Lighting" style "button_text" action SetVariable("currEvidence", 1)
+            textbutton "Front Car Lighting" style "button_text" text_hover_color "#929292"  action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence1[2]:
-            textbutton "Front Car Accounts" style "button_text" action SetVariable("currEvidence", 2)
+            textbutton "Front Car Accounts" style "button_text" text_hover_color "#929292"  action SetVariable("currEvidence", 2)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence2[0]:
-            textbutton "Bar Car Lighting" style "button_text" action SetVariable("currEvidence", 3)
+            textbutton "Bar Car Lighting" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 3)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence2[1]:
-            textbutton "Dracula's Account" style "button_text" action SetVariable("currEvidence", 4)
+            textbutton "Dracula's Account" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 4)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence2[2]:
-            textbutton "Catherine's Account" style "button_text" action SetVariable("currEvidence", 5)
+            textbutton "Catherine's Account" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 5)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[0]:
-            textbutton "Hanging Object" style "button_text" action SetVariable("currEvidence", 6)
+            textbutton "Hanging Object" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 6)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[1]:
-            textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 7)
+            textbutton "Sid's Account" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 7)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[2]:
-            textbutton "Back Car Closet" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Back Car Closet" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 8)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[3]:
-            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 9)
+            textbutton "State of the Body" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 9)
         else:
             textbutton "-" style "button_text"
 
@@ -222,7 +222,7 @@ screen midCarInv():
             hotspot(792, 329, 135, 111) action [Hide("midCarInv"), Jump("trainwindows")] mouse 'ex' hovered tt.Action("Bar Car Windows")
         ###
         if train_extra[0]:
-            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar") 
+            hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar")
             hotspot(704, 363, 62, 86) action [Hide("midCarInv"), Jump("trainbar")] mouse 'q' hovered tt.Action("Train Bar")
         else:
             hotspot(573, 276, 133, 176) action [Hide("midCarInv"), Jump("trainbar")] mouse 'ex' hovered tt.Action("Train Bar")
@@ -426,15 +426,17 @@ label trainBert:
 
 label trainKaiser:
     scene bg ntrainfront
+    $mood = "sad"
     $ statusnt("Front Car", "bert", ch = 1, sun = 4)
-    show sam with dissolve
+    show sam ind with dissolve
     s "I can't believe someone actually did this..."
     s "One of {i}us{/i} did this."
-    show sam:
+    show sam ind:
         linear .3 xcenter .75
     show kaiser ind with moveinleft:
         xcenter .25
     k "For Dan's sake, and our own, we need to keep a calm head."
+    $mood = "ind"
     b "Agree. The most important thing is finding the culprit."
     b "So the four of you were in this car up until... It happened?"
     s "Yeah, Kaiser, Lauren, Shahar, and I were up here."
@@ -449,7 +451,7 @@ label trainKaiser:
         xcenter .25
     show shahar mad with dissolve:
         xcenter .75
-    o "This is... Crazy."
+    o "This is... crazy."
     o "I knew this was a mess of a situation from the start, but..."
     o "A murder?! Really?"
     h "Aye. A shame we've lost 'im to Davey Jones."
@@ -457,8 +459,6 @@ label trainKaiser:
     b "Did any of you notice anything that might be important?"
     o "Hmmm... Not really. Pretty much just what Jenny said."
     o "It got darker all of a sudden while we were on the computers, but since the lights were still, it was easy to keep a cool head."
-    h "Till we heard that scream..."
-    o "Yeah."
     b "Hmmm. Okay, thanks."
     hide lauren ind
     hide shahar mad
@@ -522,7 +522,9 @@ label trainstella:
     b "Stella, do you remember anything that might be useful?"
     b "Or do you have an alibi for what you were doing while it was dark?"
     t "Honestly? Not really. I was right here with you guys, freaking out."
-    bi "That is true, she was talking a bunch the whole time."
+    t "It kinda turned me on, to be honest."
+    b "..."
+    bi "It's true though, she was talking a bunch the whole time."
     t "Dracula was saying something interesting a minute ago though."
     t "He might be more useful than myself."
     hide stella ind with dissolve
@@ -567,9 +569,9 @@ label traindracula:
     show drac ind
     with fade
     b "Hmmm, you're right. It sounded like a woman's voice."
-    d "Almost in a... Familiar way."
+    d "Almost in a... familiar way."
     b "Well, it had to have been one of us screaming, so it makes sense that it'd be familiar."
-    d "Yes, but... Familiar in a {i}different{/i} way."
+    d "Yes, but... familiar in a {i}different{/i} way."
     d "Regardless. That's all the information I have."
     hide drac ind with dissolve
     b "Hmm..."
@@ -696,17 +698,19 @@ label trainsid:
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     stop music fadeout 1.0
     show sid ind with dissolve
+    $mood = "sad"
     i "Is he really... dead?"
     b "Yeah, Sid. He's dead."
     b "You should go up to the bar car, you don't have to be back here."
     i "I was just... talking to him. He let me sleep in the bed..."
+    show sid mad
     i "Why did it have to happen to {i}Dan?{/i}"
     i "Who did this?!"
     b "I'm going to figure it out. But I need your help."
     b "Sid, what were you doing before... this happened?"
     i "I just told you! I was sleeping in the bed. Dan took it last night, so tonight was my turn."
     i "Then I heard someone scream, the window break, and I woke up to... this."
-    hide sid ind with dissolve
+    hide sid with dissolve
     bi "Hmmm. It seems like Dan is the only one he really befriended here."
     bi "But it also seems kinda like he killed Dan."
     if not train_evidence3[1]:
@@ -744,8 +748,8 @@ label traincloset:
 label traincoin:
     scene bg bodytrainback
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
-    bi "The window is cracked from the murder weapon..."
-    bi "The culprit must have used a ton of extra force."
+    bi "The window is cracked, seemingly from the murder weapon..."
+    bi "The culprit must have used a ton of extra force when they stabbed Dan."
     bi "...Hm?"
     bi "There's something dangling outside the window."
     blank "Bert carefully reached through the cracks in the window and retrieved the object."

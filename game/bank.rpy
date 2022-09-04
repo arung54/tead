@@ -2186,7 +2186,7 @@ label bank7:
     i "So, did I do it?"
     i "Did I solve the mystery?"
     s "Not quite..."
-    s "Dracula already told us that he 
+    s "Dracula already told us that he"
 
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
@@ -2198,7 +2198,7 @@ label bank7:
     bi "When we're talking about the money, he gets really mad."
     bi "But when we talk about his family... he becomes really docile."
     bi "It doesn't feel like it, but we're still relative strangers."
-    bi "And
+    bi "And"
 
     bi "A small weight feels lifted off my shoulders."
     bi "And there's a new feeling... almost... like a light at the end of the tunnel?"

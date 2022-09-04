@@ -29,10 +29,16 @@ label bertAsk1:
             call screen frontCar with dissolve
 
 label bertHang:
-    if fte_bert == -2:
+    if fte_bert == -1:
         b "I don't know what it is, but I've really been craving pizza."
+        play sfx "audio/pophearts.mp3" volume .5
+        show pophearts:
+            xcenter .5
+            ycenter .7
+            zoom .75
         b "Pizza with pineapple and pepperoni. And some garlic bread on the side."
         n "Why pineapple on pizza though?"
+        hide pophearts
         b "Hmm... it adds a nice sweet yet acidic flavor that compliments the meat and cheese."
         n "Won't thinking about food in this much detail just make you hungrier?"
         b "I guess so?"
@@ -40,10 +46,10 @@ label bertHang:
         b "And thinking about what I miss from home gives me motivation to work to get out."
         n "That's... a rather optimistic take, I guess."
         b "C'mon, surely you miss your old life too!"
-        b "Tell me, what will your first meal be when you get out?"
-        n "Don't you mean {i}if{/i} I get out?"
-        show bert sad
-        b "C'mon, answer the question."
+        b "Tell me, what will your first meal be when we're past all this?"
+        n "Don't you mean {i}if{/i} we get past this?"
+        show bert ind
+        b "C'mon, answer the question..."
         n "I don't think you're gonna like my answer."
         b "Try me. Maybe you'll be surprised."
         n "Honestly, I haven't had anything but gruel in... years."
@@ -68,7 +74,7 @@ label bertHang:
         n "These days... I've wisened up a bit."
         b "Understandable. I imagine after eating gruel that much salt is shocking."
         n "..."
-        show bert sad
+        show bert ind
         b "...Sorry, probably shouldn't have brought that up again."
         n "No, it's fine."
         show bert happy
@@ -77,10 +83,10 @@ label bertHang:
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
-    if fte_bert == -1:
+    if fte_bert == -0:
         n "Hey Bert, we talked about the food we'd eat when we get out."
         n "But do you really think we're going to get out?"
-        show bert sad
+        show bert ind
         b "Geez, that's a heavy question to start a conversation with."
         n "Sorry, I'm not good at conversation."
         b "Nah, it's fine. Just a bit of a ramp up from pizza."
@@ -94,25 +100,34 @@ label bertHang:
         n "We don't know their motives for playing this game..."
         n "We don't know how we ended up here..."
         n "We don't even know where we are!"
-        show bert sad
+        show bert ind
         b "You're not wrong."
         b "But not all problems can be solved like a homework problem in a few minutes."
         b "Unless the Game Master picked 12 arbitrary people, there has to be some answer."
         b "We just have to work hard and work together to find it."
         b "The alternative is we just sit around hoping things work out."
         n "Surely it won't be that easy."
+        $mood = "mad"
         n "If I was running a game like this, I would do everything to disguise myself."
         n "The person running this game has the ability to knock us out at will."
         n "They commandeered this train all by themselves!"
         n "There's no way they would be careless enough to let us find out who they are on day one."
+        b "..."
+        play sfx "audio/popmad.mp3" volume .5
+        show popmad:
+            xcenter .5
+            ycenter .25
+        $mood = "shock"
         b "...You're being kind of a bummer right now."
         n "Huh?"
+        hide popmad
         b "Being pessimistic isn't going to get us out of here."
         b "If we just lay down and accept our fate, then our chances of getting out are smaller."
         b "It feels like you're not looking for sympathy here."
         b "So all you're doing is dragging me down with you."
+        $mood = "ind"
         n "...That's fair, I guess."
-        n "Earlier, you hesitated to say \"killed\""
+        n "Earlier, you hesitated to say \"killed\."
         b "...You're not very good at pivoting topics, are you?"
         n "Like I said, not good at conversation."
         b "Yeah, I don't like the word killed."

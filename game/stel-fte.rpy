@@ -57,8 +57,7 @@ label stelAsk4:
 label stelHang:
     #Dan FTE 1
     if fte_stel == -1:
-        hide stella happy with dissolve
-        show stella ind with dissolve
+        show stella ind
         t "Bonjour Dan."
         n "Uh, bonjar Stella."
         t "Bonj{i}ou{/i}r."
@@ -74,6 +73,7 @@ label stelHang:
         show stella happy
         t "Well, you're pretty muscular and tough, yes?"
         t "Perhaps you'd make a nice addition to the team."
+        $mood = "shock"
         n "You want {i}me{/i} to be one of your bodyguards?"
         ni "That's a pretty ironic request considering my history..."
         t "Well, of course you'd have to tryout like everyone else."
@@ -98,6 +98,7 @@ label stelHang:
         t "Wonderful, thank you Dan."
         n "I don't think I agre-"
         t "What a productive meeting."
+        $mood = "ind"
         t "Au revoir, Dan!"
         n "Au revwah, Stella?"
         t "Hm, close enough."
@@ -110,20 +111,20 @@ label stelHang:
 
 
     #Bert FTE 1
-    if fte_stel == 0:
-        h "Ahoy laddy! What can I do fer ye?"
+    #if fte_stel == 0:
+        #h "Ahoy laddy! What can I do fer ye?"
 
     #Bert FTE 2
-    if fte_stel == 1:
-        h "Mate! Back for more tales of the sea?"
+    #if fte_stel == 1:
+        #h "Mate! Back for more tales of the sea?"
 
     #Bert FTE 3
-    if fte_stel == 2:
-        h "Back again lad? You must love hearing tales of the sea."
+    #if fte_stel == 2:
+        #h "Back again lad? You must love hearing tales of the sea."
 
     #Bert post-3
-    if fte_stel >= 3:
-        bi "I enjoyed some time with sam, if only because of his pirate speak."
+    #if fte_stel >= 3:
+        #bi "I enjoyed some time with sam, if only because of his pirate speak."
 
     $fte_stel += 1
     hide stella

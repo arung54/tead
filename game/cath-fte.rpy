@@ -40,17 +40,15 @@ label cathHang:
         c "Yes please! Sign me up!"
         ses "Mow mrowww!"
         ni "... is she really this happy-go-lucky?"
-        hide catherine happy
         show catherine ind
         c "Okay okay, don't get me wrong, I'm a bit worried."
         c "But honestly, I've learned to always take things in stride."
         c "Sesame and I have been through some sticky situations before, and they always work out!"
         n "Sticky situations?"
         c "Nothing as odd as this, but..."
-        c "The life-sized foosball match definitely came close."
+        c "The life-sized foosball match definitely came close!"
         ses "*Sesame seemed to nod in agreement.*"
         n "Wait, what?"
-        hide catherine ind
         show catherine happy
         c "Long story!"
         c "Maybe sometime I'll go through the whole thing with you."

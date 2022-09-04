@@ -11,51 +11,20 @@ label trainGo:
     ni "..."
     z "Hey..." #Arunj: Change speaker to ???
     ni "Huh?"
+    $mood = "shock"
     z "HEY!!!"
     $ scenent("bg trainmid", "???", "dan", ch = 1, sun = 3)
     show lauren ind
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
-
-    #show Sidv m01 with moveinleft:
-    #    xcenter .25
-    #show drac ind with moveinleft:
-    #    xcenter .25
-    #show Dracv m02 with moveinleft:
-    #    xcenter .75
-
-    #d "Sid... I will drink your blood."
-    #show Dracv m01
-    #i "Bruh..........."
-    #show Dracv m03
-
-
-
-
-
-
-
-
-
-
-
-
-    o "Hey, wake up already."
-    $ renpy.movie_cutscene("ch1guilty.webm")
-    play sfx "audio/pophuh.mp3" volume .5
-    show pophuh:
-        zoom .75
-        xcenter .6
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .4
         ycenter .25
+        zoom .75
+    o "Hey, wake up already."
     o "How'd you manage to stay knocked out even longer than the kid?"
-#    hide popwow
-#    show pophearts with dissolve:
-#        xcenter .46
-#        ycenter .5
-#    n "..."
-#    show poptear:
-#        xcenter .525
-#        ycenter .3
+    hide popwow
     n "Where are we now?"
     show lauren ind:
         xcenter .5
@@ -71,7 +40,7 @@ label trainGo:
     $mood = "mad"
     s "I mean, take a look for yourself, genius."
     s "We're going somewhere..."
-    $mood = "sad"
+    $mood = "ind"
     s "...Or being taken somewhere."
     hide sam with dissolve
     blank "Dan walked over to the window."
@@ -116,23 +85,30 @@ label trainGo:
     hide catherine ind
     hide drac ind
     with moveoutright
-    show sid ind with dissolve
+    show sid ind with moveinleft
     i "How did we even get here?"
     i "A minute ago we were trapped in that weird place."
     n "That's a good question..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .55
+        ycenter .275
+        zoom .75
     i "Next thing I know, I'm waking up to some pirate poking me on a train."
-    hide sid ind with dissolve
-    show jenny ind with dissolve
+    i "Seriously, what's with that guy..."
+    hide poptear
+    hide sid with moveoutright
+    show jenny ind with moveinleft
     j "Maybe we were on the train the whole time?"
     j "And just got moved to a different train car?"
     show jenny ind:
         linear .3 xcenter .75
-    show bert ind with dissolve: ###########################
+    show bert ind with moveinleft: ###########################
         xcenter .25
     bt "I don't think so... Those rooms were pretty wide."
     bt "I don't think they could have fit in any reasonable train car."
     hide jenny ind with moveoutright
-    show bert sad:
+    show bert ind:
         linear .3 xcenter .5
     bt "Dan, what do you think?"
     show scary with dissolve:
@@ -144,12 +120,18 @@ label trainGo:
         "Maybe we got on board ourselves.":
             n "Maybe we got on board ourselves."
             hide scary with dissolve
-            hide bert sad with moveoutright
-            show drac ind with dissolve
+            hide bert with moveoutright
+            show drac ind with moveinleft
+            play sfx "audio/popwow.mp3" volume .5
+            show popwow:
+                xcenter .4
+                ycenter .25
+                zoom .75
             d "I refuse to accept that."
+            hide popwow
             show drac ind:
                 linear .3 xcenter .75
-            show stella ind with dissolve:
+            show stella ind with moveinleft:
                 xcenter .25
             t "The vampire's right, there's no way we got onboard ourselves."
             t "We'd obviously remember that."
@@ -159,13 +141,19 @@ label trainGo:
         "We must have been moved here.":
             n "We must have been moved here."
             hide scary with dissolve
-            hide bert sad with moveoutright
-            show drac ind with dissolve
+            hide bert with moveoutright
+            show drac ind with moveinleft
+            play sfx "audio/popwow.mp3" volume .5
+            show popwow:
+                xcenter .4
+                ycenter .25
+                zoom .75
             d "Yes, the culprit must have knocked us out and moved us here."
+            hide popwow
             d "Otherwise we'd remember it."
             show drac ind:
                 linear .3 xcenter .75
-            show stella ind with dissolve:
+            show stella ind with moveinleft:
                 xcenter .25
             t "I don't remember boarding myself, that's for sure."
             t "How did they manage to knock all of us out though?"
@@ -174,7 +162,7 @@ label trainGo:
     hide stella ind
     hide drac ind
     with moveoutright
-    show kaiser ind with dissolve
+    show kaiser ind with moveinleft
     k "It seems obvious enough, yes?"
     n "You know how we got knocked out?"
     n "What do you mean?"
@@ -196,20 +184,24 @@ label trainGo:
     o "As terrifying as that is, it seems like the only explanation..."
     $mood = "shock"
     n "You really think the chips knocked us out somehow?"
-    k "Yes, it seems most likely."
+    n "When that screen told us about a chip in our brains, I didn't really believe it..."
+    k "It seems now we have proof."
+    o "Yeah, for the time being, it seems like we should take what screen told us as fact."
     hide kaiser ind
     hide lauren ind
-    with dissolve
-    show sam ind with dissolve
-    s "I can't think of any other solutions..." #Arunj: Maybe use another word for explanation here to avoid redundancy
-    n "Does that mean... we actually have to play this game?"
-    ni "This isn't all a bad dream?"
-    s "It seems like it."
+    with moveoutright
+    show sam ind with moveinleft
+    s "Hmm... damn."
+    s "Lot of illegal shit going on here." #Arunj: Maybe use another word for explanation here to avoid redundancy
+    n "If the screen wasn't lying about the brain chips, does that mean..."
+    n "Does that mean it wasn't lying about having to kill each other?"
+    s "The screen called this a {i}game{/i}."
+    s "How disgusting."
     $mood = "ind"
-    s "Either way, I don't think it's worth spending any more time on."
+    s "Either way, I don't think that's worth spending any more time on."
     s "We're finally all awake, we should try to figure out what's going on."
-    s "Most of us can't really do anything about the game until someone dies."
-    s "Maybe if we find a way out of here, we can escape this game and no one will have to die."
+    s "We can't wait around in this {i}game{/i} and twiddle our thumbs until someone dies."
+    s "Maybe if we find a way out of here, we can escape and no one will have to die."
     s "So that should be our goal. And hopefully the murderer will give us some time to do that."
     ni "We know the Game Master is one of us... would they really allow that?"
     ni "Well, perhaps they have their reasons for giving us a way out."
@@ -239,21 +231,22 @@ label trainGo:
     show bert happy:
         xcenter .25
         linear 0.15 xcenter .15
-    show frog ind with moveinbottom
+    show frog sad with moveinbottom
     f "Wh-what should I do?"
+    show bert ind
     f "I'm just a frog..."
     s "I keep forgetting there's a kid here too..."
     bt "It's probably best if Freddy doesn't get involved."
     hide sam with moveoutright
     hide bert happy with moveoutleft
-    show frog ind:
+    show frog sad:
         xcenter .5
         linear .3 xcenter .75
     show lauren ind with moveinleft:
         xcenter .25
     o "We can sit together, buddy. We'll hang out here."
     f "{i}*sniffle*{/i} Okay miss."
-    hide frog ind with moveoutright
+    hide frog sad with moveoutright
     show lauren ind:
         linear .3 xcenter .5
     o "I can watch him, I used to babysit in high school."
@@ -270,9 +263,9 @@ label trainGo:
     t "Time to search - The whiskey could be hiding anywhere!"
     t "I'll check behind the bar."
     hide stella ind with moveoutright
-    show bert sad with dissolve
+    show bert ind with dissolve
     bt "..."
-    hide bert sad
+    hide bert ind
     play sfx "audio/sfxmoodup.mp3"
     show bert happy
     bt "Her motives may be skewed, but it's still helpful."
@@ -446,19 +439,26 @@ label midcar2:
     n "Not really. The next car back is the caboose."
     play sfx "audio/poptear.mp3" volume .5
     show poptear:
-        xcenter .525
+        xcenter .55
         ycenter .275
         zoom .75
-    o "So you didn't run into anyone? Damn."
+    o "So you didn't run into anyone?"
+    o "The situation just keeps getting more grim."
+    n "Yeah..."
     n "We should probably wait for everyone else to come back before going into too much detail."
     hide poptear
     hide lauren ind  with dissolve
     show stella drunk  with dissolve
     $mood = "shock"
+    play sfx "audio/pophearts.mp3" volume .25
+    show pophearts:
+        xcenter .5
+        ycenter .5
     t "Hey cutie, is there anything harder back there? Maybe some rum?"
     show stella drunk:
         xcenter .5
         linear 0.3 xcenter .75
+    hide pophearts
     show bert sad with dissolve:
         xcenter .25
     bt "Hey, woah!"
@@ -717,7 +717,7 @@ label frontcar2:
     s "We can't just sit here and wait to find out where we're going."
     show lauren ind with moveinright:
         xcenter .75
-    o "I agree. It's getting late, but we should spend a little more time exploring before calling it a day."
+    o "I agree. We should spend a little more time exploring before making any plans."
     o "Some of us haven't even seen the back car yet, so we should start there."
     s "Yeah, let's make sure we're staying in groups."
     s "Especially the kids, like Freddy and Sid."
@@ -853,6 +853,7 @@ label frontcar3:
     n "......."
     hide welcomescreenblank with dissolve
     bt "Either way, we can't log in, so it doesn't matter much."
+    $mood = "ind"
     bt "We should head back to the bar car and meet up with the others."
     d "Agreed."
     hide bert sad
@@ -922,11 +923,16 @@ label midcar3:
     j "I feel a little bad for Catherine..."
     j "She's a vegetarian, so she's only been eating the nuts and bread."
     o "Plus, there's no cat food. Sesame's been eating the turkey from the sandwiches."
-    hide lauren ind with dissolve
-    show catherine happy with dissolve:
+    hide lauren ind with moveoutleft
+    show catherine happy with moveinleft:
         xcenter .25
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .25
+        ycenter .5
     c "We're the perfect match! He eats the meat, I eat the rest!"
     ses "Mrow!"
+    hide pophearts
     c "Don't worry about us!"
     c "It's still nice to relax and eat for a bit."
     ses "mewmewmewmew!"
@@ -966,7 +972,7 @@ label midcar3:
     k "We should figure out the rest of the sleeping arrangements."
     n "The train is pretty cramped, there definitely aren't nine more chairs or beds for us."
     hide jenny ind with moveoutleft
-    show bert sad with moveinleft:
+    show bert ind with moveinleft:
         xcenter .25
     bt "There are five more chairs in this car, and then a bed and a bench in the caboose."
     bt "So that leaves... two people's beds unaccounted for."
@@ -980,7 +986,6 @@ label midcar3:
     n "..."
     bt "..."
     d "..."
-    show bert ind
     bt "Okay, so only one more bed to account for."
     hide drac ind with moveoutright
     $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "kaiser")
@@ -1125,6 +1130,7 @@ label midcar3:
     i "If someone logs in, they can probably reset or change the counter using \"user_counter.exe\"."
     i "So that might not be reliable..."
     n "Got it."
+    $mood = "happy"
     n "Either way, Sid, this is a huge find!"
     hide sid ind
     show sid happy
@@ -1134,6 +1140,7 @@ label midcar3:
     hide sid happy
     show sid ind
     i "Yeah... I don't trust some of these people."
+    $mood = "ind"
     i "The pirate guy and the vampire guy scare me, and that French lady is such a drunk hag."
     i "I think the pirate and vampire are hiding something."
     i "And the rich lady would have tons of money, enough to hire people to kidnap all of us."
@@ -1191,10 +1198,12 @@ label day2:
     $noside = False
     show tracks with dissolve
     ni "Damn... There really isn't anything out there..."
+    $mood = "sad"
     ni "It'd be a lot easier to be hopeful if there were {i}any{/i} signs of life."
     ni "But it's hard to be hopeful in the middle of nowhere..."
     ni "If nothing changes, maybe I need to take this into my own hands..."
     hide tracks with dissolve
+    $mood = "ind"
     ni "But for now, I should go meet the others."
 label testft:
     scene bg trainmid
@@ -1210,7 +1219,7 @@ label testft:
         ycenter .5
     c "Gooooooood morning Dan! It's another gorgeous day on the Nowhere Express!"
     hide pophearts
-    show frog ind with moveinleft:
+    show frog happy with moveinleft:
         xcenter .25
     play sfx "audio/pophearts.mp3" volume .5
     show pophearts:
@@ -1236,6 +1245,7 @@ label testft:
     hide catherine nocat happy
     show catherine nocat:
         xcenter .75
+    $mood = "shock"
     c "Dan! You took the cot for yourself and made Sid sleep on the bench?"
     n "Huh? No, he insisted."
     i "I did I did!"
@@ -1246,6 +1256,7 @@ label testft:
     show sam ind with dissolve:
         xcenter .5
         linear .3 xcenter .75
+    $mood = "ind"
     s "I wouldn't worry about her being upset with you."
     s "She was up late with Freddy making sure he wasn't freaking out too much."
     show bert happy with dissolve:
@@ -1285,6 +1296,20 @@ label testft:
     tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
     tut "For the first free time segment, move to the front car and talk to Bert."
     tut "For this segment only, the skip function will be disabled."
+    python:
+        ftecounter = 0
+        fte_bert = -1
+        fte_sam = -1
+        fte_stel = -1
+        fte_drac = -1
+        fte_frog = -1
+        fte_jenn = -1
+        fte_laur = -1
+        fte_sid = -1
+        fte_shah = -1
+        fte_cath = -1
+        fte_kais = -1
+        pers = ""
     call screen midCar with dissolve
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
@@ -1332,7 +1357,7 @@ label midcar4:
     $ statusnt("Bar Car", "dan", ch = 1, sun = 2)
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
-    show bert sad with dissolve:
+    show bert ind with dissolve:
         xcenter .5
         linear .3 xcenter .75
     $mood = "ind"
@@ -1391,7 +1416,7 @@ label midcar4:
     o "..."
     play sfx "audio/poptear.mp3" volume .5
     show poptear:
-        xcenter .265
+        xcenter .28
         ycenter .25
         zoom .75
     o "Fair enough."
@@ -1478,12 +1503,9 @@ label midcar4:
     c "With that said, I don't feel particularly notable..."
     c "I'm just a worker at a shelter... I like rock climbing... Long walks on the beach..."
     hide catherine ind with moveoutright
-    show bert happy with moveinright:
+    show bert ind with moveinright:
         xcenter .75
     bt "As interesting as that stuff is, maybe we should be focused more on... More extreme things."
-    hide bert happy
-    show bert sad:
-        xcenter .75
     bt "Reasons why someone might want to kidnap us, for example."
     ni "..."
 
@@ -1516,7 +1538,7 @@ label midcar4:
     show stella ind:
         xcenter .25
     t "Of course, I am not the mole. It'd be a waste of my time."
-    t "I have nothing to gain from... This."
+    t "I have nothing to gain from... this."
     t "I'm only telling you all this so that you're not surprised when my past inevitably comes up."
     t "And sadly, I have no insight on who it might be."
     t "I'm rich enough to put this together, but there are... easier ways to entertain oneself with money."
@@ -1552,7 +1574,7 @@ label midcar4:
     #play sfx "<from 0 to 3>audio/jaws.mp3" volume .1
     show scary:
         linear .3 alpha .5
-    ni "I... Don't think they'd understand."
+    ni "I... don't think they'd understand."
     show scary:
         linear .3 alpha .8
     ni "This might be my only opportunity though."
@@ -1564,14 +1586,14 @@ label midcar4:
     $mood = "ind"
     bt "It's not exactly the same as Stella's or Sam's, but..."
     hide sam with moveoutleft
-    show bert sad:
+    show bert ind:
         linear .3 xcenter .5
     bt "I guess I can't think of anything else."
     ni "This kid just bailed me out of speaking up..."
     bt "I was only twenty, too. It feels like so long ago but I think about it every day."
     bt "I was driving after tutoring, same as always."
     bt "It was spring..."
-    bt "And this lady... She just... Walked out..."
+    bt "And this lady... she just... walked out..."
     bt "Into the road..."
     bt "......."
     ni "He's all choked up."
@@ -1656,9 +1678,14 @@ label midcar5:
         xcenter .75
     with moveinright
     h "I feel a bit guilty, lads."
-
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .8
+        ycenter .275
+        zoom .75
     h "I want to 'figure out the passwords', as ye say, but I ain't much help when it comes to techlonogy..."
     k "There's no harm in trying."
+    hide poptear
     k "Random words and phrases are as good a guess as any."
     k "We might as well head up to the front as well."
     hide kaiser ind
@@ -1675,7 +1702,7 @@ label midcar5:
     show bg notrainmid
 #    play sfx "audio/popwow.mp3" volume .5
     show popwow:
-        xcenter .4
+        xcenter .45
         ycenter .25
         zoom .75
     n "!"
@@ -1760,12 +1787,8 @@ label midcar6:
     bi "Nobody knows what's going on, and to top it all off,"
     bi "we're out of food and water... but, still..."
     bi "I can't help but think..."
-    show bertface2 with dissolve:
-        xcenter .5
-        ycenter .5
     $mood = "happy"
     bi "We can get out of here. Together."
-    hide bertface2
     blank "pssst!!!"
     play music "audio/invest1.wav"
     scene bg notrainmid
@@ -1804,7 +1827,7 @@ label midcar6:
     hide drac ind
     hide stella ind
     with dissolve
-    show catherine ind with dissolve
+    show catherine ind with moveinleft
     $mood = "happy"
     c "Okay, Freddy is asleep. I'm going to go say goodnight to Dan and Sid in the back car and then hit the hay."
     b "Tell them I say goodnight too!"
@@ -1817,7 +1840,8 @@ label midcar6:
         xcenter .55
     show frog ind:
         xcenter .8
-    with dissolve
+    with moveinright
+    j "It is getting pretty late..."
     j "Hey Bert, do you thin-{p=0.5}{nw}"
     stop music
     show scary:
@@ -1876,7 +1900,13 @@ label midcar6:
     $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     with dissolve
     show lauren ind with moveinleft
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .45
+        ycenter .25
+        zoom .75
     o "What's going on?"
+    hide popwow
     show lauren ind:
         linear .3 xcenter .75
     show sam ind with moveinleft:
@@ -1930,6 +1960,7 @@ label midcar6:
     blank "Catherine and Freddy joined them on the way to the caboose."
     blank "But when they got there..."
     $noside = False
+    $mood = "shock"
     play music "audio/sadsong.mp3" fadein 2.0
     scene bg bodytrainback
     $ showchibint("catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
@@ -1942,14 +1973,14 @@ label midcar6:
     i "I... I..."
     b "Sid..."
     b "What happened..."
-    show sam ind with moveinright:
+    show sam angry with moveinright:
         xcenter .75
     s "What the hell..."
     s "Is he... dead?"
     s "Sid, you... did you kill Dan?"
     i "No! I was asleep, I... I didn't do anything..."
     s "Everyone, back away from Sid!"
-    show sam ind:
+    show sam angry:
         linear .2 xcenter .8
     s "I can't believe it..."
     play sfx "audio/popwow.mp3" volume .5
@@ -2038,9 +2069,9 @@ label midcar6:
     b "Jenny and I can talk to Sid about what happened and we'll go from there."
     bi "I probably shouldn't be alone with him."
     bi "And hopefully Jenny's presence will calm him down a bit."
-    show sam ind with moveinleft
+    show sam angry with moveinleft
     s "So who made you the leader here?"
-    show sam ind:
+    show sam angry:
         linear .3 xcenter .75
     show kaiser ind with moveinleft:
         xcenter .25
@@ -2072,6 +2103,7 @@ label midcar6:
         xcenter .25
     show jenny ind with dissolve:
         xcenter .75
+    $mood = "sad"
     j "Alright, everyone else is gone."
     j "Let's just... have a chat."
     i "We were getting so close, too..."
@@ -2146,6 +2178,7 @@ label preinvest:
     bi "Jenny is a big help, but she's also a suspect."
     bi "I can't forget that."
     bi "For now though, it's time to gather evidence."
+    $mood = "ind"
     pause 1
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
     pause .5
@@ -2167,7 +2200,7 @@ label preinvest:
 
 label trial1a:
     $dan = False
-    $mood = "ind"
+    $mood = "sad"
     play music "audio/coming_together.mp3"
     scene black with fade
     blank "Everyone was brought to the bar car."
@@ -2235,8 +2268,14 @@ label trial1a:
     b "I don't think they had even moved a foot once I could see them again."
     j "I'd like to say that we can vouch for where Bert was too, but..."
     b "No, you can't. For all you know I could have been anywhere, and just went back to the same spot."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .3
+        ycenter .275
+        zoom .75
     j "...Yeah."
     b "So Jenny and Freddy should be cleared with alibis."
+    hide poptear
     b "As well as Lauren, Kaiser, Sam, and Shahar."
     hide frog ind
     hide jenny ind
@@ -2307,8 +2346,13 @@ label trial1b:
     bi "Best to keep that in mind."
     hide scary with dissolve
     i "I-I... agree. I guess."
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .75
+        ycenter .1
     i "I just don't want to be the only suspect..."
     i "I r-really didn't do it."
+    hide poprain with dissolve
     hide sid ind with moveoutright
     hide stella ind with moveoutleft
     with dissolve
@@ -2350,7 +2394,7 @@ label trial1b:
     call screen pickSpot1 with dissolve
 
 label trial1c:
-    play music "audio/coming_together.mp3"
+    play music "audio/coming_together.mp3" fadein 2.0
     scene bg notrainmid
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Bar Car", "bert", ch=1, sun=4)
@@ -2370,13 +2414,22 @@ label trial1c:
     j "He mentioned that to me too."
     b "But did anyone other than Dracula actually check the closet?"
     j "Hmm, I didn't."
-    s "Hey, what the hell? Was he lying about the closet being locked?"
+    j "The bed was pushed up against it anyway, it would be annoying move the bed and fully open the door."
+    j "I took his word for it being locked."
+    s "Hey, what the hell? Was Dracula lying about the closet being locked?"
     hide jenny ind with moveoutleft
     show drac ind with moveinleft:
         xcenter .25
     d "This is an unfortunate situation..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .3
+        ycenter .275
+        zoom .75
     d "I was hoping this wouldn't wind up being relevant..."
     s "What are you talking about?"
+    hide poptear
+    $mood = "shock"
     d "Truth be told, I was the first one to wake up on the train."
     d "I noticed everyone else was still unconscious, so I did a little exploring."
     d "That's when I noticed the, as the girl says, 'stabby stick' in the closet."
@@ -2399,6 +2452,7 @@ label trial1c:
         xcenter .25
     d "Hmph. As I thought."
     b "So unless Dan himself found the murder weapon, it seems like the murderer themself was the only one who could have."
+    $mood = "ind"
     b "...This is progress...!"
     b "Now we just need to figure out who went into the closet!"
     b "..."
@@ -2505,13 +2559,18 @@ label trial1d:
     s "What are you on about? Who cares if someone screamed?"
     s "Dan got stabbed through the chest, of course people are going to be screaming."
     t "Hmmm, with all due respect - which isn't much - you don't know what you're talking about."
-    show sam ind:
-        linear .05 xcenter .7
+    show sam angry:
+        xcenter .75
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .25
     s "What did you just say to me?"
     hide stella ind
     show stella happy:
         xcenter .25
     t "Oh? Did that get you all riled up? Haha!"
+    hide popmad
     show scary with dissolve:
         alpha .5
     bi "I need to step in... I know the answer!"
@@ -2546,6 +2605,7 @@ label trial1e:
         xcenter .25
     t "Ooooooo, can I be the one to explain it? I think I figured it out."
     d "If you insist."
+    $mood = "shock"
     t "It wasn't really someone screaming, it was a recording."
     b "What? What do you mean?"
     d "Yes, this is the same conclusion I reached."
@@ -2558,14 +2618,21 @@ label trial1e:
     d "I agree, which is why I did not speak up sooner."
     d "Truth be told, it took me a while to piece it together."
     d "The nail in the coffin, though, was that it wasn't just a random recording."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .7
+        ycenter .25
+        zoom .75
     d "The scream was Jenny's."
     o "Huh?"
+    hide popwow
     hide lauren ind with moveoutleft
     show jenny ind with moveinleft:
         xcenter .25
     j "Yeah, huh? What do you mean?"
     d "Think back to yesterday, do you remember... yelling?"
     j "Ummm... I don't think so? Are you sure I did?"
+    $mood = "ind"
     d "I suppose it'll be hard to convince you of something like that."
     show scary with dissolve:
         alpha .75
@@ -2635,7 +2702,7 @@ label trial1f:
     bi "How foolish of us!"
     bi "It seems obvious in hindsight... something's very different about now and the time of the murder."
     bi "And that is..."
-    hide scary with dissolve
+    #hide scary with dissolve
     call screen trainEvidenceTrial(-1, 3, "trial1g") with dissolve
 label trial1g:
     scene bg notrainmid
@@ -2650,6 +2717,11 @@ label trial1g:
     b "That's it."
     b "It's the middle of the night now, and all the lights in the car are off."
     b "The only thing letting us see is the residual moonlight coming through the windows."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .7
+        xcenter .85
+        ycenter .25
     i "I... I don't get it."
     i "Why does that matter?"
     d "Think back."
@@ -2759,8 +2831,14 @@ label trial1h:
         xcenter .75
         linear 0.15 xcenter .85
     show frog ind with moveinbottom
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        #zoom .75
+        xcenter .4
+        ycenter .45
     f "This doesn't make any sense!"
     b "What's wrong Freddy?"
+    hide popwow
     f "Well..."
     f "I was telling the scary men about tunnels, right."
     f "But then I realized!"

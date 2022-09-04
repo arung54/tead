@@ -638,10 +638,10 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [True, True, True]
-        train_evidence2 = [True, True, True]                #made all of these true from false LOL
-        train_evidence3 = [True, True, True, True]
-        train_extra = [True, True, True, True, True, True]
+        train_evidence1 = [False, False, False]
+        train_evidence2 = [False, False, False]                #made all of these true from false LOL
+        train_evidence3 = [False, False, False, False]
+        train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
         mans_extra = [False] * 11
@@ -653,6 +653,6 @@ label start:
 ###########
 #Start
 ###########
-
-    jump trial1r
+    $dan = True
+    jump midcar6
     #    call screen freeTimeCounter

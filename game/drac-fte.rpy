@@ -109,6 +109,7 @@ label dracHang:
         n "Our lives are on the line."
         n "Putting on this whole charade at a time like this?"
         n "It seems immature for someone of your... age."
+        show drac ind
         d "It seems more immature of you to assume that this is a charade."
         d "And if it were a charade, to assume it served no purpose."
         n "No, I'm pretty sure in most parts of the world pretending to be a vampire is more immature."
@@ -129,20 +130,20 @@ label dracHang:
         ni "Or maybe just not talk to each other."
 
     #Bert FTE 1
-    if fte_drac == 0:
-        h "Ahoy laddy! What can I do fer ye?"
+    #if fte_drac == 0:
+    #    h "Ahoy laddy! What can I do fer ye?"
 
     #Bert FTE 2
-    if fte_drac == 1:
-        h "Mate! Back for more tales of the sea?"
+    #if fte_drac == 1:
+    #    h "Mate! Back for more tales of the sea?"
 
     #Bert FTE 3
-    if fte_drac == 2:
-        h "Back again lad? You must love hearing tales of the sea."
+    #if fte_drac == 2:
+    #    h "Back again lad? You must love hearing tales of the sea."
 
     #Bert post-3
-    if fte_drac >= 3:
-        bi "I enjoyed some time with drac, if only because of his pirate speak."
+    #if fte_drac >= 3:
+    #    bi "I enjoyed some time with drac, if only because of his pirate speak."
 
     $fte_drac += 1
     hide drac with dissolve
