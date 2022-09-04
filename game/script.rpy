@@ -654,5 +654,5 @@ label start:
 #Start
 ###########
     $dan = True
-    jump midcar6
+    jump trial1n
     #    call screen freeTimeCounter
