@@ -2007,8 +2007,8 @@ label bank7:
     b "And Dracula's theory is Mr. Sydell is running the game."
     b "But if he disappeared from your life, and he was spiralling mentally when he did..."
     b "Is he even in shape to run this game?"
-    b "Is he even alive still?"
-    b "And if not, who is running this game?"
+    b "Or... is that why he's crazy enough to run this game?"
+    b "And if not him, who is running this game?"
     b "And what's their connection to him?"
     s "So... if you have all these new questions, this conversation wasn't helpful then?"
     b "No, it was good."
@@ -2186,19 +2186,123 @@ label bank7:
     i "So, did I do it?"
     i "Did I solve the mystery?"
     s "Not quite..."
-    s "Dracula already told us that he 
-
+    s "The lawsuit being three years ago means it's probably at least part of why Sydell disappeared."
+    s "But Dracula already told us that he thought the lawsuit was the reason for this game."
+    s "So we already knew it was deeply important..."
+    b "I wonder if he disappeared to start planning this game then..."
+    b "Perhaps he found out Shahar, Dracula, Stella, and Sid were partially responsible."
+    b "Then brought in people who tangentially hurt him, like Sam and Catherine, to round it out."
+    s "But why would he need to disappear to do that?"
+    b "Maybe... he wanted to distance himself from everyone before trapping them?"
+    i "I mean, isn't there an easier explanation for why he disappeared?"
+    i "What if he died?"
+    b "Died?"
+    s "...Huh, I guess that would make sense, yeah."
+    s "I always wondered if he moved on to a new dealer or he just quit cold turkey."
+    s "But if he died that explains why he, well, no longer needed my services."
+    b "Who's running the game if he died, then?"
+    i "I dunno, but if I figured something out then you owe me."
+    i "My consulting fee is $100,000!"
+    b "That's more than I have in my bank account..."
+    s "There's no way you're getting $100,000 from me."
+    i "Okay, okay, maybe I was highballing you a bit."
+    i "We can call it a cool $50,000 instead."
+    s "For $50,000 you have to at least name who the Game Master is."
+    i "Uh... you?"
+    s "Bzzt. Nope, I'll give you maybe $5 for your help."
+    i "Meh, I was expecting nothing so I'll take it!"
+    s "Anyway, enough distraction."
+    b "Yeah, we don't know who's running the game..."
+    b "But if it isn't Sydell, all the connections can't be a lawsuit, right?"
+    b "It has to be someone closely related to him..."
+    i "Maybe someone getting revenge for him after his death."
+    s "Regardless, this is all just speculation..."
+    s "He could very well be alive and just sitting in a room somewhere laughing at us..."
+    b "Well if that's the case we're screwed regardless."
+    b "Unless there's an alternate win condition we don't know of."
+    s "Seems unlikely."
+    b "Right. So I'd rather assume someone here is indeed Game Master and we have a shot."
+    bi "I need to think... I feel like there's some argument for who it is that's missing..."
+    bi "If I could just sit down somewhere without distractions..."
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    $ showchibint("sid", "sam", "freddy", "jenny")
+    with dissolve
+    hide sid with moveoutleft
+    hide sam with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    show frog ind with moveinleft:
+        xcenter .25
+    j "Hey guys."
+    j "It's getting late... Freddy should sleep soon."
+    j "I was kind of hoping I could take a shower before bed, could one of you take care of him?"
+    f "*Yawn* it's Freddy bedtime... Fredtime..."
+    ses "Mew!"
+    show sesame with moveinbottom
+    j "Oh, seems like Sesame's volunteering!"
+    f "Kitty..."
+    j "Yeah, you can tell he's tired if he doesn't even want to play with Sesame."
+    ses "Mew..."
+    j "Don't worry Sesame, he'll play with you tomorrow!"
+    j "Thanks guys!"
+    hide jenny with moveoutright
+    $ showchibint("sid", "sam", "freddy")
+    with dissolve
+    f "*Yawn* so... tired..."
+    hide frog with moveoutbottom
+    blank "*thunk*"
+    b "He's... he's so tired he just fell asleep on the floor."
+    show sid with moveinleft:
+        xcenter .25
+    show sam with moveinright:
+        xcenter .75
+    i "Um... I was gonna go sleep on the couch in the hallway tonight so..."
+    i "Not it!"
+    hide sid with moveoutright
+    $ showchibint("sam", "freddy")
+    with dissolve
+    s "I knew we could trust him to handle this in a mature manner..."
+    s "I'll help carry Freddy to the lobby, but I don't think I'll stay with you."
+    b "Got plans?"
+    s "Nothing secretive, don't worry. Just checking if there's anything palatable in the kitchen before bed."
+    b "Well, not like I'd be able to stop you if were doing anything..."
+    s "True. I could probably stop you though."
+    b "Huh?"
+    s "C'mon, let's get Freddy onto a couch."
+    bi "Rude."
+    scene black with dissolve
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ showchibint("freddy", "sam")
+    with dissolve
+    show sam with dissolve
+    s "Okay, Freddy is in bed, you're okay watching over him?"
+    b "Yeah, I'm fine. Maybe it'll be good to have some thinking time after today..."
+    s "Got it. Good luck."
+    hide sam with dissolve
     $ showchibint("freddy")
     with dissolve
-    bi "After the adrenaline of trying to figure things had worn down..."
-    bi "I returned to the lobby with Freddy to get ready for bed."
+    bi "After the adrenaline of trying to figure things out..."
+    bi "I sat down, hoping I would have some time to think the game through."
+    bi "But instead I found myself thinking..."
     bi "Sid really cares about his family..."
     bi "When we're talking about the money, he gets really mad."
     bi "But when we talk about his family... he becomes really docile."
-    bi "It doesn't feel like it, but we're still relative strangers."
-    bi "And
+    bi "I haven't thought about mine in a while."
+    bi "What day was I even kidnapped on... a Thursday?"
+    bi "The last time I talked to my parents was the Friday before that."
+    bi "Who knows if they're okay."
+    bi "...That's funny, that I'm worrying about them instead of myself."
+    ses "Mew?"
+    show sesame with dissolve
+    b "Aww, Sesame. How'd you know I needed a cat to sit in my lap right now?"
+    ses "Mew!"
+    ses "Prrrr."
+    bi "I'm jealous of Sesame."
+    bi "He seems to have barely registered that Catherine is gone..."
+    bi "Not to mention his family, who are probably long gone."
+    bi "Is Catherine even his original owner? Who knows."
+    bi ""
 
     bi "A small weight feels lifted off my shoulders."
     bi "And there's a new feeling... almost... like a light at the end of the tunnel?"
