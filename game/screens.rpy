@@ -674,19 +674,19 @@ screen about():
 
         vbox:
 
-            label "TEAD"
-            text _("Alpha Version 0.1\n")
-            text _("Graphics, Writing: Julian Pagliaccio\n")
-            text _("Music, Coding, Writing: Arun Ganesh\n")
-            text _("Music: Andrew Kim\n")
-            text _("Shirtless Pic: Shahar Syed\n")
-            text _("Alpha Testing: You!\n")
+            #label "TEAD"
+            text _("                  Alpha Version 0.2\n")
+            text _("                  Graphics, Writing: Julian Pagliaccio\n")
+            text _("                  Music, Coding, Writing: Arun Ganesh\n")
+            text _("                  Music: Andrew Kim\n")
+            text _("                  Shirtless Pic: Shahar Syed\n")
+            text _("                  Alpha Testing: You!\n")
 
             ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
-            text _("Made with Ren'Py.")
+            text _("                  Made with Ren'Py.")
 
 
 style about_label is gui_label

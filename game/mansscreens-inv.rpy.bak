@@ -347,7 +347,7 @@ label mansDracula:
     if False not in mans_evidence[7:9]:
         bi "Hmm... I think that's everything to find here."
         bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
-    call mansDone from _call_mansDone
+    call mansDone
     call screen diningInv
 
 label mansLandF:
@@ -665,7 +665,7 @@ label mansGenerator:
         bi "Someone moved the generator up here from the garage, but I'm not sure why."
         bi "And they tied a rope around it, maybe to make it easier to move around."
         bi "Hm..."
-    call mansDone from _call_mansDone_1
+    call mansDone
     call screen bedroomJennInv
 
 screen masterBedroomInv():
@@ -897,7 +897,7 @@ label mansSink:
     if False not in mans_evidence[0:5]:
         bi "Hmm... I found a lot in the bathroom, but I think that's everything."
         bi "Though this has brought up more questions than answers..."
-    call mansDone from _call_mansDone_2
+    call mansDone
     call screen bathroomInv
 
 label mansHands:
@@ -940,7 +940,7 @@ label mansHands:
     if False not in mans_evidence[0:5]:
         bi "Hmm... I found a lot in the bathroom, but I think that's everything."
         bi "Though this has brought up more questions than answers..."
-    call mansDone from _call_mansDone_3
+    call mansDone
     call screen bathroomInv
 
 label mansShahar:
@@ -1035,7 +1035,7 @@ label mansStella:
     if False not in mans_evidence[0:5]:
         bi "Hmm... I found a lot in the bathroom, but I think that's everything."
         bi "Though this has brought up more questions than answers..."
-    call mansDone from _call_mansDone_4
+    call mansDone
     call screen bathroomInv
 
 label mansJenny:

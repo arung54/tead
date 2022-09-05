@@ -1296,20 +1296,7 @@ label testft:
     tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
     tut "For the first free time segment, move to the front car and talk to Bert."
     tut "For this segment only, the skip function will be disabled."
-    python:
-        ftecounter = 0
-        fte_bert = -1
-        fte_sam = -1
-        fte_stel = -1
-        fte_drac = -1
-        fte_frog = -1
-        fte_jenn = -1
-        fte_laur = -1
-        fte_sid = -1
-        fte_shah = -1
-        fte_cath = -1
-        fte_kais = -1
-        pers = ""
+
     call screen midCar with dissolve
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
@@ -3308,7 +3295,7 @@ label trial1n:
     bi "It's... horrible, and disgusting, but... at least it all tracks."
     bi "We're making progress."
     hide scary with dissolve
-    $mood = "ind"    
+    $mood = "ind"
     s "More importantly, I have a question."
     s "We're assuming the murderer used the ring as bait for someone to stand at the window."
     s "I can get on board with that, sure. But."

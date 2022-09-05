@@ -212,3 +212,5 @@ define config.mouse = { 'default' : [ ('teadcursor.png', 0, 0)], 'peed' :  [ ('d
 
 define config.rollback_enabled = True
 define config.skipping= True
+#define config.allow_skipping=False
+#$_skipping = False

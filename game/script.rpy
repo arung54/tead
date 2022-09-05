@@ -272,7 +272,7 @@ init python:
         mood = "happy"
         cat = False
 init python:
-    config.developer = True
+    config.developer = False
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False
@@ -618,17 +618,17 @@ label start:
 ##################
     python:
         ftecounter = 0
-        fte_bert = 0
-        fte_sam = 0
-        fte_stel = 0
-        fte_drac = 0
-        fte_frog = 0
-        fte_jenn = 0
-        fte_laur = 0
-        fte_sid = 0
-        fte_shah = 0
-        fte_cath = 0
-        fte_kais = 0
+        fte_bert = -2
+        fte_sam = -1
+        fte_stel = -1
+        fte_drac = -1
+        fte_frog = -1
+        fte_jenn = -1
+        fte_laur = -1
+        fte_sid = -1
+        fte_shah = -1
+        fte_cath = -1
+        fte_kais = -1
         pers = ""
 
 ##################
@@ -638,9 +638,9 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [False, False, False]
-        train_evidence2 = [False, False, False]                #made all of these true from false LOL
-        train_evidence3 = [False, False, False, False]
+        train_evidence1 = [True, True, True]
+        train_evidence2 = [True, True, True]                #made all of these true from false LOL
+        train_evidence3 = [True, True, True, True]
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
@@ -654,5 +654,5 @@ label start:
 #Start
 ###########
     $dan = True
-    jump trial1n
+    jump go
     #    call screen freeTimeCounter
