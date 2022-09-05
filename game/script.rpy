@@ -27,6 +27,9 @@ image sid = Live2D("Resources/sid", base=.999, loop=True, seamless=True)
 define sid = Character("sid")
 image catherine = Live2D("Resources/catherine", base=.999, loop=True, seamless=True)
 define catherine = Character("catherine")
+image shadowyfigure = Live2D("Resources/shadowyfigure", base=.999, loop=True, seamless=True)
+define shadowyfigure = Character("shadowyfigure")
+
 
 ############### RED GREEN COLORBLIND VERSIONS OF EVERYTHING!!!!!!!!!!!!!!!!!!!!
 
@@ -78,6 +81,7 @@ init python:
     # Define function to open the menu
     def show_simple_menu():
         renpy.show_screen("simple_menu")
+        renpy.restart_interaction()
 
     # Add key to 'open_pause_menu', this case is 'a' on keyboard
     config.keymap["open_simple_menu"] = ["mouseup_3"]
@@ -87,7 +91,6 @@ init python:
 #    call screen simple_menu
 
 
-image splash = "tead.png"
 image darken = "welcomescreenblank.png"
 define danbox = Image("gui/textbox2.png", yalign=.5)
 define bertbox = Image("gui/textbox3.png", yalign=.5)
@@ -269,7 +272,7 @@ init python:
         mood = "happy"
         cat = False
 init python:
-    config.developer = True
+    config.developer = False
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False
@@ -368,6 +371,14 @@ init python:
 ###########
 #Show Chibi
 ###########
+
+screen killuser:
+    #key "mousedown_3" action Hide("nonexistent_screen")
+    key "mousedown_1" action Hide("nonexistent_screen")
+    #key "mouseup_3" action Hide("nonexistent_screen")
+    key "mouseup_1" action Hide("nonexistent_screen")
+
+
 
 init python:
     def statusnt(name, person, ch, sun):
@@ -607,17 +618,17 @@ label start:
 ##################
     python:
         ftecounter = 0
-        fte_bert = 0
-        fte_sam = 0
-        fte_stel = 0
-        fte_drac = 0
-        fte_frog = 0
-        fte_jenn = 0
-        fte_laur = 0
-        fte_sid = 0
-        fte_shah = 0
-        fte_cath = 0
-        fte_kais = 0
+        fte_bert = -2
+        fte_sam = -1
+        fte_stel = -1
+        fte_drac = -1
+        fte_frog = -1
+        fte_jenn = -1
+        fte_laur = -1
+        fte_sid = -1
+        fte_shah = -1
+        fte_cath = -1
+        fte_kais = -1
         pers = ""
 
 ##################
@@ -630,7 +641,7 @@ label start:
         train_evidence1 = [True, True, True]
         train_evidence2 = [True, True, True]                #made all of these true from false LOL
         train_evidence3 = [True, True, True, True]
-        train_extra = [True, True, True, True, True, True]
+        train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
         mans_extra = [False] * 11
@@ -642,6 +653,6 @@ label start:
 ###########
 #Start
 ###########
-
-    jump trainGo
-#    call screen freeTimeCounter
+    $dan = True
+    jump go
+    #    call screen freeTimeCounter

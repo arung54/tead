@@ -2303,6 +2303,8 @@ label bank7:
     bi "Not to mention his family, who are probably long gone."
     bi "Is Catherine even his original owner? Who knows."
     bi ""
+    bi "It doesn't feel like it, but we're still relative strangers."
+    bi "And"
 
     bi "A small weight feels lifted off my shoulders."
     bi "And there's a new feeling... almost... like a light at the end of the tunnel?"

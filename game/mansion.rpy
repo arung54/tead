@@ -4,6 +4,7 @@ label mansionGo:
     scene black
     $ statusnt("???", "", ch=2, sun=0)
     $mood = "ind"
+    play music "audio/rush.mp3" fadein 1.0
     blank "A few years ago..."
     zg "Stop right there. What are you doing here?"
     z "Oh, me? I'm a new employee here, was just wandering."
@@ -2150,7 +2151,8 @@ label postFT4:
     bi "Freddy said my name from behind the couch."
     scene black with fade
     bi "I walked over and sat behind the couch with Freddy."
-    show bg frog couch
+    show bg frogsit
+    show frog sit with dissolve
     f "Shh! Don't let anyone see you hide back here with me!"
     b "I saw you poke your head out earlier, but I don't think anyone else did."
 
@@ -2226,7 +2228,7 @@ label postFT4:
     #c "Hey, you know I'm vegetarian right."
     #c "You could at least not rub it in so much."
     s "Weirdo."
-    b "...Sorry"
+    b "...Sorry."
     #show sam ind with moveinright:
     #    xcenter .75
     s "Hm, since there are no knives in the kitchen..."
@@ -2449,6 +2451,8 @@ label mansion2:
     d "Hm, it is a shame we were not able to figure out more collectively before this happened."
     b "What do you mean?"
     d "I had a plan..."
+    show drac ind:
+        linear .3 xcenter .75
     show sam ind with moveinleft:
         xcenter .25
     s "Hey, if we want someone to make sure Shahar's not tampering with evidence..."
@@ -2479,6 +2483,7 @@ label mansion2:
     c "Yeah, I guess..."
     ses "Mrow!"
     c "Oh! Sesame!"
+    show catherine ind
     b "Huh?"
     c "This is the longest I've been away from him in a while, he must be so lonely..."
     c "I need to take care of him too, make sure he's fed and groomed and all that."
@@ -2506,8 +2511,9 @@ label mansion2:
     s "Sure, I guess."
     hide sam
     hide sid
+    #$showchibi("")
     with dissolve
-    $showchibi("sid", "sam")
+    #$showchibi("sid", "sam")
     show scary with dissolve:
         alpha .5
     bi "..."

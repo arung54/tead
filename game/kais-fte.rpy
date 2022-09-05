@@ -71,7 +71,6 @@ label kaisHang:
         ni "\"{i}It's been a pleasure?{/i}\" Is that a dash of personality I hear?!"
         ni "Maybe we did bond, a little bit."
         scene black with fade
-        ni "After Kaiser left, I went back to mingling with the others."
 
     $fte_kais += 1
     hide kaiser with dissolve

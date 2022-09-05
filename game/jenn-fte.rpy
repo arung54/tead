@@ -122,7 +122,7 @@ label jennHang:
         n "Uh... I'm not very good at math, but I'm down to listen."
         j "I'm just wondering, if we can identify the murderer every time and the murderer chooses a random victim..."
         j "How many of us escape on average?"
-        j "I think the answer's between 4 and 5 but I'm not sure."
+        j "I think the answer's between 4 and 5, but I'm not sure."
         n "That's... a rather dark math problem."
         show jenny ind
         j "Well, I haven't really been able to stop thinking about our situation."
@@ -167,27 +167,27 @@ label jennHang:
         j "What? Oh no, I started working on it, but then I thought about fashion for a bit, then it was time to eat."
         n "..."
         scene black with fade
-        ni "For someone who claims to like math she's pretty ditzy..."
+        ni "For someone who likes math, she's pretty ditzy..."
         ni "But she seems like a useful person to have around, at least."
 
 
 
 
     #Bert FTE 1
-    if fte_jenn == 0:
-        h "Ahoy laddy! What can I do fer ye?"
+    #if fte_jenn == 0:
+        #h "Ahoy laddy! What can I do fer ye?"
 
     #Bert FTE 2
-    if fte_jenn == 1:
-        h "Mate! Back for more tales of the sea?"
+    #if fte_jenn == 1:
+        #h "Mate! Back for more tales of the sea?"
 
     #Bert FTE 3
-    if fte_jenn == 2:
-        h "Back again lad? You must love hearing tales of the sea."
+    #if fte_jenn == 2:
+        #h "Back again lad? You must love hearing tales of the sea."
 
     #Bert post-3
-    if fte_jenn >= 3:
-        bi "I enjoyed some time with Jenny, if only because of his pirate speak."
+    #if fte_jenn >= 3:
+        #bi "I enjoyed some time with Jenny, if only because of his pirate speak."
 
     $fte_jenn += 1
     hide jenny with dissolve

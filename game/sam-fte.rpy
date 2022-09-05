@@ -4,7 +4,7 @@
 label samAsk0:
     scene bg trainfront1
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
-    show sam with dissolve
+    show sam ind with dissolve
     s "Hey."
     ni "I should go talk to Bert instead."
     hide sam with dissolve
@@ -14,7 +14,7 @@ label samAsk0:
 label samAsk1:
     scene bg trainfront1
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
-    show sam with dissolve
+    show sam ind with dissolve
     s "Hey."
     menu:
         "Spend time with Sam?":
@@ -155,38 +155,32 @@ label samHang:
             n "{i}What's Joke Guy's line?{/i}"
 
             "WHAT?! You gotta be kitten me!":
-                n "... How's that?"
+                n "...How's that?"
                 s "Hmm, you'll get there."
 
             "Wow! You said you were a frog, but you've been lion the whole time!":
-                n "... How's that?"
+                n "...How's that?"
                 s "Hmm, not bad."
         scene black with fade
         ni "After a surprisingly pleasant conversation with Sam, we both went seperate ways."
 
 
     #Bert FTE 1
-    if fte_sam == 0:
-        h "Ahoy laddy! What can I do fer ye?"
+    #if fte_sam == 0:
+    #    h "Ahoy laddy! What can I do fer ye?"
 
     #Bert FTE 2
-    if fte_sam == 1:
-        h "Mate! Back for more tales of the sea?"
+    #if fte_sam == 1:
+    #    h "Mate! Back for more tales of the sea?"
 
     #Bert FTE 3
-    if fte_sam == 2:
-        h "Back again lad? You must love hearing tales of the sea."
+    #if fte_sam == 2:
+    #    h "Back again lad? You must love hearing tales of the sea."
 
     #Bert post-3
-    if fte_sam >= 3:
-        bi "I enjoyed some time with sam, if only because of his pirate speak."
+    #if fte_sam >= 3:
+    #    bi "I enjoyed some time with sam, if only because of his pirate speak."
 
     $fte_sam += 1
-    $ftecounter += 1
     hide sam with dissolve
-
-    if ftecounter == 0:
-        jump postFT0
-
-    if ftecounter == 1:
-        jump postFT1
+    jump postFTEHandler

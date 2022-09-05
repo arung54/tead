@@ -172,52 +172,52 @@ screen trainEvidenceTrial(s, e, l):
             hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("trainEvidenceTrial")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
-            textbutton "Login Screen" style "button_text" action SetVariable("currEvidence", 0)
+            textbutton "Login Screen" style "button_text" text_hover_color "#929292"  action SetVariable("currEvidence", 0)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence1[1]:
-            textbutton "Front Car Lighting" style "button_text" action SetVariable("currEvidence", 1)
+            textbutton "Front Car Lighting" style "button_text" text_hover_color "#929292"  action SetVariable("currEvidence", 1)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence1[2]:
-            textbutton "Front Car Accounts" style "button_text" action SetVariable("currEvidence", 2)
+            textbutton "Front Car Accounts" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 2)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence2[0]:
-            textbutton "Bar Car Lighting" style "button_text" action SetVariable("currEvidence", 3)
+            textbutton "Bar Car Lighting" style "button_text" text_hover_color "#929292"  action SetVariable("currEvidence", 3)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence2[1]:
-            textbutton "Dracula's Account" style "button_text" action SetVariable("currEvidence", 4)
+            textbutton "Dracula's Account" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 4)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence2[2]:
-            textbutton "Catherine's Account" style "button_text" action SetVariable("currEvidence", 5)
+            textbutton "Catherine's Account" style "button_text" text_hover_color "#929292"  action SetVariable("currEvidence", 5)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[0]:
-            textbutton "Hanging Object" style "button_text" action SetVariable("currEvidence", 6)
+            textbutton "Hanging Object" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 6)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[1]:
-            textbutton "Sid's Account" style "button_text" action SetVariable("currEvidence", 7)
+            textbutton "Sid's Account" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 7)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[2]:
-            textbutton "Back Car Closet" style "button_text" action SetVariable("currEvidence", 8)
+            textbutton "Back Car Closet" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 8)
         else:
             textbutton "-" style "button_text"
 
         if train_evidence3[3]:
-            textbutton "State of the Body" style "button_text" action SetVariable("currEvidence", 9)
+            textbutton "State of the Body" style "button_text"  text_hover_color "#929292" action SetVariable("currEvidence", 9)
         else:
             textbutton "-" style "button_text"
 

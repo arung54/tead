@@ -51,7 +51,7 @@ label sidHang:
         i "I can't feel my arms!"
         n "Keep going! You're doing great!"
         blank "They worked out for a while."
-        scene bg trainfront with dissolve
+        scene bg trainmid with dissolve
         show sid ind with dissolve
         i "Are my arms supposed to feel like jello?"
         n "Yeah! But in a good way."
@@ -60,14 +60,18 @@ label sidHang:
         i "Wait, I have to do that {i}again?{/i}"
         n "It's the only way to get stronger! We can train together."
         i "D-deal!"
+        play sfx "audio/pophearts.mp3" volume .25
+        show pophearts:
+            xcenter .5
+            ycenter .5
         ni "He's a good kid, just... needs a little guidance."
         n "You'll be twice my size before you know it."
+        hide pophearts
         i "You bet! Thanks Dan."
         hide sid ind with moveoutright
         ni "I don't have many friends here, and that's okay."
         ni "I'm glad I can be a positive influence on Sid."
         scene black with fade
-        ni "I went back to see the others."
 
 
     if fte_sid == 0:

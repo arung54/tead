@@ -249,7 +249,7 @@ label securityComputer:
         blank "Computer was added to evidence."
         li "Well, this room doesn't have much besides this computer."
         li "I should go look elsewhere."
-        call hospDone from _call_hospDone
+        call hospDone
     else:
         li "Let me recall..."
         li "This computer has security cameras, lights, hot water cycling, and a thermostat."
@@ -354,7 +354,7 @@ label baseballBat:
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
-        call hospDone from _call_hospDone_1
+        call hospDone
     else:
         li "When Sam checked, it looked like the baseball bat was still in mint condition."
     call screen closetInv
@@ -376,7 +376,7 @@ label stepstool:
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
-        call hospDone from _call_hospDone_2
+        call hospDone
     else:
         li "A stepstool. It's not that tall, only gets you two or so feet off the ground."
     call screen closetInv
@@ -406,7 +406,7 @@ label cleaningSupplies:
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
-        call hospDone from _call_hospDone_3
+        call hospDone
     else:
         li "The shelf has various cleaning supplies. Ammonia, bleach, ethanol, and hydrogen peroxide."
         li "They're all pretty unsafe if you use them the wrong way..."
@@ -433,7 +433,7 @@ label closetRules:
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
-        call hospDone from _call_hospDone_4
+        call hospDone
     else:
         li "Let's review, the closet rules are..."
         li "Return everything to where you found it, but presumably you can take things out, as long as you return them."
@@ -547,7 +547,7 @@ label firstaidkit:
         if False not in hosp_evidence[2:3]:
             li "I think that's everything important in here."
             li "There's a lot in this room, but not much that seems out of place..."
-        call hospDone from _call_hospDone_5
+        call hospDone
     else:
         li "The first aid kit. Pretty much the only thing that looks like it's been used is medical glue."
         li "It's used for closing wounds. You can peel it off a few days after applying."
@@ -579,7 +579,7 @@ label hosprules:
         if False not in hosp_evidence[2:3]:
             li "I think that's everything important in here."
             li "There's a lot in this room, but not much that seems out of place..."
-        call hospDone from _call_hospDone_6
+        call hospDone
     else:
         li "The rules of the hospital."
         li "I pretty much know them by heart now..."
@@ -689,7 +689,7 @@ label cellorder:
         pause 1
         hide newevidencefound with dissolve
         blank "Order of the Cells was added to evidence."
-        call hospDone from _call_hospDone_7
+        call hospDone
     else:
         li "Let's see, the cell order is..."
         li "Me, Sam, Dracula, Freddy, Jenny, Bert, Sid, Shahar."
@@ -773,7 +773,7 @@ label shaharbody:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
             li "But whatever, I'm happy to get away from the corpse."
-        call hospDone from _call_hospDone_8
+        call hospDone
     else:
         li "Shahar's corpse. He has blood on his forehead, where his body is leaning against the bar."
         li "Besides that, I don't see anything out of place."
@@ -800,7 +800,7 @@ label glassshards:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
             li "But whatever, I'm happy to get away from the corpse."
-        call hospDone from _call_hospDone_9
+        call hospDone
     else:
         li "Glass shards, in front of Shahar's corpse."
         li "They look like the ones from the vending machine."
@@ -825,7 +825,7 @@ label pipe:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
             li "But whatever, I'm happy to get away from the corpse."
-        call hospDone from _call_hospDone_10
+        call hospDone
     else:
         li "There's a pipe on the ceiling, about twelve feet off the ground."
         li "I don't think it's relevant, but might as well remember it."
@@ -1125,7 +1125,7 @@ label hospInvSid:
         pause 1
         hide newevidencefound with dissolve
         blank "Sid's Account was added to evidence."
-        call hospDone from _call_hospDone_11
+        call hospDone
     else:
         li "I wonder why Sid suddenly started coughing only today?"
         i "*cough* Hey Lauren..."
