@@ -272,7 +272,7 @@ init python:
         mood = "happy"
         cat = False
 init python:
-    config.developer = False
+    config.developer = True
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False
@@ -654,5 +654,7 @@ label start:
 #Start
 ###########
     $dan = True
-    jump go
+    camera:
+        perspective True
+    jump twitter
     #    call screen freeTimeCounter
