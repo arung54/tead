@@ -1600,7 +1600,7 @@ label bank7:
     b "More clues?"
     i "Yeah! What if the Game Master scratched the combination onto a wall somewhere?"
     bi "Sid really shouldn't be telling anyone that he'd try random numbers on a wall..."
-    b "Sid, you probably shouldn't-"
+    b "Sid, you probably shouldn't-{p=0.5}{nw}"
     i "Seeya!"
     hide sid with moveoutright
     $ showchibi("freddy")
@@ -1778,7 +1778,7 @@ label bank7:
     j "Huh?"
     b "If anyone is even near the bathroom Sam has trouble... you know..."
     b "So I didn't want to inter-"
-    j "Bert, it's not exactly sexy to talk about peeing."
+    j "Bert..."
     j "You could've just made something up."
     j "Just go, I'll look over Freddy."
     bi "How is it that the most awkward conversations of my life happen while I'm at risk of death..."
@@ -2282,37 +2282,122 @@ label bank7:
     hide sam with dissolve
     $ showchibint("freddy")
     with dissolve
-    bi "After the adrenaline of trying to figure things out..."
     bi "I sat down, hoping I would have some time to think the game through."
-    bi "But instead I found myself thinking..."
-    bi "Sid really cares about his family..."
-    bi "When we're talking about the money, he gets really mad."
-    bi "But when we talk about his family... he becomes really docile."
-    bi "I haven't thought about mine in a while."
-    bi "What day was I even kidnapped on... a Thursday?"
-    bi "The last time I talked to my parents was the Friday before that."
-    bi "Who knows if they're okay."
-    bi "...That's funny, that I'm worrying about them instead of myself."
     ses "Mew?"
     show sesame with dissolve
     b "Aww, Sesame. How'd you know I needed a cat to sit in my lap right now?"
     ses "Mew!"
     ses "Prrrr."
-    bi "I'm jealous of Sesame."
-    bi "He seems to have barely registered that Catherine is gone..."
-    bi "Not to mention his family, who are probably long gone."
-    bi "Is Catherine even his original owner? Who knows."
-    bi ""
-    bi "It doesn't feel like it, but we're still relative strangers."
-    bi "And"
-
-    bi "A small weight feels lifted off my shoulders."
-    bi "And there's a new feeling... almost... like a light at the end of the tunnel?"
-    bi "We're getting closer to learning the secrets of this game."
-    bi "We're getting closer to getting out of here aliv-"
+    bi "He fell asleep..."
+    bi "Either the adrenaline rush from today was wearing down or Sesame's warmth got to me."
+    b "*Yawn*"
+    bi "Maybe it would be good for me to take a break."
+    bi "It'd been a few days since we had real food..."
+    bi "And it's not like anything will happen tonight, right?"
+    bi "Yeah, I could figure this out tomorrow..."
+    bi "For now, time to go to b-{p=0.5}{nw}"
+    scene black
+    bi "Without even realizing it, I fell asleep."
+    bi "..."
+    bi "..."
+    bi "What a long day of tutoring..."
+    z "Playing the best of rock, pop, rap, and more, this is FM 101.7 with your host Mike."
+    bi "It'll all be worth it for spring break..."
+    bi "..."
+    bi "Huh?"
+    blank "Shrrrrrrr."
+    blank "BANG" #TODO: Add sfx
+    bi "That..."
+    bi "That lady just walked out from nowhere into the middle of the..."
+    bi "Wait..."
+    bi "No, I was dreaming..."
+    bi "Yeah, I'm still lying in the couch right now, with my eyes closed."
+    bi "It's been a while since I dreamt about that day..."
+    bi "I guess talking about Sam may have brought the repressed memories back."
+    bi "Anyway, I should get back to-{p=0.5}{nw}"
+    blank "Creaaaaaaaaak." #TODO: Add sfx
+    bi "...Okay, I'm pretty sure I'm not dreaming anymore."
+    bi "What was that?"
+    bi "I forced my eyes to open and get myself out of my half-asleep state..."
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ showchibint("freddy")
     show bg banklobby1 #music change
+    with dissolve
+    bi "That noise... was the door opening."
+    bi "And in the door was..."
     show lauren pixel:
         xcenter .85
         ycenter .52
         zoom 1.3
-    blank "POW POW POW POW!!!"
+    $ showchibint("freddy", "myster")
+    with dissolve
+    bi "Someone wearing a guard uniform?"
+    bi "And holding what seemed to be a gun."
+    bi "Wait."
+    bi "Fuck."
+    bi "Without thinking, I ran towards Freddy."
+    bi "As soon as I did, the inevitable happened"
+    blank "BANG BANG BANG BANG BANG BANG." #TODO: Add sfx
+    scene black
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ showchibint("freddy", "myster")
+    bi "I stopped running towards Freddy and fell to the floor, closing my eyes."
+    f "Ow... my ears..."
+    f "Bert... what's happening..."
+    bi "The gunshots made it hard to hear, but I thought I heard Freddy crying."
+    bi "...Is that it?"
+    blank "Clap clap cl..."
+    bi "I could barely make it out, but..."
+    bi "Footsteps. They're going away."
+    bi "Freddy is safe, but the others..."
+    bi "Before I could even process it..."
+    f "Bert? Where are you going?"
+    bi "I was running out the door."
+    scene bg bankhall1b
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    with dissolve
+    bi "As I went into the hallway, I saw the door to the kitchen closing."
+    show bg bankhall1 with dissolve
+    blank "Click."
+    bi "It closed slowly."
+    bi "Someone just went in there... probably the uniformed person."
+    bi "...Is Sam still in there?"
+    bi "Oh no."
+    bi "At this point, it was like I wasn't even in control of my body."
+    bi "I was a spectator, my body acting on its own instincts."
+    bi "I watched my hand grabbed the door handle and yanked it open."
+    bi "I watched my legs ran in."
+    scene black with dissolve
+    bi "As I ran in, I was getting ready to identify the uniformed person."
+    bi "I knew if they were pointing the gun at someone else in the kitchen..."
+    bi "I had to act."
+    bi "I'm not sure what I would have done if that were the case."
+    bi "Run at them and try to win with the element of surprise?"
+    bi "Jump in the way of any bullets they might fire at someone else?"
+    bi "Chasing someone with a gun isn't exactly a situation you prepare for."
+    bi "I could only hope I would have picked the right action instantly."
+    bi "But..."
+    bi "Ultimately, I didn't have to make that decision."
+    bi "As I walked into the room I {i}did{/i} see the uniformed person."
+    bi "But they weren't pointing the gun at anyone."
+    bi "Instead..."
+    scene bankbreak2
+    $ statusnt("Staff Kitchen", "bert", ch=4, sun=4)
+    with dissolve
+    bi "They lay there on the ground, in a pool of blood."
+    bi "The gun a few mere inches from their hand."
+    bi "The very brief moment of relief, knowing I wouldn't have to fight..."
+    bi "It was quickly overwhelmed by raw emotion."
+    bi "..."
+    b "Fuck."
+    b "Fuck this."
+    b "AAAAAAAAAAAAGH."
+    bi "I yelled, as if into the void."
+    bi "I'm tired of feeling so powerless."
+    bi "We were coming so close..."
+    bi "And I even risked my life to try to stop this."
+    bi "Only an idiot would chase somebody with a gun, but I was that idiot..."
+    bi "And for what?"
+    bi "So I could stare at another corpse?"
+    bi "Another symbol of the hopelessness of the situation."
+    bi "Another one of us dead."
