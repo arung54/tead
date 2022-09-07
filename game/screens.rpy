@@ -4,7 +4,6 @@
 
 init offset = -1
 
-
 ################################################################################
 ## Styles
 ################################################################################
@@ -410,7 +409,7 @@ screen navigation():
             ypos 0.7
             xalign 0.5
             yalign 0.5
-            textbutton _("{b}Start{/b}") action Start()
+            textbutton _("{b}Start{/b}") action Start() text_hover_color "#929292"
 
         else:
             xalign 0
@@ -469,6 +468,68 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+init python:
+    import pygame
+    import math
+
+
+    class TrackCursor(renpy.Displayable):
+
+        def __init__(self, child, paramod, **kwargs):
+
+            super(TrackCursor, self).__init__()
+
+            self.child = renpy.displayable(child)
+            self.x = 0
+            self.y = 0
+            self.actual_x = 0
+            self.actual_y = 0
+
+            self.paramod = paramod
+            self.last_st = 0
+
+
+
+        def render(self, width, height, st, at):
+
+            rv = renpy.Render(width, height)
+            minimum_speed = 0.5
+            maximum_speed = 3
+            speed = 1 + minimum_speed
+            mouse_distance_x = min(maximum_speed, max(minimum_speed, (self.x - self.actual_x)))
+            mouse_distance_y = (self.y - self.actual_y)
+            if self.x is not None:
+                st_change = st - self.last_st
+
+                self.last_st = st
+                self.actual_x = math.floor(self.actual_x + ((self.x - self.actual_x) * speed * (st_change )) * self.paramod)
+                self.actual_y = math.floor(self.actual_y + ((self.y - self.actual_y) * speed * (st_change)) * self.paramod)
+
+
+                if mouse_distance_y <= minimum_speed:
+                    mouse_distance_y = minimum_speed
+                elif mouse_distance_y >= maximum_speed:
+                    mouse_distance_y = maximum_speed
+
+                cr = renpy.render(self.child, width, height, st, at)
+                cw, ch = cr.get_size()
+                rv.blit(cr, (self.actual_x, self.actual_y))
+
+
+
+            renpy.redraw(self, 0)
+            return rv
+
+        def event(self, ev, x, y, st):
+            hover = ev.type == pygame.MOUSEMOTION
+            click = ev.type == pygame.MOUSEBUTTONDOWN
+            mousefocus = pygame.mouse.get_focused()
+            if hover:
+
+                if (x != self.x) or (y != self.y) or click:
+                    self.x = -x /self.paramod
+                    self.y = -y /self.paramod
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
@@ -476,11 +537,16 @@ screen main_menu():
 
     style_prefix "main_menu"
 
-    add gui.main_menu_background
-
-    ## This empty frame darkens the main menu.
+    #add gui.main_menu_background
+    add TrackCursor("images/bg pentcellar.png", 20) xcenter .5 ycenter .5
+    add TrackCursor("jenny happy", 13) xcenter .5 ycenter .7
+    add TrackCursor("shahar ind", 10) xcenter .75 ycenter .7
+    add TrackCursor("drac ind", 7) xcenter .95 ycenter .7
+    add "images/topbound.png" xcenter .5 ycenter .5
+        ## This empty frame darkens the main menu.
     frame:
         pass
+
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
@@ -539,7 +605,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        add gui.game_menu_background #change to main_menu_background to match old one
     else:
         add gui.game_menu_background
 
@@ -590,7 +656,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("{i}back{/i}"):
+    textbutton _("{i} back{/i}"):
         style "return_button"
         text_hover_color "#929292"
         action Return()
