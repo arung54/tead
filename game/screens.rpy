@@ -421,7 +421,7 @@ screen navigation():
 
         textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
 
-        textbutton _("{b}Settings{/b}") action ShowMenu("preferences") text_hover_color "#929292"
+        textbutton _("{b}Settings{/b}") text_hover_color "#929292" action ShowMenu("preferences")
 
         #textbutton _("Characters") action ShowMenu("Characters")
 
@@ -656,7 +656,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("{i} back{/i}"):
+    textbutton _("{i}back{/i}"):
         style "return_button"
         text_hover_color "#929292"
         action Return()
@@ -982,7 +982,7 @@ screen preferences():
                         label _("Sound Volume")
 
                         hbox:
-                            bar value Preference("sound volume")
+                            bar value Preference("sound volume") released Play("sound", "audio/beep.mp3")
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
@@ -992,7 +992,7 @@ screen preferences():
                         label _("Voice Volume")
 
                         hbox:
-                            bar value Preference("voice volume")
+                            bar value Preference("voice volume") released Play("voice", "audio/beep.mp3")
 
                             if config.sample_voice:
                                 textbutton _("Test") action Play("voice", config.sample_voice)
