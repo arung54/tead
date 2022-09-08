@@ -785,7 +785,10 @@ label go: #Add silhouttes here?
     ni "Just as I did, so did eleven other people."
     ni "It seems like they all came from their own room, like myself."
     play music "audio/coming_together.mp3"
+
+
     scene bg startmeet
+
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with fade
     $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
@@ -793,8 +796,10 @@ label go: #Add silhouttes here?
     show bert ind:
         xcenter .25
     with dissolve
+
     ni "First was a guy with a backpack. He looked like... just a regular guy."
     ni "Nothing wrong with that. Definitely a much better first impression than I probably gave."
+
     ni "Not the most intimidating but not meek either, I could work with that."
     show sam ind:
         xcenter .5

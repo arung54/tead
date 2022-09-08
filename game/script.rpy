@@ -1,5 +1,5 @@
 
-
+default persistent.parallax = True
 define config.gl2 = True
 ############################################################################# LIVE2D DEFINES ##################
 
@@ -115,15 +115,6 @@ image poprain = anim.Filmstrip("popcloud3.png", (300,300), (5,2), .075, loop=Tru
 image pophearts = anim.Filmstrip("pophearts.png", (300,300), (5,2), .075, loop=False)
 image popwow = anim.Filmstrip("popwow.png", (300,300), (5,2), .085, loop=False)#ycenter .25, xcenter   , zoom .75
 image pophuh = anim.Filmstrip("pophuh.png", (300,300), (5,2), .085, loop=False)#ycenter .25, xcenter -.1, zoom .75
-
-#image poprain:
-#    "popcloud1.png"
-#    .5
-#    contains:
-#        "popcloud2.png"
-#        yalign .2
-#        linear 2.0 yalign .4
-#        linear 2.0 alpha 0
 
 image tracks:
     "tracks1.png"
@@ -272,7 +263,7 @@ init python:
         mood = "happy"
         cat = False
 init python:
-    config.developer = False
+    config.developer = True
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False
@@ -638,9 +629,9 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [True, True, True]
-        train_evidence2 = [True, True, True]                #made all of these true from false LOL
-        train_evidence3 = [True, True, True, True]
+        train_evidence1 = [False, False, False]
+        train_evidence2 = [False, False, False]                #made all of these true from false LOL
+        train_evidence3 = [False, False, False, False]
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
@@ -650,9 +641,37 @@ label start:
         windowcount = 0
         mistakes = 0
 
+########## julian trying shit area
+
+transform parallax:
+    perspective True
+    subpixel True
+    zpos -18
+    function moving_camera
+
+camera at parallax
+
+python:
+    def moving_camera(trans, st, at):
+        if persistent.parallax:
+            x, y = renpy.display.draw.get_mouse_pos()
+            trans.xoffset = (x - config.screen_width / 2) *.02    # make this = 0 to turn off parallax
+            trans.yoffset = (y - config.screen_height / 2) *.02   # make this = 0 to turn off parallax
+        else:
+            trans.xoffset = 0
+            trans.yoffset = 0
+        return 0
+
+
+transform bg:
+    truecenter()
+    zzoom True
+    zpos -200
+
 ###########
 #Start
 ###########
-    $dan = True
-    jump go
-    #    call screen freeTimeCounter
+
+camera at parallax
+$dan = True
+jump trainGo

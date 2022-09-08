@@ -1,4 +1,5 @@
 label trainGo:
+
     $dan = True
     $mood="ind"
     #jump frontcar1
@@ -13,7 +14,8 @@ label trainGo:
     ni "Huh?"
     $mood = "shock"
     z "HEY!!!"
-    $ scenent("bg trainmid", "???", "dan", ch = 1, sun = 3)
+    scene bg trainmid at bg
+    $statusnt("???", "dan", ch = 1, sun = 3)
     show lauren ind
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
@@ -23,6 +25,7 @@ label trainGo:
         ycenter .25
         zoom .75
     o "Hey, wake up already."
+#   camera at parallax
     o "How'd you manage to stay knocked out even longer than the kid?"
     hide popwow
     n "Where are we now?"
