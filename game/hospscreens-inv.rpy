@@ -1,6 +1,5 @@
 screen hospMapInv():
     modal True
-    #TODO: Create secret sesame FTE
     imagemap:
         ground "map3uiGUARD.png"
         hotspot(460, 273, 108, 78):
