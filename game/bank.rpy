@@ -2494,7 +2494,7 @@ label bank7:
     l "If only to honor Sam's life, we should be sure."
     j "Well, guess it's time to investigate!"
     j "Murder solving squad let's go!"
-label hospPreInv:
+label hospPreInv2:
     play music "audio/inthefaceofdeath.mp3"
     pause .5
     show investstart with dissolve

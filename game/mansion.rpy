@@ -59,7 +59,7 @@ label Mansionuno:
     bi "..."
     bi "Two people died..."
     bi "And there's nothing I could do to save them..."
-    show bg mansiondining
+    show bg mansiondining at bg
     $ statusnt("???", "bert", ch=2, sun=5)
     with slowdissolve
     bi "I slowly came to my senses and looked to my left."
@@ -141,7 +141,7 @@ label Mansionuno:
     bi "Stella and Sam?"
     bi "Oh right..."
     scene black
-    show bg trainmid
+    show bg trainmid at bg
     show stella ind
     show sepia:
         alpha .5
@@ -149,7 +149,7 @@ label Mansionuno:
     t "I tore down competition, I burned bridges, you name it."
     t "My methods don't always see eye-to-eye with the law, but, c'est la vie."
     hide stella
-    scene bg trainmid
+    scene bg trainmid at bg
     show sam ind
     show sepia:
         alpha .5
@@ -160,7 +160,7 @@ label Mansionuno:
     #hide sepia
     #with dissolve
 
-    scene bg mansiondining
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
     $ statusnt("Dining Room", "bert", ch=2, sun=5)
     show drac ind:
@@ -388,7 +388,7 @@ label Mansionuno:
     j "Let's look somewhere else. Looks like this room connects to the kitchen and a bedroom."
     $mood = "happy"
     b "Let's head to the kitchen, I'm hungry!"
-    scene bg mansionkitchen with fade
+    scene bg mansionkitchen at bg with fade
     $showchibi("jenny", "freddy", "lauren")
     $ statusnt("Kitchen", "bert", ch=2, sun=5)
     show lauren ind with dissolve
@@ -457,7 +457,7 @@ label Mansionuno:
     $mood = "sad"
     j "Jeez, get me out of here."
     scene black with fade
-    scene bg mansiongarage
+    scene bg mansiongarage at bg
     $ statusnt("Garage", "bert", ch=2, sun=5)
     with fade
     $showchibi( "jenny", "catherine", "sid")
@@ -569,7 +569,7 @@ label Mansionuno:
     j "It seems like we've explored the entirety of this floor, so let's go upstairs?"
     b "Sure."
     scene black with fade
-    scene bg mansionhall with fade
+    scene bg mansionhall at bg with fade
     $showchibi("jenny")
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
     show jenny ind with moveinleft:
@@ -584,7 +584,7 @@ label Mansionuno:
     hide jenny ind with moveoutleft
     $mood = "sad"
     b "-barge in..."
-    scene bg mansionmasterbedroom with fade
+    scene bg mansionmasterbedroom at bg with fade
     $ statusnt("Master Bedroom", "bert", ch=2, sun=2)
     $showchibi("jenny", "dracula", "sam")
     $mood = "ind"
@@ -633,7 +633,7 @@ label Mansionuno:
 
 #####
 
-    scene bg mansionbedroom1 with fade
+    scene bg mansionbedroom1 at bg with fade
     $ statusnt("Bedroom 1", "bert", ch=2, sun=2)
     $showchibi("jenny", "freddy", "lauren")
     show lauren ind with dissolve
@@ -691,7 +691,7 @@ label Mansionuno:
 
 ###
 
-    scene bg mansionbedroom2 with fade
+    scene bg mansionbedroom2 at bg with fade
     $showchibi("jenny")
     $ statusnt("Bedroom 2", "bert", ch=2, sun=3)
     show jenny ind
@@ -819,7 +819,7 @@ label Mansionuno:
     scene black with fade
     bi "We checked the last bedroom door."
     bi "It seemed to be identical to the previous two rooms."
-    scene bg mansionhall with fade
+    scene bg mansionhall at bg with fade
     $showchibi("jenny")
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
     show jenny ind with dissolve
@@ -844,7 +844,7 @@ label Mansionuno:
     bi "I headed to the bathroom by myself."
     scene black with fade
 label mansion1:
-    scene bg mansionbr with fade
+    scene bg mansionbr at bg with fade
     $ statusnt("Bathroom", "bert", ch=2, sun=3)
     b "So uh..."
     b "Guess this is the bathroom."
@@ -865,11 +865,11 @@ label mansion1:
     bi "I'm hopeful we can get everyone on the same page and keep everyone alive."
     bi "Especially with news of this party we're going to throw."
     bi "Maybe It'll give us a chance to chat with people and learn more about our situation."
-    show bg mansionbr with fade
+    show bg mansionbr at bg with fade
     bi "...Well, I'm done admiring this bathroom."
     bi "Time to head downstairs for the meeting."
     scene black with fade
-    scene bg nmansiondining with fade
+    scene bg nmansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Dining Room", "bert", ch=2, sun=3)
     $mood = "ind"
@@ -1158,7 +1158,7 @@ label mansion1:
     #FT2 to be inserted here.
 label postFT2:
     $ftecounter = 3
-    scene bg nmansiondining
+    scene bg nmansiondining at bg
     $ statusnt("Dining Room", "bert", ch=2, sun=4)
     with fade
     $showchibi("catherine", "dracula", "freddy", "shahar", "sid", "stella")
@@ -1425,7 +1425,7 @@ label postFT2:
     bi "Stella was off before we could even get started."
     bi "Dracula's probably not going to be very happy about our noise level after this..."
     scene black with fade
-    scene bg nmansionhall with fade
+    scene bg nmansionhall at bg with fade
     $showchibi("shahar", "stella")
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=4)
     show stella drunk:
@@ -1455,7 +1455,7 @@ label postFT2:
     b "Sigh."
     b "Okay, to the bathroom we go."
     scene black with fade
-    scene bg mansionbr
+    scene bg mansionbr at bg
 
     show stella drunk:
         xcenter .75
@@ -1517,7 +1517,7 @@ label postFT2:
     pause 1
     $mood = "ind"
     blank "The next morning..."
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=1)
     bi "..."
     bi "What time is it?"
@@ -1589,7 +1589,7 @@ label postFT2:
     bi "Maybe I'll go upstairs and see who there is to talk to."
     bi "Wouldn't want to distract Shahar and Stella's beauty sleep..."
     scene black with fade
-    scene bg mansionhall with fade
+    scene bg mansionhall at bg with fade
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=1)
     $showchibi("jenny", "sam")
     show jenny happy:
@@ -1638,7 +1638,7 @@ label postFT2:
     #FT3
 label postFT3:
     $ftecounter = 4
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibi("shahar", "stella")
     bi "Well, I still have a tiny amount of time to kill before the party."
@@ -1652,7 +1652,7 @@ label postFT3:
     l "Cool, thanks. They both should still be in our bedroom right now."
     l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on the party right now."
     scene black with fade
-    scene bg mansionbedroom1 with fade
+    scene bg mansionbedroom1 at bg with fade
     $statusnt("Bedroom", "bert", ch=2, sun=2)
     $showchibi("freddy")
     show frog ind with dissolve
@@ -1756,7 +1756,7 @@ label postFT3:
     f "Yeah..."
     bi "Oh boy, I can't wait to eat!"
     scene black with fade
-    scene bg mansionhall with fade
+    scene bg mansionhall at bg with fade
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
     bi "..."
     bi "Should I check the closet again?"
@@ -1764,7 +1764,7 @@ label postFT3:
     bi "Mmmm, I can smell it from here."
     b "Dinner, I'm on my way!"
     scene black with fade
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("dracula", "freddy", "lauren", "shahar", "sid", "stella")
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     show sid ind:
@@ -1792,7 +1792,7 @@ label postFT3:
     b "Oh, cool. In that case I'll go see if they need any help."
     #bi "Hopefully I defused that conversation..."
     scene black with fade
-    scene bg mansionkitchen with fade
+    scene bg mansionkitchen at bg with fade
     $statusnt("Kitchen", "bert", ch=2, sun=2)
     $showchibi("catherine", "jenny", "sam")
     show jenny happy with dissolve
@@ -1848,7 +1848,7 @@ label postFT3:
     b "I guess so. If you need help in here, let me know."
     j "Thanks Bert, now go out and party!"
     scene black with fade
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
     bi "Hm... I guess I have nothing to do besides mingle until food gets here."
@@ -1862,7 +1862,7 @@ label postFT3:
     bi "I don't want to miss the food getting served, so I probably should stay in the dining room and kitchen."
     #FT4 to be inserted here. This is what Julian got up to for STATUS and MOODS
 label postFT4:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
     show catherine nocat:
         xcenter .25
@@ -2151,8 +2151,8 @@ label postFT4:
     bi "Freddy said my name from behind the couch."
     scene black with fade
     bi "I walked over and sat behind the couch with Freddy."
-    show bg frogsit
-    show frog sit with dissolve
+    show bg frogsit at bg
+    show frog sit at bg with dissolve
     f "Shh! Don't let anyone see you hide back here with me!"
     b "I saw you poke your head out earlier, but I don't think anyone else did."
 
@@ -2203,7 +2203,7 @@ label postFT4:
     bi "...But I might bring this up without saying you told me if it's relevant information later."
     b "Your secret is safe with me."
     f "Thanks Bert..."
-    show bg mansiondining
+    show bg mansiondining at bg
     hide frog with dissolve
     $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
     show catherine nocat with dissolve
@@ -2313,7 +2313,7 @@ label postFT4:
     bi "We each got an arm under one of Sid's shoulders and lugged him up the stairs."
 label mansion2:
     scene black with fade
-    show bg mansionhall
+    show bg mansionhall at bg
     $showchibint("lauren", "sid")
     with dissolve
     show sid ind:
@@ -2350,7 +2350,7 @@ label mansion2:
     bi "He really had to vomit... but..."
     bi "I can't blame him."
     bi "After seeing what we saw in there, I wanted to vomit too."
-    scene bg mansionbr
+    scene bg mansionbr at bg
     show stella dead:
         zoom 1.0
         xcenter .37
@@ -2409,7 +2409,7 @@ label mansion2:
     b "Let's go outside, I can't handle being in here right now."
     bi "Holding in my tears, I made my way into the hallway with Sid."
     scene black with fade
-    scene bg mansionhall
+    scene bg mansionhall at bg
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
     with fade
     $showchibi("sid")
@@ -2552,7 +2552,7 @@ label trial2a:
     play music "audio/rush.mp3"
     scene black with fade
     bi "Everyone gathered in the dining room."
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     l "Well, this murder should be easier to figure out than the previous one."
@@ -2588,7 +2588,7 @@ label trial2a:
         1, stabwound, "trial2b")
 label trial2b:
     play music "audio/rush.mp3"
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Lauren, I think you missed something because you were watching over Freddy during our investigation."
@@ -2653,7 +2653,7 @@ label trial2c:
     call screen mansionEvidenceTrial(-1, stabwound2, "trial2d") with dissolve
 label trial2d:
     play music "audio/rush.mp3"
-    scene bg mansiondining
+    scene bg mansiondining at bg
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind:
         xcenter .25
@@ -2692,7 +2692,7 @@ label trial2e:
     bi "...is it really Jenny?"
     bi "I... I thought we were becoming closer but..."
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
-    scene bg mansiondining
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind
     with fade
@@ -2793,7 +2793,7 @@ label trial2f:
         2, stabwound2, "trial2g")
 label trial2g:
     play music "audio/rush.mp3"
-    scene bg mansiondining
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind with dissolve
     with fade
@@ -2906,7 +2906,7 @@ label trial2g:
     bi "The rest of us sat in silence for a few minutes waiting."
     bi "I wasn't sure why."
     bi "Eventually, Dracula and Shahar returned."
-    scene bg mansiondining
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind:
         xcenter .25
@@ -2955,7 +2955,7 @@ label trial2g:
     call screen mansionEvidenceTrial(-1, sheath, "trial2h") with dissolve
 label trial2h:
     play music "audio/rush.mp3"
-    scene bg mansiondining with fade
+    scene bg mansiondining  at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .75
@@ -3005,7 +3005,7 @@ label trial2h:
         2, -1, "trial2i")
 label trial2i:
     play music "audio/rush.mp3"
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Wait, everyone quiet down."
@@ -3072,7 +3072,7 @@ label trial2i:
     call screen mansionEvidenceTrial(-1, water, "trial2j") with dissolve
 label trial2j:
     play music "audio/rush.mp3"
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind with dissolve
     b "Dracula, I assume you're referring to Stella's clothes being damp?"
@@ -3161,7 +3161,7 @@ label trial2k:
     call screen chooseCharMansion("sam", "trial2l", "Who used the ice knife?") with dissolve
 label trial2l:
     play music "audio/rush.mp3"
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind with dissolve
     s "Me?"
@@ -3277,7 +3277,7 @@ label trial2m:
     call screen mansionEvidenceTrial(-1, burns, "trial2n") with dissolve
 label trial2n:
     play music "audio/rush.mp3"
-    scene bg mansiondining
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind:
         xcenter .25
@@ -3332,7 +3332,7 @@ label trial2n:
     scene black with fade
     call screen chooseCharMansion("sam", "trial2o", "Who would know if Stella was stabbed or burned first?") with dissolve
 label trial2o:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     bi "..."
     bi "It comes down to this."
@@ -3365,7 +3365,7 @@ label trial2o:
         "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#55f}Sam must have been chosen as murderer{/color}.", 1,
         1, location, "trial2p")
 label trial2p:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .75
@@ -3470,7 +3470,7 @@ label trial2p:
     b "Stella's hands were burned by..."
     call screen pickSpot2 with dissolve #pick sink handles
 label trial2q:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .5
@@ -3502,7 +3502,7 @@ label trial2q:
         "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}nothing could have heated them up in that time.{/color}", -1,
         3, [wires, generator], "trial2r")
 label trial2r:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .5
@@ -3516,7 +3516,7 @@ label trial2r:
     bi "But... it's not me."
     call screen chooseCharMansion("dracula", "trial2s", "Who could explain how Stella only got burnt after being stabbed?") with dissolve
 label trial2s:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind:
         xcenter .5
@@ -3659,7 +3659,7 @@ label trial2t:
     b "There's something missing from that room that the murderer would have needed..."
     call screen mansionEvidenceTrial(-1, wires, "trial2u") with dissolve
 label trial2u:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show jenny ind:
         xcenter .25
@@ -3680,7 +3680,7 @@ label trial2u:
     b "Well, when you consider that the sink is on the left wall when you enter the bathroom, we can figure that out easily."
     call screen pickSpot3 with dissolve #pick closet
 label trial2v:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show jenny ind:
         xcenter .25
@@ -3760,7 +3760,7 @@ label trial2w:
         "sid",  "Sid: C'mon, admit it, {color=#f00}Sam could move the generator easily, everything makes sense.{/color}", -1,
         3, rope, "trial2x")
 label trial2x:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind with dissolve
     b "No, actually, not everything makes sense if Sam could move the generator easily."
@@ -3798,7 +3798,7 @@ label trial2x:
     b "With that in mind, it can only be..."
     call screen chooseCharMansion("catherine", "trial2y", "Who moved the generator?") with dissolve
 label trial2y:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show catherine ind with dissolve
     c "Me? C'mon Bert, don't be silly."
@@ -3834,7 +3834,7 @@ label trial2y:
     b "The wires... you got them from..."
     call screen pickSpot4 with dissolve #pick kitchen
 label trial2z:
-    scene bg mansiondining with fade
+    scene bg mansiondining at bg with fade
     $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show catherine ind with dissolve
     b "You got them from the kitchen."
