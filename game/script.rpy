@@ -664,9 +664,6 @@ label start:
         windowcount = 0
         mistakes = 0
 
-        showchibint("dan", "bert")
-        statusnt("Bar Car", "dan", ch = 1, sun = 4)
-
 ########## julian trying shit area
 
 transform parallax:
@@ -700,4 +697,4 @@ transform bg:
 
 camera at parallax
 $dan = True
-jump twittergo
+jump go
