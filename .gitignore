@@ -9,7 +9,6 @@ game/saves/auto-10-LT1.save
 game/saves/persistent
 *.rpyc
 *.rpyb
-*.json
 game/saves/persistent
 game/saves/persistent
 game/script.rpyc
@@ -17,7 +16,6 @@ game/saves/navigation.json
 game/cache/screens.rpyb
 game/cache/bytecode.rpyb
 *.rpyc
-*.json
 *.rpyb
 game/laur-fte.rpyc
 *.rpyb

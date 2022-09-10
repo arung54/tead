@@ -161,13 +161,13 @@ screen mansionTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, state
     add "debateui.png"
     vbox xalign 0.06 ypos 190 spacing 20:
         imagebutton:
-            idle pers1+"face.png"
+            idle pers1+"face.png" action [SetVariable("statement", 0), SetVariable("agree", ag1)]
         imagebutton:
-            idle pers2+"face.png"
+            idle pers2+"face.png" action [SetVariable("statement", 1), SetVariable("agree", ag2)]
         imagebutton:
-            idle pers3+"face.png"
+            idle pers3+"face.png" action [SetVariable("statement", 2), SetVariable("agree", ag3)]
         imagebutton:
-            idle pers4+"face.png"
+            idle pers4+"face.png" action [SetVariable("statement", 3), SetVariable("agree", ag4)]
     if statement >= 0:
         add "expoint.png" xpos 0.28 ypos 175+127*statement at exzoom
     fixed xmaximum 750:
