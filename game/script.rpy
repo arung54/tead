@@ -369,30 +369,49 @@ screen killuser:
     #key "mouseup_3" action Hide("nonexistent_screen")
     key "mouseup_1" action Hide("nonexistent_screen")
 
+screen showchibis(chibis):
+    for i in range(len(chibis)):
+        add chibis[i] xpos 20 ypos 20+50*i at chibizoom
+
+screen status_screen(location, chibi, chapter, sun):
+    add "status.png"
+    add sun xpos 1165 xanchor 0 ypos 55 yanchor 0
+    if chibi is not None:
+        add chibi xpos 1225 xanchor 0 ypos 55 yanchor 0
+    add chapter xpos 1095 xanchor 0 ypos 65 yanchor 0
+    text "{b}"+location+"{/b}" xpos 1055 xanchor 0 ypos 5 yanchor 0
 
 
 init python:
     def statusnt(name, person, ch, sun):
-        sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
-        chibilist = [Position(xpos=1225, xanchor=0, ypos=55, yanchor=0)]
-        chapterlist = [Position(xpos=1095, xanchor=0, ypos=65, yanchor=0)]
-        renpy.show("status")
-        renpy.show(name = "location", what = Text("{b}"+name+"{/b}"), at_list = [Position(xpos=1055, xanchor=0, ypos=5, yanchor=0)])
-        renpy.show("ch"+str(ch), at_list = chapterlist)
-        if sun == 1:
-            renpy.show("sun1", at_list = sunlist)
-        if sun == 2:
-            renpy.show("sun2", at_list = sunlist)
-        if sun == 3:
-            renpy.show("sun3", at_list = sunlist)
-        if sun == 4:
-            renpy.show("sun4", at_list = sunlist)
-        if person == "dan":
-            renpy.show("danchibi2", at_list = chibilist)
-        if person == "bert":
-            renpy.show("bertchibi2", at_list = chibilist)
-        if person == "lauren":
-            renpy.show("laurenchibi2", at_list = chibilist)
+        # sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
+        # chibilist = [Position(xpos=1225, xanchor=0, ypos=55, yanchor=0)]
+        # chapterlist = [Position(xpos=1095, xanchor=0, ypos=65, yanchor=0)]
+        # renpy.show("status")
+        # renpy.show(name = "location", what = Text("{b}"+name+"{/b}"), at_list = [Position(xpos=1055, xanchor=0, ypos=5, yanchor=0)])
+        chapter = "ch"+str(ch)
+        sun = "sun"+str(sun)
+        if person == "dan" or person == "bert":
+            chibi = person + "chibi2"
+        else:
+            chibi = None
+        renpy.show_screen("status_screen", location=name, chibi=chibi, chapter=chapter, sun=sun)
+
+        # renpy.show("ch"+str(ch), at_list = chapterlist)
+        # if sun == 1:
+        #     renpy.show("sun1", at_list = sunlist)
+        # if sun == 2:
+        #     renpy.show("sun2", at_list = sunlist)
+        # if sun == 3:
+        #     renpy.show("sun3", at_list = sunlist)
+        # if sun == 4:
+        #     renpy.show("sun4", at_list = sunlist)
+        # if person == "dan":
+        #     renpy.show("danchibi2", at_list = chibilist)
+        # if person == "bert":
+        #     renpy.show("bertchibi2", at_list = chibilist)
+        # if person == "lauren":
+        #     renpy.show("laurenchibi2", at_list = chibilist)
 
     def scenent(bg, name, person, ch, sun):
         sunlist = [Position(xpos=1165, xanchor=0, ypos=55, yanchor=0)]
@@ -416,7 +435,6 @@ init python:
         if person == "bert":
             renpy.show("bertchibi2", at_list = chibilist)
 
-init python:
     def showchibi(*argv):
         argv = [j + "chibi" for j in argv]
         currchibis = list()
@@ -456,36 +474,37 @@ init python:
 
     def showchibint(*argv):
         argv = [j + "chibi" for j in argv]
-        currchibis = list()
-        for i in renpy.get_showing_tags():
-            if i.endswith("chibi"):
-                currchibis.append(i)
-
-        toremove = list()
-        for i in currchibis:
-            if i not in argv:
-                toremove.append(i)
-        toadd = list()
-        for i in argv:
-            if i not in currchibis:
-                toadd.append(i)
-        tostay = list()
-        for i in argv:
-            if i in currchibis:
-                tostay.append(i)
-
-        for i in toremove:
-            renpy.hide(i)
-
-        y = 20
-        for i in tostay:
-            renpy.hide(i)
-            renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
-            y += 50
-
-        for i in toadd:
-            renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
-            y += 50
+        renpy.show_screen("showchibis", chibis=argv)
+        # currchibis = list()
+        # for i in renpy.get_showing_tags():
+        #     if i.endswith("chibi"):
+        #         currchibis.append(i)
+        #
+        # toremove = list()
+        # for i in currchibis:
+        #     if i not in argv:
+        #         toremove.append(i)
+        # toadd = list()
+        # for i in argv:
+        #     if i not in currchibis:
+        #         toadd.append(i)
+        # tostay = list()
+        # for i in argv:
+        #     if i in currchibis:
+        #         tostay.append(i)
+        #
+        # for i in toremove:
+        #     renpy.hide(i)
+        #
+        # y = 20
+        # for i in tostay:
+        #     renpy.hide(i)
+        #     renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
+        #     y += 50
+        #
+        # for i in toadd:
+        #     renpy.show(i, at_list = [Transform(zoom=1.5, pos=(20, y))])
+        #     y += 50
 
 
     def showchibiwindow(inlist, outlist):
@@ -640,6 +659,9 @@ label start:
         lightscount = 0
         windowcount = 0
         mistakes = 0
+
+        showchibint("dan", "bert")
+        statusnt("Bar Car", "dan", ch = 1, sun = 4)
 
 ########## julian trying shit area
 
