@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "shaharsep.moc3",
+		"Textures": [
+			"shaharsep.2048/texture_00.png"
+		],
+		"Physics": "shaharsep.physics3.json",
+		"DisplayInfo": "shaharsep.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

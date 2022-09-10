@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "jennyrg.moc3",
+		"Textures": [
+			"jennyrg.2048/texture_00.png"
+		],
+		"Physics": "jennyrg.physics3.json",
+		"DisplayInfo": "jennyrg.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

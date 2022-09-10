@@ -1,0 +1,140 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "Angle Y"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "Eyeball X"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "catornocat"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "pet"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "ralph eyes"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "cat Z"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "cat X"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "catpaw"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "cat tail"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "BrowL Y"
+		},
+		{
+			"Id": "ParamBrowLForm",
+			"GroupId": "",
+			"Name": "BrowL Form"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "fingerwag"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "cathold"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "Mouth Form"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "Body X"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "Breath"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "Hair Move Side"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part4",
+			"Name": "Layer 74.png"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Layer 94.png"
+		},
+		{
+			"Id": "Part3",
+			"Name": "someshit.psd"
+		},
+		{
+			"Id": "Part",
+			"Name": "Group 1"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"ParamAngleX",
+			"ParamAngleZ"
+		]
+	]
+}

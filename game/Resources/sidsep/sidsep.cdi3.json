@@ -1,0 +1,160 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "ParamAngleX",
+			"GroupId": "",
+			"Name": "Angle X"
+		},
+		{
+			"Id": "ParamAngleZ",
+			"GroupId": "",
+			"Name": "Angle Z"
+		},
+		{
+			"Id": "ParamEyeLOpen",
+			"GroupId": "",
+			"Name": "EyeL Open"
+		},
+		{
+			"Id": "ParamMouthForm",
+			"GroupId": "",
+			"Name": "Mouth Form"
+		},
+		{
+			"Id": "ParamMouthOpenY",
+			"GroupId": "",
+			"Name": "Mouth Open"
+		},
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "armswag"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "fingerpoint"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "angryhands"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "EyesOpen"
+		},
+		{
+			"Id": "ParamEyeBallX",
+			"GroupId": "",
+			"Name": "Eyeball X"
+		},
+		{
+			"Id": "ParamEyeBallY",
+			"GroupId": "",
+			"Name": "Eyeball Y"
+		},
+		{
+			"Id": "ParamBrowLY",
+			"GroupId": "",
+			"Name": "BrowL Y"
+		},
+		{
+			"Id": "ParamBrowLAngle",
+			"GroupId": "",
+			"Name": "BrowL Angle"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "sidsmile"
+		},
+		{
+			"Id": "ParamBrowRForm",
+			"GroupId": "",
+			"Name": "BrowR Form"
+		},
+		{
+			"Id": "ParamCheek",
+			"GroupId": "",
+			"Name": "Cheek"
+		},
+		{
+			"Id": "ParamBodyAngleX",
+			"GroupId": "",
+			"Name": "Body X"
+		},
+		{
+			"Id": "ParamBodyAngleY",
+			"GroupId": "",
+			"Name": "Body Y"
+		},
+		{
+			"Id": "ParamBodyAngleZ",
+			"GroupId": "",
+			"Name": "Body Z"
+		},
+		{
+			"Id": "ParamBreath",
+			"GroupId": "",
+			"Name": "Breath"
+		},
+		{
+			"Id": "ParamHairFront",
+			"GroupId": "",
+			"Name": "Hair Move Front"
+		},
+		{
+			"Id": "ParamHairSide",
+			"GroupId": "",
+			"Name": "Hair Move Side"
+		},
+		{
+			"Id": "ParamHairBack",
+			"GroupId": "",
+			"Name": "Hair Move Back"
+		},
+		{
+			"Id": "ParamAngleY",
+			"GroupId": "",
+			"Name": "Angle Y"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part8",
+			"Name": "sidsmile.png"
+		},
+		{
+			"Id": "Part7",
+			"Name": "sidsmile.png"
+		},
+		{
+			"Id": "Part6",
+			"Name": "sidblink.png"
+		},
+		{
+			"Id": "Part5",
+			"Name": "arm2.png"
+		},
+		{
+			"Id": "Part4",
+			"Name": "arm1.png"
+		},
+		{
+			"Id": "Part3",
+			"Name": "arm3.png"
+		},
+		{
+			"Id": "Part2",
+			"Name": "arm4.png"
+		},
+		{
+			"Id": "Part",
+			"Name": "Group 1"
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "frogrg.moc3",
+		"Textures": [
+			"frog2rg.2048/texture_00.png",
+			"frog2rg.2048/texture_01.png"
+		],
+		"Physics": "frogrg.physics3.json",
+		"DisplayInfo": "frogrg.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}

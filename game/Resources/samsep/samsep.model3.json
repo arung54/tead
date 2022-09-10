@@ -1,0 +1,24 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "samsep.moc3",
+		"Textures": [
+			"samsep.2048/texture_00.png",
+			"samsep.2048/texture_01.png"
+		],
+		"Physics": "samsep.physics3.json",
+		"DisplayInfo": "samsep.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}
