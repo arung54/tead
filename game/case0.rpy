@@ -791,7 +791,7 @@ label go: #Add silhouttes here?
 
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with fade
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     ni "I quickly glanced around to familiarize myself with everyone."
     show bert ind:
         xcenter .25
@@ -1013,7 +1013,7 @@ label postMeetings:
     scene bg startmeet
     $ statusnt("???", "dan", ch = 0, sun = 0)
     ni "And I've met everyone. Looks like the group is reconvening to discuss now."
-    $ showchibi("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
+    $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     with dissolve
     s "Okay, now that that's done, I think we should look around and try-"
     hide sam with moveoutright

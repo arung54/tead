@@ -375,7 +375,8 @@ screen showchibis(chibis):
 
 screen status_screen(location, chibi, chapter, sun):
     add "status.png"
-    add sun xpos 1165 xanchor 0 ypos 55 yanchor 0
+    if sun is not None:
+        add sun xpos 1165 xanchor 0 ypos 55 yanchor 0
     if chibi is not None:
         add chibi xpos 1225 xanchor 0 ypos 55 yanchor 0
     add chapter xpos 1095 xanchor 0 ypos 65 yanchor 0
@@ -390,7 +391,10 @@ init python:
         # renpy.show("status")
         # renpy.show(name = "location", what = Text("{b}"+name+"{/b}"), at_list = [Position(xpos=1055, xanchor=0, ypos=5, yanchor=0)])
         chapter = "ch"+str(ch)
-        sun = "sun"+str(sun)
+        if sun > 0:
+            sun = "sun"+str(sun)
+        else:
+            sun = None
         if person == "dan" or person == "bert":
             chibi = person + "chibi2"
         else:
