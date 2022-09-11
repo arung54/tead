@@ -2448,6 +2448,8 @@ label bank7:
         xcenter .75
     with moveinright
     l "I heard you guys talking in here."
+    l "...Oh jeez!"
+    l "That..."
     l "Is that... Sam?"
     b "Yeah... Sam's dead."
     l "Oh no... it happened again."
@@ -2519,5 +2521,6 @@ label hospPreInv2:
     bi "I know I'm innocent, and I doubt Freddy is the Game Master."
     bi "So Jenny, Lauren, Sid."
     bi "I probably can't trust any of them."
-    bi "I can only rely on myself for now..."
-    bi "Myself, and the evidence in front of me."
+    bi "I need to ask them what they were up to prior to discovering the body."
+    bi "But first, I should search this room thoroughly..."
+    call screen breakInv

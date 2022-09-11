@@ -395,7 +395,7 @@ init python:
             sun = "sun"+str(sun)
         else:
             sun = None
-        if person == "dan" or person == "bert":
+        if person == "dan" or person == "bert" or person == "lauren":
             chibi = person + "chibi2"
         else:
             chibi = None
@@ -658,8 +658,10 @@ label start:
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
+        bank_evidence = [True] * 12
         mans_extra = [False] * 11
         hosp_extra = [False] * 6
+        bank_extra = [False] * 20
         lightscount = 0
         windowcount = 0
         mistakes = 0
@@ -697,4 +699,4 @@ transform bg:
 
 camera at parallax
 $dan = True
-jump go
+call screen bank_evidence
