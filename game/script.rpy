@@ -699,4 +699,4 @@ transform bg:
 
 camera at parallax
 $dan = True
-call screen bank_evidence
+jump go
