@@ -210,7 +210,7 @@ screen breakInv():
 
 label bankCorpse:
     scene bg bankbreak2
-    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_extra[0]:
         bi "Sam's corpse..."
         bi "There's a bullet hole in the temple, consistent with an attempt at suicide."
@@ -249,7 +249,7 @@ label bankCorpse:
 
 label bankDoor:
     scene bg bankbreak2
-    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[1]:
         bi "The door to the break room."
         bi "It's been open this entire time."
@@ -274,7 +274,7 @@ label bankDoor:
 
 label bankGun:
     scene bg bankbreak2
-    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[2]:
         bi "The gun that presumably Sam used to commit suicide."
         bi "It holds six bullets at once, and is empty right now..."
@@ -315,7 +315,7 @@ label bankGun:
 
 label bankBelt:
     scene bg bankbreak2
-    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[3]:
         bi "An elastic belt tied to the ___."
         bi "It probably came from a guard uniform."
@@ -342,7 +342,7 @@ label bankBelt:
 
 label bankStuck:
     scene bg bankbreak2
-    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     bi "This is the first time we might have found the body before the killer had a chance to manipulate the scene."
     bi "I should make sure I look at everything before leaving."
     bi "There's a chance someone will come back and try to hide something while I'm gone."
@@ -378,8 +378,8 @@ screen hall1Inv():
 
 label bankSid:
     scene bg bankbreak2
-    statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    showchibint("sid")
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    $ showchibint("sid")
     with dissolve
     show sid ind with dissolve
     i "Oh, hey Bert."
@@ -533,7 +533,7 @@ screen lobbyInv():
 
 label bankInvFreddy:
     scene bg bankbreak2
-    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     show frog sad with dissolve
     if bank_evidence[5]:
         f "...*sniff*"
@@ -601,7 +601,7 @@ label bankInvFreddy:
         hide lauren
         with dissolve
         bi "Well, it's nothing I didn't know, but..."
-        bi "Knowing Freddy saw everything that went down in here might be useful later."     
+        bi "Knowing Freddy saw everything that went down in here might be useful later."
         $ bank_evidence[5] = True
         show newevidencefound with dissolve
         pause 1
