@@ -1,35 +1,47 @@
 screen bankMapInv():
     modal True
-    imagemap:
-        ground "map4ui.png"
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lobbyInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("breakInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall1Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall2Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("safeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("officeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(460, 273, 108, 78):
-            action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lockerInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-            unhovered Hide("mapPreview")
+    if not bank_evidence[8]:
+        imagemap:
+            ground "map4ui.png"
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("breakInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Hide("bankMapInv"), Hide("mapPreview"), Jump("bankSid")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+    else:
+        imagemap:
+            ground "map4ui.png"
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lobbyInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("breakInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall1Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall2Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("safeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("officeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lockerInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                unhovered Hide("mapPreview")
     imagemap:
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("bankMapInv", transition=Dissolve(0.3)), Hide("mapPreview")]
@@ -136,7 +148,7 @@ screen bank_evidence():
 
         if currEvidence == 8:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "Sid woke up from sleeping on the couch. He saw the green light and walked towards the safe, but heard someone yell from the break room and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
+            text "Sid woke up from sleeping on the couch. He saw the green light, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1
@@ -185,7 +197,10 @@ screen breakInv():
         xalign 1.0
         yalign 0.175
         idle "mapicon.png" at iconzoom
-        action [Show("bankMapInv", transition=Dissolve(0.3))]
+        if bank_extra[1]:
+            action [Show("bankMapInv", transition=Dissolve(0.3))]
+        else:
+            action [Hide("breakInv"), Jump("bankStuck")]
 
     imagebutton:
         xalign 1.0
@@ -195,6 +210,7 @@ screen breakInv():
 
 label bankCorpse:
     scene bg bankbreak2
+    statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_extra[0]:
         bi "Sam's corpse..."
         bi "There's a bullet hole in the temple, consistent with an attempt at suicide."
@@ -228,10 +244,12 @@ label bankCorpse:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
+            $bank_extra[1] = True
     call screen breakInv
 
 label bankDoor:
     scene bg bankbreak2
+    statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[1]:
         bi "The door to the break room."
         bi "It's been open this entire time."
@@ -251,10 +269,12 @@ label bankDoor:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
+            $bank_extra[1] = True
     call screen breakInv
 
 label bankGun:
     scene bg bankbreak2
+    statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[2]:
         bi "The gun that presumably Sam used to commit suicide."
         bi "It holds six bullets at once, and is empty right now..."
@@ -290,16 +310,180 @@ label bankGun:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
+            $bank_extra[1] = True
     call screen breakInv
+
+label bankBelt:
+    scene bg bankbreak2
+    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    if bank_evidence[3]:
+        bi "An elastic belt tied to the ___."
+        bi "It probably came from a guard uniform."
+        bi "But it's torn and this is just one piece... where is the rest?"
+    else:
+        bi "What is this?"
+        bi "It looks like a belt of some sort."
+        bi "It's been tied pretty firmly around the ___."
+        bi "Hm... but the end of it has been torn off."
+        bi "Where'd the other end go?"
+        bi "I briefly looked around the room, but I couldn't find the rest of the belt."
+        bi "This definitely wasn't here until now, it has to be important..."
+        $ bank_evidence[3] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Torn Elastic Belt was added to evidence."
+        if False not in bank_evidence[1:3] and not bank_extra[0]:
+            bi "Okay, unless some low-quality office snacks were the murder weapon..."
+            bi "Pretty sure that's everything important in this room."
+            bi "Let's go find the others and start asking them some questions..."
+            $bank_extra[1] = True
+    call screen breakInv
+
+label bankStuck:
+    scene bg bankbreak2
+    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    bi "This is the first time we might have found the body before the killer had a chance to manipulate the scene."
+    bi "I should make sure I look at everything before leaving."
+    bi "There's a chance someone will come back and try to hide something while I'm gone."
+    call screen breakInv
+
+screen hall1Inv():
+    default tt = Tooltip("")
+    imagemap:
+        ground "bg bankhall1b.png"
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+    add "status.png"
+    add Text("{b}Bank Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.175
+        idle "mapicon.png" at iconzoom
+        action [Show("bankMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.275
+        idle "evidenceicon.png" at iconzoom
+        action [Show("bank_evidence", transition=Dissolve(0.3))]
+
+
+label bankSid:
+    scene bg bankbreak2
+    statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    showchibint("sid")
+    with dissolve
+    show sid ind with dissolve
+    i "Oh, hey Bert."
+    i "I thought I heard someone yell over here... what happened?"
+    b "Oh... Sam is dead."
+    i "What?"
+    bi "I told Sid about what happened..."
+    bi "This was my third time relaying the sequence of events."
+    bi "At this point I could probably give a TEAD Talk on it."
+    bi "I mean, TED Talk."
+    i "I'm gunna take a look..."
+    hide sid with moveoutleft
+    show sid ind with moveinright
+    i "Jeez, Sam really is dead..."
+    i "It looks like it was... um..."
+    i "Self-inflicted."
+    bi "We were kind of numb to murder at this point, but the word \"suicide\" still beared some gravity with it."
+    b "Yeah, that's what it seems like."
+    b "But I still want to investigate."
+    b "After all, if we settled on our first instincts, we'd have accused you for, well..."
+    i "..."
+    bi "Hm, maybe that was a sore spot."
+    b "...You okay Sid?"
+    i "Yeah, it's just weird."
+    i "You ever think you hate somebody?"
+    i "And then something happens and you realize you didn't really hate them."
+    i "You just... didn't really mesh that well."
+    i "But you can't go back and undo the way you treated them."
+    bi "Sid says this as if this could possibly be referring to anyone but Sam."
+    bi "I guess the two did clash quite a bit."
+    b "...I can't say I've had that happen to me, no."
+    i "Oh..."
+    b "But Sid... I think we can at least honor Sam's death by trying to figure out the truth behind it."
+    i "I... I guess."
+    b "So I need to know..."
+    b "What were you up to before you came here?"
+    i "Do... do you think I did it?"
+    show sid mad
+    i "What the hell Bert? I just opened up to you about my feelings!"
+    i "And now you're accusing me?"
+    b "I never accused you!"
+    bi "This would be so much easier with someone here to help me..."
+    bi "But again, the only person I can really trust at this point is Freddy."
+    b "Sid... I just need all the facts."
+    b "And if you think about it, it'd be more suspicious if you didn't tell me what you were up to."
+    i "Uh."
+    i "Okay, fine, I'll tell you, but I still don't forgive you for accusing me!"
+    bi "I never accused you..."
+    bi "Oh, what's the point."
+    show sid ind
+    i "Anyway, um, I was sleeping on the couch."
+    i "I woke up, I think because I had a bad dream."
+    i "When I looked around, I noticed the red light in the hallway had turned green."
+    bi "!"
+    i "I thought maybe someone had opened the safe."
+    i "So I walked towards it to check it out. The door was open, so I was going to go in."
+    i "But then I heard someone yell over here."
+    i "So I decided to come here instead in case something happened."
+    b "Hm... okay, which way did you walk here from the safe?"
+    i "Uh... the faster way. Like, past the office."
+    i "I'm not that stupid Bert... I wouldn't take the long way if something had happened."
+    b "Gotcha. So woke up, saw the green light was on, walked to the safe, then came here."
+    b "And you didn't check out the safe at all?"
+    i "That's right."
+    $ bank_evidence[8] = True
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    blank "Sid's account was added to evidence."
+    b "Okay, thanks Sid, that's helpful to know."
+    b "Interesting that the safe is open..."
+    i "Do you need help investigating it?"
+    i "I really wanna look inside!"
+    b "Actually... I need someone I can trust to keep an eye on Lauren and Jenny."
+    b "If it wasn't suicide, then they're both suspects."
+    bi "What I was omitting here is that Sid was also a suspect."
+    bi "Have to placate him a bit if I want him to play along."
+    b "Can I trust you to do that Sid?"
+    i "Aw, boring..."
+    i "Okay, but if you find money in the safe I'm getting half... no, two thirds of it!"
+    b "I... sure, you know what Sid, if there's money in the safe you can have all of it."
+    i "Score!"
+    hide sid with dissolve
+    $ showchibint()
+    bi "One thing is weird to me about Sid's story..."
+    bi "Sid came because he heard someone yell?"
+    bi "Freddy and I may have yelled due to the events that happened."
+    bi "And Jenny and Lauren were shocked when they saw Sam."
+    bi "So maybe he did hear someone yell."
+    bi "But that would have been a while ago."
+    bi "Did I really finish searching the break room in the time Sid took to walk over here?"
+    bi "Anyway, now I know the safe is open. I should probably investigate there at some point."
+    bi "Besides that, I still need to interrogate Jenny and Lauren..."
+    bi "There's nothing in this hallway that seems interesting, so I should move on."
+    call screen hall1Inv with dissolve
 
 screen lobbyInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg banklobby1.png"
+        ground "bg banklobby.png"
         if bank_evidence[1]:
-            hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
+            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
         else:
-            hotspot(259, 189, 762, 476) action [Hide("securityInv"), Jump("securityComputer")] mouse 'ex' hovered tt.Action("Computer")
+            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("securityComputer")] mouse 'ex' hovered tt.Action("Computer")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -341,69 +525,94 @@ screen lobbyInv():
         idle "jennychibi.png" at chibizoom
         action [Hide("lobbyInv", transition = Dissolve(1.0)), Jump("bankInvJenny")]
 
-label dummy2:
-    scene bg banklobby1
-    $ statusnt("Security", "lauren", ch = 3, sun = 1)
-    show sam with dissolve
-    lf "Notice anything Sam?"
-    s "...Not really..."
-    li "Talkative as always."
-    hide sam with dissolve
-    call screen securityInv
+    imagebutton:
+        xpos 20
+        ypos 170
+        idle "sidchibi.png" at chibizoom
+        action [Hide("lobbyInv", transition = Dissolve(1.0)), Jump("bankSid2")]
 
-label dummy3:
-    scene bg banklobby1
-    $ statusnt("Security", "lauren", ch = 3, sun = 1)
-    if not bank_evidence[1]:
-        li "Hm, looks like a computer the guards can use to control things on this floor."
-        li "I should take a look and see what I can do from here."
-        li "..."
-        li "Okay, first thing is a security camera system."
-        li "I can see everyone but Sam and I looking around in the cafeteria."
-        li "And I can see..."
-        li "None of the other rooms."
-        li "Seems like the camera system is limited to the cafeteria."
-        li "Weird, you'd think they might want some in the cells."
-        li "Okay, what else..."
-        li "Huh, what does this program do? It has a list of all the rooms in this floor."
-        blank "Click."
-        lf "What was that noise?"
-        show sam with dissolve
-        s "...The lights in the room next to us turned off..."
-        lf "Okay, so you can control the lights on the floor from here."
-        s "...Yeah..."
-        hide sam with dissolve
-        li "What else... there's a function called Hot Water Cycling."
-        li "Let me click the info button."
-        li "It says hot water cycles through the pipes here weekly to clean them out."
-        li "You can also schedule a hot water cycle for the future."
-        li "Seems like an antiquated way to clean things, but this whole building seems kinda old..."
-        li "And lastly, a thermostat feature."
-        li "You can control the temperature in all the rooms."
-        li "I guess they can't let the patients control their own temperature for safety reasons?"
-        li "Well, you can't set the temperature higher than 75 degrees anyway, no way that's killing anyone..."
-        li "Let's see, anything else?"
-        li "..."
-        li "No, can't find anything else I have access to."
-        li "So to recap, this computer has security cameras, lights, hot water cycling, and a thermostat."
-        li "Maybe one of those is relevant..."
-        $bank_evidence[1] = True
+label bankInvFreddy:
+    scene bg bankbreak2
+    statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    show frog sad with dissolve
+    if bank_evidence[5]:
+        f "...*sniff*"
+        f "Bert... *sniff* when can I go home?..."
+        b "We're trying our hardest Freddy."
+        b "You can help us out by being real strong!"
+        f "*sniff* Okay..."
+        bi "Freddy's pretty shaken up..."
+        bi "I think it's best not to ask him to recall the shooting."
+        hide frog with dissolve
+    else:
+        bi "You know... now that I think about it..."
+        bi "No one else besides Freddy saw the uniformed person."
+        bi "So I should probably ask him what he remembers."
+        b "Hey Freddy..."
+        b "I know it wasn't very fun, but can you tell me what you remember about waking up in here earlier?"
+        f "Oh..."
+        f "Do I have to?"
+        f "It was so scary... I just want to go back to sleep."
+        b "Freddy, it'll help us out a lot if you can."
+        b "And if you help us... uh..."
+        bi "Let's see, what would I want if I was a kid..."
+        b "I'll buy you the biggest frog toy ever once we get home!"
+        show frog ind
+        f "B-biggest?"
+        f "But... I already have one that's six feet tall and fifty pounds."
+        bi "..."
+        bi "Maybe I shouldn't have said biggest."
+        b "Well... I'll find an even bigger one!"
+        f "Even bigger?"
+        f "No way..."
+        f "Okay, so um..."
+        f "I woke up and heard like, BANG BANG BANG."
+        f "And my ears really hurt..."
+        show frog sad
+        f "And... *sniff* I was scared."
+        bi "He's starting to tear up..."
+        bi "I can feel Lauren glaring at me right now, but this could be important..."
+        b "C'mon Freddy, what else? You're a strong kid!"
+        bi "Really? That's what I say? It's so generic..."
+        f "And... and you fell to the floor and I thought you were hurt..."
+        f "Are you okay, Mr. Bert?"
+        b "Oh yeah, I was just trying to hide."
+        f "Oh... okay."
+        f "And then *sniff* I saw the person who made the BANG BANG BANG."
+        f "And then they ran away..."
+        f "And then... you chased after them *sniff*."
+        f "And I was alone and I was scared..."
+        f "And..."
+        f "I started crying... *sniff*."
+        show frog sad:
+            xcenter .5
+            linear 0.15 xcenter .25
+        show lauren ind with moveinright:
+            xcenter .75
+        l "Freddy, are you okay?"
+        l "Is Bert being mean to you?"
+        b "Oh, I just was asking Freddy to help the adults out!"
+        l "Is that true Freddy?"
+        f "Y-yeah..."
+        b "You've been a real help Freddy!"
+        b "I think I'm done with questioning him, Lauren..."
+        l "Good, poor kid's been through enough."
+        hide frog
+        hide lauren
+        with dissolve
+        bi "Well, it's nothing I didn't know, but..."
+        bi "Knowing Freddy saw everything that went down in here might be useful later."     
+        $ bank_evidence[5] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Computer was added to evidence."
-        li "Well, this room doesn't have much besides this computer."
-        li "I should go look elsewhere."
-        call bankDone from _call_bankDone
-    else:
-        li "Let me recall..."
-        li "This computer has security cameras, lights, hot water cycling, and a thermostat."
-        li "The camera only sees the cafeteria."
-        li "The hot water cycles every week, and you can also schedule cycles."
-        li "And the thermostat controls each room individually, but can't go higher than 75 degrees."
-        li "As far as I can tell, those are the only features we have access to."
+        blank "Freddy's Account was added to evidence."
+        if False not in bank_evidence[4:7]:
+            bi "Okay, I've interrogated everyone."
+            bi "I was in this room before the uniformed person ran in here..."
+            bi "So besides the shells, I don't think there's too much of importance here."
+            call bankDone from _call_bankDone_1
     call screen breakInv
-
 
 label bankDone:
     if False not in bank_evidence[1:]:
