@@ -47,18 +47,19 @@ python:
     h "aye"
 
 
-    screen magiccam:
-        add TrackCursor("stellaslut.png", 20)
-    screen testxd:
-        add "testxd.png" xcenter .5 ycenter .5
-    label twitter2:
+#    screen magiccam:
+#        add TrackCursor("stellaslut.png", 20)
+#    screen testxd:
+#        add "testxd.png" xcenter .5 ycenter .5
+#    label twitter2:
         scene bg mansionbedroom2 at bg
         #$showchibiR("bert","jenny", "sid", "dan", "sam")
         #$ statusnt("Bar Car", "dan", ch = 1, sun = 3)
-        show screen testxd
         camera at parallax
         b "pogchap"
         show sam ind
         b "pogchap"
+        show catback
+        hide catback with dissolve
         b "pogchamp"
-    '''
+'''

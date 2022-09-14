@@ -394,57 +394,89 @@ screen test():
 
 screen navigation():
 
-    vbox:
-        style_prefix "navigation"
-
-        #xpos .5 #julian
-        #ypos 0.75
-        #xalign 0.5
-        #yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
-            xpos .5 #julikan
-            ypos 0.7
+    if main_menu:
+        add "menured.png"
+        add "vinegar.png"
+        add "menubgscroll2"
+        add "menulogo.png" xcenter .175 ycenter .6
+        imagebutton:
+            idle "menuweblink.png"
+            hover "menuweblink2.png"
+            xcenter .925 ycenter .125 action OpenURL("https://teadthegame.itch.io/tead")
+        imagebutton:
+            idle "ibmenustart.png"
+            hover "ibmenustart2.png"
+            focus_mask True action Start()
+        imagebutton:
+            idle "ibmenucards.png"
+            hover "ibmenucards2.png"
+            ycenter .442 xcenter .492 focus_mask True action Hide("navigation")
+        imagebutton:
+            idle "ibmenuabout.png"
+            hover "ibmenuabout2.png"
+            focus_mask True action [Hide("navigation"),ShowMenu("about")]
+        imagebutton:
+            idle "ibmenuload.png"
+            hover "ibmenuload2.png"
+            focus_mask True action ShowMenu("load")
+        imagebutton:
+            idle "ibmenusettings.png"
+            hover "ibmenusettings2.png"
+            focus_mask True action ShowMenu("preferences")
+        textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .075 ycenter .925
+        python:
+            '''
+        hbox:
+            xpos .5
+            ypos 0.8
+            spacing 10
             xalign 0.5
-            yalign 0.5
-            textbutton _("{b}Start{/b}") action Start() text_hover_color "#929292"
-
-        else:
+            #yalign 0.65
+            style_prefix "navigation"
+            #spacing gui.navigation_spacing
+            imagebutton:
+                idle "menubuttonload.png" action ShowMenu("load")
+            imagebutton:
+                idle "menubuttonsettings.png" action ShowMenu("preferences")
+            imagebutton:
+                idle "menubuttonbegin.png" action Start()
+            imagebutton:
+                idle "menubuttonabout.png" action ShowMenu("about")
+            imagebutton:
+                idle "menubuttonquit.png" action Quit(confirm=not main_menu)
+            #textbutton _("{b}Start{/b}") action Start() text_hover_color "#929292"
+            #textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
+            #textbutton _("{b}Settings{/b}") text_hover_color "#929292" action ShowMenu("preferences")
+            #if _in_replay:
+            #    textbutton _("End Replay") action EndReplay(confirm=True)
+            #elif not main_menu:
+            #    textbutton _("{b}Main Menu{/b}") action MainMenu() text_hover_color "#929292"
+            #textbutton _("{b}About{/b}") action ShowMenu("about") text_hover_color "#929292"
+            #if renpy.variant("pc"):
+            #textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu) text_hover_color "#929292"
+            '''
+#################### below is NOT main menu, just in game menu
+    else:
+        vbox:
             xalign 0
             yoffset 300
             xoffset 60
             textbutton _("{b}History{/b}") action ShowMenu("history") text_hover_color "#929292"
-
             textbutton _("{b}Save{/b}") action ShowMenu("save") text_hover_color "#929292"
 
-        textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
+            textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
+            textbutton _("{b}Settings{/b}") text_hover_color "#929292" action ShowMenu("preferences")
 
-        textbutton _("{b}Settings{/b}") text_hover_color "#929292" action ShowMenu("preferences")
+            if _in_replay:
+                textbutton _("End Replay") action EndReplay(confirm=True)
 
-        #textbutton _("Characters") action ShowMenu("Characters")
+            elif not main_menu:
+                textbutton _("{b}Main Menu{/b}") action MainMenu() text_hover_color "#929292"
 
-        if _in_replay:
+            textbutton _("{b}About{/b}") action ShowMenu("about") text_hover_color "#929292"
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("{b}Main Menu{/b}") action MainMenu() text_hover_color "#929292"
-
-        textbutton _("{b}About{/b}") action ShowMenu("about") text_hover_color "#929292"
-
-        #if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            #textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu) text_hover_color "#929292"
+            if renpy.variant("pc"):
+                textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu) text_hover_color "#929292"
 
 
 style navigation_button is gui_button
@@ -538,12 +570,9 @@ screen main_menu():
     style_prefix "main_menu"
 
     #add gui.main_menu_background
-    add TrackCursor("images/bg pentcellar.png", 20) xcenter .5 ycenter .5
-    add TrackCursor("jenny happy", 13) xcenter .5 ycenter .7
-    add TrackCursor("shahar ind", 10) xcenter .75 ycenter .7
-    add TrackCursor("drac ind", 7) xcenter .95 ycenter .7
-    add "images/topbound.png" xcenter .5 ycenter .5
-        ## This empty frame darkens the main menu.
+    #add TrackCursor("images/bg pentcellar.png", 20) xcenter .5 ycenter .5
+    #add TrackCursor("tead", 25) xcenter .525 ycenter .525
+    #add TrackCursor("drac ind", 7) xcenter .95 ycenter .7
     frame:
         pass
 
@@ -656,7 +685,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("{i}back{/i}"):
+    textbutton _("{i}  back{/i}"):
         style "return_button"
         text_hover_color "#929292"
         action Return()

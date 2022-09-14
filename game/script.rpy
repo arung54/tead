@@ -45,6 +45,8 @@ image samrg = Live2D("Resources/samrg", base=.999, loop=True, seamless=True)
 define samrg = Character("samrg")
 image sidrg = Live2D("Resources/sidrg", base=.999, loop=True, seamless=True)
 define sidrg = Character("sidrg")
+image heads = Live2D("Resources/heads", base=.999, loop=True, seamless=True) #good format
+define heads = Character("heads")
 
 ############### SEPIAAAAAAAAAAAAAAA!!!!!!!!!
 
@@ -156,7 +158,12 @@ image menubgscroll:
         xpos -1.0
         linear 70.0 xpos 0.0
         repeat
-
+image menubgscroll2:
+    contains:
+        "menuscroll.png"
+        xpos -1.0
+        linear 30.0 xpos 0.0
+        repeat
 transform inwindow:
     truecenter zoom .8
     yalign .45
@@ -699,5 +706,5 @@ transform bg:
 
 camera at parallax
 $dan = True
-call screen bank_evidence
-#jump go
+#call screen bank_evidence
+jump trainGo
