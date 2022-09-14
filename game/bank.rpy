@@ -1565,7 +1565,7 @@ label bank7:
     l "Sure."
     bi "It'd be great to have a third person to watch him, but..."
     bi "Maybe I shouldn't force Jenny alone with him."
-    j "Alright, if we're settled here, I'm gunna hit the locker room!"
+    j "Alright, if we're settled here, I'm gonna hit the locker room!"
     j "A nice hot shower would hit the spot right now."
     j "Lauren, wanna come with me?"
     l "I won't join you in the shower, but I would like to explore this place a bit more."
@@ -2033,9 +2033,11 @@ label bank7:
         xcenter .75
     with dissolve
     bi "It didn't take long for us to find Sid..."
-    bi "As one could have guessed, he was sitting outside the safe."
-    show sid ind:
+    bi "He'd spent most of his time in here in one of two places."
+    bi "Napping on the couch, or..."
+    show sid ind with dissolve:
         xcenter .25
+    bi "In front of the safe."
     i "Hm... maybe the scratches on the surface of the vault mean something..."
     s "What are you doing?"
     i "Sam? Bert?"

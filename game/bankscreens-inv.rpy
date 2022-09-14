@@ -99,7 +99,7 @@ screen bank_evidence():
             textbutton "-" style "button_text"
 
         if bank_evidence[9]:
-            textbutton "Sign in the Safe" style "button_text" action SetVariable("currEvidence", 9)
+            textbutton "The Safe Door" style "button_text" action SetVariable("currEvidence", 9)
         else:
             textbutton "-" style "button_text"
 
@@ -132,7 +132,7 @@ screen bank_evidence():
 
         if currEvidence == 4:
             image "ev3 stool.png" xcenter 800 yalign 0.1
-            text "There were six shells on the ground in the lobby, near the door to the hallway." xcenter 800 yanchor 0.0 ypos 330
+            text "There were six shells on the ground in the lobby, near the door to the hallway. They match the shell found by Sam's body." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:
             image "ev3 stool.png" xcenter 800 yalign 0.1
@@ -140,11 +140,11 @@ screen bank_evidence():
 
         if currEvidence == 6:
             image "ev3 stool.png" xcenter 800 yalign 0.1
-            text "Lauren was searching in the office, left, and was walking towards the guard room. The safe was closed when she passed by, and she didn't see anyone in the guard room, so she started looking for us. She didn't hear me yell, but she ended up finding me and Jenny because she heard us talking in the break room." xcenter 800 yanchor 0.0 ypos 330
+            text "Lauren was searching in the office, left, and was trying to find people. The safe was closed when she passed by, and she didn't see anyone in the locker room. She walked towards the lobby, passing the couch, and ended up finding me and Jenny because she heard us talking in the break room." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
             image "ev3 cleaning.png" xcenter 800 yalign 0.1
-            text "Jenny had just finished taking a shower in the guard room. She walked out and saw the safe was open, then heard me yelling. She walked directly to the break room, passing the hallway couch on the way." xcenter 800 yanchor 0.0 ypos 330
+            text "Jenny had just finished taking a shower in the locker room. She walked out and saw the safe was open, then heard me yelling. She walked directly to the break room, passing Sid sleeping on the couch on the way." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
             image "ev3 shards.png" xcenter 800 yalign 0.1
@@ -152,7 +152,7 @@ screen bank_evidence():
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "Even when the combination is entered, if it's shut, the safe door can't be opened from the inside." xcenter 800 yanchor 0.0 ypos 330
+            text "Even when the combination is entered, if it's shut, the safe door can't be opened from the inside. The door opens and closes electronically, and opens up to a ninety degree angle." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
             image "ev3 shards.png" xcenter 800 yalign 0.1
@@ -160,7 +160,7 @@ screen bank_evidence():
 
         if currEvidence == 11:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "All but one locker in the guard room had a uniform in it." xcenter 800 yanchor 0.0 ypos 330
+            text "All but one locker in the locker room had a uniform in it." xcenter 800 yanchor 0.0 ypos 330
 
 screen breakInv():
     default tt = Tooltip("")
@@ -481,9 +481,9 @@ screen lobbyInv():
     imagemap:
         ground "bg banklobby.png"
         if bank_evidence[1]:
-            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("securityComputer")] mouse 'q' hovered tt.Action("Computer")
+            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("bankShells")] mouse 'q' hovered tt.Action("Bullet Shells")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("securityComputer")] mouse 'ex' hovered tt.Action("Computer")
+            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("bankShells")] mouse 'ex' hovered tt.Action("Bullet Shells")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -531,8 +531,51 @@ screen lobbyInv():
         idle "sidchibi.png" at chibizoom
         action [Hide("lobbyInv", transition = Dissolve(1.0)), Jump("bankSid2")]
 
+label bankShells:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    if bank_evidence[4]:
+        b "There are six bullet shells on the floor by the door to the hallway."
+        b "This is where the person in the uniform was standing, and they match the shell I found near Sam..."
+        b "So they probably were from when Freddy and I were shot at."
+    else:
+        b "Are these..."
+        show jenny ind with dissolve
+        j "Find something Bert?"
+        b "Yeah, these look like bullet shells..."
+        j "Oh... well, you did say you were shot at, right?"
+        b "Yeah, and the person in the uniform was standing about here when they shot at us..."
+        j "So this is probably the \"leftovers\" from that shooting."
+        b "I guess so..."
+        bi "I picked one up and took a closer look."
+        b "It looks like one that was near Sam's body."
+        j "Hm... I mean, that makes sense if Sam was the one that shot at you."
+        j "Then the same gun and bullets would have been used for both shootings."
+        b "That's one possibility, but I don't know if it's the only explanation."
+        j "What other explanations are there?"
+        b "I'm not sure yet..."
+        j "Hm... okay, Jenny brainstorm time!"
+        hide jenny with moveoutleft
+        bi "Jenny went and sat down with a serious look on her face..."
+        bi "It'd be nice if she solved the case for us, but I won't count on it."
+        bi "Anyway..."
+        bi "There are six shells on the floor here."
+        bi "The gun I found near Sam could hold six bullets..."
+        bi "Did the shooter run away because they had to reload?"
+        $ bank_evidence[4] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Shells in the Lobby was added to evidence."
+        if False not in bank_evidence[4:7]:
+            bi "Okay, I've interrogated everyone."
+            bi "I was in this room before the uniformed person ran in here..."
+            bi "So besides the shells, I don't think there's too much of importance here."
+            call bankDone from _call_bankDone_1
+    call screen breakInv
+
 label bankInvFreddy:
-    scene bg bankbreak2
+    scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     show frog sad with dissolve
     if bank_evidence[5]:
@@ -611,7 +654,138 @@ label bankInvFreddy:
             bi "Okay, I've interrogated everyone."
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
-            call bankDone from _call_bankDone_1
+            call bankDone from _call_bankDone_2
+    call screen breakInv
+
+label bankInvLauren:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    show lauren ind with dissolve
+    if bank_evidence[6]:
+        l "You're done investigating already?"
+        b "Oh, no, not yet..."
+        b "Just wanted to confirm what you told me earlier."
+        b "You were searching in the office, then you finished and went looking for people."
+        b "You walked past the safe, which was still closed, and checked the locker room."
+        b "Then you walked past the couch towards the lobby, and heard us talking."
+        l "And that's when I found you guys and saw the body, yup."
+        l "Your memory's good Bert... I guess that's why you're doing the investigation."
+        bi "Well... that and no one else above the age of ten could be trusted."
+        hide lauren with dissolve
+    else:
+        b "Hey Lauren."
+        l "Hey Bert."
+        b "I wanted to ask you what you were up to since I last saw you."
+        l "You mean... in the break room?"
+        b "No, before that..."
+        b "When you left to go search, Jenny went to go take a shower."
+        b "From then, until you ran into Jenny and I in the break room."
+        l "Oh, right."
+        l "Well, I was searching in the director's office..."
+        l "Just trying to find anything that could be helpful, really."
+        bi "I guess Lauren doesn't know how extensively Sam searched that room."
+        bi "I won't belittle her efforts by telling her."
+        l "After some time I gave up and decided to look for people."
+        l "So I went to the locker room since I knew Jenny might be in there."
+        b "Was the safe open when you walked by?"
+        l "No, it wasn't open."
+        b "Hm... okay."
+        l "Anyway, I didn't find anyone in the locker room."
+        l "I also knew Sid liked napping on the couch in the hall, so I checked it out."
+        l "But he wasn't there."
+        l "So I figured everyone had gathered on this side of the building."
+        l "I made my way over here, then heard you and Jenny talking in the break room."
+        l "And well, you know what happened from there."
+        b "Hm, okay. Let me recap to make sure I got this right."
+        l "You were in the office, walked to the locker room, didn't find anyone, then came here."
+        b "The safe was closed when you passed, and Sid wasn't on the couch when you looked."
+        l "Yup, that's right."
+        $ bank_evidence[6] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Lauren's Account was added to evidence."
+        b "Alright, thanks Lauren."
+        l "No problem. I'm going to go back to making sure Freddy's ok..."
+        hide lauren with dissolve
+        bi "Hm... something strikes me as odd about what Lauren told me, but I can't quite tell what..."
+        if False not in bank_evidence[4:7]:
+            bi "Okay, I've interrogated everyone."
+            bi "I was in this room before the uniformed person ran in here..."
+            bi "So besides the shells, I don't think there's too much of importance here."
+            call bankDone from _call_bankDone_3
+    call screen breakInv
+
+label bankInvJenny:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    show jenny happy with dissolve
+    if bank_evidence[7]:
+        j "Heya Bert!"
+        j "I mean, uh, sheriff!"
+        b "Hey Jenny, just want to make sure I remember your story correctly."
+        b "You left the locker room, saw the safe was open, were going to wake up Sid..."
+        b "Then you heard me yell and came to the break room."
+        j "Yessir!"
+        bi "I don't know if I'll get much more out of her while she's in \"deputy mode\"..."
+        hide jenny with dissolve
+    else:
+        j "Bert! Your deputy is here!"
+        j "Status update! I've been keeping lookout sir!"
+        b "...What?"
+        j "Teehee, I was thinking, well, you're kind of like our sheriff."
+        j "So I was thinking like... well, I'm your deputy."
+        j "And that means I should be speaking to you like a deputy would!"
+        b "I... I'm flattered, I think?"
+        b "Anyway, I wanted to ask what you were up to before we met in the break room."
+        j "Starting from when?"
+        b "Uh, I guess from when you were with the rest of us and then went to the locker room."
+        show jenny ind
+        j "Bert! You want to know what I was doing in the locker room?"
+        b "..."
+        show jenny happy
+        j "Just pulling your leg!"
+        j "Hmm okay, I finished taking a shower."
+        j "I walked out of the locker room into the hall and I saw the lights had turned green."
+        j "And that the safe door was open!"
+        j "I also saw Sid taking a nap on the couch."
+        j "I thought maybe I'd wake him and we could check it out together."
+        j "You know, safety in numbers."
+        j "And also he might yell at me if I didn't tell him..."
+        j "But then I heard you yelling."
+        j "I figured something must have happened..."
+        j "So I left Sid to enjoy his nap while the adults handled everything!"
+        bi "Jenny calling herself an adult and implying Sid isn't is an..."
+        bi "Interesting statement to make."
+        show jenny ind
+        j "And uh, yeah, that's when I ran into you."
+        j "Oh, and I figured out who the Game Master is."
+        b "What?"
+        j "Kidding! Just making sure you're paying attention."
+        b "Oh..."
+        bi "Not going to lie, part of me believed her..."
+        bi "Maybe a good thing. It means I still have hope."
+        b "Okay, so to summarize..."
+        b "You left the locker room, saw the safe was open, were going to wake up Sid..."
+        b "Then you heard me yell and came to the break room."
+        j "Yep!"
+        $ bank_evidence[7] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Jenny's Account was added to evidence."
+        b "Alright, thanks Jenny."
+        j "Yes sir sheriff sir!"
+        b "...I don't know if deputies talk like they're in the military."
+        j "Oh... that's a good point."
+        hide jenny with dissolve
+        bi "It's convenient that Jenny claims Sid was asleep when she passed him..."
+        bi "Is she trying to make an alibi for herself using a sleeping witness?"
+        if False not in bank_evidence[4:7]:
+            bi "Okay, I've interrogated everyone."
+            bi "I was in this room before the uniformed person ran in here..."
+            bi "So besides the shells, I don't think there's too much of importance here."
+            call bankDone from _call_bankDone_3
     call screen breakInv
 
 label bankDone:
