@@ -144,11 +144,11 @@ screen bank_evidence():
 
         if currEvidence == 7:
             image "ev3 cleaning.png" xcenter 800 yalign 0.1
-            text "Jenny had just finished taking a shower in the locker room. She walked out and saw the safe was open, then heard me yelling. She walked directly to the break room, passing Sid sleeping on the couch on the way." xcenter 800 yanchor 0.0 ypos 330
+            text "Jenny had just finished taking a shower in the locker room. She walked out and saw the lights had turned green and the safe was open, then heard me yelling. She walked directly to the break room, passing Sid sleeping on the couch on the way." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "Sid woke up from sleeping on the couch. He saw the green light, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
+            text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev3 shards.png" xcenter 800 yalign 0.1
@@ -490,7 +490,7 @@ screen lobbyInv():
             yalign 0.0
             text "{i}"+tt.value+"{/i}"
     add "status.png"
-    add Text("{b}Security{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -577,6 +577,7 @@ label bankShells:
 label bankInvFreddy:
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    with dissolve
     show frog sad with dissolve
     if bank_evidence[5]:
         f "...*sniff*"
@@ -660,6 +661,7 @@ label bankInvFreddy:
 label bankInvLauren:
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    with dissolve
     show lauren ind with dissolve
     if bank_evidence[6]:
         l "You're done investigating already?"
@@ -719,6 +721,7 @@ label bankInvLauren:
 label bankInvJenny:
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    with dissolve
     show jenny happy with dissolve
     if bank_evidence[7]:
         j "Heya Bert!"
@@ -785,7 +788,28 @@ label bankInvJenny:
             bi "Okay, I've interrogated everyone."
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
-            call bankDone from _call_bankDone_3
+            call bankDone from _call_bankDone_4
+    call screen breakInv
+
+label bankSid2:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    with dissolve
+    show sid ind with dissolve
+    b "Hey Sid."
+    i "Hey Bert."
+    i "You here to bring me my money?"
+    b "Uh... not quite."
+    b "Just wanted to make sure I remembered what you told me earlier."
+    i "You don't suspect me, do you?"
+    bi "Maybe if I just don't acknowledge the question he won't get mad."
+    b "So you woke up, saw the light was green, and went to check the safe door was open."
+    b "Then you heard someone scream, and you came to the break room and ran into me."
+    i "Yeah, that's right."
+    b "Great, thanks Sid, you're being really helpful!"
+    i "Yeah, yeah, just don't forget about the money you owe me."
+    bi "The money I owe {i}if{/i} we find any in the safe..."
+    hide sid with dissolve
     call screen breakInv
 
 label bankDone:
@@ -796,3 +820,206 @@ label bankDone:
         bi "Let's go to the lobby and discuss with the others."
         jump trial4a
     return
+
+screen hall2Inv():
+    default tt = Tooltip("")
+    imagemap:
+        ground "bg bankhall3.png"
+        if bank_extra[2]:
+            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankCouch")] mouse 'q' hovered tt.Action("Hallway Couch")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankCouch")] mouse 'ex' hovered tt.Action("Hallway Couch")
+        if bank_extra[3]:
+            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankLights")] mouse 'q' hovered tt.Action("Green Wall Lights")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankLights")] mouse 'ex' hovered tt.Action("Green Wall Lights")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+    add "status.png"
+    add Text("{b}Bank Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.175
+        idle "mapicon.png" at iconzoom
+        action [Show("bankMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.275
+        idle "evidenceicon.png" at iconzoom
+        action [Show("bank_evidence", transition=Dissolve(0.3))]
+
+label bankCouch:
+    scene bg banklobby
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "That's the couch Sid was sleeping on."
+    bi "Maybe it's the fact that I only slept for a little bit and then had to investigate..."
+    bi "But it does look really comfortable to sleep on."
+    bi "Surely I have time for a nap, right?"
+    bi "..."
+    bi "No, I need to keep moving."
+    bi "Plus, it'd be less than ideal if the others caught me napping on the job."
+    $ bank_extra[2] = True
+    call screen hall2Inv
+
+label bankLights:
+    scene bg banklobby
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "The lights on the wall..."
+    bi "They were red before I tried to sleep."
+    bi "Now they're green."
+    bi "The safe is also open, so presumably that's why..."
+    bi "But I guess there's no way to know for sure."
+    bi "Well, we could re-lock the safe."
+    bi "But there might be crucial evidence in there..."
+    bi "For now, I'll assume the lights indicate the safe is open."
+    $ bank_extra[3] = True
+    call screen hall2Inv
+
+screen officeInv():
+    default tt = Tooltip("")
+    imagemap:
+        ground "bg bankoffice.png"
+        if bank_extra[4]:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankShelves")] mouse 'q' hovered tt.Action("Office Shelves")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankShelves")] mouse 'ex' hovered tt.Action("Office Shelves")
+        if bank_extra[5]:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankDesk")] mouse 'q' hovered tt.Action("Desk")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankDesk")] mouse 'ex' hovered tt.Action("Desk")
+        if bank_extra[6]:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'q' hovered tt.Action("Filing Cabinets")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinets")
+        if bank_extra[7]:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'q' hovered tt.Action("Photos")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'ex' hovered tt.Action("Photos")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+    add "status.png"
+    add Text("{b}Director's Office{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.175
+        idle "mapicon.png" at iconzoom
+        action [Show("bankMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.275
+        idle "evidenceicon.png" at iconzoom
+        action [Show("bank_evidence", transition=Dissolve(0.3))]
+
+label bankShelves:
+    scene bg bankoffice
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "It's a nice set of shelves for displaying objects."
+    bi "But unless the bank director's photo of a random skyscraper is crucial to this case..."
+    bi "I don't think there's anything important here."
+    $ bank_extra[4] = True
+    call screen officeInv
+
+label bankDesk:
+    scene bg bankoffice
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "Sam spent a lot of time searching in this room, including the desk."
+    bi "So it's probably not worth looking at every single file again."
+    bi "But I should at least make sure there's nothing hidden here..."
+    bi "..."
+    bi "I took a look in each of the drawers, but I didn't see anything noticeable."
+    $ bank_extra[5] = True
+    call screen officeInv
+
+label bankCabinet:
+    scene bg bankoffice
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "There's a good chance we didn't find every piece of info in these filing cabinets..."
+    bi "And there's also a good chance if I spent a week looking through them I still would miss something."
+    bi "Who even needs a filing cabinet this big when Koogle Drive exists?"
+    bi "Anyway..."
+    bi "I looked through all the cabinets quickly, but didn't see anything out of the ordinary."
+    $ bank_extra[6] = True
+    call screen officeInv
+
+label bankPhotos:
+    scene bg bankoffice
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "Offices always have photos on the wall."
+    bi "They're kind of cool to look at the first time but after that..."
+    bi "It's still a bank, it's always going to be at least a little bit dreary."
+    $ bank_extra[7] = True
+    call screen officeInv
+
+screen lockerInv():
+    default tt = Tooltip("")
+    imagemap:
+        ground "bg banklocker.png"
+        if bank_evidence[11]:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankLockers")] mouse 'q' hovered tt.Action("Lockers")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankLockers")] mouse 'ex' hovered tt.Action("Lockers")
+        if bank_extra[8]:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'q' hovered tt.Action("Bathrooms")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'ex' hovered tt.Action("Bathrooms")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+    add "status.png"
+    add Text("{b}Locker Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.175
+        idle "mapicon.png" at iconzoom
+        action [Show("bankMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.275
+        idle "evidenceicon.png" at iconzoom
+        action [Show("bank_evidence", transition=Dissolve(0.3))]
+
+label bankBathroom:
+    scene bg banklocker
+    $ statusnt("Locker Room", "bert", ch=4, sun=4)
+    with dissolve
+    bi "You know, there could be evidence in the bathrooms..."
+    scene black with dissolve
+    bi "I checked them out, but couldn't find anything."
+    scene bg banklocker
+    $ statusnt("Locker Room", "bert", ch=4, sun=4)
+    with dissolve
+    bi "Makes sense that there's nothing in there."
+    bi "Jenny would have been in here."
+    bi "So either she's the murderer or she might have bumped into someone hiding stuff in here."
+    bi "Hopefully no one flushed something important..."
+    $ bank_extra[8] = True
+    call screen lockerInv
