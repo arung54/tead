@@ -2523,6 +2523,12 @@ label hospPreInv2:
     bi "I know I'm innocent, and I doubt Freddy is the Game Master."
     bi "So Jenny, Lauren, Sid."
     bi "I probably can't trust any of them."
-    bi "I need to ask them what they were up to prior to discovering the body."
-    bi "But first, I should search this room thoroughly..."
+    bi "At some point, I should ask them what they were up to prior to discovering the body."
+    bi "I should start by committing to memory what I can about the series of events that just happened..."
+    $ bank_evidence[0] = True
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+    blank "Bert's Account was added to evidence."
+    bi "Next, I should search this room thoroughly..."
     call screen breakInv

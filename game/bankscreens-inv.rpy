@@ -31,10 +31,6 @@ screen bankMapInv():
                 hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
                 unhovered Hide("mapPreview")
             hotspot(460, 273, 108, 78):
-                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("safeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
-                unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("officeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
                 hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
                 unhovered Hide("mapPreview")
@@ -42,6 +38,15 @@ screen bankMapInv():
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lockerInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
                 hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
                 unhovered Hide("mapPreview")
+            hotspot(460, 273, 108, 78):
+                if not bank_extra[9]:
+                    action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Hide("bankMapInv"), Hide("mapPreview"), Jump("safeFirst")]
+                    hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                    unhovered Hide("mapPreview")
+                else:
+                    action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("safeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                    hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                    unhovered Hide("mapPreview")
     imagemap:
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("bankMapInv", transition=Dissolve(0.3)), Hide("mapPreview")]
@@ -116,7 +121,7 @@ screen bank_evidence():
     fixed xmaximum 580:
         if currEvidence == 0:
             image "ev3 guards.png" xcenter 800 yalign 0.1
-            text "After the shooting, I chased the uniformed person into the hallway. It was quiet enough in the hallway that I both saw and heard the break room door close. I yanked the door open and found Sam's body in the uniform." xcenter 800 yanchor 0.0 ypos 330
+            text "After the shooting, I chased the uniformed person into the hallway. It was quiet enough in the hallway that I both saw and heard the break room door close. I yanked the door open and found the dead body in the uniform." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
             image "ev3 computer.png" xcenter 800 yalign 0.1
@@ -160,7 +165,7 @@ screen bank_evidence():
 
         if currEvidence == 11:
             image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "All but one locker in the locker room had a uniform in it." xcenter 800 yanchor 0.0 ypos 330
+            text "Originally, each locker had one uniform it. When I investigated the locker room after Sam's death, only one of those uniforms was missing. " xcenter 800 yanchor 0.0 ypos 330
 
 screen breakInv():
     default tt = Tooltip("")
@@ -812,15 +817,6 @@ label bankSid2:
     hide sid with dissolve
     call screen breakInv
 
-label bankDone:
-    if False not in bank_evidence[1:]:
-        bi "Okay, I think I've searched this place pretty thoroughly."
-        bi "I don't feel like we have much to go off, but I've felt that way every time."
-        bi "What's one more miracle at this point?"
-        bi "Let's go to the lobby and discuss with the others."
-        jump trial4a
-    return
-
 screen hall2Inv():
     default tt = Tooltip("")
     imagemap:
@@ -1011,7 +1007,7 @@ label bankBathroom:
     scene bg banklocker
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
     with dissolve
-    bi "You know, there could be evidence in the bathrooms..."
+    bi "I guess I need to search the bathrooms..."
     scene black with dissolve
     bi "I checked them out, but couldn't find anything."
     scene bg banklocker
@@ -1021,5 +1017,150 @@ label bankBathroom:
     bi "Jenny would have been in here."
     bi "So either she's the murderer or she might have bumped into someone hiding stuff in here."
     bi "Hopefully no one flushed something important..."
+    if bank_evidence[11] and not bank_extra[8]:
+        bi "There's not a whole lot in this room... I think I've checked everything."
+        bi "Time to go to the next location."
+        call bankDone from _call_bankDone_5
     $ bank_extra[8] = True
     call screen lockerInv
+
+label bankLockers:
+    scene bg banklocker
+    $ statusnt("Locker Room", "bert", ch=4, sun=4)
+    with dissolve
+    if bank_evidence[11]:
+        bi "When Jenny and I came here earlier, every locker had a uniform in it."
+        bi "Now, one is missing, the one on Sam's body."
+    else:
+        bi "The lockers..."
+        bi "Thankfully I have all the keys."
+        bi "Otherwise, there could be lots of evidence hidden in them that we'd never find."
+        bi "Jenny took a bit of a risk having me be the one to hold on to them..."
+        bi "Though I guess if a locker was locked and I suddenly didn't have one of the keys, it would be obvious I did it."
+        bi "Anyway, I should look through them to be sure."
+        bi "..."
+        bi "When Jenny and I were first in here, each locker had a guard uniform."
+        bi "Now, one of those is missing, the one Sam is wearing."
+        bi "Does that mean Sam was in the locker room at some point?"
+        $ bank_evidence[11] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Uniforms in the Lockers was added to evidence."
+        if bank_extra[8]:
+            bi "There's not a whole lot in this room... I think I've checked everything."
+            bi "Time to go to the next location."
+            call bankDone from _call_bankDone_6
+    call screen lockerInv
+
+label firstSafe:
+    $ bank_extra[9] = True
+    scene bg bankvault3
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+    with dissolve
+    bi "Wow... it is open."
+    bi "Who opened it?"
+    bi "As far as I know, no one that's alive has been in here..."
+    bi "Did Sam open it before dying?"
+    bi "Or is someone lying?"
+    bi "Also, that note said..."
+    bi '"The vault contains not only a substantial fortune, but also the true secrets of this game."'
+    bi "It's so empty... there's no way I don't find everything in here in just a few minutes, right?"
+    bi "Am I going to unlock the answers we've been looking for?"
+    bi "I guess regardless, I'd better get in there and start searching..."
+    call screen safeInv with dissolve
+
+
+screen safeInv():
+    default tt = Tooltip("")
+    imagemap:
+        ground "bg banksafe1.png"
+        if bank_extra[10]:
+            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSafeCabinet")] mouse 'q' hovered tt.Action("Filing Cabinet")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSafeCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinet")
+        if bank_evidence[9]:
+            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSign")] mouse 'q' hovered tt.Action("Sign on the Wall")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSign")] mouse 'ex' hovered tt.Action("Sign on the Wall")
+        if bank_evidence[10]:
+            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankBox")] mouse 'q' hovered tt.Action("Box of Ammunition")
+        else:
+            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankBox")] mouse 'ex' hovered tt.Action("Box")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
+    add "status.png"
+    add Text("{b}Safe{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.175
+        idle "mapicon.png" at iconzoom
+        action [Show("bankMapInv", transition=Dissolve(0.3))]
+
+    imagebutton:
+        xalign 1.0
+        yalign 0.275
+        idle "evidenceicon.png" at iconzoom
+        action [Show("bank_evidence", transition=Dissolve(0.3))]
+
+label bankSafeCabinet:
+    scene bg banksafe1
+    $ statusnt("Safe", "bert", ch=4, sun=4)
+    with dissolve
+    bi "Another filing cabinet."
+    bi "Hopefully this one isn't full of papers that I have to read through."
+    bi "If only Shahar was here... lawyers are good at reading through pages of boring text, right?"
+    bi "..."
+    bi "Huh?"
+    bi "This drawer's empty."
+    bi "...So is this one."
+    bi "In fact, all of them are."
+    bi "Maybe there was money in here and someone took it?"
+    bi "But then where is the money now? Unless it was like, ten dollars, it would be hard to hide."
+    bi "I guess unless I find another clue related to this cabinet, best not to worry about it for now."
+    if not bank_extra[10] and False not in bank_extra[9:10]:
+        bi "Well, I wasn't wrong about the safe not having much to search."
+        bi "Though, I'm wishing I found pretty much anything else in here..."
+        bi "Evidence, a secret of the game..."
+        bi "Oh well."
+    $ bank_extra[10] = True
+    call screen safeInv with dissolve
+
+label bankSign:
+    scene bg banksafe1
+    $ statusnt("Safe", "bert", ch=4, sun=4)
+    with dissolve
+    if bank_evidence[9]:
+        b "The sign on the safe says you can't unlock it from the inside."
+        b "Jenny and I tested that and it's true."
+        b "Also, we learned that the door opens and closes electronically once you pull or push it."
+        b "And when it opens, it opens to a ninety degree angle."
+    else:
+        $ bank_evidence[9] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "The Safe Door was added to evidence."
+        if bank_extra[10] and False not in bank_extra[9:10]:
+            bi "Well, I wasn't wrong about the safe not having much to search."
+            bi "Though, I'm wishing I found pretty much anything else in here..."
+            bi "Evidence, a secret of the game..."
+            bi "Oh well."
+            call bankDone from _call_bankDone_7
+    call screen lockerInv
+
+label bankDone:
+    if False not in bank_evidence[1:]:
+        bi "Okay, I think I've searched the whole bank pretty thoroughly."
+        bi "I don't feel like we have much to go off, but I've felt that way every time."
+        bi "What's one more miracle at this point?"
+        bi "Let's go to the lobby and discuss with the others."
+        jump trial4a
+    return
