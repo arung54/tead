@@ -410,11 +410,11 @@ screen navigation():
         imagebutton:
             idle "ibmenucards.png"
             hover "ibmenucards2.png"
-            ycenter .442 xcenter .492 focus_mask True action Hide("navigation")
+            ycenter .442 xcenter .492 focus_mask True action Hide("main_menu")
         imagebutton:
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
-            focus_mask True action [Hide("navigation"),ShowMenu("about")]
+            focus_mask True action [ShowMenu("about"), Hide("main_menu")]
         imagebutton:
             idle "ibmenuload.png"
             hover "ibmenuload2.png"
@@ -634,9 +634,13 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.game_menu_background #change to main_menu_background to match old one
+        add "menured.png"
+        add "vinegar.png"
+        add "menubgscroll2" #change to main_menu_background to match old one
     else:
-        add gui.game_menu_background
+        add "menured.png"
+        add "vinegar.png"
+        add "menubgscroll2"
 
     frame:
         style "game_menu_outer_frame"
@@ -756,10 +760,18 @@ style return_button:
 ## example of how to make a custom screen.
 
 screen about():
-    add "images/scary.png" alpha 0.8
-
+    #add "menured.png"
+    #add "vinegar.png"
+    #add "menubgscroll2"
     tag menu
-
+    python:
+        '''
+    imagebutton:
+        xcenter .1 ycenter .1
+        idle "backbutton.png"
+        hover "backbutton2.png"
+        action [ShowMenu("history"), Hide("about")]
+        '''
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
@@ -768,7 +780,8 @@ screen about():
         style_prefix "about"
 
         vbox:
-
+            ycenter .5
+            xcenter .4
             #label "TEAD"
             text _("                  Alpha Version 0.2\n")
             text _("                  Graphics, Writing: Julian Pagliaccio\n")
@@ -776,8 +789,6 @@ screen about():
             text _("                  Music: Andrew Kim\n")
             text _("                  Shirtless Pic: Shahar Syed\n")
             text _("                  Alpha Testing: You!\n")
-
-            ## gui.about is usually set in options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
 
