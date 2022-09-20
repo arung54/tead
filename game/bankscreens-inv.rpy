@@ -2,50 +2,62 @@ screen bankMapInv():
     modal True
     if not bank_evidence[8]:
         imagemap:
-            ground "map4ui.png"
-            hotspot(460, 273, 108, 78):
+            ground "map4ui2.png"
+            hotspot(361, 329, 131, 133):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("breakInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay1.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(491, 330, 57, 364):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Hide("bankMapInv"), Hide("mapPreview"), Jump("bankSid")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay5.png")
                 unhovered Hide("mapPreview")
     else:
         imagemap:
             ground "map4ui.png"
-            hotspot(460, 273, 108, 78):
+            hotspot(307, 477, 184, 215):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lobbyInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay4.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(361, 329, 131, 133):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("breakInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay1.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(491, 330, 57, 364):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall1Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay5.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(547, 331, 489, 56):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall2Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay5.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(674, 379, 53, 316):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall2Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay5.png")
+                unhovered Hide("mapPreview")
+            hotspot(674, 644, 361, 49):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall2Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay5.png")
+                unhovered Hide("mapPreview")
+            hotspot(987, 330, 49, 363):
+                action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("hall2Inv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
+                hovered ShowTransient("mapPreview", img="bankmapoverlay5.png")
+                unhovered Hide("mapPreview")
+            hotspot(569, 387, 105, 112):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("officeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay2.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(1035, 512, 100, 182):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lockerInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                hovered ShowTransient("mapPreview", img="bankmapoverlay3.png")
                 unhovered Hide("mapPreview")
-            hotspot(460, 273, 108, 78):
+            hotspot(726, 387, 260, 259):
                 if not bank_extra[9]:
                     action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Hide("bankMapInv"), Hide("mapPreview"), Jump("safeFirst")]
-                    hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                    hovered ShowTransient("mapPreview", img="bankmapoverlay6.png")
                     unhovered Hide("mapPreview")
                 else:
                     action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("safeInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
-                    hovered ShowTransient("mapPreview", img="bankmapoverlay8.png")
+                    hovered ShowTransient("mapPreview", img="bankmapoverlay7.png")
                     unhovered Hide("mapPreview")
     imagemap:
         idle "trainMapoverlayleft.png"
@@ -120,73 +132,75 @@ screen bank_evidence():
 
     fixed xmaximum 580:
         if currEvidence == 0:
-            image "ev3 guards.png" xcenter 800 yalign 0.1
+            image "ev4 bert.png" xcenter 800 yalign 0.1
             text "After the shooting, I chased the uniformed person into the hallway. It was quiet enough in the hallway that I both saw and heard the break room door close. I yanked the door open and found the dead body in the uniform." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
-            image "ev3 computer.png" xcenter 800 yalign 0.1
+            image "ev4 door.png" xcenter 800 yalign 0.1
             text "The door to the break room stayed open the entire time since I first walked in here." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
-            image "ev3 glue.png" xcenter 800 yalign 0.1
+            image "ev4 gun.png" xcenter 800 yalign 0.1
             text "The gun we found in the break room holds up to six bullets at once, and was empty when we found Sam's body. There was also a single bullet shell lying next to Sam." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 3:
-            image "ev3 rules.png" xcenter 800 yalign 0.1
+            image "ev4 belt.png" xcenter 800 yalign 0.1
             text "Part of an elastic belt was found attached to ___ in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
-            image "ev3 stool.png" xcenter 800 yalign 0.1
+            image "ev4 shells.png" xcenter 800 yalign 0.1
             text "There were six shells on the ground in the lobby, near the door to the hallway. They match the shell found by Sam's body." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:
-            image "ev3 stool.png" xcenter 800 yalign 0.1
+            image "ev4 freddy.png" xcenter 800 yalign 0.1
             text "Freddy woke up to the sound of gunshots. He saw me get down to the floor, then saw the uniformed person leave, and me chase after them." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
-            image "ev3 stool.png" xcenter 800 yalign 0.1
+            image "ev4 lauren.png" xcenter 800 yalign 0.1
             text "Lauren was searching in the office, left, and was trying to find people. The safe was closed when she passed by, and she didn't see anyone in the locker room. She walked towards the lobby, passing the couch, and ended up finding me and Jenny because she heard us talking in the break room." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
-            image "ev3 cleaning.png" xcenter 800 yalign 0.1
+            image "ev4 jenny.png" xcenter 800 yalign 0.1
             text "Jenny had just finished taking a shower in the locker room. She walked out and saw the lights had turned green and the safe was open, then heard me yelling. She walked directly to the break room, passing Sid sleeping on the couch on the way." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
-            image "ev3 shards.png" xcenter 800 yalign 0.1
+            image "ev4 sid.png" xcenter 800 yalign 0.1
             text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
-            image "ev3 shards.png" xcenter 800 yalign 0.1
+            image "ev4 sign.png" xcenter 800 yalign 0.1
             text "Even when the combination is entered, if it's shut, the safe door can't be opened from the inside. The door opens and closes electronically, and opens up to a ninety degree angle." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 10:
-            image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "Inside the safe we found bullets that seem to fit in the gun. The bullets come in sets of six, and are attached by a piece of metal so that they can all be reloaded at once. However, the piece of metal prevents you from separating individual bullets." xcenter 800 yanchor 0.0 ypos 330
+            image "ev4 ammo.png" xcenter 800 yalign 0.1
+            text "Inside the safe we found bullets in a box. The bullets come in sets of six, and are attached by a piece of metal so that a whole set can quickly be loaded at once. However, the piece of metal prevents you from separating individual bullets." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 11:
-            image "ev3 shards.png" xcenter 800 yalign 0.1
-            text "Originally, each locker had one uniform it. When I investigated the locker room after Sam's death, only one of those uniforms was missing. " xcenter 800 yanchor 0.0 ypos 330
+            image "ev4 uniform.png" xcenter 800 yalign 0.1
+            text "Originally, each locker had one uniform it. When I investigated the locker room after Sam's death, only one of those uniforms was missing." xcenter 800 yanchor 0.0 ypos 330
 
 screen breakInv():
     default tt = Tooltip("")
     imagemap:
         ground "bg bankbreak2.png"
         if bank_extra[0]:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankCorpse")] mouse 'q' hovered tt.Action("Sam's Corpse")
+            hotspot(821, 445, 127, 199) action [Hide("breakInv"), Jump("bankCorpse")] mouse 'q' hovered tt.Action("Sam's Corpse")
+            hotspot(940, 445, 81, 98) action [Hide("breakInv"), Jump("bankCorpse")] mouse 'q' hovered tt.Action("Sam's Corpse")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankCorpse")] mouse 'ex' hovered tt.Action("Sam's Corpse")
+            hotspot(821, 445, 127, 199) action [Hide("breakInv"), Jump("bankCorpse")] mouse 'ex' hovered tt.Action("Sam's Corpse")
+            hotspot(940, 445, 81, 98) action [Hide("breakInv"), Jump("bankCorpse")] mouse 'ex' hovered tt.Action("Sam's Corpse")
         if bank_evidence[1]:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankDoor")] mouse 'q' hovered tt.Action("Break Room Door")
+            hotspot(1060, 62, 59, 612) action [Hide("breakInv"), Jump("bankDoor")] mouse 'q' hovered tt.Action("Break Room Door")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankDoor")] mouse 'ex' hovered tt.Action("Break Room Door")
+            hotspot(1060, 62, 59, 612) action [Hide("breakInv"), Jump("bankDoor")] mouse 'ex' hovered tt.Action("Break Room Door")
         if bank_evidence[2]:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankGun")] mouse 'q' hovered tt.Action("Gun")
+            hotspot(945, 541, 47, 42) action [Hide("breakInv"), Jump("bankGun")] mouse 'q' hovered tt.Action("Gun")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankGun")] mouse 'ex' hovered tt.Action("Gun")
+            hotspot(945, 541, 47, 42) action [Hide("breakInv"), Jump("bankGun")] mouse 'ex' hovered tt.Action("Gun")
         if bank_evidence[3]:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankBelt")] mouse 'q' hovered tt.Action("???")
+            hotspot(436, 640, 157, 60) action [Hide("breakInv"), Jump("bankBelt")] mouse 'q' hovered tt.Action("Torn Elastic Belt")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("breakInv"), Jump("bankBelt")] mouse 'ex' hovered tt.Action("Torn Elastic Belt")
+            hotspot(436, 640, 157, 60) action [Hide("breakInv"), Jump("bankBelt")] mouse 'ex' hovered tt.Action("???")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -202,7 +216,7 @@ screen breakInv():
         xalign 1.0
         yalign 0.175
         idle "mapicon.png" at iconzoom
-        if bank_extra[1]:
+        if bank_extra[0] and False not in bank_evidence[1:3]:
             action [Show("bankMapInv", transition=Dissolve(0.3))]
         else:
             action [Hide("breakInv"), Jump("bankStuck")]
@@ -382,7 +396,7 @@ screen hall1Inv():
 
 
 label bankSid:
-    scene bg bankbreak2
+    scene bg bankhall1b
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     $ showchibint("sid")
     with dissolve
@@ -484,11 +498,11 @@ label bankSid:
 screen lobbyInv():
     default tt = Tooltip("")
     imagemap:
-        ground "bg banklobby.png"
+        ground "bg banklobby2.png"
         if bank_evidence[1]:
-            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("bankShells")] mouse 'q' hovered tt.Action("Bullet Shells")
+            hotspot(989, 396, 88, 45) action [Hide("lobbyInv"), Jump("bankShells")] mouse 'q' hovered tt.Action("Bullet Shells")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("lobbyInv"), Jump("bankShells")] mouse 'ex' hovered tt.Action("Bullet Shells")
+            hotspot(989, 396, 88, 45)action [Hide("lobbyInv"), Jump("bankShells")] mouse 'ex' hovered tt.Action("Bullet Shells")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -537,7 +551,7 @@ screen lobbyInv():
         action [Hide("lobbyInv", transition = Dissolve(1.0)), Jump("bankSid2")]
 
 label bankShells:
-    scene bg banklobby
+    scene bg banklobby2
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[4]:
         b "There are six bullet shells on the floor by the door to the hallway."
@@ -577,10 +591,10 @@ label bankShells:
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
             call bankDone from _call_bankDone_1
-    call screen breakInv
+    call screen lobbyInv
 
 label bankInvFreddy:
-    scene bg banklobby
+    scene bg banklobby2
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     with dissolve
     show frog sad with dissolve
@@ -661,10 +675,10 @@ label bankInvFreddy:
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
             call bankDone from _call_bankDone_2
-    call screen breakInv
+    call screen lobbyInv
 
 label bankInvLauren:
-    scene bg banklobby
+    scene bg banklobby2
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     with dissolve
     show lauren ind with dissolve
@@ -721,10 +735,10 @@ label bankInvLauren:
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
             call bankDone from _call_bankDone_3
-    call screen breakInv
+    call screen lobbyInv
 
 label bankInvJenny:
-    scene bg banklobby
+    scene bg banklobby2
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     with dissolve
     show jenny happy with dissolve
@@ -794,10 +808,10 @@ label bankInvJenny:
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
             call bankDone from _call_bankDone_4
-    call screen breakInv
+    call screen lobbyInv
 
 label bankSid2:
-    scene bg banklobby
+    scene bg banklobby2
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     with dissolve
     show sid ind with dissolve
@@ -815,20 +829,20 @@ label bankSid2:
     i "Yeah, yeah, just don't forget about the money you owe me."
     bi "The money I owe {i}if{/i} we find any in the safe..."
     hide sid with dissolve
-    call screen breakInv
+    call screen lobbyInv
 
 screen hall2Inv():
     default tt = Tooltip("")
     imagemap:
         ground "bg bankhall3.png"
         if bank_extra[2]:
-            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankCouch")] mouse 'q' hovered tt.Action("Hallway Couch")
+            hotspot(601, 354, 92, 45) action [Hide("hall2inv"), Jump("bankCouch")] mouse 'q' hovered tt.Action("Hallway Couch")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankCouch")] mouse 'ex' hovered tt.Action("Hallway Couch")
+            hotspot(601, 354, 92, 45) action [Hide("hall2inv"), Jump("bankCouch")] mouse 'ex' hovered tt.Action("Hallway Couch")
         if bank_extra[3]:
-            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankLights")] mouse 'q' hovered tt.Action("Green Wall Lights")
+            hotspot(0, 310, 575, 97) action [Hide("hall2inv"), Jump("bankLights")] mouse 'q' hovered tt.Action("Green Wall Lights")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("hall2inv"), Jump("bankLights")] mouse 'ex' hovered tt.Action("Green Wall Lights")
+            hotspot(0, 310, 575, 97) action [Hide("hall2inv"), Jump("bankLights")] mouse 'ex' hovered tt.Action("Green Wall Lights")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -853,7 +867,7 @@ screen hall2Inv():
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
 label bankCouch:
-    scene bg banklobby
+    scene bg bankhall3
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     with dissolve
     bi "That's the couch Sid was sleeping on."
@@ -867,7 +881,7 @@ label bankCouch:
     call screen hall2Inv
 
 label bankLights:
-    scene bg banklobby
+    scene bg bankhall3
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     with dissolve
     bi "The lights on the wall..."
@@ -886,21 +900,29 @@ screen officeInv():
     imagemap:
         ground "bg bankoffice.png"
         if bank_extra[4]:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankShelves")] mouse 'q' hovered tt.Action("Office Shelves")
+            hotspot(901, 106, 366, 323) action [Hide("officeInv"), Jump("bankShelves")] mouse 'q' hovered tt.Action("Office Shelves")
+            hotspot(1077, 408, 192, 156) action [Hide("officeInv"), Jump("bankShelves")] mouse 'q' hovered tt.Action("Office Shelves")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankShelves")] mouse 'ex' hovered tt.Action("Office Shelves")
+            hotspot(901, 106, 366, 323) action [Hide("officeInv"), Jump("bankShelves")] mouse 'ex' hovered tt.Action("Office Shelves")
+            hotspot(1077, 408, 192, 156) action [Hide("officeInv"), Jump("bankShelves")] mouse 'ex' hovered tt.Action("Office Shelves")
         if bank_extra[5]:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankDesk")] mouse 'q' hovered tt.Action("Desk")
+            hotspot(550, 396, 531, 301) action [Hide("officeInv"), Jump("bankDesk")] mouse 'q' hovered tt.Action("Desk")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankDesk")] mouse 'ex' hovered tt.Action("Desk")
+            hotspot(550, 396, 531, 301) action [Hide("officeInv"), Jump("bankDesk")] mouse 'ex' hovered tt.Action("Desk")
         if bank_extra[6]:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'q' hovered tt.Action("Filing Cabinets")
+            hotspot(18, 221, 335, 398) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'q' hovered tt.Action("Filing Cabinets")
+            hotspot(351, 383, 75, 176) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'q' hovered tt.Action("Filing Cabinets")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinets")
+            hotspot(18, 221, 335, 398) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinets")
+            hotspot(351, 383, 75, 176) action [Hide("officeInv"), Jump("bankCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinets")
         if bank_extra[7]:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'q' hovered tt.Action("Photos")
+            hotspot(159, 11, 166, 123) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'q' hovered tt.Action("Photos")
+            hotspot(397, 187, 139, 97) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'q' hovered tt.Action("Photos")
+            hotspot(768, 200, 115, 87) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'q' hovered tt.Action("Photos")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'ex' hovered tt.Action("Photos")
+            hotspot(159, 11, 166, 123) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'ex' hovered tt.Action("Photos")
+            hotspot(397, 187, 139, 97) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'ex' hovered tt.Action("Photos")
+            hotspot(768, 200, 115, 87) action [Hide("officeInv"), Jump("bankPhotos")] mouse 'ex' hovered tt.Action("Photos")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -973,13 +995,13 @@ screen lockerInv():
     imagemap:
         ground "bg banklocker.png"
         if bank_evidence[11]:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankLockers")] mouse 'q' hovered tt.Action("Lockers")
+            hotspot(767, 220, 512, 282) action [Hide("officeInv"), Jump("bankLockers")] mouse 'q' hovered tt.Action("Lockers")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankLockers")] mouse 'ex' hovered tt.Action("Lockers")
+            hotspot(767, 220, 512, 282) action [Hide("officeInv"), Jump("bankLockers")] mouse 'ex' hovered tt.Action("Lockers")
         if bank_extra[8]:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'q' hovered tt.Action("Bathrooms")
+            hotspot(182, 277, 252, 193) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'q' hovered tt.Action("Bathrooms")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'ex' hovered tt.Action("Bathrooms")
+            hotspot(182, 277, 252, 193) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'ex' hovered tt.Action("Bathrooms")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -1003,7 +1025,7 @@ screen lockerInv():
         idle "evidenceicon.png" at iconzoom
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
-label bankBathroom:
+label bankBathrooms:
     scene bg banklocker
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
     with dissolve
@@ -1053,14 +1075,15 @@ label bankLockers:
             call bankDone from _call_bankDone_6
     call screen lockerInv
 
-label firstSafe:
+label safeFirst:
     $ bank_extra[9] = True
-    scene bg bankvault3
+    scene bg bankvault2
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     with dissolve
-    bi "Wow... it is open."
+    bi "Well... the safe is open."
     bi "Who opened it?"
     bi "As far as I know, no one that's alive has been in here..."
+    bi "Did two people give up their birthdays?"
     bi "Did Sam open it before dying?"
     bi "Or is someone lying?"
     bi "Also, that note said..."
@@ -1076,17 +1099,17 @@ screen safeInv():
     imagemap:
         ground "bg banksafe1.png"
         if bank_extra[10]:
-            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSafeCabinet")] mouse 'q' hovered tt.Action("Filing Cabinet")
+            hotspot(322, 320, 97, 170) action [Hide("safeInv"), Jump("bankSafeCabinet")] mouse 'q' hovered tt.Action("Filing Cabinet")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSafeCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinet")
+            hotspot(322, 320, 97, 170) action [Hide("safeInv"), Jump("bankSafeCabinet")] mouse 'ex' hovered tt.Action("Filing Cabinet")
         if bank_evidence[9]:
-            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSign")] mouse 'q' hovered tt.Action("Sign on the Wall")
+            hotspot(546, 229, 188, 102) action [Hide("safeInv"), Jump("bankSign")] mouse 'q' hovered tt.Action("Sign on the Wall")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankSign")] mouse 'ex' hovered tt.Action("Sign on the Wall")
+            hotspot(546, 229, 188, 102) action [Hide("safeInv"), Jump("bankSign")] mouse 'ex' hovered tt.Action("Sign on the Wall")
         if bank_evidence[10]:
-            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankBox")] mouse 'q' hovered tt.Action("Box of Ammunition")
+            hotspot(599, 438, 81, 43) action [Hide("safeInv"), Jump("bankBox")] mouse 'q' hovered tt.Action("Box of Ammunition")
         else:
-            hotspot(0, 0, 1, 1) action [Hide("safeInv"), Jump("bankBox")] mouse 'ex' hovered tt.Action("Box")
+            hotspot(599, 438, 81, 43) action [Hide("safeInv"), Jump("bankBox")] mouse 'ex' hovered tt.Action("Box")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -1131,19 +1154,145 @@ label bankSafeCabinet:
         bi "Evidence, a secret of the game..."
         bi "Oh well."
     $ bank_extra[10] = True
-    call screen safeInv with dissolve
+    call screen safeInv
+
+label bankBox:
+    scene bg banksafe1
+    $ statusnt("Safe", "bert", ch=4, sun=4)
+    with dissolve
+    if bank_evidence[10]:
+        bi "A box holding ammo."
+        bi "The bullets come in sets of six."
+        bi "Each set is connected by a piece of metal, which lets you load six at once easily."
+        bi "But, I wasn't able to tear off individual bullets when I tried."
+    else:
+        bi "Hm, what's in this box?"
+        blank "Click."
+        bi "Huh."
+        bi "It's full of ammo, presumably for the gun."
+        bi "I guess that makes sense, we didn't see a gun or ammo until today, when the safe was first opened."
+        bi "So it had to have come from in here."
+        bi "Hm... this ammo is interesting though."
+        bi "It doesn't come as single bullets, but in sets of six."
+        bi "Each set is connected by a piece of metal that's shaped almost like a flower."
+        bi "The bullets are attached to the metal piece on \"leaves\" of the flower."
+        bi "I guess, I've seen in games those devices that let you load multiple bullets at once."
+        bi "It looks like those, except it's attached to the bullets."
+        bi "I assume when you fire there's enough force that each individual bullet detaches."
+        bi "I wonder..."
+        b "Urg."
+        b "Hhhhhhh."
+        b "ROAAAAAAAAAAARGH."
+        bi "...Damn."
+        bi "Either I'm weaker than I thought, or it's not humanly possible to tear off the bullets from the set."
+        bi "So they have to be reloaded in sets of six..."
+        bi "That seems like it will be important to remember."
+        $ bank_evidence[10] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Ammunition was added to evidence."
+        if bank_extra[10] and False not in bank_extra[9:10]:
+            bi "Well, I wasn't wrong about the safe not having much to search."
+            bi "Though, I'm wishing I found pretty much anything else in here..."
+            bi "Evidence, a secret of the game..."
+            bi "Oh well."
+            call bankDone from _call_bankDone_7
+    call screen safeInv
 
 label bankSign:
     scene bg banksafe1
     $ statusnt("Safe", "bert", ch=4, sun=4)
     with dissolve
     if bank_evidence[9]:
-        b "The sign on the safe says you can't unlock it from the inside."
-        b "Jenny and I tested that and it's true."
-        b "Also, we learned that the door opens and closes electronically once you pull or push it."
-        b "And when it opens, it opens to a ninety degree angle."
+        bi "The sign on the safe says you can't unlock it from the inside."
+        bi "Jenny and I tested that and that's true."
+        bi "Also, we learned that the door opens and closes electronically once you pull or push it."
+        bi "And when it opens, it opens to a ninety degree angle."
     else:
         $ bank_evidence[9] = True
+        bi "Let's see, what does this sign say..."
+        blank "CAUTION:"
+        blank "FOR THE ABSOLUTE SECURITY OF OUR CLIENT'S VALUABLES,"
+        blank "THE VAULT CANNOT BE UNLOCKED FROM WITHIN."
+        bi "Is that true?"
+        bi "I can't really test by myself it without locking myself in here."
+        bi "Key word, by myself..."
+        scene black with dissolve
+        bi "I ran to the lobby, grabbed Jenny, and brought her to the safe with me."
+        scene bg bankvault2
+        $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
+        $ showchibint("jenny")
+        show jenny ind
+        with dissolve
+        j "So... you brought me here to test something?"
+        b "Yeah, do you mind going in the safe for me?"
+        j "Um... okay?"
+        hide jenny with dissolve
+        $ showchibint()
+        with dissolve
+        j "Now what?!"
+        b "I'm going to close the door, once it's closed I want you to try and open it."
+        j "Oh, okay."
+        j "...Wait, try?"
+        bi "Before she could finish asking, I had already pushed on the safe door."
+        # TODO: Add sfx here
+        bi "It took some force to get it started, but..."
+        bi "It started closing on its own."
+        b "Huh, so the safe closes electronically..."
+        j "Bert!"
+        j "What did you mean b-"
+        blank "Thud."
+        show bg bankvault3 with dissolve
+        b "The door closed into place, and I couldn't hear Jenny anymore."
+        bi "..."
+        bi "Hm, I guess I should have decided how long to let her try before closing the door on her."
+        bi "Let's wait a minute, to be safe."
+        bi "..."
+        bi "Okay, that's enough time."
+        bi "I pulled on the door, and yet again it opened on its own electronically."
+        bi "I went inside to chat with Jenny."
+        scene bg banksafe1
+        $ showchibint("jenny")
+        show jenny scared
+        with dissolve
+        j "Bert, what the hell!"
+        j "I was trapped in there..."
+        b "Did you try opening the door?"
+        j "Yes! I couldn't find any door handle or anything."
+        j "So I was pushing for my life in there."
+        j "I... I could've suffocated."
+        b "Sorry... I guess there were better ways to do that."
+        j "You think?"
+        j "Hmph..."
+        j "..."
+        show jenny happy
+        j "Teehee, that would have been a funny prank, though!"
+        j "We should try it on the others!"
+        b "I, uh..."
+        b "No, I think once was enough."
+        show jenny ind
+        j "Aw man..."
+        j "Hm, you're really a perfectionist, Bert."
+        b "Huh?"
+        j "You opened the safe door back to exactly a ninety degree angle."
+        j "Just like it was when you brought me here!"
+        b "Oh... I didn't do that."
+        b "I think it's programmed to open electronically to exactly that angle."
+        j "Oh, weird. I guess the bank architect is the perfectionist then."
+        j "Them architects and their obsession with right angles..."
+        j "They should try making a pentagonal building for once!"
+        bi "I... I think that's already a thing."
+        j "Anyway, is that all you needed me for?"
+        b "Yup, thanks Jenny."
+        j "Alright, back to partying with the others!"
+        hide jenny with dissolve
+        $ showchibint()
+        with dissolve
+        bi "Hm... so the sign is accurate."
+        bi "And we also learned the door opens and closes electronically, to and from a ninety degree angle."
+        bi "That means if someone was in here earlier, they would either have been locked in or easily seen..."
+        bi "Does that mean no one's been in here before?"
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
@@ -1153,8 +1302,8 @@ label bankSign:
             bi "Though, I'm wishing I found pretty much anything else in here..."
             bi "Evidence, a secret of the game..."
             bi "Oh well."
-            call bankDone from _call_bankDone_7
-    call screen lockerInv
+            call bankDone from _call_bankDone_8
+    call screen safeInv
 
 label bankDone:
     if False not in bank_evidence[1:]:
