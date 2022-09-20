@@ -280,7 +280,7 @@ label trainGo:
     h "Aye, I'll check the next car up. To the front with me!"
     h "The captain aught to be at the bow!"
     hide shahar ind with moveoutleft
-    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "sid", "stella", "dracula")
+    $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "sid", "stella", "dracula")
     show sid ind with dissolve
     i "I'll go with, the uh, pirate. Why is there a pirate here again?"
     show sid ind:
@@ -293,7 +293,7 @@ label trainGo:
     hide sid ind
     hide kaiser ind
     with moveoutleft
-    $ showchibi("bert", "catherine", "lauren", "freddy", "jenny", "sam", "stella", "dracula")
+    $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "sam", "stella", "dracula")
     show jenny ind with dissolve
     j "Hmm, I'm going to go with them too. We should probably try to stay in groups."
     j "Plus, going to the front seems like the best way to find out where we're going."
@@ -315,7 +315,7 @@ label trainGo:
     hide jenny ind
     hide catherine ind
     with moveoutleft
-    $ showchibi("bert", "lauren", "freddy", "sam", "stella", "dracula")
+    $ showchibint("bert", "lauren", "freddy", "sam", "stella", "dracula")
 
     ni "What a strange bunch."
     show sam ind with dissolve
@@ -508,7 +508,7 @@ label midcar2:
     s "Oh, the others are back."
     hide sam with dissolve
     blank "The front train car door opened, and Shahar, Jenny, Sid, and Catherine walked in."
-    $showchibi("sam", "freddy", "lauren", "bert", "stella", "jenny", "shahar", "sid", "catherine", "dracula",  "kaiser")
+    $showchibint("sam", "freddy", "lauren", "bert", "stella", "jenny", "shahar", "sid", "catherine", "dracula",  "kaiser")
     show jenny happy with dissolve
     j "Hey, you guys are back already!"
     show jenny happy:
@@ -704,7 +704,7 @@ label frontcar2:
     j "You punk. We're stuck in here together, you know?"
     j "It wouldn't kill you to be cooperative."
     hide jenny ind with moveoutright
-    $ showchibi("sam", "lauren", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
+    $ showchibint("sam", "lauren", "bert", "shahar", "sid", "catherine", "dracula", "kaiser")
     #Arunj: Showchibi for Jenny/Freddy leaving
     show scary with dissolve:
         alpha .5
@@ -753,7 +753,7 @@ label frontcar2:
     s "Ha!"
     i "I'm outta here! You guys suck!"
     hide sid ind with dissolve
-    $ showchibi("sam", "lauren", "bert", "shahar", "catherine", "dracula", "kaiser")
+    $ showchibint("sam", "lauren", "bert", "shahar", "catherine", "dracula", "kaiser")
     show lauren ind:
         xcenter .85
         linear 0.3 xcenter .75
@@ -772,7 +772,7 @@ label frontcar2:
     show kaiser ind with dissolve
     k "I'm going as well. I haven't seen the back car yet."
     hide kaiser ind with dissolve
-    $ showchibi("bert", "shahar", "catherine", "dracula")
+    $ showchibint("bert", "shahar", "catherine", "dracula")
     show bert sad with dissolve
     bt "I haven't yet either, but I want to spend a little more time up here first."
     bt "This feels like where we'll find the most answers."
@@ -862,7 +862,7 @@ label frontcar3:
     hide bert sad
     hide drac ind
     with dissolve
-    $ showchibi()
+    $ showchibint()
     ni "......"
     ni "Now that I'm alone..."
     ni "Maybe I can figure this out before the rest of them."
@@ -991,7 +991,7 @@ label midcar3:
     d "..."
     bt "Okay, so only one more bed to account for."
     hide drac ind with moveoutright
-    $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "kaiser")
+    $ showchibint("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine", "kaiser")
 
     show kaiser ind with moveinright:
         xcenter .75
@@ -1000,7 +1000,7 @@ label midcar3:
     k "It is fine. I am used to poor sleeping conditions."
     k "With that taken care of. Goodnight all."
     hide kaiser ind with moveoutright
-    $ showchibi("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine")
+    $ showchibint("stella", "freddy", "sam", "lauren", "jenny", "bert", "shahar", "sid", "catherine")
 
     bt "Well, as long as that's taken care of. G'night Dan!"
     hide bert with moveoutleft
@@ -1194,7 +1194,7 @@ label day2:
     n "Huh? Oh, Sid... What time is it?"
     i "No idea, but the sun's up. I'm heading to the bar car to the others."
     hide sid happy with moveoutright
-    $ showchibi()
+    $ showchibint()
     ni "That kid's got a lot of energy. It must be around 7 AM."
     $noside = True
     blank "Dan walked to the back window."
@@ -1275,7 +1275,7 @@ label testft:
     hide bert happy
     hide sam
     with dissolve
-    $showchibi("jenny", "stella", "lauren", "freddy", "sid")
+    $showchibint("jenny", "stella", "lauren", "freddy", "sid")
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
@@ -1661,7 +1661,7 @@ label midcar5:
     hide sam
     hide lauren ind
     with moveoutleft
-    $ showchibi("bert", "catherine", "freddy", "jenny", "kaiser", "shahar", "sid", "stella", "dracula")
+    $ showchibint("bert", "catherine", "freddy", "jenny", "kaiser", "shahar", "sid", "stella", "dracula")
     show kaiser ind:
         xcenter .25
     show shahar ind:
@@ -1681,7 +1681,7 @@ label midcar5:
     hide kaiser ind
     hide shahar ind
     with moveoutleft
-    $ showchibi("bert", "catherine", "freddy", "jenny", "sid", "stella", "dracula")
+    $ showchibint("bert", "catherine", "freddy", "jenny", "sid", "stella", "dracula")
     show sid ind with dissolve
     i "Hey Dan."
     i "I'm starting to get tired."
@@ -2017,7 +2017,7 @@ label midcar6:
     o "I can't believe it."
     i "Lauren, I swear, I..."
     hide lauren ind with moveoutright
-    $ showchibi("catherine", "jenny", "kaiser", "sam", "shahar", "stella", "dracula", "sid")
+    $ showchibint("catherine", "jenny", "kaiser", "sam", "shahar", "stella", "dracula", "sid")
     i "I-I swear..."
     stop music fadeout 0.5
     b "Hold on!"
@@ -2073,7 +2073,7 @@ label midcar6:
     hide kaiser ind
     hide sam
     with dissolve
-    $ showchibi("catherine", "jenny", "shahar", "stella", "dracula", "sid")
+    $ showchibint("catherine", "jenny", "shahar", "stella", "dracula", "sid")
     show catherine ind with moveinleft
     play sfx "audio/poprain.mp3" volume .5
     show poprain with dissolve:
@@ -2088,7 +2088,7 @@ label midcar6:
     ses "Meoooo!"
     c "I'll corral everyone toward the bar car."
     hide catherine happy with dissolve
-    $ showchibi("jenny", "sid")
+    $ showchibint("jenny", "sid")
     show sid ind with dissolve:
         xcenter .25
     show jenny ind with dissolve:
@@ -2138,7 +2138,7 @@ label midcar6:
     j "Sure. Be careful back here with him."
     b "Thanks. I'll be there in a minute."
     hide jenny ind with moveoutleft
-    $ showchibi("sid")
+    $ showchibint("sid")
     bi "I was worried about being alone with him at first, but..."
     bi "He seems more devastated than anything."
     show sid ind with moveinleft
@@ -3379,7 +3379,7 @@ label trial1o:
     hide sid ind with moveoutleft
     scene black with fade
     blank "All 11 made their way back up to the front car."
-    scene bg notrainfront at bg
+    scene bg ntrainfront at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Front Car", "bert", ch=1, sun=4)
     with dissolve
@@ -3614,7 +3614,7 @@ label trial1q:
     show kaiser dead:
         linear .75 xcenter .5
     blank "It... has to be Kaiser."
-    scene bg notrainfront at bg
+    scene bg ntrainfront at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Front Car", "bert", ch=1, sun=4)
     with dissolve
@@ -3641,12 +3641,12 @@ label trial1q:
 label trial1r:
     scene black
     play music "audio/coming_together.mp3"
-    scene bg notrainfront at bg
+    scene bg ntrainfront at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Front Car", "bert", ch=1, sun=4)
     with dissolve
     show kaiser ind with dissolve
-    k "Excuse me?"
+    k "Excuse... me...?"
     b "It's true!"
     show kaiser ind:
         linear .3 xcenter .75
@@ -3760,7 +3760,7 @@ label trial1r:
     k "Disgusting."
     scene black
     #play music "audio/coming_together.mp3"
-    scene bg notrainfront at bg
+    scene bg ntrainfront at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Front Car", "bert", ch=1, sun=4)
     show doom
@@ -3794,7 +3794,7 @@ label trial1r:
     scr "everyone but the murderer and Game Master will be killed, and the game ends."
     scene black
     #play music "audio/coming_together.mp3"
-    scene bg notrainfront at bg
+    scene bg ntrainfront at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Front Car", "bert", ch=1, sun=4)
     show doom

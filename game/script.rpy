@@ -170,7 +170,15 @@ transform inwindow:
 
 #show expression AlphaMask("testerdog", At("sid ind")) as mask
 #transform wiggle:
-#    linear .05 ypos+=
+#    linear .05 ypos+=################################################################################################ frontcar bgs
+image bg frontcar5:
+    "bg bertmap1.png"
+    pause .5
+    "bg bertmap2.png"
+    pause .5
+    "bg bertmap3.png"
+    pause .5
+    repeat
 
 transform blink:
         "eye.png"
@@ -707,4 +715,4 @@ transform bg:
 camera at parallax
 $dan = True
 #call screen bank_evidence
-jump trainGo
+jump trial1o
