@@ -675,7 +675,7 @@ label start:
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
-        bank_evidence = [True] * 12
+        bank_evidence = [True] + [False] * 11
         mans_extra = [False] * 11
         hosp_extra = [False] * 6
         bank_extra = [False] * 20
