@@ -80,9 +80,9 @@ label hospitalGo:
     bi "An angry hiss."
     bi "Right, I'm an unwilling cat owner now."
     bi "I found the energy to open my eyes."
-    scene bg hosproom1 with dissolve
+    scene bg hosproom1 at bg with dissolve
     $ statusnt("???", "bert", ch=3, sun=0)
-    show sesame with dissolve:
+    show sesame at bg with dissolve:
         ycenter .61
     ses "Mew!"
     b  "Hey Sesame... sorry, I'm a bit tired."
@@ -115,13 +115,13 @@ label hospitalGo:
     b "Fine, I'll carry you around just for now. But don't get used to it."
     hide sesame with dissolve
     bi "I gently picked him up and plopped him in my backpack, scared he might scratch me."
-    show bert2 with dissolve
+    #show bert2 with dissolve
     bi "He was gentler now though. Almost kinda cute."
     bi "Maybe hearing Catherine's name made him think we were going to her."
     bi "Eventually I'll have to get him used to me being his owner but..."
     bi "...until this game's over, there's far more important things to worry about."
     scene black with dissolve
-    scene bg hosphall1 with dissolve
+    scene bg hosphallbotright at bg with dissolve
     $statusnt("Hallway", "bert", ch=3, sun=0)
     bi "It opened into a hallway."
     bi "There were three other cells in this hallway."
@@ -135,7 +135,7 @@ label hospitalGo:
     bi "I guess we'll all convene eventually..."
     bi "With those observations, I opened the door to the larger room..."
     scene black with dissolve
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibint("dracula", "lauren", "sid")
     $statusnt("Cafeteria", "bert", ch=3, sun=0)
     with dissolve
@@ -160,13 +160,13 @@ label hospitalGo:
     l "I've been... thinking."
     b "Thinking?"
     l "About Sam. What to say, how this affects the rest of us, all that."
-    scene bg mansiondining
-    show sam
+    scene bg mansiondining at bg
+    show sam ind
     show sepia:
         alpha .5
     with dissolve
     s "It should be me who's dead now..."
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibint("dracula", "lauren", "sid")
     $statusnt("Cafeteria", "bert", ch=3, sun=0)
     with dissolve
@@ -662,7 +662,7 @@ label hospitalGo:
     bi "Turns out, she wasn't declawed."
     bi "Which is good, declawing cats is pretty inhumane."
     bi "But so is constantly poking me while I try to sleep."
-    scene bg hosproom1
+    scene bg hosproom1 at bg
     show sesame:
         ycenter .61
     $statusnt("Bert's Cell", "bert", ch=3, sun=1)
@@ -685,7 +685,7 @@ label hospitalGo:
     scene black with dissolve
     bi "I stepped outside into the hallway."
     bi "Guess it's time to explore."
-    scene bg hosphall1 with dissolve
+    scene bg hosphallbotright at bg with dissolve
     $showchibint("jenny") #copy paste
     $statusnt("Guard Hallway", "bert", ch=3, sun=1)
     show jenny happy with dissolve
@@ -702,7 +702,7 @@ label hospitalGo:
     j "Sounds like a plan!"
     b "Okay, let's see what's at the end of this hallway..."
     scene black with dissolve
-    scene bg hospfancy with dissolve
+    scene bg hospfancy at bg with dissolve
     $showchibint("jenny") #copy paste
     $statusnt("Guard Lounge", "bert", ch=3, sun=1)
     show jenny ind with dissolve:
@@ -799,7 +799,7 @@ label hospitalGo:
     bi "Alright, let's see what's behind door number one..."
     scene black with dissolve
     $statusnt("Security Room", "bert", ch=3, sun=1)
-    scene bg hospsecurity with dissolve
+    scene bg hospsecurity at bg with dissolve
     b "..."
     b "What is this?"
     b "A computer system? This gives me bad flashbacks to the train..."
@@ -887,7 +887,7 @@ label hospitalGo:
     b "Time to go check the other door in the guard common area."
     scene black with dissolve
     bi "I made my way through the common area to the other room."
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $statusnt("Supply Closet", "bert", ch=3, sun=1)
     b "Huh, a supply closet."
     b "I guess even a mental hospital needs to get cleaned every now and then."
@@ -910,7 +910,7 @@ label hospitalGo:
     b "I think that's all I have to explore here, time to head to the kitchen."
 label testwindow:
     scene black with dissolve
-    scene bg hospkitchen with dissolve
+    scene bg hospkitchen at bg with dissolve
     $showchibiwindow(["jenny"], [])#copy paste
     $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
@@ -958,7 +958,7 @@ label testwindow:
     with dissolve
     bi "I guess I haven't talked to the others yet..."
     bi "I turned to the window and started chatting with the first person I saw."
-    scene bg hospkitchenwindow
+    scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     show drac ind at inwindow behind hospwindowoverlay
     $showchibiwindow([], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
@@ -1024,7 +1024,7 @@ label testwindow:
     hide lauren
     hide drac
     with dissolve
-    scene bg hospkitchen with dissolve
+    scene bg hospkitchen at bg with dissolve
     bi "I turned to the soup and started stirring it."
     bi "After about 10 minutes, Jenny returned."
     show jenny happy
@@ -1135,7 +1135,7 @@ label postcupcake:
     bi "Hm... I should try to find a way to talk to Shahar discreetly while everyone's eating."
     j "Food's ready!"
     bi "The others gathered in a line to get their serving."
-    scene bg hospkitchenwindow
+    scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     show jenny ind:
         xcenter .25
@@ -1356,7 +1356,7 @@ label postcupcake:
     bi "I should've said something, but I didn't."
     bi "Taking that as a cue, Lauren walked off."
     hide lauren with moveoutright
-    scene bg hospkitchen with dissolve
+    scene bg hospkitchen at bg with dissolve
     show jenny ind with dissolve
     j "Hey Bert, I'm gonna start cleaning the kitchen up."
     j "You don't have to do anything, I enjoy cleaning!"
@@ -1378,7 +1378,7 @@ label postcupcake:
     bi "Forget Freddy, does Jenny comprehend how serious this situation is?"
     hide jenny with dissolve
     bi "Hm... this is my chance, I think."
-    scene bg hospkitchenwindow
+    scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     b "Hey Shahar, can I talk to you for a second?"
     show shahar ind at inwindow behind hospwindowoverlay with dissolve
@@ -1469,7 +1469,7 @@ label postcupcake:
     bi "No one seemed to keen to talk through the window, understandably."
     bi "So might as well talk to Jenny with no windows involved."
     scene black with dissolve
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $showchibint("jenny")
     with dissolve
     show jenny happy with dissolve
@@ -1489,7 +1489,7 @@ label postcupcake:
     b "Feels like everything's been sad since we got here, a game would be a nice change of pace."
     bi "I'm a beast at chess, Jenny better be ready."
     hide jenny with dissolve
-    show bg jennymonikaind with fade
+    show bg jennymonikaind at bg with fade
     bi "..."
     $mood = "ind"
     bi "....."
@@ -1555,10 +1555,10 @@ label chess1:
         "Move a different piece.":
             $goodmoves = goodmoves + 1
             bi "Nah, I can take some space with my knight in that file."
-            show bg jennymonikablush
+            show bg jennymonikablush at bg
             j "Ooh, that's a good move Bert."
             j "I'll have to think about this next one..."
-            show bg jennymonikaind
+            show bg jennymonikaind at bg
             bi "She was complimenting me, but I was still losing slightly..."
             bi "I guess I'm holding up okay for our respective skill levels though."
             jump chess2
@@ -1623,7 +1623,7 @@ label chess3:
         bi "She finally saw it."
         j "Check."
         b "Yeah, you got me, mate next move."
-        show bg jennymonikablush with dissolve
+        show bg jennymonikablush at bg with dissolve
         j "Good game!"
         b "Good game..."
         j "You held on a lot longer than I was expecting!"
@@ -1640,10 +1640,10 @@ label chess3:
         j "Nah, no need."
         j "I don't really see the value in playing out a game when we know the likely outcome."
         j "Granted, it would be kind of funny to watch your king run around the board helpless but..."
-        show bg jennymonikablush with dissolve
+        show bg jennymonikablush at bg with dissolve
         j "I'm not a sadist or anything, so I don't want to force that on you."
         j "Good game Bert! You did really well for someone with your experience level."
-    scene bg hospfancy
+    scene bg hospfancy at bg
     show jenny happy
     with fade
     j "Oh shoot, we really took a long time playing that game."
@@ -1652,7 +1652,7 @@ label chess3:
     b "Sounds good, I can take the lead this time."
     b "I can't cook much but you shouldn't have to do all the work..."
     j "Your call Bert!"
-    scene bg hospkitchen with fade
+    scene bg hospkitchen at bg with fade
     show jenny happy with dissolve
     b "Okay, what do we have..."
     j "Well, it's just veggies like tomatoes and onions, and broths basically..."
@@ -1677,7 +1677,7 @@ label chess3:
     j "Let's get everyone fed before bedtime."
     j "Food's ready!"
     bi "The others gathered in a line again..."
-    scene bg hospkitchenwindow
+    scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     show jenny happy:
         xcenter .25
@@ -1703,7 +1703,7 @@ label chess3:
     scene black with dissolve
     bi "One by one, it was the same story."
     bi "My meal, if you could call it that, had put everyone off."
-    scene bg hospfancy
+    scene bg hospfancy at bg
     show jenny ind
     with dissolve
     b "Well, that was a disaster."
@@ -1720,7 +1720,7 @@ label chess3:
     scene black with dissolve
     $mood = "ind"
     bi "We made our way back to the cells."
-    scene bg hosphall1
+    scene bg hosphallbotright at bg
     show jenny ind
     with dissolve
     j "Well, looks like that's it for our guard shift, Bert."
@@ -1738,7 +1738,7 @@ label chess3:
     blank "The next day..."
     play sfx "audio/ding.mp3"
     intercom "Twilight has begun. You must leave your room before daytime."
-    scene bg hosproom1 with dissolve
+    scene bg hosproom1 at bg with dissolve
     $ statusnt("Cell", "bert", ch=3, sun=0)
     $cat = False
     $mood = "ind"
@@ -1766,7 +1766,7 @@ label chess3:
     bi "I tried the guard door, but it was firmly in place."
     bi "Which means..."
     b "I guess we're off to the cafeteria."
-    scene bg hospcommons with fade
+    scene bg hospcommons at bg with fade
     $showchibiwindow(["lauren", "freddy"], [])
     with dissolve
     show lauren ind:
@@ -1795,7 +1795,7 @@ label chess3:
     bi "Sid had entered the kitchen."
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
     b "Looks like he wants to talk to us."
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind at inwindow behind hospwindowoverlay2
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
@@ -1838,7 +1838,7 @@ label chess3:
     j "If you find some by all means!"
     i "Okay, guess I'll get started."
     hide sid with dissolve
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid"])
     show jenny ind:
         xcenter .25
@@ -1853,7 +1853,7 @@ label chess3:
     b "Har har."
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     b "Oh, Dracula's here?"
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show drac ind at inwindow behind hospwindowoverlay2
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
@@ -1877,18 +1877,18 @@ label chess3:
     d "I will remain here from the time being until lunch is ready, I see Sid has started."
     d "In fairness' sake I will make dinner then."
     d "In the mean time, if you wish to talk, I will be here."
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     with dissolve
     b "Well, I guess I have some time to kill until lunch..."
     b "Who to talk to?"
     $ftecounter = 6
     blank "FREE TIME 6 HERE"
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     with dissolve
     bi "After chatting a bit, Sid talked to us through the window."
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind at inwindow behind hospwindowoverlay2
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
@@ -1956,7 +1956,7 @@ label chess3:
     d "Hmph, I guess I've been volunteered involuntarily..."
     l "Guess that kid has more spunk than I gave him credit for..."
     d "Well, I guess I'll serve whatever he made."
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
     with dissolve
     bi "Time passed as we ate our salads quietly."
@@ -2122,7 +2122,7 @@ label chess3:
     bi "What felt like a few hours passed with some idle chit-chat, but it was hard to tell."
     bi "It could have been minutes, or a full day."
     bi "After some time, Dracula knocked on the window to beckon us over."
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show drac ind at inwindow behind hospwindowoverlay2
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
@@ -2229,7 +2229,7 @@ label chess3:
     bi "No, I tried to stop him..."
     d "Well, the pasta will be done soon. Would you all please get ready to eat?"
     bi "Dracula, failing to read the room, prepared plates for us all."
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["dracula"])
     with dissolve
     show scary with dissolve:
@@ -2263,7 +2263,7 @@ label chess3:
     b "Guess we should go sleep."
     bi "No one really had much to say to that..."
     bi "Everyone got up and walked towards their cells."
-    scene bg hosproom1 with fade
+    scene bg hosproom1 at bg with fade
     show sesame with dissolve
     ses "Mew?"
     b "Hey Sesame, weird day, huh?"
@@ -2293,7 +2293,7 @@ label laurentime:
     $laur = True
     $noside = False
     $rg = True
-    scene bg hosphall2
+    scene bg hosphalltopleft at bg
     $showchibint("sam")
     with dissolve
     lf "Sam."
@@ -2326,7 +2326,7 @@ label laurentime:
     show sam with dissolve
     s "Let's go..."
     scene scary with dissolve
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $showchibint("sam")
     with dissolve
     lf "Wow, this room is so much nicer than the cafeteria."
@@ -2356,14 +2356,14 @@ label laurentime:
     lf "You're right, my bad."
     lf "Let's go to the kitchen."
     scene scary with dissolve
-    scene bg hospkitchen
+    scene bg hospkitchen at bg
     $showchibint("sam")
     with dissolve
     lf "Alright, let's see what there is to cook wi-{p=0.5}{nw}"
     j "Lauren! Sam!"
     li "Jenny?"
     li "Right, I should check in with people on the other side..."
-    scene bg hospkitchenwindow
+    scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     show jenny ind at inwindow behind hospwindowoverlay
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
@@ -2385,7 +2385,7 @@ label laurentime:
     li "I'm not sure why I ran."
     li "It's not like me running was going to affect anything."
     li "I felt like those idiots who speed towards a red light."
-    scene bg hosphalltopright2 with dissolve
+    scene bg hosphalltopright2 at bg with dissolve
     l "...There's something in front of Shahar's cell."
     l "What looks like glass and... either celery juice or..."
     li "I slowly approached Shahar's cell."
@@ -2393,7 +2393,7 @@ label laurentime:
     li "Maybe he had a cup of juice and spilled it."
     li "My brain was reaching for every other explanation."
     li "But sure enough..."
-    scene bg shahardead with dissolve
+    scene bg shahardead at bg with dissolve
     lf "No."
     lf "No no no no no no no no no no no no no no no..."
     lf "Why did no one but me think to check?"
@@ -2413,7 +2413,7 @@ label laurentime:
     lf "...We should go tell the others."
     s "...Kay..."
     scene scary with dissolve
-    scene bg hospkitchenwindow
+    scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     show sam:
         xcenter .75
@@ -2470,7 +2470,7 @@ label laurentime:
     lf "Got it."
     li "I hate that Bert talks like he's my manager..."
     lf "Come on Sam, let's go."
-    scene bg hospkitchen
+    scene bg hospkitchen at bg
     $showchibiwindow(["sam"], ["jenny", "dracula", "sid", "freddy", "bert"])
     with dissolve
 label hospPreInv:
@@ -2503,7 +2503,7 @@ label trial3a:
     bi "That was out of my control, but I had ways to keep it from ruining the rest of my life."
     bi "But now..."
     $noside = False
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], [])
     with dissolve
     bi "It's all on Lauren."
@@ -2515,7 +2515,7 @@ label trial3a:
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     with dissolve
     b "They're back. Lauren and Sam."
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
@@ -2565,7 +2565,7 @@ label trial3a:
     pause 1
     hide newevidencefound with dissolve
     blank "Guards' Accounts was added to evidence."
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     with dissolve
     show jenny ind with dissolve
@@ -2579,14 +2579,14 @@ label trial3a:
         "jenny", "Jenny: They did it by {color=#f00}striking Shahar hard in the forehead through the bars{/color} with some sort of object.", -1,
         3, 8, "trial3b")
 label trial3b:
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     show jenny ind
     with dissolve
     b "No, I don't think Shahar was struck in the forehead."
     j "But he has no other injuries... why would he be bleeding on his forehead if he wasn't struck there by someone?"
     b "I agree he has no other injuries, but think about the way his body is positioned."
-    scene bg shaharhead with dissolve
+    scene bg shaharhead at bg with dissolve
     b "He's kneeling, and leaning forward."
     b "If someone hit him from the front, and that was the killing blow..."
     b "It's more likely he would have fell over backwards."
@@ -2614,7 +2614,7 @@ label trial3b:
         "sid", "Sid: *cough* It makes sense, but {color=#55f}I don't think there was anything they could use to hit him{/color}.", 1,
         1, 3, "trial3c")
 label trial3c:
-    scene bg hospcommons
+    scene bg hospcommons at bg
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     show jenny ind:
         xcenter .25
@@ -2669,7 +2669,7 @@ label trial3c2:
     d "Enough."
     d "This meaningless speculation is going nowhere."
     d "Obviously the killer is..."
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show drac ind:
         xcenter .25
@@ -2703,7 +2703,7 @@ label trial3c2:
         "dracula", "Dracula: Sam only would have {color=#f00}only waited a few minutes{/color} while you killed Shahar.", -1,
         2, [0, 11], "trial3d")
 label trial3d:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show drac ind:
         xcenter .25
@@ -2761,7 +2761,7 @@ label trial3d:
     bi "Let's see, who would have been a witness to Dracula assaulting Shahar yesterday..."
     call screen chooseCharHospital("sid", trial3e, "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
 label trial3e:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show drac ind:
         xcenter .25
@@ -2845,7 +2845,7 @@ label trial3e:
     bi "If Shahar was hit with the bottle through the cell, what spot is missing something?"
     call screen pickSpot5 with dissolve
 label trial3f:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -2883,7 +2883,7 @@ label trial3f:
     bi "If someone cleaned up the shards inside the cell, what doesn't make sense?"
     call screen pickSpot6 with dissolve
 label trial3g:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -2906,7 +2906,7 @@ label trial3g:
     l "Just think about it for a second..."
     call screen chooseCharHospital("shahar", trial3h, "Who wouldn't have cleaned up the shards outside the cell?") with dissolve
 label trial3h:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -2999,7 +2999,7 @@ label trial3hb:
     b "Yeah, just remember what you told us about..."
     call screen hospitalEvidenceTrial(-1, 9, "trial3i") with dissolve
 label trial3i:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -3049,7 +3049,7 @@ label trial3i:
         3, [11, 12], "trial3j")
 label trial3j:
 label trial3k:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -3193,7 +3193,7 @@ label trial3m:
     bi "Only one thing? Then this should be obvious..."
     call screen hospitalEvidenceTrial(-1, 6, "trial3n") with dissolve
 label trial3n:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -3230,7 +3230,7 @@ label trial3n:
     l "Specifically..."
     call screen pickSpot7 with dissolve
 label trial3o:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
         xcenter .25
@@ -3326,7 +3326,7 @@ label trial3o:
         "dracula", "Dracula: {color=#f00}If the bottles weren't there before Sid went to sleep, only Sid could have placed the bottles{/color}.", -1,
         2, 10, "trial3p")
 label trial3p:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid mad:
         xcenter .25
@@ -3394,7 +3394,7 @@ label trial3p:
         "dracula", "Dracula: Given that we've been drinking water and taking showers, {color=#f00}water must regularly be moving through the pipes{/color}.", -1,
         1, -1, "trial3q")
 label trial3q:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
         xcenter .25
@@ -3428,7 +3428,7 @@ label trial3q:
     b "Thinking about the list of evidence Lauren found, it's pretty obvious what it is..."
     call screen hospitalEvidenceTrial(-1, 2, "trial3r") with dissolve
 label trial3r:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
         xcenter .25
@@ -3523,7 +3523,7 @@ label trial3s:
         "dracula",  "Dracula: So someone had to be on the guard side to dislodge the bottle, but {color=#f00}no one was allowed to be in the hallway at the time the bottle fell{/color}.", -1,
         1, 1, "trial3t")
 label trial3t:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
         xcenter .25
@@ -3582,7 +3582,7 @@ label trial3u:
     bi "There's a glaringly simple method to do this."
     call screen hospitalEvidenceTrial(-1, 5, "trial3v") with dissolve
 label trial3v:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
         xcenter .25
@@ -3644,7 +3644,7 @@ label trial3v:
     b "The killer is..."
     call screen chooseCharHospital("dracula", trial3w, "Who could have placed the bottle?") with dissolve
 label trial3w:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
         xcenter .25
@@ -3696,7 +3696,7 @@ label trial3w:
         "dracula",  "Dracula: So the only way to get a bottle from the machine would be to break into it. But there's {color=#f00}no signs of the vending machine being broken into{/color}.", -1,
         0, 9, "trial3x")
 label trial3x:
-    scene bg hospkitchenwindow2
+    scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
         xcenter .25
@@ -3833,7 +3833,7 @@ label trial3x:
     bi "And he was trying to help us, even if only for his selfish reasons..."
     bi "So yeah, I guess I'll listen to what he has to say."
     scene black with dissolve
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $showchibint("jenny", "dracula", "sid", "freddy", "lauren", "sam")
     show lauren happy:
         xcenter .75
