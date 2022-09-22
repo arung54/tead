@@ -3,29 +3,29 @@ default persistent.parallax = True
 define config.gl2 = True
 ############################################################################# LIVE2D DEFINES ##################
 
-image drac = Live2D("Resources/drac", base=.999, loop=True, seamless=True) #good format
+image drac = Live2D("Resources/drac", base=.999, loop=True,  top=-.05,seamless=True) #good format
 define drac = Character("drac")
-image bert = Live2D("Resources/bert", base=.999, loop=True, seamless=True)
+image bert = Live2D("Resources/bert", base=.999, loop=True, top=-.05, seamless=True)
 define bert = Character("bert")
-image jenny = Live2D("Resources/jenny", base=.999, loop=True, seamless=True)
+image jenny = Live2D("Resources/jenny", base=.999, loop=True, top=-.05, seamless=True)
 define jenny = Character("jenny")
-image shahar = Live2D("Resources/shahar", base=.999, loop=True, seamless=True)
+image shahar = Live2D("Resources/shahar", base=.999, loop=True, top=-.05, seamless=True)
 define shahar = Character("shahar")
-image frog = Live2D("Resources/frog", base=.999, loop=True, seamless=True)
+image frog = Live2D("Resources/frog", base=.999, loop=True, top=-.05, seamless=True)
 define frog = Character("frog")
-image dan = Live2D("Resources/dan", base=.999, loop=True, seamless=True)
+image dan = Live2D("Resources/dan", base=.999, loop=True, top=-.05, seamless=True)
 define dan = Character("dan")
-image stella = Live2D("Resources/stella", base=.999, loop=True, seamless=True)
+image stella = Live2D("Resources/stella", base=.999, loop=True, top=-.05, seamless=True)
 define stella = Character("stella")
-image lauren = Live2D("Resources/lauren", base=.999, loop=True, seamless=True)
+image lauren = Live2D("Resources/lauren", base=.999, loop=True, top=-.05, seamless=True)
 define lauren = Character("lauren")
-image kaiser = Live2D("Resources/kaiser", base=.999, loop=True, seamless=True)
+image kaiser = Live2D("Resources/kaiser", base=.999, loop=True, top=-.05, seamless=True)
 define kaiser = Character("kaiser")
-image sam = Live2D("Resources/sam", base=.999, loop=True, seamless=True)
+image sam = Live2D("Resources/sam", base=.999, loop=True, top=-.05, seamless=True)
 define sam = Character("sam")
-image sid = Live2D("Resources/sid", base=.999, loop=True, seamless=True)
+image sid = Live2D("Resources/sid", base=.999, loop=True, top=-.05, seamless=True)
 define sid = Character("sid")
-image catherine = Live2D("Resources/catherine", base=.999, loop=True, seamless=True)
+image catherine = Live2D("Resources/catherine", base=.999, loop=True, top=-.05, seamless=True)
 define catherine = Character("catherine")
 image shadowyfigure = Live2D("Resources/shadowyfigure", base=.999, loop=True, seamless=True)
 define shadowyfigure = Character("shadowyfigure")
@@ -33,46 +33,46 @@ define shadowyfigure = Character("shadowyfigure")
 
 ############### RED GREEN COLORBLIND VERSIONS OF EVERYTHING!!!!!!!!!!!!!!!!!!!!
 
-image dracrg = Live2D("Resources/dracrg", base=.999, loop=True, seamless=True) #good format
+image dracrg = Live2D("Resources/dracrg", base=.999, loop=True, top=-.05, seamless=True) #good format
 define dracrg = Character("dracrg")
-image bertrg = Live2D("Resources/bertrg", base=.999, loop=True, seamless=True)
+image bertrg = Live2D("Resources/bertrg", base=.999, loop=True, top=-.05, seamless=True)
 define bertrg = Character("bertrg")
-image frogrg = Live2D("Resources/frogrg", base=.999, loop=True, seamless=True)
+image frogrg = Live2D("Resources/frogrg", base=.999, loop=True, top=-.05, seamless=True)
 define frogrg = Character("frogrg")
-image jennyrg = Live2D("Resources/jennyrg", base=.999, loop=True, seamless=True)
+image jennyrg = Live2D("Resources/jennyrg", base=.999, loop=True, top=-.05, seamless=True)
 define jennyrg = Character("jennyrg")
-image samrg = Live2D("Resources/samrg", base=.999, loop=True, seamless=True)
+image samrg = Live2D("Resources/samrg", base=.999, loop=True, top=-.05, seamless=True)
 define samrg = Character("samrg")
-image sidrg = Live2D("Resources/sidrg", base=.999, loop=True, seamless=True)
+image sidrg = Live2D("Resources/sidrg", base=.999, loop=True, top=-.05, seamless=True)
 define sidrg = Character("sidrg")
-image heads = Live2D("Resources/heads", base=.999, loop=True, seamless=True) #good format
+image heads = Live2D("Resources/heads", base=.999, loop=True, top=-.05, seamless=True) #good format
 define heads = Character("heads")
 
 ############### SEPIAAAAAAAAAAAAAAA!!!!!!!!!
 
-image dracsep = Live2D("Resources/dracsep", base=.999, loop=True, seamless=True) #good format
+image dracsep = Live2D("Resources/dracsep", base=.999, loop=True, top=-.05, seamless=True) #good format
 define dracsep = Character("dracsep")
-image bertsep = Live2D("Resources/bertsep", base=.999, loop=True, seamless=True)
+image bertsep = Live2D("Resources/bertsep", base=.999, loop=True, top=-.05, seamless=True)
 define bertsep = Character("bertsep")
-image jennysep = Live2D("Resources/jennysep", base=.999, loop=True, seamless=True)
+image jennysep = Live2D("Resources/jennysep", base=.999, loop=True, top=-.05, seamless=True)
 define jennysep = Character("jennysep")
-image shaharsep = Live2D("Resources/shaharsep", base=.999, loop=True, seamless=True)
+image shaharsep = Live2D("Resources/shaharsep", base=.999, loop=True, top=-.05, seamless=True)
 define shaharsep = Character("shaharsep")
-image frogsep = Live2D("Resources/frogsep", base=.999, loop=True, seamless=True)
+image frogsep = Live2D("Resources/frogsep", base=.999, loop=True, top=-.05, seamless=True)
 define frogsep = Character("frogsep")
-image dansep = Live2D("Resources/dansep", base=.999, loop=True, seamless=True)
+image dansep = Live2D("Resources/dansep", base=.999, loop=True, top=-.05, seamless=True)
 define dansep = Character("dansep")
-image stellasep = Live2D("Resources/stellasep", base=.999, loop=True, seamless=True)
+image stellasep = Live2D("Resources/stellasep", base=.999, loop=True, top=-.05, seamless=True)
 define stellasep = Character("stellasep")
-image laurensep = Live2D("Resources/laurensep", base=.999, loop=True, seamless=True)
+image laurensep = Live2D("Resources/laurensep", base=.999, loop=True, top=-.05, seamless=True)
 define laurensep = Character("laurensep")
-image kaisersep = Live2D("Resources/kaisersep", base=.999, loop=True, seamless=True)
+image kaisersep = Live2D("Resources/kaisersep", base=.999, loop=True, top=-.05, seamless=True)
 define kaisersep = Character("kaisersep")
-image samsep = Live2D("Resources/samsep", base=.999, loop=True, seamless=True)
+image samsep = Live2D("Resources/samsep", base=.999, loop=True, top=-.05, seamless=True)
 define samsep = Character("samsep")
-image sidsep = Live2D("Resources/sidsep", base=.999, loop=True, seamless=True)
+image sidsep = Live2D("Resources/sidsep", base=.999, loop=True, top=-.05, seamless=True)
 define sidsep = Character("sid")
-image catherinesep = Live2D("Resources/catherinesep", base=.999, loop=True, seamless=True)
+image catherinesep = Live2D("Resources/catherinesep", base=.999, loop=True, top=-.05, seamless=True)
 define catherinesep = Character("catherinesep")
 
 ############################################################################# LIVE2D DEFINES ##################
@@ -630,6 +630,8 @@ define zt = Character("?????", who_color= "d4af37", callback=stellavoice, image=
 define zd = Character("?????", who_color= "ff9483", callback=dracvoice, image="notbert")
 define zf = Character("?????", who_color= "76d352", callback=frogvoice, image="notbert")
 define zi = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define zr = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define zh = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice, image="notbert")
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice, image="notbert")
@@ -713,6 +715,6 @@ transform bg:
 ###########
 
 camera at parallax
-$dan = True
+$dan = False
 #call screen bank_evidence
-jump trial1o
+jump hospitalGo
