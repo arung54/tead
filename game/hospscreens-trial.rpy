@@ -11,12 +11,12 @@ init python:
 screen shatteredHosp(lab):
     modal True
     add "shot.png"
-    timer 1.0 action [Show("iGotIt", transition=Fade(0.5, 0.0, 0.5), l = lab), Hide("makeyourcase"), Hide("shatteredHosp"), Hide("hospitalTrial"), Hide("hospitalEvidenceTrial"), Hide("pickSpot2"), Hide("pickSpot3"), Hide("pickSpot4"), Hide("chooseCharHospital")]
+    timer 1.0 action [Show("iGotIt", transition=Fade(0.5, 0.0, 0.5), l = lab), Hide("makeyourcase"), Hide("shatteredHosp"), Hide("hospitalTrial"), Hide("hospitalEvidenceTrial"), Hide("pickSpot5"), Hide("pickSpot6"), Hide("pickSpot7"), Hide("chooseCharHospital")]
 
 screen chooseCharHospital(ans, correctLabel, midText):
     add "debatescroll" at cczoom
     imagemap:
-        ground "lineup3dead.png"
+        ground "lineup5dead.png"
         hotspot(46, 70, 172, 257):
             if ans == "bert":
                 action [Function(shatterNoise), Show("shatteredHosp", lab = correctLabel)]

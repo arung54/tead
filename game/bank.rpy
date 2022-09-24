@@ -2532,3 +2532,6 @@ label hospPreInv2:
     blank "Bert's Account was added to evidence."
     bi "Next, I should search this room thoroughly..."
     call screen breakInv
+label trial4a:
+    scene black
+    bi "I returned to the lobby where everyone was already gathered."
