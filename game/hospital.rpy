@@ -669,7 +669,7 @@ label hospitalGo:
     b "Oh, that reminds me."
     b "What's the room arrangement?"
     j "Oh yeah, I guess you were looking around while we discussed this."
-    show map3ui with dissolve:
+    show map3uirooms with dissolve:
         alpha 0.5
         xcenter .5
         ycenter .5
@@ -873,6 +873,7 @@ label hospitalGo:
     b "This feels invasive... it's a lot of personal information about people I don't know."
     b "It'd be like looking at strangers' search histories, except it's their mental illnesses."
     b "..."
+    show bg hospsecurity2 with dissolve
     b "Huh?"
     b "Why is Shahar's name in the patient records?"
     b "I had to scroll a few hundred lines to find his name. I almost missed it."
@@ -883,11 +884,13 @@ label hospitalGo:
     b "Nothing about who Shahar actually is, any contact information..."
     b "Is that the case for the other records?"
     b "Let me check one."
+    show bg hospsecurity3 with dissolve
     b "Whoever Howard Eastnuts is, I'm sorry for looking..."
     b "..."
     b "This person has family contact information, a detailed medical history..."
     b "Date of admission, date of discharge, insurance information, prescriptions."
     b "And a bunch more details Shahar's profile here lacks."
+    show bg hospsecurity with dissolve
     b "Was Shahar's profile inserted to freak me out? Was he actually a patient here?"
     b "Did someone wipe his information before we got here? Maybe the Game Master thought we'd learn too much?"
     b "Maybe Shahar is the Game Master and he's using this as a bluff?"
