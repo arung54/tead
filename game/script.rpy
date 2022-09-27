@@ -713,7 +713,6 @@ transform bg:
 ###########
 #Start
 ###########
-
 camera at parallax
 $dan = False
 #call screen bank_evidence

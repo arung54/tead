@@ -64,7 +64,7 @@ label Mansionuno:
     with slowdissolve
     bi "I slowly came to my senses and looked to my left."
     show frog sad with dissolve
-    $showchibi("freddy")
+    $showchibint("freddy")
     f "nrg...."
     bi "...no, that's not how I should think about it."
     bi "There were ten people I did help save."
@@ -103,11 +103,11 @@ label Mansionuno:
     f "S-sure..."
     hide lauren with moveoutleft
     hide frog with moveoutright
-    $showchibi()
+    $showchibint()
     $mood = "ind"
     bi "Thank goodness for Lauren, she's great with the kids." #JJJ
     bi "Oh, everyone else is here too, waking up like us."
-    $showchibi("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
+    $showchibint("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
     show drac ind with dissolve
     d "Hmm. I see Lauren and Freddy have already started exploring."
     b "Something like that. I think she's just trying to keep him from crying."
@@ -363,7 +363,7 @@ label Mansionuno:
     bi "I think after how she helped on train, I can trust her."
     bi "Was Stella actually on to something about Jenny and I? I'm not sure..."
     j "Where should we start? This is quite the upgrade from that trian!"
-    $ showchibi("jenny", "shahar", "stella")
+    $ showchibint("jenny", "shahar", "stella")
     bi "The others left as we started talking."
     b "Guess no one wants to look around here?"
     show jenny ind
@@ -389,7 +389,7 @@ label Mansionuno:
     $mood = "happy"
     b "Let's head to the kitchen, I'm hungry!"
     scene bg mansionkitchen at bg with fade
-    $showchibi("jenny", "freddy", "lauren")
+    $showchibint("jenny", "freddy", "lauren")
     $ statusnt("Kitchen", "bert", ch=2, sun=5)
     show lauren ind with dissolve
     l "Hey, what happened in the other room? Heard lots of chatter."
@@ -413,7 +413,7 @@ label Mansionuno:
         xcenter .25
     show stella happy with moveinright:
         xcenter .75
-    $showchibi("jenny", "freddy", "lauren", "shahar", "stella")
+    $showchibint("jenny", "freddy", "lauren", "shahar", "stella")
     h "I heard fridge and freezer. Is there rum fer the takin'?"
     t "If the mansion's owner has any class, there should be."
     hide shahar
@@ -435,7 +435,7 @@ label Mansionuno:
     hide lauren
     hide frog
     with dissolve
-    $showchibi("jenny", "shahar", "stella")
+    $showchibint("jenny", "shahar", "stella")
     show shahar ind with moveinleft:
         xcenter .25
     show stella happy with moveinright:
@@ -460,7 +460,7 @@ label Mansionuno:
     scene bg mansiongarage at bg
     $ statusnt("Garage", "bert", ch=2, sun=5)
     with fade
-    $showchibi( "jenny", "catherine", "sid")
+    $showchibint( "jenny", "catherine", "sid")
     show catherine happy with dissolve
     c "Hey guys! Welcome to Catherine's Garage Emporium!"
     $mood = "ind"
@@ -570,7 +570,7 @@ label Mansionuno:
     b "Sure."
     scene black with fade
     scene bg mansionhall at bg with fade
-    $showchibi("jenny")
+    $showchibint("jenny")
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
     show jenny ind with moveinleft:
         xcenter .5
@@ -586,7 +586,7 @@ label Mansionuno:
     b "-barge in..."
     scene bg mansionmasterbedroom at bg with fade
     $ statusnt("Master Bedroom", "bert", ch=2, sun=2)
-    $showchibi("jenny", "dracula", "sam")
+    $showchibint("jenny", "dracula", "sam")
     $mood = "ind"
     b "The master bedroom?"
     show sam ind:
@@ -635,7 +635,7 @@ label Mansionuno:
 
     scene bg mansionbedroom1 at bg with fade
     $ statusnt("Bedroom 1", "bert", ch=2, sun=2)
-    $showchibi("jenny", "freddy", "lauren")
+    $showchibint("jenny", "freddy", "lauren")
     show lauren ind with dissolve
     l "Oh, hey guys."
     l "I thought bouncing on a bed might get Freddy's mind off things."
@@ -692,7 +692,7 @@ label Mansionuno:
 ###
 
     scene bg mansionbedroom2 at bg with fade
-    $showchibi("jenny")
+    $showchibint("jenny")
     $ statusnt("Bedroom 2", "bert", ch=2, sun=3)
     show jenny ind
     j "Hey Bert, ummm..."
@@ -820,7 +820,7 @@ label Mansionuno:
     bi "We checked the last bedroom door."
     bi "It seemed to be identical to the previous two rooms."
     scene bg mansionhall at bg with fade
-    $showchibi("jenny")
+    $showchibint("jenny")
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
     show jenny ind with dissolve
     j "Alright! So three basic bedrooms, and one master bedroom."
@@ -870,7 +870,7 @@ label mansion1:
     bi "Time to head downstairs for the meeting."
     scene black with fade
     scene bg nmansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
+    $showchibint("catherine", "dracula", "freddy", "jenny", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Dining Room", "bert", ch=2, sun=3)
     $mood = "ind"
     b "It's kinda spooky in here with most of the lights off..."
@@ -1128,7 +1128,7 @@ label mansion1:
     b "Yeah, if no one else has anything to bring up, everyone can go."
     hide shahar with dissolve
     bi "Everyone except Catherine and Freddy slowly left."
-    $showchibi("catherine", "freddy")
+    $showchibint("catherine", "freddy")
     $statusnt("Dining Room", "bert", ch=2, sun=4) #Bug julian
     show frog ind with dissolve:
         xcenter .25
@@ -1144,7 +1144,7 @@ label mansion1:
     c "Alcohol can kill cats in small doses, and I expect Shahar and Stella might have left an open bottle around."
     bi "With that dark comment, she went to the kitchen."
     hide catherine with dissolve
-    $showchibi("freddy")
+    $showchibint("freddy")
     $mood = "ind"
     bi "Seems like there's still some time before we're going to sleep."
     bi "Guess I should find someone to talk to."
@@ -1161,7 +1161,7 @@ label postFT2:
     scene bg nmansiondining at bg
     $ statusnt("Dining Room", "bert", ch=2, sun=4)
     with fade
-    $showchibi("catherine", "dracula", "freddy", "shahar", "sid", "stella")
+    $showchibint("catherine", "dracula", "freddy", "shahar", "sid", "stella")
     bi "Well, guess it's time to sleep."
     bi "Or at least, try to."
     show frog ind with dissolve:
@@ -1177,7 +1177,7 @@ label postFT2:
     hide frog
     hide catherine
     with dissolve
-    $showchibi("dracula", "shahar", "sid", "stella")
+    $showchibint("dracula", "shahar", "sid", "stella")
     show drac ind with dissolve
     d "We are also off."
     d "I trust that you three will not be too loud enough to bother me?"
@@ -1187,7 +1187,7 @@ label postFT2:
     bi "Why me..."
     d "Anyway, good night."
     hide drac with dissolve
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     show shahar drunk with dissolve:
         xcenter .25
     show stella drunk with dissolve:
@@ -1426,7 +1426,7 @@ label postFT2:
     bi "Dracula's probably not going to be very happy about our noise level after this..."
     scene black with fade
     scene bg nmansionhall at bg with fade
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=4)
     show stella drunk:
         xcenter .75
@@ -1439,8 +1439,8 @@ label postFT2:
     hide shahar
     hide stella
     with moveoutright
-    $showchibi()
-    $showchibi("sam")
+    $showchibint()
+    $showchibint("sam")
     show sam ind with dissolve
     s "Didn't expect the noise out here to be you."
     b "Sorry, you probably heard Shahar yelling... they're not letting me sleep and are a bit hard to control."
@@ -1448,7 +1448,7 @@ label postFT2:
     b "Yeah, I'll try..."
     s "Whatever. Good night."
     hide sam with dissolve
-    $showchibi()
+    $showchibint()
     bi "You know, I could just go to sleep now."
     bi "But I get the feeling Stella will force me awake if I try."
     $mood = "ind"
@@ -1463,7 +1463,7 @@ label postFT2:
         xcenter .25
     with fade
     $statusnt("Bathroom", "bert", ch=2, sun=4)
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     h "Ay lad, what took ye so long!"
     b "We should really be quieter, there are people sleeping on the other side of these walls."
     t "Psh, I've fell asleep in duh corners of clubs, they can sleep through a little tomfoolery."
@@ -1521,9 +1521,9 @@ label postFT2:
     $statusnt("Dining Room", "bert", ch=2, sun=1)
     bi "..."
     bi "What time is it?"
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     bi "Those two are still asleep."
-    $showchibi("shahar", "stella", "catherine")
+    $showchibint("shahar", "stella", "catherine")
     show catherine nocat happy with dissolve
     c "Oh, morning Bert!"
     b "How... how early is it?"
@@ -1560,7 +1560,7 @@ label postFT2:
     b "Uh... ok, was just wondering, thanks. See you later Catherine."
     c "Toodaloo!"
     hide catherine with dissolve
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     bi "Hm... is it even worth asking anyone else?"
     bi "I think after Dracula suggested the murderer's been here before, no one would admit to knowing him."
     bi "Besides Stella, but she claims she barely knew him at all."
@@ -1569,7 +1569,7 @@ label postFT2:
     bi "Catherine's lighthearted enough to not really care if I ask, but someone like Dracula might be."
     $mood = "sad"
     bi "Speaking of which..."
-    $showchibi("shahar", "stella", "dracula")
+    $showchibint("shahar", "stella", "dracula")
     show drac ind with dissolve
     d "Good morning, Bert."
     b "Morning."
@@ -1582,7 +1582,7 @@ label postFT2:
     d "If you wish to talk, I will be in there, although we should perhaps wait until Sid is awake."
     b "Okay, have a good day."
     hide drac with dissolve
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     bi "...he's so weird."
     bi "It feels like I'm talking to a robot, not a vampire."
     bi "Oh well, I should find some way to kill time."
@@ -1591,7 +1591,7 @@ label postFT2:
     scene black with fade
     scene bg mansionhall at bg with fade
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=1)
-    $showchibi("jenny", "sam")
+    $showchibint("jenny", "sam")
     show jenny happy:
         xcenter .25
     show sam ind:
@@ -1623,7 +1623,7 @@ label postFT2:
     hide jenny
     hide sam
     with dissolve
-    $showchibi()
+    $showchibint()
     bi "Hm... while no one else is around and it doesn't look suspicious."
     pause 1
     bi "Nope, closet is still locked."
@@ -1640,9 +1640,9 @@ label postFT3:
     $ftecounter = 4
     scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
-    $showchibi("shahar", "stella")
+    $showchibint("shahar", "stella")
     bi "Well, I still have a tiny amount of time to kill before the party."
-    $showchibi("shahar", "stella", "lauren")
+    $showchibint("shahar", "stella", "lauren")
     show lauren ind with dissolve
     l "Hey, Bert, are you busy right now?"
     b "Uh... I guess not."
@@ -1654,7 +1654,7 @@ label postFT3:
     scene black with fade
     scene bg mansionbedroom1 at bg with fade
     $statusnt("Bedroom", "bert", ch=2, sun=2)
-    $showchibi("freddy")
+    $showchibint("freddy")
     show frog ind with dissolve
     f "Oh, hi mister!"
     b "Yeah, Lauren had some stuff she wanted to do."
@@ -1726,7 +1726,7 @@ label postFT3:
     bi "Or maybe it's some very petty crime."
     bi "I don't really feel like I'm a criminal as much as someone who happened to be in the wrong place."
     bi "Maybe that's the case for Freddy too?"
-    $showchibi("freddy", "lauren")
+    $showchibint("freddy", "lauren")
     show frog ind:
         xcenter .5
         linear 0.15 xcenter .25
@@ -1765,7 +1765,7 @@ label postFT3:
     b "Dinner, I'm on my way!"
     scene black with fade
     scene bg mansiondining at bg with fade
-    $showchibi("dracula", "freddy", "lauren", "shahar", "sid", "stella")
+    $showchibint("dracula", "freddy", "lauren", "shahar", "sid", "stella")
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     show sid ind:
         xcenter .25
@@ -1794,7 +1794,7 @@ label postFT3:
     scene black with fade
     scene bg mansionkitchen at bg with fade
     $statusnt("Kitchen", "bert", ch=2, sun=2)
-    $showchibi("catherine", "jenny", "sam")
+    $showchibint("catherine", "jenny", "sam")
     show jenny happy with dissolve
     $mood = "happy"
     j "Hey Bert! Whatcha up to?"
@@ -1836,7 +1836,7 @@ label postFT3:
     s "Well, as much fun as baking is, drinking is a bit more fun."
     s "My cake's already in the freezer so I'm going to go out and mingle, I guess."
     hide sam with dissolve
-    $showchibi("catherine", "jenny")
+    $showchibint("catherine", "jenny")
     show jenny happy with moveinright:
         xcenter .75
     c "Anyway, Bert, I think we're good to go here."
@@ -1850,7 +1850,7 @@ label postFT3:
     scene black with fade
     scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
-    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
+    $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
     bi "Hm... I guess I have nothing to do besides mingle until food gets here."
     bi "Who should I talk to?"
     play sfx "audio/beep.mp3"
@@ -1863,7 +1863,7 @@ label postFT3:
     #FT4 to be inserted here. This is what Julian got up to for STATUS and MOODS
 label postFT4:
     scene bg mansiondining at bg with fade
-    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
+    $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
     show catherine nocat:
         xcenter .25
     show sid ind:
@@ -1879,7 +1879,7 @@ label postFT4:
     i "Thanks Catherine, this looks really good!"
     c "No worries! Anyway, gotta get back to the kitchen!"
     hide catherine with moveoutleft
-    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
+    $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
     show sid smile:
         xcenter .75
         linear .15 xcenter .5
@@ -1996,7 +1996,7 @@ label postFT4:
     hide frog
     with dissolve
     bi "...well, seems with my hunger pangs I've alienated everyone except Sid here."
-    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
+    $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
     show jenny happy with dissolve
     j "The next course is ready! We have appetizers and salad."
     j "For the appetizers we have kebabs, and the salad is a kale caesar."
@@ -2044,7 +2044,7 @@ label postFT4:
     j "Wait, Stella, I really don't think it's a good idea for you to..."
     t "Vroom!"
     hide stella drunk with moveoutright
-    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid", "jenny")
+    $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "jenny")
     show jenny ind:
         xcenter .25
         linear 0.15 xcenter .5
@@ -2056,7 +2056,7 @@ label postFT4:
     j "She's cooking like crazy, I'm sure she's just distracted."
     j "But thanks! I'll go get them right now."
     hide jenny with dissolve
-    $showchibi("dracula", "freddy", "lauren", "sam", "shahar", "sid")
+    $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid")
     show shahar ind with dissolve
     h "Ahoy lad, is Stella gone?"
     b "Uh, yeah, were you not going to join her?"
@@ -2066,7 +2066,7 @@ label postFT4:
     b "Oh, yeah, then you're good to grab it now."
     h "Aye-aye, to the kitchen for a rum on the rocks, chaaaarge!"
     hide shahar with moveoutleft
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid")
     show sam ind:
         xcenter .25
     show drac ind:
@@ -2110,7 +2110,7 @@ label postFT4:
     hide sam
     hide drac
     with dissolve
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "jenny")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid", "jenny")
     show jenny happy with dissolve
     j "Hey Bert, I found the batteries! Thanks for the help."
     j "The entree should be out soon."
@@ -2129,8 +2129,8 @@ label postFT4:
     j "Anyway, I'm off to go hand the clock off to her."
     j "Seeya Bert!"
     hide jenny ind with dissolve
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid")
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar")
     show shahar ind with dissolve
     h "Aye, Bert, I got this bottle of wine but I need help openin' it."
     h "I seem to have lost me corkscrew."
@@ -2144,7 +2144,7 @@ label postFT4:
     b "Regardless, there's some in a toolbox in the garage."
     h "Aye, lad, I knew ye would help me out. To the booty I go!"
     hide shahar with dissolve
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid")
     bi "Hmmm, who should I talk t-"
     f "Pssst! Bert!"
     b "Huh?"
@@ -2172,7 +2172,7 @@ label postFT4:
     f "I don't know how useful it is."
     b "Oh?"
     f "Let's make sure no one is listening."
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar")
     bi "Looking around, no one was really paying attention."
     bi "Shahar came back in the middle of our conversation, but was too focused on opening his bottle."
     b "I think we're good."
@@ -2205,7 +2205,7 @@ label postFT4:
     f "Thanks Bert..."
     show bg mansiondining at bg
     hide frog with dissolve
-    $showchibi("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
+    $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
     show catherine nocat with dissolve
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
@@ -2240,7 +2240,7 @@ label postFT4:
     c "Sounds good! Jenny is still in there cleaning up so she can help you if needed."
     s "Got it."
     hide sam with moveoutright
-    $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine")
+    $showchibint("dracula", "freddy", "lauren", "sid", "shahar", "catherine")
     show catherine nocat:
         xcenter .25
         linear .15 xcenter .5
@@ -2262,7 +2262,7 @@ label postFT4:
     i "I... I will eat this meat loaf... just let me sit down first."
     hide sid with dissolve
     show jenny happy with dissolve
-    $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny")
+    $showchibint("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny")
     j "Well, I cleaned the kitchen up the best I could."
     j "How's the party been Bert?"
     b "Good, it's nice to just make conversation with people."
@@ -2278,7 +2278,7 @@ label postFT4:
     bi "As I sat and ate, Sam had come back with the stepstool and walked through to the kitchen."
     bi "After some more time had passed..."
     show sam ind with fade
-    $showchibi("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
+    $showchibint("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
     s "Dessert is ready."
     s "Nothing too fancy, just an ice cream layer cake."
     b "Ice cream layer cake?"
@@ -2356,7 +2356,7 @@ label mansion2:
         xcenter .37
         ycenter .8
     with Dissolve(2.0)
-    $ showchibi("lauren", "sid")
+    $ showchibint("lauren", "sid")
     b "..."
     b "Wh-wha?"
     bi "Stella's body lay in front of us, slumped on the sink, a stab would in the dead center of her back."
@@ -2390,7 +2390,7 @@ label mansion2:
     b "Yeah... sounds good. Thanks Lauren."
     l "Of course Bert. We're gonna get through this together."
     hide lauren with dissolve
-    $ showchibi("sid")
+    $ showchibint("sid")
     b "Y-yeah."
     bi "I... can't tell if she said that for me or for herself."
     bi "Though both of us probably needed to hear it."
@@ -2412,9 +2412,9 @@ label mansion2:
     scene bg mansionhall at bg
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
     with fade
-    $showchibi("sid")
+    $showchibint("sid")
     bi "As we walked out, others made their way upstairs."
-    $showchibi("sid", "catherine", "dracula", "jenny", "sam", "shahar")
+    $showchibint("sid", "catherine", "dracula", "jenny", "sam", "shahar")
     show shahar mad with dissolve
     h "Lad, tell me it's not true."
     h "Stella could drink a tornado, how could the lassie die so easily?"
@@ -2433,7 +2433,7 @@ label mansion2:
 #        ycenter .205
     h "Whoever the murderer is, they best be ready for Davy Jones' Locker, even if it takes my own hand to bring them there!"
     hide shahar with moveoutleft
-    $showchibi("sid", "catherine", "dracula", "jenny", "sam")
+    $showchibint("sid", "catherine", "dracula", "jenny", "sam")
     bi "Shahar exited to the bathroom, presumably to grieve in his own pirate way."
     show drac ind with moveinleft:
         xcenter .25
@@ -2447,7 +2447,7 @@ label mansion2:
     j "Seems like the state of the body would be a crucial bit of evidence, so I'm gonna start there."
     d "Fine with me."
     hide jenny with moveoutleft
-    $showchibi("sid", "catherine", "dracula", "sam")
+    $showchibint("sid", "catherine", "dracula", "sam")
     d "Hm, it is a shame we were not able to figure out more collectively before this happened."
     b "What do you mean?"
     d "I had a plan..."
@@ -2465,7 +2465,7 @@ label mansion2:
     d "I want to investigate downstairs anyway."
     d "If anyone wants to discuss my plan, come meet me downstairs."
     hide drac with moveoutright
-    $showchibi("sid", "catherine", "sam")
+    $showchibint("sid", "catherine", "sam")
     show catherine nocat with moveinright:
         xcenter .75
     c "Well, I guess the party's over..."
@@ -2496,7 +2496,7 @@ label mansion2:
     s "Hmph... yeah, I guess."
     c "Sesame, I'm coming!"
     hide catherine with moveoutright
-    $showchibi("sid", "sam")
+    $showchibint("sid", "sam")
     show sid ind with moveinright:
         xcenter .75
     s "Well if she's allowed to be on her own, I'm gonna go look around as well."
@@ -2511,9 +2511,9 @@ label mansion2:
     s "Sure, I guess."
     hide sam
     hide sid
-    #$showchibi("")
+    #$showchibint("")
     with dissolve
-    #$showchibi("sid", "sam")
+    #$showchibint("sid", "sam")
     show scary with dissolve:
         alpha .5
     bi "..."
@@ -2553,7 +2553,7 @@ label trial2a:
     scene black with fade
     bi "Everyone gathered in the dining room."
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
@@ -2589,7 +2589,7 @@ label trial2a:
 label trial2b:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Lauren, I think you missed something because you were watching over Freddy during our investigation."
     b "When we took a close look at the body, the stab wound was the shape you'd expect from using the kitchen knife."
@@ -2654,7 +2654,7 @@ label trial2c:
 label trial2d:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind:
         xcenter .25
     with fade
@@ -2956,7 +2956,7 @@ label trial2g:
 label trial2h:
     play music "audio/rush.mp3"
     scene bg mansiondining  at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .75
     show sid ind:
@@ -3006,7 +3006,7 @@ label trial2h:
 label trial2i:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show lauren ind with dissolve
     b "Wait, everyone quiet down."
     b "Lauren, say that again?"
@@ -3073,7 +3073,7 @@ label trial2i:
 label trial2j:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind with dissolve
     b "Dracula, I assume you're referring to Stella's clothes being damp?"
     d "Yes. I believe it was water."
@@ -3162,7 +3162,7 @@ label trial2k:
 label trial2l:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind with dissolve
     s "Me?"
     s "Bullshit, you don't have proof."
@@ -3333,7 +3333,7 @@ label trial2n:
     call screen chooseCharMansion("sam", "trial2o", "Who would know if Stella was stabbed or burned first?") with dissolve
 label trial2o:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     bi "..."
     bi "It comes down to this."
     bi "Are we going to cooperate?"
@@ -3366,7 +3366,7 @@ label trial2o:
         1, location, "trial2p")
 label trial2p:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .75
     show sid ind:
@@ -3471,7 +3471,7 @@ label trial2p:
     call screen pickSpot2 with dissolve #pick sink handles
 label trial2q:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .5
     b "Sam, you said Stella braced herself on the sink, right?"
@@ -3503,7 +3503,7 @@ label trial2q:
         3, [wires, generator], "trial2r")
 label trial2r:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sam ind:
         xcenter .5
     b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
@@ -3517,7 +3517,7 @@ label trial2r:
     call screen chooseCharMansion("dracula", "trial2s", "Who could explain how Stella only got burnt after being stabbed?") with dissolve
 label trial2s:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show drac ind:
         xcenter .5
     b "Dracula."
@@ -3660,7 +3660,7 @@ label trial2t:
     call screen mansionEvidenceTrial(-1, wires, "trial2u") with dissolve
 label trial2u:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -3681,7 +3681,7 @@ label trial2u:
     call screen pickSpot3 with dissolve #pick closet
 label trial2v:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -3761,7 +3761,7 @@ label trial2w:
         3, rope, "trial2x")
 label trial2x:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show sid ind with dissolve
     b "No, actually, not everything makes sense if Sam could move the generator easily."
     i "Huh? Are you saying Sam is a weakling?"
@@ -3799,7 +3799,7 @@ label trial2x:
     call screen chooseCharMansion("catherine", "trial2y", "Who moved the generator?") with dissolve
 label trial2y:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show catherine ind with dissolve
     c "Me? C'mon Bert, don't be silly."
     c "I was in the kitchen or dining room for the whole party, how could I move the generator?"
@@ -3835,7 +3835,7 @@ label trial2y:
     call screen pickSpot4 with dissolve #pick kitchen
 label trial2z:
     scene bg mansiondining at bg with fade
-    $showchibi("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     show catherine ind with dissolve
     b "You got them from the kitchen."
     b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
