@@ -270,7 +270,9 @@ label hospitalGo:
 
         "The rules.":
             bi "I went over to the sign, which Dracula was reading."
-            show drac ind with dissolve
+            show bg hospitalrules at bg
+            show drac ind
+            with dissolve
             d "Hello Bert."
             b "Hey Dracula. You read the rules already?"
             d "Yes. I thought it might be leftover from when this was place wasn't being used for a killing game."
@@ -280,26 +282,52 @@ label hospitalGo:
             bi "Well, of course I was going to..."
             bi "Seems Dracula doesn't believe in making conversation for the sake of it."
             bi "Alright, let's read these rules..."
+            hide drac ind with dissolve
             blank "Rules of the Latimer Mental Hospital"
-            blank "1. This floor has a guard area and a patient area, separated by cells."
+            blank "1. This floor has a guard area and a patient area, on the north and south of the cells respectively."
             blank "Every day, two guards will be appointed."
             blank "You will know you are a guard if you wake up and the door to the guard's side of this floor is open."
             blank "Otherwise, the door to the patients' side will be open."
-            blank "2. Every day, there is a daytime period, a twilight period, a nighttime period, and another twilight period."
-            blank "Each twilight period lasts 30 minutes."
-            blank "After the first day, you may not be in your cell during the daytime period."
-            blank "You may not be out of your cell during the nighttime period."
-            blank "During twilight, you are allowed to move freely, with one exception."
-            blank "No one is permitted to enter the cell of another individual at any time."
-            blank "If you are in an area you are not allowed to be in at any time, you will be punished."
+            blank "Guards are responsible for the wellbeing of the patients."
+            bi "I see..."
+            bi "I woke up in my cell, and the south facing door opened for me, so I'm here on the patients' side."
+            bi "The floor plan must look something like..."
+            show ch3mapexample1 with dissolve
+            bi "this, with everyone in their room."
+            bi "Creepy."
+            bi "Alright, next rule."
+            hide ch3mapexample1 with dissolve
+            blank "2. Latimer operates on a day-night cycle."
+            blank "Every day begins with a 30 minute twilight period, and then a daytime period."
+            blank "Then, another 30 minute twilight period before nighttime."
+            blank "You may not be {i}in{/i} your cell during the daytime period."
+            blank "You may not be {i}out of{/i} your cell during the nighttime period."
+            blank "The 30 minute twilight periods should be used to leave your cell in the morning, and return to it at night."
             blank "An intercom will announce when each period begins."
             blank "There will be two more announcements when there are 5 minutes of twilight left if someone is in a soon-to-be-forbidden area."
-            blank "For example, if daytime starts in 5 minutes and you are in a cell, there will be an announcement."
-            blank "4. Guards are responsible for feeding the patients during the day."
-            blank "They may do this however they please, using the kitchen connected to this cafeteria."
-            blank "There is a window that can be used to transfer meals and dirty dishes."
+            bi "Hmmm, okay."
+            show ch3mapexample1 with dissolve
+            bi "So this is what the floor looks like during the nighttime."
+            bi "But, once twilight starts in the morning, we have 30 minutes to go to our respective sides."
+            show ch3mapexample2 with dissolve
+            hide ch3mapexample1 with dissolve
+
+            bi "Which should have two guards on the north side, leaving the other six as patients."
+            bi "Then at night, another 30 minute twilight to go back to our rooms, and the cycle repeats with new guards."
+            bi "Seems like a scary dynamic for an already terrifying situation..."
+            bi "Looks like there's one more rule."
+            hide ch3mapexample2 with dissolve
+            blank "3. Nobody is permitted to enter the cell of another individual at any time."
+            blank "If you are in an area you are not allowed to be in at any time, you will be punished."
+            #blank "4. Guards are responsible for feeding the patients during the day."
+            #blank "They may do this however they please, using the kitchen connected to this cafeteria."
+            #blank "There is a window that can be used to transfer meals and dirty dishes."
+            bi "That rule seems easy enough... don't go into anyone else's cell, and follow rule number two."
+            show bg hospcommons at bg
+            show drac ind
+            with dissolve
             bi "..."
-            bi "As if this game wasn't hard enough as is."
+            bi "As if this game wasn't enough of a pain in the ass."
             bi "Is the Game Master upset we had a party? Wants to keep us in check?"
             b "Interesting."
             b "I'm assuming when this place was a mental hospital, they didn't randomly appoint patients as guards."
@@ -641,7 +669,7 @@ label hospitalGo:
     b "Oh, that reminds me."
     b "What's the room arrangement?"
     j "Oh yeah, I guess you were looking around while we discussed this."
-    show map3ui with dissolve:
+    show map3uirooms with dissolve:
         alpha 0.5
         xcenter .5
         ycenter .5
@@ -845,6 +873,7 @@ label hospitalGo:
     b "This feels invasive... it's a lot of personal information about people I don't know."
     b "It'd be like looking at strangers' search histories, except it's their mental illnesses."
     b "..."
+    show bg hospsecurity2 with dissolve
     b "Huh?"
     b "Why is Shahar's name in the patient records?"
     b "I had to scroll a few hundred lines to find his name. I almost missed it."
@@ -855,11 +884,13 @@ label hospitalGo:
     b "Nothing about who Shahar actually is, any contact information..."
     b "Is that the case for the other records?"
     b "Let me check one."
+    show bg hospsecurity3 with dissolve
     b "Whoever Howard Eastnuts is, I'm sorry for looking..."
     b "..."
     b "This person has family contact information, a detailed medical history..."
     b "Date of admission, date of discharge, insurance information, prescriptions."
     b "And a bunch more details Shahar's profile here lacks."
+    show bg hospsecurity with dissolve
     b "Was Shahar's profile inserted to freak me out? Was he actually a patient here?"
     b "Did someone wipe his information before we got here? Maybe the Game Master thought we'd learn too much?"
     b "Maybe Shahar is the Game Master and he's using this as a bluff?"
@@ -2292,7 +2323,7 @@ label laurentime:
     li "Of all the times to be mopey, this isn't a good one."
     $laur = True
     $noside = False
-    $rg = True
+    #$rg = True
     scene bg hosphalltopleft at bg
     $showchibint("sam")
     with dissolve
