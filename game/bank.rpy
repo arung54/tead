@@ -2535,3 +2535,15 @@ label hospPreInv2:
 label trial4a:
     scene black
     bi "I returned to the lobby where everyone was already gathered."
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    bi "They all stayed here for the entire investigation, so I caught them up to speed on everything I found."
+    bi "Which wasn't much, unfortunately."
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    j "Not going to lie, Bert..."
+    j "It seems like Sam committed suicide here."
