@@ -1524,7 +1524,7 @@ label postFT2:
     $showchibint("shahar", "stella")
     bi "Those two are still asleep."
     $showchibint("shahar", "stella", "catherine")
-    show catherine nocat happy with dissolve
+    show catherine2 happy with dissolve
     c "Oh, morning Bert!"
     b "How... how early is it?"
     c "I haven't checked the clock in the garage, but I think most of us got eight hours of sleep."
@@ -1547,19 +1547,18 @@ label postFT2:
     c "Will do!"
     b "Oh before you go, one more thing."
     c "Oh?"
-    hide catherine
-    show catherine nocat
+    hide catherine2
+    show catherine2 ind
     $mood = "ind"
     b "Stella said the guy in the picture is a Mr. Sydell. You ever seen or heard of him?"
     c "Hmm... no, can't say that I have. Unless he was an extra in one of the dramas I watched."
     c "But extras probably don't make enough money to live somewhere like here, right?"
     c "Damn, Hollywood is rough."
-    hide catherine
-    show catherine nocat happy
+    show catherine2 happy
     c "But not as rough as being a red-headed teenager in Creekvale!"
     b "Uh... ok, was just wondering, thanks. See you later Catherine."
     c "Toodaloo!"
-    hide catherine with dissolve
+    hide catherine2 with dissolve
     $showchibint("shahar", "stella")
     bi "Hm... is it even worth asking anyone else?"
     bi "I think after Dracula suggested the murderer's been here before, no one would admit to knowing him."
@@ -1817,7 +1816,7 @@ label postFT3:
     show jenny happy:
         xcenter .5
         linear 0.15 xcenter .75
-    show catherine nocat:
+    show catherine2 ind:
         xcenter .25
     with moveinleft
     c "Yeah! If we're fancy people eating a fancy dinner, we gotta serve everything in courses."
@@ -1864,7 +1863,7 @@ label postFT3:
 label postFT4:
     scene bg mansiondining at bg with fade
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
-    show catherine nocat:
+    show catherine2 ind:
         xcenter .25
     show sid ind:
         xcenter .75
@@ -1878,7 +1877,7 @@ label postFT4:
         xcenter .75
     i "Thanks Catherine, this looks really good!"
     c "No worries! Anyway, gotta get back to the kitchen!"
-    hide catherine with moveoutleft
+    hide catherine2 with moveoutleft
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
     show sid smile:
         xcenter .75
@@ -2206,7 +2205,7 @@ label postFT4:
     show bg mansiondining at bg
     hide frog with dissolve
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
-    show catherine nocat with dissolve
+    show catherine2 ind with dissolve
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
     c "There should be plenty for everyone, I brought a knife from the kitchen. Use it to cut yourself as much as you want."
@@ -2217,7 +2216,7 @@ label postFT4:
     b "Mmmmm... so juicy."
     b "You're such a good cook Catherine!"
     c "Thanks Bert!"
-    show catherine nocat:
+    show catherine2 ind:
         xcenter .5
         linear .15 xcenter .25
     show sam ind with dissolve:
@@ -2241,12 +2240,12 @@ label postFT4:
     s "Got it."
     hide sam with moveoutright
     $showchibint("dracula", "freddy", "lauren", "sid", "shahar", "catherine")
-    show catherine nocat:
+    show catherine2 ind:
         xcenter .25
         linear .15 xcenter .5
     c "Well, that's it for cooking."
     c "Time to party hardy!"
-    hide catherine with dissolve
+    hide catherine2 with dissolve
     show sid happy with dissolve
     i "I'm so full... how am I supposed to eat this meat loaf..."
     b "Ate too much, big guy?"
@@ -2466,7 +2465,7 @@ label mansion2:
     d "If anyone wants to discuss my plan, come meet me downstairs."
     hide drac with moveoutright
     $showchibint("sid", "catherine", "sam")
-    show catherine nocat with moveinright:
+    show catherine2 ind with moveinright:
         xcenter .75
     c "Well, I guess the party's over..."
     b "I uh... don't know if that's the most pressing concern."
@@ -2483,7 +2482,9 @@ label mansion2:
     c "Yeah, I guess..."
     ses "Mrow!"
     c "Oh! Sesame!"
+    hide catherine2
     show catherine ind
+    with dissolve
     b "Huh?"
     c "This is the longest I've been away from him in a while, he must be so lonely..."
     c "I need to take care of him too, make sure he's fed and groomed and all that."
@@ -4032,7 +4033,9 @@ label cathGivesInfo:
     c "Aren't I so evil? Hehe."
     b "I... can't tell how serious you're being, but I'll take good care of him."
     ses "Mew!"
-    show catherine nocat happy with dissolve
+    hide catherine happy
+    show catherine2 happy
+    with dissolve
     bi "Sesame's... surprisingly light to carry."
     bi "If he survives this round, it'll probably take a while to get used to his paws digging into me..."
     b "So uh, one last thing Catherine."
@@ -4042,7 +4045,7 @@ label cathGivesInfo:
     stop music
     show braindeath
     pause .25
-    hide catherine
+    hide catherine2
     show doom
     hide braindeath with dissolve
     b "..."

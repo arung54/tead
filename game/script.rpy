@@ -27,6 +27,8 @@ image sid = Live2D("Resources/sid", base=.999, loop=True, top=-.05, seamless=Tru
 define sid = Character("sid")
 image catherine = Live2D("Resources/catherine", base=.999, loop=True, top=-.05, seamless=True)
 define catherine = Character("catherine")
+image catherine2 = Live2D("Resources/catherine2", base=.999, loop=True, top=-.05, seamless=True)
+define catherine2 = Character("catherine2")
 image shadowyfigure = Live2D("Resources/shadowyfigure", base=.999, loop=True, seamless=True)
 define shadowyfigure = Character("shadowyfigure")
 
@@ -716,4 +718,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump hospitalGo
+jump postFT2

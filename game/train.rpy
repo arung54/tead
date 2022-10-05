@@ -1237,7 +1237,7 @@ label testft:
     ses "Merowwwwww!"
     hide frog ind with moveoutleft
     hide catherine happy
-    show catherine nocat happy:
+    show catherine2 happy:
         xcenter .75
     with dissolve
     c "Nothing we can do but try to enjoy ourselves a little!"
@@ -1245,15 +1245,15 @@ label testft:
         xcenter .25
     c "How'd you guys sleep back there?"
     i "The bench kinda hurt my back... but I'll manage."
-    hide catherine nocat happy
-    show catherine nocat:
+    hide catherine2 happy
+    show catherine2 ind:
         xcenter .75
     $mood = "shock"
     c "Dan! You took the cot for yourself and made Sid sleep on the bench?"
     n "Huh? No, he insisted."
     i "I did I did!"
     c "Hmph. For shame."
-    hide catherine nocat with moveoutright
+    hide catherine2 ind with moveoutright
     i "..."
     hide sid ind with moveoutleft
     show sam ind with dissolve:
