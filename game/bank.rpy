@@ -2545,5 +2545,107 @@ label trial4a:
         xcenter .25
     show lauren ind:
         xcenter .75
-    j "Not going to lie, Bert..."
+    j "Not going to lie..."
     j "It seems like Sam committed suicide here."
+    l "You're that confident already?"
+    l "We haven't even discussed anything yet."
+    l "Usually we need to do a whole song and dance just to come to a consensus."
+    j "Well, it's different this time."
+    j "When Dan, Stella, and Shahar died..."
+    j "All three of them were killed remotely."
+    j "So we didn't see the killer in action at all."
+    j "But this time, Bert saw Sam in the guard uniform."
+    j "The same one Sam's wearing now."
+    b "Well, I saw {i}someone{/i} in the guard uniform in here."
+    b "It wasn't necessarily Sam, right?"
+    j "No, I think the person who shot you and Freddy was Sam."
+    j "Don't you see it in the evidence you found?"
+    bi "The evidence? Let's see, what makes it seem like they're the same person..."
+    call screen bankEvidenceTrial(-1, 11, "trial4b") with dissolve
+label trial4b:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "Are you talking about the uniforms?"
+    j "Yeah, you said that there was only one uniform missing from the lockers."
+    j "But if Sam and the person who shot at you in the lobby are different people..."
+    j "Two uniforms would have been taken out, one for each of them."
+    l "Couldn't the person who shot at Bert just have put the uniform on Sam after running?"
+    j "Well, Bert chased the shooter after they ran away."
+    j "It would have taken a long time to change Sam's clothes, enough time that Bert would have caught them."
+    l "Hm... yeah, I can't argue with that."
+    bi "..."
+    bi "It's true that a lot of signs point to Sam committing suicide."
+    bi "But it's like the black swan."
+    bi "It's easy if you believe all swans are white to point at white swans and claim you're correct."
+    bi "Similarly, it's easy to look at the circumstances and come to Jenny's conclusion."
+    bi "But a single black swan is all that it takes to disprove that theory."
+    bi "As hard as it may be to find..."
+    bi "That's the only way to be certain of the truth."
+    b "I think the uniform part isn't so important."
+    b "There's lots of ways that could be explained..."
+    b "Maybe there's another one hidden somewhere we didn't know about, who knows."
+    b "But there's somethign else I want to focus on..."
+    b "If Sam committed suicide, how did it happen?"
+    j "How?"
+    j "You mean... like, with the gun to the head?"
+    b "Well, that, but when and where?"
+    j "Colonel Mustard in the Ballroom with the Revolver!"
+    b "...What?"
+    j "I said in the break room, between the shooting in the lounge and when we found the body."
+    b "Oh. Yeah, almost."
+    b "We can actually narrow it down a bit more."
+label trial4c:
+    menu:
+        b "If Sam committed suicide, the narrowest time range we can be sure it happened is..."
+
+            "After the shooter left the lobby.":
+                bi "This is true, but we can be more specific..."
+                bi "If Sam committed suicide right after leaving, the corpse would be in the hallway."
+                jump trial4c
+            "After entering the break room.":
+                bi "I think we can be more specific, Sam wasn't right next to the door."
+                bi "It would have taken some time to move to the position the body was in."
+                jump trial4c
+            "After the door closed.":
+                bi "Yes, that's it!"
+            "Right before I opened the break room door."
+                bi "That's a bit too specific, it could have been earlier."
+                jump trial4c
+    b "If Sam committed suicide, Sam would have had to do it after closing the door."
+    l "After closing the door?"
+    b "Yeah, Sam had to go out of their way to close the door."
+    j "Bert, that's not very insightful..."
+    j "All you're saying is you have to close a door for it to be closed!"
+    l "Technically, some doors close on their own..."
+    b "No, but think about it."
+    b "I don't think it's possible the gun fired at that time, because..."
+    call screen bankEvidenceTrial(-1, 0, "trial4d") with dissolve
+label trial4d:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "I saw the door to the break room close."
+    b "If a shot was fired, I was in the hallway when it happened."
+    b "So I would have heard it."
+    j "But weren't you in the lobby for all the gunshots?"
+    j "Your ears must have been ringing, maybe you just couldn't hear anything?"
+    b "No, my ears were ringing but I was still able to hear the door close."
+    b "That would have been way quieter than the gunshot."
+    j "Hm..."
+    j "Is it possible the break room is soundproofed?"
+    b "Soundproofed?"
+    j "Yeah, like... what if you just didn't hear the gunshot because the wall blocked the sound?"
+    b "Is... is it even possible to soundproof a wall that well?"
