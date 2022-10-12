@@ -2618,14 +2618,11 @@ label trial4c:
             "Right before I opened the break room door."
                 bi "That's a bit too specific, it could have been earlier."
                 jump trial4c
-    b "If Sam committed suicide, Sam would have had to do it after closing the door."
-    l "After closing the door?"
-    b "Yeah, Sam had to go out of their way to close the door."
+    b "If Sam committed suicide, Sam would have had to do it after the door closed."
+    b "Since, well, Sam had to open the door first to get into the break room."
     j "Bert, that's not very insightful..."
-    j "All you're saying is you have to close a door for it to be closed!"
-    l "Technically, some doors close on their own..."
     b "No, but think about it."
-    b "I don't think it's possible the gun fired at that time, because..."
+    b "I don't think it's possible the gun was fired after the door closed, because..."
     call screen bankEvidenceTrial(-1, 0, "trial4d") with dissolve
 label trial4d:
     scene bg banklobby
@@ -2648,4 +2645,105 @@ label trial4d:
     j "Is it possible the break room is soundproofed?"
     b "Soundproofed?"
     j "Yeah, like... what if you just didn't hear the gunshot because the wall blocked the sound?"
-    b "Is... is it even possible to soundproof a wall that well?"
+    b "Is it even possible to soundproof a wall that well?"
+    l "I doubt it... when you go to a firing range, they make you wear those noise-blocking headphones."
+    l "Those only give you 25 decibels of reduction."
+    l "A gunshot would still be about as loud as a car engine."
+    j "Hm... okay, so the room probably wasn't soundproofed."
+    j "I'm stumped then... how could Sam have committed suicide without Bert hearing?"
+    b "Well, if someone-{p=0.5}{nw}"
+    l "There could be another explanation for why Bert didn't hear the gunshot."
+    b "Huh?"
+    l "What if someone else shot Sam?"
+    j "Someone else?"
+    l "Yeah, I think someone could have shot Sam without the rest of us hearing."
+    l "Specifically, in the window of time Bert was talking about earlier."
+    bi "Oh."
+    bi "The person she's talking about is..."
+    call screen chooseCharBank("bert", trial4e, "Who could have shot Sam after the break room door closed?") with dissolve
+label trial4e:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "You... think I did it?"
+    l "Sorry Bert, I trust you a lot more than I trusted Kaiser and Dracula. And to a lesser extent, Catherine."
+    l "You've been trying so hard to save the rest of us."
+    l "But... hear me out, it just... makes a lot of sense."
+    python:
+        startBankTrial("lauren", "Lauren: I think Bert shot Sam in the break room.", 0,
+        "lauren", "Lauren: Since {color=#f00}no one else had seen Sam recently{/color}, Bert was able to make up a story about the events leading up to \"finding\" Sam's body.", -1,
+        "sid", "Sid: Wait, but then {color=#f00}we should have heard Bert shoot Sam!{/color}", -1,
+        "lauren",  "Lauren: Not necessarily, because {color=#f00}we were all far away from the break room{/color}, so it would have sounded much more quiet to us.", -1,
+        1, 5, "trial4f")
+label trial4f:
+    bi "I wanted to be mad, to think Lauren was insane."
+    bi "To go through all the emotions that Sid went through in the train."
+    bi "But..."
+    bi "I have to admit, it is pretty suspicious."
+    bi "I would have heard it if Sam shot themself, yet I claim I didn't..."
+    bi "It makes it seems like I'm the murderer and I wasn't consistent about my story."
+    bi "I can't get worked up about this..."
+    bi "If I want to live, I need to approach this with a level head."
+    bi "As hard as that may be under the circumstances..."
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show lauren ind
+    with dissolve
+    b "You say no one had seen Sam recently..."
+    b "But Freddy was there with me when my alibi happened."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show frog sad:
+        xcenter .25
+    with moveinleft
+    f "Did... did someone say my name?"
+    f "*sniff*"
+    bi "Poor kid... he's probably still in shock."
+    l "Bert... he's just a kid, don't use him as a tool."
+    b "I'm... I'm not using him."
+    b "Freddy saw what unfolded in here."
+    f "What... unfolded?"
+    b "Freddy... you remember the loud noises? And when I fell to the floor in here?"
+    f "I... I don't wanna remember..."
+    f "Can't it be nap time now?"
+    b "Freddy, just for a few seconds, can you help us?"
+    b "When the loud noises happened who was in here with you?"
+    f "Uh... you were there."
+    b "Anyone else?"
+    f "Yeah... someone dressed up for Halloween... but they were actually scary!"
+    f "I... I..."
+    b "That's enough Freddy, thanks. You can take a nap now if you want."
+    f "O-okay, I'll try..."
+    hide frog with moveoutleft
+    show sid ind:
+        xcenter .25
+    with moveinleft
+    i "So it seems like Bert was telling the truth after all."
+    i "You and me, Bert, we're one and the same."
+    bi "I wouldn't say that..."
+    i "Misunderstood, needlessly accused."
+    show sid mad:
+        xcenter .25
+    i "You're a bully, Lauren, just like every other adult!"
+    bi "I have to say, Sid coming to my defense isn't exactly helping."
+    l "Freddy seeing Bert leave doesn't mean that Bert didn't shoot Sam."
+    show sid ind:
+        xcenter .25
+    i "Huh?"
+    l "Sure, Freddy can confirm that Sam came to the lounge, took six shots, and ran."
+    l "And you're probably not lying about running out to chase Sam."
+    l "But what if this is what actually happened..."
+    l "Bert chased after Sam, in an act of heroism."
+    l "Sam went into the break room, followed by Bert."
+    l "Somehow Bert overpowered them, grabbing the gun and shooting Sam."
+    i "Wait... if Bert is the murderer, why was Sam trying to shoot people?"
+    
