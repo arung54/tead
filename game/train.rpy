@@ -105,8 +105,9 @@ label trainGo:
     j "Maybe we were on the train the whole time?"
     j "And just got moved to a different train car?"
     show jenny ind:
+        xcenter .5
         linear .3 xcenter .75
-    show bert ind with moveinleft: ###########################
+    show bert ind with dissolve: ###########################
         xcenter .25
     bt "I don't think so... Those rooms were pretty wide."
     bt "I don't think they could have fit in any reasonable train car."
@@ -134,7 +135,7 @@ label trainGo:
             hide popwow
             show drac ind:
                 linear .3 xcenter .75
-            show stella ind with moveinleft:
+            show stella ind with dissolve:
                 xcenter .25
             t "The vampire's right, there's no way we got onboard ourselves."
             t "We'd obviously remember that."
@@ -156,7 +157,7 @@ label trainGo:
             d "Otherwise we'd remember it."
             show drac ind:
                 linear .3 xcenter .75
-            show stella ind with moveinleft:
+            show stella ind with dissolve:
                 xcenter .25
             t "I don't remember boarding myself, that's for sure."
             t "How did they manage to knock all of us out though?"
@@ -172,7 +173,7 @@ label trainGo:
     show kaiser ind:
         xcenter .5
         linear 0.3 xcenter .75
-    show lauren ind with moveinleft:
+    show lauren ind with dissolve:
         xcenter .25
     o "Kaiser's probably right... think back to what the monitor told us."
     show start2
@@ -212,7 +213,7 @@ label trainGo:
     show sam ind:
         xcenter .5
         linear 0.3 xcenter .75
-    show bert happy with moveinleft:
+    show bert happy with dissolve:
         xcenter .25
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
@@ -245,7 +246,7 @@ label trainGo:
     show frog sad:
         xcenter .5
         linear .3 xcenter .75
-    show lauren ind with moveinleft:
+    show lauren ind with dissolve:
         xcenter .25
     o "We can sit together, buddy. We'll hang out here."
     f "{i}*sniffle*{/i} Okay miss."
@@ -285,7 +286,7 @@ label trainGo:
     i "I'll go with, the uh, pirate. Why is there a pirate here again?"
     show sid ind:
         linear .3 xcenter .75
-    show kaiser ind with moveinleft:
+    show kaiser ind with dissolve:
         xcenter .25
     k "Not much makes sense at the moment."
     k "No point in getting caught up in it."
@@ -299,7 +300,7 @@ label trainGo:
     j "Plus, going to the front seems like the best way to find out where we're going."
     show jenny ind:
         linear .2 xcenter .6
-    show catherine ind with moveinleft:
+    show catherine ind with dissolve:
         xcenter .38
     c "We're coming too!"
     show jenny ind with hpunch
@@ -323,7 +324,7 @@ label trainGo:
     s "It looks like it's just the three of us."
     show sam ind:
         linear .3 xcenter .75
-    show drac ind with moveinleft:
+    show drac ind with dissolve:
         xcenter .25
     d "Very well."
     #hide drac ind
@@ -780,7 +781,7 @@ label frontcar2:
     show bert sad:
         xcenter .5
         linear .3 xcenter .75
-    show drac ind with moveinleft:
+    show drac ind with dissolve:
         xcenter .25
     d "I am quite unfamiliar with everything I'm seeing up here."
     d "Illumination trapped in such curious containers..."
@@ -1481,7 +1482,7 @@ label midcar4:
     hide poprain with dissolve
     show catherine ind:
         linear .3 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind with dissolve:
         linear .3 xcenter .25
     j "If one of us is the mole though, it should be our highest priority to figure out who it is."
     c "That's true..."
@@ -1589,7 +1590,7 @@ label midcar4:
     ni "He's all choked up."
     show bert sad:
         linear .3 xcenter .75
-    show lauren ind with moveinleft:
+    show lauren ind with dissolve:
         xcenter .25
     o "Alright, we're done with this."
     o "I can't sit by and watch you guys talk about stuff like this."
@@ -1630,7 +1631,7 @@ label midcar4:
     show lauren ind:
         xcenter .25
         linear 0.15 xcenter .2
-    show frog ind with moveinbottom
+    show frog ind with dissolve
     f "Can we go to sleep? I'm tired..."
     j "Maybe we should just call it a day."
     j "I don't see us getting anywhere with this."
@@ -1899,7 +1900,7 @@ label midcar6:
     hide popwow
     show lauren ind:
         linear .3 xcenter .75
-    show sam ind with moveinleft:
+    show sam ind with dissolve:
         xcenter .25
     s "Did your car go dark too?"
     hide lauren ind with moveoutright
@@ -2063,7 +2064,7 @@ label midcar6:
     s "So who made you the leader here?"
     show sam angry:
         linear .3 xcenter .75
-    show kaiser ind with moveinleft:
+    show kaiser ind with dissolve:
         xcenter .25
     k "Oh please. As if Sid would even speak to you after that outburst a second ago."
     s "..."
@@ -2203,7 +2204,7 @@ label trial1a:
     t "I think I agree with the pirate at this point, let's all just jump out a window."
     show stella ind:
         linear .3 xcenter .75
-    show lauren ind with moveinleft:
+    show lauren ind with dissolve:
         xcenter .25
     o "That's not funny... we need to figure this out."
     o "For Dan's sake, and for our own."
@@ -2353,7 +2354,7 @@ label trial1b:
     b "Yeah, there's a lot to talk about."
     show lauren ind:
         linear .3 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind with dissolve:
         xcenter .25
     j "Yeah. Let's talk about the uh, stabby stick."
     play sfx "audio/pophuh.mp3" volume .5
@@ -2518,7 +2519,7 @@ label trial1d:
     c "So it seems like it wasn't Sid... at least not while Dan was sleeping."
     show catherine ind:
         linear .3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "Yeah! And and and..."
     i "I spent almost all my free time up in the front car trying to get into the computer."
@@ -2820,7 +2821,7 @@ label trial1h:
     show sam ind:
         xcenter .75
         linear 0.15 xcenter .85
-    show frog ind with moveinbottom
+    show frog ind with dissolve
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
         #zoom .75
@@ -2894,7 +2895,7 @@ label trial1i:
     f "Hmm... well, nevermind I guess."
     show frog ind:
         linear .3 xcenter .75
-    show drac ind with moveinleft:
+    show drac ind with dissolve:
         xcenter .25
     d "Well..."
     d "There is no need to rush."
@@ -2990,7 +2991,7 @@ label trial1ib:
     bi "But it's all we've really got right now."
     show kaiser ind:
         linear .3 xcenter .75
-    show stella ind with moveinleft:
+    show stella ind with dissolve:
         xcenter .25
     t "I have been meaning to ask."
     $mood = "shock"
@@ -3099,7 +3100,7 @@ label trial1j:
     j "What do you mean a scythe?"
     show jenny ind:
         linear .3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "W-well not exactly a scythe, but..."
     i "Look at his drawing!"
@@ -3208,7 +3209,7 @@ label trial1m:
     t "Well well well... that certainly changes things."
     show stella ind:
         linear .3 xcenter .75
-    show kaiser ind with moveinleft:
+    show kaiser ind with dissolve:
         xcenter .25
     k "Yes, it seems we have quite the mechanic on our hands."
     t "Mechanic?"
@@ -3347,7 +3348,7 @@ label trial1o:
     b "Yeah... maybe once to see what they can access, and again to set up the murder."
     show lauren ind:
         linear .3 xcenter .75
-    show kaiser ind with moveinleft:
+    show kaiser ind with dissolve:
         xcenter .25
     k "I have an inquiry - why was the user counter at 1 in the first place?"
     k "Is this value really something we should trust?"
@@ -3388,7 +3389,7 @@ label trial1o:
     j "Sid, what do I type again?"
     show jenny ind:
         linear .3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "Just type in \"DIR\", in all caps, and hit enter."
     hide jenny ind with dissolve
@@ -3442,7 +3443,7 @@ label trial1o:
     k "We spent quite some time considering ways someone could have stabbed Dan."
     show kaiser ind:
         linear .3 xcenter .75
-    show stella ind with moveinleft:
+    show stella ind with dissolve:
         xcenter .25
     t "Not wasted, per se, simply not the correct solution."
     t "Now we know that nobody snuck into the back car."
@@ -3470,7 +3471,7 @@ label trial1o:
     o "Plus, if they accessed the computer twice, it's likely one of the times was during the murder."
     show lauren ind:
         linear .3 xcenter .75
-    show drac ind with moveinleft:
+    show drac ind with dissolve:
         xcenter .25
     d "Yes - I concur."
     d "If this theory is correct, it must have been one of the four in this car."
@@ -3650,7 +3651,7 @@ label trial1r:
     b "It's true!"
     show kaiser ind:
         linear .3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "M-me?"
     b "Yes! Think back to what you said yesterday!"
@@ -3731,7 +3732,7 @@ label trial1r:
     k "So cold."
     show kaiser ind:
         linear .3 xcenter .75
-    show sid mad with moveinleft:
+    show sid mad with dissolve:
         xcenter .25
     i "You... you killed my friend! He didn't deserve to die!"
     show kaiser ind:

@@ -55,12 +55,13 @@ label mansionGo:
 
 label Mansionuno:
     scene black
+    $mood = "sad"
     blank "In the present..."
     bi "..."
     bi "Two people died..."
     bi "And there's nothing I could do to save them..."
     show bg mansiondining at bg
-    $ statusnt("???", "bert", ch=2, sun=5)
+    $ statusnt("???", "bert", ch=2, sun=0)
     with slowdissolve
     bi "I slowly came to my senses and looked to my left."
     show frog sad with dissolve
@@ -82,21 +83,25 @@ label Mansionuno:
     f "We're in a really nice house now though!"
     bi "For a kid he doesn't seem that shaken up about what just happened..."
     bi "But looking around, I had to agree."
-    $ statusnt("Dining Room", "bert", ch=2, sun=5)
+    $ statusnt("Dining Room", "bert", ch=2, sun=0)
     bi "It seemed like we were in a very posh dining room. A nice change of pace from the crowded train..."
     f "Wait, Bert?"
     f "I... I thought you were just someone in my dream."
     f "Does that mean..."
     $mood = "sad"
     show frog sad
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .5
+        ycenter .1
     f "Dan... Kaiser..."
     bi "Oh no. He's audibly tearing up."
     bi "What do I do?"
+    hide poprain with dissolve
     show frog sad:
-        xcenter .5
         linear 0.15 xcenter .75
     $showchibint("freddy", "lauren")
-    show lauren ind with moveinleft:
+    show lauren ind with dissolve:
         xcenter .25
     l "Hey Freddy, you doing okay?"
     l "You wanna look around and try to find food with me? Everyone's probably hungry after sleeping!"
@@ -117,18 +122,26 @@ label Mansionuno:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show sam ind with moveinright:
+    show sam ind with dissolve:
         xcenter .75
     s "I agree with the vampire."
     d "We may as well discuss it now, and catch those two up later."
     s "No time to waste really..."
     d "First, Kaiser mentioned the train we were in is very similar to a train he'd been in before."
+    $mood = "shock"
     d "It seems we're in some sort of mansion. Perhaps the murderer this time has been in this mansion before?"
     hide sam with moveoutright
     show catherine ind with moveinright:
         xcenter .75
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .8
+        ycenter .275
+        zoom .75
     c "Woah! So you think someone here has been in this mansion before?" #JJJ
     d "It would make sense, yes?"
+    hide poptear
+    $mood = "sad"
     b "He has a point... If there were direct ties between Kaiser and the train, maybe..."
     c "Maybe someone his direct ties to this mansion?"
     d "Precisely."
@@ -136,6 +149,7 @@ label Mansionuno:
     d "That way we can identify the murderer ahead of time."
     d "Ideally they would just kill the Game Master and we all escape, but if not we can protect ourselves in this way."
     bi "Dracula's very calm and collected about this."
+    $mood = "ind"
     bi "It seems like a pretty good plan, though maybe a bit optimistic."
     d "Secondly, we know that Kaiser, Stella, and Sam have all admitted to some sort of crime."
     bi "Stella and Sam?"
@@ -162,7 +176,7 @@ label Mansionuno:
 
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "jenny", "sam", "shahar", "sid", "stella")
-    $ statusnt("Dining Room", "bert", ch=2, sun=5)
+    $ statusnt("Dining Room", "bert", ch=2, sun=0)
     show drac ind:
         xcenter .25
     show catherine ind:
@@ -195,13 +209,19 @@ label Mansionuno:
     i "I mean, I'm only 16, I can't be a criminal."
     c "Hmm, I'm not sure if you're exempt from the law for being 16, bud."
     i "Well I didn't do anything wrong, really."
-    $mood = "happy"
+    #$mood = "happy"
     i "Er, well, nothing {i}VERY{/i} wrong..."
     bi "..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .3
+        ycenter .275
+        zoom .75
     i "Well, {i}MAYBE{/i} very wrong, but-"
     hide catherine ind with moveoutright
     show jenny ind with moveinright:
         xcenter .75
+    hide poptear
     j "I think we get the point."
     $mood = "ind"
     j "Based on everyone's reaction, it seems like there's a least some truth to Dracula's point."
@@ -247,11 +267,17 @@ label Mansionuno:
     t "But we've already discussed this and it seems nobody else wants to speak up."
     d "Hmph, fine. Maybe this is a conversation that should wait for all of us to be present anyway."
     d "But, even if we don't admit to our crimes, maybe we should take precautions like mandatory travelling in pairs."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
     t "Rubish!"
     show stella happy:
         xcenter .75
     t "You see the room we're in? This is a palace made for a queen like me."
     t "There's bound to be plenty of high-class booze, stuff you'd find in VIP lounges."
+    hide popwow
     b "For the first time since the start of all this, Stella makes a great point." #JJJ made him say this outloud and not think it
     b "Hopefully there's some real food and sleeping arrangements..."
     t "I'm not going to let some geezer tell me what to do."
@@ -269,8 +295,13 @@ label Mansionuno:
     hide sam with moveoutleft
     show shahar mad with moveinleft:
         xcenter .25
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .25
+        ycenter .25
     h "What d'ye mean pretend? Ain't nothing pretend about me."
     $mood = "sad"
+    hide popmad
     t "Alright, if it means getting to see those abs, I can agree that you're a pirate."
     show shahar ind:
         xcenter .25
@@ -286,10 +317,15 @@ label Mansionuno:
     j "Like the awkward moment from middle school that ruins you when you think of it."
     bi "..."
     t "I agree with the belle. I'm sure some of you have fetishes you wouldn't admit to, what makes a crime so different?"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     t "That being said, are you sure you aren't just trying to get on Bert's good side?"
     $mood = "shock"
     bi "Suddenly, all eyes were either on me or Jenny."
     b "What?"
+    hide pophearts
     j "Huh?"
     t "What? You're both young, doe-eyed, happy types."
     t "And it's obvious Bert doesn't want to talk about his crime, so you're bailing him out."
@@ -339,7 +375,7 @@ label Mansionuno:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show catherine happy with moveinright:
+    show catherine happy with dissolve:
         xcenter .75
     c "Great idea Sid!"
     c "There's bound to be some new information here we can use."
@@ -390,12 +426,12 @@ label Mansionuno:
     b "Let's head to the kitchen, I'm hungry!"
     scene bg mansionkitchen at bg with fade
     $showchibint("jenny", "freddy", "lauren")
-    $ statusnt("Kitchen", "bert", ch=2, sun=5)
+    $ statusnt("Kitchen", "bert", ch=2, sun=0)
     show lauren ind with dissolve
     l "Hey, what happened in the other room? Heard lots of chatter."
     $mood = "sad"
     b "Well uh..."
-    bi "I'm pretty curious how she'll react to the whole, \" we're all criminals\" news."
+    bi "I'm pretty curious how she'll react to the whole, \"we're all criminals\" news."
     b "we've concluded everyone here's a uh, criminal, basically."
     b "Some people suggested we all admit to our crime, but that wasn't very well received."
     l "Ah, okay. Well, good news, the kitchen is rather well-stocked."
@@ -429,7 +465,7 @@ label Mansionuno:
     show lauren ind:
         xcenter .5
         linear 0.3 xcenter .75
-    show frog ind with moveinleft:
+    show frog ind with dissolve:
         xcenter .25
     f "O-okay!"
     hide lauren
@@ -447,18 +483,20 @@ label Mansionuno:
         xcenter .25
     j "I'm... not old enough to drink yet."
     t "Who's gonna arrest you? The Game Master who's already broken twenty different laws?"
+    $mood = "shock"
     t "Plus it'd be good for you and Bert to get to know each other with your inhibitions down."
     b "Alright, I think we've seen everything we need to see here."
+    $mood = "ind"
     b "Jenny, let's go check out another room."
     hide stella happy
     show stella bigsmile:
         xcenter .75
     t "A bedroom?"
-    $mood = "sad"
+    #$mood = "sad"
     j "Jeez, get me out of here."
     scene black with fade
     scene bg mansiongarage at bg
-    $ statusnt("Garage", "bert", ch=2, sun=5)
+    $ statusnt("Garage", "bert", ch=2, sun=0)
     with fade
     $showchibint( "jenny", "catherine", "sid")
     show catherine happy with dissolve
@@ -484,7 +522,7 @@ label Mansionuno:
     show catherine happy:
         xcenter .5
         linear 0.3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "I... I could repair things around here."
     i "We couldn't afford to hire people, so my dad taught me how to do basic household repairs."
@@ -493,14 +531,20 @@ label Mansionuno:
     c "There's also a clock and some boxes full of junk."
     c "According to the clock it's early afternoon right now."
     b "It's hard to tell for sure, with all the windows boarded up."
-    b "We might as well use that as out time standard for now."
+    b "We might as well use that as our time standard for now."
     $ statusnt("Garage", "bert", ch=2, sun=2)
     c "Catherine's Garage Emporium Standard time! CGEST!"
     $mood = "sad"
     bi "I heard Jenny giggle behind me. I'm jealous of their lightheardedness sometimes..."
     $mood = "ind"
+    show catherine happy:
+        xcenter .75
+        linear 0.3 xcenter .65
     c "There's also a light generator here, it seems like it's fully fueled."
     c "We have running power so we shouldn't need it, but it's nice to know that won't be an issue."
+    show catherine happy:
+        xcenter .65
+        linear 0.3 xcenter .75
     show catherine ind
     #c "I imagine whoever owns this house isn't paying the electricity bill."
     #c "So unless the Game Master's doing us that favor..."
@@ -525,6 +569,11 @@ label Mansionuno:
     j "Well, I think what we all really need right now is something to bring us together."
     b "Something to bring us together?"
     $mood = "happy"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .25
+        ycenter .5
+    show jenny happy
     j "Yeah, like... a fancy dinner party!"
 
     c "Aww, Jenny! That's such a cute idea!"
@@ -534,15 +583,21 @@ label Mansionuno:
     hide catherine ind with moveoutright
     show sid ind with moveinright:
         xcenter .75
+    hide pophearts
     i "Wow, a fancy party?"
     i "I... I've only ever lived in my parents' cramped apartment."
     i "Sustaining ourselves off budget meals."
     i "This is..."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     show sid smile:
         xcenter .75
     i "So exciting!"
     bi "Wow, and just like that, Sid's in high spirits."
     b "Sounds good to me!"
+    hide pophearts
     $mood = "ind"
     bi "Honestly, anything to get Sid's mind off of Dan, and this situation as a whole, is welcome in my book."
 
@@ -558,30 +613,31 @@ label Mansionuno:
 
     bi "I'm glad something good is coming out of this."
     hide catherine
-    hide sid
+    hide sid with moveoutright
     with dissolve
     show jenny ind:
-        xcenter .5
-    with dissolve
+        xcenter .25
+        linear .3 xcenter .5
     b "Ready to keep exploring?"
     j "Sounds good, Catherine gave us a rundown of this room anyway."
     j "Let's see... We saw the dining room, kitchen, and garage."
     j "It seems like we've explored the entirety of this floor, so let's go upstairs?"
     b "Sure."
-    scene black with fade
+    #scene black with fade
     scene bg mansionhall at bg with fade
     $showchibint("jenny")
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
     show jenny ind with moveinleft:
         xcenter .5
     j "Okay, so this is the upstairs, huh?"
-    b "Prety spacious ."
-    j "It seems like there are 1,2,3,4,5,6 doors up here!"
+    b "Prety spacious."
+    j "It seems like there are 1, 2, 3, 4, 5, 6 doors up here!"
     j "Let's check them out from left to right!"
     b "I hear some murmuring coming from that room already..."
+    show jenny happy
     b "Maybe don't-"
     j "Wahoo!"
-    hide jenny ind with moveoutleft
+    hide jenny with moveoutleft
     $mood = "sad"
     b "-barge in..."
     scene bg mansionmasterbedroom at bg with fade
@@ -614,12 +670,14 @@ label Mansionuno:
     d "Fine."
     b "Cool, make sure to mention it to anyone you bump into."
     b "By the way, can I ask what you were talking about?"
+    $mood = "sad"
     d "..."
     s "..."
     d "We were discussing private affairs."
     d "You have secrets you're keeping about your crime, so surely you won't mind me keeping my own."
     s "Yeah, what the vampire said."
     b "Oh, yeah, of course..."
+    $mood = "ind"
     d "And maybe you'd like to give us some privacy so we may continue speaking?"
     d "Continue going on your little adventure around the house."
     bi "I nodded, but was a little bit annoyed by the whole conversation."
@@ -629,7 +687,7 @@ label Mansionuno:
     show jenny ind with dissolve
     b "Let's move on? We can check the next room over."
     j "Sounds good."
-    scene black with fade
+    scene black with dissolve
 
 #####
 
@@ -638,32 +696,16 @@ label Mansionuno:
     $showchibint("jenny", "freddy", "lauren")
     show lauren ind with dissolve
     l "Oh, hey guys."
+    show lauren happy
     l "I thought bouncing on a bed might get Freddy's mind off things."
-    show lauren ind:
+    show lauren happy:
         xcenter .5
         linear 0.15 xcenter .25
-    show frog ind with moveinbottom:
+    show frog ind with dissolve:
         xcenter .75
-        ycenter .8
-    show frog ind:
-        xcenter .75
-        ycenter .8
-        linear .15 ycenter .2
-    show frog ind:
-        xcenter .75
-        ycenter .2
-        linear .15 ycenter .8
-    show frog ind:
-        xcenter .75
-        ycenter .8
-        linear .15 ycenter .2
-    show frog ind:
-        xcenter .75
-        ycenter .2
-        linear .15 ycenter .5
     f "It's fun!"
     l "It's probably not what he's used to in terms of fun but... it's something."
-    l "Hey Freddy, how high do you think you can go?"
+    #l "Hey Freddy, how high do you think you can go?"
     b "By the way, we're meeting soon in the living room to discuss who gets to sleep where."
     b "We can bring you down with us when it's time to start."
     l "Got it."
@@ -687,7 +729,7 @@ label Mansionuno:
     j "Yeah."
     #b "I'm assuming all the bedrooms upstairs look like this, so I think we just need to look at the bathroom."
     #b "We're about to have that meeting anyway."
-    scene black with fade
+    scene black with dissolve
 
 ###
 
@@ -697,17 +739,22 @@ label Mansionuno:
     show jenny ind
     j "Hey Bert, ummm..."
     j "While we're alone..."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        xcenter .4
+        ycenter .25
+        zoom .75
     j "Do the jokes everyone's making about us annoy you as much as they annoy me?"
-    b "Yes. Hell yes."
     $mood = "sad"
     b "I don't get how people can be saying that kind of stuff while our lives are on the line."
     j "Okay, just wanted to make sure we were on the same page."
+    hide pophuh
     b "I'll speak up next time it happens."
     b "..and you should join me in doing so, since I don't think they all take me seriously."
     b "Mostly Dracula, since I'm not admitting my crime."
     b "Even though he's still claiming to be a vampire..."
     $mood = "ind"
-    j "Don't worry about him. He's just a grumpy old man."
+    j "Don't worry about him. He's just a grumpy boomer."
     j "He thinks that since he's stuck here with a bunch of \"young\" people he's in charge."
     j "You don't need to tell anyone what your crime is, I wasn't just saying that to protect you."
     j "I think that applies to everyone."
@@ -739,9 +786,11 @@ label Mansionuno:
             $ telljenny = 0
     j "Well, I can tell you mine, if you want."
     j "If it makes you more comfortable with me."
+    $mood = "shock"
     j "It's not that bad, if anything I'm a little proud of it."
     bi "..."
     bi "Jenny had been so bubbly and supportive this whole time."
+    $mood = "ind"
     bi "It's hard to process that she's a criminal too."
     if telljenny == 1:
         b "Sure, we can trade secrets."
@@ -767,16 +816,23 @@ label Mansionuno:
     j "I didn't think what I did was that bad, but it was all just for show, really."
     b "For show?"
     j "Yeah, they made a big deal out of my case to distract from the original not guilty verdict."
+    $mood = "shock"
     j '"Local Pink Haired Girl Threatens to Kill Judge" was all over the city.'
     b "You threatened to kill him?!"
     j "I mean, a little yes, a little no. It's hard to remember."
     j "But yeah, that's been following me ever since."
     j "To think I got off worse than that bastard did, it's crazy."
+    $mood = "ind"
     j "It was a dumb decision, but honestly?"
     show jenny happy
     j "I don't regret it much. I'm kinda proud."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     j "It's important to stand up for what's right!"
     bi "It definitely sounds like something she'd do."
+    hide pophearts
     j "That's my crime, if you want to call it that."
     show jenny ind
     if telljenny == 0:
@@ -862,9 +918,14 @@ label mansion1:
     bi "This is such a terrifying situation, but..."
     $mood = "happy"
     show bg mansionbr3
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     bi "I'm hopeful we can get everyone on the same page and keep everyone alive."
     bi "Especially with news of this party we're going to throw."
     bi "Maybe It'll give us a chance to chat with people and learn more about our situation."
+    hide pophearts
     show bg mansionbr at bg with fade
     bi "...Well, I'm done admiring this bathroom."
     bi "Time to head downstairs for the meeting."
@@ -880,7 +941,7 @@ label mansion1:
     show sam ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show catherine happy with moveinright:
+    show catherine happy with dissolve:
         xcenter .75
     $mood = "happy"
     c "Yessir! But I'll wait until you're done Bert."
@@ -896,11 +957,16 @@ label mansion1:
     show frog ind with moveinright:
         xcenter .75
     f "Yeah, okay with me!"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     f "Can Lauren be the person I share a bed with?"
     show lauren aw:
         xcenter .25
     l "Never thought you'd ask."
     bi "I could've guessed that..."
+    hide pophearts
     b "Okay, so three of us need to stay somewhere that isn't a bedroom."
     b "And two people can probably share the master bedroom."
     hide frog with moveoutright
@@ -948,7 +1014,7 @@ label mansion1:
     show shahar ind:
         xcenter .5
         linear .15 xcenter .75
-    show stella drunk with moveinleft:
+    show stella drunk with dissolve:
         xcenter .25
     t "Sleeping with two cute drunk boys? Hell yes, who needs a master bedroom?"
     b "{i}Two{/i} drunk boys?"
@@ -965,7 +1031,7 @@ label mansion1:
     show catherine happy:
         xcenter .5
         linear .15 xcenter .25
-    show sid ind with moveinright:
+    show sid ind with dissolve:
         xcenter .75
     i "Oh... yeah, my family isn't that well off so... this is the nicest place I've ever been in."
     c "I say we give Sid a treat and let him take the master bedroom!"
@@ -978,12 +1044,18 @@ label mansion1:
     hide catherine with moveoutleft
     show sam ind with moveinleft:
         xcenter .25
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .35
+        ycenter .25
+        zoom .75
     s "Wait, are we really going to trust what Sid says at face value?"
     $mood = "ind"
     s "He could just be lying about being poor so we're nicer to him."
     show sid ind:
         xcenter .75
     i "Wh-why would I lie?"
+    hide popwow
     s "You do remember the part where we're all criminals, right?"
     s "Everyone here has a reason to lie."
     i "..."
@@ -998,13 +1070,16 @@ label mansion1:
         linear .3 xcenter .45
     bi "Catherine got closer to Sam and whispered, just barely loud enough for me to hear."
     $mood = "shock"
-    c "Do we need to bring up the fact that Sid got close to Dan before he died?"
+    c "Do we need to bring up the fact that Sid got close to Dan?"
+    c "And then had him die right in front of him?"
+    c "And then got framed for his murder?"
     s "No..."
+    s "Fine, he can have the room."
     hide sam with moveoutleft
     show catherine happy:
         xcenter .45
         linear .3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     $mood = "ind"
     c "Room's all yours Sid."
@@ -1030,7 +1105,6 @@ label mansion1:
     bi "Not that anyone would be down to take my spot."
     $mood = "ind"
     i "Plus, you claim you don't sleep, so I'd have someone protecting me all night!"
-    d "Reasonable enough for me."
     hide drac with moveoutright
     show catherine ind with moveinright:
         xcenter .75
@@ -1060,11 +1134,11 @@ label mansion1:
     c "So I was thinking tomorrow evening we could have a dinner party!"
     c "It would be a shame to not make good use of all the food in the kitchen."
     c "Plus I'm sure we could all use a mood lifter."
-    c "I can do most of the cooking, but if anyone can contribute!"
+    c "I can do most of the cooking, but anyone can contribute!"
     show catherine happy:
         xcenter .5
         linear .15 xcenter .75
-    show stella drunk with moveinleft:
+    show stella drunk with dissolve:
         xcenter .25
     t "Is drinking allowed at this party?"
     show catherine ind:
@@ -1090,7 +1164,7 @@ label mansion1:
     s "I might drink a bit myself."
     l "...Are you even old enough to drink?"
     s "Again, all criminals, murder game, trapped here against our will..."
-    l "...Fine."
+    l "...True."
     s "So, that concludes the meeting, right?"
     b "I guess so."
     b "Uh... yeah, meeting over I guess, everyone's free to go."
@@ -1130,7 +1204,7 @@ label mansion1:
     bi "Everyone except Catherine and Freddy slowly left."
     $showchibint("catherine", "freddy")
     $statusnt("Dining Room", "bert", ch=2, sun=4) #Bug julian
-    show frog ind with dissolve:
+    show frog happy with dissolve:
         xcenter .25
     show catherine happy with dissolve:
         xcenter .75
@@ -1236,7 +1310,9 @@ label postFT2:
     b "Not even if you retire?"
     t "Well, I could probably retire now if I wanted."
     t "I have billions saved up already, my bloodline will be forever wealthy."
-    b "Billions? You're only a few years older than me..."
+    $mood = "shock"
+    b "Billions? With a B?"
+    b "You're only a few years older than me..."
     t "Sorry kid, life is unfair. You should've figured that out when one percent of people own 40 percent of duh wealth."
     b "So why don't you retire now?"
     t "What is this, an interrogation? Did someone commit duh murder while we were drinking? Hahaha!"
@@ -1280,9 +1356,16 @@ label postFT2:
     b "..."
     t "Here, I'll be more useful than you were all day, with one sentence."
     $mood = "shock"
-    t "Duh guy in the painting? His name's Mr. Sydell."
+    t "Duh guy in the painting behind me?"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .35
+        ycenter .25
+        zoom .75
+    t "His name's Mr. Sydell."
     b "Huh? Why didn't you mention this before?"
     t "I only just remembered his name."
+    hide popwow
     t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
     t "But I think at at some point my company sunk his company into duh ground."
@@ -1339,9 +1422,14 @@ label postFT2:
     b "That... sounds more like taking a break from a relationship than not having a lover."
     show shahar mad:
         xcenter .25
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .25
+        ycenter .25
     h "Lad, what'd I tell ya, don't ask!"
     t "Ooh, duh boys are about to fight!"
     t "Catfight! Catfight! Catfight!"
+    hide popmad
     b "What? No! I don't want to fight!"
     b "Sorry, I won't say anything else about it."
     show shahar ind:
@@ -1388,7 +1476,7 @@ label postFT2:
     t "I don't know if I can approve of stealing from duh rich given... well, you know."
     h "Aye lass, it's not like I'm pillaging your village!"
     t "Hmm, that is true."
-    t "After what my boys did this guy, he's probably too poor now to enjoy his life anyway."
+    t "After what my lawyers did to this guy, he's probably too poor now to enjoy his life anyway."
     t "Alright, let's steal something!"
     t "Woo!"
     hide stella with moveoutright
@@ -1424,7 +1512,7 @@ label postFT2:
     $mood = "sad"
     bi "Stella was off before we could even get started."
     bi "Dracula's probably not going to be very happy about our noise level after this..."
-    scene black with fade
+    scene black with dissolve
     scene bg nmansionhall at bg with fade
     $showchibint("shahar", "stella")
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=4)
@@ -1480,6 +1568,11 @@ label postFT2:
     b "It looks nicer but still lets a plumber work on the sink."
     b "...aren't you rich Stella? Why didn't you think of this?"
     t "I'm drunk, Killjoy."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
     t "I'm not here for thinking, I'm here for DOING!"
     #t "If you know what I mean."
     #b "You... don't need to keep saying that."
@@ -1499,7 +1592,7 @@ label postFT2:
         alpha .5
     with dissolve
     bi "I peeked under the sink, in the cabinet."
-    b "Hm, I don't see any way to detach the handles from the sink down here."
+    b "Hm, sorry guys, I don't see any way to detach the handles from the sink down here."
     bi "That was a lie. There were some bolts holding the handles in place."
     hide scary with dissolve
     show stella drunk:
@@ -1525,7 +1618,7 @@ label postFT2:
     bi "Those two are still asleep."
     $showchibint("shahar", "stella", "catherine")
     show catherine2 happy with dissolve
-    c "Oh, morning Bert!"
+    c "Oh, morning Bert!" ########## julian checkpoint
     b "How... how early is it?"
     c "I haven't checked the clock in the garage, but I think most of us got eight hours of sleep."
     c "You probably had less, I heard about your adventures last night from Sam on the way down."
@@ -1598,7 +1691,7 @@ label postFT2:
     with dissolve
     j "Oh, Bert."
     j "Good morning! Sam and I were just about to head downstairs and help out Catherine."
-    b "Oh, you're both cooks?"
+    b "Oh, you guys can cook?"
     j "Not as experienced as Catherine, but I like being helpful!"
     s "I'm more of a baker. Gonna make some dessert."
     s "Some of my customers prefer to receive their product in brownies or cookies, so I got pretty good at baking."
@@ -1650,7 +1743,7 @@ label postFT3:
     b "Yeah, I don't mind."
     l "Cool, thanks. They both should still be in our bedroom right now."
     l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on the party right now."
-    scene black with fade
+    scene black with dissolve
     scene bg mansionbedroom1 at bg with fade
     $statusnt("Bedroom", "bert", ch=2, sun=2)
     $showchibint("freddy")
@@ -1661,6 +1754,7 @@ label postFT3:
     b "N-not that I wouldn't want to hang out with you normally."
     f "Huh?"
     b "Never mind."
+    show frog happy
     f "Check out all these tricks Sesame can do!"
     $mood = "shock"
     b "Tricks?"
@@ -1683,6 +1777,7 @@ label postFT3:
     f "I spend a lot of time just watching videos about then and learning new frog facts."
     b "Are you in any clubs at school?"
     f "Clubs?"
+    show frog ind
     b "Yeah, like, things you do with other students for fun."
     f "Oh, I'm homeschooled."
     f "My parents pay for a man to come to our house and teach me."
@@ -1691,6 +1786,10 @@ label postFT3:
     b "What happened?"
     f "We had a homework assignment where we had to talk about what our parents did."
     show frog sad
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .5
+        ycenter .1
     f "I tried asking my dad to help but he said it was too hard to explain."
     f "So I uh, didn't turn in the homework."
     f "The teacher got angry during class and then a bunch of the kids started asking me about it at lunch."
@@ -1701,6 +1800,7 @@ label postFT3:
     $mood = "sad"
     b "Do you get to meet other kids still?"
     f "Not really, no."
+    hide poprain with dissolve
     f "My mom says I should wear this hoodie and mask so that the kids from my old school don't recognize me..."
     f "I don't mind though, because I feel like a frog when I'm in it!"
     b "That... isn't that lonely, Freddy?"
@@ -1729,18 +1829,25 @@ label postFT3:
     show frog ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show lauren ind with moveinright:
+    show lauren happy with dissolve:
         xcenter .75
     l "And I'm back."
     l "How are you two doing?"
     b "Oh, good, we were just making small talk."
     l "The party's about to start. We should head down if we want to eat while the food is hot."
     f "Sesame, let's go!"
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .7
+        ycenter .275
+        zoom .75
     l "Oh, Sesame shouldn't come."
     show frog sad:
         xcenter .25
+
     f "Wh...why?"
     l "There's gonna be a lot of stuff Sesame can't eat or drink at the party."
+    hide poptear
     #l "She asked us to leave him up here."
     #f "Can't Catherine hold onto him?"
     #l "She's hosting the party, she'll probably be too busy worrying about the food."
@@ -1751,22 +1858,26 @@ label postFT3:
     $mood = "happy"
     l "I'm sure you'll have a great time at the party, hanging out with us!"
     f "O-okay..."
+    show frog ind
     l "Let's head downstairs?"
     f "Yeah..."
+    f "I'm sure the food will be great anyway."
     bi "Oh boy, I can't wait to eat!"
-    scene black with fade
+    scene black with dissolve
     scene bg mansionhall at bg with fade
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
+    $mood = "ind"
     bi "..."
-    bi "Should I check the closet again?"
+    bi "Should I check to see if the closet is locked again?"
     bi "Nah, I'm probably just being paranoid. Besides, there's food waiting for me!"
     bi "Mmmm, I can smell it from here."
+    $mood = "happy"
     b "Dinner, I'm on my way!"
-    scene black with fade
+    scene black with dissolve
     scene bg mansiondining at bg with fade
     $showchibint("dracula", "freddy", "lauren", "shahar", "sid", "stella")
     $statusnt("Dining Room", "bert", ch=2, sun=2)
-    show sid ind:
+    show sid happy:
         xcenter .25
     show drac ind:
         xcenter .75
@@ -1790,7 +1901,7 @@ label postFT3:
     d "No, I believe the chefs are putting the finishing touches on the first course."
     b "Oh, cool. In that case I'll go see if they need any help."
     #bi "Hopefully I defused that conversation..."
-    scene black with fade
+    scene black with dissolve
     scene bg mansionkitchen at bg with fade
     $statusnt("Kitchen", "bert", ch=2, sun=2)
     $showchibint("catherine", "jenny", "sam")
@@ -1798,9 +1909,15 @@ label postFT3:
     $mood = "happy"
     j "Hey Bert! Whatcha up to?"
     b "Just came to see if I could help with finishing dinner."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .4
+        ycenter .275
+        zoom .75
     j "You just want to be the first to get served, don't you."
     b "...maybe."
     b "Regardless, is everything going smoothly here?"
+    hide poptear
     j "Mostly yeah."
     $mood = "ind"
     b "Mostly?"
@@ -1825,7 +1942,7 @@ label postFT3:
     c "Plus I missed cooking, it's fun to be in the kitchen!"
     c "Don't worry, I'll be able to party once everything besides dessert is done."
     b "Oh, who's making dessert?"
-    hide jenny with moveinright
+    hide jenny happy with dissolve
     show sam ind with moveinright:
         xcenter .75
     s "Me, I'll be out in the living room soon."
@@ -1846,7 +1963,7 @@ label postFT3:
     j "Most idioms are."
     b "I guess so. If you need help in here, let me know."
     j "Thanks Bert, now go out and party!"
-    scene black with fade
+    scene black with dissolve
     scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
@@ -1863,10 +1980,12 @@ label postFT3:
 label postFT4:
     scene bg mansiondining at bg with fade
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
-    show catherine2 ind:
+    show catherine2 happy:
         xcenter .25
     show sid ind:
         xcenter .75
+    with dissolve
+    $mood = "happy"
     c "First course is served! We have a charcuterie board with various crackers, cheeses, meats, and some fruit to start!"
     i "Huh... is this what fancy dinners are like?"
     c "Only part of it!"
@@ -1886,8 +2005,15 @@ label postFT4:
     i "It's insane to me that this is only one course."
     b "I got a big stomach, to me this is a light snack."
     i "Hm... that sounds like a challenge!"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .4
+        ycenter .25
+        zoom .75
+    $mood = "ind"
     b "Uh, that's not what I..."
     bi "Before I could finish, Sid was already digging in."
+    hide popwow
     bi "...Guess that's the end of my conversation with him."
     hide sid with dissolve
     show stella happy with dissolve
@@ -1897,13 +2023,13 @@ label postFT4:
     b "Have you not been drinking all day?"
     t "On and off. Even someone like me needs breaks."
     b "What constitutes a break?"
-    t "Oh you know, an hour-long nap to sober up."
+    t "Oh you know, an hour-long power nap to sober up!"
     show stella happy:
         xcenter .25
-        linear 0.15 xcenter .75
-    show shahar ind with moveinright:
+        linear 0.3 xcenter .75
+    show shahar ind with dissolve:
         xcenter .25
-    h "Aye, did someone say time to start drinking?"
+    h "Aye, did someone say time to start drinking again?"
     b "I'm... gonna go talk to some other people."
     h "Suit yerself lad, we'll be drinking with ye tonight anyway!"
     hide shahar
@@ -1921,7 +2047,7 @@ label postFT4:
     d "No, you're free to join us."
     #s "Though you should be warned, I believe we both plan to drink at some point."
     #s "If that bothers you maybe you can go see if Catherine and Jenny need help in the kitchen?"
-    b "That's fine with me, just needed something to do."
+    b "Thanks, just needed something to do."
     s "Something to do? Ooo, in that case..."
     s "Maybe you wouldn't mind grabbing us a round of drinks from the kitchen?"
     b "...I get the message."
@@ -1931,15 +2057,21 @@ label postFT4:
     with dissolve
     bi "I'd probably just be distracting Catherine and Jenny in the kitchen."
     bi "Well, that only really leaves me two people to talk to."
-    show lauren ind with dissolve
+    show lauren happy with dissolve
     b "Hey, how's it going?"
     l "It's okay. Freddy's pretty torn up about not having Sesame at the party."
     l "While it's very nice of Catherine and Jenny to cook for us, they were some of the people Freddy got along better with."
     l "So, no offense, but it's pretty much is just me that he gets along with at the party right now."
     b "Huh? I thought we were getting along fine..."
+    show lauren ind
     l "You asked him about his home life, right? He told me on the way down here."
     b "Oh... yeah, I was just trying to figure out why he's here."
     l "I get that you're trying to be helpful but..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .425
+        ycenter .275
+        zoom .75
     l "Given some of the very innocent crimes people are \"admitting\" to, I don't think knowing more about him will accomplish much."
     l "And from I gather his home life wasn't great so maybe it's best not to remind him of that."
     b "That's true..."
@@ -1958,10 +2090,10 @@ label postFT4:
     l "I should probably go back to talking to him before Shahar and Stella try to do anything stupid around him."
     b "I'll join you."
     bi "In part because I forgot to try out the food."
-    show lauren ind:
+    show lauren happy:
         xcenter .5
-        linear 0.15 xcenter .75
-    show frog ind with moveinleft:
+        linear 0.3 xcenter .75
+    show frog ind with dissolve:
         xcenter .25
     l "Hey Freddy, how's the food?"
     f "It's so good! So many different types of cheese."
@@ -1997,6 +2129,7 @@ label postFT4:
     bi "...well, seems with my hunger pangs I've alienated everyone except Sid here."
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
     show jenny happy with dissolve
+    $mood = "happy"
     j "The next course is ready! We have appetizers and salad."
     j "For the appetizers we have kebabs, and the salad is a kale caesar."
     b "Wow, Jenny, did you make these?"
@@ -2012,14 +2145,16 @@ label postFT4:
     j "We've been taste testing the food throughout the day, and we have some portions saved for ourselves."
     j "No need to worry Bert, we're taking care of ourselves too!"
     b "Well, if you want to take a break and come out here I'd be happy to swap in..."
+    $mood = "sad"
     b "I might be saying this so I can take a break from Stella and Shahar's shenanigans."
     j "You mean their Stellanigans? Or maybe their Shahanigans?"
     show jenny happy:
         xcenter .5
         linear 0.15 xcenter .25
-    show stella drunk with moveinright:
+    show stella drunk with dissolve:
         xcenter .75
     t "Did someone say Stellanigans?"
+    $mood = "ind"
     b "Huh? How was that a word that caught your attention?"
     t "That's what a lot of my subordinates called my drunk antics."
     j "Ha, knew it was a good word!"
@@ -2098,7 +2233,7 @@ label postFT4:
     s "Hmph."
     show frog ind with moveinright:
         rotate 315
-        xcenter 1.1
+        xcenter 1.05
         ycenter .5
     b "Huh?"
     s "Is something the matter?"
@@ -2123,7 +2258,8 @@ label postFT4:
     j "Oh."
     b "Wait..."
     b "Catherine can't eat meatloaf though, right?"
-    j "She can't eat the meatloaf, but she had a pretty hearty portion of french onion soup set aside."
+    b "She's a vegetarian."
+    j "She can't eat the meatloaf, but she had a pretty hearty portion of soup set aside."
     j "We just need to heat it in the oven for a few minutes with the sauce on top."
     j "Anyway, I'm off to go hand the clock off to her."
     j "Seeya Bert!"
@@ -2151,7 +2287,8 @@ label postFT4:
     scene black with fade
     bi "I walked over and sat behind the couch with Freddy."
     show bg frogsit at bg
-    show frog sit at bg with dissolve
+    show frog sit at bg
+    with dissolve
     f "Shh! Don't let anyone see you hide back here with me!"
     b "I saw you poke your head out earlier, but I don't think anyone else did."
 
@@ -2178,7 +2315,8 @@ label postFT4:
     bi "Freddy leaned in to whisper."
     f "I think I overheard Mr. Dracula discussing his real job with Sam."
     f "It was hard to hear much."
-    f "But he said he's an expert on the human body. Knows a lot about stab wounds and blood." #checkpoint
+    $mood = "shock"
+    f "But he said he's an expert on the human body. Knows a lot about stab wounds and blood."
     b "I guess that's expected of a vampire..."
     f "But not just that. He's done some... expe... expi... expire minting?"
     b "Experimenting?"
@@ -2192,6 +2330,7 @@ label postFT4:
     bi "That one's probably fire."
     bi "Hm... is this real, or is this just Dracula fabricating a vampire story and Sam entertaining him?"
     bi "This is... very gruesome for a kid to overhear."
+    $mood = "sad"
     b "Thanks Freddy, that's really helpful."
     b "Did you get any more details?"
     f "No... and you can't tell anyone I told you this."
@@ -2200,12 +2339,13 @@ label postFT4:
     bi "...Does he understand what kind of situation we're in?"
     b "I won't tell anyone you told me."
     bi "...But I might bring this up without saying you told me if it's relevant information later."
+    $mood = "ind"
     b "Your secret is safe with me."
     f "Thanks Bert..."
-    show bg mansiondining at bg
     hide frog with dissolve
+    show bg mansiondining at bg
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
-    show catherine2 ind with dissolve
+    show catherine2 happy with dissolve
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
     c "There should be plenty for everyone, I brought a knife from the kitchen. Use it to cut yourself as much as you want."
@@ -2216,7 +2356,7 @@ label postFT4:
     b "Mmmmm... so juicy."
     b "You're such a good cook Catherine!"
     c "Thanks Bert!"
-    show catherine2 ind:
+    show catherine2 happy:
         xcenter .5
         linear .15 xcenter .25
     show sam ind with dissolve:
@@ -2253,6 +2393,10 @@ label postFT4:
     b "I have lots of experience at all-you-can-eat Korean barbeque."
     b "My stomach has slowly expanded over the years through rigorous training."
     bi "By which I mean getting fast food at midnight even after having a big dinner."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .5
+        ycenter .25
     i "Well I don't wanna be outdone! I'm gonna eat a big slice of meatloaf too!"
     b "Uh, that might not be the best-"
     i "*burp*"
@@ -2272,19 +2416,21 @@ label postFT4:
     b "Hrm? Erkay, guh uhb fuh wih ereryah!"
     j "...You should learn to swallow before talking at a fancy party."
     hide jenny with dissolve
-    bi "...is she upset?"
-    bi "Oh well. I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
+    bi "...I'm sure I looked like a dork in front of Jenny, but oh well."
+    bi "I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
     bi "As I sat and ate, Sam had come back with the stepstool and walked through to the kitchen."
     bi "After some more time had passed..."
     show sam ind with fade
     $showchibint("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
+    $mood = "happy"
     s "Dessert is ready."
     s "Nothing too fancy, just an ice cream layer cake."
     b "Ice cream layer cake?"
     s "Yeah. It's like a normal layer cake, but one of the layers is ice cream."
     b "Did you find something to cut it with?"
     s "Yeah, there's no more sharp objects in the kitchen, but I found the sheath for the knife Catherine was using."
-    s "It's much blunter than a knife, but it should work fine."
+    s "It's much blunter than a knife, but it should work fine for this."
+    $mood = "ind"
     bi "Just like before, I cut myself way too big a slice."
     bi "It seemed Sam had already cut one piece out, with rather clean cluts."
     bi "In contrast, my cut looked more like I beat my slice of cake to death..."
@@ -2295,6 +2441,7 @@ label postFT4:
     hide sam with dissolve
     show sid ind with dissolve
     i "I... I ate way too much."
+    $mood = "shock"
     b "Huh?"
     i "Bert... help..."
     show sid ind:
@@ -2303,23 +2450,31 @@ label postFT4:
     show lauren ind with dissolve:
         xcenter .75
     l "Sid, you okay?"
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .25
+        ycenter .1
     i "I... I think I'm gonna vomit."
     l "Come on, let's get you to the bathroom."
     i "It... it hurts to move."
+    l "Jeez..."
+    l "I guess we can walk you there."
     l "Bert, can you lend me a hand in getting him up the stairs?"
+    $mood = "sad"
     bi "But... my cake's gonna melt..."
     b "Yeah, let's go."
+    i "Thanks... you're my heroes... sniffle."
     bi "We each got an arm under one of Sid's shoulders and lugged him up the stairs."
+    hide poprain with dissolve
 label mansion2:
-    scene black with fade
+    scene black with dissolve
     show bg mansionhall at bg
     $showchibint("lauren", "sid")
-    with dissolve
     show sid ind:
         xcenter .75
     show lauren ind:
         xcenter .25
-    with dissolve
+    with fade
 
 #    show poprain with dissolve:
 #        zoom .75
@@ -2350,7 +2505,7 @@ label mansion2:
     bi "I can't blame him."
     bi "After seeing what we saw in there, I wanted to vomit too."
     scene bg mansionbr at bg
-    show stella dead:
+    show stella dead at bg:
         zoom 1.0
         xcenter .37
         ycenter .8
@@ -2399,15 +2554,21 @@ label mansion2:
     i "Bert?"
     i "Did it happen again?"
     b "Yeah, it did."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .7
+        ycenter .275
+        zoom .75
     i "Wh-why am I always the first person to find the body?"
     i "I swear it wasn't me."
-    b "I know, there wasn't a moment we weren't together we last saw Stella."
+    b "I know, there wasn't a moment we weren't together since we last saw Stella."
     i "O-ok."
+    hide poptear
     i "Sorry, I'm just... still shaken up from everyone accusing me of Dan's death."
     b "We're... we're gonna get through this one too Sid."
-    b "Let's go outside, I can't handle being in here right now."
+    b "Let's step outside, I can't handle being in here right now."
     bi "Holding in my tears, I made my way into the hallway with Sid."
-    scene black with fade
+    scene black with dissolve
     scene bg mansionhall at bg
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
     with fade
@@ -2416,11 +2577,11 @@ label mansion2:
     $showchibint("sid", "catherine", "dracula", "jenny", "sam", "shahar")
     show shahar mad with dissolve
     h "Lad, tell me it's not true."
-    h "Stella could drink a tornado, how could the lassie die so easily?"
+    h "Stella could drink a tornado, how could the lassie die so easily?" #julian checkpoint
     show shahar mad:
         xcenter .5
-        linear 0.15 xcenter .25
-    show sam ind with moveinright:
+        linear 0.3 xcenter .25
+    show sam ind with dissolve:
         xcenter .75
     s "The fact that she drank so much might be why she's dead..."
     h "Scallywag! How could two days of drinking get her shanked if a lifetime didn't?!"
@@ -2452,7 +2613,7 @@ label mansion2:
     d "I had a plan..."
     show drac ind:
         linear .3 xcenter .75
-    show sam ind with moveinleft:
+    show sam ind with dissolve:
         xcenter .25
     s "Hey, if we want someone to make sure Shahar's not tampering with evidence..."
     s "Shouldn't we send someone downstairs to make sure Lauren's not either?"
@@ -2560,7 +2721,7 @@ label trial2a:
     show lauren ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show catherine ind with moveinleft:
+    show catherine ind with dissolve:
         xcenter .25
     c "What makes you say that?"
     #b "Uh... is it okay to have Sesame around again?"
@@ -2613,7 +2774,7 @@ label trial2b:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show sam ind with moveinright:
+    show sam ind with dissolve:
         xcenter .75
     s "C'mon, Sid, isn't it obvious?"
     i "Huh?"
@@ -2701,7 +2862,7 @@ label trial2e:
     show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind with dissolve:
         xcenter .25
     j "Me?"
     s "Is there another Jenny here I could be talking about?"
@@ -2804,7 +2965,7 @@ label trial2g:
     show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show catherine happy with moveinleft:
+    show catherine happy with dissolve:
         xcenter .25
     c "Oh, I think I can take it from here, Bert!"
     bi "...man, I hate being interrupted."
@@ -3019,7 +3180,7 @@ label trial2i:
     show lauren ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show frog ind with moveinright:
+    show frog ind with dissolve:
         xcenter .75
     f "So... Lauren is right? We figured it out!"
     bi "I always forget there's a kid here during these discussions of how someone was murdered."
@@ -3081,7 +3242,7 @@ label trial2j:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show shahar ind with moveinleft:
+    show shahar ind with dissolve:
         xcenter .25
     h "Water? You sure it wasn't a splash of vodka? That'd be more in character fer the lass."
     d "No, the way the killer formed the weapon wouldn't work with alcohol due to its chemical properties."
@@ -3182,7 +3343,7 @@ label trial2l:
     show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show shahar ind with moveinleft:
+    show shahar ind with dissolve:
         xcenter .25
     h "Rum on the rocks. What's it matter to ye?"
     s "On the rocks. As in you had ice in the drink, right?"
@@ -3353,7 +3514,7 @@ label trial2o:
     show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "Wait! I don't buy it."
     bi "What now..."
@@ -3413,7 +3574,7 @@ label trial2p:
     show sam ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show lauren ind with moveinleft:
+    show lauren ind with dissolve:
         xcenter .25
     l "Sam I... think all of understand just how messed up this whole situation is."
     l "You or whoever murdered Stella aren't the enemy. The Game Master is the enemy. I think we can agree with that."
@@ -3557,7 +3718,7 @@ label trial2s:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind with dissolve:
         xcenter .25
     i "Um... I have a question."
     d "Yes?"
@@ -3738,7 +3899,7 @@ label trial2w:
     show lauren ind:
         xcenter .75
         linear 0.15 xcenter .8
-    show sid ind with moveinbottom
+    show sid ind with dissolve
     i "Aha!"
     i "It was Sam all along!"
     i "Sam would be the only person who could move the generator."
@@ -3747,7 +3908,7 @@ label trial2w:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sam ind with moveinleft:
+    show sam ind with dissolve:
         xcenter .25
     s "No, I swear it wasn't me."
     s "I knew nothing about the generator before a few minutes ago..."
@@ -3775,7 +3936,7 @@ label trial2x:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show frog sad with moveinright:
+    show frog sad with dissolve:
         xcenter .75
     f "M-me? But I'm just a frog..."
     show lauren ind with moveinright:
@@ -3850,7 +4011,7 @@ label trial2z:
     show catherine ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show sid ind with moveinright:
+    show sid ind with dissolve:
         xcenter .75
     i "No! You mean lady!"
     i "You... you killed Stella, and then made me yell at Sam."
@@ -3934,7 +4095,7 @@ label cathGivesInfo:
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show shahar ind with moveinright:
+            show shahar ind with dissolve:
                 xcenter .75
             h "I see... I guess it's hard to blame ye then."
             h "I apologize for me outburst earlier lassie."
@@ -3954,7 +4115,7 @@ label cathGivesInfo:
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show drac ind with moveinright:
+            show drac ind with dissolve:
                 xcenter .75
             d "If I may interject, I have a supposition."
             d "What if the Game Master gives every murderer a location-based advantage?"
@@ -3977,7 +4138,7 @@ label cathGivesInfo:
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show lauren ind with moveinright:
+            show lauren ind with dissolve:
                 xcenter .75
             l "Wait... so Freddy could have died to this? You were okay with killing a kid?"
             show catherine ind:
@@ -4019,7 +4180,7 @@ label cathGivesInfo:
     show catherine happy:
         xcenter .5
         linear 0.15 xcenter .25
-    show shahar ind with moveinright:
+    show shahar ind with dissolve:
         xcenter .75
     h "Aye lassie, yer finally speaking me language!"
     hide shahar with moveoutright
