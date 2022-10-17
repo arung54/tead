@@ -693,6 +693,12 @@ transform parallax:
     zpos -18
     function moving_camera
 
+transform paralloff:
+    perspective True
+    subpixel True
+    zpos 0
+    function fixed_camera
+
 camera at parallax
 
 python:
@@ -706,6 +712,16 @@ python:
             trans.yoffset = 0
         return 0
 
+python:
+    def fixed_camera(trans, st, at):
+        if persistent.parallax:
+            x, y = renpy.display.draw.get_mouse_pos()
+            trans.xoffset = (x - config.screen_width / 2) *.0    # make this = 0 to turn off parallax
+            trans.yoffset = (y - config.screen_height / 2) *.0   # make this = 0 to turn off parallax
+        else:
+            trans.xoffset = 0
+            trans.yoffset = 0
+        return 0
 
 transform bg:
     truecenter()
@@ -718,4 +734,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump postFT2
+jump cathGivesInfo

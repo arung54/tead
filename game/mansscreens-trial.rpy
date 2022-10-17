@@ -102,7 +102,7 @@ screen mansionEvidenceTrial(s, e, l):
 
     fixed xmaximum 580:
         if currEvidence == 0:
-            image "ev2 wound.png" xcenter 800 yalign 0.1
+            image "ev2 shape.png" xcenter 800 yalign 0.1
             text "Stella was seemingly stabbed in the back. The wound is long in one direction but narrow in the other." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
@@ -110,7 +110,7 @@ screen mansionEvidenceTrial(s, e, l):
             text "The blood on Stella's back has dried a bit. There's not a lot of blood for how damaging the wound seems, almost as if something was used to seal the wound afterwards." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
-            image "ev2 wound.png" xcenter 800 yalign 0.1
+            image "ev2 damp.png" xcenter 800 yalign 0.1
             text "A part of Stella's clothes was rather damp around the area she was stabbed in. However, this part wasn't stained, so it seems to have been water rather than blood." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 3:
@@ -122,11 +122,11 @@ screen mansionEvidenceTrial(s, e, l):
             text "During the investigation, we found wires under the sink that entered through a hole in the bathroom wall." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:
-            image "ev2 wound.png" xcenter 800 yalign 0.1
+            image "ev2 generator.png" xcenter 800 yalign 0.1
             text "There was a generator in Jenny's bedroom. We saw the generator in the garage earlier." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
-            image "ev2 wound.png" xcenter 800 yalign 0.1
+            image "ev2 rope.png" xcenter 800 yalign 0.1
             text "A rope was attached to the handle of the generator. The generator has wheels, so the rope can be used to easily pull it around." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
@@ -134,7 +134,7 @@ screen mansionEvidenceTrial(s, e, l):
             text "A sheath that Sam found during the party and used to cut the cake. As far as we know, the sheath remained in the kitchen or dining room for the entire party." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
-            image "ev2 wound.png" xcenter 800 yalign 0.1
+            image "ev2 location.png" xcenter 800 yalign 0.1
             text "Earlier, we discussed Kaiser's death and concluded the murderer is probably someone who's been in this mansion before." xcenter 800 yanchor 0.0 ypos 330
 
     if currEvidence >= 0:

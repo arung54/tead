@@ -2604,20 +2604,19 @@ label trial4b:
 label trial4c:
     menu:
         b "If Sam committed suicide, the narrowest time range we can be sure it happened is..."
-
-            "After the shooter left the lobby.":
-                bi "This is true, but we can be more specific..."
-                bi "If Sam committed suicide right after leaving, the corpse would be in the hallway."
-                jump trial4c
-            "After entering the break room.":
-                bi "I think we can be more specific, Sam wasn't right next to the door."
-                bi "It would have taken some time to move to the position the body was in."
-                jump trial4c
-            "After the door closed.":
-                bi "Yes, that's it!"
-            "Right before I opened the break room door."
-                bi "That's a bit too specific, it could have been earlier."
-                jump trial4c
+        "After the shooter left the lobby.":
+            bi "This is true, but we can be more specific..."
+            bi "If Sam committed suicide right after leaving, the corpse would be in the hallway."
+            jump trial4c
+        "After entering the break room.":
+            bi "I think we can be more specific, Sam wasn't right next to the door."
+            bi "It would have taken some time to move to the position the body was in."
+            jump trial4c
+        "After the door closed.":
+            bi "Yes, that's it!"
+        "Right before I opened the break room door.":
+            bi "That's a bit too specific, it could have been earlier."
+            jump trial4c
     b "If Sam committed suicide, Sam would have had to do it after the door closed."
     b "Since, well, Sam had to open the door first to get into the break room."
     j "Bert, that's not very insightful..."
@@ -2746,4 +2745,3 @@ label trial4f:
     l "Sam went into the break room, followed by Bert."
     l "Somehow Bert overpowered them, grabbing the gun and shooting Sam."
     i "Wait... if Bert is the murderer, why was Sam trying to shoot people?"
-    
