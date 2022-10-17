@@ -395,14 +395,11 @@ screen test():
 screen navigation():
 
     if main_menu:
-        add "menured.png"
-        add "vinegar.png"
-        add "menubgscroll2"
-        add "menulogo.png" xcenter .175 ycenter .6
-        imagebutton:
-            idle "menuweblink.png"
-            hover "menuweblink2.png"
-            xcenter .925 ycenter .125 action OpenURL("https://teadthegame.itch.io/tead")
+        add "menufg.png"
+        #imagebutton:
+        #    idle "menuweblink.png"
+        #    hover "menuweblink2.png"
+        #    xcenter .925 ycenter .125 action OpenURL("https://teadthegame.itch.io/tead")
         imagebutton:
             idle "ibmenustart.png"
             hover "ibmenustart2.png"
@@ -410,7 +407,7 @@ screen navigation():
         imagebutton:
             idle "ibmenucards.png"
             hover "ibmenucards2.png"
-            ycenter .442 xcenter .492 focus_mask True action Hide("main_menu")
+            ycenter .5 xcenter .5 focus_mask True action Hide("main_menu")
         imagebutton:
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
@@ -419,11 +416,13 @@ screen navigation():
             idle "ibmenuload.png"
             hover "ibmenuload2.png"
             focus_mask True action ShowMenu("load")
-        imagebutton:
-            idle "ibmenusettings.png"
-            hover "ibmenusettings2.png"
-            focus_mask True action ShowMenu("preferences")
-        textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .075 ycenter .925
+        #imagebutton:
+        #    idle "ibmenusettings.png"
+        #    hover "ibmenusettings2.png"
+        #    focus_mask True action ShowMenu("preferences")
+        textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
+        textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
+
         python:
             '''
         hbox:
