@@ -90,15 +90,15 @@ screen mansionEvidenceTrial(s, e, l):
             ground "evidenceui.png"
             hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("mansionEvidenceTrial")]
     vbox xalign 0.15 yalign 0.75 spacing 30:
-        textbutton "Shape of the Wound" style "button_text" action SetVariable("currEvidence", 0)
-        textbutton "Blood from the Wound" style "button_text" action SetVariable("currEvidence", 1)
-        textbutton "Damp Clothing" style "button_text" action SetVariable("currEvidence", 2)
-        textbutton "Burns on Stella's Hands" style "button_text" action SetVariable("currEvidence", 3)
-        textbutton "Wires and Hole Under the Sink" style "button_text" action SetVariable("currEvidence", 4)
-        textbutton "Generator" style "button_text" action SetVariable("currEvidence", 5)
-        textbutton "Rope Attached to Generator" style "button_text" action SetVariable("currEvidence", 6)
-        textbutton "Knife Sheath" style "button_text" action SetVariable("currEvidence", 7)
-        textbutton "Location and the Murderer" style "button_text" action SetVariable("currEvidence", 8)
+        textbutton "Shape of the Wound" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 0)
+        textbutton "Blood from the Wound" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 1)
+        textbutton "Damp Clothing" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 2)
+        textbutton "Burns on Stella's Hands" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 3)
+        textbutton "Wires and Hole Under the Sink" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 4)
+        textbutton "Generator" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 5)
+        textbutton "Rope Attached to Generator" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 6)
+        textbutton "Knife Sheath" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 7)
+        textbutton "Location and the Murderer" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 8)
 
     fixed xmaximum 580:
         if currEvidence == 0:

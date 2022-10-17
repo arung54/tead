@@ -2741,6 +2741,7 @@ label trial2a:
     bi "Everyone gathered in the dining room."
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show lauren ind with dissolve
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
@@ -2767,6 +2768,7 @@ label trial2a:
     l "Let me explain..."
     camera at paralloff
     $showchibint()
+    $renpy.hide_screen("status_screen")
     python:
         stabwound = 0
         stabwound2 = 1
@@ -2780,6 +2782,7 @@ label trial2b:
     camera at parallax
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show lauren ind
     with dissolve
     $mood = "ind"
@@ -2847,6 +2850,7 @@ label trial2d:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sid ind:
         xcenter .25
     with fade
@@ -2886,6 +2890,7 @@ label trial2e:
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sam ind
     with fade
     b "Sam, are you... suggesting Jenny murdered Stella?"
@@ -2999,6 +3004,7 @@ label trial2f:
     hide popmad
     camera at paralloff
     $showchibint()
+    $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("sam", "Sam: The knife was clearly returned to the kitchen shortly after the murder, what part of that do you disagree with?", 0,
         "sam",  "Sam: There was {color=#f00}no reason for the murderer to wait upstairs after the murder{/color}.", -1,
@@ -3008,8 +3014,9 @@ label trial2f:
 label trial2g:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg
-    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     camera at parallax
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sam ind
     with fade
     b "Sam, we inspected the wound during the investigation."
@@ -3128,6 +3135,7 @@ label trial2g:
     bi "Eventually, Dracula and Shahar returned."
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show drac ind:
         xcenter .25
     show shahar ind:
@@ -3177,6 +3185,7 @@ label trial2h:
     play music "audio/rush.mp3"
     scene bg mansiondining  at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sam ind:
         xcenter .75
     show sid ind:
@@ -3220,6 +3229,7 @@ label trial2h:
     bi "...are they really all on the same page?"
     camera at paralloff
     $showchibint()
+    $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("catherine", "Catherine: They clearly {color=#55f}inverted the sheath{/color} and the inside must be pointy enough to stab with!", 1,
         "shahar",  "Shahar: They used {color=#55f}something to make the sheath sharper{/color} before stabbing Stella!", 1,
@@ -3230,6 +3240,7 @@ label trial2i:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     camera at parallax
     show lauren ind
     with fade
@@ -3300,6 +3311,7 @@ label trial2j:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show drac ind
     with fade
     $mood = "shock"
@@ -3402,9 +3414,11 @@ label trial2k:
     call screen chooseCharMansion("sam", "trial2l", "Who used the ice knife?") with dissolve
 label trial2l:
     play music "audio/rush.mp3"
-    scene bg mansiondining at bg with fade
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
-    show sam ind with dissolve
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
+    show sam ind
+    with fade
     s "Me?"
     play sfx "audio/popmad.mp3" volume .5
     show popmad:
@@ -3544,6 +3558,7 @@ label trial2n:
     play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sid ind:
         xcenter .25
     show sam ind:
@@ -3604,8 +3619,10 @@ label trial2n:
     scene black with dissolve
     call screen chooseCharMansion("sam", "trial2o", "Who would know if Stella was stabbed or burned first?") with dissolve
 label trial2o:
-    scene bg mansiondining at bg with fade
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
+    with fade
     bi "..."
     bi "It comes down to this."
     bi "Are we going to cooperate?"
@@ -3632,6 +3649,7 @@ label trial2o:
     $location = 8
     camera at paralloff
     $showchibint()
+    $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for Sam to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think they did.{color=#f00}", -1,
         "sid", "Sid: Kaiser made it sound like it was pretty clear he was chosen as murderer, so there's {color=#f00}no way Sam was confused about being the murderer.{/color}", -1,
@@ -3641,6 +3659,7 @@ label trial2o:
 label trial2p:
     scene bg mansiondining at bg with dissolve
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     camera at parallax
     show sam ind:
         xcenter .75
@@ -3759,6 +3778,7 @@ label trial2p:
 label trial2q:
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sam ind:
         xcenter .5
     with fade
@@ -3786,6 +3806,7 @@ label trial2q:
     $generator = 5
     camera at paralloff
     $showchibint()
+    $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("sam", "Sam: Stella {color=#f00}was messing with the sink handles when I got there.{color=#f00}", -1,
         "sam", "Sam: If the sink handles are what burned her, {color=#55f}she should have been in pain before I stabbed her.{color=#55f}", 1,
@@ -3795,6 +3816,7 @@ label trial2q:
 label trial2r:
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     camera at parallax
     show sam ind:
         xcenter .5
@@ -3812,6 +3834,7 @@ label trial2r:
 label trial2s:
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show drac ind:
         xcenter .5
     with fade
@@ -3961,6 +3984,7 @@ label trial2t:
 label trial2u:
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -3982,6 +4006,7 @@ label trial2u:
 label trial2v:
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -4061,6 +4086,7 @@ label trial2w:
     $rope = 6
     camera at paralloff
     $showchibint()
+    $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("sid", "Sid: {color=#f00}Sam was the last person to go upstairs{/color} before we found the body.", -1,
         "sid",  "Sid: So if the generator moved after Stella died and before we went up, {color=#55f}Sam is the only one who could have done it.{/color}", 1,
@@ -4071,6 +4097,7 @@ label trial2x:
     camera at parallax
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sid ind
     with fade
     $mood = "ind"
@@ -4113,6 +4140,7 @@ label trial2x:
 label trial2y:
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show catherine ind
     with fade
     play sfx "audio/pophuh.mp3" volume .5
@@ -4156,6 +4184,7 @@ label trial2y:
 label trial2z:
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
     show catherine ind with dissolve
     b "You got them from the kitchen."
     b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
@@ -4406,6 +4435,7 @@ label cathGivesInfo:
     scene black
     pause 1.0
     $showchibint()
+    $renpy.hide_screen("status_screen")
     $mood = "sad"
     bi "Honestly, I was a little relieved."
     bi "I thought I had gotten to know Stella at least a little bit."

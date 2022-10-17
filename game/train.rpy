@@ -2303,6 +2303,8 @@ label trial1a:
     tut "Find the correct or incorrect statement and its refutation to proceed."
     tut "There is no penalty for choosing the wrong statement or evidence, except shame upon your family."
     tut "Good luck!"
+    camera at paralloff
+    $showchibint()
     python:
         startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
     "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
@@ -2316,6 +2318,7 @@ label trial1b:
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Bar Car", "bert", ch=1, sun=4)
     with dissolve
+    camera at parallax
     show bert happy with moveinleft
     b "Yeah, that's it!"
     hide bert happy with moveoutright
@@ -2565,6 +2568,8 @@ label trial1d:
     show scary with dissolve:
         alpha .5
     bi "I need to step in... I know the answer!"
+    camera at paralloff
+    $showchibint()
     python:
         startTrainTrial("stella", "Isn't it obvious? Think about that scream in particular.", 0,
         "sam", "What are you even talking about? There shouldn't be {color=#f00}anything notable{/color} about someone screaming.", -1,
@@ -2574,6 +2579,7 @@ label trial1d:
 
 label trial1e:
     play music "audio/coming_together.mp3"
+    camera at parallax
     scene bg notrainmid at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Bar Car", "bert", ch=1, sun=4)
@@ -3078,6 +3084,8 @@ label trial1ib:
     c "I think I'm going to go inspect the body again."
     i "Catherine, you can't! Hear me out!"
     c "Hmm... I'll give you one minute!"
+    camera at paralloff
+    $showchibint()
     python:
         startTrainTrial("sid", "Sid: I know it seems like a waste, but think about what Freddy just said.{color=#55f}{/color}", 0,
         "catherine", "Catherine: Look! I'll admit it, {color=#f00}his drawing was better than mine...{/color}", -1,
@@ -3087,6 +3095,7 @@ label trial1ib:
 
 label trial1j:
     scene black with fade
+    camera at parallax
     play music "audio/coming_together.mp3"
     $mood = "shock"
     bi "!"
@@ -3241,6 +3250,8 @@ label trial1m:
     t "It's sort of like a cuckoo clock. Once it's installed, you don't have to do anything."
     f "B-but... no! You're missing the point!"
     t "Au contraire."
+    camera at paralloff
+    $showchibint()
     python:
         startTrainTrial("freddy", "Freddy: Y-you're so mean to me! You're not my mom...", 0,
         "stella", "Stella: Dear, you're too young and stupid to understand. Leave this to us for now.", 0,
@@ -3251,6 +3262,7 @@ label trial1m:
 label trial1n:
     play music "audio/coming_together.mp3"
     scene black with fade
+    camera at parallax
     scene bg bodytrainback at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Caboose", "bert", ch=1, sun=4)
@@ -3325,6 +3337,8 @@ label trial1n:
     s "Damnit, right under our noses..."
     o "Wait, hold on. I don't think anyone managed to get into the computers."
     s "Don't be so foolish."
+    camera at paralloff
+    $showchibint()
     python:
         startTrainTrial("lauren", "Lauren: Why are you {color=#55f}so sure about yourself{/color}?", 1,
         "sam", "Sam: Look, we don't have time to focus on the means, just focus on the fact that it resulted in a murder.", 0,
@@ -3335,6 +3349,7 @@ label trial1n:
 label trial1o:
     play music "audio/coming_together.mp3"
     scene black with fade
+    camera at parallax
     scene bg bodytrainback at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Caboose", "bert", ch=1, sun=4)
