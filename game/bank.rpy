@@ -2744,4 +2744,105 @@ label trial4f:
     l "Bert chased after Sam, in an act of heroism."
     l "Sam went into the break room, followed by Bert."
     l "Somehow Bert overpowered them, grabbing the gun and shooting Sam."
+    l "Freddy was still in the lounge, so he didn't witness any of this."
     i "Wait... if Bert is the murderer, why was Sam trying to shoot people?"
+    i "I thought every location could only have one murderer?"
+    l "We don't know what happens if someone who's not the designated murderer kills someone."
+    l "Also, it wouldn't be the first time Sam thought they were the killer..."
+    b "Surely we all learned from that mistake."
+    b "It seems unlikely both Sam and I would be trying to kill someone for any reason."
+    l "Well, maybe you didn't intend to kill Sam until the events transpired."
+    l "And you did it out of self defense."
+    l "And now, since we don't know how the rules play out, you're trying to cover it up."
+    bi "This is all just conjecture, but..."
+    bi "If I say that it just seems like I'm trying to deflect."
+    bi "I can't for sure say how the rules of the game play out in this case..."
+    bi "Nor what I would do in the situation Lauren's describing."
+    bi "I have to find an angle involving things we know about."
+    b "..."
+    i "...Nothing to say, Bert?"
+    i "That's awfully suspicious..."
+    i "Thinking up a fake story?"
+    l "I have to agree with Sid, silence speaks volume here..."
+    b "...Instead of speculating about what my motive would be after those events happened..."
+    b "I want to hear how you think events played out in the break room again."
+    l "Um... why?"
+    bi "Admittedly it sounds like I'm about to incriminate myself, but..."
+    b "Because I didn't do it."
+    b "And the evidence should be able to prove it."
+    l "Alright, whatever you say Bert..."
+    python:
+        startBankTrial("lauren", "Lauren: Sam {color=#f00}ran out of bullets{/color} and ran away to the break room.", -1,
+        "lauren", "Lauren: You chased after Sam, who had {color=#f00}run into the break room{/color}. There was some sort of confrontation where you got control of the gun.", -1,
+        "lauren", "Lauren: Then {color=#f00}you managed to shoot Sam once in the head{/color} and killed them. Afterwards, you dropped the gun.", -1,
+        "lauren",  "Lauren: That way, the room {color=#f00}looked like a suicide{/color} when the rest of us arrived.", -1,
+        2, 2, "trial4g")
+label trial4g:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show lauren ind
+    with dissolve
+    l "I'm confused..."
+    l "You're objecting to Sam being shot in the head once?"
+    b "Sort of."
+label trial4h:
+    menu:
+        b "More precisely, the problem is that..."
+
+            "Sam could have shot me during the supposed confrontation."
+                bi "No, as Lauren mentioned, Sam ran out of bullets."
+                bi "At some point Sam needed to reload."
+                bi "If I confronted Sam during that point, it would have been a fistfight."
+                jump trial4h
+            "Sam wasn't shot just once.":
+                bi "If that's the case, why did we only find one shell in the break room?"
+                jump trial4h
+            "In Lauren's story, I couldn't have shot Sam exactly once.":
+                bi "I could have, I think a single bullet to the brain is pretty lethal."
+                bi "So I could have killed Sam with one shot."
+                bi "And if I overpowered Sam and could reload the gun, that one shot was definitely possible."
+                jump trial4h
+            "The evidence isn't consistent with Sam getting shot exactly once.":
+                bi "Yes, that's it!"
+    b "It seems like Sam died to a single bullet, but..."
+    b "The evidence doesn't line up with a single bullet."
+    l "What do you mean?"
+    b "Think about how we found evidence in the break room."
+    l "Yeah, there was a single shell on the ground."
+    l "It's pretty glaringly clear Sam was just shot once."
+    b "Well, yes, the shell would suggest that."
+    b "But the gun seems to contradict that."
+    l "The gun?"
+    b "Yeah, think about it."
+    b "The gun was empty when we found it."
+    l "And?"
+label trial4i:
+    menu:
+        b "If your story is accurate, the number of bullets in the gun should have been..."
+
+            "0":
+                bi "No, that's how many there were. That would just incriminate me more..."
+                jump trial4i
+            "1":
+                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+                jump trial4i
+            "2":
+                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+                jump trial4i
+            "3":
+                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+                jump trial4i
+            "4":
+                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+                jump trial4i
+            "5":
+                bi "Yes, that's it!"
+            "6":
+                bi "...If I shot the gun, how would it still be full?"
+                jump trial4i
+    b "Five."
+    b "Because the gun was empty when Sam ran."
+    b "When it was reloaded, it would have had six again."
+    b "And then if I shot it once, it would have five bullets."
