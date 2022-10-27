@@ -2846,3 +2846,106 @@ label trial4i:
     b "Because the gun was empty when Sam ran."
     b "When it was reloaded, it would have had six again."
     b "And then if I shot it once, it would have five bullets."
+    b "But instead..."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "There were zero!"
+    b "...Yes, I was about to say that."
+    hide lauren with moveoutright
+    show sid ind:
+        xcenter .75
+    with moveinright
+    i "Um, I confused... why would you have reloaded six bullets?"
+    i "Wouldn't it have been faster to just load one?"
+    i "It sounds like you and Sam fought... surely you didn't have time for six!"
+    bi "I guess I was the only person who saw this..."
+    bi "The reason I would load six bullets at once is..."
+    call screen bankEvidenceTrial(-1, 10, "trial4j") with dissolve
+label trial4j:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind:
+        xcenter .75
+    with dissolve
+    b "I guess, it's not obvious if you haven't been in the safe yet."
+    i "I haven't, I swear!"
+    bi "That's... a suspicious way to respond to that."
+    bi "But that's not important now."
+    b "The ammo for the gun..."
+    b "The only place I found any was in the safe."
+    b "The ammo has a special design, where every set of six bullets is attached by a piece of metal."
+    hide jenny with moveoutleft
+    show lauren ind with moveinleft:
+        xcenter .25
+    l "Oh, it's like a built-in speed reloader."
+    b "Speed reloader?"
+    l "It's a device you use to reload guns quickly."
+    l "Basically, you can attach all the bullets to a speed reloader beforehand."
+    l "Then, they're already aligned with the chamber, so you load them all it at once."
+    l "Then you press a button on the speed reloader to release the bullets."
+    l "But I guess here, the metal is keeping the bullets in formation instead."
+    b "You've used one before?"
+    l "Nah, I've seen them in video games though."
+    b "Anyway, yeah, I guess it's like that."
+    b "So if that's the only ammo that's available, I would have had to load six bullets at once."
+    i "Couldn't you just have torn one off?"
+    b "No, the metal connecting the bullets is actually surprisingly sturdy."
+    i "Hm... maybe for a weak guy like you."
+    bi "...Sigh, I hate that I have to do this, but..."
+    b "Do you want to go and try to tear the bullets apart?"
+    i "Are you challenging me?"
+    show sid mad:
+        xcenter .75
+    i "I'll have you know I was on my school's wrestling team!"
+    i "I'm more than meets the eye Bert!"
+    hide sid with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "Um, where is the ammo again?"
+    b "In the safe."
+    i "Right. See you suckers there!"
+    hide sid with moveoutright
+    b "...I guess we're following him, then."
+    scene black with dissolve
+    scene bg banklobby
+    $ statusnt("Bank Safe", "bert", ch=4, sun=2)
+    $ showchibint("jenny", "sid")
+    with dissolve
+    bi "Lauren stayed behind to make sure Freddy was okay."
+    bi "The rest of us went to the safe."
+    show sid ind with dissolve
+    i "It's in this box, right?"
+    b "Yup, that's it."
+    bi "Sid grabbed some bullets and..."
+    i "Hrgggggg..."
+    i "Roarghhhhhhhhhhhhhhh..."
+    i "RAAAAAAAAAAAAAAAAAAAAAA..."
+    i "*pant*"
+    i "It's not budging..."
+    show sid ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Um... Sid, you said you were a wrestler..."
+    j "What weight class were you in?"
+    i "...{size=-10}Light flyweight.{/size}"
+    j "Huh? I couldn't hear you."
+    i "I said light flyweight."
+    j "Isn't that one of the smallest ones?"
+    show sid mad:
+        xcenter .75
+    i "Hey!"
+    i "Minimumweight is smaller."
+    j "I don't think I've ever heard of that one."
+    i "Grrr."
+    i "Whatever, we found out you can't separate the bullets, let's go back..."
+    scene black
+    bi "Sid ran off, and with nothing left to do, Jenny and I followed him."
