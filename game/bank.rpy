@@ -2949,3 +2949,105 @@ label trial4j:
     i "Whatever, we found out you can't separate the bullets, let's go back..."
     scene black
     bi "Sid ran off, and with nothing left to do, Jenny and I followed him."
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show lauren ind:
+        xcenter .25
+    show sid ind:
+        xcenter .75
+    with dissolve
+    l "So?"
+    i "Bert's right, it's not possible to tear the bullets apart..."
+    i "Whoever loaded the gun must have loaded six in at once."
+    l "Well, I was thinking about that..."
+    l "What if the other five were emptied out later?"
+    i "Huh?"
+    l "As in, what if Bert shot Sam, and then took the other five bullets out."
+    b "I mean, do you want to search my backpack?"
+    l "There's no point."
+    l "Even if your backpack doesn't have them, you could have hidden them anywhere."
+    l "There was a conveniently long amount of time you were alone..."
+    bi "She means the investigation, I guess."
+    bi "Admittedly, that's also suspicious, that I'm the one relaying all the evidence..."
+label trial4k:
+    menu:
+        bi "Thankfully, there's one flaw with Lauren's argument."
+
+            "I wouldn't take the bullets out if I were staging a suicide.":
+                bi "Yes, that's it!"
+            "Jenny would have seen the bullets before I could hide them.":
+                bi "No, Jenny only came when she heard me yell."
+                bi "For all they know, I only called for help after hiding the bullets."
+                jump trial4k
+            "The safe would have had to open while I was in the lounge."
+                bi "No, Lauren's theory is consistent with Sam being the one to open it."
+                jump trial4k
+            "Freddy can verify that I wasn't gone long enough to hide the bullets."
+                bi "We spent a bit of time in the break room after I found Sam."
+                bi "So from Freddy's point of view, I was gone for a while."
+                jump trial4k
+    b "Lauren, put yourself in my shoes as the murderer."
+    i "So you are the murderer?"
+    b "...The {i}hypothetical{/i} murderer."
+    b "If I shot Sam, and then I wanted to make it look like a suicide, what would I have done?"
+    l "I don't know, probably dropped the gun near Sam, maybe rearranged the body..."
+    b "Right, but would I have taken out the bullets?"
+    b "I think not."
+    b "After all, if I wanted to make it look like a suicide, matching the story I told you..."
+label trial4l:
+    menu:
+        b "Then the number of bullets in the gun I should have left in the gun would be..."
+
+            "0":
+                bi "Well, that's how many there were, not how many there should have been."
+                jump trial4l
+            "1":
+                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+                jump trial4l
+            "2":
+                bi ""
+                jump trial4l
+            "3":
+                bi "Maybe if the guard uniform was bulletproof, but I don't think it was..."
+                jump trial4l
+            "4":
+                bi "Maybe if the guard uniform was bulletproof, but I don't think it was..."
+                jump trial4l
+            "5":
+                bi "Yes, that's it!"
+            "6":
+                bi "If Sam commited suicide, how would the gun be reloaded to full capacity?"
+                jump trial4l
+    i "Five again..."
+    i "For the same reason, right?"
+    i "If Sam came to the break room with an empty gun, they would have had to reload it."
+    i "Then, after shooting themselves the first time, I doubt they could shoot it again."
+    bi "I've at least won over Sid..."
+    b "Yes, exactly."
+    b "If I wanted to stage a suicide, there's no reason to hide bullets."
+    hide sid with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Bert has a good point..."
+    j "Not to mention, he was the one who was pushing so hard to find another explanation for Sam's death."
+    j "That would be weird to do if he staged the suicide."
+    j "He could have easily just agreed with us, found no evidence to the contrary..."
+    bi "That... would have been a good argument to make a while ago."
+    bi "Would have saved me a lot of trouble."
+    l "...Yeah, I think you have a point."
+    l "There's too many things that don't make sense if Bert did it."
+    l "Sorry, I got caught up in it..."
+    l "I guess I was getting paranoid."
+    l "\"If Bert'vs been the one leading the effort to solve all these murders, how would we know if he did it?"
+    b "It's fine... it's not the first time we've accused someone for the sake of due diligence."
+    l "But, we're back to square one now."
+    l "Maybe even further back..."
+    l "Square one would be if we thought Sam committed suicide."
+    l "But based on the argument Bert just made, that can't be what happened, right?"
+    j "Well, I'm not convinced about that either..."
+    j "What if Sam is the murderer, but staged it to look like it wasn't a suicide?"
+    b "Huh?"
+    b "Why would anyone do that?"
+    
