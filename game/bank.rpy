@@ -3040,7 +3040,7 @@ label trial4l:
     l "There's too many things that don't make sense if Bert did it."
     l "Sorry, I got caught up in it..."
     l "I guess I was getting paranoid."
-    l "\"If Bert'vs been the one leading the effort to solve all these murders, how would we know if he did it?"
+    l "\"If Bert's been the one leading the effort to solve all these murders, how would we know if he did it?\""
     b "It's fine... it's not the first time we've accused someone for the sake of due diligence."
     l "But, we're back to square one now."
     l "Maybe even further back..."
@@ -3050,4 +3050,61 @@ label trial4l:
     j "What if Sam is the murderer, but staged it to look like it wasn't a suicide?"
     b "Huh?"
     b "Why would anyone do that?"
-    
+    j "I don't know, but..."
+    j "Maybe it was to lash out at us?"
+    j "Like, \"I'm taking you all down with me!\""
+    l "That seems... unlike Sam as of late."
+    l "If this happened in the hospital I could maybe believe it."
+    l "Here though, Sam seemed like they had been feeling... well, maybe not like themselves."
+    l "But they were more optimistic recently."
+    j "Sure, but what if that was just an act?"
+    bi "This seems like a very elaborate theory..."
+    bi "But I already have a few reasons to believe it's wrong, I think."
+    bi "One is my subjective feelings about Sam, of course..."
+    bi "If we debate that, we'll never come to a conclusion."
+    b "I agree with Lauren, it seems unlikely..."
+    b "But I don't think we'll get anywhere if we try to argue about Sam's intentions."
+    j "So... what do we do then?"
+    b "Look at the evidence."
+    l "Bert loves his evidence..."
+    b "There's one piece of evidence that I haven't figured out yet..."
+    b "Something that doesn't seem to relate to Sam's death."
+    bi "What I'm talking about is..."
+    call screen bankEvidenceTrial(-1, 3, "trial4m") with dissolve
+label trial4m:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    l "...The what?"
+    b "Yeah, I barely noticed it either."
+    b "It's an elastic belt, attached to the leg of a table in the break room."
+    b "Part of it is torn off and missing, however..."
+    l "That wasn't there before... it can't be a coincidence, right?"
+    b "Appearing in the room Sam's body was in, in the span of time leading up to his death..."
+    b "I'd agree, it's too good to be true."
+    j "But what purpose did it serve?"
+    b "I don't know... but if Sam really staged things to not look like a suicide..."
+    b "It has to serve some purpose, right?"
+    j "Couldn't someone else have put it there and Sam just ignored it?"
+    l "Well, did anyone else here put a belt in that room?"
+    j "..."
+    b "..."
+    l "I'll take that as a no..."
+    b "Which means either Sam placed it there, or someone is lying."
+    b "If someone's lying, they probably are the murderer..."
+    b "So Sam didn't commit suicide."
+    b "So if we want to figure out if Jenny's right..."
+    b "We have to assume Sam put it there and figure out why."
+    j "Hm... I have some ideas about that, actually."
+    python:
+        startBankTrial("jenny", "Jenny: ", 0,
+        "jenny", "Jenny: ", -1,
+        "jenny", "Jenny: ", -1,
+        "jenny", "Jenny: ", -1,
+        1, 5, "trial4n")

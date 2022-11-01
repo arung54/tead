@@ -145,7 +145,7 @@ screen bank_evidence():
 
         if currEvidence == 3:
             image "ev4 belt.png" xcenter 800 yalign 0.1
-            text "Part of an elastic belt was found attached to ___ in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
+            text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
             image "ev4 shells.png" xcenter 800 yalign 0.1
