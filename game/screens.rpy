@@ -393,9 +393,9 @@ screen test():
         textbutton _("Test") action ShowMenu("save")
 
 screen navigation():
-
     if main_menu:
         add "menufg.png"
+        #$main_menu = True
         #imagebutton:
         #    idle "menuweblink.png"
         #    hover "menuweblink2.png"
@@ -411,7 +411,7 @@ screen navigation():
         imagebutton:
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
-            focus_mask True action [ShowMenu("about"), Hide("main_menu")]
+            focus_mask True action ShowMenu("about")
         imagebutton:
             idle "ibmenuload.png"
             hover "ibmenuload2.png"
@@ -423,37 +423,6 @@ screen navigation():
         textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
         textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
 
-        python:
-            '''
-        hbox:
-            xpos .5
-            ypos 0.8
-            spacing 10
-            xalign 0.5
-            #yalign 0.65
-            style_prefix "navigation"
-            #spacing gui.navigation_spacing
-            imagebutton:
-                idle "menubuttonload.png" action ShowMenu("load")
-            imagebutton:
-                idle "menubuttonsettings.png" action ShowMenu("preferences")
-            imagebutton:
-                idle "menubuttonbegin.png" action Start()
-            imagebutton:
-                idle "menubuttonabout.png" action ShowMenu("about")
-            imagebutton:
-                idle "menubuttonquit.png" action Quit(confirm=not main_menu)
-            #textbutton _("{b}Start{/b}") action Start() text_hover_color "#929292"
-            #textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
-            #textbutton _("{b}Settings{/b}") text_hover_color "#929292" action ShowMenu("preferences")
-            #if _in_replay:
-            #    textbutton _("End Replay") action EndReplay(confirm=True)
-            #elif not main_menu:
-            #    textbutton _("{b}Main Menu{/b}") action MainMenu() text_hover_color "#929292"
-            #textbutton _("{b}About{/b}") action ShowMenu("about") text_hover_color "#929292"
-            #if renpy.variant("pc"):
-            #textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu) text_hover_color "#929292"
-            '''
 #################### below is NOT main menu, just in game menu
     else:
         vbox:
@@ -632,15 +601,9 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add "menured.png"
-        add "vinegar.png"
-        add "menubgscroll2" #change to main_menu_background to match old one
-    else:
-        add "menured.png"
-        add "vinegar.png"
-        add "menubgscroll2"
-
+    add "menured.png"
+    add "vinegar.png"
+    add "menubgscroll2"
     frame:
         style "game_menu_outer_frame"
 
@@ -688,7 +651,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("{i}  back{/i}"):
+    textbutton _("{i}back{/i}"):
         style "return_button"
         text_hover_color "#929292"
         action Return()
@@ -759,25 +722,9 @@ style return_button:
 ## example of how to make a custom screen.
 
 screen about():
-    #add "menured.png"
-    #add "vinegar.png"
-    #add "menubgscroll2"
-    tag menu
-    python:
-        '''
-    imagebutton:
-        xcenter .1 ycenter .1
-        idle "backbutton.png"
-        hover "backbutton2.png"
-        action [ShowMenu("history"), Hide("about")]
-        '''
-    ## This use statement includes the game_menu screen inside this one. The
-    ## vbox child is then included inside the viewport inside the game_menu
-    ## screen.
     use game_menu(_(" "), scroll="viewport"): #removed about
 
         style_prefix "about"
-
         vbox:
             ycenter .5
             xcenter .4
@@ -790,8 +737,8 @@ screen about():
             text _("                  Alpha Testing: You!\n")
             if gui.about:
                 text "[gui.about!t]\n"
-
             text _("                  Made with Ren'Py.")
+
 
 
 style about_label is gui_label

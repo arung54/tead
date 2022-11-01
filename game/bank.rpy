@@ -1,7 +1,9 @@
 label bankGo:
     $noside = True
+    camera at paralloff
     scene black
-    $ statusnt("???", "", ch=4, sun=0)
+    show bg flashback with dissolve
+    #$ statusnt("???", "", ch=4, sun=0)
     z "Dad?"
     z "Is that you?"
     sy "Hey... yeah, it is."
@@ -101,6 +103,7 @@ label bankGo:
     $noside = False
     scene black
     blank "In the present..."
+    camera at parallax
     $ftecounter = 8
     scene black
     $mood = "sad"
@@ -2790,22 +2793,21 @@ label trial4g:
 label trial4h:
     menu:
         b "More precisely, the problem is that..."
-
-            "Sam could have shot me during the supposed confrontation."
-                bi "No, as Lauren mentioned, Sam ran out of bullets."
-                bi "At some point Sam needed to reload."
-                bi "If I confronted Sam during that point, it would have been a fistfight."
-                jump trial4h
-            "Sam wasn't shot just once.":
-                bi "If that's the case, why did we only find one shell in the break room?"
-                jump trial4h
-            "In Lauren's story, I couldn't have shot Sam exactly once.":
-                bi "I could have, I think a single bullet to the brain is pretty lethal."
-                bi "So I could have killed Sam with one shot."
-                bi "And if I overpowered Sam and could reload the gun, that one shot was definitely possible."
-                jump trial4h
-            "The evidence isn't consistent with Sam getting shot exactly once.":
-                bi "Yes, that's it!"
+        "Sam could have shot me during the supposed confrontation.":
+            bi "No, as Lauren mentioned, Sam ran out of bullets."
+            bi "At some point Sam needed to reload."
+            bi "If I confronted Sam during that point, it would have been a fistfight."
+            jump trial4h
+        "Sam wasn't shot just once.":
+            bi "If that's the case, why did we only find one shell in the break room?"
+            jump trial4h
+        "In Lauren's story, I couldn't have shot Sam exactly once.":
+            bi "I could have, I think a single bullet to the brain is pretty lethal."
+            bi "So I could have killed Sam with one shot."
+            bi "And if I overpowered Sam and could reload the gun, that one shot was definitely possible."
+            jump trial4h
+        "The evidence isn't consistent with Sam getting shot exactly once.":
+            bi "Yes, that's it!"
     b "It seems like Sam died to a single bullet, but..."
     b "The evidence doesn't line up with a single bullet."
     l "What do you mean?"
@@ -2821,27 +2823,26 @@ label trial4h:
 label trial4i:
     menu:
         b "If your story is accurate, the number of bullets in the gun should have been..."
-
-            "0":
-                bi "No, that's how many there were. That would just incriminate me more..."
-                jump trial4i
-            "1":
-                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
-                jump trial4i
-            "2":
-                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
-                jump trial4i
-            "3":
-                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
-                jump trial4i
-            "4":
-                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
-                jump trial4i
-            "5":
-                bi "Yes, that's it!"
-            "6":
-                bi "...If I shot the gun, how would it still be full?"
-                jump trial4i
+        "0":
+            bi "No, that's how many there were. That would just incriminate me more..."
+            jump trial4i
+        "1":
+            bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+            jump trial4i
+        "2":
+            bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+            jump trial4i
+        "3":
+            bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+            jump trial4i
+        "4":
+            bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+            jump trial4i
+        "5":
+            bi "Yes, that's it!"
+        "6":
+            bi "...If I shot the gun, how would it still be full?"
+            jump trial4i
     b "Five."
     b "Because the gun was empty when Sam ran."
     b "When it was reloaded, it would have had six again."
@@ -2974,20 +2975,19 @@ label trial4j:
 label trial4k:
     menu:
         bi "Thankfully, there's one flaw with Lauren's argument."
-
-            "I wouldn't take the bullets out if I were staging a suicide.":
-                bi "Yes, that's it!"
-            "Jenny would have seen the bullets before I could hide them.":
-                bi "No, Jenny only came when she heard me yell."
-                bi "For all they know, I only called for help after hiding the bullets."
-                jump trial4k
-            "The safe would have had to open while I was in the lounge."
-                bi "No, Lauren's theory is consistent with Sam being the one to open it."
-                jump trial4k
-            "Freddy can verify that I wasn't gone long enough to hide the bullets."
-                bi "We spent a bit of time in the break room after I found Sam."
-                bi "So from Freddy's point of view, I was gone for a while."
-                jump trial4k
+        "I wouldn't take the bullets out if I were staging a suicide.":
+            bi "Yes, that's it!"
+        "Jenny would have seen the bullets before I could hide them.":
+            bi "No, Jenny only came when she heard me yell."
+            bi "For all they know, I only called for help after hiding the bullets."
+            jump trial4k
+        "The safe would have had to open while I was in the lounge.":
+            bi "No, Lauren's theory is consistent with Sam being the one to open it."
+            jump trial4k
+        "Freddy can verify that I wasn't gone long enough to hide the bullets.":
+            bi "We spent a bit of time in the break room after I found Sam."
+            bi "So from Freddy's point of view, I was gone for a while."
+            jump trial4k
     b "Lauren, put yourself in my shoes as the murderer."
     i "So you are the murderer?"
     b "...The {i}hypothetical{/i} murderer."
@@ -2999,27 +2999,26 @@ label trial4k:
 label trial4l:
     menu:
         b "Then the number of bullets in the gun I should have left in the gun would be..."
-
-            "0":
-                bi "Well, that's how many there were, not how many there should have been."
-                jump trial4l
-            "1":
-                bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
-                jump trial4l
-            "2":
-                bi ""
-                jump trial4l
-            "3":
-                bi "Maybe if the guard uniform was bulletproof, but I don't think it was..."
-                jump trial4l
-            "4":
-                bi "Maybe if the guard uniform was bulletproof, but I don't think it was..."
-                jump trial4l
-            "5":
-                bi "Yes, that's it!"
-            "6":
-                bi "If Sam commited suicide, how would the gun be reloaded to full capacity?"
-                jump trial4l
+        "0":
+            bi "Well, that's how many there were, not how many there should have been."
+            jump trial4l
+        "1":
+            bi "Okay, I think even Freddy is good enough at math to not come up with that answer."
+            jump trial4l
+        "2":
+            bi ""
+            jump trial4l
+        "3":
+            bi "Maybe if the guard uniform was bulletproof, but I don't think it was..."
+            jump trial4l
+        "4":
+            bi "Maybe if the guard uniform was bulletproof, but I don't think it was..."
+            jump trial4l
+        "5":
+            bi "Yes, that's it!"
+        "6":
+            bi "If Sam commited suicide, how would the gun be reloaded to full capacity?"
+            jump trial4l
     i "Five again..."
     i "For the same reason, right?"
     i "If Sam came to the break room with an empty gun, they would have had to reload it."

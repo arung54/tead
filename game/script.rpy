@@ -166,6 +166,14 @@ image menubgscroll2:
         xpos -1.0
         linear 30.0 xpos 0.0
         repeat
+image bg flashback:
+    contains:
+        "spinbg.png"
+        xcenter .5 ycenter .5
+        rotate 0
+        linear 40 rotate 360
+        repeat
+        "vinegar.png"
 transform inwindow:
     truecenter zoom .8
     yalign .45
@@ -634,6 +642,10 @@ define zf = Character("?????", who_color= "76d352", callback=frogvoice, image="n
 define zi = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
 define zr = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
 define zh = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
+define sy = Character("?????", who_color= "f3946a", callback=samvoice, image="notbert")
+define syc = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
+define syci = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
+
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice, image="notbert")
 define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice, image="notbert")
@@ -734,4 +746,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump trial2o
+jump hospitalGo

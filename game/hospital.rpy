@@ -1,7 +1,9 @@
 label hospitalGo:
     $noside = True
+    camera at paralloff
     scene black
-    $ statusnt("???", "", ch=3, sun=0)
+    show bg flashback with dissolve
+    #$ statusnt("???", "", ch=3, sun=0)
     $mood = "ind"
     blank "A few years ago..."
     zr "Let me get this straight."
@@ -50,9 +52,9 @@ label hospitalGo:
     zr "I know a kid. Good with computers. We have some dirt on him, but he doesn't know it."
     zr "A few emails, and I think he'll do what we need..."
     $noside = False
-
     $ftecounter = 5
     scene black
+    camera at parallax
     blank "In the present..."
     bi "..."
     bi "As I slowly gained consciousness, I resisted opening my eyes."
