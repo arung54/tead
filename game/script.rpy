@@ -140,6 +140,16 @@ image btracks:
     pause .05
     repeat
 
+image bg dandieslide:
+    contains:
+        "dandieepic.png"
+        xcenter .5
+        ycenter .9
+        zoom 1.3
+        linear 9 ycenter .35 zoom 1
+        pause 5
+        repeat 
+
 image turning:
     "trainturn1.png"
     pause .05
@@ -746,4 +756,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump hospitalGo
+jump midcar6
