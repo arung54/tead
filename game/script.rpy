@@ -1,6 +1,9 @@
 
 default persistent.parallax = True
 define config.gl2 = True
+init python:
+    import time
+
 ############################################################################# LIVE2D DEFINES ##################
 
 image drac = Live2D("Resources/drac", base=.999, loop=True,  top=-.05,seamless=True) #good format
@@ -120,6 +123,58 @@ image pophearts = anim.Filmstrip("pophearts.png", (300,300), (5,2), .075, loop=F
 image popwow = anim.Filmstrip("popwow.png", (300,300), (5,2), .085, loop=False)#ycenter .25, xcenter   , zoom .75
 image pophuh = anim.Filmstrip("pophuh.png", (300,300), (5,2), .085, loop=False)#ycenter .25, xcenter -.1, zoom .75
 
+image danjumping = anim.Filmstrip("danjumpingfilm.png", (40,64), (2,1), .4, loop=True)#ycenter .25, xcenter -.1, zoom .75
+
+############## FISHING
+
+image fishingrod:
+    contains:
+        "fishrod2.png"
+        zoom 2
+        pause 1
+        "fishrod1.png"
+        zoom 2
+        pause 1
+        "fishrod2.png"
+        zoom 2
+        pause 1
+        "fishrod3.png"
+        zoom 2
+        pause 1
+        repeat
+image fishingrodhooked:
+    contains:
+        "fishrod4.png"
+        zoom 2
+        pause .1
+        "fishrod5.png"
+        zoom 2
+        pause .1
+        repeat
+image danfish:
+    contains:
+        "dansit1.png"
+        zoom 2
+        pause 3
+        "dansit2.png"
+        zoom 2
+        pause .05
+        "dansit1.png"
+        zoom 2
+        pause 7
+        "dansit2.png"
+        zoom 2
+        pause .05
+        "dansit1.png"
+        zoom 2
+        pause .05
+        "dansit2.png"
+        zoom 2
+        pause .05
+        repeat
+
+################ MOVING BACKGROUNDS
+
 image tracks:
     "tracks1.png"
     pause .05
@@ -148,7 +203,7 @@ image bg dandieslide:
         zoom 1.3
         linear 9 ycenter .35 zoom 1
         pause 5
-        repeat 
+        repeat
 
 image turning:
     "trainturn1.png"
@@ -200,19 +255,6 @@ image bg frontcar5:
     pause .5
     repeat
 
-transform blink:
-        "eye.png"
-        alpha 1.0
-        .1
-        alpha 0.0
-        .2
-        alpha 1.0
-        .1
-        alpha 0.0
-        .7
-        alpha 1.0
-        .1
-        alpha 0.0
 define slowdissolve = Dissolve(2.0)
 image debatescroll:
     contains:
@@ -756,4 +798,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump midcar6
+jump twittergo
