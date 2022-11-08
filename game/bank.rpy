@@ -2793,6 +2793,7 @@ label trial4g:
 label trial4h:
     menu:
         b "More precisely, the problem is that..."
+
         "Sam could have shot me during the supposed confrontation.":
             bi "No, as Lauren mentioned, Sam ran out of bullets."
             bi "At some point Sam needed to reload."
@@ -2823,6 +2824,7 @@ label trial4h:
 label trial4i:
     menu:
         b "If your story is accurate, the number of bullets in the gun should have been..."
+
         "0":
             bi "No, that's how many there were. That would just incriminate me more..."
             jump trial4i
@@ -2975,6 +2977,7 @@ label trial4j:
 label trial4k:
     menu:
         bi "Thankfully, there's one flaw with Lauren's argument."
+
         "I wouldn't take the bullets out if I were staging a suicide.":
             bi "Yes, that's it!"
         "Jenny would have seen the bullets before I could hide them.":
@@ -2999,6 +3002,7 @@ label trial4k:
 label trial4l:
     menu:
         b "Then the number of bullets in the gun I should have left in the gun would be..."
+
         "0":
             bi "Well, that's how many there were, not how many there should have been."
             jump trial4l
@@ -3102,8 +3106,106 @@ label trial4m:
     b "We have to assume Sam put it there and figure out why."
     j "Hm... I have some ideas about that, actually."
     python:
-        startBankTrial("jenny", "Jenny: ", 0,
-        "jenny", "Jenny: ", -1,
-        "jenny", "Jenny: ", -1,
-        "jenny", "Jenny: ", -1,
-        1, 5, "trial4n")
+        startBankTrial("jenny", "Jenny: It's a bit dark, but another method to commit suicide would be, well... {color=#f00}hanging with a rope{/color}.", -1,
+        "jenny", "Jenny: There's obviously {color=#f00}no rope to be found{/color}, but the belt could be a makeshift rope.", -1,
+        "jenny", "Jenny: Maybe Sam was... well, trying that method in the break room, and the {color=#f00}belt didn't have enough strength{/color} so it broke.", -1,
+        "jenny", "Jenny: Sam got rid of the part of the belt attached to them, but left the other half in the break room, {color=#f00}and it fell down later{/color}.", -1,
+        3, 3, "trial4n")
+label trial4n:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    bi "I feel almost silly pointing this out, but..."
+    b "If Sam wanted to hang... well, something with the rope, why was it attached to the table leg?"
+    b "It would have to be attached somewhere high up."
+    b "And if, as Jenny says, it fell down, it would have had to magically slip under the table leg."
+    b "And then tied itself tightly around said leg."
+    j "Hm... when you put it that way..."
+    j "Yeah, I sound kinda silly, huh."
+    b "But I think you're onto something for why the belt was placed there..."
+    b "If the belt broke into two pieces, something must have pulled on it at some point."
+    b "And this must have happened before I entered the room, because the torn piece of belt was there when I entered."
+    b "Looking back at how things happened, I think I know what the other end of the belt was attached to..."
+    call screen pickSpot8 with dissolve
+label trial4o:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "I'm pretty sure the other of the belt was attached to the door to the break room."
+    l "What makes you so sure?"
+    b "For one, it's the only object near the table that you could tie the belt to."
+    b "But also, if the belt was tied to the door..."
+    b "There's a point where a lot of force was applied to the door, and it could have broken."
+    b "That point being..."
+    call screen bankEvidenceTrial(-1, 0, "trial4p") with dissolve
+label trial4p:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "When I went into the break room after chasing Sam, I pulled hard on the door while opening it."
+    b "I don't know why, maybe the adrenaline rush, maybe to try to catch them by surprise."
+    b "But when I did, that could have easily broken the belt."
+    j "Hm... that still doesn't make sense to me, though."
+    j "For one, why would anyone have tied a rope to the door?"
+    j "And also, why wouldn't it have broken when Sam entered the room?"
+    j "And where did the other half go?"
+    b "There's still a lot to figure out, I agree..."
+    hide lauren with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "Um... shouldn't we test this idea first?"
+    b "Test... the whole idea?"
+    i "Well, no, I was thinking just... does the belt even go that far?"
+    i "And like, could you tear it open by just pulling on the door?"
+    b "That's... actually a really good idea."
+    b "Let's go grab another belt from the lockers in the locker room, and bring it to the break room."
+    scene black with dissolve
+    bi "We went to the locker room, grabbed a belt from a different uniform, and went to the break room."
+    bi "We decided that Freddy, for obvious reasons, shouldn't come with us, and Lauren stayed with him."
+    scene bg bankbreak3
+    $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
+    $ showchibint("jenny", "sid")
+    with dissolve
+    show sid ind with dissolve
+    bi "Sid had taken charge, which was kind of good."
+    bi "While Sid was figuring things out, I could take a break."
+    bi "It felt like my brain was on a treadmill and I just turned it down to walking speed."
+    i "Okay, so we tie this end here..."
+    i "And then we pull gently..."
+    i "And this end..."
+    i "..."
+    i "Yeah, it's a bit of a stretch..."
+    show sid ind:
+        xcenter .5
+        linear 0.15 xcenter .25
+    show jenny ind with moveinright:
+        xcenter .75
+    j "Ha!"
+    i "Huh?"
+    i "Oh..."
+    i "Yeah, it's a bit... of a tough one."
+    i "But you can stretch the belt from the table leg to the door."
+    j "Hm... we should try some other things though, right?"
+    j "Like, we should see if we can open the door without the belt breaking."
+    j "Because if it breaks when you open the door even slightly, then..."
+    j "That means whoever tied it would be trapped in here unless they broke the belt."
+    j "On the other hand, would a belt have broken when Bert pulled on the door?"
+    j "Maybe they're just elastic enough to resist breaking..."

@@ -237,7 +237,7 @@ screen pickSpot5:
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(524, 569, 210, 51):
-            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3f")]
+            action [Function(shatterNoise), Show("shatteredHosp", lab = "trial3f")]
 
 screen pickSpot6:
     imagemap:
@@ -245,7 +245,7 @@ screen pickSpot6:
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(556, 625, 170, 60):
-            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3g")]
+            action [Function(shatterNoise), Show("shatteredHosp", lab = "trial3g")]
 
 screen pickSpot7:
     imagemap:
@@ -253,6 +253,6 @@ screen pickSpot7:
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(593, 656, 35, 24):
-            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3o")]
+            action [Function(shatterNoise), Show("shatteredHosp", lab = "trial3o")]
         hotspot(687, 625, 35, 24):
-            action [Function(shatterNoise), Show("shattedHosp", lab = "trial3o")]
+            action [Function(shatterNoise), Show("shatteredHosp", lab = "trial3o")]
