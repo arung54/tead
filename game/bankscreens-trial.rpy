@@ -226,3 +226,12 @@ screen bankTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statemen
             idle "refutegrey.png"
             xpos 0.775
             yalign 0.04
+
+
+screen pickSpot8:
+    imagemap:
+        ground "bg bankbreak3.png"
+        hotspot(0, 0, 1279, 719):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(1055, 61, 67, 610):
+            action [Function(shatterNoise), Show("shatteredBank", lab = "trial4o")]
