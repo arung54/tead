@@ -1,7 +1,9 @@
 label bankGo:
     $noside = True
+    camera at paralloff
     scene black
-    $ statusnt("???", "", ch=4, sun=0)
+    show bg flashback with dissolve
+    #$ statusnt("???", "", ch=4, sun=0)
     z "Dad?"
     z "Is that you?"
     sy "Hey... yeah, it is."
@@ -101,6 +103,7 @@ label bankGo:
     $noside = False
     scene black
     blank "In the present..."
+    camera at parallax
     $ftecounter = 8
     scene black
     $mood = "sad"

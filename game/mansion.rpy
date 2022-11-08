@@ -1,11 +1,13 @@
 label mansionGo:
     $ftecounter = 2
     $noside = True
+    camera at paralloff
     scene black
     $ statusnt("???", "", ch=2, sun=0)
     $mood = "ind"
     play music "audio/rush.mp3" fadein 1.0
     blank "A few years ago..."
+    show bg flashback with dissolve
     zg "Stop right there. What are you doing here?"
     z "Oh, me? I'm a new employee here, was just wandering."
     zb "Wandering into the CEO's floor? That requires the highest level of clearance to access?"
@@ -54,6 +56,7 @@ label mansionGo:
     $noside = False
 
 label Mansionuno:
+    camera at parallax
     scene black
     $mood = "sad"
     blank "In the present..."

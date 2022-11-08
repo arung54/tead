@@ -1953,9 +1953,18 @@ label midcar6:
     $noside = False
     $mood = "shock"
     play music "audio/sadsong.mp3" fadein 2.0
+    camera at paralloff
+    $ showchibint()
+    hide screen status_screen
+    scene bg dandieslide with dissolve #kill splash
+    show screen killuser
+    pause 10
+    hide screen killuser
+
     scene bg bodytrainback at bg
     $ showchibint("catherine", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "stella", "dracula", "sid")
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
+    camera at parallax
     with Dissolve(2.0)
     b "Oh no..."
     b "No no no no..."
