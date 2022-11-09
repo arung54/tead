@@ -3180,7 +3180,7 @@ label trial4p:
     scene black with dissolve
     bi "We went to the locker room, grabbed a belt from a different uniform, and went to the break room."
     bi "We decided that Freddy, for obvious reasons, shouldn't come with us, and Lauren stayed with him."
-    scene bg bankbreak3
+    scene bg bankbreak4
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
     $ showchibint("jenny", "sid")
     with dissolve
@@ -3208,4 +3208,70 @@ label trial4p:
     j "Because if it breaks when you open the door even slightly, then..."
     j "That means whoever tied it would be trapped in here unless they broke the belt."
     j "On the other hand, would a belt have broken when Bert pulled on the door?"
-    j "Maybe they're just elastic enough to resist breaking..."
+    j "Maybe there's just elastic enough to resist breaking..."
+    i "Man, let's stop talking and start trying!"
+    bi "Sid slowly started pushing on the door."
+    i "There's some resistance from the belt, but..."
+    i "It's not breaking."
+    b "Okay, so it would have been possible to tie the belt and then leave the room."
+    b "So if it was tied to the door, it could have been tied before I entered the break room."
+    blank "*click*"
+    i "Oh, huh."
+    b "What happened?"
+    i "I let go of the handle and the door closed."
+    b "I guess that makes sense if the belt is pulling on it enough to cause some resistance..."
+    i "And now the other question..."
+    hide sid with moveoutright
+    bi "..."
+    blank "*snap*"
+    show bg bankbreak3 with dissolve
+    show sid with moveinright
+    i "I pulled on the door, and..."
+    b "And the belt broke."
+    b "Anything else we need to figure out?"
+    i "No, I think that's everything."
+    tut "Torn Elastic Belt's description has been updated in the evidence menu."
+    j "Are we sure all the belts are the same?"
+    j "Maybe different belts have different amounts of stretch..."
+    i "I mean... we could go and try this with every belt if you want."
+    j "Hm..."
+    j "I'll go take a quick look and see if the belts are all the same size, at least."
+    j "Just to be sure, you know..."
+    j "It's not like al lthe guards would have been the same size."
+    j "You guys can go back to the lobby, if you want."
+    b "No, we should go with you just to double-check."
+    j "Oki!"
+    scene black with dissolve
+    bi "We checked, and all the belts were in fact the same size."
+    bi "Not too surprising, belts can be made one-size-fits-many."
+    bi "As we walked back to the lobby, I was thinking..."
+    bi "Jenny seems very hard-pressed to prove Sam committed suicide..."
+    bi "On the other hand, Sid very eagerly jumped on the theory I proposed..."
+    bi "Not to mention Lauren trying to accuse me earlier..."
+    bi "It's all very suspicious."
+    bi "Is Jenny trying to pin her murder on Sam?"
+    bi "Is Lauren trying to pin her murder on me?"
+    bi "Is Sid leading us down the wrong road intentionally?"
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show sid ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    l "Welcome back. What'd you guys find?"
+    i "The belt reaches from the table leg to the door."
+    i "And if you tie it at both ends, you can open the door without breaking it."
+    i "But a quick yank on the door does cause it to break."
+    l "Interesting..."
+    l "Bert may be on to something after all."
+    j "But I still don't understand..."
+    j "Why would Sam or anyone else tie the belt like that?"
+    l "Maybe to try to lock the corpse in the break room?"
+    l "If we couldn't find it, maybe we'd all just die by default..."
+    j "It's an interesting idea, but..."
+    j "The belt didn't actually prevent the door from opening."
+    l "Oh, yeah, you just mentioned that."
+    l "Maybe Sam set it up and didn't have time to check?"

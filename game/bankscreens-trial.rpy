@@ -117,7 +117,10 @@ screen bankEvidenceTrial(s, e, l):
 
         if currEvidence == 3:
             image "ev4 belt.png" xcenter 800 yalign 0.1
-            text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
+            if bank_extra[11]:
+                text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is. A whole elastic belt is long enough to reach from the table leg to the doorknob. When it's tied at both ends, it pulls on the door, but not with enough force to prevent you from opening it. Also, if the door is yanked when the belt is tied at both ends, the belt snaps." xcenter 800 yanchor 0.0 ypos 330
+            else:
+                text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
             image "ev4 shells.png" xcenter 800 yalign 0.1
@@ -230,7 +233,7 @@ screen bankTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, statemen
 
 screen pickSpot8:
     imagemap:
-        ground "bg bankbreak3.png"
+        ground "bg bankbreak4.png"
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(1055, 61, 67, 610):
