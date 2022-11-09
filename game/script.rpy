@@ -205,6 +205,33 @@ image bg dandieslide:
         pause 5
         repeat
 
+image bg stelladieslide:
+    contains:
+        "stelladieepic.png"
+        xcenter .5
+        ycenter -.3
+        zoom 2.1
+        linear 10 ycenter .4 zoom 1.2
+        pause 3
+
+image bg shahardieslide:
+    contains:
+        "shahardieepic.png"
+        xcenter .5
+        ycenter 1.2
+        zoom 1.3
+        linear 7 ycenter .2 zoom 1
+        pause 3
+
+image bg samdieslide:
+    contains:
+        "samdieepic.png"
+        xcenter .7
+        ycenter 1.2
+        zoom 2
+        linear 7 ycenter .7 xcenter .5 zoom .8
+        pause 3
+
 image turning:
     "trainturn1.png"
     pause .05
@@ -441,9 +468,9 @@ init python:
 ###########
 
 screen killuser:
-    #key "mousedown_3" action Hide("nonexistent_screen")
+    key "mousedown_3" action Hide("nonexistent_screen")
     key "mousedown_1" action Hide("nonexistent_screen")
-    #key "mouseup_3" action Hide("nonexistent_screen")
+    key "mouseup_3" action Hide("nonexistent_screen")
     key "mouseup_1" action Hide("nonexistent_screen")
 
 screen showchibis(chibis):
@@ -798,4 +825,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump twittergo
+jump bank8

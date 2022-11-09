@@ -1952,6 +1952,7 @@ label midcar6:
     blank "But when they got there..."
     $noside = False
     $mood = "shock"
+
     play music "audio/sadsong.mp3" fadein 2.0
     camera at paralloff
     $ showchibint()

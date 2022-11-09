@@ -601,7 +601,7 @@ label mansGoAway:
         bi "Nope, nothing in this bedroom either."
         bi "That just leave's Jenny's room..."
         scene black with dissolve
-        scene bg mansionbedroom gen with dissolve
+        scene bg mansionbedroom1gen with dissolve
         $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
         bi "...Huh?"
         call screen bedroomJennInv
@@ -634,7 +634,7 @@ screen bedroomJennInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 label mansGenerator:
-    scene bg mansionbedroom gen
+    scene bg mansionbedroom1gen
     $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
     if not mans_evidence[5]:
         bi "Huh, what's the generator doing in here?"

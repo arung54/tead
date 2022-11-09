@@ -2276,6 +2276,7 @@ label bank7:
     s "C'mon, let's get Freddy onto a couch."
     bi "Rude."
     scene black with dissolve
+label bank8:
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "sam")
@@ -2341,7 +2342,7 @@ label bank7:
     bi "Wait."
     bi "Fuck."
     bi "Without thinking, I ran towards Freddy."
-    bi "As soon as I did, the inevitable happened"
+    bi "As soon as I did, the inevitable happened."
     blank "BANG BANG BANG BANG BANG BANG." #TODO: Add sfx
     scene black
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
@@ -2386,7 +2387,17 @@ label bank7:
     bi "As I walked into the room I {i}did{/i} see the uniformed person."
     bi "But they weren't pointing the gun at anyone."
     bi "Instead..."
-    scene bankbreak2
+
+    play music "audio/sadsong.mp3" fadein 2.0
+    camera at paralloff
+    $ showchibint()
+    hide screen status_screen
+    scene bg samdieslide with dissolve #kill splash
+    show screen killuser
+    pause 10
+    hide screen killuser
+    camera at parallax
+    scene bg bankbreak2
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=4)
     with dissolve
     bi "They lay there on the ground, in a pool of blood."
