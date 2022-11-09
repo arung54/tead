@@ -2426,17 +2426,27 @@ label laurentime:
     li "Maybe he had a cup of juice and spilled it."
     li "My brain was reaching for every other explanation."
     li "But sure enough..."
+
+    play music "audio/sadsong.mp3" fadein 2.0
+    camera at paralloff
+    $ showchibint()
+    hide screen status_screen
+    scene bg shahardieslide with dissolve #kill splash
+    show screen killuser
+    pause 8
+    hide screen killuser
+
+    camera at parallax
     scene bg shahardead at bg with dissolve
+    $showchibint("sam")
     lf "No."
     lf "No no no no no no no no no no no no no no no..."
     lf "Why did no one but me think to check?"
-    $showchibint("sam")
     show sam:
         xcenter .75
     with dissolve
     s "...He's dead..."
-    lf "...Yeah."
-    s "...In some ways, he's lucky..."
+    s "Maybe he's lucky..."
     s "...Doesn't have to play this game anymore..."
     li "Really not helping right now, Sam."
     li "Keep it together Lauren."

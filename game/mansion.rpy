@@ -2507,14 +2507,27 @@ label mansion2:
     bi "He really had to vomit... but..."
     bi "I can't blame him."
     bi "After seeing what we saw in there, I wanted to vomit too."
+
+    play music "audio/sadsong.mp3" fadein 2.0
+    camera at paralloff
+    $ showchibint()
+    hide screen status_screen
+    scene bg stelladieslide with dissolve #kill splash
+    show screen killuser
+    pause 10
+    hide screen killuser
+
+
     scene bg mansionbr at bg
+    camera at parallax
     show doom at bg
     show stella dead:
         zoom 1.0
         xcenter .37
         ycenter .8
-    with Dissolve(2.0)
+    $ statusnt("Bathroom", "bert", ch=2, sun=3)
     $ showchibint("lauren", "sid")
+    with Dissolve(2.0)
     $mood = "shock"
     b "..."
     b "Wh-wha?"
