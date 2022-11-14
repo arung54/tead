@@ -407,15 +407,15 @@ screen navigation():
         imagebutton:
             idle "ibmenucards.png"
             hover "ibmenucards2.png"
-            ycenter .5 xcenter .5 focus_mask True action Hide("main_menu")
+            ycenter .5 xcenter .5 focus_mask True action [Show("Characters"), Hide("main_menu")]
         imagebutton:
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
-            focus_mask True action ShowMenu("about")
+            focus_mask True action [ShowMenu("about"), Hide("main_menu")]
         imagebutton:
             idle "ibmenuload.png"
             hover "ibmenuload2.png"
-            focus_mask True action ShowMenu("load")
+            focus_mask True action [ShowMenu("load"), Hide("main_menu")]
         #imagebutton:
         #    idle "ibmenusettings.png"
         #    hover "ibmenusettings2.png"
@@ -429,22 +429,21 @@ screen navigation():
             xalign 0
             yoffset 300
             xoffset 60
-            textbutton _("{b}History{/b}") action ShowMenu("history") text_hover_color "#929292"
-            textbutton _("{b}Save{/b}") action ShowMenu("save") text_hover_color "#929292"
+            textbutton _("Settings") text_hover_color "#929292" action ShowMenu("preferences")
+            textbutton _("History") action ShowMenu("history") text_hover_color "#929292"
+            textbutton _("Characters") action [ShowMenu("Characters")] text_hover_color "#929292"
+            textbutton _("Save") action ShowMenu("save") text_hover_color "#929292"
 
-            textbutton _("{b}Load{/b}") action ShowMenu("load") text_hover_color "#929292"
-            textbutton _("{b}Settings{/b}") text_hover_color "#929292" action ShowMenu("preferences")
-
+            textbutton _("Load") action ShowMenu("load") text_hover_color "#929292"
+            textbutton _("About") action ShowMenu("about") text_hover_color "#929292"
             if _in_replay:
                 textbutton _("End Replay") action EndReplay(confirm=True)
 
             elif not main_menu:
-                textbutton _("{b}Main Menu{/b}") action MainMenu() text_hover_color "#929292"
+                textbutton _("Main Menu") action MainMenu() text_hover_color "#929292"
 
-            textbutton _("{b}About{/b}") action ShowMenu("about") text_hover_color "#929292"
-
-            if renpy.variant("pc"):
-                textbutton _("{b}Quit{/b}") action Quit(confirm=not main_menu) text_hover_color "#929292"
+            #if renpy.variant("pc"):
+            #    textbutton _("Quit") action Quit(confirm=not main_menu) text_hover_color "#929292"
 
 
 style navigation_button is gui_button
@@ -651,9 +650,10 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("{i}back{/i}"):
+    textbutton _("Back"):
         style "return_button"
         text_hover_color "#929292"
+        xcenter .07
         action Return()
 
     label title
@@ -722,23 +722,37 @@ style return_button:
 ## example of how to make a custom screen.
 
 screen about():
-    use game_menu(_(" "), scroll="viewport"): #removed about
-
-        style_prefix "about"
-        vbox:
-            ycenter .5
-            xcenter .4
-            #label "TEAD"
-            text _("                  Alpha Version 0.2\n")
-            text _("                  Graphics, Writing: Julian Pagliaccio\n")
-            text _("                  Music, Coding, Writing: Arun Ganesh\n")
-            text _("                  Music: Andrew Kim\n")
-            text _("                  Shirtless Pic: Shahar Syed\n")
-            text _("                  Alpha Testing: You!\n")
-            if gui.about:
-                text "[gui.about!t]\n"
-            text _("                  Made with Ren'Py.")
-
+    tag menu
+    modal True
+    #use game_menu(_(" "), scroll="viewport"): #removed about
+    style_prefix "about"
+    add "scary.png"
+    vbox:
+        ycenter .5
+        xcenter .4
+        text _("                  Alpha Version 0.2\n")
+        text _("                  Graphics, Writing: Julian Pagliaccio\n")
+        text _("                  Music, Coding, Writing: Arun Ganesh\n")
+        text _("                  Music: Andrew Kim\n")
+        text _("                  Shirtless Pic: Shahar Syed\n")
+        text _("                  Alpha Testing: You!\n")
+        if gui.about:
+            text "[gui.about!t]\n"
+        text _("                  Made with Ren'Py.")
+    if main_menu:
+        textbutton _("Back"):
+            #style "return_button"
+            xcenter .07
+            ycenter .15
+            text_hover_color "#929292"
+            action Return()
+    else:
+        textbutton _("Back"):
+            #style "return_button"
+            xcenter .07
+            ycenter .15
+            text_hover_color "#929292"
+            action [Hide("about"), ShowMenu("preferences")]
 
 
 style about_label is gui_label
@@ -749,14 +763,21 @@ style about_label_text:
     size gui.label_text_size
 
 screen Characters():
-    tag menu
-    ## This use statement includes the game_menu screen inside this one. The
-    ## vbox child is then included inside the viewport inside the game_menu
-    ## screen.
-    use game_menu(_("Characters"), scroll="viewport"):
-        style_prefix "Characters"
-        # Build your screen here
-        #show bert happy
+    modal True
+    use freeTimeCounter
+
+    if main_menu:
+        imagebutton:
+            xcenter .08 ycenter .1
+            idle "goback.png"
+            hover "goback.png"
+            focus_mask True action Return()
+    else:
+        imagebutton:
+            xcenter .08 ycenter .1
+            idle "goback.png"
+            hover "goback.png"
+            focus_mask True action [Hide("Characters"), Function(hideCards), ShowMenu("preferences")]
 
 style characters_label is gui_label
 style characters_label_text is gui_label_text
@@ -778,14 +799,14 @@ screen save():
 
     tag menu
 
-    use file_slots(_(" ")) #removed save
+    use file_slots(_("Save")) #removed save
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_(" ")) #removed load
+    use file_slots(_("Load")) #removed load
 
 
 screen file_slots(title):
@@ -793,14 +814,10 @@ screen file_slots(title):
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(title):
-
         fixed:
-
             ## This ensures the input will get the enter event before any of the
             ## buttons do.
             order_reverse True
-
-            ## The page name, which can be edited by clicking on a button.
             button:
                 style "page_label"
 
@@ -906,11 +923,18 @@ style slot_button_text:
 screen preferences():
 
     tag menu
-#Preferences
-    use game_menu(_(" "), scroll="viewport"):
-
+    if main_menu:
+        modal True
+        add "menured.png"
+        add "vinegar.png"
+        add "menubgscroll2"
+        textbutton _("Back"):
+            style "return_button"
+            text_hover_color "#929292"
+            xcenter .07
+            action Return()
         vbox:
-
+            xcenter .5 ycenter .5
             hbox:
                 box_wrap True
 
@@ -921,23 +945,6 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-                #
-                # vbox:
-                #     style_prefix "radio"
-                #     label _("Rollback Side")
-                #     textbutton _("Disable") action Preference("rollback side", "disable")
-                #     textbutton _("Left") action Preference("rollback side", "left")
-                #     textbutton _("Right") action Preference("rollback side", "right")
-                #
-                # vbox:
-                #     style_prefix "check"
-                #     label _("Skip")
-                #     textbutton _("Unseen Text") action Preference("skip", "toggle")
-                #     textbutton _("After Choices") action Preference("after choices", "toggle")
-                #     textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
 
             null height (4 * gui.pref_spacing)
 
@@ -989,6 +996,74 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+
+    else:
+
+        use game_menu(_(" "), scroll="viewport"):
+
+            vbox:
+
+                hbox:
+                    box_wrap True
+
+                    if renpy.variant("pc") or renpy.variant("web"):
+
+                        vbox:
+                            style_prefix "radio"
+                            label _("Display")
+                            textbutton _("Window") action Preference("display", "window")
+                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
+
+                null height (4 * gui.pref_spacing)
+
+                hbox:
+                    style_prefix "slider"
+                    box_wrap True
+
+                    vbox:
+
+                        label _("Text Speed")
+
+                        bar value Preference("text speed")
+
+                        label _("Auto-Forward Time")
+
+                        bar value Preference("auto-forward time")
+
+                    vbox:
+
+                        if config.has_music:
+                            label _("Music Volume")
+
+                            hbox:
+                                bar value Preference("music volume")
+
+                        if config.has_sound:
+
+                            label _("Sound Volume")
+
+                            hbox:
+                                bar value Preference("sound volume") released Play("sound", "audio/beep.mp3")
+
+                                if config.sample_sound:
+                                    textbutton _("Test") action Play("sound", config.sample_sound)
+
+
+                        if config.has_voice:
+                            label _("Voice Volume")
+
+                            hbox:
+                                bar value Preference("voice volume") released Play("voice", "audio/beep.mp3")
+
+                                if config.sample_voice:
+                                    textbutton _("Test") action Play("voice", config.sample_voice)
+
+                        if config.has_music or config.has_sound or config.has_voice:
+                            null height gui.pref_spacing
+
+                            textbutton _("Mute All"):
+                                action Preference("all mute", "toggle")
+                                style "mute_all_button"
 
 
 style pref_label is gui_label

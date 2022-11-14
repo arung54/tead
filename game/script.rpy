@@ -825,4 +825,4 @@ transform bg:
 camera at parallax
 $dan = False
 #call screen bank_evidence
-jump bank8
+jump hospitalGo

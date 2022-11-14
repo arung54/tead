@@ -38,7 +38,19 @@ define gui.about = _p("""
 ## or semicolons.
 
 define build.name = "tead2162021"
-
+define pers = ""
+define ftecounter = 0
+define fte_bert = -2
+define fte_sam = -1
+define fte_stel = -1
+define fte_drac = -1
+define fte_frog = -1
+define fte_jenn = -1
+define fte_laur = -1
+define fte_sid = -1
+define fte_shah = -1
+define fte_cath = -1
+define fte_kais = -1
 
 ## Sounds and music ############################################################
 
