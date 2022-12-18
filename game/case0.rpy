@@ -1,5 +1,12 @@
 $dan = True
 
+label splashscreen:
+    scene black
+    with Pause(1)
+    show tead with dissolve
+    with Pause(2)
+    return
+
 screen intros():
     imagemap:
         ground "bg startmeet.png"

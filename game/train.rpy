@@ -1289,7 +1289,7 @@ label testft:
    #FREE TIME ONE
    #############
    #JULIAN note to self
-
+    play music "audio/cobwebs.mp3" fadein 5.0
     tut "Throughout the game, there will be free time segments."
     tut "In these segments, you will have the opportunity to talk with other participants and get to know them better."
     tut "You can use the map icon, in the top right, to navigate around the train and find people."
@@ -1345,6 +1345,7 @@ label postFT1:
 
 label midcar4:
     scene bg trainmid at bg
+    play music "audio/rush.mp3" fadein 1.0
     $ statusnt("Bar Car", "dan", ch = 1, sun = 2)
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade

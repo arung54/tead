@@ -734,11 +734,12 @@ screen about():
         text _("                  Graphics, Writing: Julian Pagliaccio\n")
         text _("                  Music, Coding, Writing: Arun Ganesh\n")
         text _("                  Music: Andrew Kim\n")
-        text _("                  Shirtless Pic: Shahar Syed\n")
-        text _("                  Alpha Testing: You!\n")
+        text _("                  Music: Haunted Houses and CobWebs by HoliznaCC0,")
+        text _("                  Unity and Anachronist by Kevin MacLeod. ")
+        text _("                  All music credits and links found on our website. ")
         if gui.about:
             text "[gui.about!t]\n"
-        text _("                  Made with Ren'Py.")
+        text _("                  Ren'Py engine")
     if main_menu:
         textbutton _("Back"):
             #style "return_button"

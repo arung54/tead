@@ -824,5 +824,5 @@ transform bg:
 ###########
 camera at parallax
 $dan = False
-#call screen bank_evidence
-jump hospitalGo
+stop music #"audio/haunted.mp3" fadeout 1.0
+jump testft
