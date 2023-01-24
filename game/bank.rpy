@@ -2631,8 +2631,25 @@ label trial4c:
         "Right before I opened the break room door.":
             bi "That's a bit too specific, it could have been earlier."
             jump trial4c
-    b "If Sam committed suicide, Sam would have had to do it after the door closed."
-    b "Since, well, Sam had to open the door first to get into the break room."
+    b "If Sam committed suicide, Sam would have had to close the door first."
+    j "Couldn't the door have closed on its own?"
+    j "Some doors are like that, to save energy from heating and stuff."
+    b "No, the door couldn't have closed on its own because..."
+    call screen bankEvidenceTrial(-1, 1, "trial4c2") with dissolve
+label trial4c2:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "When I was investigating in the break room, the door stayed open the entire time."
+    b "So we know it's not a self-closing door."
+    b "So Sam had to be the one to close the door, which Sam obviously couldn't do if they were dead at the time."
+    b "Which means the suicide would have had to happen after the door closed."
     j "Bert, that's not very insightful..."
     b "No, but think about it."
     b "I don't think it's possible the gun was fired after the door closed, because..."
@@ -2648,9 +2665,9 @@ label trial4d:
         xcenter .75
     with dissolve
     b "I saw the door to the break room close."
-    b "If a shot was fired, I was in the hallway when it happened."
-    b "So I would have heard it."
-    j "But weren't you in the lobby for all the gunshots?"
+    b "Which means after the door closed, I was in the hallway, very close to the break room."
+    b "So I would have heard gunshots. But I didn't."
+    j "But weren't you in the lobby for all the previous gunshots?"
     j "Your ears must have been ringing, maybe you just couldn't hear anything?"
     b "No, my ears were ringing but I was still able to hear the door close."
     b "That would have been way quieter than the gunshot."
@@ -3225,11 +3242,11 @@ label trial4p:
     i "There's some resistance from the belt, but..."
     i "It's not breaking."
     b "Okay, so it would have been possible to tie the belt and then leave the room."
-    b "So if it was tied to the door, it could have been tied before I entered the break room."
+    b "So if it was tied to the door, it could have been tied before I entered the brea-"
     blank "*click*"
     i "Oh, huh."
     b "What happened?"
-    i "I let go of the handle and the door closed."
+    i "I let go of the handle and the door closed a bit later."
     b "I guess that makes sense if the belt is pulling on it enough to cause some resistance..."
     i "And now the other question..."
     hide sid with moveoutright
@@ -3241,6 +3258,7 @@ label trial4p:
     b "And the belt broke."
     b "Anything else we need to figure out?"
     i "No, I think that's everything."
+    $ bank_extra[11] = True
     tut "Torn Elastic Belt's description has been updated in the evidence menu."
     j "Are we sure all the belts are the same?"
     j "Maybe different belts have different amounts of stretch..."
@@ -3248,7 +3266,7 @@ label trial4p:
     j "Hm..."
     j "I'll go take a quick look and see if the belts are all the same size, at least."
     j "Just to be sure, you know..."
-    j "It's not like al lthe guards would have been the same size."
+    j "It's not like all the guards would have been the same size."
     j "You guys can go back to the lobby, if you want."
     b "No, we should go with you just to double-check."
     j "Oki!"
@@ -3262,7 +3280,7 @@ label trial4p:
     bi "It's all very suspicious."
     bi "Is Jenny trying to pin her murder on Sam?"
     bi "Is Lauren trying to pin her murder on me?"
-    bi "Is Sid leading us down the wrong road intentionally?"
+    bi "Is Sid leading us down the wrong road intentionally?..."
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
     $ showchibint("freddy", "jenny", "lauren", "sid")
@@ -3272,17 +3290,83 @@ label trial4p:
     show lauren ind:
         xcenter .75
     with dissolve
+    bi "Before I could finish that train of thought, we were back in the lobby."
     l "Welcome back. What'd you guys find?"
     i "The belt reaches from the table leg to the door."
+    i "It pulls on it with enough force to close the door slowly."
     i "And if you tie it at both ends, you can open the door without breaking it."
     i "But a quick yank on the door does cause it to break."
     l "Interesting..."
     l "Bert may be on to something after all."
-    j "But I still don't understand..."
-    j "Why would Sam or anyone else tie the belt like that?"
-    l "Maybe to try to lock the corpse in the break room?"
-    l "If we couldn't find it, maybe we'd all just die by default..."
-    j "It's an interesting idea, but..."
-    j "The belt didn't actually prevent the door from opening."
-    l "Oh, yeah, you just mentioned that."
-    l "Maybe Sam set it up and didn't have time to check?"
+    hide sid ind with moveoutleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "This seems like a dead end to me."
+    j "Sure, the belt probably had something to do with the murder."
+    j "But it doesn't explain other contradictions between Bert's alibi and Sam not being the killer."
+    b "Other contradictions?"
+    j "Yeah, I didn't bring it up earlier, but..."
+    python:
+        startBankTrial("jenny", "Jenny: If Sam didn't commit suicide, that means {color=#f00}you saw someone else fled the lobby{/color}.", -1,
+        "jenny", "Jenny: Everyone else wasn't in the break room when Bert found Sam, {color=#f00}so the killer wasn't in the break room when the body was found{/color}.", -1,
+        "jenny", "Jenny: But if the killer didn't run in there, {color=#f00}you wouldn't have seen the break room door close{/color}.", -1,
+        "jenny", "Jenny: Not to mention, the gun you saw the killer holding {color=#55f}is the same one we found in the break room{/color}.", -1,
+        2, 3, "trial4q")
+label trial4q:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "With what we know about the belt..."
+    b "It's very plausible for me to have seen the break room door close, if the belt was used to close it."
+    b "Suppose the belt was attached to the door before the killer shot at Freddy and I in the lobby."
+    b "Then all they would have to do is open the door while they were running past it."
+    b "They had a head start on me, that's plenty of time to open the door, lob the gun..."
+    b "And then get around the hallway corner before I could see them."
+    j "But wait..."
+    j "Earlier we said that Sam couldn't have shot the gun because it would have been while you were in the hallway."
+    j "And we knew you were in the hallway because Sam would have been the one to close the door, which you saw happen."
+    j "But now you're saying the belt closed the door."
+    j "Which means Sam could have shot the gun while you were still far away in the lobby!"
+    l "...She actually has a good point here."
+    l "We just disproved what we thought must be true earlier, about when Sam would have had to shoot themself."
+    l "It's now a possibility again."
+    l "The belt could even have been diversion by Sam."
+    l "Bert, do you remember exactly how many seconds passed before you gave chase?"
+    b "Uh... no. Just that I was in shock for a bit before I did."
+    l "Then maybe Sam had time to tie the belt after leaving the lobby."
+    b "Why would Sam do that?"
+    l "Maybe to lock the room so we couldn't find their corpse?"
+    b "No, because I saw the door close, presumably due to the belt."
+    b "That means if Sam tied the belt after reaching the break room, they opened the door at least once."
+    b "They would have known it didn't lock the door."
+    j "Maybe the belt messed with the other evidence somehow."
+    j "Like when it broke it swept around the floor and moved the gun around!"
+    bi "I could spend all day knocking down these ideas..."
+    bi "I need to present a definitive point against what they're saying if I want this to end anytime soon."
+    b "Let's assume that Sam was the one who tied the belt."
+    b "Then one of us did something that we're not confessing to."
+    b "It's related to..."
+    call screen bankEvidenceTrial(-1, 3, "trial4r") with dissolve
+label trial4r:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "Half the belt is missing."
+    b "If it was tied to the door when Sam died, then obviously Sam couldn't have removed it."
+    b "Which means... one of us did."
+    b "Does anyone want to own up to that?"
+    l "..."
+    j "..."
+    b "Then I {i}really{/i} think we should consider the possibility that someone else is the murderer."
