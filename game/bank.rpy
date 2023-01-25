@@ -3340,7 +3340,9 @@ label trial4q:
     l "Bert, do you remember exactly how many seconds passed before you gave chase?"
     b "Uh... no. Just that I was in shock for a bit before I did."
     l "Then maybe Sam had time to tie the belt after leaving the lobby."
-    b "Why would Sam do that?"
+    b "But we also said the number of bullets doesn't make sense if it was a suicide."
+    j "Maybe there's another source of ammo we didn't find?"
+    b "Okay, but why would Sam tie the belt to the door?"
     l "Maybe to lock the room so we couldn't find their corpse?"
     b "No, because I saw the door close, presumably due to the belt."
     b "That means if Sam tied the belt after reaching the break room, they opened the door at least once."
@@ -3349,6 +3351,7 @@ label trial4q:
     j "Like when it broke it swept around the floor and moved the gun around!"
     bi "I could spend all day knocking down these ideas..."
     bi "I need to present a definitive point against what they're saying if I want this to end anytime soon."
+    b "Okay, fine."
     b "Let's assume that Sam was the one who tied the belt."
     b "Then one of us did something that we're not confessing to."
     b "It's related to..."
@@ -3369,4 +3372,101 @@ label trial4r:
     b "Does anyone want to own up to that?"
     l "..."
     j "..."
-    b "Then I {i}really{/i} think we should consider the possibility that someone else is the murderer."
+    b "Then I {i}really{/i} think we should consider the possibility that someone else is the murderer..."
+    b "And they're not telling us that they removed the belt."
+    hide lauren with moveoutright
+    show sid ind with moveinright:
+        xcenter .75
+    i "Jenny..."
+    i "I think I have to agree with Bert on this one."
+    i "We might be wasting a lot of time barking up the wrong tree."
+    i "Just like dumb adults do!"
+    i "Can't you guys be cool adults?"
+    j "..."
+    j "Okay, fine."
+    j "I still think it was a suicide, but..."
+    j "I guess we can't rule every other possibility out entirely."
+    b "Great, now that we're all on the same page..."
+    i "Well, let's think about who could have done it."
+    i "..."
+    j "..."
+    i "Okay, I'm stumped."
+    i "If it wasn't Sam then it seems like there's no clues about who it could be."
+    j "So... you think it was a suicide?"
+    i "Well, no, just..."
+    i "How do we figure anything out if it isn't Sam?"
+    b "Well, we can narrow it down a bit."
+    b "Freddy and I were in the lobby with the shooter, so we can't have been the shooters."
+    b "Plus, based on our discussion so far, we think the killer set up the belt and lobbed the gun into the break room."
+    b "Then they turned the corner to the east of the building before I could see them."
+    b "Which is, conveniently, where..."
+    b "Well, the only candidates are one of you three."
+    show sid ind:
+        xcenter .75
+        linear 0.15 xcenter .5
+    show lauren ind with moveinright:
+        xcenter .75
+    b "All three of you were."
+    j "Wait, all three of us were there?"
+    j "I saw Sid napping but I didn't see Lauren..."
+    l "Huh, I didn't see you or Sid."
+    i "Yeah, I didn't see either of you..."
+    bi "Right, they told me their alibis, but didn't tell them directly to each other."
+    b "Now might be a good time for everyone to recap where they were before we found the body..."
+    hide sid
+    hide lauren
+    with moveoutright
+    show jenny ind:
+        xcenter .25
+        linear 0.5 xcenter .15
+    j "Okay, so where was I..."
+    j "I finished taking a shower, walked out of the locker room into the hall, saw the green lights."
+    j "Oh, and the safe door was open. I saw Sid napping on the couch."
+    j "Then I heard Bert yell, and went to see what happened."
+    hide jenny with moveoutleft
+    show sid ind with moveinleft
+    i "Um, I was sleeping on the couch, like Jenny said."
+    i "When I woke up, I noticed the red light in the hallway had turned green."
+    i "I went to go check out the safe, then I heard Bert yell before I could go in."
+    i "So I ran from the safe, past the office, to the break room."
+    hide sid with moveoutleft
+    show lauren ind with moveinleft
+    l "I was searching for clues in the director's office."
+    l "I couldn't find anything, so I went to go look for other people."
+    l "I walked to the locker room, didn't find anyone there."
+    b "And the safe was closed when you walked from the office to the locker room?"
+    l "Yep. After that I heard you scream, so I came to the break room."
+    show lauren ind:
+        xcenter .5
+        linear 0.15 xcenter .75
+    show sid ind with moveinleft
+    show jenny ind with moveinleft:
+        xcenter .25
+    j "Hm... it's kind of inconvenient."
+    j "None of us really saw each other, except me seeing Sid."
+    j "So we don't really have a way to confirm each other's stories."
+    i "Hey! You can confirm I was taking a nap!"
+    l "Yeah, but I don't know what you were doing before or after Jenny saw you..."
+    l "You could have even been fake sleeping."
+    i "Hmph, like I could ever pretend to sleep on a couch as comfy as that."
+    i "You've never heard the Signature Sid Siren Snore!"
+    i "A sound only the most asleep man could ever make!"
+    j "...The what?"
+    i "No one could recreate that sound on purpose!"
+    l "Well, that means Jenny can't confirm she heard the sound then."
+    j "Yeah, it seemed like you were sleeping pretty lightly..."
+    i "...Shoot!"
+    b "Enough about the snores..."
+    b "It's true that none of you can confirm each other's alibis."
+    b "But that doesn't mean you can't refute them..."
+    l "What do you mean by that?"
+    b "There's a pair of your alibis that seem to contradict each other."
+    $alibiset = set()
+    menu:
+        b "That pair is..."
+        "Jenny and Lauren":
+            b "PLACEHOLDER"
+        "Jenny and Sid":
+            b "PLACEHOLDER"
+        "Lauren and Sid":
+            b "PLACEHOLDER"

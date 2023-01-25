@@ -467,7 +467,7 @@ label bankSid:
     show newevidencefound with dissolve
     pause 1
     hide newevidencefound with dissolve
-    blank "Sid's account was added to evidence."
+    blank "Sid's Account was added to evidence."
     b "Okay, thanks Sid, that's helpful to know."
     b "Interesting that the safe is open..."
     i "Do you need help investigating it?"
