@@ -3435,7 +3435,7 @@ label trial4r:
     l "I couldn't find anything, so I went to go look for other people."
     l "I walked to the locker room, didn't find anyone there."
     b "And the safe was closed when you walked from the office to the locker room?"
-    l "Yep. After that I heard you scream, so I came to the break room."
+    l "Yep. After that I went to the break room and found you and Jenny."
     show lauren ind:
         xcenter .5
         linear 0.15 xcenter .75
@@ -3462,11 +3462,145 @@ label trial4r:
     l "What do you mean by that?"
     b "There's a pair of your alibis that seem to contradict each other."
     $alibiset = set()
+label trial4t:
     menu:
+        set alibiset
         b "That pair is..."
         "Jenny and Lauren":
-            b "PLACEHOLDER"
+            b "Jenny and Lauren."
+            j "Us?"
+            j "But... I was just telling the truth."
+            l "I don't understand... what about our stories doesn't add up?"
+        label trial4ta:
+            menu:
+                b "The contradiction is..."
+                "The locker room.":
+                    b "Lauren would have ran into Jenny in the locker room!"
+                    j "...Or I left before she got there."
+                    b "Oh... I guess you could have missed each other, yeah..."
+                    jump trial4ta
+                "The safe.":
+                    b "The safe!"
+                    b "Lauren said the safe was closed, but Jenny said she saw the safe opened when she left the locker room."
+                    b "Which means, Lauren must have passed by the safe before Jenny left the locker room."
+                    b "But then she would have seen Sid napping on the couch, since Jenny saw Sid sleeping and the safe opened."
+                    b "So we know Sid didn't wake up until after the safe was opened."
+                    l "What if Sid left the couch, then came back before Jenny saw him?"
+                    b "Well even then, either Jenny would have run into you in the locker room..."
+                    b "Or, you would have left the locker room before Jenny did, and heard me scream."
+                    j "Hm..."
+                    j "Yeah, there's a lot of possibilities, but all of them make Lauren's alibi and mine seem inconsistent."
+                    l "Wait, couldn't the safe door have just closed after Jenny left the locker room, but before I left the office?"
+                    l "It's not like once it's open it has to stay open."
+                    b "The safe door, sure, but as far as I know there's no way to lock the safe itself."
+                    i "Yeah, surely you would noticed the lights!"
+                    i "After all, who could resist the possibility of taking all that schmoney!"
+                    bi "...Most of us, but that's besides the point."
+                    l "Wait, the lights?"
+                    b "Yeah, they changed color from red to green, presumably because the safe opened."
+                    l "...Oh."
+                    l "Okay, this is going to seem very convenient, but you have to trust me on this."
+                    l "I'm red-green colorblind."
+                    b "...Huh?"
+                    l "Yeah, I know it's rare for girls but... I am."
+                    l "I know there's not really any way for me to prove it, but you have trust me..."
+                    l "Damn, if Sam was still alive they could confirm."
+                    l "I asked Sam if there was a cherry soda in the hospital vending machine, and they thought I was dumb."
+                    l "But it's because I couldn't tell..."
+                    l "I'd have no way of knowing who would be murderer in the bank when I was in the hospital!"
+                    l "So it's not like I could have done that as a convenient excuse..."
+                    b "Um... I'm not really sure how we can confirm or deny this."
+                    if len(alibiset) > 3:
+                        j "Bert, I think we should trust Lauren for now and see what else we can figure out."
+                        j "Is there anything else about our alibis that's suspicious?"
+                        b "Yeah, actually, there's another pair of alibis that seems fishy..."
+                        jump trial4t
+                "The screaming.":
+                    b "Lauren should have heard me screaming!"
+                    l "Not necessarily."
+                    l "It's possible I was in the office or locker room when it happened."
+                    l "Maybe the scream wasn't loud enough to be heard if you weren't in the hallway."
+                    b "Oh..., yeah that's true."
+                    b "I was on the other side of the building..."
+                    jump trial4ta
+                "You didn't pass each other.":
+                    j "Well, Lauren reached you in the break room after me, right?"
+                    j "So maybe she just went to the locker room after I left it, then followed my path."
+                    l "Yeah, if anything that seems like the most consistent part of our stories..."
+                    b "Oh... uh, haha, slip of the tongue!"
+                    jump trial4ta
+
+
         "Jenny and Sid":
-            b "PLACEHOLDER"
+            b "Jenny and Sid."
+            j "Huh?"
+            show sid mad
+            j "That's surprising... I would have thought that I'd indirectly confirmed Sid's alibi."
+            j "After all, I did see him sleeping."
+            i "Yeah, what gives punk?"
+            b "Well, what doesn't make sense is..."
+        label trial4tb:
+            b "The contradiction is..."
+            menu:
+                "The locker room.":
+                    b "The locker room!"
+                    i "...The locker room?"
+                    i "The one I never claimed to go into in my alibi?"
+                    b "Uh..."
+                    bi "Yeah, I guess nothing about the locker room really pertains to Sid's alibi..."
+                    jump trial4tb
+                "The safe.":
+                    b "You have conflicting stories about the safe!"
+                    j "...We both said it was open."
+                    i "Yeah, that's us agreeing with each other..."
+                    show sid ind
+                    i "Oh, I get it."
+                    i "Thanks Bert! You're telling us we're innocent!"
+                    b "No, wait, let me rethink that."
+                    i "So... you still think I'm still not innocent?"
+                    show sid mad
+                    i "Grrr..."
+                    bi "I'd better fix my answer before Sid gets too mad..."
+                    jump trial4tb
+                "The screaming.":
+                    b "Both of you claimed to hear someone yell..."
+                    i "Yeah, that makes sense!"
+                    i "After all, we were both in the hallway when you screamed."
+                    b "Well, it's not about where you claimed to have hear me, but when."
+                    b "Jenny claimed to hear me scream when Sid was asleep."
+                    b "But Sid also claimed to hear me scream..."
+                    b "After he woke up."
+                    b "And I don't remember screaming twice."
+                    i "..."
+                    if len(alibiset) > 3:
+                        j "Bert, I think we should trust Lauren for now and see what else we can figure out."
+                        j "Is there anything else about our alibis that's suspicious?"
+                        b "Yeah, actually, there's another pair of alibis that seems fishy..."
+                        jump trial4t
+                "You didn't pass each other.":
+                    j "...Bert, I said I passed Sid when I was going towards you screaming."
+                    j "How else would I see him sleeping?"
+                    b "Oh."
+                    b "...Yeah, but Sid didn't pass you!"
+                    b "Or see you pass him!"
+                    j "I mean, that's true, but it's not a contradiction..."
+                    b "...Yeah, you're right."
+                    b "Let me rethink this..."
+                    jump trial4tb
+
         "Lauren and Sid":
             b "PLACEHOLDER"
+            b "The contradiction is..."
+        label trial4tc:
+            menu:
+                "The locker room.":
+                    b "PLACEHOLDER"
+                    jump trial4tc
+                "The safe.":
+                    b "PLACEHOLDER"
+                    jump trial4tc
+                "The screaming.":
+                    b "PLACEHOLDER"
+                "You didn't pass each other.":
+                    b "PLACEHOLDER"
+                    jump trial4tc
