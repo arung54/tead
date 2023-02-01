@@ -3510,11 +3510,14 @@ label trial4t:
                     l "I'd have no way of knowing who would be murderer in the bank when I was in the hospital!"
                     l "So it's not like I could have done that as a convenient excuse..."
                     b "Um... I'm not really sure how we can confirm or deny this."
-                    if len(alibiset) > 3:
+                    if len(alibiset) < 3:
                         j "Bert, I think we should trust Lauren for now and see what else we can figure out."
                         j "Is there anything else about our alibis that's suspicious?"
                         b "Yeah, actually, there's another pair of alibis that seems fishy..."
                         jump trial4t
+                    else:
+                        b "I guess, let's assume Lauren is telling the truth for now."
+                        bi "Anyway, that's all the contradictions..."
                 "The screaming.":
                     b "Lauren should have heard me screaming!"
                     l "Not necessarily."
@@ -3572,11 +3575,32 @@ label trial4t:
                     b "After he woke up."
                     b "And I don't remember screaming twice."
                     i "..."
-                    if len(alibiset) > 3:
-                        j "Bert, I think we should trust Lauren for now and see what else we can figure out."
-                        j "Is there anything else about our alibis that's suspicious?"
-                        b "Yeah, actually, there's another pair of alibis that seems fishy..."
+                    j "Sid?"
+                    i "Did nobody else scream afterwards?"
+                    i "Maybe I heard someone else react after I woke up..."
+                    j "Oh, you think you heard me or Lauren?"
+                    i "Maybe..."
+                    j "I mean, we were both shocked when we saw Sam..."
+                    b "But... were you loud enough to be heard from across the bank?"
+                    b "When I found the body I was yelling into the hallway so people would hear."
+                    b "But Jenny and Lauren wouldn't have made a deliberate attempt to be heard..."
+                    i "...Wait, why's all the pressure on me?"
+                    i "What if Jenny's lying about the timing of the yell to incriminate me?!"
+                    i "Or she's lying about seeing me sleeping!"
+                    i "It's not like I saw her!"
+                    b "...Huh."
+                    j "Um... I mean, I wasn't lying?"
+                    i "That's easy for you to say punk!"
+                    i "I can say I wasn't lying either!"
+                    if len(alibiset) < 3:
+                        b "I don't think there's any way to tell which of you is lying..."
+                        b "Maybe we table this for now, and look for other contradictions."
+                        j "Others?"
+                        b "Yeah, there's another pair of alibis that bothers me..."
                         jump trial4t
+                    else:
+                        b "Hmm, I don't think there's a way to figure out who's lying..."
+                        b "But, that's all the contradictions..."
                 "You didn't pass each other.":
                     j "...Bert, I said I passed Sid when I was going towards you screaming."
                     j "How else would I see him sleeping?"
@@ -3587,20 +3611,78 @@ label trial4t:
                     b "...Yeah, you're right."
                     b "Let me rethink this..."
                     jump trial4tb
-
         "Lauren and Sid":
-            b "PLACEHOLDER"
+            b "Lauren and Sid."
+            i "Huh?"
+            show sid mad
+            i "Whatchu trying to say, punk?"
+            b "All I'm trying to say is, your alibi and Lauren's alibi are contradictory."
             b "The contradiction is..."
         label trial4tc:
             menu:
                 "The locker room.":
-                    b "PLACEHOLDER"
+                    b "The locker room!"
+                    i "...The locker room?"
+                    i "The one I never claimed to go into in my alibi?"
+                    b "Uh..."
+                    bi "Yeah, I guess nothing about the locker room really pertains to Sid's alibi..."
                     jump trial4tc
                 "The safe.":
-                    b "PLACEHOLDER"
+                    b "The safe!"
+                    b "Sid said he saw it open, but Lauren said when she passed it, it was closed!"
+                    j "Um... Lauren reached the break room after Sid."
+                    j "So presumably her alibi occurred after Sid's."
+                    i "Yeah punk! Maybe the safe opened between when Lauren passed it and when I did."
+                    b "Oh... yeah, that's true."
+                    bi "..."
+                    bi "I think there's something wrong with what we just discussed, but..."
+                    bi "They're right that the safe is not the most pressing part of it."
                     jump trial4tc
                 "The screaming.":
-                    b "PLACEHOLDER"
-                "You didn't pass each other.":
-                    b "PLACEHOLDER"
+                    b "Sid said he heard me yelling, but Lauren didn't!"
+                    l "So... what's the issue?"
+                    l "I could have just been in the office while it happened."
+                    i "And I could have been in the hallway when it happened!"
+                    l "Yeah, we didn't see each other, so I don't see a contradiction there."
+                    b "Um..."
+                    b "Okay, that's not a contradiction, but what is a contradiction is..."
                     jump trial4tc
+                "You didn't pass each other.":
+                    b "Sid, remind me where you went after you woke up on the couch?"
+                    i "To the front of the safe, then to the break room."
+                    b "So you passed the locker room, then the safe, then the office."
+                    i "Yeah, what about it"?
+                    b "And Lauren, you left from the office, passed the safe..."
+                    l "...And then checked the locker room."
+                    b "Right. And... you didn't see Sid on the couch."
+                    l "No, I didn't."
+                    b "So somehow, you two went around the safe in opposite directions..."
+                    b "And didn't run in to each other."
+                    i "Wait!"
+                    i "Couldn't Lauren have just been in the office the whole time I was walking around?"
+                    b "Well, maybe..."
+                    b "But she reached the break room before you did."
+                    b "So if that's what happened..."
+                    b "Somehow, Lauren did a whole lap around the bank in the time it took you to walk a few feet."
+                    b "And even if that happened..."
+                    b "How would you not have run into each other in the hallway after you both looped around the safe?"
+                    l "...Yeah, you're right."
+                    l "We should have run into each other."
+                    i "So... Lauren is lying then."
+                    l "I am?"
+                    i "Well, I'm not!"
+                    l "Sid... I think you're the one who's lying."
+                    l "Bert, surely there's a way to prove one of our alibis."
+                    b "Unfortunately... I don't think there is."
+                    b "Jenny saw Sid sleeping, but otherwise..."
+                    b "I mean, unless there's something else one of you hasn't told us."
+                    i "Nope. I'm telling the truth!"
+                    i "And Lauren's lying."
+                    if len(alibiset) < 3:
+                        bi "This is getting nowhere..."
+                        b "Okay, maybe it would help to point out another contradiction..."
+                        jump trial4t
+                    else:
+                        bi "This is getting nowhere..."
+                        b "Okay, let's ignore that for now."
+                        b "Accounting for all the contradictions..."
