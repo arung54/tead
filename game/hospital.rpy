@@ -175,6 +175,8 @@ label hospitalGo:
     $showchibint("dracula", "lauren", "sid")
     $statusnt("Cafeteria", "bert", ch=3, sun=0)
     with dissolve
+
+    #febreview
     bi "Oh, right. Sam tried to kill Stella."
     bi "And probably didn't feel very good about it now."
     bi "We didn't really have time to debrief after figuring out it was Catherine who did it."
@@ -193,11 +195,14 @@ label hospitalGo:
 
         "The photo composites.":
             bi "I joined Sid by the photo composites."
-            show sid ind with dissolve
+            show bg friends at bg
+            show sid ind:
+                xcenter .75
+            with dissolve
             i "Hey Bert."
             b "Hey Sid. What's happening here?"
             i "It seems like every year they put up a photo of everyone who got discharged that year."
-            bi "Each photo composite had about 50 or so photos on it."
+            bi "Each photo composite had about 10 people in it."
             b "Must be a pretty small hospital, if only this many people cycle per year..."
             i "It's kind of nice, in a way."
             b "Nice?"
@@ -407,7 +412,7 @@ label hospitalGo:
     bi "Well, I guess that's everything to see in this room."
     bi "Unless I want to stare at some really boring tables."
     bi "In the meantime, it seemed everyone had filtered into the cafeteria."
-    $showchibint("dracula", "lauren", "sid", "sam", "shahar", "jenny", "frog")
+    $showchibint("dracula", "lauren", "sid", "sam", "shahar", "jenny", "freddy")
     show jenny happy with dissolve
     j "Hey Bert! Seems like we're in a hospital now!"
     bi "That's... not really something to be cheery about."
@@ -618,7 +623,7 @@ label hospitalGo:
     show lauren ind:
         xcenter .25
         linear 0.15 xcenter .5
-    show sam with dissolve:
+    show sam with dissolve:                      #all sams need to be sam ind etc febreview
         xcenter .25
     bi "Except for one person."
     s "I guess... I've been committing crimes perpetually..."
@@ -675,7 +680,7 @@ label hospitalGo:
     b "What's the room arrangement?"
     j "Oh yeah, I guess you were looking around while we discussed this."
     show map3uirooms with dissolve:
-        alpha 0.5
+
         xcenter .5
         ycenter .5
     j "So there's two hallways, one to the left of the room we're in if you're facing the kitchen."
@@ -689,7 +694,7 @@ label hospitalGo:
     b "Good night Freddy. We'll see you in the morning!"
     f "G-good night..."
     scene black with fade
-    bi "We all made our way back to our rooms."
+    bi "We all made our way back to our rooms." #febreview
     bi "I had trouble sleeping."
     bi "Mostly because Sesame didn't like the cold floor and instead insisted on laying on me."
     bi "Turns out, she wasn't declawed."
@@ -715,7 +720,7 @@ label hospitalGo:
     bi "Sesame was standing near the opposite door."
     bi "Right, maybe I'm one of the guards today."
     b "Thanks Sesame."
-    scene black with dissolve
+    scene black with dissolve #febreview
     bi "I stepped outside into the hallway."
     bi "Guess it's time to explore."
     scene bg hosphallbotright at bg with dissolve
@@ -947,7 +952,7 @@ label hospitalGo:
 label testwindow:
     scene black with dissolve
     scene bg hospkitchen at bg with dissolve
-    $showchibiwindow(["jenny"], [])#copy paste
+    $showchibiwindow(["jenny"], [])#copy paste  #febreview #febreview
     $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
     bi "As I entered the kitchen, I looked through the window to the cafeteria, just to make sure..."
@@ -1785,7 +1790,7 @@ label chess3:
     show sesame with dissolve:
         ycenter .61
     ses "Mew!"
-    b "Morning Sesame."
+    b "Morning Sesame."  #febreview
     b "I'm weirdly excited for today... being on the guard side was quite lonely."
     b "Not that Jenny isn't good company, but it often felt like it was just the two of us..."
     b "Now we can actually talk to everyone without a literal wall between us."
@@ -2304,7 +2309,7 @@ label chess3:
     ses "Mew?"
     b "Hey Sesame, weird day, huh?"
     ses "Prrrrr."
-    b "Do cats even understand what murder is?"
+    b "Do cats even understand what murder is?"  #febreview
     ses "Ssssss."
     bi "She was leaning and bowing her head."
     b "Do you... want head scratches?"
@@ -2471,7 +2476,7 @@ label laurentime:
     with dissolve
     j "Did you find him?"
     lf "...He's dead."
-    show bert sad:
+    show bert sad at inwindow behind hospwindowoverlay:
         xcenter .25
     bt "...Dead?"
     lf "Yeah. He's leaning against one of the bars in his cell."
@@ -3877,7 +3882,7 @@ label trial3x:
     bi "I wanted to be mad at Dracula, but I knew what Lauren said was correct."
     bi "He might have been like the rest of us. A decent person outside the game. Or at least trying to be."
     bi "And he was trying to help us, even if only for his selfish reasons..."
-    bi "So yeah, I guess I'll listen to what he has to say."
+    bi "So yeah, I guess I'll listen to what he has to say." #febreview
     scene black with dissolve
     scene bg hospfancy at bg
     $showchibint("jenny", "dracula", "sid", "freddy", "lauren", "sam")
@@ -3911,7 +3916,7 @@ label trial3x:
     d "First, this isn't exactly a surprise, but my name isn't Dracula."
     show jenny scared with moveinleft:
         rotate 45
-        xcenter -0.1
+        xcenter 0.1
         ycenter .5
     j "Whaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat?!?!?!?!?!?!?!"
     hide jenny with moveoutleft
@@ -3978,7 +3983,7 @@ label dracAsk:
             dr "So when we got here, I thought..."
             dr "Perhaps he regained his memory. And this was all his doing."
             dr "He may have remembered the events leading to his lobotomy."
-            dr "So he'd have a reason to put us through this game"
+            dr "So he'd have a reason to put us through this game."
             dr "And even if he wasn't the Game Master, if he remembered who I was, you all would kill me regardless."
             dr "So I set about destroying the evidence, as it were."
             dr "When I got to the computer, I deleted his record from there, believing what Bert had said."
@@ -4027,7 +4032,7 @@ label dracAsk:
             b "And indirectly, Stella was too."
             b "Surely this ties to the game, right?"
             dr "You'd be foolish to think it didn't."
-            dr "That's part of why I killed Shahar; he seemed like the most likely to seek some sort of revenge"
+            dr "That's part of why I killed Shahar; he seemed like the most likely to seek some sort of revenge."
             jump dracAsk
 
         "Who do you think is behind the game?" if len(menuset) >= 2:
@@ -4042,7 +4047,7 @@ label dracAsk:
             b "You think he's the Game Master?"
             b "But he's not here with us..."
             dr "Correct."
-            dr "I'm not sure how we are meant to win if we can't kill him, as he is not a participant."
+            dr "I'm not sure how we are meant to win if we can't kill him, as he is not a participant." #febreview
             dr "But that is my best theory."
             dr "Maybe the bitter reality is, he will kill us one by one in this game."
             dr "The game is not winnable, it is just entertainment for him."
@@ -4060,6 +4065,7 @@ label dracAsk:
             dr "That is no longer my concern, anyway."
             dr "Whether you all live, die trying, or die having given up."
             dr "It would be foolish to waste my last breaths worrying about that."
+            jump dracAsk
 
         "How do you know how the chips work?" if len(menuset) >= 3:
             dr "Simple."
@@ -4107,7 +4113,7 @@ label dracAsk:
             bi "But when my brain can be turned off with a flip of a switch..."
             bi "Winning seems impossible."
             play music "audio/ominous.mp3" fadein 3.0
-            show endch3 with Dissolve(3.0)
+            show endch3 with Dissolve(3.0) #febreview
             pause
             stop music fadeout 3.0
             hide endch3 with Dissolve (3.0)

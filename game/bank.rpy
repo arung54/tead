@@ -3471,7 +3471,7 @@ label trial4t:
             j "Us?"
             j "But... I was just telling the truth."
             l "I don't understand... what about our stories doesn't add up?"
-        label trial4ta:
+            label trial4ta:
             menu:
                 b "The contradiction is..."
                 "The locker room.":
@@ -3542,7 +3542,7 @@ label trial4t:
             j "After all, I did see him sleeping."
             i "Yeah, what gives punk?"
             b "Well, what doesn't make sense is..."
-        label trial4tb:
+            label trial4tb:
             b "The contradiction is..."
             menu:
                 "The locker room.":
@@ -3618,7 +3618,7 @@ label trial4t:
             i "Whatchu trying to say, punk?"
             b "All I'm trying to say is, your alibi and Lauren's alibi are contradictory."
             b "The contradiction is..."
-        label trial4tc:
+            label trial4tc:
             menu:
                 "The locker room.":
                     b "The locker room!"
@@ -3651,7 +3651,7 @@ label trial4t:
                     b "Sid, remind me where you went after you woke up on the couch?"
                     i "To the front of the safe, then to the break room."
                     b "So you passed the locker room, then the safe, then the office."
-                    i "Yeah, what about it"?
+                    i "Yeah, what about it?"
                     b "And Lauren, you left from the office, passed the safe..."
                     l "...And then checked the locker room."
                     b "Right. And... you didn't see Sid on the couch."
