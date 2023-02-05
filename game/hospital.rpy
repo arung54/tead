@@ -110,11 +110,11 @@ label hospitalGo:
     b "C'mon Sesame, let's go."
     ses "..."
     b "..."
-    $cat = True
     bi "Sesame wasn't moving."
     b "Lazy cat, Catherine probably carries you everywhere."
     $mood = "ind"
     b "Fine, I'll carry you around just for now. But don't get used to it."
+    $cat = True
     hide sesame with dissolve
     bi "I gently picked him up and plopped him in my backpack, scared he might scratch me."
     #show bert2 with dissolve
@@ -122,6 +122,9 @@ label hospitalGo:
     bi "Maybe hearing Catherine's name made him think we were going to her."
     bi "Eventually I'll have to get him used to me being his owner but..."
     bi "...until this game's over, there's far more important things to worry about."
+
+    #febreview
+
     scene black with dissolve
     scene bg hosphallbotright at bg with dissolve
     $statusnt("Hallway", "bert", ch=3, sun=0)

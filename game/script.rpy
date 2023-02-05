@@ -16,6 +16,8 @@ image shahar = Live2D("Resources/shahar", base=.999, loop=True, top=-.05, seamle
 define shahar = Character("shahar")
 image frog = Live2D("Resources/frog", base=.999, loop=True, top=-.05, seamless=True)
 define frog = Character("frog")
+image frog2 = Live2D("Resources/frog2", base=.999, loop=True, top=-.05, seamless=True)
+define frog2 = Character("frog2")
 image dan = Live2D("Resources/dan", base=.999, loop=True, top=-.05, seamless=True)
 define dan = Character("dan")
 image stella = Live2D("Resources/stella", base=.999, loop=True, top=-.05, seamless=True)
@@ -261,6 +263,14 @@ image menubgscroll2:
 image bg flashback:
     contains:
         "spinbg.png"
+        xcenter .5 ycenter .5
+        rotate 0
+        linear 40 rotate 360
+        repeat
+        "vinegar.png"
+image bg reflecting:
+    contains:
+        "reflecting.png"
         xcenter .5 ycenter .5
         rotate 0
         linear 40 rotate 360
@@ -691,17 +701,17 @@ image side notbert = ConditionSwitch(
 define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF", image="bert")
 define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
 define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF", image="bert")
-define ni = Character("{i}Dan Scagnelli{/i}", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert") #Dan Internal, name and text italics
+define ni = Character("Dan Scagnellii", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox, image="bert")
-define bi = Character("{i}Bert Kim{/i}", who_color= "78AB46", callback=bertvoice, what_italic = True, image="bert") #Bert Internal, name and text italics
-define li = Character("{i}Lauren Palmer{/i}", who_color= "fbe55c", callback=laurenvoice, what_italic = True, image="bert")
+define bi = Character("Bert Kimi", who_color= "78AB46", callback=bertvoice, what_italic = True, image="bert") #Bert Internal, name and text italics /// use {i}Bert Kim{/i} if text
+define li = Character("Lauren Palmeri", who_color= "fbe55c", callback=laurenvoice, what_italic = True, image="bert")
 define lf = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="bert") #First person Lauren
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox, image="notbert")
 define bt = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="notbert") #Third person Bert
 define b = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="bert")
 define s = Character("Sam Lee", who_color= "f3946a", image="notbert", callback=samvoice)
 define t = Character("Stella Cantoire", who_color= "d4af37", callback=stellavoice, image="notbert")
-define d = Character("Dracula?", who_color= "ff9483", callback=dracvoice, image="notbert")
+define d = Character("Dracula", who_color= "ff9483", callback=dracvoice, image="notbert") #Changed fromv Dracula?
 define dr = Character("Ivan Nepomniachtchi", who_color= "ff9483", callback=dracvoice, image="notbert")
 define f = Character("Freddy Ogden", who_color= "76d352", image="notbert", callback=frogvoice)
 define j = Character("Jenny Flowers", who_color= "e50548", callback=jennyvoice, image="notbert")
@@ -710,20 +720,20 @@ define o = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice,
 define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice, image="notbert")
 define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice, image="notbert")
 ###
-define z = Character("?????", who_color= "FFFFFF", callback=fillvoice, image="notbert")
-define zg = Character("?????", who_color= "999999", callback=fillvoice, image="notbert")
-define zb = Character("?????", who_color= "000099", callback=fillvoice, image="notbert")
-define zs = Character("?????", who_color= "f3946a", callback=samvoice, image="notbert")
-define zc = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
-define zt = Character("?????", who_color= "d4af37", callback=stellavoice, image="notbert")
-define zd = Character("?????", who_color= "ff9483", callback=dracvoice, image="notbert")
-define zf = Character("?????", who_color= "76d352", callback=frogvoice, image="notbert")
-define zi = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
-define zr = Character("?????", who_color= "4f90b0", callback=fillvoice, image="notbert")
-define zh = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
-define sy = Character("?????", who_color= "f3946a", callback=samvoice, image="notbert")
-define syc = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
-define syci = Character("?????", who_color= "b66baa", callback=fillvoice, image="notbert")
+define z = Character("Question", who_color= "FFFFFF", callback=fillvoice, image="notbert") #changed from ?????
+define zg = Character("Question", who_color= "999999", callback=fillvoice, image="notbert")
+define zb = Character("Question", who_color= "000099", callback=fillvoice, image="notbert")
+define zs = Character("Question", who_color= "f3946a", callback=samvoice, image="notbert")
+define zc = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
+define zt = Character("Question", who_color= "d4af37", callback=stellavoice, image="notbert")
+define zd = Character("Question", who_color= "ff9483", callback=dracvoice, image="notbert")
+define zf = Character("Question", who_color= "76d352", callback=frogvoice, image="notbert")
+define zi = Character("Question", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define zr = Character("Question", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define zh = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
+define sy = Character("Question", who_color= "f3946a", callback=samvoice, image="notbert")
+define syc = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
+define syci = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
 
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice, image="notbert")
@@ -731,9 +741,9 @@ define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice, 
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice, image="notbert")
 define warden = Character("Warden", who_color= "ffffff", callback=mevoice, image="notbert") #used in chapter 0
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice, image="notbert") #used in chapter 0
-define tut = Character("{i}Tutorial{/i}", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
+define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
 define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
-define blank = Character(" ", what_italic=True, callback=fillvoice) #blank text, always italics
+define blank = Character("blank", what_italic=True, callback=fillvoice) #blank text, always italics /// used to " ", changed to the word blank for image use
 
 label start:
 
@@ -825,4 +835,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump testft
+jump hospitalGo

@@ -194,7 +194,8 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who id "who"
+                image "[who]Name.png"
+                #text who id "who" #julian
 
         text what id "what"
 
@@ -235,10 +236,10 @@ style bertbox:
     background Image("gui/textbox2.png", xalign=0.5, yalign=1.0)
 
 style namebox:
-    xpos .3 #JULIANCHANGED THIS PENIS
+    xpos .295 #JULIANCHANGED THIS
     xanchor gui.name_xalign
     xsize gui.namebox_width
-    ypos 0.05 #JULIANCHANGED THIS PENIS
+    ypos 0 #JULIANCHANGED THIS
     ysize gui.namebox_height
 
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
