@@ -721,19 +721,19 @@ define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice, ima
 define h = Character("Shahar Syed", who_color= "dfa64c", callback=fillvoice, image="notbert")
 ###
 define z = Character("Question", who_color= "FFFFFF", callback=fillvoice, image="notbert") #changed from ?????
-define zg = Character("Question", who_color= "999999", callback=fillvoice, image="notbert")
-define zb = Character("Question", who_color= "000099", callback=fillvoice, image="notbert")
-define zs = Character("Question", who_color= "f3946a", callback=samvoice, image="notbert")
-define zc = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
-define zt = Character("Question", who_color= "d4af37", callback=stellavoice, image="notbert")
-define zd = Character("Question", who_color= "ff9483", callback=dracvoice, image="notbert")
-define zf = Character("Question", who_color= "76d352", callback=frogvoice, image="notbert")
-define zi = Character("Question", who_color= "4f90b0", callback=fillvoice, image="notbert")
-define zr = Character("Question", who_color= "4f90b0", callback=fillvoice, image="notbert")
-define zh = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
-define sy = Character("Question", who_color= "f3946a", callback=samvoice, image="notbert")
-define syc = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
-define syci = Character("Question", who_color= "b66baa", callback=fillvoice, image="notbert")
+define zg = Character("Questiong", who_color= "999999", callback=fillvoice, image="notbert")
+define zb = Character("Questionb", who_color= "000099", callback=fillvoice, image="notbert")
+define zs = Character("Questions", who_color= "f3946a", callback=samvoice, image="notbert")
+define zc = Character("Questionc", who_color= "b66baa", callback=fillvoice, image="notbert")
+define zt = Character("Questiont", who_color= "d4af37", callback=stellavoice, image="notbert")
+define zd = Character("Questiond", who_color= "ff9483", callback=dracvoice, image="notbert")
+define zf = Character("Questionf", who_color= "76d352", callback=frogvoice, image="notbert")
+define zi = Character("Questioni", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define zr = Character("Questionr", who_color= "4f90b0", callback=fillvoice, image="notbert")
+define zh = Character("Questionh", who_color= "b66baa", callback=fillvoice, image="notbert")
+define sy = Character("Questionsy", who_color= "f3946a", callback=samvoice, image="notbert")
+define syc = Character("Questionsyc", who_color= "b66baa", callback=fillvoice, image="notbert")
+define syci = Character("Questionsyci", who_color= "b66baa", callback=fillvoice, image="notbert")
 
 
 define c = Character("Catherine Henson", who_color= "b66baa", callback=fillvoice, image="notbert")
@@ -835,4 +835,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump trial3x
+jump hospitalGo
