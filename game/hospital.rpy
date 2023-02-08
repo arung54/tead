@@ -2810,7 +2810,7 @@ label trial3d:
     bi "I hate Dracula sometimes but..."
     bi "If it's going to get us closer to the truth, I'll have to figure out what he's talking about."
     bi "Let's see, who would have been a witness to Dracula assaulting Shahar yesterday..."
-    call screen chooseCharHospital("sid", trial3e, "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
+    call screen chooseCharHospital("sid", "trial3e", "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
 label trial3e:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
@@ -2955,7 +2955,7 @@ label trial3g:
     l "Well, there's one possible killer who wouldn't have cleaned up the shards outside."
     j "What?"
     l "Just think about it for a second..."
-    call screen chooseCharHospital("shahar", trial3h, "Who wouldn't have cleaned up the shards outside the cell?") with dissolve
+    call screen chooseCharHospital("shahar", "trial3h", "Who wouldn't have cleaned up the shards outside the cell?") with dissolve
 label trial3h:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
@@ -3693,7 +3693,7 @@ label trial3v:
     b "But someone else could have."
     b "And with that, I think we've found the killer."
     b "The killer is..."
-    call screen chooseCharHospital("dracula", trial3w, "Who could have placed the bottle?") with dissolve
+    call screen chooseCharHospital("dracula", "trial3w", "Who could have placed the bottle?") with dissolve
 label trial3w:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
