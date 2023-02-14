@@ -5,7 +5,7 @@ label hospitalGo:
     show bg flashback with dissolve
     #$ statusnt("???", "", ch=3, sun=0)
     $mood = "ind"
-    blank "A few years ago..."
+    blank "A few years ago..."#febmusic
     zr "Let me get this straight."
     zr "With the evidence we have right now, we can't win the lawsuit."
     zh "No, I'm afraid there's no shot."
@@ -55,18 +55,20 @@ label hospitalGo:
     $ftecounter = 5
     scene black
     camera at parallax
-    blank "In the present..."
+    blank "In the present..."#febmusic
     bi "..."
     bi "As I slowly gained consciousness, I resisted opening my eyes."
     bi "Was I a child with no sense of object permanence?"
     bi "Maybe if I don't open my eyes this game won't continue?"
     bi "No, that's not it..."
+    $mood = "sad"
     bi "I felt more like a student during finals week."
     bi "Exhausted from the first few, knowing I still had more to go."
-    bi "Knowing hat the light at the end of the tunnel was very far away."
+    bi "Knowing that the light at the end of the tunnel was very far away."
     bi "Wanting to cling to the relief of my bed, a temporary escape."
     bi "Except instead of exams, I had to solve the murders of people I was..."
     bi "Well, in some cases friends, others acquaintances."
+    $mood = "ind"
     bi "Regardless, you never really know what death is like until you experience it in person."
     bi "I'm no different than anyone else growing up in the modern age of media and the internet."
     bi "I haven't seen the darkest of what's out there, but I've seen pictures of dead bodies."
@@ -78,6 +80,7 @@ label hospitalGo:
     bi "I don't know how doctors, police, and morticians cope."
     bi "It's something I hope I never get used to."
     bi "..."
+    $mood = "shock"
     ses "Mrowww!"
     bi "An angry hiss."
     bi "Right, I'm an unwilling cat owner now."
@@ -85,28 +88,36 @@ label hospitalGo:
     scene bg hosproom1 at bg with dissolve
     $ statusnt("???", "bert", ch=3, sun=0)
     show sesame at bg with dissolve:
-        ycenter .61
+        ycenter .62
+        zoom .9
     ses "Mew!"
     b  "Hey Sesame... sorry, I'm a bit tired."
     ses "Hssss!"
+    $mood = "ind"
     bi "If I had to guess, he was motioning to the doors of the cell."
     bi "...A cell?"
     $ statusnt("Cell", "bert", ch=3, sun=0)
     bi "Are we in a prison?"
-    bi "There's doors on both sides, both in front of me and behind me..."
+    bi "There are bars on both sides, both in front of me and behind me..."
     bi "I don't think a prison would be like that."
     b "You want me to get us out of here?"
     ses "Hsss!"
     bi "Does he... understand the fact that Catherine's dead?"
     bi "Maybe he thinks I catnapped him?"
     bi "Whatever, that's not important right now."
-    bi "I approached one door and tried opening it."
-    bi "...it's locked."
-    bi "Am I stuck in here? Did I wake up before I was supposed to?"
-    bi "...Wait, if everyone's still asleep, maybe I can find out who the Game Master is!"
-    bi "Maybe I can escape!"
-    bi "Those thoughts quickly faded when I tried the second door."
+    bi "I grabbed the bars behind me and shook them."
+    bi "...it's not going to budge."
+    bi "Am I stuck in here?"
+    b "Sesame, what are we supposed to do?"
+    ses "..."
+    bi "I never have been much of a cat person..."
     blank "Click."
+    show bg hosproom2 at bg
+    show sesame at bg:
+        ycenter .62
+        zoom .9
+    with dissolve
+    bi "The bars on that side retracted."
     b "C'mon Sesame, let's go."
     ses "..."
     b "..."
@@ -132,10 +143,7 @@ label hospitalGo:
     bi "There were three other cells in this hallway."
     bi "One end of the hallway was a dead end, the other seemed to lead towards a larger room."
     bi "Mine was the second from the larger room."
-    bi "I briefly walked towards the dead end to check the cells."
     bi "All of them looked to be identical to mine."
-    bi "They all looked like they were empty, but..."
-    bi "From this hallway, you couldn't really see the bed."
     bi "Some of them might have had people sleeping that I just couldn't see."
     bi "I guess we'll all convene eventually..."
     bi "With those observations, I opened the door to the larger room..."
@@ -154,16 +162,18 @@ label hospitalGo:
     bi "Sam was looking at a series of... photo composites on on wall."
     bi "On another wall was a sign."
     bi "It read \"Rules of the Latimer Mental Hospital\" at the top."
+    $mood = "shock"
     bi "...Mental hospital?"
     bi "I guess... in a demented sense, a mental hospital is like a prison."
     bi "Dracula was reading through that one."
     b "How much looking around have you all done?"
-    l "Not much personally."
+    l "Not much personally..."
     b "You also just got here?"
-    l "Nah, I got up about 10 minutes ago."
+    l "I got up about 10 minutes ago."
     l "When I got here, Sid was the only one waiting. Dracula arrived a few minutes later."
     l "I've been... thinking."
     b "Thinking?"
+    $mood = "sad"
     l "About Sam. What to say, how this affects the rest of us, all that."
     scene bg mansiondining at bg
     show sam ind
@@ -172,6 +182,7 @@ label hospitalGo:
     with dissolve
     s "It should be me who's dead now..."
     scene bg hospcommons at bg
+    show lauren ind
     $showchibint("dracula", "lauren", "sid")
     $statusnt("Cafeteria", "bert", ch=3, sun=0)
     with dissolve
@@ -186,7 +197,9 @@ label hospitalGo:
     bi "...I couldn't tell if she was patronizing me or complimenting me."
     b "Sounds good, seeya Lauren."
     hide lauren with dissolve
-    bi "Looking around, the room didn't really have much besides tables."
+    bi "Looking around, there isn't much in here."
+    bi "There's a window on the far wall that leads to a kitchen."
+    bi "There's a little opening underneath, but no way for someone to get to the kitchen from here."
     bi "So the only things to look at were the photo composites on the wall, and the sign with the rules."
     $menuset = set()
     menu picsorrules:
@@ -200,7 +213,7 @@ label hospitalGo:
                 xcenter .75
             with dissolve
             i "Hey Bert."
-            b "Hey Sid. What's happening here?"
+            b "Hey Sid... what's happening here?"
             i "It seems like every year they put up a photo of everyone who got discharged that year."
             bi "Each photo composite had about 10 people in it."
             b "Must be a pretty small hospital, if only this many people cycle per year..."
@@ -214,11 +227,6 @@ label hospitalGo:
             i "I saw a drama on TV like this..."
             i "It was about bunch of people competing in a life-or-death versions of children's games for a lot of money."
             i "They had one every year in the show, and one of the winners of the previous games ran the game now."
-            i "What if this game we're in repeats every year?"
-            i "Maybe the Game Master is a past winner?"
-            b "Sid... no offense, but that's just something on TV."
-            b "I don't think it has anything to do with our situation."
-            i "Yeah, you're probably right."
             b "Have you taken a close look at the photos yet?"
             b "Maybe someone one of us knows is one of the photos?"
             i "I haven't looked in a lot of detail, but I haven't recognized anyone, no..."
@@ -227,6 +235,7 @@ label hospitalGo:
             bi "No, I don't recognize anyone on this one..."
             bi "Not that I should, it's from a year before I was born..."
             bi "I read through a few more, but didn't recognize any of the names or faces."
+            $mood = "shock"
             bi "Huh?"
             bi "There's one from four years ago, and two years ago..."
             bi "But not three years ago."
@@ -238,18 +247,26 @@ label hospitalGo:
             b "You were the first one to get here, right?"
             i "Yeah, pretty much as soon as I woke up I came here."
             i "So I guess there wasn't time for someone to come and remove it?"
+            $mood = "ind"
             b "Maybe, maybe not..."
             b "We don't really know anything about how us waking up in a new location works."
             b "Do we all wake up at the same time or is it like taking a nap?"
             i "Hm... maybe the person whose turn it is to murder is on the missing composite?"
             i "Or maybe it's the Game Master and they deliberately removed it!"
             b "Yeah, there's gotta be a reason that specific year's is missing..."
+            play sfx "audio/pophuh.mp3" volume .5
+            show pophuh:
+                zoom .75
+                xcenter .85
+                ycenter .25
             i "Maybe we should ask everyone if anything significant happened three years ago?"
             show scary with dissolve:
                 alpha 0.5
             bi "Three years ago? What was I doing?"
             bi "I was twenty, so, that would be the year I-"
+            $mood = "sad"
             bi "Got in the driving accident..."
+            hide pophuh
             bi "I talked to Jenny about this but..."
             bi "Am I ready to talk to everyone about it?"
             hide scary with dissolve
@@ -265,6 +282,7 @@ label hospitalGo:
             bi "Sid seems really set on this..."
             b "Okay, guess we'll discuss this once everyone's here..."
             i "Yeah, I think we should..."
+            $mood = "ind"
             b "..."
             b "Okay, well, I guess back to scanning through these."
             i "Uh, yeah."
@@ -344,9 +362,11 @@ label hospitalGo:
             d "I'd say that's a reasonable conclusion."
             bi "...Is that his version of sass?"
             d "Bert, I have a question for you."
+            $mood = "shock"
             d "For the Game Master, what do you think is the purpose of these rules?"
             b "I mean... I don't know it seems like some crazed experiment rather than a killing game."
             b "I have no idea what this accomplishes towards their overall goals."
+            $mood = "ind"
             d "I agree, it's almost like they're emphasizing that we're just lab rats to them."
             d "It does make killing someone much harder, however..."
             b "Huh?"
@@ -380,7 +400,9 @@ label hospitalGo:
             d "Perhaps they'll replenish our food supply, but make us decide if not murdering is worth being stuck forever."
             b "Well, I hope it doesn't come to that..."
             d "So you wish that someone dies?"
+            $mood = "shock"
             b "What? No!"
+            $mood = "ind"
             b "Well, I mean... I guess yeah, I'd prefer the Game Master dying to us being stuck here."
             d "But that is statistically unlikely. The murderer has a one out of seven chance."
             b "One out of seven? They can make an educated guess, right?"
@@ -413,13 +435,21 @@ label hospitalGo:
     bi "Unless I want to stare at some really boring tables."
     bi "In the meantime, it seemed everyone had filtered into the cafeteria."
     $showchibint("dracula", "lauren", "sid", "sam", "shahar", "jenny", "freddy")
-    show jenny happy with dissolve
+    show bg hospcommons at bg
+    show jenny happy
+    with dissolve
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     j "Hey Bert! Seems like we're in a hospital now!"
     bi "That's... not really something to be cheery about."
-    b "Hey Jenny. How's it going?"
+    b "Hey Jenny. How are you holding up?"
+    hide pophearts
     j "Oh, I'm doing as good as I can be!"
     show jenny ind
     j "But doesn't seem like everyone else is."
+    $mood = "sad"
     b "Huh?"
     j "Well, Sam is pretty torn up about trying to kill Stella."
     j "And Shahar says he's been having a headache since we got here."
@@ -434,12 +464,20 @@ label hospitalGo:
     bi "I don't know if I'd classify Shahar's contributions as \"brainpower\" but..."
     b "That's true... yeah, I can talk to Shahar."
     show jenny happy
+    $mood = "shock"
     j "Great! So you'll talk to both Shahar and Sam!"
     b "Wha-"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     j "Thanks Bert, that's really nice of you!"
-    hide jenny with dissolve
+    hide jenny
+    hide pophearts
+    with moveoutright
     bi "She left before I could even respond..."
     bi "I'm not the best at cheering people up, why can't someone like Lauren do this?"
+    $mood = "ind"
     bi "Sigh. Okay, might as well bite the bullet."
     bi "Let's see, Shahar or Sam..."
     $menuset = set()
@@ -448,15 +486,21 @@ label hospitalGo:
         "Who should I talk to?"
 
         "Talk to Sam.":
-            show sam with dissolve
+            show sam ind with dissolve
             s "Oh... hey Bert."
+            $mood = "sad"
             b "Hey Sam... how are you feeling?"
+            play sfx "audio/poprain.mp3" volume .5
+            show poprain:
+                xcenter .5
+                ycenter .1
             s "I don't know, I just tried to kill someone because I thought I had to."
             s "But then I found out I didn't have to, I'm just an idiot."
             s "So now I'm someone who murdered without a good reason."
             s "So what do you think, that I'm feeling fine?"
             bi "Still sassy, even when feeling sad..."
             bi "But I guess it was a dumb question."
+            hide poprain with dissolve
             b "Sam... you didn't kill Stella. Catherine did."
             s "I may as well have."
             s "Catherine got lucky that I pushed Stella into her trap."
@@ -492,9 +536,15 @@ label hospitalGo:
             d "Can I help you Bert?"
             b "Hey, I'm sure you've noticed but Sam's been feeling kind of down..."
             b "Could you maybe talk to Sam? Try to get through so Sam can help us?"
+            play sfx "audio/popwow.mp3" volume .5
+            show popwow:
+                xcenter .35
+                ycenter .25
+                zoom .75
             d "To be frank, I don't see the point."
             b "What?!"
             d "Bert, you're a fine member of this \"team.\""
+            hide popwow
             d "One of the few who has worked towards getting out of here."
             d "We have limited time before the murder happens, we should use it wisely."
             d "I'm not very good with emotional matters, as is true of any vampire."
@@ -508,7 +558,8 @@ label hospitalGo:
             b "What kind of favor do you have in mind."
             d "You made me admit things to everyone while we were solving Stella's murder."
             d "Things I was blatantly trying to keep a secret."
-            d "I want you to admit your crime to everyone, honestly."
+            $mood = "shock"
+            d "I want you to admit your crime to everyone."
             b "What?"
             bi "My heart started racing quickly, I thought I felt my palms sweat."
             bi "If even thinking about it is elliciting this reaction, then..."
@@ -516,6 +567,7 @@ label hospitalGo:
             d "Interesting. Why isn't it worth it?"
             d "Surely it will come out one way or another, when we learn the truth behind this whole game."
             d "Why not rip off the bandage now, so to speak?"
+            $mood = "sad"
             b "I... now's not the time."
             d "Well it seems we have nothing else to discuss then."
             d "Good day Bert."
@@ -536,6 +588,7 @@ label hospitalGo:
             h "I miss her, but I've lost many compatriots on the sea."
             h "I only knew 'er for nary a week, Bert, it's not like I lost me lover or me parent."
             h "But... I feel like I'm forgetting somethin', lad."
+            show shahar ind
             h "Well, nay."
             h "It's more like... I can't remember somethin'."
             h "I feel like I don't know who I am, lad."
@@ -546,17 +599,22 @@ label hospitalGo:
             h "It feels like this is a room in a pirate ship I've wandered 'round."
             b "But... it's a hospital."
             h "Aye lad, you can see my confusion."
+            play sfx "audio/popwow.mp3" volume .5
+            show popwow:
+                xcenter .35
+                ycenter .25
+                zoom .75
             h "Pirates don't need hospitals, a lil' scurvy hurt nary a man of the sea!"
             bi "Uh... I don't think that's true."
             bi "Also, this is a mental hospital. Scurvy doesn't get treated here..."
             h "Anyway lad, my head's been hurtin'."
+            hide popwow
             h "Not just because I can't 'member, lad."
             h "I got a headache like I drank a gallon o' bilge water."
             h "And I'm not much of a thinker so..."
             h "I ain't got any idea what to do."
             b "That's... frustrating. I don't know what to tell you."
             b "Tomorrow let's ask the guards to see if there's any pain relievers."
-            hide shahar
             show shahar ind
             h "See lad, that's the kind of thinkin' I need ye fer!"
             bi "Ah yes, the obscure idea of taking medicine to help with a headache."
@@ -565,7 +623,7 @@ label hospitalGo:
             bi "With that, I left him to think. Or not think, not sure which."
             hide shahar with dissolve
             jump samorshahar
-    bi "Having talked to Sam and Shahar, I went to go join the others."
+    bi "Having talked to Sam and Shahar, I regrouped with everyone else."
     show drac ind with dissolve
     d "So, has everyone read the rules?"
     d "We should make sure we all understand them before progressing."
@@ -575,7 +633,7 @@ label hospitalGo:
     show jenny ind with moveinleft:
         xcenter .25
     j "I did have one question..."
-    j "The rules say we'll be \"punished\" if we follow them."
+    j "The rules say we'll be \"punished\" if we don't follow them."
     j "Do we know what punished means?"
     hide drac with moveoutright
     show frog ind with moveinright:
@@ -586,8 +644,14 @@ label hospitalGo:
     f "And you can't even play video games or listen to music."
     show frog sad:
         xcenter .75
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .7
+        ycenter .5
+        zoom .75
     f "And your mom and dad are arguing but you're not allowed to go to your room."
     f "So you have to listen the whole time."
+    hide poptear
     b "Uhhh....."
     hide jenny with moveoutleft
     show lauren with moveinleft:
@@ -609,10 +673,16 @@ label hospitalGo:
     i "Maybe. But it could also be someone related to one of us?"
     i "Or maybe that was an important year for why this game happened."
     b "Important year?"
+    $mood = "sad"
     i "Yeah, after Bert and I talked about the photos I was thinking..."
     i "I haven't really done anything that bad in the past three years."
     i "If I was chosen to be a part of this game, it has to be for something that happened before that, right?"
     i "I was wondering..."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .65
+        xcenter .85
+        ycenter .25
     i "Did any of your crimes happen in the past three years?"
     i "You don't have to say what your crimes were, I know some of you can't really talk about it."
     i "But just that one bit of info might reveal a whole lot."
@@ -623,7 +693,7 @@ label hospitalGo:
     show lauren ind:
         xcenter .25
         linear 0.15 xcenter .5
-    show sam with dissolve:                      #all sams need to be sam ind etc febreview
+    show sam ind with dissolve:                      #all sams need to be sam ind etc febreview
         xcenter .25
     bi "Except for one person."
     s "I guess... I've been committing crimes perpetually..."
@@ -633,15 +703,23 @@ label hospitalGo:
     s "...I lost contact with him about three years ago..."
     b "Lost contact?"
     s "He just never reached out to me again..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .3
+        ycenter .275
+        zoom .75
     s "And well, not like I personally knew the guy..."
     s "I had no reason to reach out to him..."
     b "I wonder... did something happen to him three years ago?"
     l "Maybe he disappeared to start planning this game?"
+    hide poptear
     i "I thought the Game Master was one of us?"
     i "None of us look like him..."
+    $mood = "ind"
     i "But I think you're right Bert."
     i "There's no way what Sam said isn't related to the missing photo composite."
     i "Maybe Mr. Sydell was on it."
+    show sid mad
     i "Maybe whatever happened to him three years ago is the reason for this game!"
     bi "A noise interrupted."
     play sfx "audio/ding.mp3"
@@ -679,14 +757,17 @@ label hospitalGo:
     b "Oh, that reminds me."
     b "What's the room arrangement?"
     j "Oh yeah, I guess you were looking around while we discussed this."
+    show scary with dissolve:
+        alpha .5
     show map3uirooms with dissolve:
-
         xcenter .5
-        ycenter .5
+        ycenter .4
     j "So there's two hallways, one to the left of the room we're in if you're facing the kitchen."
     j "That one has Lauren, Sam, Dracula, and Froggy, going from furthest to closest to this room."
     j "The one on the right has me, you, Sid, and Shahar, going from closest to furthest."
-    hide map3ui with dissolve
+    hide map3uirooms
+    hide scary
+    with dissolve
     show jenny happy:
         xcenter .25
     j "So you can be a gentleman and escort me to my room, Bert!"
@@ -694,36 +775,38 @@ label hospitalGo:
     b "Good night Freddy. We'll see you in the morning!"
     f "G-good night..."
     scene black with fade
+    $showchibint()
     bi "We all made our way back to our rooms." #febreview
     bi "I had trouble sleeping."
     bi "Mostly because Sesame didn't like the cold floor and instead insisted on laying on me."
     bi "Turns out, she wasn't declawed."
     bi "Which is good, declawing cats is pretty inhumane."
     bi "But so is constantly poking me while I try to sleep."
+    bi "After what felt like not sleeping at all..."
+label hospitalb:
     scene bg hosproom1 at bg
-    show sesame:
-        ycenter .61
+    $showchibint()
     $statusnt("Bert's Cell", "bert", ch=3, sun=1)
-    with dissolve
-    bi "After what felt like not sleeping at all, I woke up."
+    with dissolve #febmusic 2
+    bi "I woke up."
     bi "Well, I was woken up."
     bi "By a sound I hoped I wouldn't get used to."
     play sfx "audio/ding.mp3"
     intercom "Twilight has begun. You must leave your room before daytime."
+    $mood = "sad"
     bi "I knew if I stayed in bed, I might not make it out of the room in 30 minutes."
     bi "So I begrudgingly got up and tried opening the door behind me, like I had last night."
     bi "..."
     bi "And, it wouldn't move."
     bi "Was I stuck? Am I getting indirectly murdered already?"
     ses "Mew!"
-    show sesame with dissolve
-    bi "Sesame was standing near the opposite door."
+    $mood = "ind"
     bi "Right, maybe I'm one of the guards today."
+    bi "The bars on the wall {i}behind{/i} me were raised today, leading to the opposite hallway."
     b "Thanks Sesame."
     scene black with dissolve #febreview
     bi "I stepped outside into the hallway."
-    bi "Guess it's time to explore."
-    scene bg hosphallbotright at bg with dissolve
+    scene bg hosphalltopright at bg with dissolve
     $showchibint("jenny") #copy paste
     $statusnt("Guard Hallway", "bert", ch=3, sun=1)
     show jenny happy with dissolve
@@ -735,8 +818,8 @@ label hospitalGo:
     b "Please don't."
     j "Don't worry, I wouldn't even know how."
     j "So, whaddya wanna do first?"
-    b "I think we have to make food for the others, but twilight isn't even over yet."
-    b "So I was thinking we should explore and tell the others what we find."
+    b "Well, we're the first ones over here, so we should explore a bit."
+    b "It's still twilight, so we should have some time before we need to make food for everone."
     j "Sounds like a plan!"
     b "Okay, let's see what's at the end of this hallway..."
     scene black with dissolve
@@ -767,13 +850,15 @@ label hospitalGo:
     b "Psh, reading's boring, I'm tryna check out this vending machine."
     b "Maybe there's some cola in there..."
     b "I like a good classic cola, nothing beats that."
+    $mood = "sad"
     b "Huh, this vending machine's very... old-timey."
     j "What makes you say that?"
-    b "All the bottles are glass. It reminds me of how they package soda in foreign countries."
-    b "But I don't think I've seen a vending machine with glass bottles where I'm from."
+    b "All the bottles are glass."
+    b "I don't think I've seen a vending machine with glass bottles where I'm from."
     j "Hm... I wonder how long ago this building was in use."
     j "Or maybe they just didn't have money to upgrade it?"
     j "Ooh, maybe the Game Master bought this place because they went bankrupt!"
+    $mood = "ind"
     b "That's... a theory, not sure if we can infer from that, though."
     b "Besides \"The Game Master has money or influence.\""
     show jenny happy
@@ -784,9 +869,11 @@ label hospitalGo:
     b "For all I know it could be root beer, which is gross..."
     play sfx "audio/beep.mp3"
     b "Huh? It's not vending..."
+    play sfx "audio/beep.mp3"
+    b "C'mon..."
     show jenny ind
     j "Did you pay for the drink?"
-    b "Pay? With what? Not like we have money here..."
+    b "Pay? With what? Not like we have money..."
     j "You could break the vending machine open if you really want to."
     b "That sounds dangerous..."
     b "Don't people die getting crushed by vending machines?"
@@ -837,7 +924,9 @@ label hospitalGo:
     bi "Alright, let's see what's behind door number one..."
     scene black with dissolve
     $statusnt("Security Room", "bert", ch=3, sun=1)
+    $showchibint()
     scene bg hospsecurity at bg with dissolve
+    $mood = "shock" #febmusic scary
     b "..."
     b "What is this?"
     b "A computer system? This gives me bad flashbacks to the train..."
@@ -850,6 +939,7 @@ label hospitalGo:
     b "Kind of like that program dentists use that stores your history, but it's... well, for a mental hospital."
     b "Then there's a security camera system."
     b "..."
+    $mood = "ind"
     b "Yup, I can see the cafeteria from here."
     b "Everyone had gathered, Jenny was talking to Sid through the kitchen window."
     b "Hmm, it has an option to look at other rooms, but the button's not working."
@@ -865,14 +955,17 @@ label hospitalGo:
     b "..."
     b "She wouldn't kill me now, right?"
     b "Should I look out for her?"
-    b "Anyone could be the murderer, including her..."
+    b "Anyone could be the murderer this round, including her..."
+    b "Anyone could be the Game Master, too..."
     b "No, I need to stop freaking out."
     b "If she killed me here it would be way too obvious."
     b "Plus, it's not like I can do anything about it, I'm stuck on this side with her."
     b "I should focus on being as useful as possible while I'm able to explore this side..."
     b "Speaking of which, time to move on."
     ses "Mew!"
-    show sesame with moveinbottom
+    show sesame with moveinbottom:
+        ycenter .6
+    play sfx "audio/beep.mp3"
     hide sesame with moveoutbottom
     bi "Sesame jumped on the controls and then jumped off..."
     b "Huh? This is the program storing patient information."
@@ -884,6 +977,7 @@ label hospitalGo:
     b "It'd be like looking at strangers' search histories, except it's their mental illnesses."
     b "..."
     show bg hospsecurity2 with dissolve
+    $mood = "shock"
     b "Huh?"
     b "Why is Shahar's name in the patient records?"
     b "I had to scroll a few hundred lines to find his name. I almost missed it."
@@ -893,6 +987,7 @@ label hospitalGo:
     b "All it says is \"Patient thinks he is a pirate.\""
     b "Nothing about who Shahar actually is, any contact information..."
     b "Is that the case for the other records?"
+    $mood = "ind"
     b "Let me check one."
     show bg hospsecurity3 with dissolve
     b "Whoever Howard Eastnuts is, I'm sorry for looking..."
@@ -906,7 +1001,7 @@ label hospitalGo:
     b "Maybe Shahar is the Game Master and he's using this as a bluff?"
     b "I should check one more thing, just to be sure..."
     b "..."
-    b "Nope, I've tried all of our names. Including Kaiser, Dan, Catherine, and Stella's."
+    b "Okay, I've tried all of our names. Including Kaiser, Dan, Catherine, and Stella's."
     b "No one in this game except Shahar has a record here."
     b "I should talk to Shahar about this."
     b "This might have to do with his headache."
@@ -928,11 +1023,11 @@ label hospitalGo:
     b "Time to go check the other door in the guard common area."
     scene black with dissolve
     bi "I made my way through the common area to the other room."
-    scene bg hospcloset at bg
+    scene bg hospcloset at bg with dissolve
     $statusnt("Supply Closet", "bert", ch=3, sun=1)
     b "Huh, a supply closet."
     b "I guess even a mental hospital needs to get cleaned every now and then."
-    b "It's a bit dark in here, let me turn on the lights."
+    b "It's a bit dark in here, let me turn on the lights-"
     b "...actually, after reading that sign, maybe I won't."
     b "Don't want to die for forgetting to flip a light switch."
     b "Let's see. There's a box of small unzippable plastic bags on the top shelf, fairly standard."
@@ -952,14 +1047,13 @@ label hospitalGo:
 label testwindow:
     scene black with dissolve
     scene bg hospkitchen at bg with dissolve
-    $showchibiwindow(["jenny"], [])#copy paste  #febreview #febreview
+    $showchibint("jenny")#copy paste  #febmusic 1 normal music
     $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
     bi "As I entered the kitchen, I looked through the window to the cafeteria, just to make sure..."
-    $showchibiwindow(["jenny"], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    $showchibint("jenny", "window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     with dissolve
-    bi "Phew, no one's been punished yet..."
-    bi "They were all there."
+    bi "They were all there on the other side of the glass."
     j "Hey Bert, what'd you find?"
     b "Well, there's what looks like a control or security room."
     b "Giant computer, can look at the cafeteria from there."
@@ -972,13 +1066,21 @@ label testwindow:
     show jenny ind
     j "A baseball bat?"
     b "Yeah... not sure why a mental hospital has a baseball bat in a supply closet."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .45
+        ycenter .275
+        zoom .75
     j "I can uh... think of some not-so-great reasons."
     b "Oh."
+    $mood = "sad"
     b "Ohhhhh. This place just got a lot darker."
+    hide poptear
     j "Should we take the bat and put it somewhere where everyone can see it?"
     b "There's a sign in the closet that says to return everything... I'm afraid if we move it we get punished."
     b "After all, there was a punishment for not following the rules in the cafeteria."
     j "That sucks. Well, guess we'll just tell everyone."
+    $mood = "ind"
     b "How's cooking going?"
     j "It's okay. This kitchen is not nearly as well stocked as the mansion was."
     j "The fridge only has the bare minimum, basic veggies like tomatoes and onions, a few broths."
@@ -991,18 +1093,18 @@ label testwindow:
     j "You'd just need to stir the pot every now and then, I can try to be back before it's done cooking."
     b "Sure, this would be a good chance for me to catch up with the others anyway."
     show jenny happy
-    j "Thanks Bert! Just to be safe, if it feels like 20 minutes have passed since I've left turn off the stove then."
+    j "Thanks Bert! Just to be safe, if it feels like 20 minutes have passed since I've left turn off the stove."
     b "Got it, let me know if you find anything I missed."
     j "Will do, seeya Bert!"
     hide jenny
-    $showchibiwindow([], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    $showchibint("window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     with dissolve
     bi "I guess I haven't talked to the others yet..."
     bi "I turned to the window and started chatting with the first person I saw."
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     show drac ind at inwindow behind hospwindowoverlay
-    $showchibiwindow([], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    $showchibint("window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     with dissolve
     d "Hello Bert. Are you here to brief us on the other side?"
     b "Uh... I guess I can, yeah."
@@ -1011,6 +1113,10 @@ label testwindow:
     show frog ind at inwindow behind hospwindowoverlay with dissolve
     f "Bert! Are you okay?"
     b "Oh, hey Freddy. Yeah I'm fine."
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain at inwindow behind hostpwindowoverlay:
+        xcenter .5
+        ycenter .1
     show frog sad
     f "I got worried because Jenny showed up but you didn't."
     f "And I thought... well..."
@@ -1018,6 +1124,7 @@ label testwindow:
     bi "Despite us trying to keep death away from him, he might have been thinking about it as much as the rest of us."
     bi "Though maybe he didn't grasp how obvious it would be if Jenny murdered me on the first day..."
     b "I'm here Freddy, don't worry!"
+    hide poprain with dissolve
     show frog ind
     f "Oh. Okay. Is the food almost ready?"
     bi "Children really are whimsical."
@@ -1034,9 +1141,15 @@ label testwindow:
     f "Baseball bat? Can we play sports in here?"
     b "I uh... didn't see any baseballs or anything like that in here."
     f "Oh. Maybe we can find one!"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .7
+        ycenter .25
+        zoom .75
     d "Hush child, there are business matters to discuss."
     d "So you say you're afraid to take the baseball bat out of the closet?"
     b "Yeah, there's a sign saying to return everything."
+    hide popwow
     b "I don't want to find out if breaking that rule kills me like the other rules."
     d "It seems unlikely, you could just try taking it out and see what happens."
     bi "Easy for you to say when you're on the other side..."
@@ -1052,25 +1165,28 @@ label testwindow:
     l "If you really wanna know, you can check on your own time Dracula."
     d "Hmph. Fine."
     b "By the way, I heard the 5 minute reminder get announced this morning..."
+    $mood = "sad"
     b "Did everyone make it out of their cells in time?"
     l "Yeah, we had to do some... convincing to get Sam out of bed."
     b "Is Sam doing any better?"
     l "Not really. Mostly just sitting in the same seat."
-    b "That's... a little concerning, to put it lightly."
+    b "That's... a little concerning, to put it   lightly."
     l "Yeah. Don't worry about it for now, not much you can do on that end."
     l "By the way, where's Jenny? Isn't she prepping a meal right now?"
+    $mood = "shock"
     bi "Shoot!"
     b "Uh... yeah, I gotta go take care of that."
     b "We'll let you guys know when it's ready."
     hide lauren
     hide drac
+    scene bg hospkitchen at bg
     with dissolve
-    scene bg hospkitchen at bg with dissolve
     bi "I turned to the soup and started stirring it."
     bi "After about 10 minutes, Jenny returned."
     show jenny happy
-    $showchibiwindow(["jenny"], ["dracula", "sid", "shahar", "lauren", "freddy", "sam"])#copy paste
+    $showchibint("jenny", "window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     with dissolve
+    $mood = "ind"
     j "Hey Bert! Everything okay here?"
     b "Yup! Was definitely sitting here making sure nothing burned the whole time!"
     show jenny ind
@@ -1088,11 +1204,13 @@ label testwindow:
     j "Besides, I'm sure if there were something interesting you would have found it."
     show jenny happy
     j "Oh! But there is something secret in here!"
+    $mood = "shock"
     b "What?"
     j "Check the fridge, second level from the top."
     bi "I opened the fridge and found..."
     bi "A cupcake."
     bi "Red velvet with what looked like cream cheese frosting..."
+    $mood = "ind"
     show jenny ind
     j "There were two when I found them but uh..."
     show jenny happy
@@ -1249,6 +1367,7 @@ label postcupcake:
         show jenny ind:
             xcenter .25
         bi "Jenny turned away as I was saying this."
+        show frog happy
         f "Cupcake?"
         b "Yeah. It's all yours."
         f "Wow. Thanks so much Bert!"
@@ -1275,12 +1394,13 @@ label postcupcake:
     d "Good day."
     j "Good day, Dracula!"
     hide drac with moveoutleft
-    show jenny happy:
+    show jenny ind:
         xcenter .25
         linear 0.15 xcenter .5
     b "...wait, there's an extra serving."
     b "Has anyone not come up yet?"
     j "I think it's Sam."
+    $mood = "sad"
     b "Oh..."
     bi "I hadn't noticed, but Sam hadn't even come to the windows like the others."
     bi "Sam was instead sitting in the same seat, staring at the ground."
@@ -1304,22 +1424,30 @@ label postcupcake:
     bi "Lauren went over and somewhat forcefully got Sam to stand up and walk to the kitchen window."
     show lauren ind at inwindow behind hospwindowoverlay:
         xcenter .33
-    show sam at inwindow behind hospwindowoverlay:
+    show sam ind at inwindow behind hospwindowoverlay:
         xcenter .66
     with moveinright
     s "What do you want..."
     b "We wanted you to eat your meal."
     s "What's the point..."
+    $mood = "ind"
     b "Sam, you need to eat."
     s "I'm not hungry..."
     b "It's soup, it'll go down effortlessly. We need calories in you so you can keep going."
     s "Why are you all trying to keep a murderer alive..."
     l "Sam, you're not a murderer."
     s "I might as well be."
-    l "Sam, take it from someone who actaully murdered someone."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad at inwindow behind hospwindowoverlay:
+        xcenter .33
+        ycenter .4
+    l "Sam, stop this."
+    $mood = "shock"
+    l "Take it from someone who actaully murdered someone."
     bi "..."
     bi "What?"
     bi "This is news..."
+    hide popmad
     s "...You murdered someone?"
     l "I don't want to go into details."
     l "But I once was in a dangerous situation in public with a robber."
@@ -1361,6 +1489,7 @@ label postcupcake:
     show lauren ind at inwindow behind hospwindowoverlay:
         xcenter .33
         linear 0.15 xcenter .5
+    $mood = "sad"
     bi "..."
     bi "I don't know what to say."
     l "You don't have to say anything."
@@ -1384,17 +1513,10 @@ label postcupcake:
     b "Um... yeah."
     b "Lauren?"
     l "Yeah?"
-    b "Thanks. You went above and beyond, you didn't have to do that."
-    l "Bert, what are we all doing here? Solving these murders and trying to figure out who the Game Master is?"
-    b "Uh... we're trying to get out?"
-    l "Sure, but more than that. We're trying to save each other."
-    l "That includes Sam. As annoying as Sam is, or at least was..."
-    l "Sam has parents, family, friends outside of here too."
-    l "If it means becoming the pariah of this group instead of Sam..."
-    l "I'll make that trade to give Sam a chance to get out of here."
+    b "Thanks."
     b "..."
     l "..."
-    bi "I should've said something, but I didn't."
+    bi "I should've said more, but I didn't."
     bi "Taking that as a cue, Lauren walked off."
     hide lauren with moveoutright
     scene bg hospkitchen at bg with dissolve
@@ -2109,7 +2231,7 @@ label chess3:
     hide shahar
     with dissolve
     bi "With that, the only person we hadn't asked was..."
-    show sam with dissolve
+    show sam ind with dissolve
     bi "Sam."
     b "You want to join in Sam?"
     s "..."
@@ -2117,7 +2239,7 @@ label chess3:
     b "Huh?"
     s "Going to get rid of my drugs."
     b "..."
-    show sam:
+    show sam ind:
         xcenter .5
         linear 0.15 xcenter .25
     show lauren ind with moveinright:
@@ -2135,7 +2257,7 @@ label chess3:
     show lauren ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sam with moveinleft:
+    show sam ind with moveinleft:
         xcenter .25
     s "Life was fine before I tried to kill Stella."
     s "If I don't try to kill anyone else, that's the only way life will be fine after."
@@ -2364,7 +2486,7 @@ label laurentime:
     lf "Well, and Shahar."
     lf "He has the mind of a child, so I guess he counts."
     hide scary with dissolve
-    show sam with dissolve
+    show sam ind with dissolve
     s "Let's go..."
     scene scary with dissolve
     scene bg hospfancy at bg
@@ -2373,7 +2495,7 @@ label laurentime:
     lf "Wow, this room is so much nicer than the cafeteria."
     lf "Ooh, a vending machine."
     lf "None of the previous guards mentioned this..."
-    show sam with dissolve
+    show sam ind with dissolve
     s "..."
     lf "Sam's... not one for many words."
     lf "Hey Sam, is there a cherry soda in there?"
@@ -2450,7 +2572,7 @@ label laurentime:
     lf "No."
     lf "No no no no no no no no no no no no no no no..."
     lf "Why did no one but me think to check?"
-    show sam:
+    show sam ind:
         xcenter .75
     with dissolve
     s "...He's dead..."
@@ -2466,7 +2588,7 @@ label laurentime:
     scene scary with dissolve
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
-    show sam:
+    show sam ind:
         xcenter .75
     show jenny ind at inwindow behind hospwindowoverlay:
         xcenter .5
@@ -2572,7 +2694,7 @@ label trial3a:
     with dissolve
     show lauren ind at inwindow behind hospwindowoverlay:
         xcenter .33
-    show sam at inwindow behind hospwindowoverlay:
+    show sam ind at inwindow behind hospwindowoverlay:
         xcenter .67
     with dissolve
     l "I think we found everything."
@@ -2725,7 +2847,7 @@ label trial3c2:
     show drac ind:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .75
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     with dissolve
@@ -2759,7 +2881,7 @@ label trial3d:
     show drac ind:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .75
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     with dissolve
@@ -2817,7 +2939,7 @@ label trial3e:
     show drac ind:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .75
     show sid mad:
         xcenter .75
@@ -2851,7 +2973,7 @@ label trial3e:
     show lauren at inwindow behind hospwindowoverlay2:
         xcenter .5
         linear 0.15 xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .75
         linear 0.15 xcenter .6
     s "Shut up..."
@@ -2902,7 +3024,7 @@ label trial3f:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
         xcenter .75
@@ -2940,7 +3062,7 @@ label trial3g:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
         xcenter .75
@@ -2963,7 +3085,7 @@ label trial3h:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
         xcenter .75
@@ -3056,7 +3178,7 @@ label trial3i:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
         xcenter .75
@@ -3106,7 +3228,7 @@ label trial3k:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
         xcenter .75
@@ -3250,7 +3372,7 @@ label trial3n:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3287,7 +3409,7 @@ label trial3o:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3383,7 +3505,7 @@ label trial3p:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3451,7 +3573,7 @@ label trial3q:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3485,7 +3607,7 @@ label trial3r:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3580,7 +3702,7 @@ label trial3t:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3648,7 +3770,7 @@ label trial3v:
     b "With that it should be pretty easy to place the bottle in a high location."
     $showchibiwindow(["jenny", "dracula", "sid", "freddy"], ["lauren", "sam"])
     with dissolve
-    show sam at inwindow behind hospwindowoverlay2 with dissolve:
+    show sam ind at inwindow behind hospwindowoverlay2 with dissolve:
         xcenter .6
     s "...Just like Sid said, the computer shows hot water cycled about an hour before we woke up..."
     i "*cough* I think the theory is right then!"
@@ -3701,7 +3823,7 @@ label trial3w:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
@@ -3753,7 +3875,7 @@ label trial3x:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
-    show sam at inwindow behind hospwindowoverlay2:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
         xcenter .75
