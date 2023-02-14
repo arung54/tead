@@ -3471,7 +3471,7 @@ label trial4t:
             j "Us?"
             j "But... I was just telling the truth."
             l "I don't understand... what about our stories doesn't add up?"
-            label trial4ta:
+        label trial4ta:
             menu:
                 b "The contradiction is..."
                 "The locker room.":
@@ -3542,7 +3542,7 @@ label trial4t:
             j "After all, I did see him sleeping."
             i "Yeah, what gives punk?"
             b "Well, what doesn't make sense is..."
-            label trial4tb:
+        label trial4tb:
             b "The contradiction is..."
             menu:
                 "The locker room.":
@@ -3618,7 +3618,7 @@ label trial4t:
             i "Whatchu trying to say, punk?"
             b "All I'm trying to say is, your alibi and Lauren's alibi are contradictory."
             b "The contradiction is..."
-            label trial4tc:
+        label trial4tc:
             menu:
                 "The locker room.":
                     b "The locker room!"
@@ -3651,7 +3651,7 @@ label trial4t:
                     b "Sid, remind me where you went after you woke up on the couch?"
                     i "To the front of the safe, then to the break room."
                     b "So you passed the locker room, then the safe, then the office."
-                    i "Yeah, what about it?"
+                    i "Yeah, what about it"?
                     b "And Lauren, you left from the office, passed the safe..."
                     l "...And then checked the locker room."
                     b "Right. And... you didn't see Sid on the couch."
@@ -3686,3 +3686,70 @@ label trial4t:
                         bi "This is getting nowhere..."
                         b "Okay, let's ignore that for now."
                         b "Accounting for all the contradictions..."
+    b "I think from the three of you, one of you is very likely lying about their alibi."
+    b "That person is..."
+    call screen chooseCharBank("sid", "trial4u", "Who is most likely lying about their alibi?") with dissolve
+label trial4u:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "Sid."
+    show sid mad
+    i "Me?"
+    i "But what about Lauren?"
+    i "She could be lying about colorblindness!"
+    i "And maybe she lied about where she went!"
+    b "Well, it's true maybe Lauren is lying."
+    b "But, when I pointed out the contradiction in Lauren and Jenny's alibis..."
+    b "There was a plausible explanation Lauren gave."
+    b "So if she's telling the truth, then that would mean you're lying."
+    b "One person lying is believable."
+    b "On the other hand, Sid..."
+    b "Both times I found a contradiction involving your alibi, there wasn't a satisfying resolution."
+    b "So in order for you to be telling the truth, both Jenny and Lauren would have to be lying."
+    b "Or, there'd have to be some crazy explanation we can't think of."
+    i "No! I didn't lie!"
+    i "How could you think that when I was being so helpful earlier!"
+    l "Sid... why would you lie..."
+    l "You know how this game works..."
+    j "Did... did you do it Sid?"
+    j "Did you kill Sam?"
+    j "I know you hated them, but..."
+    i "No, I don't hate Sam!"
+    i "We didn't get along, but..."
+    i "I swear I didn't kill them!"
+    show scary with dissolve:
+        alpha .5
+    bi "..."
+    bi "Lauren and Jenny both sounded disappointed."
+    bi "Equally willing to accept Sid was the killer."
+    bi "I was hoping one of them was more willing to believe Sid."
+    bi "Because..."
+    bi "I think Sid's not the killer."
+    bi "And I need to figure out which of Jenny and Lauren is."
+    bi "Well, for now Sid's still lying in his alibi."
+    bi "And I think I need to earn his trust by proving his innocence before he'll admit it."
+    hide scary with dissolve
+    b "Sid... I never accused you of being the murderer."
+    b "In fact, I don't think you did it."
+    i "Hmph."
+    i "You're just saying that so I'll soften up to you!"
+    bi "Yup, as I thought, I can't just say it, I'll have to prove it..."
+    b "No, I believe that."
+    b "I'm going to prove it... and then I need you to help me solve this murder when I do."
+    b "Including telling me what your real alibi is."
+    b "Deal?"
+    i "..."
+    show sid ind
+    i "I mean, I know I'm innocent, but..."
+    i "Yeah, you should definitely convince the others."
+    i "It'd be best for the case, or something."
+    bi "That wasn't him promising to tell me the truth, but..."
+    bi "I'll take it for now."
