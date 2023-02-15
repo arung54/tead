@@ -5,6 +5,7 @@ label hospitalGo:
     show bg flashback with dissolve
     #$ statusnt("???", "", ch=3, sun=0)
     $mood = "ind"
+    play music "audio/ominous.mp3" fadein 1.0
     blank "A few years ago..."#febmusic
     zr "Let me get this straight."
     zr "With the evidence we have right now, we can't win the lawsuit."
@@ -51,6 +52,7 @@ label hospitalGo:
     zr "Yes. That's why a Cantoire employee won't do it."
     zr "I know a kid. Good with computers. We have some dirt on him, but he doesn't know it."
     zr "A few emails, and I think he'll do what we need..."
+    stop music fadeout 3.0
     $noside = False
     $ftecounter = 5
     scene black
@@ -85,6 +87,7 @@ label hospitalGo:
     bi "An angry hiss."
     bi "Right, I'm an unwilling cat owner now."
     bi "I found the energy to open my eyes."
+    play music "audio/rush.mp3" fadein 1.0
     scene bg hosproom1 at bg with dissolve
     $ statusnt("???", "bert", ch=3, sun=0)
     show sesame at bg with dissolve:
@@ -783,6 +786,7 @@ label hospitalGo:
     bi "Which is good, declawing cats is pretty inhumane."
     bi "But so is constantly poking me while I try to sleep."
     bi "After what felt like not sleeping at all..."
+    stop music fadeout 3.0
 label hospitalb:
     scene bg hosproom1 at bg
     $showchibint()
@@ -806,6 +810,7 @@ label hospitalb:
     b "Thanks Sesame."
     scene black with dissolve #febreview
     bi "I stepped outside into the hallway."
+    play music "audio/unity.mp3" fadein 1.0
     scene bg hosphalltopright at bg with dissolve
     $showchibint("jenny") #copy paste
     $statusnt("Guard Hallway", "bert", ch=3, sun=1)
@@ -922,6 +927,7 @@ label hospitalb:
     b "Sounds good. Thanks Jenny, I'll let you know what I find."
     hide jenny with dissolve
     bi "Alright, let's see what's behind door number one..."
+    stop music fadeout 3.0
     scene black with dissolve
     $statusnt("Security Room", "bert", ch=3, sun=1)
     $showchibint()
@@ -978,6 +984,7 @@ label hospitalb:
     b "..."
     show bg hospsecurity2 with dissolve
     $mood = "shock"
+    play music "audio/ominous.mp3" fadein 1.0
     b "Huh?"
     b "Why is Shahar's name in the patient records?"
     b "I had to scroll a few hundred lines to find his name. I almost missed it."
@@ -1050,6 +1057,7 @@ label testwindow:
     $showchibint("jenny")#copy paste  #febmusic 1 normal music
     $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
+    play music "audio/rush.mp3" fadein 1.0
     bi "As I entered the kitchen, I looked through the window to the cafeteria, just to make sure..."
     $showchibint("jenny", "window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     with dissolve
@@ -1114,9 +1122,9 @@ label testwindow:
     f "Bert! Are you okay?"
     b "Oh, hey Freddy. Yeah I'm fine."
     play sfx "audio/poprain.mp3" volume .5
-    show poprain at inwindow behind hostpwindowoverlay:
+    show poprain at inwindow behind hospwindowoverlay:
         xcenter .5
-        ycenter .1
+        ycenter .2
     show frog sad
     f "I got worried because Jenny showed up but you didn't."
     f "And I thought... well..."
@@ -1139,11 +1147,12 @@ label testwindow:
     b "Alright..."
     bi "I briefly told them about the common area, control room, and supply closet."
     f "Baseball bat? Can we play sports in here?"
+    $mood = "sad"
     b "I uh... didn't see any baseballs or anything like that in here."
     f "Oh. Maybe we can find one!"
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
-        xcenter .7
+        xcenter .65
         ycenter .25
         zoom .75
     d "Hush child, there are business matters to discuss."
@@ -1443,6 +1452,7 @@ label postcupcake:
         ycenter .4
     l "Sam, stop this."
     $mood = "shock"
+    stop music
     l "Take it from someone who actaully murdered someone."
     bi "..."
     bi "What?"
@@ -1521,6 +1531,7 @@ label postcupcake:
     hide lauren with moveoutright
     scene bg hospkitchen at bg with dissolve
     show jenny ind with dissolve
+    #play music "audio/rush.mp3" fadein 1.0
     j "Hey Bert, I'm gonna start cleaning the kitchen up."
     j "You don't have to do anything, I enjoy cleaning!"
     j "It might be a good time to talk to the others if you haven't already."
@@ -1530,6 +1541,7 @@ label postcupcake:
     $ftecounter = 5
     blank "FREE TIME 5 HERE"
     show jenny ind with dissolve
+    play music "audio/unity.mp3" fadein 1.0
     j "And, all done with cleaning!"
     j "I'm gonna go relax in the lounge, Bert."
     b "You don't want to talk to the others?"
@@ -1540,6 +1552,7 @@ label postcupcake:
     b "Haha, I'd never do that..."
     bi "Forget Freddy, does Jenny comprehend how serious this situation is?"
     hide jenny with dissolve
+    $showchibint("window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     bi "Hm... this is my chance, I think."
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
@@ -1567,9 +1580,14 @@ label postcupcake:
     b "It's almost like someone wiped most of your information."
     h "\"Thinks he is a pirate?\""
     show shahar mad at inwindow behind hospwindowoverlay
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad at inwindow behind hospwindowoverlay:
+        xcenter .5
+        ycenter .4
     h "Lad, I think I'm a pirate because I am a pirate!"
     h "How can I trust ye lad, ye might be thinkin' I'm an addle you can swindle and kill."
     b "Trust me?"
+    hide popmad
     b "..."
     if eat:
         bi "No, he's right."
@@ -1634,6 +1652,7 @@ label postcupcake:
     scene black with dissolve
     scene bg hospfancy at bg
     $showchibint("jenny")
+    $statusnt("Lounge", "bert", ch=3, sun=2)
     with dissolve
     show jenny happy with dissolve
     j "Hey Bert! Guess what I found?"
@@ -1816,6 +1835,8 @@ label chess3:
     b "I can't cook much but you shouldn't have to do all the work..."
     j "Your call Bert!"
     scene bg hospkitchen at bg with fade
+    $statusnt("Kitchen", "bert", ch=3, sun=3)
+    $showchibint("jenny", "window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     show jenny happy with dissolve
     b "Okay, what do we have..."
     j "Well, it's just veggies like tomatoes and onions, and broths basically..."
@@ -1826,13 +1847,15 @@ label chess3:
     b "...Onion soup?"
     b "Is that even a thing?"
     j "Uh... it is now!"
-    show jenny happy
     $mood = "ind"
+    hide jenny with dissolve
+    show scary with dissolve:
+        alpha .5
     b "Onion soup it is."
     bi "We cut some veggies, boiled them in broth..."
-    hide jenny happy with dissolve
     bi "About thirty minutes later we had made... something."
     bi "I took a taste and..."
+    hide scary with dissolve
     b "It's... edible."
     show jenny happy with dissolve
     b "...Maybe I should have let you cook again."
@@ -1866,13 +1889,14 @@ label chess3:
     scene black with dissolve
     bi "One by one, it was the same story."
     bi "My meal, if you could call it that, had put everyone off."
-    scene bg hospfancy at bg
+    scene bg hospkitchen at bg
     show jenny ind
     with dissolve
     b "Well, that was a disaster."
     b "I guess I'll stick to eating in the company cafeteria in the future..."
     j "Aww, at least you tried Bert."
     bi "Just then..."
+    stop music
     play sfx "audio/ding.mp3"
     intercom "It is now twilight. Please feel free to return to your rooms."
     intercom "You may still roam freely, but remember that you must return to your cell before night begins."
@@ -1909,8 +1933,9 @@ label chess3:
     bi "The intercom wouldn't have been necessary, my stomach rumbling was about as loud..."
     b "Damn, I'm hungry."
     b "Neither meal yesterday was really that filling..."
-    show sesame with dissolve:
-        ycenter .61
+    show sesame at bg with dissolve:
+        ycenter .62
+        zoom .9
     ses "Mew!"
     b "Morning Sesame."  #febreview
     b "I'm weirdly excited for today... being on the guard side was quite lonely."
@@ -1918,9 +1943,11 @@ label chess3:
     b "Now we can actually talk to everyone without a literal wall between us."
     ses "Mew?"
     b "Um... do cats understand how windows work?"
+    $mood = "sad"
     b "...Do you even understand what I'm saying?"
     ses "Prrr."
     b "I guess not..."
+    $mood = "ind"
     b "Well, let's get going, don't want to get punished!"
     hide sesame with dissolve
     $cat = True
@@ -1937,6 +1964,8 @@ label chess3:
     show frog ind:
         xcenter .75
     with dissolve
+    play music "audio/rush.mp3" fadein 2.0
+
     l "Morning Bert, you're up earlier than last time."
     b "My stomach served as an alarm clock today."
     b "I'm really hungry..."
