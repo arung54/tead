@@ -3761,3 +3761,69 @@ label trial4u:
     i "It'd be best for the case, or something."
     bi "That wasn't him promising to tell me the truth, but..."
     bi "I'll take it for now."
+    l "Wait, if you're claiming Sid is innocent..."
+    l "That means one of me or Jenny is the killer."
+    b "Yes, precisely."
+    l "...And you expect both of us to go along with this?"
+    l "That's a 50/50 shot I get accused as an innocent."
+    j "Hey, implying I'm guilty?"
+    l "Well, if it's not me..."
+    j "Hmph. Well now I kind of think it is you!"
+    l "Well, all the more reason why we shouldn't rule out Sid so easily."
+    b "Look, let me make a convincing argument..."
+    b "If you're innocent, you should believe any convincing argument."
+    l "Pshh. Fine."
+    l "So what makes Sid so innocent?"
+    b "Well, first, we need to think about where the killer went after the murder and why."
+    b "In particular, I think the murderer had to go to..."
+    call screen pickSpot9 with dissolve
+label trial4v:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "The locker room."
+    i "Yeah, the locker room! I didn't go there!"
+    i "...Um... why the locker room?"
+    b "Well, it comes back to something I found earlier while investigating..."
+    b "Something that I couldn't have found if the killer didn't go back to the locker room."
+    call screen bankEvidenceTrial(-1, 11, "trial4w") with dissolve
+label trial4w:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "When I was investigating, there was a uniform missing from the locker room."
+label trial4x:
+    menu:
+        b "If the killer never went back to the locker room, the number of missing uniforms should have been..."
+        "0":
+            bi "Zero!"
+            bi "...Wait, no, Sam is wearing one that wouldn't be in the locker room."
+            jump trial4w
+        "1":
+            bi "One!"
+            bi "Wait... that's consistent with what I found. I'd have nothing to prove from that."
+            jump trial4w
+        "2":
+            b "Two!"
+        "3":
+            bi "Three!"
+            bi "Wait... no, that's too many."
+            jump trial4w
+    b "One that Sam is still wearing, and the one the killer was wearing in the lobby."
+    b "They can't be the same, because we already established I was closely following the killer."
+    b "They wouldn't have had time to change Sam into their uniform."
+    b "Since Sam is still wearing a uniform, so the killer's must have been returned."
