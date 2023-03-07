@@ -109,7 +109,7 @@ screen bankEvidenceTrial(s, e, l):
 
         if currEvidence == 1:
             image "ev4 door.png" xcenter 800 yalign 0.1
-            text "The door to the break room stayed open the entire time since I first walked in here." xcenter 800 yanchor 0.0 ypos 330
+            text "The door to the break room stayed open the entire time since I first walked in here. Nothing seemed out of the ordinary about the door." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "ev4 gun.png" xcenter 800 yalign 0.1

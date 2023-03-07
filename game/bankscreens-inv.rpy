@@ -137,7 +137,7 @@ screen bank_evidence():
 
         if currEvidence == 1:
             image "ev4 door.png" xcenter 800 yalign 0.1
-            text "The door to the break room stayed open the entire time since I first walked in here." xcenter 800 yanchor 0.0 ypos 330
+            text "The door to the break room stayed open the entire time since I first walked in here. Nothing seemed out of the ordinary about the door." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "ev4 gun.png" xcenter 800 yalign 0.1
@@ -272,6 +272,7 @@ label bankDoor:
     if bank_evidence[1]:
         bi "The door to the break room."
         bi "It's been open this entire time."
+        bi "Nothing's out of the ordinary about it."
     else:
         bi "Hm, nothing is particularly noticeable about the door."
         bi "Though now that I think about it..."

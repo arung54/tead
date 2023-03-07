@@ -1,4 +1,4 @@
-label bankGo:
+4tilabel bankGo:
     $noside = True
     camera at paralloff
     scene black
@@ -3471,7 +3471,7 @@ label trial4t:
             j "Us?"
             j "But... I was just telling the truth."
             l "I don't understand... what about our stories doesn't add up?"
-            jump trial4ta
+            jump trial4ti
         "Jenny and Sid":
             b "Jenny and Sid."
             j "Huh?"
@@ -3480,7 +3480,7 @@ label trial4t:
             j "After all, I did see him sleeping."
             i "Yeah, what gives punk?"
             b "Well, what doesn't make sense is..."
-            jump trial4tb
+            jump trial4tii
         "Lauren and Sid":
             b "Lauren and Sid."
             i "Huh?"
@@ -3488,16 +3488,16 @@ label trial4t:
             i "Whatchu trying to say, punk?"
             b "All I'm trying to say is, your alibi and Lauren's alibi are contradictory."
             b "The contradiction is..."
-            jump trial4tc
+            jump trial4tiii
 
-label trial4ta:
+label trial4ti:
     menu:
         b "The contradiction is..."
         "The locker room.":
             b "Lauren would have ran into Jenny in the locker room!"
             j "...Or I left before she got there."
             b "Oh... I guess you could have missed each other, yeah..."
-            jump trial4ta
+            jump trial4ti
         "The safe.":
             b "The safe!"
             b "Lauren said the safe was closed, but Jenny said she saw the safe opened when she left the locker room."
@@ -3545,15 +3545,15 @@ label trial4ta:
             l "Maybe the scream wasn't loud enough to be heard if you weren't in the hallway."
             b "Oh..., yeah that's true."
             b "I was on the other side of the building..."
-            jump trial4ta
+            jump trial4ti
         "You didn't pass each other.":
             j "Well, Lauren reached you in the break room after me, right?"
             j "So maybe she just went to the locker room after I left it, then followed my path."
             l "Yeah, if anything that seems like the most consistent part of our stories..."
             b "Oh... uh, haha, slip of the tongue!"
-            jump trial4ta
+            jump trial4ti
 
-label trial4tb:
+label trial4tii:
     b "The contradiction is..."
     menu:
         "The locker room.":
@@ -3562,7 +3562,7 @@ label trial4tb:
             i "The one I never claimed to go into in my alibi?"
             b "Uh..."
             bi "Yeah, I guess nothing about the locker room really pertains to Sid's alibi..."
-            jump trial4tb
+            jump trial4tii
         "The safe.":
             b "You have conflicting stories about the safe!"
             j "...We both said it was open."
@@ -3575,7 +3575,7 @@ label trial4tb:
             show sid mad
             i "Grrr..."
             bi "I'd better fix my answer before Sid gets too mad..."
-            jump trial4tb
+            jump trial4tii
         "The screaming.":
             b "Both of you claimed to hear someone yell..."
             i "Yeah, that makes sense!"
@@ -3622,8 +3622,8 @@ label trial4tb:
             j "I mean, that's true, but it's not a contradiction..."
             b "...Yeah, you're right."
             b "Let me rethink this..."
-            jump trial4tb
-label trial4tc:
+            jump trial4tii
+label trial4tiii:
     menu:
         "The locker room.":
             b "The locker room!"
@@ -3631,7 +3631,7 @@ label trial4tc:
             i "The one I never claimed to go into in my alibi?"
             b "Uh..."
             bi "Yeah, I guess nothing about the locker room really pertains to Sid's alibi..."
-            jump trial4tc
+            jump trial4tiii
         "The safe.":
             b "The safe!"
             b "Sid said he saw it open, but Lauren said when she passed it, it was closed!"
@@ -3642,7 +3642,7 @@ label trial4tc:
             bi "..."
             bi "I think there's something wrong with what we just discussed, but..."
             bi "They're right that the safe is not the most pressing part of it."
-            jump trial4tc
+            jump trial4tiii
         "The screaming.":
             b "Sid said he heard me yelling, but Lauren didn't!"
             l "So... what's the issue?"
@@ -3651,7 +3651,7 @@ label trial4tc:
             l "Yeah, we didn't see each other, so I don't see a contradiction there."
             b "Um..."
             b "Okay, that's not a contradiction, but what is a contradiction is..."
-            jump trial4tc
+            jump trial4tiii
         "You didn't pass each other.":
             b "Sid, remind me where you went after you woke up on the couch?"
             i "To the front of the safe, then to the break room."
@@ -3812,18 +3812,145 @@ label trial4x:
         "0":
             bi "Zero!"
             bi "...Wait, no, Sam is wearing one that wouldn't be in the locker room."
-            jump trial4w
+            jump trial4x
         "1":
             bi "One!"
             bi "Wait... that's consistent with what I found. I'd have nothing to prove from that."
-            jump trial4w
+            jump trial4x
         "2":
             b "Two!"
         "3":
             bi "Three!"
             bi "Wait... no, that's too many."
-            jump trial4w
+            jump trial4x
     b "One that Sam is still wearing, and the one the killer was wearing in the lobby."
     b "They can't be the same, because we already established I was closely following the killer."
     b "They wouldn't have had time to change Sam into their uniform."
-    b "Since Sam is still wearing a uniform, so the killer's must have been returned."
+    b "Sam is still wearing a uniform, so the killer's must have been returned."
+    l "Okay, but how does that absolve Sid?"
+    b "Well, Jenny, when you saw Sid, did he have a uniform with him?"
+    j "Um... no, I don't remember seeing anything like the uniform. I don't think he had it."
+    j "Unless he managed to stuff it in his pockets."
+    b "Which is unlikely."
+    l "But he could have just hid it elsewhere until Jenny walked by him, then moved it to the locker room."
+    l "Then Jenny would give him a convenient alibi."
+    b "Sure, but remember that Jenny saw Sid on the couch shortly before she heard me yell."
+    b "And I yelled shortly after finding the body, and I was only a few seconds behind the criminal."
+    b "So Sid would have had a very tiny window to hide the uniform."
+    l "He could have just hidden it in the couch he was sleeping on."
+    b "You really think he could hide an entire uniform in that small couch?"
+    l "Maybe he could."
+    l "I don't think we can rule it out."
+    l "So unless you have any other evidence, it's your opinion against mine."
+    b "Funny you mention that..."
+    b "There's another piece of evidence that rules Sid out."
+    b "Between when I found Sam's body and finished investigating the break room..."
+    b "Jenny and Lauren were in the break room."
+    b "But Sid didn't show up until after I finished investigating the break room."
+    i "Bert! That just makes me sound more fishy."
+    i "How is this evidence in my favor?"
+    b "Well, I think the murderer had to have been by the break room before I finished investigating it."
+    b "Because of this..."
+    call screen bankEvidenceTrial(-1, [1, 11], "trial4y") with dissolve
+label trial4y:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    i "The belt again?"
+    b "Yes, remember, we think the other end was tied to the door."
+    b "And that when I went into the break room, the belt snapped in two."
+    b "But when I investigated the break room..."
+    b "I didn't find the other half of the belt."
+    b "Which means it must have been removed before I finished investigating."
+    b "Lauren and Jenny came to the break room in that period of time, so they could have removed it."
+    b "But Sid..."
+    b "He couldn't have."
+    j "But why would the person who removed it be the murderer?"
+    b "Well, who else would have a reason to remove it?"
+    b "That would just be concealing evidence..."
+    b "Which is exactly what the murderer would want to do."
+    j "Hm..."
+    j "Hate to say it Lauren, but between the belt and the uniform..."
+    j "It seems really hard for Sid to have been the killer."
+    l "So? Really hard doesn't mean impossible."
+    b "I mean, we can never know for sure who did it."
+    b "Even if someone confessed, they could be lying for some reason."
+    b "We just have to go with what's our best shot."
+    b "And we won't know what that is unless we choose to believe in Sid, and Sid tells us the truth."
+    l "..."
+    l "Yeah, you're right."
+    l "I'm sorry..."
+    l "Once we rule out Sid, then I have to believe Jenny did it."
+    l "And... I'm not ready for that."
+    l "The five of us have been together the longest..."
+    l "It will hurt so much to be betrayed by one of you."
+    l "At least right now I have some plausible deniability for both Jenny and Sid..."
+    j "Aww, it's okay Lauren."
+    j "The feeling's mutual, now I know you did it!"
+    l "Hmph. I guess you have to say that, even if..., no, even though you did it."
+    bi "This situation hadn't arisen before..."
+    bi "Usually we had a primary suspect, or none at all."
+    bi "But assuming we haven't made any mistakes so far..."
+    bi "We have two suspects, they both know it, and the situation means they're actively working against each other."
+    bi "One of them will be trying to lie to pin it on the other..."
+    bi "The other, trying to help us find the truth."
+    bi "It's my job to figure out which one is which."
+    b "Okay, Sid."
+    b "Now it's your turn."
+    b "To tell us what really happened."
+    i "Okay, um..."
+    i "We're 100% sure it wasn't me, right?"
+    l "I mean, I'm not, but..."
+    l "I'll give you 90%."
+    i "Hey, that's not enough!"
+    b "Sid, please..."
+    b "If you tell us what happened that number can only go up."
+    b "If you're withholding information and we find that out, it'll go down."
+    i "...Sigh, fine."
+    i "I went in the safe."
+    b "Huh?"
+    i "I actually woke up when I heard Bert yelling for help."
+    i "I opened my eyes slightly... it's a little trick I learned at home."
+    i "Sometimes my mom and dad would fight and I wouldn't want them to know I was listening."
+    i "So I'd pretend to nap, but my eyes would be barely open."
+    i "I saw the lights were green, and I saw Jenny moving towards Bert yelling."
+    i "And I thought, if I wait for her to leave I can check out the safe and no one would be suspicious of me."
+    i "I was really hoping there was money in there, and I got greedy..."
+    i "If I knew a murder happened, I wouldn't have gone to the safe, I swear!"
+    bi "I don't entirely believe that, but it'd only hurt to mention that..."
+    j "Ah, so Sid's alibi and mine don't contradict anymore!"
+    l "And, neither do ours."
+    j "Oh."
+    j "...Then what?"
+    j "I mean, again, I know Lauren's the killer."
+    j "But... it is true Sid just resolved all the contradictions in our alibis."
+    j "So how do I prove it now?"
+    l "I should be the one asking that..."
+    j "How do you prove you're the killer? That should be easy!"
+    l "No, that's not what I..."
+    l "Never mind."
+    b "Wait, explain to me why you think this resolves the contradictions I pointed out earlier?"
+python:
+    startBankTrial("jenny", "Jenny: Sid and I both heard you yell at different times, but Sid {color=#f00}lied about when he heard you yell{/color}.", -1,
+    "jenny", "Jenny: Sid heard you yell at the same time as me, but .", -1,
+    "lauren", "Lauren: You said it's a contradiction that Sid and I didn't pass each other. But {color=#f00}I could have passed Sid while he was in the safe{/color}.", -1,
+    "lauren",  "Lauren: The {color=#f00}safe door was closed{/color}, so we didn't see each other.", -1,
+    3, 9, "trial4z")
+label trial4z:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    with dissolve
