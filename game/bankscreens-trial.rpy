@@ -140,7 +140,10 @@ screen bankEvidenceTrial(s, e, l):
 
         if currEvidence == 8:
             image "ev4 sid.png" xcenter 800 yalign 0.1
-            text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
+            if bank_extra[12]:
+                text "Sid pretended to sleep on the couch when he heard me yell. He went into the safe for a few minutes after he thought Jenny wouldn't see him, found it was mostly empty, then came to the break room afterwards." xcenter 800 yanchor 0.0 ypos 330
+            else:
+                text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev4 sign.png" xcenter 800 yalign 0.1

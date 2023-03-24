@@ -3923,7 +3923,10 @@ label trial4y:
     i "I saw the lights were green, and I saw Jenny moving towards Bert yelling."
     i "And I thought, if I wait for her to leave I can check out the safe and no one would be suspicious of me."
     i "I was really hoping there was money in there, and I got greedy..."
+    i "So I went in. But only for a few minutes! It was pretty much empty when I went in there, so I left shortly after."
     i "If I knew a murder happened, I wouldn't have gone to the safe, I swear!"
+    $ bank_extra[12] = True
+    tut "Sid's Account description has been updated in the evidence menu."
     bi "I don't entirely believe that, but it'd only hurt to mention that..."
     j "Ah, so Sid's alibi and mine don't contradict anymore!"
     l "And, neither do ours."
@@ -3939,10 +3942,10 @@ label trial4y:
     b "Wait, explain to me why you think this resolves the contradictions I pointed out earlier?"
 python:
     startBankTrial("jenny", "Jenny: Sid and I both heard you yell at different times, but Sid {color=#f00}lied about when he heard you yell{/color}.", -1,
-    "jenny", "Jenny: Sid heard you yell at the same time as me, but .", -1,
+    "jenny", "Jenny: Sid and I {color=#f00}heard the same yell{/color}, but he was pretending to be asleep.", -1,
     "lauren", "Lauren: You said it's a contradiction that Sid and I didn't pass each other. But {color=#f00}I could have passed Sid while he was in the safe{/color}.", -1,
     "lauren",  "Lauren: The {color=#f00}safe door was closed{/color}, so we didn't see each other.", -1,
-    3, 9, "trial4z")
+    3, [9, 12], "trial4z")
 label trial4z:
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
@@ -3954,3 +3957,103 @@ label trial4z:
     show lauren ind:
         xcenter .75
     with dissolve
+    b "Lauren..."
+    b "The safe door can't have been closed."
+    l "What? We already went over this."
+    l "I know now the door was unlocked at the time, but I didn't know then because of my colorblindness."
+    b "No, I'm not talking about being locked, I'm talking about being closed, like shut."
+    b "Well, locked and shut are kind of the same thing, actually."
+    b "On the inside, you can't actually open the safe door even if it's unlocked."
+    b "Jenny and I tested this earlier."
+    l "So? I was on the outside."
+    l "Information about being on the inside doesn't change my alibi."
+    b "Not in isolation, no..."
+    b "But Sid was inside the safe when you passed by."
+    b "If the safe door was really closed, Sid would have been locked in there."
+    i "Hey... yeah!"
+    l "Okay, but what if Jenny trapped Sid in there, and then let him out later?"
+    i "You think I wouldn't hear the door close?"
+    l "Maybe it closed quietly?"
+    b "No, I'm pretty sure Jenny didn't trap Sid in there."
+    b "If, as you say, you passed the safe, checked the locker room, and then came to the break room..."
+    b "Jenny, who came to the break room before you, wouldn't have had a window to let Sid out."
+    b "She would have had to come to the safe after you passed it, opened it, and then run back to the break room..."
+    b "All without being seen by you while you were in the hallway, and while beating you to the break room."
+    b "Even if somehow Sid had his back turned to the door the entire time and couldn't hear it close..."
+    b "It seems too hard to pull off."
+    l "Maybe Jenny was lying when you tested the safe door?"
+    l "She's the only one who we know has tried to leave the safe while the door is closed."
+    i "Okay, you test it! We'll close the safe door on you and you try to get out!"
+    j "Sid, I'm not lying but... you're basically advocating for jailing her in there."
+    i "Well we'd let her out, obviously!"
+    l "Sid it's... it's fine, I don't need to test it."
+    l "I guess Jenny wouldn't lie about something that could be checked so easily."
+    l "...Okay, what if Jenny kept the door barely open?"
+    l "That way he wasn't locked in, but it would be hard to tell the door was open."
+    l "If Sid didn't notice it would be a great way to implicate me."
+    i "I mean... I'm pretty sure the door was wide open when I left."
+    i "But... maybe I'm forgetting."
+    b "No, that's not possible."
+    call screen bankEvidenceTrial(-1, 9, "trial4aa") with dissolve
+label trial4aa:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    b "The safe door opens and closes electronically, and when it does it moves a full ninety degrees."
+    b "If Sid wasn't trapped in the safe when you passed it, you would've seen the door wide open."
+    l "Okay, fine, maybe the safe door was open when I passed by it."
+    l "Then things look pretty bad for me..."
+    l "But there's something you haven't considered."
+    l "Why would I lie about passing Sid? If you believe that then you must have some reason why I did it..."
+    python:
+        startBankTrial("lauren", "Lauren: Lying about not seeing Sid {color=#f00}only makes me more suspicious{/color}. The murderer would try to avoid suspicion.", -1,
+        "lauren", "Lauren: I had {color=#f00}no way to know Sid would lie in his alibi{/color}. So I had no reason to come up with a lie that looked suspicious if Sid told the truth.", -1,
+        "lauren", "Lauren: If Sid and I saw each other while he was in the safe, we could confirm each other's alibis and {color=#f00}it would only make me seem more innocent{/color}.", -1,
+        "lauren",  "Lauren: Also, why wouldn't I point out Sid lied earlier if I knew he went in the safe? {color=#f00}It would make Sid seem like the murderer{/color}.", -1,
+        2, 11, "trial4ab")
+label trial4ab:
+    scene bg banklobby
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .25
+    show sid ind
+    show lauren ind:
+        xcenter .75
+    b "You say if you and Sid saw each other it would make you seem more innocent."
+    b "That would be true if you weren't the murderer."
+    b "But we know after running away from the lobby, the murderer was carrying something."
+    b "Something we've discussed earlier."
+    b "A uniform, that they needed to return to the locker room."
+    b "If it was seen outside the locker room, we would have known someone besides Sam wore it."
+    b "We would figure out immediately known Sam didn't commit suicide."
+    l "..."
+    b "It was a pretty clever murder, all things considered."
+    b "You shot Sam, presumably a long time before you entered the lobby."
+    b "You placed their corpse in the break room, wearing the uniform."
+    b "You put on a uniform, to imitate Sam, then shot at me and Freddy."
+    b "But you weren't actually trying to kill us, you were just making it seem like Sam was."
+    b "After all, if we just found Sam's body, even with a gun next to it..."
+    b "We might not think it was a suicide."
+    b "You set up the room so the door would close on its own, as if Sam ran in there."
+    b "You ran from the lobby, and then threw the gun in the break room next to Sam's corpse."
+    b "To us, it looked like a suicide at first."
+    b "Then, you carefully avoided being seen by Jenny and Sid with the uniform."
+    b "You returned it to the locker room."
+    b "That way, no one would think the person in the lobby wasn't Sam."
+    l "But I made too many mistakes."
+    l "I didn't think about the number of bullets in the gun at all..."
+    l "I tried to hide the belt used to close the break room, but couldn't grab the other half."
+    l "If I had just left the belt on the break room door, we wouldn't have absolved Sid."
+    l "And I didn't realize the safe door would trap Sid inside if it were closed."
+    l "After all, it's not something I could test myself..."
+    l "So I was going to lie and say the safe door was closed, and if Sid said it was open..."
+    l "I was hoping you wouldn't be able to tell if Sid or I was lying."
