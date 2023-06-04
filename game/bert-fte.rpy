@@ -63,7 +63,8 @@ label bertHang:
         show bert happy
         b "And that's a positive in its own way!"
         ni "I'm envious of his optimism..."
-        ni "...it won't do much good to be on bad terms with everyone, so maybe I'll try to play along."
+        ni "I don't want to come off as a jerk though."
+        ni "It won't do much good to be on bad terms with everyone, so maybe I'll try to play along."
         n "...though in my childhood I really liked deep dish pizza."
         b "Oh?"
         n "Yeah. our local pizza place sold thin crust by the pizza and deep dish by the slice."
@@ -71,14 +72,13 @@ label bertHang:
         n "So I'd get deep dish so I could eat it without sharing."
         b "Weird toppings?"
         n "I loved anchovies as a kid."
-        n "These days... I've wisened up a bit."
-        b "Understandable. I imagine after eating gruel that much salt is shocking."
-        n "..."
-        show bert ind
-        b "...Sorry, probably shouldn't have brought that up again."
-        n "No, it's fine."
-        show bert happy
-        b "Still, thanks for talking to me!"
+        n "Speaking of Italian food, some of the people I used to roll with would call me Spaghetti." #febreview
+        b "Spaghetti?"
+        n "I think they were teasing me about my last name, Scagnelli."
+        n "It's long, Italian, and has a bunch of letters, kinda like Spaghetti."
+        b "Do you want me to call you that?"
+        n "No, I've moved on from that group. Just Dan is fine."
+        b "Got it! Anyway, thanks for talking to me!"
         b "It'll only help us work together in the future!"
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."

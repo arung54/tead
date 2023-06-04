@@ -315,6 +315,14 @@ image gotit:
         xpos .25
         linear 2 xpos .0
 
+transform show_hide_dissolve:
+    on show:
+        alpha .0
+        linear .05 alpha 1.0
+    on hide:
+        alpha 1.0
+        linear .05 alpha .0
+
 init python:
     grey_images = {}
     sep_images = {}
@@ -476,6 +484,11 @@ init python:
 ###########
 #Show Chibi
 ###########
+screen killmenu:
+    key "mousedown_3" action Hide("nonexistent_screen")
+    #key "mousedown_1" action Hide("nonexistent_screen")
+    key "mouseup_3" action Hide("nonexistent_screen")
+    #key "mouseup_1" action Hide("nonexistent_screen")
 
 screen killuser:
     key "mousedown_3" action Hide("nonexistent_screen")
@@ -698,8 +711,8 @@ image side notbert = ConditionSwitch(
 #image side dan = ConditionSwitch('mood==\"happy\"', 'dhappy', 'mood==\"ind\"', 'dind',
 #'mood==\"sad\"', 'sad', 'mood==\"mad\"', 'dmad', xalign=0.13, yalign=0.9)
 
-define m = Character("Me?", callback=fillvoice, who_color = "FFFFFF", image="bert")
-define mi = Character("Me?", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
+define m = Character("Me", callback=fillvoice, who_color = "FFFFFF", image="bert")
+define mi = Character("Me", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert")
 define n = Character("Dan Scagnelli", callback=fillvoice, who_color = "FFFFFF", image="bert")
 define ni = Character("Dan Scagnellii", callback=fillvoice, what_italic=True, who_color = "FFFFFF", image="bert") #Dan Internal, name and text italics
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox, image="bert")
@@ -772,13 +785,14 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [True, True, True]
-        train_evidence2 = [True, True, True]                #made all of these true from false LOL
-        train_evidence3 = [True, True, True, True]
+        train_evidence1 = [False, False, False]
+        train_evidence2 = [False, False, False]                #made all of these true from false LOL
+        train_evidence3 = [False, False, False, False]
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
         bank_evidence = [True] + [False] * 11
+        pent_evidence = [False] * 9
         mans_extra = [False] * 11
         hosp_extra = [False] * 6
         bank_extra = [False] * 20
@@ -835,4 +849,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump testwindow
+jump pent23

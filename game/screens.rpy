@@ -305,9 +305,10 @@ style input:
 ## https://www.renpy.org/doc/html/screen_special.html#choice
 
 screen choice(items):
+
     style_prefix "choice"
 
-    vbox:
+    vbox at show_hide_dissolve:
         for i in items:
             textbutton i.caption action i.action
 
@@ -394,6 +395,7 @@ screen test():
         textbutton _("Test") action ShowMenu("save")
 
 screen navigation():
+    use killmenu
     if main_menu:
         add "menufg.png"
         #$main_menu = True
@@ -408,15 +410,15 @@ screen navigation():
         imagebutton:
             idle "ibmenucards.png"
             hover "ibmenucards2.png"
-            ycenter .5 xcenter .5 focus_mask True action [Show("Characters"), Hide("main_menu")]
+            ycenter .5 xcenter .5 focus_mask True action [ShowMenu("Characters"), Hide("main_menu")]
         imagebutton:
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
-            focus_mask True action [ShowMenu("about"), Hide("main_menu")]
+            focus_mask True action ShowMenu("about")#, Hide("main_menu")]
         imagebutton:
             idle "ibmenuload.png"
             hover "ibmenuload2.png"
-            focus_mask True action [ShowMenu("load"), Hide("main_menu")]
+            focus_mask True action ShowMenu("load")
         #imagebutton:
         #    idle "ibmenusettings.png"
         #    hover "ibmenusettings2.png"
@@ -424,7 +426,7 @@ screen navigation():
         textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
         textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
 
-#################### below is NOT main menu, just in game menu
+        #################### below is NOT main menu, just in game menu
     else:
         vbox:
             xalign 0
@@ -765,6 +767,7 @@ style about_label_text:
     size gui.label_text_size
 
 screen Characters():
+    tag menu
     modal True
     use freeTimeCounter
 
@@ -773,13 +776,13 @@ screen Characters():
             xcenter .08 ycenter .1
             idle "goback.png"
             hover "goback.png"
-            focus_mask True action Return()
+            focus_mask True action [Hide("Characters"), Hide("freeTimeCounter"), Function(hideCards), Return()]
     else:
         imagebutton:
             xcenter .08 ycenter .1
             idle "goback.png"
             hover "goback.png"
-            focus_mask True action [Hide("Characters"), Function(hideCards), ShowMenu("preferences")]
+            focus_mask True action [Hide("Characters"), Hide("freeTimeCounter"), Function(hideCards), ShowMenu("preferences")]
 
 style characters_label is gui_label
 style characters_label_text is gui_label_text
@@ -808,7 +811,7 @@ screen load():
 
     tag menu
 
-    use file_slots(_("Load")) #removed load
+    use file_slots(_("Load"))
 
 
 screen file_slots(title):

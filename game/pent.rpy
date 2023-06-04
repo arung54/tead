@@ -62,6 +62,9 @@ label pentGo:
     bi "I want to find a way to save them all, but if one of them's the Game Master..."
     bi "Is it even possible to save everyone?"
     bi "Jenny? Freddy? Sid?"
+    bi "...No matter what, I have to try."
+    bi "I'm going to figure everything out, and save us."
+    bi "There's no time to waste, so I need to start collecting evidence as soon as possible."
     hide frog2 ind
     hide jenny ind
     hide sid ind
@@ -76,7 +79,10 @@ label pentGo:
     bi "If I move a bit I hear a creaking noise."
     bi "Hardwood floors."
     bi "It smells like... dust."
-    show bg pentcellar at bg with dissolve
+    show bg pentcellar at bg
+    show scary:
+        alpha .6
+    with dissolve
     $mood = "shock"
     $cat = True
     bi "I immediately feel claustrophobic."
@@ -84,6 +90,7 @@ label pentGo:
     bi "But there are clearly bottles of wine all over the walls."
     bi "I'm in a big closet?"
     bi "No, there's a ladder going up, and no other way out."
+    hide scary with dissolve
     bi "My eyes are adjusting a bit."
     bi "It seems like... a wine cellar?"
     $ statusnt("Wine Cellar", "bert", ch=5, sun=0)
@@ -96,7 +103,7 @@ label pentGo:
     ses "Mrep!"
     $mood = "shock"
     bi "Huh?"
-    bi "There's a false panel on the far wall."
+    bi "There's a false panel on the far wall." #febreview Might cut??? unsure
     bi "The key is in the keyslot, making it pretty obvious."
     $noside = True
     blank "Bert walked over and opened the false panel."
@@ -438,17 +445,6 @@ label pent23:
     b 'Refuge from what? Who are they scared of, who is the person that "knows where they live?"'
     j "Bert, this is scary..."
     j "Not a big fan of this book..."
-    b "Me either, but it's information."
-    b "Hm? What's this?"
-    b "There's a little slip of paper tucked in a different page."
-    show bg journal2 at bg with dissolve
-    b "This looks like a phone number."
-    b "It's scribbled down in the same handwriting on a scrap of paper..."
-    b 'And the word "spaghetti", for whatever reason.'
-    b 'Maybe... this phone number has to do with "turning the tables."'
-    i "Shit, if we had a phone ourselves, we could just call that number."
-    b "I don't think we'll get that lucky."
-    b "We don't have our phones, and I haven't seen one here yet."
     show bg pentstudy at bg
     show jenny scared:
         xcenter .3
@@ -482,6 +478,7 @@ label pent23:
 
 label pent25:
     show scary with dissolve:
+        alpha .5
     menu:
         bi "That criminal was..."
 
@@ -497,7 +494,8 @@ label pent25:
             bi "I don't think she mentioned anything like that."
             jump pent25
 
-    b "What if..."
+    b "I think that settles it."
+    i "Settles what?"
     b "Lets assume this really is Mr. Sydell's journal."
     b "Think about it - it seems like almost all of us have some connection to Sydell."
     b "And importantly, Catherine said she had robbed his house before."
@@ -524,6 +522,12 @@ label pent25:
     b "So he came here to take refuge."
     j "Wow, Bert, you might be right."
     j "Between the painting, the furniture, and the book, I think you're onto something."
+    if not pent_evidence[0]:
+        $pent_evidence[0] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "Sydell's Apartment was added to evidence."
     hide frog2 with moveoutright
     show sid ind with moveinright:
         xcenter .7
@@ -535,10 +539,6 @@ label pent25:
     i "Pun intended."
     j 'Also, why "as well"?'
     j "Doesn't that imply someone had already died?"
-    j "Bert, I'm scared..."
-    i "Me too, not gunna lie..."
-    b "Our fear aside, I think there's a way everything makes sense."
-    b "Maybe..."
     b "Maybe someone close to Sydell had been murdered."
     b 'That would explain him saying "as well".'
     b "Then, when Catherine robbed his empty house, he thought he was next to die."
@@ -549,17 +549,96 @@ label pent25:
     bi "Even if this is true, it brings up even more questions..."
     bi "Why was someone killed before him?"
     bi "What were Sydell and that person doing to end up in this situation?"
-    bi "Where is Sydell now?"
-    bi 'And lastly, what\'s with this phone number and the word "spaghetti"?'
+    bi "And lastly, how does this connect to our situation?"
     hide scary with dissolve
     b "One step forward, one step back..."
-    b "We should go check out the rest of this place."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
+    $mood = "shock"
+    j "Bert, take a look at this!"
+    b "Hm? What's is it?"
+    hide popwow
+    j "There's a little slip of paper tucked in a different page."
+    show bg journal2 at bg
+    hide jenny
+    hide sid
+    with dissolve
+    b "This looks like a phone number."
+    b "It's scribbled down in the same handwriting on a scrap of paper..."
+    b 'And the word "spaghetti", for whatever reason.'
+    b 'Maybe... this phone number has to do with "turning the tables."'
+    i "Why's it say spaghetti?"
+    i "Was he ordering takeout?"
+    j "If we had a phone, we could just call it. But we don't have one..."
+    b "Spaghetti... spaghetti..."
+    b "I feel like I should know someone by that name..."
+    i "You know someone named Spaghetti?"
+    b "Kinda... someone that was trapped with us."
+    b "That's it!"
+label pent26:
+    show scary with dissolve:
+        alpha .5
+    menu:
+        bi "That person was..."
+
+        "Kaiser.":
+            bi "No, it definitely wasn't Kaiser..."
+            jump pent26
+
+        "Dracula.":
+            bi "I don't think he mentioned anything like that..."
+            hide scary with dissolve
+            jump pent26
+
+        "Dan.":
+            bi "It was Dan!"
+            hide scary with dissolve
 
 
-    #clcok somewhere says the time
-    #during looking around, ticks to next time
-
-
+    scene bg pentstudy at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    with dissolve
+    i "What are you talking about?"
+    b "Dan must be Spaghetti - there's no other explanation."
+    b "On the first day on the train, Dan talked to me in private."
+    scene bg trainfront at bg
+    show dan ind
+    show sepia:
+        alpha .5
+    with dissolve
+    n "Speaking of Italian food, some of the people I used to roll with would call me Spaghetti." #febreview
+    b "Spaghetti?"
+    n "I think they were teasing me about my last name, Scagnelli."
+    n "It's long, Italian, and has a bunch of letters, kinda like Spaghetti."
+    scene bg pentstudy at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    with fade
+    i "What?!"
+    i "So this is... Dan's number?"
+    i "Dan..."
+    bi "I'd forgotten how quickly Sid grew attached to Dan."
+    bi "Something about a strong male figure to look up to, I suppose."
+    b "Given Dan's history especially, I'm not shocked to see he was tied up in all this."
+    j "Bert!"
+    bi "Jenny gave me a look, I don't think she wanted me badmouthing Dan in front of Sid."
+    i "He's right..."
+    i "One of the last things Dan said to me was about his criminal history."
+    j "Oh... I see..."
+    i "Dan was kind to me, but there's no reason to dance around his shady past."
+    b "Still, why is his phone number in a place like this?"
 
 
 
@@ -677,3 +756,9 @@ label pent6:
     #we go look at window
     #everything clicks......
     #3 question quiz for user 1) what was the flashlight 2) where are we 3) what does this mean (bert is person)
+    if not pent_evidence[0]:
+        $pent_evidence[0] = True
+        show newevidencefound with dissolve
+        pause 1
+        hide newevidencefound with dissolve
+        blank "__________ was added to evidence."

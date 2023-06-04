@@ -1391,7 +1391,12 @@ label postFT2:
     t "I'm not trying to be harsh on you, kid."
     t "You didn't do anything useful because there's very little useful to do."
     t "Someone already has been assigned to murder, someone's going to have to be their victim."
-    t "It's not like we're investing, nothing you do will save them."
+    t "Nothing you do will save them."
+    t "What a jarring change from my day-to-day this all is..."
+    t "I used to be so powerful that there'd be assassination attempts on me weekly."
+    t "My team got so used to it they'd even turn hitmen back around to kill their bosses." #febreview
+    bi "That's insane..."
+    t "But now, here, we're all equally powerless."
     t "If that's the case, why not relax?"
     $mood = "sad"
     b "Isn't that too fatalistic?"
@@ -1403,7 +1408,6 @@ label postFT2:
     t "And for a gal like me with a robust liver, drinking to relax is that thing."
     b "I... kind of followed until the last part."
     t "I've given up, kiddo."
-    t "I've given up."
     b "..."
     t "Hey Pirate boy, whatcha doin over there?"
     show stella drunk:

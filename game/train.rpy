@@ -1723,7 +1723,13 @@ label midcar5:
     i "But I'm hopeful."
     n "Hopeful?"
     hide pophearts
-    i "Yeah! I think we're gunna get off this train, safe and sound."
+    i "Meeting someone strong and tough like you helps."
+    n "I don't think you want to be me like, Sid."
+    n "I've had a pretty problematic past with the law."
+    i "..."
+    i "I don't care about that!"
+    i "All that matters for us right now is moving forward."
+    i "We're gunna get off this train, safe and sound."
     i "After all, I have stuff to do! I'm gunna show my family the world!"
     $mood = "happy"
     ni "Damn right you will, kid."
@@ -1754,7 +1760,7 @@ label midcar5:
     hide start2
     hide sepia
     with dissolve
-    ni "What a shame... I just got out of the pen, and now I have to murder again..."
+    ni "What a shame..."
     ni "At least there are a lot of easy targe-{p=0.5}{nw}" #Arun: BIG NOISE, cut off music
     stop music
     show scary:
@@ -3800,7 +3806,8 @@ label trial1r:
 
     k "And then... this car."
     k "It reminds me of one heist in particular, my most famous heist."
-    k "In fact, it's nearly identical to the train from then."
+    k "The coldest August 5th I've ever experienced, and one that changed my life."  #febreview
+    k "This is nearly identical to the train from then."
     b "So you tried the same password? From that heist?"
     k "Yes, and it worked."
     k "It was going to be my big break... and for a while, I thought it was."

@@ -711,9 +711,11 @@ label hospitalGo:
         xcenter .3
         ycenter .275
         zoom .75
-    s "And well, not like I personally knew the guy..."
-    s "I had no reason to reach out to him..."
-    b "I wonder... did something happen to him three years ago?"
+    s "And well, not like I personally knew the guy..." #sam flashback
+    s "He didn't even know my name, of course."
+    b "He didn't know your name?"
+    s "I always dealt under my middle name, Heron."
+    b "I see... I wonder, did something happen to him three years ago?"
     l "Maybe he disappeared to start planning this game?"
     hide poptear
     i "I thought the Game Master was one of us?"
