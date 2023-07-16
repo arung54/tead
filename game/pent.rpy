@@ -6,7 +6,7 @@ label pentGo:
     $cat = False
     $ statusnt("???", "bert", ch=5, sun=0)
     $mood = "sad"
-    play music "audio/rush.mp3" fadein 1.0
+    play music "audio/ominous.mp3" fadein 1.0
 
     bi "So many people..."
     bi "Dead."
@@ -58,6 +58,10 @@ label pentGo:
     bi "He had a terrible life, and now he's stuck in here probably because of his father."
     bi "And now it's just the four of us."
     bi "I trust all of them, but... maybe I shouldn't?"
+
+    bi "We also have the hint from the vault."
+    bi '"The Secret of the Game", as it said.'
+
     bi "I don't know what to think."
     bi "I want to find a way to save them all, but if one of them's the Game Master..."
     bi "Is it even possible to save everyone?"
@@ -98,24 +102,21 @@ label pentGo:
     ses "Mrep."
     $mood = "ind"
     bi "And more importantly, where is everyone else?"
+    bi "It's weird that I'm waking up alone..."
     bi "I need to go find them."
     bi "Up the ladder I go-"
     ses "Mrep!"
     $mood = "shock"
     bi "Huh?"
-    bi "There's a false panel on the far wall." #febreview Might cut??? unsure
-    bi "The key is in the keyslot, making it pretty obvious."
-    $noside = True
+    bi "There's a drawer on the far wall."
     blank "Bert walked over and opened the false panel."
     blank "Inside was a shelf with one item."
     $noside = False
     show theflashlight with dissolve
-    bi "It's a generic looking flashlight."
+    bi "It's a flashlight."
     bi "It's made of metal, with an on-off button on the shaft."
     bi "There's also a small metal tip on the opposite end."
     bi "It turns on, but it's not {i}that{/i} dark down here anyway."
-    bi "Plus, I see light coming from the crack in the cellar door anyway."
-    bi "I don't think I need this right now."
     $noside = True
     blank "Bert unscrewed the flashlight to find its batteries."
     $noside = False
@@ -123,11 +124,31 @@ label pentGo:
     bi "Doesn't seem like anything out of the ordinary."
     hide theflashlight with dissolve
     bi "But why is a flashlight being locked away in a wine cellar?"
-    bi "Speaking of which..."
-    show thekey with dissolve
-    bi "I will keep my hands on the key."
-    bi "If anyone needs the flashlight, I can come back here and get it with this."
-    hide thekey with dissolve
+    bi "..."
+    bi "......"
+    bi "I woke up alone in a wine cellar with access to an item, this flashlight."
+    bi "Does that mean what I think it means?"
+    $mood = "shock"
+    bi "Have I... been chosen as the killer for this round?"
+    bi "It's a horrible thought."
+    bi "If so, why was I given this flashlight specifically?"
+    bi "And shouldn't I have a connection to this location?"
+    $mood = "sad"
+    bi "I've definitely never been in this wine cellar before..."
+    bi "And I don't know what I'm supposed to do with a flashlight."
+    bi "..."
+    bi "Maybe it's good if I'm the one picked as the killer..."
+    bi "I know for certain I would never resort to that... but..."
+    bi "I wouldn't be able to say the same for the others."
+    bi "Plus, it was a 1 in 3 chance to get chosen, assuming the Game Master is here with us."
+    bi "..."
+    bi "Despite that, it's hard not to feel a looming pressure."
+    bi "I imagine this is how Kaiser, Catherine, Ivan, and Lauren must have felt."
+    "Bert sighed."
+    bi "For now, I'll hang on to this flashlight."
+    $noside = True
+    blank "Bert put the flashlight in his backpack."
+    $noside = False
     bi "Alright."
     b "Time to go find everyone else, Sesame."
     ses "Mep."
@@ -138,6 +159,7 @@ label pentGo:
     scene bg pentbedroom2 at bg
     $ statusnt("???", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
+    play music "audio/rush.mp3" fadein 3.0
     show sidsleep at bg:
         xcenter .5
         ycenter .63
@@ -150,12 +172,11 @@ label pentGo:
         xcenter .715
         ycenter .77
     with fade
-    bi "What's with that hatch?"
-    bi "It's half covered by the rug."
+    bi "The hatch to the wine cellar is half covered by the rug."
     bi "It's as if the wine cellar is normally hidden."
     bi "Why would someone need to hide their wine cellar?"
     bi "Anyway..."
-    bi "This looks like a nice bedroom."
+    bi "It looks like a bedroom."
     $ statusnt("Bedroom", "bert", ch=5, sun=0)
     bi "And the other 3 are here and still asleep."
     i "snnnnnnnnnnnnnnnnnnnnnnnn......."
@@ -383,11 +404,11 @@ label pent23:
             b "Haven't we seen it before?"
 
         "selection of drinks over there.":
-            b "Hmm... On second thought..."
+            bi "Hmm... On second thought..."
             jump pent23
 
         "model of fireplace.":
-            b "Not sure why I'd say that..."
+            bi "Not sure why I'd say that..."
             jump pent23
 
     show jenny ind with moveinleft:
@@ -639,123 +660,906 @@ label pent26:
     j "Oh... I see..."
     i "Dan was kind to me, but there's no reason to dance around his shady past."
     b "Still, why is his phone number in a place like this?"
+    b "Maybe Sydell was looking to call in a favor."
+    j "That would make sense, if he was scared of Catherine and the lawyers after him."
+    j "Maybe Sydell needed a bodygaurd, or-"
+    i "A hitman..."
+    bi "Sid looks like he's piecing together Dan's past."
+    b "If Sid was a hitman, everything would start to make sense."
+    j "What do you mean? What would make sense?"
+    b "Sydell wanted Stella gone, right?"
+    b "He was being sued into the ground, and was scared for his life after Catherine's robbery."
+    b "Back in the mansion Stella said something that stuck with me."
+    j "Well? What was it?"
 
+label pent27:
+    show scary with dissolve:
+        alpha .5
+    menu:
+        bi "Stella told us that..."
 
+        "She knew Dan as a hitman.":
+            bi "No, she definitely never met Dan prior to this..."
+            jump pent27
 
+        "Her bodyguards have sent hitmen back to kill their bosses before.":
+            hide scary with dissolve
+            bi "I remember it clearly now!"
 
-    i "You really sprung this on me first thing in the morning."
-    b "I think it's closer to mid-day, there is a window in the other room."
-    show sid happy
-    play sfx "audio/popwow.mp3" volume .5
-    show popwow:
-        xcenter .61
-        ycenter .25
-        zoom .75
-    i "A window?!"
-    i "Bert, why didn't you say so earlier!"
-    $mood = "shock"
-    i "Screw all this puzzle hunting, I'm jumpin' for it!"
-    b "Sid, I think we're really high u-"
-    hide sid happy with moveoutleft
-    show jenny scared:
-        xcenter .3
-        linear .3 xcenter .5
-    j "We should follow him before he jumps out the window."
-    j "Come on, Freddy!"
-    hide jenny scared with moveoutleft
-    hide frogsit3 with dissolve
-    b "He better not jump out the window..."
-    scene bg pentkitchen at bg
-    $ statusnt("Loft", "bert", ch=5, sun=2)
+        "She knew it was Sydell's masion right away.":
+            bi "She did say that... but that's not relevant at the moment."
+            #hide scary with dissolve
+            jump pent28
+label pent28:
+    b "It was me, Stella, and Shahar in the dining room."
+    b "She said..."
+    scene bg nmansiondining at bg
+    show stella drunk
+    show sepia:
+        alpha .5
+    with fade
+    t "What a jarring change from my day-to-day this all is..."
+    t "I used to be so powerful that there'd be assassination attempts on me weekly."
+    t "My team got so used to it they'd even turn hitmen back around to kill their bosses." #febreview
+    bi "That's insane..."
+    t "But now, here, we're all equally powerless."
+    scene bg pentstudy at bg
+    $ statusnt("Study", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    with fade
+    b "Maybe Dan was hired by Sydell as the hitman... to take out Stella."
+    b "Then, Stella's bodyguards caught Dan, and made him kill Sydell."
+    b "That would explain this note being here."
+    i "And it might explain why Dan was in jail prior to this game."
+    j "It also make it seem more likely that Sydell is dead."
+    $mood = "shock"
+    b "We can't be sure he's dead."
+    j "But if Stella's team knew about a hitman out for her head, I'm sure they'd counterattack."
+    j "Whether it was her own guards, or Dan, I'd imagine Sydell was killed..."
+    b "..."
+    $mood = "ind"
+    bi "We were all silent for a moment."
+    b "You're probably right." #ev
+    b "We should assume Sydell was killed in response."
+    show jenny:
+        linear .2 xcenter .25
+    j "Does that mean one of you three is really behind all this?"
+    j "I was still holding out hope that... some bald old freak named Sydell was behind it all."
+    j "But if he's been dead this whole time, then there's no way..."
+    bi "One of us is behind all this..."
+    bi "She's probably right."
+    bi "But I don't want to accept that just yet."
+    b "Let's keep exploring before we get too depressed about it."
+    i "Agreed!"
+    hide sid with moveoutleft
+    scene black with fade
+    "All four of them made their way back through the other bedroom door."
+label pent29:
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    b "This looks like..."
+    show jenny ind:
+        xcenter .3
+    show sid smile:
+        xcenter .7
+    with moveinright
+    i "A kitchen!"
+    j "A living room!"
+    $ statusnt("Dining Room", "bert", ch=5, sun=0)
+    b "Both, I think."
+    j "Gotta love an open floorplan."
+    bi "She's pretty quickly back in high spirits..."
+    j "It looks like we're... really high up?"
+    i "Holy shit, those are windows!"
+    bi "He's right..."
+    bi "This is the first time since the train we've seen windows that aren't boarded up."
+    i "Gang, we're makin' a jump for it!"
+    hide sid with moveoutbottom
+    show sidstand2 at bg with dissolve:
+        xcenter .48
+        ycenter .53
+    "Sid ran over to the windows."
+    b "Hold on!"
+    i "We can break through the glass and jump for it!"
+    "Sid started banging on the window as hard as he could."
+    b "At least try to {i}open{/i} the windows first..."
+    show jenny scared
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .3
+        ycenter .3
+        #zoom .75
+    j "Bert!"
+    j "Bert! Make sure he doesn't fall!"
+    b "Oh! You're right!"
+    scene black with fade
+    "Bert ran over to the window and pulled Sid away."
+    "Bert looked out the window."
+    scene bg pentview2 at bg
+    show fogscroll at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    b "..."
+    b "It really is a window to society..."
+    bi "I can see a couple cars, and even some people walking..."
+    bi "But... it's so foggy, and it must be the absolute middle of the night."
+    bi "Still, it feels nice to know there are some other people out there."
+    "{i}BAM BAM BAM!{/i}"
+    b "Sid! Stop hitting the windows!"
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .3
     show sidstand2 at bg:
         xcenter .48
         ycenter .53
-    show jenny scared:
-        xcenter .25
-    with fade
-    i "This is our way out of all this!"
-    i "It might involve some careful climbing, but look!"
-    i "Civilization!"
-    j "Bert! We're so high up."
-    j "You have to stop him."
-    j "If he falls and dies, I'm blaming you..."
-    b "Me?!"
-    i "Graaaah! Why won't this glass break!"
-    scene black with fade
-    bi "I ran over and pulled Sid off the window."
-    bi "I was so relieved to keep him safe."
-    stop music fadeout 1.0
-    bi "But it only lasted a moment before everything changed."
-    bi "I leaned up against the glass and looked down."
-    bi "A vibrant, booming city beneath me."
-    bi "Kids with their families, people in a park, women crossing the roads..."
-    bi "I just wish I didn't recognize it."
-    scene bg pentview at bg with dissolve
-    bi "..."
-    bi "Everything clicked."
-label pent3:
+    with dissolve
+    i "It won't budge!"
+    i "I can't even make a crack in it."
+    "{i}WHACK WHACK WHACK!{/i}"
+    j "Well don't keep trying!"
+    "{i}WHACK WHACK WHACK!{/i}"
+    "{i}WHACK WHACK WHACK WHACK WHACK WHACK!{/i}"
+    "{i}WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK!{/i}"
+    b "...I think it's fine."
+    j "If he falls out the window, I'm blaming you."
+    hide sidstand2 with dissolve
+    show sid ind with moveinbottom:
+        xcenter .7
+    i "I think the windows are safety glass or something fancy."
+    i "They're really hard, my hand hurts now..."
+    b "Help Jenny and I look around for a bit."
+    b "If we can't find anything useful, I'll help make something to break through the glass."
+    bi "Maybe."
+    j "It does feel weird..."
+    i "Weird?"
+    j "Well, it really is the first time since we were on the train to have a window."
+    i "Yeah... we got to have windows on the train because nobody was suspicious yet."
+    i "It didn't feel like anyone would {i}kill each other{/i}."
     show scary with dissolve:
         alpha .5
+    bi "It's true that we were less skeptical on the train, but..."
+    bi "I'm not sure that's why the windows weren't boarded up."
+    bi "In fact, there's even a similarity between then and now."
+    bi "There's only one reason the Game Master wouldn't have covered them."
+label pent30:
+    menu:
+        bi "The reason that the train windows and these penthouse windows aren't covered is..."
+
+        "It was too difficult to secure the covers over the windows.":
+            bi "After everything we've been put through, I doubt that would be an issue..."
+            jump pent30
+
+        "Opening the windows was a means of murder.":
+            bi "That must be it..."
+            bi "On the train, jumping out the window at such a high speed would kill you."
+            bi "And here, falling from such a height would do the same."
+            bi "And in either situation, being pushed out the window..."
+            bi "That would be murder."
+            hide scary with dissolve
+
+        "The Game Master would kill us with the brain chips either way.":
+            bi "We're pretty certain the Game Master would kill us if we tried to escape."
+            bi "But I don't think that's why they left the windows uncovered."
+            jump pent30
+
+label pent31:
+    b "I think..."
+    b "The windows aren't covered for a reason."
+    i "Huh?"
+    b "Think about it."
+    b "On the train, the windows were the easiest way to kill someone."
+    j "That's true..."
+    b "In fact, Kaiser's murder method did involve the window, the one in the caboose."
+    i "Y-yeah..."
+    b "This is a little different, because we're not moving."
+    i "But being tossed out this window would for sure kill you."
+    j "Tossed?"
+    i "Thrown, tossed, chucked, ya know."
+    b "Pushed, probably..."
+    i "So the Game Master wants us to hurl each other out the window?"
+    b "Well, it seems like they're leaving that possibility on the table..."
+    i "I still think we should try to jump for it."
+    i "If we had known what was going to happen on the train, I woulda jumped there too!"
+    b "That's... understandable."
+    b "Sid, let's look around for a bit."
+    b "If we don't find anything useful, maybe we can rig something up get out the window."
+    i "Alright, deal."
+    j "There are lots of drawers, cabinets, and tables in here."
+    hide jenny with moveoutleft
+    show frog2 ind with moveinleft:
+        xcenter .3
+    f "What should I do to help!"
+    b "Ummm..."
+    b "You can have the most important job."
+    f "Really!!!"
+    b "Yup! We need someone to look between all the couch cushions!"
+    f "Oh boy!"
+    bi "Maybe that will distract him for a bit."
+    b "Make sure you don't miss anything, Freddy!"
+    f "Aye aye, sir!"
+    bi "Why's everyone saying that now..."
+    b "Okay, let's get started."
+    scene black with dissolve
+    "The four of them spent 30 minutes scavenging every corner of the room."
+    "LAST FREETIME???"
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    j "Okay team!"
+    j "Despite a lot of places to hide stuff in here, it doesn't seem like there's a lot of hidden stuff."
+    i "I can't believe we're tearing apart a rich guy's penthouse and there's no money laying around."
+    i "Leave me a little cash bro come on..."
+    j "He {i}was{/i} rich."
+    j "By the time he was hiding here, he was losing money and in some business troubles, remember?"
+    i "Yeah, true."
+    b "Well speaking of business, Jennny did find this folder labeled \"InSyde Electronics\"."
+    b "Stella told us that that was the name of Sydell's company, so maybe there's something useful in here."
+    j "I took a peek inside and it looked useful, so I set it aside for us to read through."
+    b "Let's see..."
+    b "W2... receipts... shipping documents..."
+    b "Woah!"
+    i "What is it?!"
+    b "Look, look!"
+    b "There's something about an insurance claim!"
+    j "That doesn't sound exciting..."
+    b "Just take a look."
+    i "Huh, the page is torn in half."
+    show scary:
+        alpha .5
+    show sydellfile
+    with dissolve
+    bi "..."
+    i '"Stewart Sydell?"'
+    i "Bro's first name is Stewart?"
+    b "Come on, keep reading."
+    j "It's about InSyde Electronics, his business."
+    i "It says..."
+    i "{i}This letter serves as a rejection for coverag e of claim #092523...{/i}"
+    i "Rejection?"
+    i "So his insurance company flaked on him?"
+    b "Basically, yeah..."
+    j "Wait, but what was this insurance claim about in the first place?"
+    b "Let's keep reading..."
+    b "{i}Thank you for your business...{/i} yada yada..."
+    b "{i}Due to the nature of the theft we’re unable to assist at this time.{/i}"
+    b "Theft?"
+    j "Maybe this is about Catherine again?"
+    j "She robbed Sydell's house, maybe this is about that."
+    i "Yeah, I bet."
+    i "She took some stuff and he wanted the money back for it."
+    b "Hmm..."
+    b "It's true Catherine robbed him, but if the claim is about that, something doesn't add up."
+    hide sydellfile with dissolve
+    i "You think this is about a different theft?"
+    j "What makes you think this isn't about Catherine?"
+label pent32:
+    show scary with dissolve:
+        alpha .5
+    menu:
+        b "If it's about Catherine, then..."
+
+        "why is this addressed to his company?":
+            hide scary with dissolve
+
+        "why isn't her name anywhere on it?":
+            bi "Hmm, well, I guess the robber's name isn't on it at all."
+            bi "So that doesn't really indicate anything here."
+            jump pent32
+
+        "why did he use Week Air Insurance?":
+            bi "On second thought, it is a pretty big brand."
+            bi "I don't think that tells us anything useful."
+            jump pent32
+
+label pent33:
+    j "What do you mean?"
+    b "At the top it says..."
+    show sydellfile
+    with dissolve
+    b "{i}To whom it may concern, InSyde Electronics{/i}"
+    b "It's not directly addressed to Mr. Sydell."
+    j "If this was about a home break-in, I guess it wouldn't say that"
+    hide sydellfile
+    with dissolve
+    b "Right, it would just be addressed to him."
+    j "Good catch Bert!"
+    i "But wait, if it's not about Catherine robbing him, is this even useful?"
+    i "Who cares about some random insurance claim against his company?"
+    b "..."
+    j "Sid, you're pretty nonchalant about his considering it could be able you!"
+    i "Hey! I didn't steal from him!"
+    i "I hacked him, and planted information."
+    i "If anything, I left him with more than when I started!"
+    b "..."
+    b "Ignoring that last comment, Sid is right."
+    b "He never robbed InSyde, so this isn't about him."
+    i "YEAH!"
+    b "But he's wrong about this being useless."
+    b "There's one more piece of information we can use to tie this to us."
+    j "Let me see, let me see!"
+    j "I want to figure it out."
+    b "I'm sure you can."
+    i "Me too! Hype me up man."
+    b "Uhh, go Sid go."
+    "They looked over the document again."
+    j "..."
+    i "....."
+    j "........"
+    i "I got it!"
+    j "It's the date, August 6th!"
+    i "That's what I was going to say!"
+    i "Wait, what? The date?"
+    j "It says the claim was filed on August 6th, that's useful!"
+    i "Umm yeah, that's what I was going to say too..."
+    b "..."
+    b "Jenny's right - we can tie someone's crime to that date."
+    i "I don't know any of the dates the crimes happened on..."
+    j "I don't either, except my own I guess."
+    b "I remember the one that matters right now."
+    show scary with dissolve
+    call screen chooseCharPent("kaiser", "pent34", "The person whose crime happened on this date is...") with dissolve
+label pent34:
+    hide scary with dissolve
+    j "Kaiser's train heist was on August 6th?"
+    b "Technically, no."
+    b "Think back."
+    scene bg ntrainfront at bg
+    $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
+    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    show doom
+    with dissolve
+    show kaiser ind:
+        xcenter .7
+    show sid ind:
+        xcenter .25
+    with dissolve
+    show sepia:
+        alpha .5
+    k "And then... this car."
+    k "It reminds me of one heist in particular, my most famous heist."
+    k "I'll never forget the day, down to the most minute details."
+    k "It was the coldest August 5th I've ever experienced, and one that changed my life."  #febreview
+    k "It was going to be my big break... and for a while, I thought it was."
+    k "How naive of me..."
+
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+
+    b "Kaiser's heist was on August 5th, which is one day before the claim was made."
+    i "So Kaiser's crime impacted Sydell, who then filed an insurance claim the next day..."
+    j "And then that claim got shot down, leaving Sydell in the red."
+    b "I think that's it, yes."
+    b 'It would also explain what this form means about the "nature of the theft".'
+    b "A train heist seems like an unusual thing to file for."
+    j "Which probably made it easy for the insurance company to reject."
+    i "Man..."
+    i "I mean, I hate that guy right, but damn."
+    i "He really went through a lot at the end there."
+    j "Yeah..."
+    i "Robbed by Catherine and Kaiser, on Sam's sketchy drugs, crushed by Stella's firm..."
+    b "And probably even more that we haven't uncovered yet."
+    j "He's why we're here though! Right?"
+    j "I can't feel bad for someone like that."
+    i "Tr-true..."
+    show scary with dissolve:
+        alpha .5
+    bi "If he's dead, he can't be the Game Master though."
+    bi "It has to be someone here."
+    bi "And based on the hint from the bank, their last name starts with S..."
+    hide scary with dissolve
+
+    show frog2 ind with moveinbottom:
+        xcenter .5
+    show jenny ind:
+        linear .2 xcenter.25
+    show sid ind:
+        linear .2 xcenter .75
+    f "Jenny, look what I found!"
+    f "Some candy!"
+    j "Huh?"
+    $mood = "shock"
+    b "Freddy! Gimme those!"
+    bi "These are not candy..."
+    show pillbag with dissolve
+    b "These are..."
+    j "Drugs?"
+    show frog2 ind:
+        xcenter .5
+    i "Party pills, the kids at my school call em..."
+    b "The pills are small and colorful, and this type of bag doesn't make it look like candy."
+    hide pillbag with dissolve
+    j "Freddy! Where did you find these?"
+    f "It was tucked away between the couch cushions."
+    bi "I can't believe that distraction actually lead to finding something."
+    f "So can I have them or not?"
+    b "Absolutely not. These aren't for kids."
+    f "What about just one?"
+    j "Freddy, they could make you really sick."
+    f "Uh oh, really?"
+    j 'Why "uh oh" Freddy?'
+    b 'Yeah why "uh oh"?'
+    f "Errrrmmmmmmmm..."
+    f "I may have already eaten one..."
+    b "What?!"
+    f "Well they look so yummy!"
+    f "But they don't really have much flavor."
+    bi "If these really are drugs, the effect will start kicking in soon."
+    bi "And for a kid his size, it could cause serious damage."
+    b "Freddy... how long ago did you eat the first one..."
+    f "Erm..."
+    hide frog2 ind with moveoutbottom
+    #scary music
+    "Freddy fell to the ground."
+    j "Freddy!"
+    i "Oh no what the hell do we do!!!"
+    j "Stay with me little buddy!"
+    i "Bert, he's out cold!"
+    bi "It can't be a coincidence."
+    j "He has a pulse."
+    j "But he's starting to sweat like crazy..."
+    i "Just a second ago it felt like we were figuring things out."
+    i "And now the Freddy's gunna die!?"
+    j "Sid! Don't say that!"
+    j "We're going to help him."
+    bi "I was the chosen killer, wasn't I?"
+    i "Bert! Get it together!"
+    i "You're smart right? Help the kid!"
+    j "Bert, please!"
+    j "We need some cold towels, or something!"
+    i "Wait a minute..."
+    i "Bert..."
+    b "I..."
+    i "You told him to look between the couch cushions."
+    bi "Sid said what I coulnd't bring myself to say."
+    i "Did you do this on purpose?!"
+    b "I...."
+    i "Are you the chosen killer this round, and this is how you're doing it?!"
+    i "By drugging a little kid?!"
+    i "You sick fuck!"
+    j "Sid! We don't know what happened!"
+    b "I d-didn't!"
+    b "I had no idea those pills were there!"
+    i "Yeah, my ass!"
+    b "It's true!"
+    b "We all came out into the living room together, remember?"
+    i "How can I trust that?!"
+    b "I..."
+    j "Sid!"
+    j "We need to help Freddy first!"
+    j "We can question Bert afterwards."
+    i "Hmph."
+    i "Fine. But for now, Bert, go sit over there."
+    b "Oka-"
+    i "And if you move a muscle..."
+    bi "Sid looked me dead in the eyes."
+    i "I'll kill you."
+    scene black with dissolve
+    "Bert sat motionless in the corner."
+    "Jenny and Sid cared to Freddy."
+    "Only about 5 minutes passed."
+
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
+    with dissolve
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    with dissolve
+    j "Okay..."
+    j "We got Freddy to throw up a little, and he has a cold towel."
+    j "We don't know how long ago he ate the pill though."
+    i "So it could still be in his bloodstream."
+    b "Guys..."
+    i "I don't want to hear a peep out of you."
+    j "Sid, we have to listen to his side of the story."
+    j "We don't know if Bert actually meant to do this or if it was an accident."
+    i "Who cares if it was an accident?"
+    i "If that kid dies, it's on Bert's hands."
+    j "Sid!"
+    b "No, it's true."
+    b "I told Freddy to go looking, and didn't keep an eye on him."
+    b "This is my fault."
+    i "Hmph."
+    b "And that's why I'm going to do everything I can to fix it."
+    i "Hm?"
+    j "Fix it?"
+    b "We can start with these."
+    show pillbag with dissolve
+    b "The pills."
+    i "Why's there a flamingo on them?"
+    b "It looks like a flamingo."
+    b "But it's not."
+    j "Huh? Looks pretty flamingo-ey to me, Bert..."
+    b "There's a reason we've gathered so much information."
+    b "It's so we can figure things like this out!"
+label pent345:
+    show scary with dissolve:
+        alpha .5
+    menu:
+        b "The birds on these pills are..."
+
+        "Herons.":
+            hide scary with dissolve
+            bi "That's it."
+            b "The birds are herons."
+
+        "Egrets.":
+            bi "Er, I'm surprised I even know that an egret is..."
+            jump pent345
+
+        "Cranes.":
+            bi "They look like cranes, but that's not it."
+            jump pent345
+
+        "Flamingos.":
+            bi "I just told Sid they're not flamingos."
+            jump pent345
+
+    i "What the hell are you talking about?"
+    b "These pills..."
+    b "They're some of the drugs Sam sold to Sydell."
+    i "How can we know that?"
+    b "You were there Sid - think back!"
+    $showchibint("dracula", "lauren", "sid", "sam")
+    $statusnt("Cafeteria", "bert", ch=3, sun=0)
+    scene bg hospcommons at bg
+    show sam ind
+    show sepia:
+        alpha .5
+    s "And well, not like I personally knew the guy..." #sam flashback
+    s "He didn't even know my name, of course."
+    b "He didn't know your name?"
+    s "I always dealt under my middle name, Heron."
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    with dissolve
+    #sam flashback about the name Heron
+    #evidence found
+    j "Wow..."
+    i "Y-you're right, I was there when Sam said that."
+    b "Which also means these pills are probably extremely dangerous."
+    i "Sam sold super experimental stuff..."
+    b "You guys did a great job helping Freddy."
+    b "But if he doesn't get to a hospital soon, he could die anyway."
+    i "D-do you really think so?"
+    b "I do."
+    b "And I'm not going to let him die."
+    j "Bert..."
+    b "Now that we've had time to collect our thoughts, I have something to tell you both."
+    b "The truth is, I woke up in the wine cellar with this flashlight."
+    show theflashlight with dissolve
+    b "It must be a murder weapon, or some other form of advantage."
+    b "That's because I think I am the chosen killer for this location."
+    i "The chosen killer?"
+    j "The same way Kaiser, Catherine, Ivan, and Lauren were."
+    i "They were also given an advantage when it was their turn."
+    hide theflashlight with dissolve
+    j "Bert... why are you telling us that?"
+    j "I..."
+    j "How can I trust you if I know you're the chosen killer?"
+    b "That's exactly why you can trust me!"
+    i "Huh?"
+    b "The chosen killer can't be the Game Master."
+    b "This flashlight proves - to both of you - that I'm not the Game Master!"
+    i "Holy..."
+    j "So, you're the chosen killer, but..."
+    b "I won't kill anyone!"
+    b "Being the chosen killer is a blessing in disguise for me."
+    b "It means you can both trust me."
+    show scary with dissolve:
+        alpha .5
+    bi "I say they can both trust me, but I know full well I can't trust both of them."
+    bi "One of them is the Game Master."
+    bi "I just need the other one to cooperate until I can figure it out."
+    bi "I have all the information I need..."
+    bi "I just need to uncover them!"
+    hide scary with dissolve
+    i "I know we gotta move quick, but I'm not convinced yet."
+    b "What?"
+    i "What if you are the Game Master, and you're just cheating in the last round?"
+    b "Well, I'm the chosen killer."
+    b "I can't be both the chosen killer and the Game Master."
+    i "..."
+    i "I need more proof you're the chosen killer, and not just the Game Master lying."
+    b "Well someone has to be the chosen killer, right?"
+    j "Based on everything that's happened so far, yeah."
+    b "Was it either of you chosen? Were you given some hint or item?"
+    j "..."
+    i "..."
+    b "Then that should sett-"
+    j "It could have been Freddy..."
+    j "As crazy as it sounds, Freddy could be the chosen killer."
+    j "There's a chance you're just using the fact that he's unconcious for your own gain."
+    b "...Jenny, you know I wouldn't do that."
+    j "I want to believe it's you, Bert, but we don't have proof it's not Freddy."
+    i "Yeah. We need more proof."
+    b "More proof?"
+    j "Sid's right... there is another little detail missing."
+    j "You said you've never been here before, but all the other chosen killer's had some connection to that location."
+    i "Yeah!"
+    i "You woke up and found a flashlight, so what?"
+    i "Before I can trust you again, I need proof that you have a tie to this location."
+    b "Proof that I have a tie to this location..."
+    b "I don't have that."
+    i "Well..."
+    i "Figure it out."
+    b "Sid..."
+    i "I want to trust you, I do."
+    i "But I trusted Lauren, too."
+    i "I just need... a little more proof that you weren't trying to kill Freddy."
+    j "...Bert."
+    j "Sid and I will figure out our plan and tend to Freddy."
+    j "You should see if there's a way to connect yourself to this location."
+    hide jenny
+    hide sid
+    with dissolve
+    show scary with dissolve:
+        alpha .5
+    bi "Jenny looks visibly scared of me."
+    bi "And Sid looked like he wants to kill me a minute ago."
+    bi "I guess I can't blame them - if I had meant to poison Freddy, that's..."
+    bi "Sickening."
+    bi "Regardless..."
+    bi "I didn't mean to poison him, and I know I am the chosen killer."
+    bi "But how can I prove I'm the chosen killer for this location if I've never been here?"
+    bi "..."
+    bi "I guess I need to look around."
+    bi "Something {i}has{/i} changed, at least a little, since we've been here."
+    hide scary with dissolve
+    #pick the spot
+    bi "..."
+    bi "It's been a little while and the sun's coming up."
+    bi "It looks like the fog has cleared up since earlier, too."
+    #move to window
+    scene bg pentview at bg with dissolve
+    bi "It looks like rush hour."
+    bi "In a vibrant, booming city."
+    bi "Kids with their parents, people in a park, families heading out for the day..."
+    bi "What a beautiful view, right into the heart of the city."
+    bi "..."
+    bi "I know exactly where I am."
+    bi "This is the most bittersweet moment of my life."
+    bi "Do have a tie to this location."
+    bi "Because this location..."
+label pent35:
+    show scary with dissolve:
+        alpha .25
     menu:
         bi "This is a view of..."
 
         "the road I grew up on.":
             bi "No, unfortunately it isn't."
-            jump pent3
+            jump pent35
 
         "somewhere I've seen in a movie.":
             bi "No, I don't think it is..."
-            jump pent3
+            jump pent35
 
         "my favorite park as a kid!":
             bi "That's true, but... not what's important here."
-            jump pent3
+            jump pent35
 
         "where I ran over that lady.":
+            hide scary with dissolve
             bi "..."
             bi "That's where it happened."
-
-label pent4:
     bi "That's where I killed that woman."
-    bi "I recognize it too well."
-    bi "St. Mok Park across the steet, the tutoring building down the block..."
-    bi "A road I haven't driven on once since the incident."
+    bi "I want to throw up just looking at that intersection."
+    bi "I've avoided this area since the accident, and to think this is how I'm seeing it again."
     bi "..."
-    bi "I hear Sid banging on the window again beside me."
-    bi "The windows aren't breaking, even though he's using all his strength."
-    bi "Suddenly, this makes sense too."
-    bi "And my heart sank even further."
-label pent5:
-    menu:
-        bi "He can't break the window because..."
+    bi "One other thing makes sense now too."
+    show theflashlight with dissolve
+    bi "My advantage for this location, the flashlight."
+    bi "The flashlight itself isn't the important part."
+    bi "it's the back, this solid metal tip."
+    bi "These points are made to crack safety glass..."
+    bi "I've seen them used in cars before."
+    bi "That's why Sid wasn't able to crack the window."
+    bi "But with this, and a little force..."
+    #cracking noise
+    show scary with dissolve
+    #broken glass
 
-        "he's not strong enough.":
-            bi "No, it's nothing to do with Sid."
-            jump pent5
+    bi "At least I can prove it now."
+    scene bg pentkitchen2 at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
+    $ showchibint("freddy", "jenny", "sid")
+    with dissolve
+    show jenny ind:
+        xcenter .3
+    show sid ind:
+        xcenter .7
+    with dissolve
+    i "Bert?! What the hell?!"
+    j "Are you okay?!"
+    i "How did the window break? I couldn't even leave a scratch..."
+    b "It's the flashlight."
+    b "It wasn't about being a flashlight, it was about the safety glass breaker."
+    b "That advantage let's me break the window, and then..."
+    bi "Well..."
+    i "Is that your connection to this location? Being able to break the glass?"
+    b "No, that was just my advantage."
+    b "I did find a connection to the location."
+    b "This is the scene of my crime."
+    j "You ran someone over in this apartment?"
+    b "No, I ran someone over on the road, down there."
+    i "And you just noticed now?"
+    b "Well, it was dark and foggy - you weren't able to tell where we were either."
+    i "That's true..."
+    b "But now that I know where we are, I could tell you anything about the area."
+    b "It's burned into my mind, every store, every street sign, every crosswalk."
+    b "Between that and my getting the flashlight, I hope that's enough proof for you both."
+    i "..."
+    j "I believe you, Bert."
+    j "You're the chosen killer for the location, like you said."
+    j "And you didn't intentionally poison Freddy."
+    i "Yeah, alright, same."
+    b "Thank you, both of you."
+    bi "One of them has known this whole time."
+    i "Let's get back to it then."
+    j "Bert, you made it sound like you had a plan to figure out who the Game Master is."
+    b "I do."
+    b "And it's one of you two."
+    i "..."
+    j "..."
+    j "Not it..."
+    #sid point
+    i "HEY! THAT'S NOT HOW IT WORKS!"
+    i "Bert said he has a plan, so we need to help him!"
+    j "Yeah! And Sid, if you don't cooperate, we'll know you're the Game Master."
+    i "I'm not the Game Master! You must be!"
+    j "We'll see about that, Sid."
 
-        "the emergency window breaker is in the cellar.":
-            bi "That flashlight..."
+    ###implanted
 
-        "he's hitting it in the wrong spots.":
-            bi "No, I don't think that's part of it."
-            jump pent5
 
-        "the window is made out of safety glass.":
-            bi "This is true, but that means he would need..."
-            jump pent5
-label pent6:
-    i "Yo yo yo!!"
-    i "It's me, sid"
-    #wake up first, in the cellar
-    #confused??? find flashlight window breaker. leave it there
-    #go up, nobody there. wtf... look aroudn, find them in bedroom
-    #chat a tiny bit
-    #go into kitchen, sid says holy shit a window, tries to break it
-    #everyone yells to stop him, be careful
-    #we go look at window
-    #everything clicks......
-    #3 question quiz for user 1) what was the flashlight 2) where are we 3) what does this mean (bert is person)
+    b "We don't have time to bicker. Freddy needs treatment."
+    b "So we're going to settle everything, right here and now."
+    b "We're going to end this game - WIN this game."
+    j "How can we do that?"
+    b "We've collected data about almost everyone involved in the game from this location."
+    b "Dan."
+    b "Kaiser."
+    b "Setlla."
+    b "Catherine."
+    b "Shahar."
+    b "Ivan."
+    b "Sam."
+    b "Lauren."
+    b "Freddy..."
+    b "And the three of us."
+    b "One of us is the Game Master"
+    b "No, one of you two."
+    b "I've proven that it can't be me."
+
+    j "..."
+    i "..."
+
+
+    ###implanted
+    b "So, both of you."
+    b "I need you to tell me your backgrounds again."
+    b "Then tell me about your crimes, and any prior connections with anyone from the game."
+    b "And finally, any connections you made during the game."
+    b "... This is it."
+    b "So tell me everything."
+    b "Sid, you first."
+    #transition to background screen and only one character
+    i "Okay, yeah."
+    i "I'm Sid Straits!"
+    i "I'm 17 and was finishing high school before all this."
+    i "I was a little bit of a trouble maker, but not a slacker!"
+    i "I was helping my parents run the store, and learning about computers on the side."
+    i "We were pretty poor."
+    i "For extra money, I did a little hacking..."
+    i "That's how I got caught up with Shahar."
+    i "Not directly, I didn't know the guy, but there was some lawsuits and blackmail going on."
+    i "Stella as involved, and Dracul-er, Ivan, knew about some of it."
+    i "I... wish I could undo it all, take it all back."
+    i "I just wanted to make sure my family was making enough money."
+    i "When this whole game started, I knew that's why I was involved, though I didn't know the details."
+    i "..."
+    i "I appreciated Dan."
+    i "We know his past now, and he wasn't an amazing guy, but..."
+    i "That doesn't change the way he talked to me, or respected me."
+    i "He was manly, headstrong, protective."
+    i "We only knew him for a few days, but it was hard to really connect with anyone else here after he died."
+    i "I guess... that's it."
+    hide sid with dissolve
+    b "Now Jenny."
+    show jenny ind with dissolve
+    j "Well, from the top I guess."
+    j "I'm Jenny Flowers, 20 year old college student."
+    j "I come from a pretty normal middle-class family."
+    j "It feels like so long ago..."
+    j "I've always politically active, just doing what I can, and got arrested protesting about Freddy's father."
+    j "It didn't lead to much at the time, but it's my connection to Freddy for this game."
+    j "I... stand by what I did."
+    j "Freddy's a good kid, but his father is a horrible man."
+    j "As for connections I made during the game..."
+    j "Well, I think you and I get along really well, Bert."
+    j "I know you have to question both Sid and I, I get it."
+    j "But you're the first person here I told about my arrest."
+    j "And I was the first person you told about the woman you hit."
+    j "I don't know, maybe I'm being foolish, but it's felt like there's... something here."
+    j "I guess... that's it."
+    #transition back to both of them in real time.
+    b "..."
+    b "I know who the Game Master is."
+    b "Between all the murders, investigations, clues we found here, and your stories..."
+    b "There's only one thing that doesn't add up."
+    b "One thing that tells me who the Game Master has to be."
+    b "For Freddy's sake, we have to act now."
+    b "So."
+    b "The Game Master is..."
+    #lineup 2 people "Who is the Game Master?"
+        #show sid in void again
+    b "Sid."
+    b "We talked about the last name hint, but it's been weighing on me."
+    b "All the rules the Game Master left have been accurate so far, and I think that one is too."
+    b "Anyone could be lying about their last name, but both your names definitely starts with an S."
+
+    #show jenny in void agian
+    b "Jenny."
+    b "It's true that we were close."
+    b "I'll never know if that was real or not."
+    b "Because you're the Game Master, and you die here."
+    j "Bert, are you being serious?"
+    b "There's no way I could be the Game Master."
+    b "I've been thinking about it a lot:"
+    b "Every time I brought up my car accident, I never mentioned the victim's gender."
+    b "It wasn't a trap, it's just hard to get into the details."
+    b "But you... a minute ago, said that it was a woman."
+    j "Bert..."
+    b "And you were right."
+    b "It was a woman, I killed a woman."
+    b "And based on everything we know now, I think that woman was..."
+    b "Mrs. Sydell - your mother!"
+    b "It's the only explanation for why I'm here..."
+    b "This whole time... you've been Sydell's daughter."
+    b 'This "Flowers" name, it must be your mother\'s maiden name.'
+    b "Which would explain the hint in the bank - your last name starts with S, for Sydell."
+
+
+    #PERSON BERT HIT, NOT WOMAN!!! JENNY WILL SAY ITS A WOMAN
+
+
+
+
+    ############################################
     if not pent_evidence[0]:
         $pent_evidence[0] = True
         show newevidencefound with dissolve

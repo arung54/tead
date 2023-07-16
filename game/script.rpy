@@ -300,7 +300,14 @@ image debatescroll:
         xpos -1
         linear 30 xpos .01
         repeat
-
+image fogscroll:
+    contains:
+        "fog5.png"
+        zoom .7
+        ypos 0
+        xpos 0
+        linear 350 xpos -5500
+        repeat
 image bg debatescroll:
     contains:
         "vineslide.png"
@@ -792,7 +799,7 @@ label start:
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
         bank_evidence = [True] + [False] * 11
-        pent_evidence = [False] * 9
+        pent_evidence = [False] * 8
         mans_extra = [False] * 11
         hosp_extra = [False] * 6
         bank_extra = [False] * 20
@@ -849,4 +856,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump pent23
+jump pent34

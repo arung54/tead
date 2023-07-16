@@ -3806,12 +3806,13 @@ label trial1r:
 
     k "And then... this car."
     k "It reminds me of one heist in particular, my most famous heist."
-    k "The coldest August 5th I've ever experienced, and one that changed my life."  #febreview
-    k "This is nearly identical to the train from then."
-    b "So you tried the same password? From that heist?"
-    k "Yes, and it worked."
+    k "I'll never forget the day, down to the most minute details."
+    k "It was the coldest August 5th I've ever experienced, and one that changed my life."  #febreview
     k "It was going to be my big break... and for a while, I thought it was."
     k "How naive of me..."
+    k "This is nearly identical to the train from then."
+    b "So you tried the same password? From that heist?"
+    k "Yes. And it worked."
     k "Regardless, I have made my decision."
     k "I killed Dan. Whether he was the Game Master or not, there's no way for us to know yet."
     k "I had hoped to conceal my guilt, akin to the Game Master's original message..."
