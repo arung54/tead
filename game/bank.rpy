@@ -292,9 +292,9 @@ label bankGo:
     hide lauren ind with dissolve
     show bg bankbreak with dissolve
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
+    $ showchibint("freddy", "jenny", "lauren", "sam")
     show lauren ind with dissolve
     l "...the kitchen."
-    $ showchibi("freddy", "jenny", "lauren", "sam")
     show lauren ind:
         linear .3 xcenter .75
     show jenny ind with moveinleft:
@@ -4059,3 +4059,141 @@ label trial4ab:
     l "So many mistakes..."
     l "Even just one less and I might have gotten away with it."
     l "But then again, one less mistake, and I might not even be in this game..."
+    b "..."
+    bi "I didn't know what to say."
+    bi "It was like when you beat your friend in a game, and they tell you \"well I would have won if...\""
+    bi "Except it was a game with our lives on the line."
+    l "I bet you guys have questions, but..."
+    bi "She glanced at Freddy to make sure he wasn't in earshot, then whispered"
+    l "I don't want Freddy to have to listen."
+    l "Not just because it's too violent for a kid, but..."
+    l "The last thing he needs is to feel betrayed by me."
+    scene black with dissolve
+    bi "We left the lobby, giving Lauren a chance to say her goodbyes to Freddy."
+    bi "Lauren asked Jenny to stay in the lobby and watch over Freddy."
+    bi "Presumably because she was the most motherly person remaining, which was a fair assessment."
+    bi "Jenny was happy to oblige."
+    bi "Not sure how much time we had left, we reconvened in the nearby break room."
+    show bg bankbreak with dissolve
+    $ statusnt("Staff Kitchen", "bert", ch=4, sun=2)
+    $ showchibint("lauren", "sid")
+    show lauren ind with dissolve
+    l "So... what do you want to know?"
+    $menuset = set()
+label laurAsk:
+    menu:
+        set menuset
+        bi "What to ask..."
+
+        "Why this bank?":
+            l "Well, I told you guys about my crime..."
+            l "I was in public and a witness to a robber."
+            l "The robbery happened here, in the lobby."
+            b "Um..."
+            l "It's the story I told Sam back in the hospital, you might not remember."
+            l "I was here in line to cash a check when a robber came in and started waving a gun around."
+            l "He yelled at the tellers to start loading money into bags."
+            l "I had a gun in my purse, so I waited for him to turn around."
+            l "Firing a gun isn't as easy as they make it seem in the movies."
+            l "I was doing my best to turn off the safety and load a magazine while keeping it hidden."
+            l "In retrospect, it was probably an idiotic move."
+            l "I don't think he was actually planning to shoot."
+            l "He just needed to intimidate people and make a clean run for it."
+            l "But I was panicking, couldn't think straight."
+            l "And well... I eventually was ready to fire, took aim, and fired three shots."
+            l "Unfortunately, for whatever reason, one of the shots missed..."
+            l "And hit a girl, a few years younger than me."
+            b "I hate to ask, but... what was her name?"
+            l "It wasn't Sydell, if that's what you're asking."
+            l "I met her parents eventually, neither of them was a Sydell."
+            b "That's weird... if that's your crime, how does it connect to the rest of us?"
+            b "Maybe Mr. Sydell was close to the girl somehow?"
+            l "I wouldn't know, not like I could ask her."
+            l "Or even would have known who Sydell was when I met her parents."
+            b "There has to be some connection though..."
+            l "Bert, I know you want to figure out who the Game Master is from the information I'm telling you."
+            l "But... if there were a tight connection I knew of..."
+            l "Then wouldn't I have shot the right person?"
+            b "Hm, that's true..."
+            b "I guess, we don't know that Sam {i}isn't{/i} the right person..."
+            l "Well, if Sam is the Game Master, then nothing I can tell you matters anyway."
+            b "Yeah, good point."
+            b "Alright, I have other stuff I want to ask you, no use spending more time on this, I guess."
+
+        "How did you open the safe?":
+            l "Well, just like everyone else I've been getting an advantage."
+            l "Mine was... I was told that someone here has a birthday on July 17th."
+            l "With that information I was able to open the safe."
+            b "You knew your birthday and the 17th... don't you need a third digit?"
+            l "Oh, yeah, Freddy told me his birthday."
+            b "What? But Jenny told him not to!"
+            l "Well, he technically followed her instructions."
+            l "He told me way back in the mansion."
+            b "Why didn't he tell us that he told you?!"
+            l "Bert, you're giving a lot of credit to Freddy."
+            l "He's just a kid, we've been keeping most of the game secret from him."
+            l "And we're all hungry, tired, missing our friends and family..."
+            l "He could have easily forgotten, decided to lie about it because he likes me..."
+            b "Yeah, I guess it was never a foolproof plan."
+            l "Admittedly, I don't know how July 17th was chosen, but..."
+            l "If it was randomly, I got lucky that it wasn't Freddy's birthday."
+            l "Then I'd be stuck at two dates."
+            show lauren ind:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show sid ind with moveinleft:
+                xcenter .75
+            i "So um, since you opened the safe..."
+            i "Was there money inside?"
+            i "And if so... can I have it? Since, well, you know..."
+            l "..."
+            b "Sid, you're being incredibly-{p=0.5}{nw}"
+            l "Bert, it's fine, he's just thinking about his family."
+            l "There wasn't money in there."
+            l "The safe was pretty much how you guys found it, mostly empty."
+            l "It almost makes me wonder if the Game Master robbed the bank to fund this whole operation..."
+            i "Aw man..."
+            show sid mad:
+                xcenter .75
+            i "Screw you Game Master! Taking my money!"
+            bi "It's not your money..."
+            l "Well, the money might have never been there in the first place."
+            show sid ind:
+                xcenter .75
+            i "Never there?..."
+            i "So I've been trying to crack this safe for days for nothing..."
+            hide sid with moveoutleft
+            show lauren ind:
+                xcenter .25
+                linear 0.15 xcenter .5
+            bi "Sid slinked into the corner."
+            bi "It's like the mention of money made him forget he was accused of murder just a few minutes ago."
+            bi "Maybe it's for the better if he doesn't interrupt again..."
+
+        "Why Sam?" if len(menuset) >= 2:
+            l "Well, it has to do with the \"secret of the game.\""
+            b "Oh... I guess you're still the only one who knows it."
+            l "Don't worry, it's... not really {i}the{/i}secret, just {i}a{/i} secret."
+            l "{i}The Game Master's last name starts with an S{/i}."
+            bi "Before I fully processed that..."
+            show lauren ind:
+                xcenter .5
+                linear 0.15 xcenter .25
+            show sid mad with moveinleft:
+                xcenter .75
+            i "What did you say?!"
+            i "You're accusing me!"
+            bi "Ah. His last name is Straits."
+            l "Sid, relax, if I thought it was you I'd have shot you instead."
+            i "How do I know you're not just trying to throw me under the bus?"
+            i "Maybe the secret is something else and you're just spiting me with your dying breath!"
+            i "What kind of lame secret is that anyway?"
+            i "The Game Master's last name starts with an S?"
+            i "You might as well have said \"The Game Master is Sid Straits, the dumb teenager who no one listens to!\""
+            l "Sid, just listen..."
+            l "In Korea, the family name comes first."
+            b "Oh... yeah, that's true. In Korea my legal name would be Kim Bert, not Bert Kim."
+            l "Right. Sam is also Korean. So Sam's legal name in Korea would be Lee Sam."
+            show sid ind with moveinleft:
+                xcenter .75
+            i "...So according to the secret, Sam could also be the Game Master."
