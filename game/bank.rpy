@@ -4064,7 +4064,7 @@ label trial4ab:
     bi "It was like when you beat your friend in a game, and they tell you \"well I would have won if...\""
     bi "Except it was a game with our lives on the line."
     l "I bet you guys have questions, but..."
-    bi "She glanced at Freddy to make sure he wasn't in earshot, then whispered"
+    bi "She glanced at Freddy to make sure he wasn't in earshot, then whispered."
     l "I don't want Freddy to have to listen."
     l "Not just because it's too violent for a kid, but..."
     l "The last thing he needs is to feel betrayed by me."
@@ -4192,8 +4192,84 @@ label laurAsk:
             i "You might as well have said \"The Game Master is Sid Straits, the dumb teenager who no one listens to!\""
             l "Sid, just listen..."
             l "In Korea, the family name comes first."
-            b "Oh... yeah, that's true. In Korea my legal name would be Kim Bert, not Bert Kim."
-            l "Right. Sam is also Korean. So Sam's legal name in Korea would be Lee Sam."
+            b "Right. In Korea my legal name would be Kim Bert, not Bert Kim."
+            l "And Sam is also Korean. So Sam's legal name in Korea would be Lee Sam."
             show sid ind with moveinleft:
                 xcenter .75
             i "...So according to the secret, Sam could also be the Game Master."
+            l "Yeah. I figured the Game Master wouldn't make it so obvious, and well..."
+            l "I tried to come up with a way to twist the words, and that's what I came up with."
+            l "It was never going to be you, Sid."
+            l "I... even if I thought it was you..."
+            l "I couldn't bring myself to kill another kid."
+            i
+            i "Well, we better find out that Sam is the Game Master, or else-{p=0.5}{nw}"
+            show braindeath
+            pause .25
+            hide lauren
+            show doom
+            hide braindeath with dissolve
+            i "..."
+            b "..."
+            b "Lauren died, which means..."
+            b "Sam wasn't the Game Master."
+            bi "And that means..."
+            i "Bert, it's not me, I swear!"
+            i "Lauren must have been lying, or Jenny or Freddy are lying, or..."
+            i "It's not me! It's not me!"
+            bi "Lauren's gone, I..."
+            bi "I want to rip my hair out and scream, but someone has to be the adult in the room."
+            b "Sid, calm down."
+            b "No one's going to try to kill you right now."
+            b "We need to... tell Jenny what Lauren told us."
+            b "So we're all on even ground."
+            i "So she also thinks it's me!"
+            b "Sid if you're the Game Master, it's suspicious if you don't let me tell her..."
+            b "Since after all, if Jenny is the killer next round, it would help the Game Master if she doesn't know a lot."
+            i "...Ugh, fine."
+            i "But I get to have time to convince her it's not me."
+            bi "Kind of hard for me to agree to, because if it's not Sid..."
+            bi "Well, Jenny's either accusing a kid dressed in a frog costume, or me."
+            bi "But that's not important right now."
+            b "You can tell her whatever you want Sid."
+            b "Now I'm going, who knows how much time we have..."
+            scene black
+            bi "I sprinted back to the lobby."
+            bi "To be honest, it was for a somewhat selfish reason."
+            bi "One I didn't let slip to Sid."
+            bi "If Sid was the Game Master, and Jenny's the next murderer..."
+            bi "I don't want Jenny to wake up wherever we went next and try to kill me."
+            bi "Was I being truthful to Sid?"
+            bi "Did I believe what I said to convince him to let me go to the lobby?"
+            bi "Or I was just playing the game to the best of my ability?"
+            bi "Manipulating a little kid to increase my chances of winning?"
+            bi "Saying whatever I felt he needed to hear?"
+            show bg banklobby with dissolve
+            $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
+            $ showchibint("freddy", "jenny")
+            bi "I was bit taller than Sid, so he was still catching up as I burst into the lobby."
+            show jenny ind with dissolve
+            j "Bert? Is everything okay?"
+            b "Jenny!"
+            b "Lauren's-"
+            bi "I glanced at Freddy."
+            b "Well... you know."
+            j "Oh... so it wasn't Sam?"
+            b "No. But more importantly, Lauren told us something about the safe."
+            b "She said-{p=0.5}{/nw}"
+            scene black
+            pause 1.0
+            bi "Damn you, Game Master."
+            bi "Is this your way of toying with me?"
+            bi "Is watching eight people die in front of me not enough?"
+            bi "Depriving me of food, water, my family?"
+            bi "Despite all the emotional damage this game had inevitably caused, I was still \"playing\" my hardest."
+            bi "But as my body slowly fell unconscious, I could tell I was nearing my wit's end."
+            bi "I was almost ready to surrender."
+            bi "I could only wonder, if I woke up, would I have the energy to survive?"
+            bi "Or would one simple mistake mean the end?"
+            play music "audio/ominous.mp3" fadein 3.0
+            show endch4 with Dissolve(3.0) #febreview
+            pause
+            stop music fadeout 3.0
+            hide endch4 with Dissolve(3.0)
