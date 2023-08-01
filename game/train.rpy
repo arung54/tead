@@ -1585,7 +1585,7 @@ label midcar4:
     bt "I was only twenty, too. It feels like so long ago but I think about it every day."
     bt "I was driving after tutoring, same as always."
     bt "It was spring..."
-    bt "And this lady... she just... walked out..."
+    bt "And this pedestrian... just... walked out..."
     bt "Into the road..."
     bt "......."
     ni "He's all choked up."
