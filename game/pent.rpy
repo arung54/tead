@@ -2,9 +2,8 @@ label pentGo:
     #$ftecounter = 2
     #$noside = True
     #camera at paralloff
-    scene bg reflecting at bg with dissolve
+    scene bg reflecting with dissolve
     $cat = False
-    $ statusnt("???", "bert", ch=5, sun=0)
     $mood = "sad"
     play music "audio/ominous.mp3" fadein 1.0
 
@@ -58,9 +57,39 @@ label pentGo:
     bi "He had a terrible life, and now he's stuck in here probably because of his father."
     bi "And now it's just the four of us."
     bi "I trust all of them, but... maybe I shouldn't?"
-
+    hide frog2
+    hide jenny
+    hide sid
+    with dissolve
     bi "We also have the hint from the vault."
     bi '"The Secret of the Game", as it said.'
+    bi "The Game Master's name starting with the letter 'S'."
+    bi "I'm not sure if we can trust it, but we definitely can't ignore it."
+    bi "If we count first and last names..."
+    show lineupletters with dissolve
+    bi "There are five people that fit the description."
+    bi "Dan Scagnelli, Sam Lee, Shahar Syed, Sid Straits, and Stella Cantoire."
+    bi "It seems like a lot, but only one of them is still alive."
+    hide lineupletters
+    show lineupletters15
+    with dissolve
+    bi "Sid."
+    bi "I just said I wanted to trust him, but it's hard not to take this into account."
+    bi "He fits the hint description perfectly."
+    bi "Both of his names start with the letter 'S'."
+    bi "The other alternative is that people lied about their names."
+    bi "Accounting for Freddy, whose full name we can confirm, and myself, we have..."
+    hide lineupletters15
+    show lineupletters2
+    with dissolve
+    bi "Ten people whose names {i}could{/i} start with the letter 'S'."
+    bi "It's not unreasonable to think even an innocent person would lie about their name."
+    bi "Especially given the circumstances."
+    bi "Out of everyone, the most important would be Jenny, who's still alive."
+    bi "Is Jenny lying about her name?"
+    bi "I have no way of knowing."
+    hide lineupletters2
+    with dissolve
 
     bi "I don't know what to think."
     bi "I want to find a way to save them all, but if one of them's the Game Master..."
@@ -69,10 +98,6 @@ label pentGo:
     bi "...No matter what, I have to try."
     bi "I'm going to figure everything out, and save us."
     bi "There's no time to waste, so I need to start collecting evidence as soon as possible."
-    hide frog2 ind
-    hide jenny ind
-    hide sid ind
-    with dissolve
     bi "..."
     bi "I feel the weight of Sesame laying on my chest."
     bi "My head hurts..."
@@ -84,6 +109,7 @@ label pentGo:
     bi "Hardwood floors."
     bi "It smells like... dust."
     show bg pentcellar at bg
+    $ statusnt("???", "bert", ch=5, sun=0)
     show scary:
         alpha .6
     with dissolve
@@ -144,7 +170,7 @@ label pentGo:
     bi "..."
     bi "Despite that, it's hard not to feel a looming pressure."
     bi "I imagine this is how Kaiser, Catherine, Ivan, and Lauren must have felt."
-    "Bert sighed."
+    bi "Sigh."
     bi "For now, I'll hang on to this flashlight."
     $noside = True
     blank "Bert put the flashlight in his backpack."
@@ -1539,23 +1565,162 @@ label pent35:
     b "Because you're the Game Master, and you die here."
     j "Bert, are you being serious?"
     b "There's no way I could be the Game Master."
-    b "I've been thinking about it a lot:"
-    b "Every time I brought up my car accident, I never mentioned the victim's gender."
-    b "It wasn't a trap, it's just hard to get into the details."
-    b "But you... a minute ago, said that it was a woman."
+    b "There's no way you couldn't!"
+    b "We can start from the beginning, person by person."
+    b "Crime by crime."
+    b "And by the end, I'll prove that it's you."
+    b "Chronologically, the first crime to happen was Lauren's."
+    #show lauren
+    b "There was bank robbery about six years ago, and she was among the people there."
+    b "She shot the robber, but also ended up shooting and killing a young girl."
+    b "We still don't know who that girl is, but..."
+    b "Given the timeline, that girl would have been around your age, Jenny."
+    b "My guess is she was a friend of yours."
+    j "..."
+    b "And if it was, that must have scarred you deeply."
+    b "An experience like that when you're so young can warp your sense of justice and how you see life."
+    b "It was the start of all of this, and..."
+    b "Why everything that happened to your father sent you over the edge."
+    j "My father?"
+    b "Mr. Sydell, your father, and the owner of InSyde Electronics."
+    j "..."
+    b "The one to start it all was Kaiser"
+    #show kaiser
+    b "We have proof that Kaiser's train heist damaged Mr. Sydell."
+    b "InSyde Electronics suffered massive losses."
+    b "But more importantly, it damaged relationships with partners - namely, Cantoire." #julian
+    #show stella
+    b "Unable to fulfill shipments, InSyde got hit with lawsuits from Stella's team."
+    b "While Stella didn't personally work the cases, her team was merciless."
+    b "She hired one of the best lawyers she could find to dig up dirt and ruin Sydell."
+    #show shahar
+    b "That lawyer was Shahar."
+    b "The man we knew was once a great lawyer..."
+    b "Cantoire wanted InSyde in the dirt, and used cheap tricks to do it."
+    b "The train heist wasn't Mr. Sydell's fault, but the lawyers didn't care - they did anything to win."
+    b "They blackmailed a kid to hack Sydell's computers and plant information."
+    b "Of course, Stella's team was full of monsters."
+    b "Perhaps weary Shahar would confess, or just as an extra precaution, they..."
+    #show dracula
+    b "They hired Ivan to lobotomize Shahar."
+    b "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
+    b "Ivan himself was remorseful, but it didn't change what he did."
+    b "And it was just to protect the fact that some kid was rigging a case for them."
+    #show sid
+    b "Sid, the kid right over there."
+    b "The self trained ethical hacker got forced to plant info."
+    b "It ruined the case for Sydell, and he lost everything he had worked so hard for."
+    b "It must have been devestating for him, and his family."
+    j "..."
+    b "His business in shambles, Sydell turned to drugs."
+    #show sam
+    b "That's where Sam came in."
+    b "Sam sold Sydell experimental drugs, and Sydell didn't care."
+    b "By Sam's own admission, the drugs were not safe, and probably ruined his mental state."
+    b "Sam said Sydell became a regular customer."
+    hide sam with dissolve
+    b "It was almost rock bottom for Sydell."
+    b "But there was more coming."
+    #show catherine
+    b "Catherine robbed his mansion."
+    b "Losing material possessions is always awful."
+    b "But the peace of mind? His safety inside his own home?"
+    b "It must have been shattered."
+    b "Catherine didn't give a lot of details about the burglary, but I think I've connected some dots."
+    #show freddy
+    b "This... is where Freddy comes in."
+    b "To be precise, Freddy's father, Mr. Ogden."
+    b "He was a shady businessman, and you did hate him, Jenny."
+    b "But not for the reason you told me."
+    j "..."
+    b "Ogden's must have known how dire Sydell's state was, and he decided to make a move."
+    b "Freddy's father tipped off Catherine that Sydell would be an easy target."
+    b "We don't know his goal, but they stripped away any last semlance of safety Sydell had."
+    b "Business failing, addicted to drugs, and feeling unsafe in his own home."
+    b "He fled to this apartment as a last ditch effort for safety."
+    b "It must have been unbearable."
+    #show bert
+    b "And... I only made it worse."
+    b "It was the worst moment of my life."
+    b "I think about it almost every day, even if just for a second."
+    b "Right otuside this apartment, down there in that intersection, I drove into and killed a woman."
+    b "That woman was - it could only have been - Sydell's wife."
+    b "The person who was by his side the whole time."
+    b "And if she was Sydell's wife..."
+    #show jenny
+    b "That had to have made her... your mother."
+    b "I didn't realize it until now, but that must be where this fake last name comes from."
+    j "..."
+    b "Jenny Flowers - your real name is Jenny Sydell, making the hint in the bank true."
+    b "It was right under our noses the whole time."
+    b "And for Mr. Sydell, the rest was history."
+    b "Losing literally everything, he turned to Dan, or as he knew him,"
+    #show dan
+    b "Spaghetti, the hitman."
+    b "He ordered Dan to kill Stella in a fit of madness."
+    b "As we know, this backfired."
+    b "Stella's team caught him, and got him to kill Sydell himself."
+    b "To think Dan was the one to kill Sydell this whole time..."
+    b "He somehow ended up in jail - by Stella's team, the cops, or his own confession."
+    b "But it wasn't enough."
+    b "If there's one thing I've learned through all of this, it was never enough."
+    #show jenny
+    b "For you, Jenny."
+    b "You watched it all from the sidelines."
+    b "Your father's business get destroyed."
+    b "Your family's safety in jeopardy."
+    b "Your father turn to drugs."
+    b "And then both of them die."
+    b "That's how all of this started."
+    b "Revenge, anger, fear, whatever the reason was."
+    b "You pulled every possible string to get back at all of us."
+    b "You think we all deserved to die."
+    b "That's why you found Ivan and made him implant all these chips in our brains."
+    b "You set up this whole thing, and you're the reason everyone else is dead now."
+    b "You're the Game Master."
+    b "It's been you this whole time, Jenny."
+    j "There's no way you can actually prove any of that."
+    j "It's a good story, but what if it's just not true?"
+    j "What if I'm exactly who I say I am - Jenny Flowers?"
+    j "And what if you can't say otherwise?"
+    b "I was on the fence, truly."
+    b "There was almost nothing to connect you to Sydell."
+    b "But you yourself gave me the last piece of information I needed"
+    j "What?"
+    b "Just a few minutes ago. You were trying to connect with me."
+    b "Pull on my heart strings, maybe."
+    b "You mentioned the person that I killed."
+    j "Yeah?"
+    b "And you called them a 'her', as if it was common knowledge."
+    b "Despite thinking about it constantly, I never mentioned that they were a woman."
+    b "You thought that everyone must know by now, but really... it's just you and I who knew."
+    b "But in a desperate attempt to make me care, you messed up."
+    b "Or maybe even, you've just stopped trying."
+    b "Maybe you've accepted your fate."
+    #slide jenny over, show sid
+    i "Bert!"
+    i "It's Freddy, his head is burning hot, and his breathing has gotten weird!"
+    i "I'm worried he's, he's..."
+    i "We need to do something, now!"
     j "Bert..."
-    b "And you were right."
-    b "It was a woman, I killed a woman."
-    b "And based on everything we know now, I think that woman was..."
-    b "Mrs. Sydell - your mother!"
-    b "It's the only explanation for why I'm here..."
-    b "This whole time... you've been Sydell's daughter."
-    b 'This "Flowers" name, it must be your mother\'s maiden name.'
-    b "Which would explain the hint in the bank - your last name starts with S, for Sydell."
+    b "We need to end this game."
+    b "For Freddy."
+    b "And for everyone else you killed."
+    b "Jenny..."
+    b "You're the Game Master."
+    b "And your end is deserved."
+    #bert pushes jenny out the window.
+    #their ends are deserved screen
 
-
-    #PERSON BERT HIT, NOT WOMAN!!! JENNY WILL SAY ITS A WOMAN
-
+    #post credits explainer
+    "Jenny ironically died in the same intersection that her mother did."
+    "After which, Bert and Sid no longer feared the chip in their head knocking them out or killing them."
+    "They knocked down the front door of the apartment, and found help down in the apartment lobby."
+    "Freddy was rushed to the hospital and made a full recovery."
+    "Bert and Sid were taken to the police for questioning, and a full investigation began."
+    "Ultimately, neither were tried with any crimes."
+    "The bodies of Dan, Kaiser, Stella, Catherine, Shahar, Ivan, Sam, Lauren, and Jenny were recovered."
+    "As well as the bodies of those assisting Jenny, who were killed via brain chip at the time of her death."
 
 
 
