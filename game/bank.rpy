@@ -1967,9 +1967,11 @@ label bank7:
     s "They look totally different."
     b "Oh..."
     b "Right..."
-    b "...I dunno, maybe he got cosmetic surgery?" #febreview need a better dissuader here- something like Freddy saw the painting in the other house, and sam has seen both of their faces
+    b "...I dunno, maybe he got cosmetic surgery?"
     b "Assume a new identity, get a fresh start at life, that sort of thing?"
     s "That's a bit of a stretch."
+    s "Freddy saw Sydell's face in the mansion and didn't react."
+    s "You think he wouldn't recognize his dad?"
     b "Hm... yeah."
     b "..."
     b "Earlier you mentioned something."
