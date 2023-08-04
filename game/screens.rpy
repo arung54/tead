@@ -415,16 +415,16 @@ screen navigation():
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
             focus_mask True action ShowMenu("about")#, Hide("main_menu")]
-        imagebutton:
-            idle "ibmenuload.png"
-            hover "ibmenuload2.png"
-            focus_mask True action ShowMenu("load")
         #imagebutton:
-        #    idle "ibmenusettings.png"
-        #    hover "ibmenusettings2.png"
-        #    focus_mask True action ShowMenu("preferences")
+        #    idle "ibmenuload.png"
+        #    hover "ibmenuload2.png"
+        #    focus_mask True action ShowMenu("load")
+        imagebutton:
+            idle "ibmenucontrols.png"
+            hover "ibmenucontrols2.png"
+            focus_mask True action ShowMenu("preferences")
         textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
-        textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
+        #textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
 
         #################### below is NOT main menu, just in game menu
     else:
@@ -950,6 +950,13 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                    vbox:
+                        ycenter .6
+                        xcenter 1.0
+                        text _("Left Click / Space - Next line")
+                        text _("Right Click - Quick Menu")
+                        text _("H - Hide characters and menus on screen")
+                        text _("F - Toggle fullscreen mode")
 
             null height (4 * gui.pref_spacing)
 
@@ -1004,7 +1011,7 @@ screen preferences():
 
     else:
 
-        use game_menu(_(" "), scroll="viewport"):
+        use game_menu(_(" "), scroll="None"):
 
             vbox:
 
@@ -1018,6 +1025,13 @@ screen preferences():
                             label _("Display")
                             textbutton _("Window") action Preference("display", "window")
                             textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        vbox:
+                            ycenter .6
+                            xcenter 1.0
+                            text _("Left Click / Space - Next line")
+                            text _("Right Click - Quick Menu")
+                            text _("H - Hide characters and menus on screen")
+                            text _("F - Toggle fullscreen mode")
 
                 null height (4 * gui.pref_spacing)
 
@@ -1246,7 +1260,7 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    use game_menu(_("Help"), scroll="None"):
 
         style_prefix "help"
 

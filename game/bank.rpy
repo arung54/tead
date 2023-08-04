@@ -4204,7 +4204,6 @@ label laurAsk:
             l "It was never going to be you, Sid."
             l "I... even if I thought it was you..."
             l "I couldn't bring myself to kill another kid."
-            i
             i "Well, we better find out that Sam is the Game Master, or else-{p=0.5}{nw}"
             show braindeath
             pause .25

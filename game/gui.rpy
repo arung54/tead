@@ -339,7 +339,7 @@ define config.history_length = 250
 
 ## The height of a history screen entry, or None to make the height variable at
 ## the cost of performance.
-define gui.history_height = 140
+define gui.history_height = 90
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
@@ -445,7 +445,7 @@ init python:
         gui.navigation_spacing = 20
         gui.pref_button_spacing = 10
 
-        gui.history_height = 190
+        gui.history_height = 90
         gui.history_text_width = 690
 
         gui.quick_button_text_size = 20
