@@ -196,6 +196,27 @@ image btracks:
     "tracksb2.png"
     pause .05
     repeat
+image glassfallanim:
+    contains:
+        "glassfalling.png"
+        alpha .75
+        xcenter .4
+        ycenter .4
+        linear 6 ycenter .52 xcenter .46
+
+image sidfallanim:
+    contains:
+        "sidfalling.png"
+        xcenter .4
+        ycenter .4
+        linear 6 ycenter .5 xcenter .45
+
+image jennyfallanim:
+    contains:
+        "jennyfalling.png"
+        xcenter .4
+        ycenter .4
+        linear 6 ycenter .5 xcenter .45
 
 image bg dandieslide:
     contains:
@@ -856,4 +877,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump pentGo
+jump pent35

@@ -1,4 +1,5 @@
 screen chooseCharPent(ans, correctLabel, midText):
+    add "scary.png"
     add "debatescroll" at cczoom
     imagemap:
         ground "lineup.png"
@@ -63,3 +64,21 @@ screen chooseCharPent(ans, correctLabel, midText):
             else:
                 action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
     text midText xalign 0.5 yalign 0.5
+
+screen pickSpotpent:
+    imagemap:
+        ground "pickthespotpent"
+        hotspot(0, 0, 1277, 718):
+            action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
+        hotspot(153, 178, 881, 224):
+            action [Function(shatterNoise), Show("shattered", lab = "pent346")]
+    #add "wherewasmurderweapon"
+
+screen pickSpotpent:
+    #add "bg reflecting"
+    imagemap:
+        ground "lineup2"
+        hotspot(655, 47, 392, 671):
+            action [Function(shatterNoise), Show("shattered", lab = "pentsid")]
+        hotspot(273, 57, 301, 662):
+            action [Function(shatterNoise), Show("shattered", lab = "pentjenny")]

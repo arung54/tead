@@ -727,9 +727,16 @@ style return_button:
 screen about():
     tag menu
     modal True
+
     #use game_menu(_(" "), scroll="viewport"): #removed about
     style_prefix "about"
-    add "scary.png"
+    #add "scary.png"
+    if main_menu:
+        add "menured.png"
+        add "vinegar.png"
+        add "menubgscroll2"
+    else:
+        use game_menu(_(" "), scroll="None")
     vbox:
         ycenter .5
         xcenter .4
@@ -739,7 +746,7 @@ screen about():
         text _("                  Music: Andrew Kim\n")
         text _("                  Music: Haunted Houses and CobWebs by HoliznaCC0,")
         text _("                  Unity and Anachronist by Kevin MacLeod. ")
-        text _("                  All music credits and links found on our website. ")
+        text _("                  All music credits and links found on our Itch.io page. ")
         if gui.about:
             text "[gui.about!t]\n"
         text _("                  Ren'Py engine")
@@ -750,13 +757,13 @@ screen about():
             ycenter .15
             text_hover_color "#929292"
             action Return()
-    else:
-        textbutton _("Back"):
-            #style "return_button"
-            xcenter .07
-            ycenter .15
-            text_hover_color "#929292"
-            action [Hide("about"), ShowMenu("preferences")]
+    #else:
+    #    textbutton _("Back"):
+    #        #style "return_button"
+    #        xcenter .07
+    #        ycenter .15
+    #        text_hover_color "#929292"
+    #        action [Hide("about"), ShowMenu("preferences")]
 
 
 style about_label is gui_label

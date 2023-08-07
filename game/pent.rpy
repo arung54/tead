@@ -5,7 +5,7 @@ label pentGo:
     scene bg reflecting with dissolve
     $cat = False
     $mood = "sad"
-    play music "audio/ominous.mp3" fadein 1.0
+    play music "audio/rush.mp3" fadein 1.0
 
     bi "So many people..."
     bi "Dead."
@@ -36,11 +36,13 @@ label pentGo:
     bi "I didn't even know them that well, but I can't believe they're gone."
     bi "It's not directly my fault, but it's hard not to feel guilty..."
     bi "If I could just stop the Game Master."
+    $mood = "ind"
     bi "Speaking of which, there are only four of us left."
     show jenny ind with dissolve:
         xcenter .5
     bi "Jenny, the bubbly outspoken activist."
     bi "She's who I've felt closest to this whole time."
+    $mood = "sad"
     bi "She was the first one to tell me her secrets, and it feels wrong to suspect her."
     show jenny ind:
         linear .3 xcenter .25
@@ -48,6 +50,7 @@ label pentGo:
     bi "Sid..."
     bi "A bright teenager with a poor past, caught up in some legal issues."
     bi "He was the first one to really get hit with the weight of this game, finding Dan's body..."
+    bi "Other than Dan himself, I guess."
     bi "In my heart I think he's just doing everything he thinks is right, but... I don't know."
     show sid ind:
         linear .3 xcenter .75
@@ -56,11 +59,14 @@ label pentGo:
     bi "I just feel awful for this kid..."
     bi "He had a terrible life, and now he's stuck in here probably because of his father."
     bi "And now it's just the four of us."
+    call poptearb
+    bi "Regardless, I'll have to keep working with them to figure this out."
     bi "I trust all of them, but... maybe I shouldn't?"
     hide frog2
     hide jenny
     hide sid
     with dissolve
+    $mood = "ind"
     bi "We also have the hint from the vault."
     bi '"The Secret of the Game", as it said.'
     bi "The Game Master's name starting with the letter 'S'."
@@ -83,7 +89,8 @@ label pentGo:
     show lineupletters2
     with dissolve
     bi "Ten people whose names {i}could{/i} start with the letter 'S'."
-    bi "It's not unreasonable to think even an innocent person would lie about their name."
+    bi "Myself and Freddy are the only ones we can prove aren't lying."
+    bi "And besides, it's not unreasonable to think even an innocent person would lie about their name."
     bi "Especially given the circumstances."
     bi "Out of everyone, the most important would be Jenny, who's still alive."
     bi "Is Jenny lying about her name?"
@@ -96,18 +103,23 @@ label pentGo:
     bi "Is it even possible to save everyone?"
     bi "Jenny? Freddy? Sid?"
     bi "...No matter what, I have to try."
+    call popwowb
     bi "I'm going to figure everything out, and save us."
     bi "There's no time to waste, so I need to start collecting evidence as soon as possible."
     bi "..."
+    $mood = "shock"
     bi "I feel the weight of Sesame laying on my chest."
     bi "My head hurts..."
     bi "It's hard to tell why."
+    $mood = "sad"
     bi "Maybe it's the brain chip that keeps knocking me out."
     bi "Maybe it's all this trauma..."
     bi "Or it could just be this hard ground."
     bi "If I move a bit I hear a creaking noise."
     bi "Hardwood floors."
     bi "It smells like... dust."
+
+    play music "audio/unity.mp3" fadein 1.0
     show bg pentcellar at bg
     $ statusnt("???", "bert", ch=5, sun=0)
     show scary:
@@ -115,6 +127,7 @@ label pentGo:
     with dissolve
     $mood = "shock"
     $cat = True
+    call popwowb
     bi "I immediately feel claustrophobic."
     bi "There's it's dark."
     bi "But there are clearly bottles of wine all over the walls."
@@ -133,6 +146,7 @@ label pentGo:
     bi "Up the ladder I go-"
     ses "Mrep!"
     $mood = "shock"
+    call pophuhb
     bi "Huh?"
     bi "There's a drawer on the far wall."
     blank "Bert walked over and opened the false panel."
@@ -163,7 +177,11 @@ label pentGo:
     bi "I've definitely never been in this wine cellar before..."
     bi "And I don't know what I'm supposed to do with a flashlight."
     bi "..."
-    bi "Maybe it's good if I'm the one picked as the killer..."
+    $mood = "ind"
+    bi "But it can't be a coincidence."
+    bi "It's too similar to what the past chosen killers experienced."
+    bi "Plus..."
+    bi "Maybe it's good if I'm the one picked as the killer."
     bi "I know for certain I would never resort to that... but..."
     bi "I wouldn't be able to say the same for the others."
     bi "Plus, it was a 1 in 3 chance to get chosen, assuming the Game Master is here with us."
@@ -185,7 +203,7 @@ label pentGo:
     scene bg pentbedroom2 at bg
     $ statusnt("???", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
-    play music "audio/rush.mp3" fadein 3.0
+    #play music "audio/rush.mp3" fadein 3.0
     show sidsleep at bg:
         xcenter .5
         ycenter .63
@@ -202,14 +220,17 @@ label pentGo:
     bi "It's as if the wine cellar is normally hidden."
     bi "Why would someone need to hide their wine cellar?"
     bi "Anyway..."
-    bi "It looks like a bedroom."
     $ statusnt("Bedroom", "bert", ch=5, sun=0)
+    bi "It looks like a bedroom."
     bi "And the other 3 are here and still asleep."
     i "snnnnnnnnnnnnnnnnnnnnnnnn......."
     b "Hey guys, wake up."
     f "mimimimimimimi....................."
     bi "..."
+
+    $mood = "shock"
     b "HEY!!!"
+    call popwowb
     b "WAKE UP!!!"
     show jenny scared:
         xcenter .3
@@ -221,6 +242,7 @@ label pentGo:
     j "Bert! Was that you screaming?"
     j "Yaaaaaaaaaaaaaaaaaaaaaawn."
     f "Good morning Bert!"
+    $mood = "ind"
     b "Thank goodness you guys are safe..."
     play sfx "audio/poptear.mp3" volume .5
     show poptear:
@@ -253,20 +275,27 @@ label pentGo:
     show poprain with dissolve:
         xcenter .7
         ycenter .1
+    $mood = "sad"
     f "*sniffle* L-Lauren..."
     b "Yeah..."
     b "We've got each other though, Freddy."
     b "I'll make sure you're safe."
     j "Me too, and so will Sid."
+    $mood = "ind"
     b "Speaking of which, let's wake that guy up so we can all talk."
     hide poprain with dissolve
     f "Ummm..."
     f "Miss Jenny, do I have to listen?"
     f "All this stuff makes me really sad..."
     b "It's important for you to be here, Freddy."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .3
+        ycenter .3
     j "Bert..."
     show frog2 smile
     j "Freddy, just stay in the room with us so we can keep an eye on you, okay?"
+    hide popmad
     play sfx "audio/pophearts.mp3" volume .5
     show pophearts:
         xcenter .7
@@ -307,71 +336,68 @@ label pent2:
     i "So it's just the four of us now, huh."
     i "I can't believe Lauren did Sam in like that."
     i "Guess you really can't trust anyone these days."
-    b "Speaking of which, it should be pretty easy for us to narrow down our {i}roles{/i} now."
-    i 'What do you mean our "roles"?'
-    b "Well, unless we've been lied to this whole time, one of us is the Game Master."
-    b "And another one of us is the chosen killer for this location."
-    j "So, two out of the four of us have some predetermined role."
-    b "Right."
-    b "Surely, the Game Master won't speak up now and say they're the Game Master, but..."
-    i "...since it's just the four of us now, maybe the chosen killer would speak up."
-    b "Exactly."
-    b "We need to work together."
-    b "If we all know which one of us is the chosen killer, we can break this all down and end this."
-    j "Oh! And if the chosen killer speaks up, we know they're not the Game Master."
-    j "So then it's just 1/3 for who the bad guy really is."
-    i "Yeah, sure, but if I was the Game Master right now I'd lie my ass off, like:"
-    i "\"Yo guys I'm the killer this round!\""
-    b "But then the {i}real{/i} chosen killer could speak up, and we'd know one of them is the Game Master."
-    i "Hmm... I guess that's true."
-    show jenny happy
-    j "Great logic guys!"
-    j "So who's who?"
-    j "Speak up now or forever hold your peace!"
-    b "..."
-    i "Well don't look at me!"
-    j "C'mon Sid, you can admit it, I'll forgive you!"
-    show sid mad
-    play sfx "audio/poptear.mp3" volume .5
-    show poptear:
-        xcenter .65
-        ycenter .275
-        zoom .75
+    j "Speaking of which..."
+    j "Are we going to talk about the secret in the bank?"
+    show jenny ind:
+        linear .3 xcenter .25
+    j "It said that... Sid's the Game Master."
+    play sfx "audio/popmad.mp3" volume .5
+    show sid mad:
+        linear .1 xcenter .65
+    show popmad:
+        xcenter .7
+        ycenter .3
+    i "It didn't say that!"
+    j "Maybe we should tie him up, Bert!"
+    i "Tie me up?! What the hell?"
+    hide popmad
+    j "Just own up to it Sid, we can talk this out!"
+    j "I'll forgive you!"
     i "If I really was the Game Master, you shouldn't forgive me!"
+    i "I've got nothing to own up to!"
+    i 'All it said was "someone whose name starts with S", not me specifically!'
+    j "Mmmm well my name is Jenny, and that's Bert, and that's Freddy, soooo..."
+    b "Jenny..."
+    j "Am I wrong?"
+    j "He's the only one who fits the description!"
     show scary with dissolve:
         alpha .5
+    call poptearb
     bi "This went a bit more smoothly in my head..."
-    hide poptear
-    bi "Plus, I've been avoiding the fact that Freddy could technically be either role..."
-    bi "As unlikely as it is, it throws a bit of a wrench in my logic."
-    bi "Maybe we're rushing this."
-    bi "As long as we all keep eyes on each other we should be fine, and there's only four of us anyway."
+    bi "I think I need to de-escalate this situation."
+    bi "Even if Jenny's right, we should check out the rest of this place first."
+    bi "As long as we all keep our eyes on each other we should be fine, and there's only four of us anyway."
     hide scary with dissolve
-    b "Hmm, alright, at least we all know the plan for now."
     show sid ind
-    b "Maybe we should explore a bit so chosen killer knows that's their role."
-    b "If one of us does have a connection to this location, we need to scope it out a bit first."
-    i "Yeah, I haven't even been outside this frou-frou bedroom yet."
-    j "It seems like there are two doors out of here, which room should we check out first?"
-    show scary with dissolve:
-        alpha .5
-    menu:
-        bi "Let's check out the door on the..."
-
-        "South wall.":
-            hide scary with dissolve
-            b "Let's go this way."
-
-
-        "East wall.":
-            hide scary with dissolve
-            b "Let's go this way."
-    j "Aye Aye, captain Bert!"
+    b "Jenny, do you have a driver's license with you?"
+    j "Huh? No, of course not?"
+    b "What about a passport?"
+    j "Ummm... no."
+    b "Then how can you even prove your name is Jenny?"
+    b "What if it's really Senny, and you fit the description too?"
+    j "Senny?"
+    b "I don't know! But you get my point."
+    show jenny ind:
+        linear .3 xcenter .3
+    j "Hmph... maybe."
+    b "So before we jump down Sid's throat, we should explore."
+    i "Thanks Bert."
+    b "Of course."
+    b "We need to act as a team to figure everything out."
+    bi "Whether that's entirely true or not, I'm still not sure."
+    j "Okay..."
+    b "Now let's look around."
+    i "Aye Aye, captain Bert!"
+    $mood = "sad"
+    call poptearb
     b "You sound like Shahar..."
+    i "Come on, there's a door over here."
+    i "Let's check it out."
     scene black with dissolve
     $noside = True
     blank "The four of them went into the next room together."
     $noside = False
+    $mood = "ind"
     scene bg pentstudy at bg
     $ statusnt("???", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
@@ -390,8 +416,7 @@ label pent2:
     j "There's even an electric fireplace."
     hide jenny happy with dissolve
     bi "She turned it on."
-    #ADD FIREPLACE ON BACKGROUND HERE!!!!!!!!!!! SHE TURN THAT SHIT ON FR
-    #JULIAN
+    show bg pentstudy2 at bg with dissolve
     show jenny happy:
         xcenter .3
     with dissolve
@@ -400,13 +425,13 @@ label pent2:
     b "We should look for anything that could connect us to this place."
     j "I'm pretty connected to being warm and cozy, so..."
     i "Looks like there's some booze too!"
+    call poptearb
     $mood = "sad"
     b "Please... work with me here."
-    i "Yeah you're right."
-    i "Well I've definitely never been here before."
+    i "Okay, you're right."
+    i "Well, I've definitely never been here before."
     i "The only library I've been to is the public one near me, definitely nothing fancy like this."
     b "Me too... I have no memory of this place."
-    #b "It seems a very personal nook for someone."
     j "Well, let's look around!"
     j "Maybe there are some clues for us!"
     hide jenny
@@ -426,7 +451,9 @@ label pent23:
 
         "picture on the wall.":
             hide scary with dissolve
-            b "Yeah, that painting over the fireplace."
+            $mood = "ind"
+            call popwowb
+            b "That painting over the fireplace."
             b "Haven't we seen it before?"
 
         "selection of drinks over there.":
@@ -453,10 +480,10 @@ label pent23:
     f "Oh, Bert! Are you awake? Feeling okay?"
     b "Yeah, I'm fine."
 
-    scene bg pentstudy at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    scene bg pentstudy2 at bg
+    $ statusnt("Study", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
-    show jenny happy:
+    show jenny ind:
         xcenter .3
     show sid ind:
         xcenter .7
@@ -470,8 +497,17 @@ label pent23:
     b "Anyway, I don't think it's a coincidence that the same painting is here."
     b "The decor in general is pretty similar too."
     b "There's definitely some connection to Mr. Sydell's mansion."
-    j "I found something too."
+    i "Maybe this is his summer pad?"
+    b "I'm not sure."
+    b "But I'm convinced it could be useful."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
+    j "Guys, I found something too."
     j "Everything is neat and all the books are back up on the shelves, but..."
+    hide popwow
     j "This book specifically was tucked one of the couch cushions."
     j "It was open to this page."
     show bg journal1 at bg
@@ -486,13 +522,14 @@ label pent23:
     b '"this is not sustainable. But where else can I go?"'
     b '"They know where I live. I fear my days as well are numbered."'
     b '"Unless... I can turn the tables."'
+    call popwowb
     b "Huh?!"
     b "What the hell... this was written by whoever was living in this penthouse..."
     b "Or taking refuge, as they said."
     b 'Refuge from what? Who are they scared of, who is the person that "knows where they live?"'
     j "Bert, this is scary..."
-    j "Not a big fan of this book..."
-    show bg pentstudy at bg
+    j "I'm not a big fan of this book..."
+    show bg pentstudy2 at bg
     show jenny scared:
         xcenter .3
     show sid happy:
@@ -504,7 +541,7 @@ label pent23:
     i 'The part about his "days being numbered" and then the next page being blank is...'
     i "A little spooky."
     b "Does anyone know the handwriting?"
-    bi "Nobody spoke up."
+    "Nobody spoke up."
     hide sid happy with moveoutright
     show frog2 ind with moveinright:
         xcenter .7
@@ -543,7 +580,8 @@ label pent25:
 
     b "I think that settles it."
     i "Settles what?"
-    b "Lets assume this really is Mr. Sydell's journal."
+    b "Lets assume this is Mr. Sydell's journal."
+    j "Just because the painting is the same as the one in his mansion?"
     b "Think about it - it seems like almost all of us have some connection to Sydell."
     b "And importantly, Catherine said she had robbed his house before."
     scene bg nmansiondining at bg
@@ -555,7 +593,7 @@ label pent25:
     c "Oh yeah, I burgled this mansion before while the owner was out."
     b "Does that mean you knew Mr. Sydell?"
     c "Eh, never met the guy. I just overheard from an acquaintance that he was in court that day."
-    scene bg pentstudy at bg
+    scene bg pentstudy2 at bg
     $ statusnt("???", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
     show jenny ind:
@@ -569,20 +607,23 @@ label pent25:
     b "So he came here to take refuge."
     j "Wow, Bert, you might be right."
     j "Between the painting, the furniture, and the book, I think you're onto something."
-    if not pent_evidence[0]:
-        $pent_evidence[0] = True
-        show newevidencefound with dissolve
-        pause 1
-        hide newevidencefound with dissolve
-        blank "Sydell's Apartment was added to evidence."
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
     hide frog2 with moveoutright
     show sid ind with moveinright:
         xcenter .7
     i "So we're in Sydell's secret apartment?"
     b "That's my best guess so far..."
-    i "I don't get it though - didn't Catherine just rob him?"
+    i "I don't get it though - didn't Catherine only rob him?"
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .625
+        ycenter .25
     i 'Why\'s he talking all like "my days as well are numbered"?'
     i "I dunno, I've been robbed before, and it's scary, but renting a place like this to hide seems like... overkill."
+    hide pophuh
     i "Pun intended."
     j 'Also, why "as well"?'
     j "Doesn't that imply someone had already died?"
@@ -601,17 +642,19 @@ label pent25:
     b "One step forward, one step back..."
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
-        xcenter .41
+        xcenter .375
         ycenter .25
         zoom .75
     $mood = "shock"
     j "Bert, take a look at this!"
     b "Hm? What's is it?"
     hide popwow
-    j "There's a little slip of paper tucked in a different page."
-    show bg journal2 at bg
+    show bg journal1 at bg
     hide jenny
     hide sid
+    with dissolve
+    j "There's a little slip of paper tucked in a different page."
+    show bg journal2 at bg
     with dissolve
     b "This looks like a phone number."
     b "It's scribbled down in the same handwriting on a scrap of paper..."
@@ -624,6 +667,7 @@ label pent25:
     b "I feel like I should know someone by that name..."
     i "You know someone named Spaghetti?"
     b "Kinda... someone that was trapped with us."
+    call popwowb
     b "That's it!"
 label pent26:
     show scary with dissolve:
@@ -637,11 +681,10 @@ label pent26:
 
         "Dracula.":
             bi "I don't think he mentioned anything like that..."
-            hide scary with dissolve
             jump pent26
 
         "Dan.":
-            bi "It was Dan!"
+            b "It was Dan!"
             hide scary with dissolve
 
 
@@ -661,12 +704,13 @@ label pent26:
     show sepia:
         alpha .5
     with dissolve
+    $mood = "ind"
     n "Speaking of Italian food, some of the people I used to roll with would call me Spaghetti." #febreview
     b "Spaghetti?"
     n "I think they were teasing me about my last name, Scagnelli."
     n "It's long, Italian, and has a bunch of letters, kinda like Spaghetti."
     scene bg pentstudy at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    $ statusnt("Study", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
     show jenny ind:
         xcenter .3
@@ -675,6 +719,10 @@ label pent26:
     with fade
     i "What?!"
     i "So this is... Dan's number?"
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .7
+        ycenter .1
     i "Dan..."
     bi "I'd forgotten how quickly Sid grew attached to Dan."
     bi "Something about a strong male figure to look up to, I suppose."
@@ -684,6 +732,7 @@ label pent26:
     i "He's right..."
     i "One of the last things Dan said to me was about his criminal history."
     j "Oh... I see..."
+    hide poprain with dissolve
     i "Dan was kind to me, but there's no reason to dance around his shady past."
     b "Still, why is his phone number in a place like this?"
     b "Maybe Sydell was looking to call in a favor."
@@ -714,8 +763,7 @@ label pent27:
 
         "She knew it was Sydell's masion right away.":
             bi "She did say that... but that's not relevant at the moment."
-            #hide scary with dissolve
-            jump pent28
+            jump pent27
 label pent28:
     b "It was me, Stella, and Shahar in the dining room."
     b "She said..."
@@ -729,7 +777,7 @@ label pent28:
     t "My team got so used to it they'd even turn hitmen back around to kill their bosses." #febreview
     bi "That's insane..."
     t "But now, here, we're all equally powerless."
-    scene bg pentstudy at bg
+    scene bg pentstudy2 at bg
     $ statusnt("Study", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
     show jenny ind:
@@ -740,7 +788,7 @@ label pent28:
     b "Maybe Dan was hired by Sydell as the hitman... to take out Stella."
     b "Then, Stella's bodyguards caught Dan, and made him kill Sydell."
     b "That would explain this note being here."
-    i "And it might explain why Dan was in jail prior to this game."
+    i "And it might explain why Dan was in jail prior to this game!"
     j "It also make it seem more likely that Sydell is dead."
     $mood = "shock"
     b "We can't be sure he's dead."
@@ -748,11 +796,12 @@ label pent28:
     j "Whether it was her own guards, or Dan, I'd imagine Sydell was killed..."
     b "..."
     $mood = "ind"
-    bi "We were all silent for a moment."
+    "They were all silent for a moment."
     b "You're probably right." #ev
     b "We should assume Sydell was killed in response."
     show jenny:
         linear .2 xcenter .25
+    stop music fadeout 1.0
     j "Does that mean one of you three is really behind all this?"
     j "I was still holding out hope that... some bald old freak named Sydell was behind it all."
     j "But if he's been dead this whole time, then there's no way..."
@@ -760,11 +809,12 @@ label pent28:
     bi "She's probably right."
     bi "But I don't want to accept that just yet."
     b "Let's keep exploring before we get too depressed about it."
-    i "Agreed!"
+    i "A-agreed!"
     hide sid with moveoutleft
     scene black with fade
     "All four of them made their way back through the other bedroom door."
 label pent29:
+    play music "audio/rush.mp3" fadein 1.0
     scene bg pentkitchen2 at bg
     $ statusnt("???", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
@@ -777,13 +827,21 @@ label pent29:
     with moveinright
     i "A kitchen!"
     j "A living room!"
-    $ statusnt("Dining Room", "bert", ch=5, sun=0)
+    $ statusnt("Dining Room", "bert", ch=5, sun=4) #100% opacity
     b "Both, I think."
     j "Gotta love an open floorplan."
     bi "She's pretty quickly back in high spirits..."
     j "It looks like we're... really high up?"
+    show sid happy
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .62
+        ycenter .25
+        zoom .75
+
     i "Holy shit, those are windows!"
     bi "He's right..."
+    hide popwow
     bi "This is the first time since the train we've seen windows that aren't boarded up."
     i "Gang, we're makin' a jump for it!"
     hide sid with moveoutbottom
@@ -791,8 +849,11 @@ label pent29:
         xcenter .48
         ycenter .53
     "Sid ran over to the windows."
+    call popwowb
+    $mood = "shock"
     b "Hold on!"
     i "We can break through the glass and jump for it!"
+    play sound "audio/windowknock2.mp3"
     "Sid started banging on the window as hard as he could."
     b "At least try to {i}open{/i} the windows first..."
     show jenny scared
@@ -809,18 +870,19 @@ label pent29:
     "Bert looked out the window."
     scene bg pentview2 at bg
     show fogscroll at bg
-    $ statusnt("Dining Room", "bert", ch=5, sun=0)
+    $ statusnt("Dining Room", "bert", ch=5, sun=4)
     $ showchibint("freddy", "jenny", "sid")
     with dissolve
     b "..."
-    b "It really is a window to society..."
+    b "It really is a window to the outside world..."
     bi "I can see a couple cars, and even some people walking..."
     bi "But... it's so foggy, and it must be the absolute middle of the night."
     bi "Still, it feels nice to know there are some other people out there."
+    play sound "audio/windowknock2.mp3"
     "{i}BAM BAM BAM!{/i}"
     b "Sid! Stop hitting the windows!"
     scene bg pentkitchen2 at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    $ statusnt("Dining Room", "bert", ch=5, sun=0)
     $ showchibint("freddy", "jenny", "sid")
     with dissolve
     show jenny ind:
@@ -831,12 +893,21 @@ label pent29:
     with dissolve
     i "It won't budge!"
     i "I can't even make a crack in it."
+    play sound "audio/windowknock2.mp3"
     "{i}WHACK WHACK WHACK!{/i}"
     j "Well don't keep trying!"
+    play sound "audio/windowknock2.mp3"
     "{i}WHACK WHACK WHACK!{/i}"
+    play sound "audio/windowknock2.mp3"
     "{i}WHACK WHACK WHACK WHACK WHACK WHACK!{/i}"
+    play sound "audio/windowknock2.mp3"
+    play sound "audio/windowknock2.mp3"
     "{i}WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK!{/i}"
+    b "..."
+    $mood = "ind"
+    call poptearb
     b "...I think it's fine."
+    b "It doesn't seem like the window is going to budge."
     j "If he falls out the window, I'm blaming you."
     hide sidstand2 with dissolve
     show sid ind with moveinbottom:
@@ -894,6 +965,11 @@ label pent31:
     b "Pushed, probably..."
     i "So the Game Master wants us to hurl each other out the window?"
     b "Well, it seems like they're leaving that possibility on the table..."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .62
+        ycenter .25
+        zoom .75
     i "I still think we should try to jump for it."
     i "If we had known what was going to happen on the train, I woulda jumped there too!"
     b "That's... understandable."
@@ -901,6 +977,7 @@ label pent31:
     b "If we don't find anything useful, maybe we can rig something up get out the window."
     i "Alright, deal."
     j "There are lots of drawers, cabinets, and tables in here."
+    b "Looks like there's even a closet over there."
     hide jenny with moveoutleft
     show frog2 ind with moveinleft:
         xcenter .3
@@ -909,6 +986,10 @@ label pent31:
     b "You can have the most important job."
     f "Really!!!"
     b "Yup! We need someone to look between all the couch cushions!"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .3
+        ycenter .5
     f "Oh boy!"
     bi "Maybe that will distract him for a bit."
     b "Make sure you don't miss anything, Freddy!"
@@ -917,18 +998,24 @@ label pent31:
     b "Okay, let's get started."
     scene black with dissolve
     "The four of them spent 30 minutes scavenging every corner of the room."
-    "LAST FREETIME???"
-    scene bg pentkitchen2 at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    scene bg pentkitchen90 at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
     $ showchibint("freddy", "jenny", "sid")
-    with dissolve
+    b "While we have this time, maybe I should chat with someone to calm the nerves."
+    b "It's a scary situation, but we need camaraderie."
+    "FREETIME" #fte freetime free time arun
+
+
     show jenny ind:
         xcenter .3
     show sid ind:
         xcenter .7
+    with dissolve
+    $mood = "ind"
     j "Okay team!"
-    j "Despite a lot of places to hide stuff in here, it doesn't seem like there's a lot of hidden stuff."
+    j "Despite a lot of places to hide stuff in here, it doesn't seem like there's a lot hidden."
     i "I can't believe we're tearing apart a rich guy's penthouse and there's no money laying around."
+    call poptearb
     i "Leave me a little cash bro come on..."
     j "He {i}was{/i} rich."
     j "By the time he was hiding here, he was losing money and in some business troubles, remember?"
@@ -938,12 +1025,20 @@ label pent31:
     j "I took a peek inside and it looked useful, so I set it aside for us to read through."
     b "Let's see..."
     b "W2... receipts... shipping documents..."
+    call popwowb
+    $mood = "shock"
     b "Woah!"
     i "What is it?!"
     b "Look, look!"
     b "There's something about an insurance claim!"
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .35
+        ycenter .275
+        zoom .75
     j "That doesn't sound exciting..."
     b "Just take a look."
+    hide poptear
     i "Huh, the page is torn in half."
     show scary:
         alpha .5
@@ -952,10 +1047,11 @@ label pent31:
     bi "..."
     i '"Stewart Sydell?"'
     i "Bro's first name is Stewart?"
+    $mood = "ind"
     b "Come on, keep reading."
     j "It's about InSyde Electronics, his business."
     i "It says..."
-    i "{i}This letter serves as a rejection for coverag e of claim #092523...{/i}"
+    i "{i}This letter serves as a rejection for coverage of claim #092523...{/i}"
     i "Rejection?"
     i "So his insurance company flaked on him?"
     b "Basically, yeah..."
@@ -970,7 +1066,9 @@ label pent31:
     i "She took some stuff and he wanted the money back for it."
     b "Hmm..."
     b "It's true Catherine robbed him, but if the claim is about that, something doesn't add up."
-    hide sydellfile with dissolve
+    hide sydellfile
+    hide scary
+    with dissolve
     i "You think this is about a different theft?"
     j "What makes you think this isn't about Catherine?"
 label pent32:
@@ -997,31 +1095,40 @@ label pent33:
     b "At the top it says..."
     show sydellfile
     with dissolve
-    b "{i}To whom it may concern, InSyde Electronics{/i}"
+    b "{i}To whom it may concern, InSyde Electronics{/i}."
     b "It's not directly addressed to Mr. Sydell."
     j "If this was about a home break-in, I guess it wouldn't say that"
     hide sydellfile
     with dissolve
     b "Right, it would just be addressed to him."
+    show jenny happy
     j "Good catch Bert!"
     i "But wait, if it's not about Catherine robbing him, is this even useful?"
     i "Who cares about some random insurance claim against his company?"
     b "..."
-    j "Sid, you're pretty nonchalant about his considering it could be able you!"
+    j "Sid, you're pretty nonchalant about his considering it could be about you!"
+    show sid mad
     i "Hey! I didn't steal from him!"
     i "I hacked him, and planted information."
     i "If anything, I left him with more than when I started!"
     b "..."
     b "Ignoring that last comment, Sid is right."
     b "He never robbed InSyde, so this isn't about him."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .59
+        ycenter .25
+        zoom .75
     i "YEAH!"
     b "But he's wrong about this being useless."
     b "There's one more piece of information we can use to tie this to us."
+    hide popwow
     j "Let me see, let me see!"
     j "I want to figure it out."
     b "I'm sure you can."
     i "Me too! Hype me up man."
     b "Uhh, go Sid go."
+    show sid ind
     "They looked over the document again."
     j "..."
     i "....."
@@ -1030,11 +1137,18 @@ label pent33:
     j "It's the date, August 6th!"
     i "That's what I was going to say!"
     i "Wait, what? The date?"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
     j "It says the claim was filed on August 6th, that's useful!"
     i "Umm yeah, that's what I was going to say too..."
     b "..."
+    hide popwow
     b "Jenny's right - we can tie someone's crime to that date."
     i "I don't know any of the dates the crimes happened on..."
+    show jenny ind
     j "I don't either, except my own I guess."
     b "I remember the one that matters right now."
     show scary with dissolve
@@ -1046,16 +1160,16 @@ label pent34:
     b "Think back."
     scene bg ntrainfront at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
-    $ statusnt("Front Car", "bert", ch=1, sun=4)
+    #$ statusnt("Front Car", "bert", ch=1, sun=4)
     show doom
     with dissolve
     show kaiser ind:
         xcenter .7
     show sid ind:
         xcenter .25
-    with dissolve
     show sepia:
         alpha .5
+    with dissolve
     k "And then... this car."
     k "It reminds me of one heist in particular, my most famous heist."
     k "I'll never forget the day, down to the most minute details."
@@ -1063,15 +1177,14 @@ label pent34:
     k "It was going to be my big break... and for a while, I thought it was."
     k "How naive of me..."
 
-    scene bg pentkitchen2 at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    scene bg pentkitchen80 at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
     $ showchibint("freddy", "jenny", "sid")
-    with dissolve
     show jenny ind:
         xcenter .3
     show sid ind:
         xcenter .7
-
+    with dissolve
     b "Kaiser's heist was on August 5th, which is one day before the claim was made."
     i "So Kaiser's crime impacted Sydell, who then filed an insurance claim the next day..."
     j "And then that claim got shot down, leaving Sydell in the red."
@@ -1079,21 +1192,20 @@ label pent34:
     b 'It would also explain what this form means about the "nature of the theft".'
     b "A train heist seems like an unusual thing to file for."
     j "Which probably made it easy for the insurance company to reject."
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .7
+        ycenter .1
     i "Man..."
     i "I mean, I hate that guy right, but damn."
     i "He really went through a lot at the end there."
     j "Yeah..."
     i "Robbed by Catherine and Kaiser, on Sam's sketchy drugs, crushed by Stella's firm..."
+    hide poprain with dissolve
     b "And probably even more that we haven't uncovered yet."
     j "He's why we're here though! Right?"
     j "I can't feel bad for someone like that."
     i "Tr-true..."
-    show scary with dissolve:
-        alpha .5
-    bi "If he's dead, he can't be the Game Master though."
-    bi "It has to be someone here."
-    bi "And based on the hint from the bank, their last name starts with S..."
-    hide scary with dissolve
 
     show frog2 ind with moveinbottom:
         xcenter .5
@@ -1105,13 +1217,14 @@ label pent34:
     f "Some candy!"
     j "Huh?"
     $mood = "shock"
+    call popwowb
+    show jenny scared
     b "Freddy! Gimme those!"
+    show frog2 sad
     bi "These are not candy..."
     show pillbag with dissolve
     b "These are..."
     j "Drugs?"
-    show frog2 ind:
-        xcenter .5
     i "Party pills, the kids at my school call em..."
     b "The pills are small and colorful, and this type of bag doesn't make it look like candy."
     hide pillbag with dissolve
@@ -1126,7 +1239,13 @@ label pent34:
     j 'Why "uh oh" Freddy?'
     b 'Yeah why "uh oh"?'
     f "Errrrmmmmmmmm..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .45
+        ycenter .425
+        zoom .75
     f "I may have already eaten one..."
+    call popwowb
     b "What?!"
     f "Well they look so yummy!"
     f "But they don't really have much flavor."
@@ -1135,10 +1254,11 @@ label pent34:
     b "Freddy... how long ago did you eat the first one..."
     f "Erm..."
     hide frog2 ind with moveoutbottom
-    #scary music
+    play music "audio/sadsong.mp3" fadein 1.0
     "Freddy fell to the ground."
     j "Freddy!"
     i "Oh no what the hell do we do!!!"
+    hide jenny with moveoutbottom
     j "Stay with me little buddy!"
     i "Bert, he's out cold!"
     bi "It can't be a coincidence."
@@ -1156,13 +1276,21 @@ label pent34:
     i "Wait a minute..."
     i "Bert..."
     b "I..."
+    show sid mad
     i "You told him to look between the couch cushions."
-    bi "Sid said what I coulnd't bring myself to say."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
     i "Did you do this on purpose?!"
     b "I...."
     i "Are you the chosen killer this round, and this is how you're doing it?!"
     i "By drugging a little kid?!"
+    hide popwow
     i "You sick fuck!"
+    show jenny scared with moveinbottom:
+        xcenter .3
     j "Sid! We don't know what happened!"
     b "I d-didn't!"
     b "I had no idea those pills were there!"
@@ -1179,14 +1307,21 @@ label pent34:
     b "Oka-"
     i "And if you move a muscle..."
     bi "Sid looked me dead in the eyes."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .3
     i "I'll kill you."
     scene black with dissolve
+    stop music fadeout 1.0
+
     "Bert sat motionless in the corner."
+    hide popmad
     "Jenny and Sid cared to Freddy."
     "Only about 5 minutes passed."
 
-    scene bg pentkitchen2 at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    scene bg pentkitchen70 at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
     $ showchibint("freddy", "jenny", "sid")
     show frogsit5 at bg:
         #zoom .85
@@ -1198,6 +1333,7 @@ label pent34:
     show sid ind:
         xcenter .7
     with dissolve
+    $mood = "sad"
     j "Okay..."
     j "We got Freddy to throw up a little, and he has a cold towel."
     j "We don't know how long ago he ate the pill though."
@@ -1206,6 +1342,7 @@ label pent34:
     i "I don't want to hear a peep out of you."
     j "Sid, we have to listen to his side of the story."
     j "We don't know if Bert actually meant to do this or if it was an accident."
+    show sid mad
     i "Who cares if it was an accident?"
     i "If that kid dies, it's on Bert's hands."
     j "Sid!"
@@ -1213,9 +1350,17 @@ label pent34:
     b "I told Freddy to go looking, and didn't keep an eye on him."
     b "This is my fault."
     i "Hmph."
+    play music "audio/inthefaceofdeath.mp3"
     b "And that's why I'm going to do everything I can to fix it."
+    show sid ind
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .62
+        ycenter .25
     i "Hm?"
     j "Fix it?"
+    hide pophuh
     b "We can start with these."
     show pillbag with dissolve
     b "The pills."
@@ -1223,6 +1368,7 @@ label pent34:
     b "It looks like a flamingo."
     b "But it's not."
     j "Huh? Looks pretty flamingo-ey to me, Bert..."
+    $mood = "ind"
     b "There's a reason we've gathered so much information."
     b "It's so we can figure things like this out!"
 label pent345:
@@ -1254,18 +1400,23 @@ label pent345:
     i "How can we know that?"
     b "You were there Sid - think back!"
     $showchibint("dracula", "lauren", "sid", "sam")
-    $statusnt("Cafeteria", "bert", ch=3, sun=0)
+    #$statusnt("Cafeteria", "bert", ch=3, sun=0)
     scene bg hospcommons at bg
     show sam ind
     show sepia:
         alpha .5
+    with dissolve
     s "And well, not like I personally knew the guy..." #sam flashback
     s "He didn't even know my name, of course."
     b "He didn't know your name?"
     s "I always dealt under my middle name, Heron."
-    scene bg pentkitchen2 at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    scene bg pentkitchen55 at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
     $ showchibint("freddy", "jenny", "sid")
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
     with dissolve
     show jenny ind:
         xcenter .3
@@ -1273,7 +1424,10 @@ label pent345:
         xcenter .7
     with dissolve
     #sam flashback about the name Heron
-    #evidence found
+    show newevidencefound with dissolve
+    pause 1
+    hide newevidencefound with dissolve
+
     j "Wow..."
     i "Y-you're right, I was there when Sam said that."
     b "Which also means these pills are probably extremely dangerous."
@@ -1287,19 +1441,24 @@ label pent345:
     b "Now that we've had time to collect our thoughts, I have something to tell you both."
     b "The truth is, I woke up in the wine cellar with this flashlight."
     show theflashlight with dissolve
+    b "I don't know why it a flashlight, but..."
     b "It must be a murder weapon, or some other form of advantage."
+    hide theflashlight with dissolve
+    stop music fadeout 1.0
     b "That's because I think I am the chosen killer for this location."
     i "The chosen killer?"
     j "The same way Kaiser, Catherine, Ivan, and Lauren were."
     i "They were also given an advantage when it was their turn."
-    hide theflashlight with dissolve
     j "Bert... why are you telling us that?"
     j "I..."
     j "How can I trust you if I know you're the chosen killer?"
+    play music "audio/rush.mp3"
     b "That's exactly why you can trust me!"
     i "Huh?"
     b "The chosen killer can't be the Game Master."
+    call popwowb
     b "This flashlight proves - to both of you - that I'm not the Game Master!"
+    show sid happy
     i "Holy..."
     j "So, you're the chosen killer, but..."
     b "I won't kill anyone!"
@@ -1322,16 +1481,24 @@ label pent345:
     i "I need more proof you're the chosen killer, and not just the Game Master lying."
     b "Well someone has to be the chosen killer, right?"
     j "Based on everything that's happened so far, yeah."
+    call pophuhb
     b "Was it either of you chosen? Were you given some hint or item?"
     j "..."
     i "..."
     b "Then that should sett-"
-    j "It could have been Freddy..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .35
+        ycenter .275
+        zoom .75
+    j "It could be Freddy..."
     j "As crazy as it sounds, Freddy could be the chosen killer."
     j "There's a chance you're just using the fact that he's unconcious for your own gain."
+    hide poptear
     b "...Jenny, you know I wouldn't do that."
     j "I want to believe it's you, Bert, but we don't have proof it's not Freddy."
     i "Yeah. We need more proof."
+    $mood = "shock"
     b "More proof?"
     j "Sid's right... there is another little detail missing."
     j "You said you've never been here before, but all the other chosen killer's had some connection to that location."
@@ -1339,6 +1506,7 @@ label pent345:
     i "You woke up and found a flashlight, so what?"
     i "Before I can trust you again, I need proof that you have a tie to this location."
     b "Proof that I have a tie to this location..."
+    $mood = "sad"
     b "I don't have that."
     i "Well..."
     i "Figure it out."
@@ -1365,7 +1533,9 @@ label pent345:
     bi "I guess I need to look around."
     bi "Something {i}has{/i} changed, at least a little, since we've been here."
     hide scary with dissolve
-    #pick the spot
+    call screen pickSpotpent with dissolve
+label pent346:
+    $cat = True
     bi "..."
     bi "It's been a little while and the sun's coming up."
     bi "It looks like the fog has cleared up since earlier, too."
@@ -1373,12 +1543,13 @@ label pent345:
     scene bg pentview at bg with dissolve
     bi "It looks like rush hour."
     bi "In a vibrant, booming city."
-    bi "Kids with their parents, people in a park, families heading out for the day..."
+    bi "Kids with their parents, people in a park, families heading out for the day..." #55%
     bi "What a beautiful view, right into the heart of the city."
     bi "..."
+    $mood = "sad"
     bi "I know exactly where I am."
     bi "This is the most bittersweet moment of my life."
-    bi "Do have a tie to this location."
+    bi "I do have a tie to this location."
     bi "Because this location..."
 label pent35:
     show scary with dissolve:
@@ -1406,6 +1577,7 @@ label pent35:
     bi "I want to throw up just looking at that intersection."
     bi "I've avoided this area since the accident, and to think this is how I'm seeing it again."
     bi "..."
+    $mood = "ind"
     bi "One other thing makes sense now too."
     show theflashlight with dissolve
     bi "My advantage for this location, the flashlight."
@@ -1415,23 +1587,32 @@ label pent35:
     bi "I've seen them used in cars before."
     bi "That's why Sid wasn't able to crack the window."
     bi "But with this, and a little force..."
-    #cracking noise
     show scary with dissolve
-    #broken glass
-
     bi "At least I can prove it now."
-    scene bg pentkitchen2 at bg
-    $ statusnt("???", "bert", ch=5, sun=0)
+    play sound "audio/shatter.mp3" volume .75
+    pause 1.0
+    scene bg pentkitchenbroke at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
     $ showchibint("freddy", "jenny", "sid")
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
     with dissolve
-    show jenny ind:
+    show jenny scared:
         xcenter .3
-    show sid ind:
+    show sid happy:
         xcenter .7
     with dissolve
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .59
+        ycenter .25
+        zoom .75
     i "Bert?! What the hell?!"
     j "Are you okay?!"
     i "How did the window break? I couldn't even leave a scratch..."
+    hide popwow
     b "It's the flashlight."
     b "It wasn't about being a flashlight, it was about the safety glass breaker."
     b "That advantage let's me break the window, and then..."
@@ -1446,6 +1627,7 @@ label pent35:
     b "Well, it was dark and foggy - you weren't able to tell where we were either."
     i "That's true..."
     b "But now that I know where we are, I could tell you anything about the area."
+    b "Mok Park, Clepper's Clippers down the road, DaDonuts is probably about to open around now, you name it."
     b "It's burned into my mind, every store, every street sign, every crosswalk."
     b "Between that and my getting the flashlight, I hope that's enough proof for you both."
     i "..."
@@ -1458,44 +1640,44 @@ label pent35:
     i "Let's get back to it then."
     j "Bert, you made it sound like you had a plan to figure out who the Game Master is."
     b "I do."
+    call popwowb
     b "And it's one of you two."
     i "..."
     j "..."
     j "Not it..."
-    #sid point
+    show sid mad
     i "HEY! THAT'S NOT HOW IT WORKS!"
     i "Bert said he has a plan, so we need to help him!"
     j "Yeah! And Sid, if you don't cooperate, we'll know you're the Game Master."
     i "I'm not the Game Master! You must be!"
     j "We'll see about that, Sid."
-
-    ###implanted
+    show sid ind
+    show jenny ind
 
 
     b "We don't have time to bicker. Freddy needs treatment."
+    b "And if either of you push back now, it's proof that you want him to die."
     b "So we're going to settle everything, right here and now."
-    b "We're going to end this game - WIN this game."
+    b "We're going to end this game - "
+    call popwowb
+    b "WIN this game."
     j "How can we do that?"
-    b "We've collected data about almost everyone involved in the game from this location."
-    b "Dan."
-    b "Kaiser."
-    b "Setlla."
-    b "Catherine."
-    b "Shahar."
-    b "Ivan."
-    b "Sam."
-    b "Lauren."
-    b "Freddy..."
-    b "And the three of us."
-    b "One of us is the Game Master"
-    b "No, one of you two."
-    b "I've proven that it can't be me."
+    b "We've collected data about Sydell's past from this location."
+    b "About Sam's drugs, Dan's hit job, Catherine's burglary, and more."
+    b "And... about the three of us."
+    b "Now all I have to do is piece the story together."
+    b "And I'll know - once and for all - who the Game Master is."
 
     j "..."
     i "..."
 
-
     ###implanted
+    show bg reflecting
+    hide screen status_screen
+    hide screen showchibis
+    hide frogsit5
+    with dissolve
+    stop music fadeout 1.0
     b "So, both of you."
     b "I need you to tell me your backgrounds again."
     b "Then tell me about your crimes, and any prior connections with anyone from the game."
@@ -1503,7 +1685,9 @@ label pent35:
     b "... This is it."
     b "So tell me everything."
     b "Sid, you first."
-    #transition to background screen and only one character
+    hide jenny with moveoutleft
+    show sid ind:
+        linear .2 xcenter .5
     i "Okay, yeah."
     i "I'm Sid Straits!"
     i "I'm 17 and was finishing high school before all this."
@@ -1531,7 +1715,7 @@ label pent35:
     j "I'm Jenny Flowers, 20 year old college student."
     j "I come from a pretty normal middle-class family."
     j "It feels like so long ago..."
-    j "I've always politically active, just doing what I can, and got arrested protesting about Freddy's father."
+    j "I've always been politically active, just doing what I can, and got arrested protesting about Freddy's father."
     j "It didn't lead to much at the time, but it's my connection to Freddy for this game."
     j "I... stand by what I did."
     j "Freddy's a good kid, but his father is a horrible man."
@@ -1539,10 +1723,13 @@ label pent35:
     j "Well, I think you and I get along really well, Bert."
     j "I know you have to question both Sid and I, I get it."
     j "But you're the first person here I told about my arrest."
-    j "And I was the first person you told about the woman you hit."
+    j "And I was the first person you told about your car accident with that woman."
     j "I don't know, maybe I'm being foolish, but it's felt like there's... something here."
     j "I guess... that's it."
-    #transition back to both of them in real time.
+    hide jenny with dissolve
+label pentpicker:
+    show bg reflecting
+    play music "audio/rush.mp3" fadein 1.0
     b "..."
     b "I know who the Game Master is."
     b "Between all the murders, investigations, clues we found here, and your stories..."
@@ -1551,13 +1738,49 @@ label pent35:
     b "For Freddy's sake, we have to act now."
     b "So."
     b "The Game Master is..."
-    #lineup 2 people "Who is the Game Master?"
-        #show sid in void again
+    call screen pickSpotpent with dissolve
+label pentsid:
+    scene bg pentkitchenbroke at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
+    $ showchibint("freddy", "jenny", "sid")
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
+    show sid happy:
+        xcenter .5
+    with dissolve
     b "Sid."
     b "We talked about the last name hint, but it's been weighing on me."
     b "All the rules the Game Master left have been accurate so far, and I think that one is too."
     b "Anyone could be lying about their last name, but both your names definitely starts with an S."
+    i "Bert, I -"
+    b "It's time."
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
+        linear 1.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 120.0, 690.0)*RotateMatrix(0.0, 0.0, 0.0)
 
+
+    stop music
+    scene black with dissolve
+    play sound "audio/shatter.mp3" volume .75
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
+    hide screen status_screen
+    hide screen showchibis
+    camera at paralloff
+    show bg pentfall at bg
+    show sidfallanim at bg
+    show glassfallanim at bg
+    with dissolve
+    show screen killuser
+    pause 6
+    hide screen killuser
+    scene black with dissolve
+    "..."
+    jump pentpicker
+
+label pentjenny:
     #show jenny in void agian
     b "Jenny."
     b "It's true that we were close."
@@ -1710,9 +1933,18 @@ label pent35:
     b "You're the Game Master."
     b "And your end is deserved."
     #bert pushes jenny out the window.
-    #their ends are deserved screen
 
-    #post credits explainer
+
+
+label jennydie:
+    camera at paralloff
+    show bg pentfall at bg
+    show jennyfallanim at bg
+    show glassfallanim at bg
+    pause 3.0
+    jump postdeath
+
+label postdeath:
     "Jenny ironically died in the same intersection that her mother did."
     "After which, Bert and Sid no longer feared the chip in their head knocking them out or killing them."
     "They knocked down the front door of the apartment, and found help down in the apartment lobby."
