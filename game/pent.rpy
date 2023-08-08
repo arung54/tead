@@ -1729,9 +1729,12 @@ label pent35:
     hide jenny with dissolve
 label pentpicker:
     show bg reflecting
-    play music "audio/rush.mp3" fadein 1.0
     b "..."
-    b "I know who the Game Master is."
+    b "......"
+    play music "audio/rush.mp3" fadein 1.0
+    b "I know what happened."
+    call popwowb
+    b "And... I know who the Game Master is."
     b "Between all the murders, investigations, clues we found here, and your stories..."
     b "There's only one thing that doesn't add up."
     b "One thing that tells me who the Game Master has to be."

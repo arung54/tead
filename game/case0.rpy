@@ -1,11 +1,11 @@
 $dan = True
 
-label splashscreen:
-    scene black
-    with Pause(1)
-    show tead with dissolve
-    with Pause(2)
-    return
+#label splashscreen:
+    #camera at paralloff
+#    scene black
+#    with Pause(1)
+#    show tead with dissolve
+#    with Pause(2)
 
 screen intros():
     imagemap:
@@ -83,7 +83,7 @@ screen intros():
             action [Hide("intros", transition=Fade), Jump("meetShahar")]
 
 label ligma:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show bert happy with dissolve
     bt "Hey Dan, you ever think about removing the A from your first name?"
@@ -96,7 +96,7 @@ label ligma:
 
 
 label meetBert:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show bert happy with dissolve
     bt "Hi, my name's Bert Kim."
@@ -108,15 +108,21 @@ label meetBert:
         "What should I ask Bert?"
 
         "What do you do for a living?":
-            bt "I graduated pretty recently, I'm a software engineer now."
+            bt "I graduated college pretty recently, I'm a software engineer now."
             n "Damn, you must be pretty smart."
             bt "That's nice of you to say! But I think these days most people can pick up coding if they try really hard."
             jump bertQuestions
 
         "What were you doing before you ended up here?":
             bt "I was at this really great Italian restaurant just enjoying some pasta."
+            play sfx "audio/poptear.mp3" volume .5
+            show poptear:
+                xcenter .45
+                ycenter .275
+                zoom .75
             bt "Tortellini with pesto... man I'm sad I didn't get to finish it."
             bt "Well, I guess that's the last thing I remember."
+            hide poptear
             bt "I imagine there's more between then and now that I don't remember."
             n "Yeah, same for me..."
             jump bertQuestions
@@ -141,7 +147,7 @@ label postMeetBert:
     call screen intros with dissolve
 
 label meetSam:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show sam ind with dissolve
     s "Not really one for formalities, but I'm Sam. Sam Lee."
@@ -184,7 +190,7 @@ label postMeetSam:
     call screen intros with dissolve
 
 label meetStella:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show stella ind with dissolve
     t "You're not my type, but I guess we can talk. I'm Stella Cantoire."
@@ -233,7 +239,7 @@ label postMeetStella:
     call screen intros with dissolve
 
 label meetSid:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show sid ind with dissolve
     i "Hey I'm Sid Straits. Don't forget it!"
@@ -245,14 +251,21 @@ label meetSid:
 
         "What do you do for a living?":
             i "I'm still in high school, but I work at a grocery store after school."
+            play sfx "audio/popmad.mp3" volume .5
+            show popmad:
+                xcenter .5
+                ycenter .3
+            show sid mad
             i "But it's not just a high school job! I work just as hard the adults!"
+            hide popmad
+            show sid ind
             ni "Defensive today, aren't we?"
             jump sidQuestions
 
         "What were you doing before you ended up here?":
             i "I think I just got off the bus from work back home."
             i "I was walking home, and that's the last thing I can remember."
-            ni "The kid's parents don't pick him up from work? They must also work late hours."
+            ni "The kid's parents can't pick him up from work? They must also work late hours."
             jump sidQuestions
 
         "Why do you think we're here?":
@@ -268,7 +281,7 @@ label postMeetSid:
     ni "Seems like a pretty headstrong kid."
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
-        xcenter .4
+        xcenter .58
         ycenter .25
         zoom .75
     i "Hey, what about you? Tell me more about you."
@@ -285,7 +298,7 @@ label postMeetSid:
     call screen intros with dissolve
 
 label meetJenny:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show jenny happy with dissolve
     play sfx "audio/pophearts.mp3" volume .5
@@ -317,10 +330,10 @@ label meetJenny:
             jump jennyQuestions
 
         "Why do you think we're here?":
-            j "Hmm... I once tried card counting with some friends at a casino."
-            j "I've seen movies where casinos beat people up who do that kind of thing in a more organized manner."
-            j "Maybe this is that kind of thing? Did the rest of you make a casino upset?"
-            j "I hope they know they'd be monsters if they punched a girl!"
+            j "Hmm... not sure!"
+            j "I've never wanted to kidnap anyone before, so it's hard to say for sure."
+            n "Do you think we were kidnapped?"
+            j "Erm, duh! Seems pretty obvious to me!"
             ni "How is she saying that with such a bubbly expression?"
             jump jennyQuestions
 
@@ -335,7 +348,7 @@ label postMeetJenny:
     call screen intros with dissolve
 
 label meetCatherine:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show catherine happy with dissolve
     c "Heya! I'm Catherine Henson, and this is Sesame Henson!"
@@ -387,7 +400,7 @@ label postMeetCatherine:
     call screen intros with dissolve
 
 label meetKaiser:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show kaiser ind with dissolve
     k "Greetings, I'm Kaiser Maden."
@@ -412,7 +425,7 @@ label meetKaiser:
 
         "Why do you think we're here?":
             k "I don't know, maybe a terrorist attack?"
-            k "Like the Iranian hostage crisis or something?"
+            k "A hostage crisis or something, perhaps?"
             k "Hard to say without meeting the people behind it."
             jump kaisQuestions
 
@@ -427,14 +440,17 @@ label postMeetKaiser:
     call screen intros with dissolve
 
 label meetDracula:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show drac ind with dissolve
     d "Hello. I'm Dracula."
+    $mood = "shock"
+    call pophuhb
     n "...Like the vampire?"
     d "Yes."
     ni "...I don't know if I believe him."
     ni "I've never had someone introduce themselves as a famous vampire before."
+    $mood = "ind"
     n "I'm Dan, it's... nice to meet you."
     $menuset = set()
     menu dracQuestions:
@@ -478,7 +494,7 @@ label postMeetDracula:
     call screen intros with dissolve
 
 label meetLauren:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show lauren ind with dissolve
     o "Hi, I'm Lauren Palmer."
@@ -493,6 +509,7 @@ label meetLauren:
             o "The sports I like are not so easy to go pro in, otherwise I would be doing that."
             n "Oh, what kinds of sports?"
             o "I'd... rather not get into that."
+            call pophuhb
             ni "?"
             jump laurenQuestions
 
@@ -521,7 +538,7 @@ label postMeetLauren:
     call screen intros with dissolve
 
 label meetFreddy:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show frog ind with dissolve
     f "H-hey, I'm Freddy Ogden. But I like it when people call me Froggy!"
@@ -563,7 +580,7 @@ label postMeetFreddy:
     call screen intros with dissolve
 
 label meetShahar:
-    scene bg startmeet
+    scene bg startmeet at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     show shahar ind with dissolve
     h "Ahoy there matey! Yer talking to Shahar Syed, the finest pirate on the seven seas."
@@ -575,9 +592,15 @@ label meetShahar:
         "What should I ask Shahar?"
 
         "What do you do for a living?":
+            play sfx "audio/popwow.mp3" volume .5
+            show popwow:
+                xcenter .41
+                ycenter .25
+                zoom .75
             h "Didn't ye hear me lad?! I'm the finest pirate on the seven seas."
             n "...oh, I thought you were joking."
             n "Trying to lighten up the situation."
+            hide popwow
             h "No, I'm a pirate, right before yer very eyes!"
             ni "...I think I'd prefer to believe he's joking."
             jump shaharQuestions
@@ -591,8 +614,14 @@ label meetShahar:
 
         "Why do you think we're here?":
             h "Thinking isn't exactly my strong suit, mate."
+            play sfx "audio/popwow.mp3" volume .5
+            show popwow:
+                xcenter .41
+                ycenter .25
+                zoom .75
             h "Ye look like a smart guy, why don't ye be the captain here and tell me why we're here!"
             n "Uh... I don't know, have you looted or plundered any villages with angry mayors?"
+            hide popwow
             h "Mate, what do ye think this is, the 16th century? Piracy is serious business! We loot towns, not villages!"
             n "..."
             jump shaharQuestions
@@ -609,6 +638,7 @@ label postMeetShahar:
 
 
 label go: #Add silhouttes here?
+    #camera at parallax
     scene black
     $mood = "ind"
     $dan = True
@@ -617,8 +647,8 @@ label go: #Add silhouttes here?
     mi "Another morning being woken up by the prison loudspeaker."
     mi "It's gotten to the point where the sound of a loud alarm clock would be music to my ears."
     warden "Dan Scagnelli, wake up. That is an order."
-    mi "Ugh... don't want to wake up for another day of this..."
-    scene bg phall
+    ni "Ugh... don't want to wake up for another day of this..."
+    scene bg phall at bg
     show cellwindow
     $ statusnt("Prison", "", ch = 0, sun = 0)
     with dissolve
@@ -626,14 +656,14 @@ label go: #Add silhouttes here?
     ni "Why me specifically... what did I do wrong?"
     #n "I'm up, I'm up. Just getting used to the light."
     #ni "I realized how dumb I sounded, light was barely filtering into the cell."
-    ni "Seems like it's only sunrise now."
+    ni "Seems like it's not even sunrise yet."
     ni "Why am I being woken so early?"
     warden "Dan Scagnelli. You're being released."
     n "..."
+    call pophuhb
     n "What!?"
     warden "Your sentence ends today."
-    ni "I... I thought I was stuck here for a few more years?"
-    #warden "I don't know what to tell you, just following orders."
+    ni "I... I have almost a whole decade left though?"
     warden "Someone's come for you."
     warden "They're on their way to your cell."
     ni "What's going on? Who could possibly be coming to bail me out?"
@@ -656,10 +686,11 @@ label go: #Add silhouttes here?
     $ showchibint("myster")
     show shadowyfigure ind:
         linear .3 xcenter .75
-    show dan ind with moveinleft:
+    show dan ind:
         xcenter .25
+    with moveinleft
     #with dissolve
-    z "Much better."
+    z "Good."
     ni "I could barely remember how long it had been since I last wore these..."
     #ni "After I'd changed, he unlocked the cell, cuffed me and we made our way out."
     #ni "A stranger was there to greet me."
@@ -668,6 +699,8 @@ label go: #Add silhouttes here?
     n "Now tell me... who are you?"
     z "Look, Dan."
     hide dan ind with moveoutleft
+    show shadowyfigure scary:
+        linear .3 xcenter .5
     $noside = False
     z "I'll be the one asking the questions for now."
     show bg debatescroll:
@@ -675,9 +708,10 @@ label go: #Add silhouttes here?
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with dissolve
     play music "audio/ominous.mp3" fadein 1.0
-    show shadowyfigure scary:
-        linear .3 xcenter .5
+#    show shadowyfigure scary:
+#        linear .3 xcenter .5
     $mood = "shock"
+    call popwowb
     ni "Wh-what's going on?"
     z "Dan... do you feel guilty?"
     n "Guilty?"
@@ -695,14 +729,14 @@ label go: #Add silhouttes here?
     z "Do you think they can so easily forgive and forget?"
     n "What's your point?"
     z "What makes you think you have the right to forgive yourself if those people could never forgive you?"
-    n "That's... a bit of a leading question."
+    n "I... don't know."
     z "I see."
     z "Well then, let's not waste anymore time here."
     z "You have plenty of hard work ahead of you..."
     show handextend with dissolve:
         #zoom 4
         xcenter .45
-        ycenter .62
+        ycenter .58
     z "Come with me."
     ni "They extended their hand."
     ni "Who... who is this?"
@@ -734,7 +768,10 @@ label go: #Add silhouttes here?
     #z "I said eat while walking."
     #ni "What was so urgent that it needed me to be pulled out of prison and rushed to a car?"
     #ni "We headed outside, and for the first time in ages I was excited to see the glorious sun and greenery."
-    scene black with fade
+    scene black
+    hide screen status_screen
+    hide screen showchibis
+    with fade
     stop music fadeout 0.5
 
     #with fade
@@ -758,20 +795,21 @@ label go: #Add silhouttes here?
     pause 1.0
     blank "....."
     blank "........."
-    show bg start with fade:
+    #$mood = "shock"
+    show bg start at bg with fade:
         alpha .1
-    m "{i}Where... Where am I?{/i}"
-    m "{i}I can't... remember how I got here...{/i}"
-    m "{i}My head is throbbing...{/i}"
+    ni "Where... Where am I?"
+    ni "I can't... remember how I got here..."
+    ni "My head is throbbing..."
     scene black
-    m "........"
-    m "{i}I think I passed out again...{/i}"
-    m "{i}Have to... get up...{/i}"
-    scene bg start
+    ni "........"
+    ni "I think I passed out again..."
+    ni "Have to... get up..."
+    scene bg start at bg
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with fade
-    ni "{i}.....!{/i}"
     $mood = "shock"
+    ni ".....!"
     ni "Where... am I?"
     ni "How did I get here?"
     ni "Last thing I remember... I was in my cell being told I'd get out."
@@ -780,7 +818,7 @@ label go: #Add silhouttes here?
     ni "Now I'm on the floor in what looks like a little cell."
     $mood = "ind"
     ni "Hmmm... I don't have anything with me."
-    ni "Not even ID in my pockets. Someone must have taken it from me."
+    ni "Not even my ID in my pockets. Someone must have taken it from me."
     ni "What's going on here?"
     play sfx "audio/beep.mp3"
     pause 1.0
@@ -794,7 +832,7 @@ label go: #Add silhouttes here?
     play music "audio/coming_together.mp3"
 
 
-    scene bg startmeet
+    scene bg startmeet at bg
 
     $ statusnt("???", "dan", ch = 0, sun = 0)
     with fade
@@ -817,7 +855,9 @@ label go: #Add silhouttes here?
     show stella ind:
         xcenter .75
     with dissolve
-    ni "Next was a woman in a suit. She looked to be in her late 20s, like me. It was hard to read her expression."
+    ni "Next was... Stella Cantoire?"
+    ni "I've seen her on TV before, what's she doing here?"
+    ni "One of the richest people in the world, and head of the Cantoire Management Group."
     ni "Her outfit made it seem like she would be very serious, but the way her eyes flicked around..."
     ni "She was definitely checking some of the men in the room out."
     ni "I was mildly offended when she made eye contact with me and then quickly looked away."
@@ -834,7 +874,7 @@ label go: #Add silhouttes here?
     show jenny ind:
         xcenter .5
     with dissolve
-    ni "Next was a fashionable girl. Probably a college student."
+    ni "Next was a young girl. Probably a college student."
     ni "Unlike most of us, she seemed to be lost in thought rather than trying to make sense of the situation."
     ni "A lot of the the guys were glancing at her."
     show catherine ind:
@@ -878,6 +918,7 @@ label go: #Add silhouttes here?
     ni "I'm just going to assume it's a kid. But the outfit they're wearing makes it hard to tell anything else about them."
     show shahar ind:
         xcenter .67
+    with dissolve
     ni "Last was a... pretty much half-naked man. His outfit was about as out-of-place as the vampire's."
     ni "Maybe it really was Halloween before we all were gathered here."
     ni "I was hoping to get good reads on everyone, but this guy, the frog, and the vampire threw that out the window."
@@ -892,8 +933,9 @@ label go: #Add silhouttes here?
     show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
-    show catherine ind with moveinright:
+    show catherine ind:
         xcenter .75
+    with moveinright
     zc "No clue. The last thing I remember I was out for a walk, totally fine."
     zc "After that, my memory is a haze. It's like I suddenly took a nap and woke up here."
     ni "A few people spoke up at once agreeing."
@@ -907,8 +949,9 @@ label go: #Add silhouttes here?
     show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
-    show stella ind with moveinright:
+    show stella ind:
         xcenter .75
+    with moveinright
     zt "Besides the world-famous businesswoman, who I'm sure we've all seen on TV."
     ni "A bunch of people were staring at her."
     ni "After that clarification the hands shot back down."
@@ -932,8 +975,9 @@ label go: #Add silhouttes here?
     show sam ind:
         xcenter .5
         linear 0.3 xcenter .75
-    show sid ind with moveinleft:
+    show sid ind:
         xcenter .25
+    with moveinleft
     zi "Umm... does anyone have a phone? Or something else like that?"
     ni "A few people instinctively checked their pockets."
     ni "A few others made it clear they had checked a few times already."
@@ -966,15 +1010,17 @@ label go: #Add silhouttes here?
     zs "Anyone have anything to report?"
     show sam ind:
         linear .3 xcenter .75
-    show frog sad with moveinbottom:
+    show frog sad:
         xcenter .25
+    with moveinbottom
     play sfx "audio/poprain.mp3" volume .5
     zf "Umm... kinda."
     show poprain:
         xcenter .25
         ycenter .1
     with dissolve
-    zf "I'm scared... I miss my mom..."
+    zf "I'm scared... I want to report..."
+    zf "That I miss my mom..."
     zs "Not sure that counts as finding something..."
     hide poprain with dissolve
     ni "So it is a little boy in the frog suit."
@@ -992,14 +1038,20 @@ label go: #Add silhouttes here?
     show sam ind:
         xcenter .5
         linear 0.3 xcenter .25
-    show catherine ind with moveinright:
+    show catherine ind:
         xcenter .75
+    with moveinright
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     zc "I think first we should all introduce ourselves!"
     zc "It seems like we're stuck in here for the moment, it'd be good to know who we're stuck with."
+    hide pophearts
     hide catherine with moveoutright
     show drac ind with moveinright:
         xcenter .75
-    zd "I agree. I don't know how to address any of you."
+    zd "I concur. I don't know how to address any of you."
     zd "It'll be hard for us to work together without some sense of camaraderie."
     hide drac with moveoutright
     show sam ind:
@@ -1022,7 +1074,10 @@ label postMeetings:
     ni "And I've met everyone. Looks like the group is reconvening to discuss now."
     $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     with dissolve
-    s "Okay, now that that's done, I think we should look around and try-"
+    show sam ind with dissolve
+    s "Okay, great, we all got to chat with each other."
+    s "now that that's done, I think we should look around and try-"
+    s "?"
     hide sam with moveoutright
     stop music fadeout 1.0
     play sfx "audio/whirr.mp3"
@@ -1054,19 +1109,19 @@ label postMeetings:
         ycenter .65
         xcenter .29
     scr "The game will be played in rounds."
-    show expl 6a
+    show expl 6a with dissolve
     scr "Each round, one of you who is not the Game Master will be chosen."
-    show expl 7a
+    show expl 7a with dissolve
     scr "The chosen individual must kill someone who they think is the Game Master."
     scr "You may use any method to kill."
-    show expl 6b
+    show expl 6b with dissolve
     scr "If they do successfully kill the Game Master, the game immediately ends and the remaining participants will be let free."
     show expl 7b with dissolve
     scr "If they kill someone who is not the Game Master..."
     scr "They should do their best to hide their guilt."
-    show expl 8a
+    show expl 8a with dissolve
     scr "This is because the remaing participants will investigate and vote on who the murderer is."
-    show expl 8b
+    show expl 8b with dissolve
     scr "If they vote for the murderer correctly, the murderer will be killed."
     scr "The game will then continue with the surviving participants."
     ###########
@@ -1086,6 +1141,7 @@ label postMeetings:
     $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     with fade
     ni "..."
+    call pophuhb
     ni "What the hell is all this..."
     scr "A chip has been planted in each of your heads, capable of killing you instantly."
     scr "This chip will be used to resolve the outcome of the vote."
@@ -1095,6 +1151,8 @@ label postMeetings:
     scr "The chip will also be used to keep you unconscious as you are transported between locations."
     scr "As proof of this, you will soon be transported to the first location, to play the first round of the game."
     stop music fadeout 1.0
+    call popwowb
+    $mood = "mad"
     ni "...what?"
     ni "How would we even know who to kill?"
     ni "This game... it's so much to process."
@@ -1113,20 +1171,29 @@ label postMeetings:
     d "This is... inhumane, to say the least."
     ni "Is this really happening?"
     hide drac with dissolve
+    $mood = "ind"
     scr "You may be scared to kill someone who isn't the mastermind."
     scr "You may feel sorry when someone dies."
     scr "Let me assure you of one thing."
     scr "Everyone who dies in the course of the game..."
 label testmontage:
     #scr "Their endings are deserved."
-    scene black with fade
-    show text "{color=#FFFFFF}Their Endings Are Deserved.{/color}" with dissolve:
-        ycenter .5
-        xcenter .5
-    pause(1)
-    hide text with dissolve
+    hide screen status_screen
+    hide screen showchibis
+    scene black
+    with fade
+    camera at paralloff
     $_game_menu_screen = None
     show screen killuser
+    show teadc with fade
+    pause 1.0
+    show teadbw with dissolve
+    show theirendsaredeserved with dissolve
+    pause 2.0
+    hide theirendsaredeserved
+    hide teadc
+    hide teadbw
+    with dissolve
     play sound "<from 0.1 to 12.2>audio/welcome.mp3"
     $renpy.movie_cutscene("ch1trailer.webm")
     hide screen killuser
