@@ -1538,10 +1538,17 @@ label postcupcake:
     j "You don't have to do anything, I enjoy cleaning!"
     j "It might be a good time to talk to the others if you haven't already."
     j "There's some time to go until we have to make another meal, have to kill that time somehow."
-    b "I'd talked to Lauren and Sam, but I guess I could talk to them more or talk to someone else."
     hide jenny ind with dissolve
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    bi "I'd talked to Lauren and Sam, but I guess I could talk to them more or talk to someone else."
+    call screen hospKitchen with fade
     $ftecounter = 5
-    blank "FREE TIME 5 HERE"
+label postFT5:
     show jenny ind with dissolve
     play music "audio/unity.mp3" fadein 1.0
     j "And, all done with cleaning!"
@@ -2077,7 +2084,15 @@ label chess3:
     b "Well, I guess I have some time to kill until lunch..."
     b "Who to talk to?"
     $ftecounter = 6
-    blank "FREE TIME 6 HERE"
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    call screen patientcommons with fade
+    $ftecounter = 6
+label postFT6:
     scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
     with dissolve
@@ -2312,7 +2327,15 @@ label chess3:
     bi "I guess I should strike up a conversation with someone..."
     bi "Unfortunately, it seems Sid is busy, so it can't be him."
     $ftecounter = 7
-    blank "FREE TIME 7 HERE"
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    call screen patientcommons with fade
+    $ftecounter = 7
+label postFT7:
     bi "What felt like a few hours passed with some idle chit-chat, but it was hard to tell."
     bi "It could have been minutes, or a full day."
     bi "After some time, Dracula knocked on the window to beckon us over."

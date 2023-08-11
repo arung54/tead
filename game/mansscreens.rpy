@@ -66,7 +66,12 @@ screen kitchen():
     add "status.png"
     add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -133,7 +138,12 @@ screen dining():
     add "status.png"
     add Text("{b}Dining Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -209,7 +219,12 @@ screen garage():
     add "status.png"
     add Text("{b}Garage{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -233,7 +248,12 @@ screen hallway():
     add "status.png"
     add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -263,7 +283,12 @@ screen bedroom():
     add "status.png"
     add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -287,7 +312,12 @@ screen bedroomFL():
     add "status.png"
     add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -333,7 +363,12 @@ screen masterBedroom():
     add "status.png"
     add Text("{b}Master Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -384,7 +419,12 @@ screen bathroom():
     add "status.png"
     add Text("{b}Bathroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 2:
+        add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 3:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 4:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0

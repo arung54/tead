@@ -783,13 +783,13 @@ screen Characters():
             xcenter .08 ycenter .1
             idle "goback.png"
             hover "goback.png"
-            focus_mask True action [Hide("Characters"), Hide("freeTimeCounter"), Function(hideCards), Return()]
+            focus_mask True action [Hide("Characters"), SetVariable("pers", "NONE"), Hide("freeTimeCounter"), Function(hideCards), Return()]
     else:
         imagebutton:
             xcenter .08 ycenter .1
             idle "goback.png"
             hover "goback.png"
-            focus_mask True action [Hide("Characters"), Hide("freeTimeCounter"), Function(hideCards), ShowMenu("preferences")]
+            focus_mask True action [Hide("Characters"), SetVariable("pers", "NONE"), Hide("freeTimeCounter"), Function(hideCards), ShowMenu("preferences")]
 
 style characters_label is gui_label
 style characters_label_text is gui_label_text

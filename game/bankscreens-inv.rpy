@@ -207,7 +207,7 @@ screen breakInv():
             yalign 0.0
             text "{i}"+tt.value+"{/i}"
     add "status.png"
-    add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Staff Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0

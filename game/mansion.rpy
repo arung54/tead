@@ -1232,7 +1232,7 @@ label mansion1:
     pause 2
     hide freetime with dissolve
     tut "Since you are now playing as Bert, the number of times you've talked to each participant has been reset."
-    #FT2 to be inserted here.
+    call screen dining with fade
 label postFT2:
     $ftecounter = 3
     scene bg nmansiondining at bg
@@ -1734,7 +1734,7 @@ label postFT2:
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
-    #FT3
+    call screen hallway with fade
 label postFT3:
     $ftecounter = 4
     scene bg mansiondining at bg with fade
@@ -1983,7 +1983,7 @@ label postFT3:
     pause 2
     hide freetime with dissolve
     bi "I don't want to miss the food getting served, so I probably should stay in the dining room and kitchen."
-    #FT4 to be inserted here. This is what Julian got up to for STATUS and MOODS
+    call screen dining with fade
 label postFT4:
     scene bg mansiondining at bg with fade
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
