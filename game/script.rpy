@@ -877,4 +877,4 @@ transform bg:
 camera at parallax
 $dan = True
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump frontcar1
+jump midcar6

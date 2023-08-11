@@ -1414,7 +1414,7 @@ label postFT1:
 label midcar4:
     scene bg trainmid at bg
     play music "audio/rush.mp3" fadein 1.0
-    $ statusnt("Bar Car", "dan", ch = 1, sun = 2)
+    $ statusnt("Bar Car", "dan", ch = 1, sun = 3)
     $ showchibint("bert", "catherine", "lauren", "freddy", "jenny", "kaiser", "sam", "shahar", "sid", "stella", "dracula")
     with fade
     show bert ind with dissolve:
@@ -1456,7 +1456,8 @@ label midcar4:
     hide jenny ind with moveoutright
     show sam ind with moveinright:
         xcenter .75
-    s "I'm worried that Jenny's right."
+    s "I don't even think it's an implication."
+    s "We can avoid it, but that's definitely what the screen told us."
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
         xcenter .65
@@ -1476,8 +1477,8 @@ label midcar4:
     o "..."
     play sfx "audio/poptear.mp3" volume .5
     show poptear:
-        xcenter .28
-        ycenter .25
+        xcenter .33
+        ycenter .28
         zoom .75
     o "Fair enough."
     o "What do you think we should do about it?"
@@ -1514,7 +1515,13 @@ label midcar4:
     h "Next minute, I come to in the little crow's nest wit' the rest of ye."
     i "I..."
     $mood = "ind"
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .675
+        ycenter .25
     i "I don't really know what he just said."
+    hide pophuh
     hide shahar ind with moveoutleft
     show drac ind with moveinleft:
         xcenter .25
@@ -1526,7 +1533,7 @@ label midcar4:
     show sid happy:
         xcenter .75
         linear .1 xcenter .78
-    play sfx "<from 0 to 1>audio/mildshock.mp3" volume .2
+    play sfx "<from 0 to 1>audio/mildshock.mp3" volume .3
     i "Wh-what? Me? No way!"
     $mood = "shock"
     d "Oh? I'm sure you'll be happy to empty your pockets then."
@@ -1538,7 +1545,9 @@ label midcar4:
     d "What a silly coincidence, I put a whiskey shooter in my pocket earlier, but..."
     d "It's just so happen to go missing earlier when Sid and I were alone together in the front car."
     $mood = "ind"
-    d "Regardless, I've been nothing but productive and friendly since we woke up here yesterday."
+    d "Regardless..."
+    d "I've been nothing but productive and friendly since we woke up here yesterday."
+    ni "I guess that is true..."
     d "I'm sure you all believe me when I say I am just as dumbfounded as the rest of you."
     hide drac ind with dissolve
     show catherine ind with dissolve
@@ -1622,6 +1631,12 @@ label midcar4:
     s "But I do know I at {i}least{/i} pissed some people off. I wouldn't be surprised if that's part of why I'm here."
     s "It's hard to come to terms with some of this stuff..."
     s "Maybe I deserve this."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .59
+        ycenter .25
+        zoom .75
+
     bt "Hey, don't say that! No way."
     bt "We've all made mistakes, and owning up to it now can help us figure this out."
     bt "Any information we can gather is progress."
@@ -1650,9 +1665,15 @@ label midcar4:
         linear .3 xcenter .5
     bt "I guess I can't think of anything else."
     ni "This kid just bailed me out of speaking up..."
-    bt "I was only twenty, too. It feels like so long ago but I think about it every day."
+    bt "I was twenty."
+    bt "It feels like so long ago but I think about it every day."
     bt "I was driving after tutoring, same as always."
     bt "It was spring..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .45
+        ycenter .275
+        zoom .75
     bt "And this pedestrian... just... walked out..."
     bt "Into the road..."
     bt "......."
@@ -1676,7 +1697,7 @@ label midcar4:
     play sfx "audio/popmad.mp3" volume .5
     show popmad:
         xcenter .75
-        ycenter .25
+        ycenter .35
         #zoom .75
     t "Hmph, just when I thought we were going to get into the juicy stuff..."
     hide stella ind with moveoutright
@@ -1689,6 +1710,7 @@ label midcar4:
     show scary:
         alpha 0
         linear .3 alpha .5
+    call poptearb
     ni "And morale."
     ni "Maybe I really do need to take this into my own hands..."
     ni "If we don't make any progress by midnight, I have some guesses..."
@@ -1761,8 +1783,9 @@ label midcar5:
     show sid happy
     show bg notrainmid at bg
 #    play sfx "audio/popwow.mp3" volume .5
+    $mood = "shock"
     show popwow:
-        xcenter .45
+        xcenter .43
         ycenter .25
         zoom .75
     n "!"
@@ -1773,13 +1796,15 @@ label midcar5:
     $noside = True
     blank "They made their way to the back car."
     $noside = False
-    scene bg notrainback at bg
+    scene bg noctrainback at bg
     $ showchibint("sid")
     $ statusnt("Caboose", "dan", ch = 1, sun = 4)
     with dissolve
     show sid ind with dissolve
     i "Well, goodnight Dan!" #Arun: Lights off
-    n "Hey, Sid. Before you sleep. How are you, well, feeling? About everything."
+    n "Hey, Sid. Before you sleep."
+    call pophuhb
+    n "How are you, well, feeling? About everything."
     i "Well, it's a little scary I suppose."
     i "We're all out of food, and some of the people on board are suspicious..."
     hide sid ind
@@ -1789,9 +1814,11 @@ label midcar5:
         xcenter .5
         ycenter .5
     i "But I'm hopeful."
+    $mood = "shock"
     n "Hopeful?"
     hide pophearts
     i "Meeting someone strong and tough like you helps."
+    $mood = "ind"
     n "I don't think you want to be me like, Sid."
     n "I've had a pretty problematic past with the law."
     i "..."
@@ -1817,9 +1844,10 @@ label midcar5:
     ni "There's something hanging outside the window, about a foot from the glass."
     ni "It looks like a coin, or maybe a cufflink?"
     ni "I don't think that was there this morning..."
-    ni "I guess somebody put that out there earlier today."
+    ni "I guess somebody put that out there earlier today?"
     ni "It doesn't seem worth the risk to open the door and get it though..."
     ni "Whatever..."
+    ni "I don't have time to worry about that."
     show start2
     show sepia:
         alpha .5
@@ -1829,6 +1857,7 @@ label midcar5:
     hide sepia
     with dissolve
     ni "What a shame..."
+    ni "I'm going to have to make a move, huh."
     ni "At least there are a lot of easy targe-{p=0.5}{nw}" #Arun: BIG NOISE, cut off music
     stop music
     show scary:
@@ -1838,8 +1867,10 @@ label midcar5:
     $mood = "shock"
     ni "Wh-what?"
     ni "Everything's... dark."
+    n "S... Sid?"
 label midcar6:
     scene black with fade
+    $ statusnt("???", "bert", ch = 1, sun = 4)
     $dan = False
     $mood = "sad"
     $noside = True
@@ -1856,7 +1887,7 @@ label midcar6:
     $mood = "happy"
     bi "We can get out of here. Together."
     blank "pssst!!!"
-    play music "audio/invest1.wav"
+    play music "audio/invest1.wav" fadein 1.0
     scene bg notrainmid at bg
     $ showchibint("catherine", "freddy", "jenny", "stella", "dracula")
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
@@ -1923,7 +1954,8 @@ label midcar6:
     f "Ahhh! Mommy!"
     bi "It sounded like the world's biggest chandelier fell."
     j "I'm scared!"
-    play sfx "audio/beep.mp3" volume .1
+    #play sfx "audio/beep.mp3" volume .1
+    play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     z "AHHHHHH!!!"
     bi "Oh no."
     bi "Was that a... scream?"
@@ -2001,6 +2033,7 @@ label midcar6:
     b "Well that's good."
     b "... But..."
     $mood = "shock"
+    call popwowb
     b "Oh no."
     j "What's wrong?"
     b "Where's Sid? And Dan?"
@@ -2051,9 +2084,14 @@ label midcar6:
     b "What happened..."
     show sam angry with moveinright:
         xcenter .75
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .3
     s "What the hell..."
     s "Is he... dead?"
     s "Sid, you... did you kill Dan?"
+    hide popmad
     i "No! I was asleep, I... I didn't do anything..."
     s "Everyone, back away from Sid!"
     show sam angry:
@@ -2077,8 +2115,14 @@ label midcar6:
     d "He is dead."
     d "Very, very dead."
     d "The metal rod is going all the way through his chest."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .32
+        ycenter .25
+        zoom .75
     i "Th-this is what I woke up to! Just a minute ago!"
     d "Hmph."
+    hide popwow
     hide drac ind with moveoutright
     bi "I don't know if I believe him, but..."
     $mood = "shock"
@@ -2116,8 +2160,8 @@ label midcar6:
     bi "Dan is... dead."
     bi "We've only know him for a day and a half, but..."
     bi "I can't believe he's actually dead."
-    bi "Someone killed Dan."
     show dan dead with dissolve
+    bi "Someone killed Dan."
     bi "It makes sense. We're out of food, the murderer didn't have much time to act."
     bi "And we don't know what consequences there are for the murderer not doing anything."
     bi "It's all so logical, but still so shocking..."
@@ -2175,10 +2219,11 @@ label midcar6:
     c "I'll corral everyone toward the bar car."
     hide catherine happy with dissolve
     $ showchibint("jenny", "sid")
-    show sid ind with dissolve:
+    show sid ind:
         xcenter .25
-    show jenny ind with dissolve:
+    show jenny ind:
         xcenter .75
+    with dissolve
     $mood = "sad"
     j "Alright, everyone else is gone."
     j "Let's just... have a chat."
@@ -2202,6 +2247,7 @@ label midcar6:
     j "Jeez..."
     b "Did he... yell? Or say anything?"
     b "Before he couldn't anymore."
+    call poptearb
     bi "This is incredibly uncomfortable..."
     i "Well... I thought I heard him say my name, with a faint breath."
     i "But it's hard to remember."
