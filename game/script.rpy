@@ -782,7 +782,7 @@ define k = Character("Kaiser Maden", who_color= "b07b4c", callback=kaiservoice, 
 define ses = Character("Sesame the cat", who_color= "fbe55c", callback=fillvoice, image="notbert")
 define warden = Character("Warden", who_color= "ffffff", callback=mevoice, image="notbert") #used in chapter 0
 define scr = Character("Screen", who_color= "ffffff", what_italic = True, callback=mevoice, image="notbert") #used in chapter 0
-define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what_color = "00ff00") #used in chapter 0
+define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what_color = "71c34c") #used in chapter 0
 define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
 define blank = Character("blank", what_italic=True, callback=fillvoice) #blank text, always italics /// used to " ", changed to the word blank for image use
 
@@ -877,4 +877,4 @@ transform bg:
 camera at parallax
 $dan = True
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump postMeetings
+jump frontcar1
