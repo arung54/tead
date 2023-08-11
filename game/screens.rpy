@@ -49,20 +49,20 @@ screen simple_menu():
                 textbutton "{i}Save:  {/i}":
                     text_color "#5D5D5D" text_hover_color "#5D5D5D"
                 textbutton "1":
-                    text_color "#929292" text_hover_color "#EDEDED" action QuickSave(1)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
                 textbutton "2":
-                    text_color "#929292" text_hover_color "#EDEDED" action QuickSave(2)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
                 textbutton "3":
-                    text_color "#929292" text_hover_color "#EDEDED" action QuickSave(3)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
 
                 textbutton "{i}  Load:  {/i}":
                     text_color "#5D5D5D" text_hover_color "#5D5D5D"
                 textbutton "1":
-                    text_color "#929292" text_hover_color "#EDEDED" action QuickLoad(1)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(1)
                 textbutton "2":
-                    text_color "#929292" text_hover_color "#EDEDED" action QuickLoad(2)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(2)
                 textbutton "3":
-                    text_color "#929292" text_hover_color "#EDEDED" action QuickLoad(3)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(3)
             hbox:
                 textbutton "{i}Volume  {/i}":
                     text_color "#5D5D5D" text_hover_color "#5D5D5D"

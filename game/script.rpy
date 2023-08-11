@@ -793,7 +793,7 @@ label start:
 ##################
     python:
         ftecounter = 0
-        fte_bert = -2
+        fte_bert = -1
         fte_sam = -1
         fte_stel = -1
         fte_drac = -1

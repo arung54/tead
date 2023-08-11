@@ -34,16 +34,17 @@ label bertHang:
         play sfx "audio/pophearts.mp3" volume .5
         show pophearts:
             xcenter .5
-            ycenter .7
+            ycenter .5
             zoom .75
         b "Pizza with pineapple and pepperoni. And some garlic bread on the side."
         n "Why pineapple on pizza though?"
         hide pophearts
         b "Hmm... it adds a nice sweet yet acidic flavor that compliments the meat and cheese."
+        call poptearb
         n "Won't thinking about food in this much detail just make you hungrier?"
         b "I guess so?"
         b "But at the same time, if I'm thinking about food I'm not freaking out."
-        b "And thinking about what I miss from home gives me motivation to work to get out."
+        b "And thinking about what I miss from home gives me motivation to work to get out of here."
         n "That's... a rather optimistic take, I guess."
         b "C'mon, surely you miss your old life too!"
         b "Tell me, what will your first meal be when we're past all this?"

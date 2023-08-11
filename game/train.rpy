@@ -1404,7 +1404,7 @@ label postFT0:
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
-    tut "For this and all future free time segments, you will have the luxury of talking to anyone or skipping."
+    tut "For this and all future free time segments, you will have the luxury of talking to anyone, or skipping."
     $ftecounter = 1
     call screen midCar with dissolve
 label postFT1:
