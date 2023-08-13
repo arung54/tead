@@ -2294,12 +2294,15 @@ label preinvest:
     j "Okay, everyone should be back in the car they were in when the lights went off."
     b "Perfect."
     b "And thank you for helping me calm down Sid."
+    call poptearb
     j "Now to calm down Freddy... Shahar told him that \"Dan be as good as shark bait\" now."
     b "Oh jeez..."
     hide jenny ind with dissolve
     bi "Jenny is a big help, but she's also a suspect."
     bi "I can't forget that."
+    $mood = "ind"
     bi "For now though, it's time to gather evidence."
+    bi "Anything could be useful, so I'll need to look around closely."
     $mood = "ind"
     pause 1
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
@@ -2330,6 +2333,9 @@ label trial1a:
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Bar Car", "bert", ch=1, sun=4)
     with dissolve
+    show delistart with dissolve
+    pause 1.0
+    hide delistart with dissolve
     show stella ind with dissolve
     t "So what's the plan?"
     t "I think I agree with the pirate at this point, let's all just jump out a window."
@@ -2361,8 +2367,14 @@ label trial1a:
     s "So it had to have happened sometime between then and when we made our way to the back car to check on them."
     s "Which honestly wasn't a very long time... maybe 20 minutes."
     $mood = "sad"
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .675
+        ycenter .275
+        zoom .75
     c "Putting a time to it somehow makes this even more disturbing."
     b "Also, we did all go check up in the front car first."
+    hide poptear
     c "Yeah, so for a few minutes, this car had to have been completely empty."
     $mood = "ind"
     b "Well, Sid could have come into this car while everyone was up front, and we would have no way of knowing."
@@ -2412,8 +2424,15 @@ label trial1a:
     b "Not exactly... "
     show catherine ind
     i "So it could have been Catherine?"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
+
     i "She could have snuck into the back car and done it!"
     i "I told you it wasn't me!"
+    hide popwow
     hide catherine ind with moveoutleft
     show stella ind with moveinleft:
         xcenter .25
@@ -2423,8 +2442,8 @@ label trial1a:
         ycenter .25
         zoom .75
     t "You're not the fastest learner Sid."
-    b "Hey wait, slow down!"
-    t "I suppose you are just a child... Think more clearly."
+    b "Hey wait, we don't need to argue like that!"
+    t "I suppose you are just a child... let me explain."
     stop music fadeout 1.0
     tut "You're about to take part in your first debate."
     tut "Four statements will appear. Statements with blue text can be agreed with."
@@ -2434,12 +2453,14 @@ label trial1a:
     tut "Find the correct or incorrect statement and its refutation to proceed."
     tut "There is no penalty for choosing the wrong statement or evidence, except shame upon your family."
     tut "Good luck!"
-    camera at paralloff
+    hide screen status_screen
     $showchibint()
+    with dissolve
+    camera at paralloff
     python:
-        startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#55f}{/color}.", 0,
+        startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#0BF}{/color}.", 0,
     "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
-    "sid", "Sid: I told you it {color=#55f}wasn't me{/color}!", 1,
+    "sid", "Sid: I told you it {color=#0BF}wasn't me{/color}!", 1,
     "stella",  "Stella: It would also explain that perky attitude of hers... it's just a diversion.", 0,
     1, 5, "trial1b")
 
@@ -2458,9 +2479,10 @@ label trial1b:
     show sid ind:
         xcenter .75
     with dissolve
+    call popwowb
     b "Hey! Catherine couldn't have left the bar car."
-    b "She knew about the scream!"
-    t "Hmmm... and neither Sid nor those in the front car heard the scream..."
+    b "She heard the scream!"
+    t "Hmmm... and neither Sid, nor those in the front car heard the scream..."
     t "So if she left the bar car, how could she have known?"
     b "Exactly!"
     b "We can't prove exactly what she was doing, but it seems pretty clear she didn't leave this car."
@@ -2512,6 +2534,7 @@ label trial1b:
     show scary with dissolve:
         alpha .5
     bi "Nobody saw it?"
+    stop music fadeout 1.0
     bi "Unfortunately, that can't be true."
     bi "Someone here used it to kill Dan. Where was it hiding?"
     bi "I thought I had checked everywhere... but maybe there is one place I hadn't looked."
@@ -2541,7 +2564,7 @@ label trial1c:
     j "Hmm, I didn't."
     j "The bed was pushed up against it anyway, it would be annoying move the bed and fully open the door."
     j "I took his word for it being locked."
-    s "Hey, what the hell? Was Dracula lying about the closet being locked?"
+    s "Are you saying Dracula was lying about the closet being locked?"
     hide jenny ind with moveoutleft
     show drac ind with moveinleft:
         xcenter .25
@@ -2558,10 +2581,12 @@ label trial1c:
     d "Truth be told, I was the first one to wake up on the train."
     d "I noticed everyone else was still unconscious, so I did a little exploring."
     d "That's when I noticed the, as the girl says, 'stabby stick' in the closet."
+    d "There were some general supplies, some wood, and... the murder weapon."
     s "Are you kidding me?! So it was unlocked?"
     d "Yes, the closet was unlocked the whole time."
     d "When I saw the metal bar, I was worried about it becoming a weapon."
     d "However, I couldn't find anywhere better to hide it. So instead, I made sure to disuade people from opening the closet."
+    d "As well, I pushed the bed even closer up to the closet wall door, making it even more difficult to open."
     hide sam with moveoutright
     show kaiser ind with moveinright:
         xcenter .75
@@ -2594,8 +2619,15 @@ label trial1c:
     i "Wait, no way!"
     i "Even i-if I wanted to, I couldn't have gotten into the closet!"
     k "Why's that?"
-    i "Dan! Dan was sleeping in the cot last night, and the cot blocks the closet!"
-    i "It won't even open if you don't move the cot a little!"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
+    i "Dan!"
+    i "Dan was sleeping in the cot last night, and the cot blocks the closet!"
+    hide popwow
+    i "It won't even open if you don't move the cot a little, like Dracula said!"
     show drac ind with moveinleft:
         rotate 45
         xcenter -.1
@@ -2627,6 +2659,9 @@ label trial1c:
     with dissolve
     bi "Hmmm... proof that Dan slept on the cot, and Sid slept on the bench."
     bi "Who might have that?"
+    hide screen status_screen
+    $showchibint()
+    with dissolve
     play music "audio/invest1.wav"
     call screen chooseChar("catherine", "trial1d", "Who might have proof that Dan slept on the cot, and Sid slept on the bench?") with dissolve
 label trial1d:
@@ -2636,6 +2671,12 @@ label trial1d:
     $ statusnt("Bar Car", "bert", ch=1, sun=4)
     with dissolve
     show catherine ind with dissolve
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .42
+        ycenter .25
+
     c "Huh? Me?"
     c "What do you mean?"
     b "Remember back to your conversation with Dan and Sid this morning?"
@@ -2689,7 +2730,7 @@ label trial1d:
     play sfx "audio/popmad.mp3" volume .5
     show popmad:
         xcenter .75
-        ycenter .25
+        ycenter .35
     s "What did you just say to me?"
     hide stella ind
     show stella happy:
@@ -2699,12 +2740,14 @@ label trial1d:
     show scary with dissolve:
         alpha .5
     bi "I need to step in... I know the answer!"
-    camera at paralloff
+    hide screen status_screen
     $showchibint()
+    with dissolve
+    camera at paralloff
     python:
         startTrainTrial("stella", "Isn't it obvious? Think about that scream in particular.", 0,
         "sam", "What are you even talking about? There shouldn't be {color=#f00}anything notable{/color} about someone screaming.", -1,
-        "stella", "Do you think I'm {color=#55F}making up{/color} the scream? Why would I do that?", 1,
+        "stella", "Do you think I'm {color=#0BF}making up{/color} the scream? Why would I do that?", 1,
         "sam", "Maybe to cover up the murder! I don't trust you for a second.", 0,
         1, 4, "trial1e")
 
@@ -2727,7 +2770,7 @@ label trial1e:
     show drac ind with moveinright:
         xcenter .75
     d "I'd hardly call it a testimonial, but yes, I do agree with Stella."
-    d "I find it quite easy to focus in the dark, and to me, that scream felt very particular."
+    d "I find it quite easy to focus in the dark, and to me, that scream felt very peculiar."
     b "And what do you mean by that?"
     show stella happy:
         xcenter .25
@@ -2748,7 +2791,7 @@ label trial1e:
     d "The nail in the coffin, though, was that it wasn't just a random recording."
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
-        xcenter .7
+        xcenter .675
         ycenter .25
         zoom .75
     d "The scream was Jenny's."
@@ -2799,8 +2842,14 @@ label trial1f:
     show catherine ind with moveinright:
         xcenter .75
     c "Now that you mention it, both did sound like they came from a little girl."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .35
+        ycenter .25
+        zoom .75
     j "Hey! I'm basically the same age as you!"
     c "Anyway, I think Dracula's right."
+    hide popwow
     b "I agree."
     c "But we do we do about it?"
     c "What does that even mean for the case?"
@@ -2883,6 +2932,7 @@ label trial1h:
             jump trial1h
 
         "Something blocked the moonlight coming through the windows!":
+            call popwowb
             bi "That's it!"
 
         "We were temporarily blinded by the Game Master's brain chips!":
@@ -2891,7 +2941,8 @@ label trial1h:
             jump trial1h
 
     hide scary with dissolve
-    b "That must be it! Something blocked all the moonlight coming through the windows."
+    b "That must be it!"
+    b "Something blocked all the moonlight coming through the windows."
     o "Oh, maybe you're right."
     d "He's definitely right."
     d "I have no proof, but I certainly cannot think of any other alternatives."
@@ -2903,6 +2954,7 @@ label trial1h:
     o "That makes a lot of sense... I don't think anyone who was in the front car would have noticed."
     blank "They looked around, but nobody else spoke up."
     o "Plus, this train is really quiet and smooth."
+    b "Sam mentioned the same thing yesterday."
     o "It's hard to even remember we're on a train sometimes, let alone notice things like that."
     b "Exactly!"
     b "The most obvious aspect of going through a tunnel would have to be -"
@@ -2930,6 +2982,7 @@ label trial1h:
     k "Or did the murderer simply capitalize off of the darkness and decide to kill?"
     b "...I don't know."
     o "This also doesn't change the fact that Catherine was basically guarding the door to the back car."
+    o "It still seems impossible for someone other than Sid to be there to do it."
     b "...That is true..."
     k "It feels like we're uncovering some things, but no closer to a real answer."
     hide lauren ind with moveoutright
@@ -2945,12 +2998,14 @@ label trial1h:
     s "This is such a circular argument..."
     show scary with dissolve:
         alpha .7
+    $mood = "sad"
     bi "Damn, are they right?"
     bi "Are we really not getting anywhere?"
     bi "So far we've learned what everyone was doing, where the weapon came from, and why it got dark."
     bi "It feels close."
     bi "It feels like if we just figure out a few more things..."
     hide scary
+    $mood = "shock"
     f "Hey, wait a minute!"
     show sid ind:
         xcenter .25
@@ -2958,7 +3013,7 @@ label trial1h:
     show sam ind:
         xcenter .75
         linear 0.15 xcenter .85
-    show frog ind with dissolve
+    show frog ind with moveinbottom
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
         #zoom .75
@@ -3019,6 +3074,7 @@ label trial1i:
     b "What did you say we're looking for again, Freddy?"
     f "The flag!"
     f "It's all the way on the back of the train."
+    call pophuhb
     b "I'm pushing my head all the way up against the glass and I can't see that far back."
     k "Me as well..."
     hide forest run
@@ -3034,9 +3090,9 @@ label trial1i:
         linear .3 xcenter .75
     show drac ind with dissolve:
         xcenter .25
-    d "Well..."
-    d "There is no need to rush."
-    b "Huh? Of course there is!"
+    d "I think I understand..."
+    d "We need to wait a bit."
+    b "Huh?"
     b "Dan is dead! We have to figure out what happened!"
     hide frog ind with moveoutright
     show jenny ind with moveinright:
@@ -3086,9 +3142,17 @@ label trial1ib:
     hide jenny ind with moveoutright
     show shahar ind with moveinright:
         xcenter .75
-    h "Aye."
+    h "Aye, laddies."
     h "I don't get it."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .675
+        ycenter .25
+
     h "Are ye sayin' the flag is invisible?"
+    hide pophuh
+    call poptearb
     bi "..."
     hide drac ind with moveoutleft
     show catherine happy with moveinleft:
@@ -3111,9 +3175,16 @@ label trial1ib:
     show traindoodle2 with dissolve
     extend "we have a better field of view!"
     c "Does that make sense?"
-    i "Why is he smiling now..."
+    i "Why is the stick figure smiling now..."
     o "And you even signed it, with a heart."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .25
+        ycenter .5
     c "I think I did a pretty good job drawing it!"
+    b "..."
+    b "I think you're correct, though."
+    hide pophearts
     hide traindoodle2 with dissolve
     show shahar ind with dissolve:
         xcenter .75
@@ -3141,8 +3212,10 @@ label trial1ib:
     k "She makes a good point, for once."
     hide pophuh
     k "There {i}is{/i} a killer amongst us."
-    t "Seems easy enough, no? We can just kill them."
+    t "To me, it seems easy enough."
+    t "We'll have to kill them."
     k "Agreed."
+    call popwowb
     b "What!? We don't need another dead body on this train."
     k "What do you suggest then?"
     b "..."
@@ -3178,7 +3251,11 @@ label trial1ib:
     show sid ind:
         xcenter .75
     with dissolve
-    i "This kid's starting to bother me..."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .3
+    i "This tadpole's starting to bother me..."
     b "Wait, let him keep talking."
     b "Freddy, what do you mean it was a long, pointy flag?"
     b "That doesn't sound like any flag I've seen before."
@@ -3215,13 +3292,16 @@ label trial1ib:
     c "I think I'm going to go inspect the body again."
     i "Catherine, you can't! Hear me out!"
     c "Hmm... I'll give you one minute!"
-    camera at paralloff
+    hide screen status_screen
     $showchibint()
+    with dissolve
+    camera at paralloff
+
     python:
-        startTrainTrial("sid", "Sid: I know it seems like a waste, but think about what Freddy just said.{color=#55f}{/color}", 0,
+        startTrainTrial("sid", "Sid: I know it seems like a waste, but think about what Freddy just said.{color=#0BF}{/color}", 0,
         "catherine", "Catherine: Look! I'll admit it, {color=#f00}his drawing was better than mine...{/color}", -1,
-        "catherine", "Catherine: But this is a waste of time. There's {color=#55f}nothing useful in his picture{/color} anyway.", 1,
-        "sid",  "Sid: Don't you think his flag looked... {color=#55f}awfully similar to a scythe{/color}?", 1,
+        "catherine", "Catherine: But this is a waste of time. There's {color=#0BF}nothing useful in his picture{/color} anyway.", 1,
+        "sid",  "Sid: Don't you think his flag looked... {color=#0BF}awfully similar to a scythe{/color}?", 1,
         3, -1, "trial1j")
 
 label trial1j:
@@ -3295,11 +3375,18 @@ label trial1l:
     show traindoodle4 with dissolve
     i "Someone could have set up a mechanism to BONK the scythe off the tunnel entrance,"
     i "and swing down to stab through the back car window!"
+    h "Bonk?"
+    i "BONK!"
     hide traindoodle4 with dissolve
     show sam ind with moveinright:
         xcenter .75
     s "That is a batshit insane theory."
     i "Wait, bu-"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
     s "But! If it's right, we should be able to check."
     s "The murderer would have had to set up a hinge or something to make sure it swung down correctly."
     b "You're right!"
@@ -3316,12 +3403,14 @@ label trial1l:
     b "Alright."
 
 label trial1m:
+
     scene black with fade
     blank "All of them made their way to the back car, together."
     scene bg bodytrainback at bg
     $ showchibint("catherine", "dracula", "freddy", "jenny", "kaiser", "lauren", "sam", "shahar", "sid", "stella")
     $ statusnt("Caboose", "bert", ch=1, sun=4)
     with dissolve
+    play music "audio/inthefaceofdeath.mp3" fadein 1.0
     show sid ind with dissolve
     i "Damn..."
     i "I don't really want to, uh, climb over his body to check the window..."
@@ -3334,6 +3423,8 @@ label trial1m:
     bi "Hmmm... It's hard to get a good view of the overhang outside the train..."
     bi "But if I lean up against the broken glass of the window just right..."
     show trainhinge with dissolve
+    $mood = "shock"
+    call popwowb
     bi "!"
     bi "On second thought... This must have been where that object was hanging from..."
     bi "There really is a big hinge, right outside the back door."
@@ -3343,6 +3434,7 @@ label trial1m:
     show scary:
         alpha .5
     with dissolve
+    $mood = "ind"
     blank "Bert stepped back over the body, and explained what he saw to everyone else."
     hide scary with dissolve
     show stella ind with moveinleft
@@ -3376,13 +3468,15 @@ label trial1m:
     show frog ind with moveinleft:
         xcenter .25
     f "W-what? I don't get it."
-    f "Someone killed Dan even though they weren't there with him?"
+    f "Someone hurt Dan even though they weren't there with him?"
     t "Well buddy, once they put the flag up there, all they had to do was wait for the tunnel."
     t "It's sort of like a cuckoo clock. Once it's installed, you don't have to do anything."
-    f "B-but... no! You're missing the point!"
+    f "B-but... what? That doesn't make any sense..."
     t "Au contraire."
-    camera at paralloff
+    hide screen status_screen
     $showchibint()
+    with dissolve
+    camera at paralloff
     python:
         startTrainTrial("freddy", "Freddy: Y-you're so mean to me! You're not my mom...", 0,
         "stella", "Stella: Dear, you're too young and stupid to understand. Leave this to us for now.", 0,
@@ -3399,24 +3493,32 @@ label trial1n:
     $ statusnt("Caboose", "bert", ch=1, sun=4)
     with dissolve
     show frog ind with moveinbottom
-    f "W-what do you mean? What object?"
+    b "There was something that distracted him, Freddy."
+    f "W-what do you mean?"
     b "When I came back here to investigate more, I noticed this hanging right outside the back window."
     show frog ind:
         linear .3 xcenter .25
     show thering with dissolve:
         xcenter .75
-    b "In fact, it was hanging from that same hinge."
+    b "In fact, it must have been hanging from that same hinge."
+    bi "To think I missed something like that..."
     b "My guess is that Dan noticed the same thing and walked over to the back window."
     f "Sh-shiny..."
     show stella ind with moveinleft:
         xcenter .35
     show frog ind:
         linear .3 xcenter .15
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .48
+        ycenter .25
+        zoom .75
     t "Hey, give me that!"
     t "That is my ring!"
     show stella ind:
         linear .3 xcenter .5
-    hide frog ind with moveoutleft
+    hide frog ind
+    with moveoutleft
     hide thering with dissolve
     b "Huh? This is yours?"
     t "Why yes of course it is, now hand it over."
@@ -3428,9 +3530,12 @@ label trial1n:
     t "Someone must have stolen it from me."
     show stella ind:
         linear .3 xcenter .75
-    show sam ind with moveinleft:
+    show sam ind:
         xcenter .25
+    with moveinleft
+    call poptearb
     s "Or they just asked for it while you were blackout drunk."
+    t "Yes, or that!"
     s "If you don't remember who you gave it to -"
     t "Or who took it-"
     s "Then it doesn't really matter that it's yours."
@@ -3467,11 +3572,13 @@ label trial1n:
     s "Someone must have gotten into the computers and kept it a secret from the rest of us."
     s "Damnit, right under our noses..."
     o "Wait, hold on. I don't think anyone managed to get into the computers."
-    s "Don't be so foolish."
-    camera at paralloff
+    s "Don't be so foolish, Lauren."
+    hide screen status_screen
     $showchibint()
+    with dissolve
+    camera at paralloff
     python:
-        startTrainTrial("lauren", "Lauren: Why are you {color=#55f}so sure about yourself{/color}?", 1,
+        startTrainTrial("lauren", "Lauren: Why are you {color=#0BF}so sure about yourself{/color}?", 1,
         "sam", "Sam: Look, we don't have time to focus on the means, just focus on the fact that it resulted in a murder.", 0,
         "lauren", "Lauren: There's just {color=#f00}no way for us to know if someone got into the computers {/color}anyway, so this is a dangerous rabbit hole.", -1,
         "sam",  "Sam: You're right, but I just know someone figured out the password. It's the only solution.", 0,
@@ -3566,7 +3673,7 @@ label trial1o:
     blank "....................................................................................................................."
     show scary with dissolve:
         alpha .5
-    bi "I was not prepared for Jenny to scream like that."
+    bi "I was not prepared for Jenny to do that."
     bi "Anyway, nobody's speaking up..."
     bi "It seems like this is silently someone's admission of guilt."
     bi "If the murderer said they used the \"DIR\" input, they could absolve themselves of some blame."
@@ -3603,6 +3710,7 @@ label trial1o:
         xcenter .75
     o "So, the person who accessed the computer is the murderer?"
     t "It seems quite that simple."
+    b "They need to have learned the train's route somehow for the sythe mechanism to work."
     t "Otherwise, they wouldn't be able to time the on hitting the tunnel so accurately."
     o "I see..."
     hide stella ind with moveoutleft
@@ -3627,7 +3735,7 @@ label trial1o:
     d "Something essential to the setup that could only be accomplished in this car."
     b "Hmm..."
 label trial1p:
-    show scary:
+    show scary with dissolve:
         alpha .75
     menu:
         bi "Something that could only be accomplished in the front car, at the time of the murder?"
@@ -3648,6 +3756,7 @@ label trial1p:
             jump trial1p
 
     hide scary with dissolve
+    call popwowb
     b "They must have been... activating the PA system with the button!"
     d "Precisely."
     b "I nearly forgot about the scream."
@@ -3675,14 +3784,18 @@ label trial1p:
     show lauren ind:
         linear .2 xcenter .8
     blank "Lauren pressed the button."
+    play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     z "AHHHHHH!!!"
     b "!"
     show catherine ind with moveinleft:
         xcenter .25
     c "Wow! Jenny's scream really is programmed onto that button!"
     c "Press it again!"
+    play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     z "AHHHHHH!!!"
+    play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     z "AHHHHHH!!!"
+    play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     z "AHHHHHH!!!"
     o "Wow..."
     hide lauren ind with moveoutright
@@ -3710,6 +3823,7 @@ label trial1p:
     bi "We're so close."
     bi "There's only one logical next step."
     bi "This could be it..."
+    call popwowb
     bi "Let's settle this!"
     hide scary with dissolve
     b "Okay! Sam, Shahar, Kaiser, and Lauren."
@@ -3721,6 +3835,7 @@ label trial1p:
         xcenter .6
     show lauren ind with dissolve:
         xcenter .875
+    stop music fadeout 1.0
     b "You four were up here at the time of the murder."
     b "I need you to to each tell us exactly what you were doing up here at the time of the murder."
     b "{i}Exactly{/i} what you were doing."
@@ -3748,6 +3863,9 @@ label trial1p:
     show scary with dissolve
     bi "That settles it. I know who it was."
     bi "The murderer is..."
+    hide screen status_screen
+    $showchibint()
+    with dissolve
     play music "audio/ominous.mp3"
     call screen chooseChar2("kaiser", "trial1q", "  ") with dissolve
 
@@ -3771,18 +3889,23 @@ label trial1q:
     play music "audio/coming_together.mp3"
     k "Excuse me?"
     k "Are you insinuating that I killed Dan?"
+    call popwowb
     b "No, I'm proclaiming it. It had to have been you."
     b "We have all the evidence we need now."
     k "Excuse me, but how did you come to such a ridiculous conclusion?"
     k "Surely the four of us tell you what we were doing couldn't have been the deciding factor."
     b "It was, Kaiser!"
     b "You said you were trying everyone's names as passwords."
-    k "That's exactly what happened, you fool."
+    k "That's exactly what I was doing, you fool."
     b "We know that can't be true!"
     k "Pardon me, bu-"
     b "Think back to yesterday! We have proof you couldn't have done that."
     b "Who said it..."
-    show scary with dissolve
+    hide screen status_screen
+    $showchibint()
+    show scary
+    with dissolve
+
     play music "audio/invest1.wav"
     call screen chooseChar("sid", "trial1r", "Who knows the truth?") with dissolve
 label trial1r:
@@ -3805,14 +3928,25 @@ label trial1r:
     i "I..."
     show sid happy:
         xcenter .25
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .35
+        ycenter .25
+        zoom .75
     i "You're right! I do know!"
     i "Kaiser couldn't possibly have tested everyone's name as passwords!"
+    hide popwow
     i "After 5 attempts it locks you out!"
     hide sid happy
     show sid ind:
         xcenter .25
     show kaiser ind:
         linear .1 xcenter .775
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .675
+        ycenter .25
     k "What?! Surely you're joking..."
     i "No, it's true!"
     blank "Lauren rushed over to a computer and started typing."
@@ -3825,6 +3959,7 @@ label trial1r:
     hide sid ind with moveoutleft
     show lauren ind with moveinleft:
         xcenter .25
+    $mood = "shock"
     o "It's... true."
     o "After 5 attempts it stopped me from typing anything else in."
     o "There's no pop-up or anything, but it's impossible to input any new letters."
@@ -3840,11 +3975,11 @@ label trial1r:
     hide movie "ch1guilty.webm" with dissolve
     play music "audio/ominous.mp3" fadein 1.0
     $mood = "shock"
-    k "Yes, you've figured it all out."
-    k "I'm impressed, quite frankly."
     hide lauren ind with moveoutleft
     show kaiser ind:
         linear .3 xcenter .5
+    k "Yes, you've figured it all out."
+    k "I'm impressed, quite frankly."
     k "I killed Dan, there's no reason to claim otherwise now."
     b "But... but why?"
     b "Why would you do something like that?"
@@ -3880,6 +4015,10 @@ label trial1r:
         linear .3 xcenter .75
     show sid mad with dissolve:
         xcenter .25
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .25
+        ycenter .3
     i "You... you killed my friend! He didn't deserve to die!"
     show kaiser ind:
         linear .1 xcenter .7
@@ -3968,17 +4107,18 @@ label trial1r:
     show doom
     hide braindeath with dissolve
     hide sid ind
-    show sid happy:
-        xcenter .25
-        linear .1 xcenter .2
-    blank "Kaiser fell to the floor."
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
         xcenter .3
         ycenter .25
         zoom .75
+    show sid happy:
+        xcenter .25
+        linear .1 xcenter .2
+    blank "Kaiser fell to the floor."
     b "Wh-what?!"
     i "No no no no no!"
+    hide popwow
     c "Oh my god oh my god oh my god oh my god!"
     i "What happened?!"
     b "He just, "
@@ -3995,15 +4135,17 @@ label trial1r:
     b "I survived... we, the 10 of us, survived..."
     bi "Technically, we were closer to winning this game."
     bi "But really, we had lost more than we had won."
-    b "...what n-{p=0.5}{nw}"
+    b "...what no-{p=0.5}{nw}"
     scene black
     pause 1.0
     bi "A more humane person would have given us some time."
     bi "To celebrate, to reflect, to mourn."
     bi "But instead, with no warning, I passed out."
-    play music "audio/ominous.mp3" fadein 3.0
-    show endch1 with Dissolve(3.0)
-    pause
-    stop music fadeout 3.0
-    hide endch1 with Dissolve (3.0)
-    $ MainMenu(confirm=False)()
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    pause 1.0
+############################################## end of ch1 screen
+    call screen ch1results
+    pause 1.0
+    jump mansionGo

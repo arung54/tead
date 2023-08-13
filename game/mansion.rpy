@@ -3,6 +3,7 @@ label mansionGo:
     $noside = True
     camera at paralloff
     scene black
+    pause 2.0
     $ statusnt("???", "", ch=2, sun=0)
     $mood = "ind"
     play music "audio/rush.mp3" fadein 1.0
@@ -14,7 +15,7 @@ label mansionGo:
     z "Does it? Must be a bug with the security system."
     zg "Cut the bullshit. We know who you are and why you're here."
     zg "Mr. Dan Scagnelli?"
-    z "..."
+    n "..."
     n "That's my name, but what do you mean why I'm here?"
     n "I told you already, I'm a new employee."
     zg "Listen punk, this'll be easier if you stop lying."
@@ -66,24 +67,32 @@ label Mansionuno:
     show bg mansiondining at bg
     $ statusnt("???", "bert", ch=2, sun=0)
     with slowdissolve
-    bi "I slowly came to my senses and looked to my left."
+    bi "I'm finally awake..."
     show frog sad with dissolve
     $showchibint("freddy")
-    f "nrg...."
-    bi "...no, that's not how I should think about it."
+    f "Hmmsmdnnnn...."
+    bi "...I can't be negative right now how I should think about it."
     bi "There were ten people I did help save."
     bi "If we didn't investigate and uncover Kaiser's secrets, we..."#JJJ
+    $mood = "ind"
     bi "...we all would have been killed." #JJJ
     bi "Though, I still feel no closer to figuring out who the game master is..." #JJJ
     bi "Either way, I need to keep my guard up and protect everyone here."
     show frog ind
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
     f "Oh, Bert! Are you awake? Feeling okay?"
     bi "This kid's one of them."
+    hide popwow
     bi "I have to keep him safe."
     $mood = "happy"
     b "Yeah, I'm fine. Thanks for asking. How are you?"
     f "Eh, kinda sleepy, like always."
     f "We're in a really nice house now though!"
+    $mood = "ind"
     bi "For a kid he doesn't seem that shaken up about what just happened..."
     bi "But looking around, I had to agree."
     $ statusnt("Dining Room", "bert", ch=2, sun=0)
@@ -138,7 +147,7 @@ label Mansionuno:
         xcenter .75
     play sfx "audio/poptear.mp3" volume .5
     show poptear:
-        xcenter .8
+        xcenter .7
         ycenter .275
         zoom .75
     c "Woah! So you think someone here has been in this mansion before?" #JJJ
@@ -146,11 +155,11 @@ label Mansionuno:
     hide poptear
     $mood = "sad"
     b "He has a point... If there were direct ties between Kaiser and the train, maybe..."
-    c "Maybe someone his direct ties to this mansion?"
+    c "Maybe someone has direct ties to this mansion?"
     d "Precisely."
     d "In which case, while exploring let's look for clues that tie specific people to this place."
     d "That way we can identify the murderer ahead of time."
-    d "Ideally they would just kill the Game Master and we all escape, but if not we can protect ourselves in this way."
+    d "Ideally, they would just kill the Game Master and we all escape, but if not we can protect ourselves in this way."
     bi "Dracula's very calm and collected about this."
     $mood = "ind"
     bi "It seems like a pretty good plan, though maybe a bit optimistic."
@@ -262,12 +271,18 @@ label Mansionuno:
     bi "So Dracula must be hoping the murderer isn't so wise."
     bi "Better yet, he's suggesting that the murderer's task, identifying and killing the Game Master, could be aided by this process."
     bi "If they took his words to heart, they would indirectly out themselves, and think that was the right thing to do..."
-    bi "But will Dracula's plan really work?"
+    bi "I'm not sure if someone would step forward so easily, but..."
+    bi "Dracula's definitely scheming something up."
     $mood = "ind"
     hide scary with dissolve
     t "Babe, you're just coming off as senile."
-    t "The idea of admitting to our crimes would be much more enticing from a younger guy..."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
+    t "The idea of discussing our crimes would be much more enticing from a younger guy..."
     t "But we've already discussed this and it seems nobody else wants to speak up."
+    hide pophearts
     d "Hmph, fine. Maybe this is a conversation that should wait for all of us to be present anyway."
     d "But, even if we don't admit to our crimes, maybe we should take precautions like mandatory travelling in pairs."
     play sfx "audio/popwow.mp3" volume .5
@@ -293,7 +308,7 @@ label Mansionuno:
     s "The particulars don't really matter, though I do think admitting our crimes might help."
     bi "..."
     bi "I don't want to think about it again."
-    bi "I don't want to relive that moment."
+    bi "I don't want to relive the moment again... that poor woman..."
     t "Honey, as someone who has confessed crimes, is that really fair when the vampire and pirate are going to keep playing pretend?"
     hide sam with moveoutleft
     show shahar mad with moveinleft:
@@ -326,6 +341,7 @@ label Mansionuno:
         ycenter .5
     t "That being said, are you sure you aren't just trying to get on Bert's good side?"
     $mood = "shock"
+    call pophuhb
     bi "Suddenly, all eyes were either on me or Jenny."
     b "What?"
     hide pophearts
@@ -367,13 +383,23 @@ label Mansionuno:
     d "Well, one more thing."
     d "It seems that despite not being in a fast-moving train, escape is unlikely."
     d "All the windows in this room have been boarded with a metal sheet..."
+    call poptearb
     d "Even if they were not there, I have a feeling the chips in our brains would likely kill us if we escaped."
     d "And, given what happened to Kaiser, it would seem the chips are going to be hard to subvert."
+    bi "It's true. I can't imagine we can just run from this situation."
+    bi "Especially if the Game Master really did kill Kaiser just at the flip of a switch..."
     d "That is all I wished to say. Would hate to see any more unnecessary deaths than we already have."
     hide drac with dissolve
     show sid ind with dissolve
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .45
+        ycenter .25
+
     i "So um, are we free to go explore?"
     i "I... I've never been in a house this fancy."
+    hide pophuh
     i "I was hoping we'd do what we did on the train and get to explore a bit."
     show sid ind:
         xcenter .5
@@ -386,7 +412,7 @@ label Mansionuno:
     c "Oh, true, and maybe mice to catch!"
     $mood = "happy"
     bi "She's as scatterbrained as usual, but it's probably good right now."
-    bi "Sid is probably the most shaken up about Dan's death. It's good to get his mind off that."
+    bi "Sid is clearly the most shaken up about Dan's death. It's good to get his mind off that."
     b "Yeah, plus we have to figure out what there is to eat and where to sleep."
     bi "I'd be happy to get my mind off it for a bit too."
     hide sid
@@ -412,6 +438,7 @@ label Mansionuno:
     j "There is that ominous portrait, though."
     bi "She pointed above the fireplace."
     bi "A middle-aged, ordinary-looking man dressed up quite nicely."
+    call pophuhb
     b "Wait... who is that?"
     j "No clue."
     b "It must be someone relevant, right?"
@@ -422,22 +449,27 @@ label Mansionuno:
     j "Maybe it's the Game Master? And this is their mansion?"
     b "Well, that would contradict what the screen told us about one of us being the Game Master."
     $mood = "sad"
-    b "But maybe we'd be naive to trust that."
+    b "But maybe we'd be naive to trust that without more evidence."
     j "Unless someone's met this person before, I don't know if we'll get much information out of this."
     j "Let's look somewhere else. Looks like this room connects to the kitchen and a bedroom."
     $mood = "happy"
     b "Let's head to the kitchen, I'm hungry!"
-    scene bg mansionkitchen at bg with fade
+    scene black with dissolve
+    "Bert and Jenny head to the kitchen."
+    scene bg mansionkitchen at bg with dissolve
     $showchibint("jenny", "freddy", "lauren")
     $ statusnt("Kitchen", "bert", ch=2, sun=0)
-    show lauren ind with dissolve
+    show lauren ind
+    with dissolve
     l "Hey, what happened in the other room? Heard lots of chatter."
     $mood = "sad"
     b "Well uh..."
     bi "I'm pretty curious how she'll react to the whole, \"we're all criminals\" news."
+    call poptearb
     b "we've concluded everyone here's a uh, criminal, basically."
     b "Some people suggested we all admit to our crime, but that wasn't very well received."
-    l "Ah, okay. Well, good news, the kitchen is rather well-stocked."
+    l "Ah, okay."
+    l "Well, good news, the kitchen is rather well-stocked."
     $mood = "shock"
     bi "....."
     bi "... is she not at all fazed by the fact that we're all criminals?"

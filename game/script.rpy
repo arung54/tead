@@ -813,9 +813,16 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        train_evidence1 = [False, False, False]
-        train_evidence2 = [False, False, False]                #made all of these true from false LOL
-        train_evidence3 = [False, False, False, False]
+        #train_evidence1 = [False, False, False]
+        #train_evidence2 = [False, False, False]                #made all of these true from false LOL
+        #train_evidence3 = [False, False, False, False]
+        train_evidence1 = [True, True, True]
+        train_evidence2 = [True, True, True]                #made all of these true from false LOL
+        train_evidence3 = [True, True, True, True]
+
+
+
+
         train_extra = [False, False, False, False, False, False]
         mans_evidence = [True] * 9
         hosp_evidence = [False] * 13
@@ -875,6 +882,6 @@ transform bg:
 #Start
 ###########
 camera at parallax
-$dan = True
+$dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump midcar6
+jump mansionGo

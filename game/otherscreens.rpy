@@ -560,3 +560,22 @@ screen cardstebtof():
     add "stecardBtoF" xpos 1000 ycenter 0.5
     imagebutton:
         idle "blankcard.png" xpos 758 ycenter 0.5 action[Hide("cardstebtof"), Show("cardsteftob")]
+
+
+########## results screens
+
+screen ch1results:
+    modal True
+    add "ch1complete" at show_hide_dissolve
+    hbox at show_hide_dissolve:
+        ypos .875 xpos .25
+        textbutton "{i}Save:  {/i}":
+            text_color "#EDEDED" text_hover_color "#EDEDED"
+        textbutton "1":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+        textbutton "2":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+        textbutton "3":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+    #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
+    textbutton _("Continue ->") action[Hide("ch1results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve

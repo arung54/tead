@@ -378,15 +378,15 @@ screen backCarInv():
 ####################################################
 
 label trainComputer:
-    scene bg ntrainfront
+    scene bg ntrainfront at bg
     $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     bi "The train's computer system. Hmmm..."
     bi "Let's take a closer look."
-    scene welcomescreendir4
+    scene welcomescreendir4 at bg
     bi "It looks the same as before, I think."
     bi "Wait - no! There is something different..."
     bi "I should make a mental note of that."
-    scene bg ntrainfront
+    scene bg ntrainfront at bg
     if not train_evidence1[0]:
         show newevidencefound with dissolve
         pause 1
@@ -399,7 +399,7 @@ label trainComputer:
     call screen frontCarInv
 
 label trainFrontWindow:
-    scene bg ntrainfront
+    scene bg ntrainfront at bg
     $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     bi "The train's front window."
     bi "It's pretty dark out, but there's still some light coming through."
@@ -417,7 +417,7 @@ label trainFrontWindow:
     call screen frontCarInv
 
 label trainBert:
-    scene bg ntrainfront
+    scene bg ntrainfront at bg
     $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     show bert sad with dissolve
     bi "What a terrible situation..."
@@ -425,7 +425,7 @@ label trainBert:
     call screen frontCarInv
 
 label trainKaiser:
-    scene bg ntrainfront
+    scene bg ntrainfront at bg
     $mood = "sad"
     $ statusnt("Front Car", "bert", ch = 1, sun = 4)
     show sam ind with dissolve
@@ -475,7 +475,7 @@ label trainKaiser:
     call screen frontCarInv
 
 label trainmidBert:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show bert sad with dissolve
     bi "What a terrible situation..."
@@ -483,7 +483,7 @@ label trainmidBert:
     call screen midCarInv
 
 label trainfreddy:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show frog sad with moveinbottom
     f "Shahar said Dan's... swimming with the fishes?"
@@ -501,7 +501,7 @@ label trainfreddy:
     call screen midCarInv
 
 label trainjenny:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show jenny ind with dissolve
     j "Personally, I don't remember much..."
@@ -515,7 +515,7 @@ label trainjenny:
     call screen midCarInv
 
 label trainstella:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show stella ind with dissolve
     t "Well sheesh, that'll sober you up quick."
@@ -532,11 +532,10 @@ label trainstella:
     call screen midCarInv
 
 label traincatherine:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show catherine ind with dissolve
     c "This is so scary..."
-    c "It's like a crappy murder mystery game."
     ses "Mrow!!!"
     b "Catherine, when the lights went out, did you keep walking to the back car?"
     b "I distinctly remember you on your way to say goodnight to Sid and Dan."
@@ -558,14 +557,15 @@ label traincatherine:
     call screen midCarInv
 
 label traindracula:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     show drac ind with dissolve
     d "By the way..."
     d "What was that scream we heard?"
     scene black with fade
+    play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     blank "AHHHHH!"
-    scene bg notrainmid
+    scene bg notrainmid at bg
     show drac ind
     with fade
     b "Hmmm, you're right. It sounded like a woman's voice."
@@ -587,7 +587,7 @@ label traindracula:
     call screen midCarInv
 
 label trainlights:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     if windowcount > 5:
         b "Wait... The lights are still off."
@@ -614,7 +614,7 @@ label trainlights:
     call screen midCarInv
 
 label trainwindows:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     if lightscount > 5:
         b "Wait... It's night time."
@@ -639,7 +639,7 @@ label trainwindows:
     call screen midCarInv
 
 label trainbar:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $train_extra[0] = True
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     bi "The train bar."
@@ -647,7 +647,7 @@ label trainbar:
     call screen midCarInv
 
 label traincouch:
-    scene bg notrainmid
+    scene bg notrainmid at bg
     $train_extra[1] = True
     $ statusnt("Bar Car", "bert", ch = 1, sun = 4)
     bi "Some chairs and couches throughout the bar car."
@@ -655,7 +655,7 @@ label traincouch:
     call screen midCarInv
 
 label trainbackBert:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     show bert sad with dissolve
     bi "What a terrible situation..."
@@ -663,7 +663,7 @@ label trainbackBert:
     call screen backCarInv
 
 label trainrip:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $train_extra[2] = True
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "Well I guess it's a good thing we have this."
@@ -671,7 +671,7 @@ label trainrip:
     call screen backCarInv
 
 label trainbed:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $train_extra[3] = True
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The bed. It's next to the closet, but other than that..."
@@ -679,7 +679,7 @@ label trainbed:
     call screen backCarInv
 
 label trainwater:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $train_extra[4] = True
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "There's an old-timey water heater and kettle back here."
@@ -687,14 +687,14 @@ label trainwater:
     call screen backCarInv
 
 label trainbench:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     $train_extra[5] = True
     bi "The bench. I think this is where either Dan or Sid was sleeping."
     call screen backCarInv
 
 label trainsid:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     stop music fadeout 1.0
     show sid ind with dissolve
@@ -726,14 +726,17 @@ label trainsid:
     call screen backCarInv
 
 label traincloset:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The locked closet."
     bi "I might as well try it."
     blank "The closet door opened without any trouble."
     blank "Nothing was inside."
     bi "What?!"
+    $mood = "shock"
+    call popwowb
     bi "I thought this closet was locked shut?"
+    $mood = "ind"
     if not train_evidence3[2]:
         $train_evidence3[2] = True
         show newevidencefound with dissolve
@@ -746,7 +749,7 @@ label traincloset:
     call screen backCarInv
 
 label traincoin:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "The window is cracked, seemingly from the murder weapon..."
     bi "The culprit must have used a ton of extra force when they stabbed Dan."
@@ -770,7 +773,7 @@ label traincoin:
     call screen backCarInv
 
 label trainbody:
-    scene bg bodytrainback
+    scene bg bodytrainback at bg
     $ statusnt("Caboose", "bert", ch = 1, sun = 4)
     bi "Dan's body..."
     bi "It's hard to look at."
