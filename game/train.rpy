@@ -1345,9 +1345,9 @@ label testft:
     hide sam
     with dissolve
     $showchibint("jenny", "stella", "lauren", "freddy", "sid")
-    play sfx "audio/beep.mp3"
     ni "I don't particularly want to talk to anyone, but..."
     ni "I should mingle so I don't look suspicious."
+    play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5

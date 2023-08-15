@@ -1418,7 +1418,9 @@ label postFT2:
     $ftecounter = 3
     scene bg nmansiondining at bg
     $ statusnt("Dining Room", "bert", ch=2, sun=4)
+    $mood = "ind"
     with fade
+    play music "audio/rush.mp3" fadein 1.0
     $showchibint("catherine", "dracula", "freddy", "shahar", "sid", "stella")
     bi "Well, guess it's time to sleep."
     bi "Or at least, try to."
@@ -1429,9 +1431,15 @@ label postFT2:
     c "Sorry Freddy, I think I'm gonna take Sesame up to bed now."
     show frog ind:
         xcenter .25
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .3
+        ycenter .375
+        zoom .75
     f "Oh, okay..."
     c "You can play tomorrow though! And if you fall asleep quickly then tomorrow will be here soon!"
     f "Y-yeah, let's go upstairs."
+    hide poptear
     hide frog
     hide catherine
     with dissolve
@@ -1471,9 +1479,15 @@ label postFT2:
     h "You can sleep when yer in Davy Jones' Locker! Aagagagagah!"
     t "If you really want to sleep, you can sneak into bed with one of duh girls upstairs..."
     t "Just don't squish the cat if you get in bed with Catherine."
+    call poptearb
     b "Why are you so obsessed with... me and romance right now."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     t "Romance is a cute for word it!"
     b "I'm just saying, you talk a lot about me and my love-life, but never about you and yours."
+    hide pophearts
     t "Do you want to hear about my love life?"
     b "Uh..."
     b "I guess more than I want to hear about you trying to matchmake me."
@@ -1495,22 +1509,29 @@ label postFT2:
     t "Well, I could probably retire now if I wanted."
     t "I have billions saved up already, my bloodline will be forever wealthy."
     $mood = "shock"
+    call popwowb
     b "Billions? With a B?"
     b "You're only a few years older than me..."
     t "Sorry kid, life is unfair. You should've figured that out when one percent of people own 40 percent of duh wealth."
     b "So why don't you retire now?"
     t "What is this, an interrogation? Did someone commit duh murder while we were drinking? Hahaha!"
+    $mood = "sad"
     b "Sorry, just trying to make conversation."
     t "Fine. Thing is, kid, retired life's boring if you don't have a passion."
-    $mood = "sad"
     bi "I don't really like that she keeps calling me kid..."
     t "Right now, my only passion is ruthless business."
     $mood = "ind"
     t "It's a sinister passion, but it's duh only thing I'm good at."
     t "Well, that and holding my liquor."
     t "And wrapping cute young guys around my thumb."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
     t "But my body can only take so much alcohol and so many cute guys."
     t "So for now, my life is dedicated to my work."
+    hide popwow
     #b "Didn't you have hobbies as a kid?"
     #t "My hobby was investing."
     #t "...and cute guys, even in high school."
@@ -1543,7 +1564,7 @@ label postFT2:
     t "Duh guy in the painting behind me?"
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
-        xcenter .35
+        xcenter .41
         ycenter .25
         zoom .75
     t "His name's Mr. Sydell."
@@ -1552,27 +1573,35 @@ label postFT2:
     hide popwow
     t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
+    call popwowb
     t "But I think at at some point my company sunk his company into duh ground."
     t "I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
-    t "If you want to pretend to be useful some more you can go around asking about him tomorrow."
+    b "Your company bankrupted him and you couldn't even remember his name?"
+    t "Them's duh breaks, kid."
+    t "If you want to pretend to be useful some more, you can go around asking about him tomorrow."
     $mood = "ind"
     bi "Sydell... I don't think I've heard the name before."
-    bi "Would anyone confess to knowing him?"
+    b "Would anyone confess to knowing him?"
     t "Here, I'll get you started."
+    t "Hey Shahar, ever heard of Mr. Sydell?"
     show shahar drunk with moveinleft:
         rotate 30
         xcenter .05
         ycenter .5
-    t "Hey Shahar, ever heard of Mr. Sydell?"
     h "Is that a fellow pirate?"
     h "Unless he's a ocean lover like myself, I reckon I don't know him lad."
     bi "As expected."
     hide shahar with moveoutleft
     t "Anyways, see, in two minutes I've done more for us while drunk than you did in a day while sober."
     t "I'm not trying to be harsh on you, kid."
-    t "You didn't do anything useful because there's very little useful to do."
+    t "You didn't do anything useful... because there's very little useful to do."
     t "Someone already has been assigned to murder, someone's going to have to be their victim."
     t "Nothing you do will save them."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .43
+        ycenter .275
+        zoom .75
     t "What a jarring change from my day-to-day this all is..."
     t "I used to be so powerful that there'd be assassination attempts on me weekly."
     t "My team got so used to it they'd even turn hitmen back around to kill their bosses." #febreview
@@ -1588,9 +1617,16 @@ label postFT2:
     t "And so duh best thing you can do is whatever has you most ready to deal with duh fallout of duh shitty thing."
     t "And for a gal like me with a robust liver, drinking to relax is that thing."
     b "I... kind of followed until the last part."
+    t "Well..."
     t "I've given up, kiddo."
     b "..."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
     t "Hey Pirate boy, whatcha doin over there?"
+    hide popwow
     show stella drunk:
         linear .3 xcenter .75
     show shahar drunk:
@@ -1604,6 +1640,7 @@ label postFT2:
     t "Don't pirates drink a lot? This feels very uncharacteristic for one."
     h "Aye, I just... haven't been out to sea in a while."
     $mood = "ind"
+    call pophuhb
     b "Oh? Why's that?"
     h "I'd rather not talk about it laddy, you don't ask a man why he hasn't had a lover in a while."
     h "And the sea is my love."
@@ -1618,10 +1655,12 @@ label postFT2:
     t "Ooh, duh boys are about to fight!"
     t "Catfight! Catfight! Catfight!"
     hide popmad
+    $mood = "shock"
     b "What? No! I don't want to fight!"
     b "Sorry, I won't say anything else about it."
     show shahar ind:
         xcenter .25
+    $mood = "ind"
     h "Look laddy, maybe I'm getting old."
     h "Pirate life, it's long hours, good pay but asks a lot of ye."
     h "What little time you're not working you're drinking, does a toll on yer body."
@@ -1646,12 +1685,24 @@ label postFT2:
     b "Never mind."
     bi "Not worth getting into an argument over this."
     t "Speaking of a pirate's life, don't pirates own a lot of jewelry?"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
+
     t "Shahar I feel like you're rather... bare."
     t "Not that anyone minds."
     h "Ay, you're right about that."
+    hide pophearts
     h "I do own a chestful of booty!"
     h "But booty's inconvenient to carry round."
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     t "Ooh yeah, a fat booty makes walking hard."
+    t "Easier to look at though."
+    hide pophearts
     #b "I... don't think that's what he meant."
     #t "Oh trust me hun, I get it."
     h "Regardless, we had nary a chance to prepare for this game!"
@@ -1662,12 +1713,20 @@ label postFT2:
     $mood = "sad"
     b "Or, we could pass the time by sleeping."
     t "I don't know if I can approve of stealing from duh rich given... well, you know."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .36
+        ycenter .25
+        zoom .75
     h "Aye lass, it's not like I'm pillaging your village!"
     t "Hmm, that is true."
+    hide popwow
     t "After what my lawyers did to this guy, he's probably too poor now to enjoy his life anyway."
+    t "Hahaha! Loser!"
     t "Alright, let's steal something!"
     t "Woo!"
     hide stella with moveoutright
+    call poptearb
     blank "Thud."
     bi "...Stella took two steps and fell over."
     show stella drunk with moveinbottom:
@@ -1701,17 +1760,26 @@ label postFT2:
     bi "Stella was off before we could even get started."
     bi "Dracula's probably not going to be very happy about our noise level after this..."
     scene black with dissolve
-    scene bg nmansionhall at bg with fade
+    scene bg nmansionhall at bg
     $showchibint("shahar", "stella")
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=4)
+    with fade
     show stella drunk:
         xcenter .75
     show shahar drunk:
         xcenter .25
     with moveinleft
     b "Be quiet, we don't want to wake up anyone sleeping."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .36
+        ycenter .25
+        zoom .75
     h "Plundering isn't about being quiet! CHAAAAAARGE!"
-    t "Yay, stealing from duh rich! This must be what Robin Hood felt like."
+    hide popwow
+    t "Yay, stealing from duh rich!"
+    t "This must be what Robin Hood felt like."
+    b "I don't think it counts if you're a billionaire, and plan on keeping what you steal..."
     hide shahar
     hide stella
     with moveoutright
@@ -1719,6 +1787,7 @@ label postFT2:
     $showchibint("sam")
     show sam ind with dissolve
     s "Didn't expect the noise out here to be you."
+    call poptearb
     b "Sorry, you probably heard Shahar yelling... they're not letting me sleep and are a bit hard to control."
     s "Think you can keep them quieter? Some of us are trying to sleep."
     b "Yeah, I'll try..."
@@ -1730,26 +1799,34 @@ label postFT2:
     $mood = "ind"
     b "Sigh."
     b "Okay, to the bathroom we go."
-    scene black with fade
-    scene bg mansionbr at bg
+    scene bg mansionbr at bg with dissolve
 
     show stella drunk:
         xcenter .75
     show shahar drunk:
         xcenter .25
-    with fade
+    with dissolve
     $statusnt("Bathroom", "bert", ch=2, sun=4)
     $showchibint("shahar", "stella")
+    $mood = "sad"
     h "Ay lad, what took ye so long!"
     b "We should really be quieter, there are people sleeping on the other side of these walls."
     t "Psh, I've fell asleep in duh corners of clubs, they can sleep through a little tomfoolery."
     b "That... doesn't sound like the safest idea, sleeping in a club."
     b "And you know someone on the other side of the walls might be trying to kill us?"
     b "Probably shouldn't give them a reason."
+    $mood = "ind"
     t "Damn, you really are a killjoy."
     t "Maybe I'll start calling you that."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .65
+        ycenter .25
+
     t "Well Killjoy, do you have any idea how to steal this sink knob?"
     t "We pulled on it real hard but no luck."
+    hide pophuh
     b "Did you check under the sink?"
     h "Like... in the cabinet under it?"
     b "Yeah. In a fancy house like this, the nuts and bolts of the sink are in the cabinet."
@@ -1774,8 +1851,6 @@ label postFT2:
     bi "Hm... if I lie about it, maybe they'll give up."
     b "Okay, going in."
     b "..."
-    hide stella
-    hide shahar
     show scary:
         alpha .5
     with dissolve
@@ -1783,18 +1858,14 @@ label postFT2:
     b "Hm, sorry guys, I don't see any way to detach the handles from the sink down here."
     bi "That was a lie. There were some bolts holding the handles in place."
     hide scary with dissolve
-    show stella drunk:
-        xcenter .75
-    show shahar drunk:
-        xcenter .25
-    with dissolve
     h "By Davy Jones... this plundering mission might be over lads."
     h "Oh well, it was a noble effort! Let's go sleep."
     t "Ugh, fine. I'm starting to come down anyway."
     $mood = "happy"
     bi "Finally..."
+    stop music fadeout 1.0
     scene black with fade
-    bi "With that, we headed downstairs and finally went to sleep."
+    "With that, they downstairs and slept in the dining room."
     pause 1
     $mood = "ind"
     blank "The next morning..."
@@ -1803,6 +1874,7 @@ label postFT2:
     bi "..."
     bi "What time is it?"
     $showchibint("shahar", "stella")
+    play music "audio/rush.mp3" fadein 1.0
     bi "Those two are still asleep."
     $showchibint("shahar", "stella", "catherine")
     show catherine2 happy with dissolve
@@ -1814,8 +1886,13 @@ label postFT2:
     b "Oh... yeah, that'd explain why I'm so tired."
     b "What are you doing down here before everyone else?"
     $mood = "ind"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     c "I'm getting ready for the party tonight!"
     c "Going to be cooking all day pretty much, we have a feast planned."
+    hide pophearts
     c "Freddy offered to \"take care\" of Sesame today, which is great since I don't want his fur or anything getting in the food."
     c "Plus there's some stuff in the kitchen he shouldn't eat..."
     b "Wait, besides alcohol?"
@@ -1831,7 +1908,7 @@ label postFT2:
     hide catherine2
     show catherine2 ind
     $mood = "ind"
-    b "Stella said the guy in the picture is a Mr. Sydell. You ever seen or heard of him?"
+    b "Stella said the guy in the picture over the fireplace is a Mr. Sydell. You ever seen or heard of him?"
     c "Hmm... no, can't say that I have. Unless he was an extra in one of the dramas I watched."
     c "But extras probably don't make enough money to live somewhere like here, right?"
     c "Damn, Hollywood is rough."
@@ -1854,9 +1931,14 @@ label postFT2:
     d "Good morning, Bert."
     b "Morning."
     d "I must say, it was quite loud last night."
+    call poptearb
     b "Sorry, I can't really do much to control the drunkards."
     b "I did try to at least get them to sleep as early as I could..."
     d "I suppose it's not your fault if you tried."
+    b "You're not mad?"
+    b "I thought you might drink my blood or something."
+    d "I don't think you're... my type."
+    bi "..."
     $mood = "ind"
     d "Well, that is all I wished to say. I am returning to my room to think."
     d "If you wish to talk, I will be in there, although we should perhaps wait until Sid is awake."
@@ -1868,7 +1950,6 @@ label postFT2:
     bi "Oh well, I should find some way to kill time."
     bi "Maybe I'll go upstairs and see who there is to talk to."
     bi "Wouldn't want to distract Shahar and Stella's beauty sleep..."
-    scene black with fade
     scene bg mansionhall at bg with fade
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=1)
     $showchibint("jenny", "sam")
@@ -1880,14 +1961,20 @@ label postFT2:
     j "Oh, Bert."
     j "Good morning! Sam and I were just about to head downstairs and help out Catherine."
     b "Oh, you guys can cook?"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .25
+        ycenter .5
     j "Not as experienced as Catherine, but I like being helpful!"
     s "I'm more of a baker. Gonna make some dessert."
+    hide pophearts
     s "Some of my customers prefer to receive their product in brownies or cookies, so I got pretty good at baking."
     #s "Plus, there's not exactly much else to do until the party tonight."
     #b "Well, unless you want to get super drunk like Stella and Shahar did."
     #s "Eh, day drinking's not really my thing."
     j "Oh yeah, how was last night?"
     j "I heard some noise."
+    call poptearb
     b "They uh... tried to steal the sink knob from the bathroom."
     j "...Why?"
     b "Boredom, I guess?"
@@ -1909,23 +1996,35 @@ label postFT2:
     bi "Nope, closet is still locked."
     bi "Well, I guess I have some time to kill before the party."
     bi "Everyone's probably awake by now, maybe I can find someone to talk to?"
-    play sfx "audio/beep.mp3"
+
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
-    call screen hallway with fade
+   #############
+   #FREE TIME FTE ARUN
+   #############
+    play music "audio/cobwebs.mp3" fadein 2.0
+    call screen midCar with fade
+
+
 label postFT3:
     $ftecounter = 4
     scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibint("shahar", "stella")
-    bi "Well, I still have a tiny amount of time to kill before the party."
+    bi "Well, I still have a tiny amount of time before-"
     $showchibint("shahar", "stella", "lauren")
     show lauren ind with dissolve
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .65
+        ycenter .25
     l "Hey, Bert, are you busy right now?"
     b "Uh... I guess not."
+    hide pophuh
     l "Do you mind watching over Freddy, and I guess Sesame?"
     l "I've been with them all day and was hoping to take a shower while I could..."
     b "Yeah, I don't mind."
