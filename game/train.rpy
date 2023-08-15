@@ -1357,7 +1357,7 @@ label testft:
    #FREE TIME ONE
    #############
    #JULIAN note to self
-    play music "audio/cobwebs.mp3" fadein 5.0
+    play music "audio/cobwebs.mp3" fadein 2.0
     tut "Throughout the game, there will be free time segments."
     tut "In these segments, you will have the opportunity to talk with other participants and get to know them better."
     tut "You can use the map icon, in the top right, to navigate around the train and find people."

@@ -36,15 +36,10 @@ screen mansionmap():
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
             unhovered Hide("mapPreview")
-        hotspot(497, 310, 218, 158):
-            if ftecounter != 4:
-                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
-            unhovered Hide("mapPreview")
         hotspot(234, 544, 225, 140):
             if ftecounter != 4:
-                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
+                action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
+            hovered ShowTransient("mapPreview", img="mansionmapoverlay7.png")
             unhovered Hide("mapPreview")
         hotspot(463, 543, 251, 141):
             if ftecounter != 4:
@@ -279,7 +274,7 @@ screen hallway():
             action [Hide("hallway", transition = Dissolve(1.0)), Jump("jennAsk2")]
 
 screen bedroom():
-    add "bg mansionbedroom.png"
+    add "bg mansionbedroom1.png"
     add "status.png"
     add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -308,7 +303,7 @@ screen bedroom():
             action [Show("skipFT", transition=Dissolve(0.3))]
 
 screen bedroomFL():
-    add "bg mansionbedroom.png"
+    add "bg mansionbedroom2.png"
     add "status.png"
     add Text("{b}Bedroom{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
