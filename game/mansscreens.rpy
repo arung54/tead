@@ -203,11 +203,6 @@ screen dining():
             ypos 320
             idle "stellachibi.png" at chibizoom
             action [Hide("dining", transition = Dissolve(1.0)), Jump("stelAsk4")]
-        imagebutton:
-            xpos 20
-            ypos 370
-            idle "sidchibi.png" at chibizoom
-            action [Hide("dining", transition = Dissolve(1.0)), Jump("sidAsk4")]
 
 screen garage():
     add "bg mansiongarage.png"
