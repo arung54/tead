@@ -665,6 +665,69 @@ screen game_menu(title, scroll=None, yinitial=0.0):
         key "game_menu" action ShowMenu("main_menu")
 
 
+screen game_menu_no_nav(title, scroll=None, yinitial=0.0):
+
+    style_prefix "game_menu"
+
+    add "menured.png"
+    add "vinegar.png"
+    add "menubgscroll2"
+    frame:
+        style "game_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            frame:
+                style "game_menu_navigation_frame"
+
+            frame:
+                style "game_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    textbutton _("Back"):
+        style "return_button"
+        text_hover_color "#929292"
+        xcenter .07
+        action Return()
+
+    label title
+
+    if main_menu:
+        key "game_menu" action ShowMenu("main_menu")
+
 style game_menu_outer_frame is empty
 style game_menu_navigation_frame is empty
 style game_menu_content_frame is empty
@@ -821,6 +884,13 @@ screen load():
     use file_slots(_("Load"))
 
 
+screen load_no_nav():
+
+    tag menu
+
+    use file_slots_no_nav(_("Load"))
+
+
 screen file_slots(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
@@ -892,6 +962,76 @@ screen file_slots(title):
 
                 textbutton _(">") action FilePageNext()
 
+screen file_slots_no_nav(title):
+
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+
+    use game_menu_no_nav(title):
+        fixed:
+            ## This ensures the input will get the enter event before any of the
+            ## buttons do.
+            order_reverse True
+            button:
+                style "page_label"
+
+                key_events True
+                xalign 0.5
+                action page_name_value.Toggle()
+
+                input:
+                    style "page_label_text"
+                    value page_name_value
+
+            ## The grid of file slots.
+            grid gui.file_slot_cols gui.file_slot_rows:
+                style_prefix "slot"
+
+                xalign 0.5
+                yalign 0.5
+
+                spacing gui.slot_spacing
+
+                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+
+                    $ slot = i + 1
+
+                    button:
+                        action FileAction(slot)
+
+                        has vbox
+
+                        add FileScreenshot(slot) xalign 0.5
+
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                            style "slot_time_text"
+
+                        text FileSaveName(slot):
+                            style "slot_name_text"
+
+                        key "save_delete" action FileDelete(slot)
+
+            ## Buttons to access other pages.
+            hbox:
+                style_prefix "page"
+
+                xalign 0.5
+                yalign 1.0
+
+                spacing gui.page_spacing
+
+                textbutton _("<") action FilePagePrevious()
+
+                if config.has_autosave:
+                    textbutton _("{#auto_page}A") action FilePage("auto")
+
+                if config.has_quicksave:
+                    textbutton _("{#quick_page}Q") action FilePage("quick")
+
+                ## range(1, 10) gives the numbers from 1 to 9.
+                for page in range(1, 10):
+                    textbutton "[page]" action FilePage(page)
+
+                textbutton _(">") action FilePageNext()
 
 style page_label is gui_label
 style page_label_text is gui_label_text
