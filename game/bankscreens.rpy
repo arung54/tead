@@ -47,7 +47,10 @@ screen break():
     add "status.png"
     add Text("{b}Staff Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 8 or ftecounter == 10:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 9:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -71,7 +74,10 @@ screen lobby():
     add "status.png"
     add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 8 or ftecounter == 10:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 9:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -143,7 +149,10 @@ screen hall():
     add "status.png"
     add Text("{b}Bank Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 8 or ftecounter == 10:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 9:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -184,7 +193,10 @@ screen office():
     add "status.png"
     add Text("{b}Director's Office{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 8 or ftecounter == 10:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 9:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -219,7 +231,10 @@ screen locker():
     add "status.png"
     add Text("{b}Locker Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 8 or ftecounter == 10:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 9:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
