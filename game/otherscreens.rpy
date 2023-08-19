@@ -279,7 +279,16 @@ screen skipFT():
 
 screen freeTimeCounter():
     imagemap:
-        ground "characterscreen.png"
+        if ftecounter < 2:
+            ground "characterscreen.png"
+        elif ftecounter < 5:
+            ground "characterscreen2.png"
+        elif ftecounter < 8:
+            ground "characterscreen3.png"
+        elif ftecounter < 11:
+            ground "characterscreen4.png"
+        else:
+            ground "characterscreen5.png"
         hotspot(47, 38, 99, 41):
             action [Function(hideCards), SetVariable("pers", "NONE"), Hide("freeTimeCounter", transition=Dissolve(0.3))]
         if pers != "ber":
