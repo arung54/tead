@@ -1,4 +1,5 @@
 label bankGo:
+    $ftecounter = 8
     $noside = True
     camera at paralloff
     scene black
@@ -104,7 +105,6 @@ label bankGo:
     scene black
     blank "In the present..."
     camera at parallax
-    $ftecounter = 8
     scene black
     $mood = "sad"
     bi "Two more people dead..."
@@ -685,8 +685,15 @@ label bank3:
     bi "I can't blame her, this is a lot of new information to take in."
     bi "Well, it seems like everyone's doing something for a bit."
     bi "Let's make sure we stay upbeat and keep busy."
-    ### FTE 1 goes here
-label bank4:
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    call screen lobby with fade
+label postFT8:
+    $ftecounter = 9
     scene black with dissolve
     bi "After a while, everyone returned to the lobby."
     bi "We brought some food from the kitchen and recapped what we found."
@@ -1190,8 +1197,15 @@ label bank4:
     bi "These peanut butter bars are pretty good..."
     bi "Anyway, I've got a little while before we're chatting with Freddy."
     bi "Maybe I'll find someone to spend the time with?"
-    #FTE 2 GOES HERE
-label bank45:
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    call screen lobby with dissolve
+label postFT9:
+    $ftecounter = 10
     scene bg banklobby
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
     $ showchibint("freddy", "lauren", "jenny", "sam", "sid")
@@ -1524,8 +1538,14 @@ label bank5:
     bi "I think I was rebelious around his age too."
     bi "I've got a while until I need to meet back up with everyone."
     bi "Let's find someone to talk to."
-    #FTE 3 goes here
-label bank7:
+    play sfx "audio/beep.mp3"
+    show freetime with dissolve:
+        ycenter .4
+        linear 4 ycenter .5
+    pause 2
+    hide freetime with dissolve
+    call screen lobby with dissolve
+label postFT10:
     scene black
     bi "After spending some time chatting, I went back to the lobby."
     scene bg banklobby

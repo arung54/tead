@@ -1,4 +1,5 @@
 label hospitalGo:
+    $ftecounter = 5
     $noside = True
     camera at paralloff
     scene black
@@ -54,7 +55,6 @@ label hospitalGo:
     zr "A few emails, and I think he'll do what we need..."
     stop music fadeout 3.0
     $noside = False
-    $ftecounter = 5
     scene black
     camera at parallax
     blank "In the present..."#febmusic
@@ -1547,10 +1547,12 @@ label postcupcake:
     hide freetime with dissolve
     bi "I'd talked to Lauren and Sam, but I guess I could talk to them more or talk to someone else."
     call screen hospKitchen with fade
-    $ftecounter = 5
 label postFT5:
-    show jenny ind with dissolve
-    play music "audio/unity.mp3" fadein 1.0
+    $statusnt("Kitchen", "bert", ch=3, sun=1)
+    show jenny happy
+    $showchibint("jenny", "window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
+    play music "audio/rush.mp3" fadein 1.0
+    with dissolve
     j "And, all done with cleaning!"
     j "I'm gonna go relax in the lounge, Bert."
     b "You don't want to talk to the others?"
@@ -2091,7 +2093,6 @@ label chess3:
     pause 2
     hide freetime with dissolve
     call screen patientcommons with fade
-    $ftecounter = 6
 label postFT6:
     scene bg hospcommons at bg
     $showchibiwindow(["lauren", "freddy", "jenny", "shahar", "sam"], ["sid", "dracula"])
@@ -2326,15 +2327,14 @@ label postFT6:
     bi "Well, have to kill time somehow."
     bi "I guess I should strike up a conversation with someone..."
     bi "Unfortunately, it seems Sid is busy, so it can't be him."
-    $ftecounter = 7
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
-    call screen patientcommons with fade
     $ftecounter = 7
+    call screen patientcommons with fade
 label postFT7:
     bi "What felt like a few hours passed with some idle chit-chat, but it was hard to tell."
     bi "It could have been minutes, or a full day."

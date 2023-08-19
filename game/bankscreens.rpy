@@ -38,16 +38,12 @@ screen bankMap():
             action [Hide("lobby"), Hide("break"), Hide("hall"), Hide("safe"), Hide("office"), Hide("locker"), Show("locker", transition=Dissolve(0.3)), Hide("bankMap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="bankmapoverlay3.png")
             unhovered Hide("mapPreview")
-        hotspot(726, 387, 260, 259):
-            action [Hide("lobby"), Hide("break"), Hide("hall"), Hide("safe"), Hide("office"), Hide("locker"), Show("safe", transition=Dissolve(0.3)), Hide("bankMap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="bankmapoverlay7.png")
-            unhovered Hide("mapPreview")
     imagemap:
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("bankMap", transition=Dissolve(0.3)), Hide("mapPreview")]
 
 screen break():
-    add "bg bankbreak2.png"
+    add "bg bankbreak.png"
     add "status.png"
     add Text("{b}Staff Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -71,7 +67,7 @@ screen break():
             action [Show("skipFT", transition=Dissolve(0.3))]
 
 screen lobby():
-    add "bg bankbreak2.png"
+    add "bg banklobby1.png"
     add "status.png"
     add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -93,9 +89,57 @@ screen lobby():
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
+    if ftecounter == 8:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "jennychibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("jennAsk8")]
+    if ftecounter == 9:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "freddychibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("frogAsk9")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "jennychibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("jennAsk9")]
+        imagebutton:
+            xpos 20
+            ypos 120
+            idle "laurenchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("laurAsk9")]
+        imagebutton:
+            xpos 20
+            ypos 170
+            idle "samchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("samAsk9")]
+        imagebutton:
+            xpos 20
+            ypos 220
+            idle "sidchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("sidAsk9")]
+    if ftecounter == 10:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "laurenchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("laurAsk10")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "samchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("samAsk10")]
+        imagebutton:
+            xpos 20
+            ypos 120
+            idle "sidchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("sidAsk10")]
 
 screen hall():
-    add "bg bankbreak2.png"
+    add "bg bankvault.png"
     add "status.png"
     add Text("{b}Bank Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
@@ -117,11 +161,28 @@ screen hall():
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
+    if ftecounter == 8:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "sidchibi.png" at chibizoom
+            action [Hide("hall", transition = Dissolve(1.0)), Jump("sidAsk8")]
+    if ftecounter == 10:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "freddychibi.png" at chibizoom
+            action [Hide("hall", transition = Dissolve(1.0)), Jump("frogAsk10")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "jennychibi.png" at chibizoom
+            action [Hide("hall", transition = Dissolve(1.0)), Jump("jennAsk10")]
 
 screen office():
-    add "bg bankbreak2.png"
+    add "bg bankoffice.png"
     add "status.png"
-    add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Director's Office{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -141,11 +202,22 @@ screen office():
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
+    if ftecounter == 8:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "freddychibi.png" at chibizoom
+            action [Hide("hall", transition = Dissolve(1.0)), Jump("frogAsk8")]
+        imagebutton:
+            xpos 20
+            ypos 70
+            idle "laurenchibi.png" at chibizoom
+            action [Hide("hall", transition = Dissolve(1.0)), Jump("laurAsk8")]
 
 screen locker():
-    add "bg bankbreak2.png"
+    add "bg banklocker.png"
     add "status.png"
-    add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Locker Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -165,27 +237,9 @@ screen locker():
         idle "skipicon" at iconzoom
         if ftecounter > 0:
             action [Show("skipFT", transition=Dissolve(0.3))]
-
-screen safe():
-    add "bg bankbreak2.png"
-    add "status.png"
-    add Text("{b}Bank Lobby{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
-    add "ch4.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun4.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
-    imagebutton:
-        xalign 1.0
-        yalign 0.175
-        idle "mapicon" at iconzoom
-        action [Show("bankMap", transition=Dissolve(0.3))]
-    imagebutton:
-        xalign 1.0
-        yalign 0.275
-        idle "hearticon" at iconzoom
-        action [Show("freeTimeCounter", transition=Dissolve(0.3))]
-    imagebutton:
-        xalign 1.0
-        yalign 0.375
-        idle "skipicon" at iconzoom
-        if ftecounter > 0:
-            action [Show("skipFT", transition=Dissolve(0.3))]
+    if ftecounter == 8:
+        imagebutton:
+            xpos 20
+            ypos 20
+            idle "samchibi.png" at chibizoom
+            action [Hide("locker", transition = Dissolve(1.0)), Jump("samAsk8")]

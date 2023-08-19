@@ -52,7 +52,10 @@ screen security():
     add "status.png"
     add Text("{b}Security{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -76,7 +79,10 @@ screen closet():
     add "status.png"
     add Text("{b}Closet{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -100,7 +106,10 @@ screen guardroom():
     add "status.png"
     add Text("{b}Guards' Commons{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -124,7 +133,10 @@ screen hallwayTL():
     add "status.png"
     add Text("{b}Guards' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -148,7 +160,10 @@ screen hallwayTR():
     add "status.png"
     add Text("{b}Guards' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -172,7 +187,10 @@ screen hallwayBR():
     add "status.png"
     add Text("{b}Patients' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -196,7 +214,10 @@ screen hallwayBL():
     add "status.png"
     add Text("{b}Patients' Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -220,7 +241,10 @@ screen hospKitchen():
     add "status.png"
     add Text("{b}Kitchen{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
@@ -280,7 +304,10 @@ screen patientcommons():
     add "status.png"
     add Text("{b}Cafeteria{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-    add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0 #TODO: Make cases for this
+    if ftecounter == 5 or ftecounter == 6:
+        add "sun1.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    if ftecounter == 7:
+        add "sun2.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
     imagebutton:
         xalign 1.0
