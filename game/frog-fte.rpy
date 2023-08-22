@@ -311,7 +311,6 @@ label frogHang:
         bi "I feel like Freddy's starting to trust me."
         bi "If only I could use that trust to explain things to him properly..."
 
-
     #Bert post-3
     if fte_frog >= 3:
         bi "I enjoyed some time with frog, if only because of his pirate speak."
