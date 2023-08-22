@@ -171,11 +171,60 @@ label jennHang:
         ni "But she seems like a useful person to have around, at least."
 
 
-
-
     #Bert FTE 1
-    #if fte_jenn == 0:
-        #h "Ahoy laddy! What can I do fer ye?"
+    if fte_jenn == 0:
+        j "Bert! How are you doing?"
+        b "Um... I mean, I guess as good as I can be doing in a situation like this."
+        j "Ha! Good one."
+        b "...Thanks?"
+        bi "She's so upbeat about... well, nothing really."
+        b "You seem like you're in a good mood."
+        j "Yeah! One upside about being here is I have a lot of time to just think."
+        j "And I've been playing a lot of mental poker and learning a lot."
+        b "Mental poker?"
+        j "Oh, yeah, I forget if I've told you but I'm really into poker!"
+        bi "She has, but, she seems like the type whose brain moves too fast to remember these things."
+        j "So mental poker is basically playing poker hands in your head."
+        j "Kind of like how chess grandmasters can play chess without a board!"
+        b "But... they still need somebody to play with, right?"
+        b "Like, if you play poker with yourself, there's no bluffing or anything."
+        b "Not to mention, with chess there's no luck or hidden information."
+        b "But with mental poker, you can't randomize the hands or make sure you're not lying."
+        b "I'd just say I have two aces everytime and you couldn't disprove me..."
+        j "Well, I'm not playing with anyone, so I don't need two people!"
+        j "And since I'm not playing with anyone there's no need to make sure I'm not lying."
+        b "But... where's the sport in playing with yourself?"
+        j "Well, saying I'm playing mental poker is probably a bit misleading."
+        j "I'm basically just coming up with example hands, and trying to work out a play."
+        j "Like, for example, if I'm big blind with a pair of twos and three people fold, two people check..."
+        j "Should I raise?"
+        j "Then I can try to work out how likely raising is to lead to a favorable situation."
+        b "But... how do you know what your, er, opponents have?"
+        j "Well, if no one raised I can make a reasonable guess what their hands are."
+        j "For example, I'd always raise pre-flop with pocket aces."
+        j "But given one person didn't fold who wasn't the small blind at a table of six..."
+        j "They must have a reasonably strong hand. At least adjacent or suited cards."
+        b "Uh..."
+        bi "I realize I don't know as much poker as I thought I did."
+        b "...Wouldn't it be easier to like, make a deck of cards out of something?"
+        j "...Make a deck of cards?"
+        b "I don't know, I imagine if we had a pen and paper you could just tear the paper up."
+        b "And then write the names of the cards on all the pieces."
+        b "And then some of us could play hands with you. It'd be a good way to kill the time."
+        j "Eh... no offense Bert, but I don't know if playing with the people here would be good practice."
+        j "Not to mention, if we didn't tear the paper perfectly, I might just memorize the shapes."
+        b "The shapes?"
+        j "Like, the shapes of the torn paper."
+        j "It's not like we'll make perfect rectangles."
+        b "..."
+        j "But, pen and paper would make it easier to write down what I've figured out."
+        j "That's a good idea Bert! I should go look for some."
+        j "Seeya!"
+        scene black with fade
+        bi "I wouldn't have guessed it when I met her, but..."
+        bi "Turns out Jenny's a huge nerd. Probably ten times smarter than I am."
+        bi "Does that mean she'll be a useful ally? Or someone to look out for? Hm..."
+
 
     #Bert FTE 2
     #if fte_jenn == 1:
