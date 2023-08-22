@@ -48,29 +48,34 @@ label kaisHang:
         ni "... I thought {i}I{/i} wasn't very personable..."
         show scary with dissolve:
             alpha .5
-        ni "Do I have any questions for Kaiser? Ummm..."
-        menu:
-            ni "Do I have any questions for Kaiser? Ummm..."
+        $menuset = set()
+        label kaiserQuestions:
+            menu:
+                set menuset
+                ni "Do I have any questions for Kaiser? Ummm..."
 
-            "How old are you?":
-                hide scary with dissolve
-                n "I'm 27."
+                "How old are you?":
+                    hide scary with dissolve
+                    n "I'm 27."
+                    jump kaiserQuestions
 
-            "Any hobbies?":
-                hide scary with dissolve
-                n "Hmm. Biking."
+                "Any hobbies?":
+                    hide scary with dissolve
+                    n "Hmm. Biking."
+                    jump kaiserQuestions
 
-            "Do you think we'll get out of this alive?":
-                hide scary with dissolve
-                k "Hm, no."
+                "Do you think we'll get out of this alive?":
+                    hide scary with dissolve
+                    k "Hm, no."
+                    jump kaiserQuestions
 
-        k "Anything else?"
-        n "Um, no, that's all I guess."
-        k "I see. It's been a pleasure."
-        hide kaiser ind with dissolve
-        ni "\"{i}It's been a pleasure?{/i}\" Is that a dash of personality I hear?!"
-        ni "Maybe we did bond, a little bit."
-        scene black with fade
+            k "Anything else?"
+            n "Um, no, that's all I guess."
+            k "I see. It's been a pleasure."
+            hide kaiser ind with dissolve
+            ni "\"{i}It's been a pleasure?{/i}\" Is that a dash of personality I hear?!"
+            ni "Maybe we did bond, a little bit."
+            scene black with fade
 
     $fte_kais += 1
     hide kaiser with dissolve
