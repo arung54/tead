@@ -57,6 +57,13 @@ label cathHang:
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
+    if fte_cath == 0:
+
+    if fte_cath == 1:
+
+    if fte_cath == 2:
+
+
 
     $fte_cath += 1
     hide catherine with dissolve

@@ -173,6 +173,7 @@ label jennHang:
 
     #Bert FTE 1
     if fte_jenn == 0:
+        show jenny happy
         j "Bert! How are you doing?"
         b "Um... I mean, I guess as good as I can be doing in a situation like this."
         j "Ha! Good one."
@@ -225,14 +226,96 @@ label jennHang:
         bi "Turns out Jenny's a huge nerd. Probably ten times smarter than I am."
         bi "Does that mean she'll be a useful ally? Or someone to look out for? Hm..."
 
+    if fte_jenn == 1:
+        show jenny happy
+        j "Hey Bert! I feel like I talk about myself a lot when we hang out..."
+        j "I want to ask you something instead!"
+        b "Oh. Sure, go for it!"
+        j "What's your favorite paradox?"
+        b "Huh?"
+        j "You know, like, a self-contradicting idea."
+        b "Oh, I know what a paradox is, just... I don't know, I don't have a favorite paradox ready."
+        b "Hm... I guess I like the grandfather paradox."
+        j "Oh, that's a classic."
+        j "Though it's not really a paradox, if you believe in parallel universes."
+        b "Huh?"
+        j "Well the contradiction is that you can't kill your grandfather and be born later."
+        j "But if you killed him in a different universe, then there'd be no contradiction."
+        b "Oh... I guess that's true."
+        show jenny ind
+        j "Hm... there's a lot of killing in this paradox."
+        j "Kind of suspicious to ask..."
+        b "What? No, it's just one of the most famous ones!"
+        show jenny happy
+        j "Just kidding Bert! I don't think you're suspicious."
+        j "If anything you're one of the most trustworthy guys here!"
+        b "Oh... it was a joke."
+        j "Anyway, ask me about my favorite paradox!"
+        b "Um... okay, what's your favorite paradox?"
+        j "It's kind of a boring answer, but the Banach-Tarski paradox is so cool!"
+        b "Oh... yeah, that one is cool, haha."
+        show jenny ind
+        j "...You don't know what it is, do you?"
+        b "No, that wasn't a very convincing lie, was it."
+        j "Not really, no."
+        show jenny happy
+        j "It's okay Bert! Most people probably don't know about it."
+        b "But... you said it's a boring answer."
+        b "I assume it must be pretty well-known."
+        j "Oh, it's popular in math circles, but I don't think the average person knows it."
+        j "And even the people who know about it probably don't fully understand it."
+        j "They just know it as \"you can disassemble a ball into five parts, and make two balls out of them\"."
+        b "So... it's about generating matter from thin air?"
+        j "Kind of? It only works in theory."
+        j "Like, I can tell you how to do it, but you'd have to be able to make infinitely small cuts to the balls."
+        j "It would be cool if it worked in real life, but obviously it can't."
+        bi "I could feel my eyes glazing over..."
+        j "Ah, it's so refreshing to be able to talk about this stuff."
+        show jenny ind
+        j "I miss this from the outside, having stimulating conversations with my peers."
+        bi "I wouldn't say I'm her peer, seems like she's way more knowledgeable here than I am..."
+        j "Ooh, but you've at least heard of Hilbert's hotel, right?"
+        b "Gabbo Hotel?"
+        j "No, Hilbert's!"
+        scene black with fade
+        bi "Jenny gave me what was basically a lecture about infinity and paradoxes..."
+        bi "I didn't understand much, but I could tell it let her escape this place for a bit, so I was happy to listen."
 
-    #Bert FTE 2
-    #if fte_jenn == 1:
-        #h "Mate! Back for more tales of the sea?"
-
-    #Bert FTE 3
-    #if fte_jenn == 2:
-        #h "Back again lad? You must love hearing tales of the sea."
+    if fte_jenn == 2:
+        show jenny happy
+        j "Bert!"
+        j "I wanted to tell you something."
+        j "It's not about math this time, I swear!"
+        b "Oh... yeah, I mean, always happy to talk."
+        j "I just wanted to say... thanks for letting me talk to you about math and poker and stuff."
+        show jenny ind
+        j "Even at college, it's rare that I get to talk about this stuff."
+        j "I have a bit of a... difficult home life situation."
+        j "Most of my free time goes towards trying to help my parents out with whatever I can."
+        j "So even though I'm lucky enough to get to go to college..."
+        j "Well, I don't get to hang out with people on campus much."
+        j "Much less people on campus who are willing to talk about math instead of other things."
+        j "And then, well, a lot of the people who were willing to listen to me were guys, who, well..."
+        j "Were more interested in hitting on me than listening to me."
+        show jenny happy
+        j "So even though you pretended you knew what the Banach-Tarski paradox was..."
+        j "The fact that you wanted me to feel like I wasn't boring you was really nice!"
+        b "I mean... I don't feel like I really did much besides show you human decency."
+        j "Well, maybe you didn't."
+        j "But, even if that's all you did, it's something I don't get a lot of in my normal life."
+        j "So thanks Bert."
+        b "No need to thank me, haha..."
+        show jenny ind
+        j "..."
+        b "..."
+        j "So, um..."
+        j "Do you happen to know anything about stochastic calculus, Bert?"
+        b "I don't, but I'm sure you can teach me a lot about it."
+        j "Okay, so imagine a guy taking a walk on a line, but he randomly decides which way to walk every minute..."
+        scene black with fade
+        bi "Jenny gave me a... well, lecture about random walks and something called Brownian motion."
+        bi "I didn't understand most of it, but that wasn't important."
+        bi "What was important was Jenny getting a break from this game, but also from the troubles of her normal life."
 
     #Bert post-3
     #if fte_jenn >= 3:

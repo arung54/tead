@@ -165,9 +165,8 @@ label samHang:
         ni "After a surprisingly pleasant conversation with Sam, we both went seperate ways."
 
 
-    #Bert FTE 1
-    #if fte_sam == 0:
-    #    h "Ahoy laddy! What can I do fer ye?"
+    if fte_sam == 0:
+       h "Ahoy laddy! What can I do fer ye?"
 
     #Bert FTE 2
     #if fte_sam == 1:
