@@ -418,7 +418,7 @@ screen navigation():
         #imagebutton:
         #    idle "ibmenuload.png"
         #    hover "ibmenuload2.png"
-        #    focus_mask True action ShowMenu("load")
+        #    focus_mask True action ShowMenu("load_no_nav")
         imagebutton:
             idle "ibmenucontrols.png"
             hover "ibmenucontrols2.png"
