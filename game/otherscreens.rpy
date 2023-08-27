@@ -588,3 +588,51 @@ screen ch1results:
             text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
     #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
     textbutton _("Continue ->") action[Hide("ch1results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve
+
+screen ch2results:
+    modal True
+    add "ch2complete" at show_hide_dissolve
+    hbox at show_hide_dissolve:
+        ypos .875 xpos .25
+        textbutton "{i}Save:  {/i}":
+            text_color "#EDEDED" text_hover_color "#EDEDED"
+        textbutton "1":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+        textbutton "2":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+        textbutton "3":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+    #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
+    textbutton _("Continue ->") action[Hide("ch2results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve
+
+screen ch3results:
+    modal True
+    add "ch3complete" at show_hide_dissolve
+    hbox at show_hide_dissolve:
+        ypos .875 xpos .25
+        textbutton "{i}Save:  {/i}":
+            text_color "#EDEDED" text_hover_color "#EDEDED"
+        textbutton "1":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+        textbutton "2":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+        textbutton "3":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+    #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
+    textbutton _("Continue ->") action[Hide("ch3results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve
+
+screen ch4results:
+    modal True
+    add "ch4complete" at show_hide_dissolve
+    hbox at show_hide_dissolve:
+        ypos .875 xpos .25
+        textbutton "{i}Save:  {/i}":
+            text_color "#EDEDED" text_hover_color "#EDEDED"
+        textbutton "1":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+        textbutton "2":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+        textbutton "3":
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+    #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
+    textbutton _("Continue ->") action[Hide("ch4results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve

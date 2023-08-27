@@ -4633,6 +4633,7 @@ label trial2w:
 label trial2x:
     camera at parallax
     scene bg mansiondining at bg
+    play music "audio/coming_together.mp3" fadein 1.0
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sid ind
@@ -4647,7 +4648,6 @@ label trial2x:
     i "So do you think it was someone who couldn't have easily moved it around?"
     i "That means it must be Freddy!"
     show sid ind:
-        xcenter .5
         linear 0.15 xcenter .25
     show frog sad with moveinbottom:
         xcenter .75
@@ -4673,8 +4673,10 @@ label trial2x:
     b "And we don't think it's Sam because Sam wouldn't need a rope to move the generator."
     b "With that in mind, we know who must be the murderer."
     b "It can only be..."
-    show scary with dissolve:
-        alpha .5
+    hide screen status_screen
+    $showchibint()
+    show scary
+    with dissolve
     call screen chooseCharMansion("catherine", "trial2y", "Who moved the generator?") with dissolve
 label trial2y:
     scene bg mansiondining at bg
@@ -4687,6 +4689,7 @@ label trial2y:
         xcenter .42
         ycenter .25
         zoom .75
+    stop music fadeout 1.0
     c "Me? C'mon Bert, don't be silly."
     c "I was in the kitchen or dining room for the whole party, how could I move the generator?"
     c "Stella's dead, now's not the time for jokes!"
@@ -4727,6 +4730,8 @@ label trial2y:
         alpha .5
     bi "Why didn't she bring this up earlier?"
     $mood = "ind"
+    play music "audio/coming_together.mp3"
+
     bi "No, I know why. She's on the defensive. She's grasping for straws to find a way out."
     bi "Luckily, the answer is pretty obvious."
     hide scary with dissolve
@@ -4748,10 +4753,10 @@ label trial2z:
     c "..."
     c "That makes sense, but anyone could've woken up in the middle of the night and stole the wires!"
     show catherine ind:
-        xcenter .5
         linear 0.3 xcenter .25
-    show sid mad with moveinright:
+    show sid mad:
         xcenter .75
+    with moveinright
     i "No! You mean lady!"
     play sfx "audio/popmad.mp3" volume .5
     show popmad:
@@ -4789,11 +4794,12 @@ label trial2z:
     hide screen killuser
     #hide movie "ch2guilty.webm" with dissolve
     play music "audio/ominous.mp3" fadein 1.0
-    scene bg mansiondining at bg with fade
+    scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
-    show catherine ind with dissolve
-    show doom with dissolve
+    show catherine ind
+    show doom
+    with dissolve
     c "I... I lost. I won't draw it out anymore."
     show catherine happy
     play sfx "audio/pophearts.mp3" volume .5
@@ -4873,8 +4879,9 @@ label cathGivesInfo:
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show shahar ind with moveinright:
+            show shahar ind:
                 xcenter .75
+            with moveinright
             play sfx "audio/poptear.mp3" volume .5
             show poptear:
                 xcenter .675
@@ -4899,8 +4906,9 @@ label cathGivesInfo:
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show drac ind with moveinright:
+            show drac ind:
                 xcenter .75
+            with moveinright
             d "If I may interject, I have a supposition."
             d "What if the Game Master gives every murderer a location-based advantage?"
             c "Huh?"
@@ -4950,20 +4958,23 @@ label cathGivesInfo:
                 jump cathGivesInfo
 
         "Did you commit a crime here?":
+            $mood = "shock"
             c "Oh yeah, I burgled this mansion before while the owner was out."
             b "You did know Mr. Sydell?"
             c "No, I never met the guy. A shady businessman I knew that Sydell was in court that day."
             c "I waited around that day until his family left for other reasons and made my move."
             b "So... does that mean you lied to me earlier when I asked if you know who he was?"
             c "Yup! But c'mon, that's just one of many lies I told you, you won't hold that against me, right?"
+            $mood = "ind"
             b "..."
             c "Well, I guess it's fine if you do, the Game Master's gonna fry my brain or something regardless."
             b "No, I won't hold it against you, you had to do it I'm sure."
             if len(menuset) < 4:
                 jump cathGivesInfo
     c "Wait, I just remembered. Before you ask anything else, I have a request."
+    call pophuhb
     $mood = "shock"
-    ses "Mrep"
+    ses "Mrep!"
     c "Bert, can you take care of Sesame? If he doesn't also get brain-zapped, that is."
     b "Me?"
     call popwowb
@@ -4972,8 +4983,9 @@ label cathGivesInfo:
     show catherine happy:
         xcenter .5
         linear 0.15 xcenter .25
-    show shahar ind with moveinright:
+    show shahar ind:
         xcenter .75
+    with moveinright
     h "Aye lassie, yer finally speaking me language!"
     hide shahar with moveoutright
     show catherine happy:
@@ -5012,9 +5024,9 @@ label cathGivesInfo:
     s "It should be me who's dead now..."
     b "Sam, that's not-{p=0.5}{nw}"
     scene black
-    pause 1.0
     $showchibint()
     hide screen status_screen
+    pause 1.0
     $mood = "sad"
     bi "Honestly, I was a little relieved."
     bi "I thought I had gotten to know Stella and Catherine at least a little bit."
@@ -5023,9 +5035,9 @@ label cathGivesInfo:
     bi "But just as before, with no warning, we were put to sleep."
     bi "No time to mourn, no time to discuss."
     bi "Our chances to find the Game Master are running thin..."
-    play music "audio/ominous.mp3" fadein 3.0
+    play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
-############################################## end of ch1 screen
-    call screen ch2results
+    call screen ch2results with dissolve
+    stop music fadeout .5
     pause 1.0
     jump hospitalGo

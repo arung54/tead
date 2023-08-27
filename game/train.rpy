@@ -4136,16 +4136,16 @@ label trial1r:
     bi "Technically, we were closer to winning this game."
     bi "But really, we had lost more than we had won."
     b "...what no-{p=0.5}{nw}"
+    hide screen status_screen
+    $showchibint()
     scene black
     pause 1.0
     bi "A more humane person would have given us some time."
     bi "To celebrate, to reflect, to mourn."
     bi "But instead, with no warning, I passed out."
-    hide screen status_screen
-    $showchibint()
-    with dissolve
+    play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
-############################################## end of ch1 screen
-    call screen ch1results
+    call screen ch1results with dissolve
+    stop music fadeout .5
     pause 1.0
     jump mansionGo

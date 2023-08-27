@@ -1,6 +1,7 @@
 label hospitalGo:
     $noside = True
     $dan = False
+    $cat = False
     camera at paralloff
     scene black
     pause 2.0
@@ -94,11 +95,12 @@ label hospitalGo:
     bi "Right, I'm an unwilling cat owner now."
     bi "I found the energy to open my eyes."
     play music "audio/rush.mp3" fadein 1.0
-    scene bg hosproom1 at bg with dissolve
+    scene bg hosproom1 at bg
     $ statusnt("???", "bert", ch=3, sun=3)
-    show sesame at bg with dissolve:
+    show sesame at bg:
         ycenter .62
         zoom .9
+    with dissolve
     ses "Mew!"
     b  "Hey Sesame... sorry, I'm a bit tired."
     ses "Hssss!"
@@ -149,7 +151,7 @@ label hospitalGo:
 
     scene black with dissolve
     scene bg hosphallbotright at bg with dissolve
-    $statusnt("Hallway", "bert", ch=3, sun=3)
+    $statusnt("Hallway", "bert", ch=3, sun=0)
     bi "It opened into a hallway."
     bi "There were three other cells in this hallway."
     bi "One end of the hallway was a dead end, the other seemed to lead towards a larger room."
@@ -203,7 +205,7 @@ label hospitalGo:
     scene bg hospcommons at bg
     show lauren ind
     $showchibint("dracula", "lauren", "sid")
-    $statusnt("Cafeteria", "bert", ch=3, sun=3)
+    $statusnt("Cafeteria", "bert", ch=3, sun=0)
     with dissolve
 
     #febreview
@@ -4669,6 +4671,8 @@ label dracAsk:
             i "That dude was a jerk!"
             i "I don't care if he's dead, it's the truth!"
             i "What kind of person-{p=0.5}{nw}"
+            hide screen status_screen
+            $showchibint()
             scene black
             pause 1.0
             bi "I think what Dracula speculated was true, at least part of it."
@@ -4679,11 +4683,9 @@ label dracAsk:
             call poptearb
             bi "But when my brain can be turned off with a flip of a switch..."
             bi "Winning seems impossible."
-            hide screen status_screen
-            $showchibint()
-            with dissolve
+            play music "audio/haunted.mp3" fadein 1.0
             pause 1.0
-        ############################################## end of ch1 screen
-            call screen ch3results
+            call screen ch3results with dissolve
+            stop music fadeout .5
             pause 1.0
-            jump bankGo
+            jump hospitalGo
