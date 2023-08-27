@@ -205,7 +205,7 @@ label meetStella:
             t "If only you were younger..."
             n "I... haven't paid much attention to the news recently."
             n "Are you famous?"
-            t "I'm CEO of Cantoire Management."
+            t "I'm CEO of Cantoire Holdings."
             t "One of the largest investment firms in the world, surely you've heard of it."
             n "Ah, yeah that rings a bell."
             ni "The truth is I know her but..."
@@ -857,7 +857,7 @@ label go: #Add silhouttes here?
     with dissolve
     ni "Next was... Stella Cantoire?"
     ni "I've seen her on TV before, what's she doing here?"
-    ni "One of the richest people in the world, and head of the Cantoire Management Group."
+    ni "One of the richest people in the world, and head of the Cantoire Holdings Group."
     ni "Her outfit made it seem like she would be very serious, but the way her eyes flicked around..."
     ni "She was definitely checking some of the men in the room out."
     ni "I was mildly offended when she made eye contact with me and then quickly looked away."

@@ -522,19 +522,19 @@ label mansGarageDoor:
     call screen garageInv
 
 screen hallwayInv():
-   default tt = Tooltip("")
-   if tt.value != "":
-       frame:
-           xalign 0.5
-           yalign 0.0
-           text "{i}"+tt.value+"{/i}"
+    default tt = Tooltip("")
+    if tt.value != "":
+        frame:
+            xalign 0.5
+            yalign 0.0
+            text "{i}"+tt.value+"{/i}"
 
-   add "bg mansionhall.png"
-   add "status.png"
-   add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
-   add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
-   add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
-   add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
+    add "bg mansionhall.png"
+    add "status.png"
+    add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
+    add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
+    add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
 
     imagebutton:
         xalign 1.0

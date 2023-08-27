@@ -84,7 +84,7 @@ label mansionGo:
 
 label Mansionuno:
     camera at parallax
-    scene black
+    scene black with dissolve
     $mood = "sad"
     blank "In the present..."
     bi "..."
@@ -146,7 +146,7 @@ label Mansionuno:
     l "You wanna look around and try to find food with me? Everyone's probably hungry after sleeping!"
     f "S-sure..."
     hide lauren with moveoutleft
-    hide frog with moveoutright
+    hide frog with moveoutleft
     $showchibint()
     $mood = "ind"
     bi "Thank goodness for Lauren, she's great with the kids." #JJJ
@@ -2003,7 +2003,7 @@ label postFT2:
     pause 2
     hide freetime with dissolve
    #############
-   #FREE TIME FTE ARUN
+   #FREE TIME FTE ARUN 4
    #############
     play music "audio/cobwebs.mp3" fadein 2.0
     call screen midCar with fade
@@ -2014,13 +2014,15 @@ label postFT3:
     scene bg mansiondining at bg with fade
     $statusnt("Dining Room", "bert", ch=2, sun=2)
     $showchibint("shahar", "stella")
+    play music "audio/rush.mp3" fadein 1.0
+
     bi "Well, I still have a tiny amount of time before-"
     $showchibint("shahar", "stella", "lauren")
     show lauren ind with dissolve
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
         zoom .75
-        xcenter .65
+        xcenter .42
         ycenter .25
     l "Hey, Bert, are you busy right now?"
     b "Uh... I guess not."
@@ -2030,16 +2032,19 @@ label postFT3:
     b "Yeah, I don't mind."
     l "Cool, thanks. They both should still be in our bedroom right now."
     l "Sorry, the only other people I'd trust are Catherine and Jenny and they're both working on the party right now."
+    b "I'll head up right now."
     scene black with dissolve
-    scene bg mansionbedroom1 at bg with fade
+    scene bg mansionbedroom1 at bg
     $statusnt("Bedroom", "bert", ch=2, sun=2)
     $showchibint("freddy")
-    show frog ind with dissolve
+    show frog happy
+    with dissolve
     f "Oh, hi mister!"
     b "Yeah, Lauren had some stuff she wanted to do."
     f "Oh, cool!"
     b "N-not that I wouldn't want to hang out with you normally."
     f "Huh?"
+    call poptearb
     b "Never mind."
     show frog happy
     f "Check out all these tricks Sesame can do!"
@@ -2051,27 +2056,33 @@ label postFT3:
     f "Sesame and Catherine are really close!"
     f "So he's much easier to train than other cats, she says."
     b "That's rather impressive."
+    show frog ind
     $mood = "ind"
     bi "And convenient for keeping Freddy's mind distracted."
     b "So uh..."
-    bi "I'm still not great at making conversation with the kid..."
+    show scary with dissolve:
+        alpha .5
+    bi "I'm still not great at making conversation with this kid..."
     bi "Maybe I can ask him for some information that's useful?"
     bi "Feel like we haven't really talked to him meaningfully yet."
-    bi "Sesame is keeping him occupied, so I can think this through."
-    bi "What kind of crime would a kid have done?"
+    bi "As weird as it is, he's here, which means he's involved somehow."
+    bi "And if we're assuming everyone is some type of criminal, it really begs the question..."
+    bi "What kind of crime could Freddy have done?"
+    hide scary with dissolve
     b "Hey Freddy, what hobbies do you have?"
     f "Uh... I really like frogs!"
+    f "Is that a hobby?"
     f "I spend a lot of time just watching videos about then and learning new frog facts."
+    call pophuhb
     b "Are you in any clubs at school?"
     f "Clubs?"
-    show frog ind
     b "Yeah, like, things you do with other students for fun."
     f "Oh, I'm homeschooled."
     f "My parents pay for a man to come to our house and teach me."
     f "They say it's so I get a better education."
     f "I think it's really because my dad got upset when I went to school with other kids..."
     b "What happened?"
-    f "We had a homework assignment where we had to talk about what our parents did."
+    f "We had a homework to talk about our parents' work."
     show frog sad
     play sfx "audio/poprain.mp3" volume .5
     show poprain with dissolve:
@@ -2083,7 +2094,7 @@ label postFT3:
     f "My dad wasn't happy people were bullying me so he pulled me out of that school."
     b "That's... huh. {i}Do{/i} you know what your dad does?"
     f "N-no... after that day I felt like it was better not to ask."
-    f "I just know he's not around a lot and is angry all the time."
+    f "I just know he's not home a lot and is angry all the time."
     $mood = "sad"
     b "Do you get to meet other kids still?"
     f "Not really, no."
@@ -2097,15 +2108,7 @@ label postFT3:
     $mood = "ind"
     b "Well, as long as you're happy..."
     bi "That sounds like a really sad existence."
-    bi "I do have to wonder though... is Freddy really a criminal?"
-    bi "Maybe he's lying, but if he's stuck at home what crimes could he really do?"
-    #b "Freddy, do you use the computer at home often?"
-    #f "Yeah! That's how I learned so much about frogs!"
-    #b "Do you do anything else on the computer?"
-    #f "Uh, I play games and watch other videos sometimes."
-    #f "I think that's what most kids do on the computer these days."
-    #b "Yeah, makes sense."
-    f "Bert, can I ask why you're asking me all of this?"
+    f "Bert, why are you asking me all of this?"
     b "Oh uh, just trying to make small talk."
     bi "...and understand why a kid is in a group of criminals."
     bi "Maybe it's a mistake?"
@@ -2116,7 +2119,7 @@ label postFT3:
     show frog ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show lauren happy with dissolve:
+    show lauren happy with moveinright:
         xcenter .75
     l "And I'm back."
     l "How are you two doing?"
@@ -2135,13 +2138,6 @@ label postFT3:
     f "Wh...why?"
     l "There's gonna be a lot of stuff Sesame can't eat or drink at the party."
     hide poptear
-    #l "She asked us to leave him up here."
-    #f "Can't Catherine hold onto him?"
-    #l "She's hosting the party, she'll probably be too busy worrying about the food."
-    #f "But... but I wanna play with Sesame."
-    #f "Can't I stay here?"
-    #l "Sorry Freddy, I think it's safest if you're with the group."
-    #l "Besides, you gotta eat dinner eventually."
     $mood = "happy"
     l "I'm sure you'll have a great time at the party, hanging out with us!"
     f "O-okay..."
@@ -2150,7 +2146,6 @@ label postFT3:
     f "Yeah..."
     f "I'm sure the food will be great anyway."
     bi "Oh boy, I can't wait to eat!"
-    scene black with dissolve
     scene bg mansionhall at bg with fade
     $statusnt("Upstairs Hallway", "bert", ch=2, sun=2)
     $mood = "ind"
@@ -2160,7 +2155,6 @@ label postFT3:
     bi "Mmmm, I can smell it from here."
     $mood = "happy"
     b "Dinner, I'm on my way!"
-    scene black with dissolve
     scene bg mansiondining at bg with fade
     $showchibint("dracula", "freddy", "lauren", "shahar", "sid", "stella")
     $statusnt("Dining Room", "bert", ch=2, sun=2)
@@ -2170,25 +2164,22 @@ label postFT3:
         xcenter .75
     with dissolve
     $mood = "ind"
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .25
+        ycenter .5
     i "My first dinner party, I'm so excited!"
     d "Hopefully your first of many. I've hosted quite a few in my lair before."
     i "Your lair?"
+    hide pophearts
     d "I guess what humans call a mansion."
     i "You have a mansion?"
     d "Being a vampire pays well, in its own way."
     d "Anyways, enjoy the party Sid. Well, as much as one can without drinking."
-    #i "Why can't I drink? Sam's underage and is going to drink."
-    #d "Yes, but you are quite young. You are free to do what you wish but drinking definitely gets riskier the younger you are."
-    #d "Not to mention, a scrawny kid such as yourself probably has tolerance more similar to a teenage girl."
-    #i "Who're you calling a girl?"
-    #d "I'm not calling you a girl, just drawing a comparison."
-    #i "Screw you old man!"
-    #bi "This can only go poorly... let me interrupt."
     b "Hey guys, has the food been served yet?"
     d "No, I believe the chefs are putting the finishing touches on the first course."
     b "Oh, cool. In that case I'll go see if they need any help."
     #bi "Hopefully I defused that conversation..."
-    scene black with dissolve
     scene bg mansionkitchen at bg with fade
     $statusnt("Kitchen", "bert", ch=2, sun=2)
     $showchibint("catherine", "jenny", "sam")
@@ -2202,6 +2193,7 @@ label postFT3:
         ycenter .275
         zoom .75
     j "You just want to be the first to get served, don't you."
+    call poptearb
     b "...maybe."
     b "Regardless, is everything going smoothly here?"
     hide poptear
@@ -2211,9 +2203,9 @@ label postFT3:
     j "The display for the clocks on the stove and microwave aren't working anymore for some reason."
     j "So we've been using the clock from the garage to manually time everything."
     b "Huh, that's weird. Do you know why?"
-    j "Honestly haven't thought to look into it, we've been busy with prepping food."
+    j "We haven't thought to look into it, we've been busy with prepping food."
     j "Everything else is still working so it's fine."
-    j "It's probably just be a maintenance issue, who knows how long it's been since someone lived in this house."
+    j "It's probably just busted, who knows how long it's been since someone lived in this house."
     b "Yeah, makes sense."
     j "Anyway, first course should be out soon."
     b "First course?"
@@ -2229,16 +2221,17 @@ label postFT3:
     c "Plus I missed cooking, it's fun to be in the kitchen!"
     c "Don't worry, I'll be able to party once everything besides dessert is done."
     b "Oh, who's making dessert?"
-    hide jenny happy with dissolve
+    hide jenny happy with moveoutright
     show sam ind with moveinright:
         xcenter .75
     s "Me, I'll be out in the living room soon."
     b "What did you make?"
     s "I made an ice cream cake, was about all I could manage with the ingredients we had."
-    b "Still sounds pretty tasty."
+    call popwowb
+    b "Still sounds pretty tasty!"
     s "Well, as much fun as baking is, drinking is a bit more fun."
     s "My cake's already in the freezer so I'm going to go out and mingle, I guess."
-    hide sam with dissolve
+    hide sam with moveoutright
     $showchibint("catherine", "jenny")
     show jenny happy with moveinright:
         xcenter .75
@@ -2256,23 +2249,31 @@ label postFT3:
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
     bi "Hm... I guess I have nothing to do besides mingle until food gets here."
     bi "Who should I talk to?"
+    # FREE TIME FTE ARUN FTE5
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
+    play music "audio/cobwebs.mp3" fadein 2.0
     bi "I don't want to miss the food getting served, so I probably should stay in the dining room and kitchen."
     call screen dining with fade
+
+
+
 label postFT4:
     scene bg mansiondining at bg with fade
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "catherine")
+    play music "audio/rush.mp3" fadein 1.0
+
     show catherine2 happy:
         xcenter .25
     show sid ind:
         xcenter .75
     with dissolve
     $mood = "happy"
+    call popwowb
     c "First course is served! We have a charcuterie board with various crackers, cheeses, meats, and some fruit to start!"
     i "Huh... is this what fancy dinners are like?"
     c "Only part of it!"
@@ -2281,7 +2282,12 @@ label postFT4:
     i "Oh... ok. I was gonna say, this doesn't seem like a meal."
     show sid smile:
         xcenter .75
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .75
+        ycenter .5
     i "Thanks Catherine, this looks really good!"
+    hide pophearts
     c "No worries! Anyway, gotta get back to the kitchen!"
     hide catherine2 with moveoutleft
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella")
@@ -2299,7 +2305,7 @@ label postFT4:
         zoom .75
     $mood = "ind"
     b "Uh, that's not what I..."
-    bi "Before I could finish, Sid was already digging in."
+    bi "Before I could finish my sentence, Sid was already digging in."
     hide popwow
     bi "...Guess that's the end of my conversation with him."
     hide sid with dissolve
@@ -2329,7 +2335,7 @@ label postFT4:
         xcenter .75
     with dissolve
     s "Hello Bert."
-    b "Hey, sorry, needed to get away from the drunkards."
+    b "Hey, sorry, needed to get away from them."
     b "Hope I'm not interrupting anything here."
     d "No, you're free to join us."
     #s "Though you should be warned, I believe we both plan to drink at some point."
@@ -2337,8 +2343,11 @@ label postFT4:
     b "Thanks, just needed something to do."
     s "Something to do? Ooo, in that case..."
     s "Maybe you wouldn't mind grabbing us a round of drinks from the kitchen?"
+    call poptearb
     b "...I get the message."
     d "Sorry Bert, nothing personal, but trust and time are limited commodities here."
+    s "As are the drinks."
+    b "Not sure I really fit in with anyone here."
     hide sam
     hide drac
     with dissolve
@@ -2359,20 +2368,24 @@ label postFT4:
         xcenter .425
         ycenter .275
         zoom .75
+    $mood = "sad"
     l "Given some of the very innocent crimes people are \"admitting\" to, I don't think knowing more about him will accomplish much."
     l "And from I gather his home life wasn't great so maybe it's best not to remind him of that."
     b "That's true..."
+    hide poptear
     #l "Nothing to apologize for, you were just trying to get us out of here in your own way."
     l "I don't think you need to do that constantly, we don't need to spend every moment like we did on the train."
     b "What do you mean?"
-    l "It felt like every moment we spent on the train we were fighting for our lives."
+    l "Every moment on the train we were fighting for our lives."
     l "We're still fighting for our lives here, but not as directly, if that makes sense."
     l "I think events like this party are overall helping our morale and make sure there's no more... action."
+    call poptearb
     b "That's true, but I worry we're giving up, or losing motivation to find a way out of this."
     l "Maybe it's motivation, maybe it's just that we're somewhere more relaxing."
     l "I wouldn't overthink it, not like Shahar and Stella are particularly helpful sober anyway."
     b "That is unfortunately true..."
     l "And people like Sam and Dracula are reclusive, but I still think they're trying their best, in their own way."
+    $mood = "ind"
     l "Anyway, the food is only going to keep Freddy entertained for so long."
     l "I should probably go back to talking to him before Shahar and Stella try to do anything stupid around him."
     b "I'll join you."
@@ -2380,12 +2393,13 @@ label postFT4:
     show lauren happy:
         xcenter .5
         linear 0.3 xcenter .75
-    show frog ind with dissolve:
+    show frog happy with moveinleft:
         xcenter .25
     l "Hey Freddy, how's the food?"
     f "It's so good! So many different types of cheese."
     f "I don't think I know all of their names, some are a bit long."
     f "Like Cam... Cam... Camembert?"
+    $mood = "happy"
     b "Hey, that's me!"
     f "Huh?"
     f "Oh, I get it."
@@ -2404,6 +2418,7 @@ label postFT4:
     b "The nibbles of pepper in the jack cheese."
     b "The slight saltiness of the cracker."
     l "...Are you sure you're okay?"
+    call popheartsb
     b "Sorry, I'm having a bit of a moment."
     b "It feels like ages since I've had real food."
     l "You know it's only been a few days since this whole game started, right?"
@@ -2413,19 +2428,17 @@ label postFT4:
     hide lauren
     hide frog
     with dissolve
+    call poptearb
     bi "...well, seems with my hunger pangs I've alienated everyone except Sid here."
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
-    show jenny happy with dissolve
+    show jenny happy with moveinright
     $mood = "happy"
     j "The next course is ready! We have appetizers and salad."
     j "For the appetizers we have kebabs, and the salad is a kale caesar."
     b "Wow, Jenny, did you make these?"
     j "Well, Catherine prepped the meat, I just put the kebabs together."
-    show jenny ind
-    j "I had a... complicated family situation so I made lots of meals for myself growing up."
-    j "Salad is easy to make, so I made a lot of it."
-    b "...Is a salad that filling?"
-    show jenny happy
+    j "I used to make these alllll the time when I was younger, breakfast lunch or dinner!"
+    b "Is a salad that filling?"
     j "If you eat enough, yeah!"
     #j "I love Caesar dressing... oh, but I didn't add that much this time because there's more courses coming."
     b "This all looks really good, but are you and Catherine getting a chance to eat?"
@@ -2446,7 +2459,6 @@ label postFT4:
     t "That's what a lot of my subordinates called my drunk antics."
     j "Ha, knew it was a good word!"
     j "Stella, you look like you're having a good time."
-    b "No, don't encourage her!"
     t "Thanks sweetie, you look good too."
     show jenny ind:
         xcenter .25
@@ -2455,8 +2467,14 @@ label postFT4:
     #b "...Adventure?"
     #t "You know, the one upstairs."
     #b "I'd hardly call that an adventure, but sure."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .65
+        ycenter .25
+        zoom .75
     t "I think it's time for act two, want to join?"
     b "Not really... does Shahar not want to join you?"
+    hide popwow
     t "Psh, he's carrying a lot of muscle but he's a bit of a weak drinker."
     t "Says he's still tired from last night and wants to stay down here."
     b "I uh... no."
@@ -2476,17 +2494,23 @@ label postFT4:
     b "I'm surprised Catherine didn't tell you that, she was the one who found them yesterday."
     j "She's cooking like crazy, I'm sure she's just distracted."
     j "But thanks! I'll go get them right now."
-    hide jenny with dissolve
+    hide jenny with moveoutleft
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid")
     show shahar ind with dissolve
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .42
+        xcenter .85
+        ycenter .25
     h "Ahoy lad, is Stella gone?"
     b "Uh, yeah, were you not going to join her?"
+    hide pophuh
     h "Nay, there's a bounty of rum in the kitchen and I wanted to have as much as I could afore she drinks it all."
     h "That lass is stashin' a second liver somewhere in here, I swear t' Blackbeard!"
     h "If I open a bottle I'll have hardly a shotful before it's gone!"
     b "Oh, yeah, then you're good to grab it now."
     h "Aye-aye, to the kitchen for a rum on the rocks, chaaaarge!"
-    hide shahar with moveoutleft
+    hide shahar with moveoutright
     $showchibint("dracula", "freddy", "lauren", "sam", "sid")
     show sam ind:
         xcenter .25
@@ -2500,6 +2524,7 @@ label postFT4:
     b "...Aren't you two drinking right now as well?"
     s "Yeah, you didn't get us one so I went to the kitchen and got us a round."
     b "I thought you wanted me to leave you alone, not actually get you a drink."
+    call poptearb
     s "Well yeah, but a drink would've been nice too."
     d "Regardless, I have basically infinite alcohol tolerance."
     d "Vampires' metabolism works differently than the relatively weak human metabolism."
@@ -2508,16 +2533,18 @@ label postFT4:
     b "Oh yeah, isn't your course of the meal coming up?"
     s "Yeah, just the entrees are left before dessert."
     s "But again, I just need to take my dessert out of the freezer and find something to cut it into pieces with."
-    b "Huh? Is there not a bunch of knives in the kitchen?"
-    s "No, there's only one. According to Lauren when she searched she could only find one yesterday in the whole kitchen."
+    s "There's only one knife in that huge kitchen."
     s "And Catherine wanted to serve it with the entree so people could cut themselves a portion."
-    d "Clever, the knife can't be used as a murder weapon if it's in the middle of a crowd."
+    d "Clever."
+    s "Hm?"
+    d "The knife can't be used as a murder weapon if it's in the middle of a crowd."
     s "I'm not sure if that was her intention."
     s "She's a bit of a ditz, I don't think she thinks nearly that far ahead unless cats or food are involved."
     b "...You know she's in the other room and could walk in any moment."
     s "I'm sure she's heard it before, or figured it out herself."
     b "Regardless, I don't really want to talk about the person selflessly cooking dinner for us behind her back..."
     s "Hmph."
+    $mood = "shock"
     show frog ind with moveinright:
         rotate 315
         xcenter 1.05
@@ -2527,22 +2554,25 @@ label postFT4:
     hide frog with moveoutright
     b "I... nothing, I thought I saw someone over there."
     s "You haven't gone delirious already, have you?"
+    $mood = "ind"
     b "No, I think that's my cue to leave you two alone again though."
     hide sam
     hide drac
     with dissolve
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "jenny")
-    show jenny happy with dissolve
-    j "Hey Bert, I found the batteries! Thanks for the help."
+    show jenny happy with moveinleft
+    j "Hey Bert, I found the batteries bee tee dubs! Thanks for the help."
     j "The entree should be out soon."
     b "Ooh, what is the entree?"
-    j "Meatloaf and french onion soup!"
+    $mood = "happy"
+    j "Catherine and I made a Meatloaf and french onion soup!"
     b "A... a giant slab of meat?"
     b "I'm so in love."
     show jenny ind
     j "With Catherine?"
     b "No, with meat."
     j "Oh."
+    $mood = "ind"
     b "Wait..."
     b "Catherine can't eat meatloaf though, right?"
     b "She's a vegetarian."
@@ -2551,12 +2581,12 @@ label postFT4:
     j "Anyway, I'm off to go hand the clock off to her."
     j "Seeya Bert!"
     hide jenny ind with dissolve
-    $showchibint("dracula", "freddy", "lauren", "sam", "sid")
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar")
     show shahar ind with dissolve
     h "Aye, Bert, I got this bottle of wine but I need help openin' it."
     h "I seem to have lost me corkscrew."
     h "Do you know if there's any screws I can use to uncork me a bottle?"
+    call poptearb
     bi "Are Catherine, Sid, and I the only ones who bothered checking the garage?"
     b "Screws?"
     h "Yes lad! All a corkscrew does is turn a screw into the cork and yank it out."
@@ -2576,15 +2606,18 @@ label postFT4:
     show bg frogsit at bg
     show frog sit at bg
     with dissolve
+
     f "Shh! Don't let anyone see you hide back here with me!"
     b "I saw you poke your head out earlier, but I don't think anyone else did."
-
+    $mood = "sad"
+    call poptearb
     f "My parents always said \"Children are best seen, not heard.\""
     f "But they lied about the seen part."
     f "At home my parents argued a lot and I would listen while hiding."
     f "My dad would get really angry at me if he found me trying to listen in on him..."
     bi "This kid really had a weird life, huh."
-    f "Anyway, there's some scary people here like my dad, so I thought I should just hide and listen."
+    f "There are some scary people here like my dad, so I thought I should just hide and listen."
+    $mood = "ind"
     b "You don't to tell me twice bud, parties aren't for everyone."
     #b "I know adults who lurk in the corner at parties because that's what most comfortable to them."
     f "Oh... thanks Bert. But uh, could I ask you not to tell anyone else I'm hiding back here?"
@@ -2593,13 +2626,14 @@ label postFT4:
     b "If you hear anything that might be useful, let me know."
     f "Well, I did hear one thing."
     f "I don't know how useful it is."
+    call pophuhb
     b "Oh?"
     f "Let's make sure no one is listening."
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar")
     bi "Looking around, no one was really paying attention."
     bi "Shahar came back in the middle of our conversation, but was too focused on opening his bottle."
     b "I think we're good."
-    bi "Freddy leaned in to whisper."
+    "Freddy started to whisper."
     f "I think I overheard Mr. Dracula discussing his real job with Sam."
     f "It was hard to hear much."
     $mood = "shock"
@@ -2614,10 +2648,10 @@ label postFT4:
     f "He... expi... expe... tried that out. Also uh... ele... Alex trickery?"
     bi "Electricity?"
     f "And uh... fire!"
-    bi "That one's probably fire."
+    bi "That one's probably just fire."
     bi "Hm... is this real, or is this just Dracula fabricating a vampire story and Sam entertaining him?"
     bi "This is... very gruesome for a kid to overhear."
-    $mood = "sad"
+    $mood = "ind"
     b "Thanks Freddy, that's really helpful."
     b "Did you get any more details?"
     f "No... and you can't tell anyone I told you this."
@@ -2626,16 +2660,23 @@ label postFT4:
     bi "...Does he understand what kind of situation we're in?"
     b "I won't tell anyone you told me."
     bi "...But I might bring this up without saying you told me if it's relevant information later."
-    $mood = "ind"
+    $mood = "happy"
     b "Your secret is safe with me."
     f "Thanks Bert..."
     hide frog with dissolve
     show bg mansiondining at bg
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar", "catherine")
     show catherine2 happy with dissolve
+    $mood = "ind"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .41
+        ycenter .25
+        zoom .75
     c "And the entree is served!"
     c "Meatloaf with french onion soup!"
-    c "There should be plenty for everyone, I brought a knife from the kitchen. Use it to cut yourself as much as you want."
+    hide popwow
+    c "There should be plenty for everyone, I brought the knife from the kitchen. Use it to cut yourself as much as you want."
     c "Don't walk away with the knife though, we only have the one!"
     b "Meat?"
     b "Meeeeeeeeeeeeat."
@@ -2670,13 +2711,25 @@ label postFT4:
     show catherine2 ind:
         xcenter .25
         linear .15 xcenter .5
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .7
+        ycenter .5
     c "Well, that's it for cooking."
     c "Time to party hardy!"
-    hide catherine2 with dissolve
+    hide pophearts
+    hide catherine2 with moveoutleft
     show sid happy with dissolve
     i "I'm so full... how am I supposed to eat this meat loaf..."
     b "Ate too much, big guy?"
-    i "I shouldn't have taken what you said as a challenge... Whoa, how are you gonna eat that big a slice?"
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .41
+        ycenter .275
+        zoom .75
+    i "I shouldn't have taken what you said as a challenge..."
+    i "Whoa, how are you gonna eat that big a slice?"
+    hide poptear
     b "I have lots of experience at all-you-can-eat Korean barbeque."
     b "My stomach has slowly expanded over the years through rigorous training."
     bi "By which I mean getting fast food at midnight even after having a big dinner."
@@ -2685,7 +2738,9 @@ label postFT4:
         xcenter .5
         ycenter .25
     i "Well I don't wanna be outdone! I'm gonna eat a big slice of meatloaf too!"
+    $mood = "shock"
     b "Uh, that might not be the best-"
+    hide popmad
     i "*burp*"
     b "Oh jeez... pace yourself Sid, don't go overboard."
     #b "And please let us know if you're not feeling okay, overeating is a very real thing."
@@ -2703,10 +2758,14 @@ label postFT4:
     b "Hrm? Erkay, guh uhb fuh wih ereryah!"
     j "...You should learn to swallow before talking at a fancy party."
     hide jenny with dissolve
+    show scary with dissolve:
+        alpha .5
     bi "...I'm sure I looked like a dork in front of Jenny, but oh well."
     bi "I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
+    bi "It really was nice to have this time to relax with everyone, despite the various levels of of friendships."
     bi "As I sat and ate, Sam had come back with the stepstool and walked through to the kitchen."
-    bi "After some more time had passed..."
+    "After some more time had passed..."
+    hide scary with dissolve
     show sam ind with fade
     $showchibint("dracula", "freddy", "lauren", "sid", "shahar", "catherine", "jenny", "sam")
     $mood = "happy"
@@ -2722,32 +2781,42 @@ label postFT4:
     bi "It seemed Sam had already cut one piece out, with rather clean cluts."
     bi "In contrast, my cut looked more like I beat my slice of cake to death..."
     bi "Well, good thing the shape of my slice doesn't matter, it's all getting digested anyway!"
-    bi "It's so tasty, but I'm so full..."
-    bi "But everyone has a dessert stomach."
     s "Well, my work here's done. I'm gonna go party."
     hide sam with dissolve
     show sid ind with dissolve
-    i "I... I ate way too much."
+    i "Bert, please..."
     $mood = "shock"
     b "Huh?"
+    i "Help... I need help."
     i "Bert... help..."
     show sid ind:
-        xcenter .5
         linear .15 xcenter .25
-    show lauren ind with dissolve:
+    show lauren ind with moveinright:
         xcenter .75
     l "Sid, you okay?"
     play sfx "audio/poprain.mp3" volume .5
     show poprain with dissolve:
         xcenter .25
         ycenter .1
+    b "What's going on?"
+    i "I don't know..."
+    i "I might be... dying."
+    call popwowb
+    b "Dying?!"
+    i "Yeah... dying."
+    i "Or..."
+    b "Or what, Sid?!"
+    i "Or I'm just really, really full."
+    call poptearb
+    $mood = "sad"
+    i "I ate so much bro..."
     i "I... I think I'm gonna vomit."
+    bi "Throwing up and dying seem pretty different to me."
     l "Come on, let's get you to the bathroom."
     i "It... it hurts to move."
     l "Jeez..."
     l "I guess we can walk you there."
     l "Bert, can you lend me a hand in getting him up the stairs?"
-    $mood = "sad"
     bi "But... my cake's gonna melt..."
     b "Yeah, let's go."
     i "Thanks... you're my heroes... sniffle."
@@ -2761,7 +2830,7 @@ label mansion2:
         xcenter .75
     show lauren ind:
         xcenter .25
-    with fade
+    with dissolve
 
 #    show poprain with dissolve:
 #        zoom .75
@@ -2805,7 +2874,7 @@ label mansion2:
     scene bg mansionbr at bg
     camera at parallax
     show doom at bg
-    show stella dead:
+    show stella dead at bg:
         zoom 1.0
         xcenter .37
         ycenter .8
@@ -2823,8 +2892,9 @@ label mansion2:
     l "..."
     l "Another one so soon?"
     l "Was Dan not enough..."
+    call popwowb
     b "H-hold on, maybe she's still alive?"
-    bi "I nearly ran to Stella's side, trying to feel for a pulse."
+    bi "I ran to Stella's side, trying to feel for a pulse."
     bi "I don't feel anything..."
     b "C'mon Stella, don't die on us."
     b "It's just a cut in your back, right?"
@@ -2834,12 +2904,13 @@ label mansion2:
     l "Sorry... I don't know how to handle this either..."
     l "But... we gotta process it eventually."
     b "Y-yeah, you're right..."
+    show scary with dissolve:
+        alpha .5
     bi "I hate the Game Master."
     bi "What good does Stella dying do?"
     bi "And now one of us is a murderer."
     bi "No one deserves to have that on their hands..."
-    l "..."
-    b "..."
+    hide scary with dissolve
     l "We... we should... go tell the others."
     b "...Yeah. Can't give the murderer time to hide evidence."
     l "I'll go do that... Bert, can you look after Sid and make sure he's okay?"
@@ -2848,7 +2919,7 @@ label mansion2:
     b "Yeah... sounds good. Thanks Lauren."
     l "Of course Bert. We're gonna get through this together."
     hide lauren with dissolve
-    $ showchibint("sid")
+    $showchibint("sid")
     b "Y-yeah."
     bi "I... can't tell if she said that for me or for herself."
     bi "Though both of us probably needed to hear it."
@@ -2881,7 +2952,7 @@ label mansion2:
     $showchibint("sid", "catherine", "dracula", "jenny", "sam", "shahar")
     show shahar mad with dissolve
     h "Lad, tell me it's not true."
-    h "Stella could drink a tornado, how could the lassie die so easily?" #julian checkpoint
+    h "Stella could drink a tornado, how could the lassie die so easily?"
     show shahar mad:
         xcenter .5
         linear 0.3 xcenter .25
@@ -2895,13 +2966,9 @@ label mansion2:
     h "Scallywag! How could two days of drinking get her shanked if a lifetime didn't?!"
     s "That's... not what I meant."
     hide popmad
-    h "Stella, my matey, I grieve thee!"
-    s "I think that's... old English, not pirate speak."
-#    show popham with dissolve:
-#        xcenter .237
-#        ycenter .205
+    h "Stella, my matey..."
     h "Whoever the murderer is, they best be ready for Davy Jones' Locker, even if it takes my own hand to bring them there!"
-    hide shahar with moveoutleft
+    hide shahar with moveoutright
     $showchibint("sid", "catherine", "dracula", "jenny", "sam")
     bi "Shahar exited to the bathroom, presumably to grieve in his own pirate way."
     show drac ind with moveinleft:
@@ -2911,19 +2978,18 @@ label mansion2:
     hide sam with moveoutright
     show jenny ind with moveinright:
         xcenter .75
-    j "I'll go... last time we let Bert do all the investigating. I'm so sad Stella died but..."
-    j "This time I want to help. I won't be useless this time."
+    j "I'll go... last time we let Bert do all the investigating."
+    j "I'm so sad Stella died but..."
+    j "This time I will help more. I won't be useless this time."
     j "Seems like the state of the body would be a crucial bit of evidence, so I'm gonna start there."
     d "Fine with me."
     hide jenny with moveoutleft
     $showchibint("sid", "catherine", "dracula", "sam")
-    d "Hm, it is a shame we were not able to figure out more collectively before this happened."
+    d "Hm, it is a shame we were not able to figure out more before this happened."
     b "What do you mean?"
     d "I had a plan..."
-    show drac ind:
-        linear .3 xcenter .75
-    show sam ind with dissolve:
-        xcenter .25
+    show sam ind with moveinright:
+        xcenter .75
     s "Hey, if we want someone to make sure Shahar's not tampering with evidence..."
     s "Shouldn't we send someone downstairs to make sure Lauren's not either?"
     b "Oh yeah, where is Lauren, why didn't she come up here?"
@@ -2932,11 +2998,12 @@ label mansion2:
     b "That's... reasonable."
     d "In that case, I'll go."
     d "I want to investigate downstairs anyway."
+    bi "Dracula glared at me."
     d "If anyone wants to discuss my plan, come meet me downstairs."
     hide drac with moveoutright
     $showchibint("sid", "catherine", "sam")
-    show catherine2 ind with moveinright:
-        xcenter .75
+    show catherine2 ind with moveinleft:
+        xcenter .25
     c "Well, I guess the party's over..."
     b "I uh... don't know if that's the most pressing concern."
     c "Oh, shoot, yeah Stella's dead."
@@ -2945,42 +3012,44 @@ label mansion2:
     c "Everyone was congregating in one space..."
     c "When people left they were all alone."
     c "It's not like the train where Kaiser had to kill Dan while someone was with him."
-    play sfx "audio/popwow.mp3" volume .5
-    show popwow:
-        xcenter .65
-        ycenter .25
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
         zoom .75
+        xcenter .32
+        ycenter .25
     c "Is... is it my fault someone died?"
     b "I get why you feel that way..."
     b "But it's not."
-    hide popwow
+    hide pophuh
     $mood = "ind"
-    b "It's the Game Master's, we can't forget that."
+    b "It's the Game Master's fault, we can't forget that."
     c "Yeah, I guess..."
     ses "Mrow!"
     c "Oh! Sesame!"
     hide catherine2
     show catherine ind:
-        xcenter .75
+        xcenter .25
     with dissolve
     c "This is the longest I've been away from him in a while, he must be so lonely..."
     c "I need to take care of him too, make sure he's fed and groomed and all that."
     c "Is it okay if I take care of him while the rest of you look around?"
     b "Uh... why are you asking me?"
-    c "Well you were kind of in charge last time."
-    s "Isn't it kind of suspicious to leave Catherine?"
+    c "Well, you were kind of in charge last time."
+    s "Isn't it kind of suspicious to leave right now, Catherine?"
     c "But... my kitty..."
     b "I don't know if it's any more suspicious than Freddy not investigating..."
     s "Hmph... yeah, I guess."
-    c "Sesame, I'm coming!"
-    hide catherine with moveoutright
+    c "Sesame, let's get you fed!"
+    hide catherine with moveoutleft
     $showchibint("sid", "sam")
-    show sid ind with moveinright:
-        xcenter .75
+    show sid ind with moveinleft:
+        xcenter .25
     s "Well if she's allowed to be on her own, I'm gonna go look around as well."
     play sfx "audio/popwow.mp3" volume .5
+    show sid mad:
+        xcenter .25
     show popwow:
-        xcenter .65
+        xcenter .32
         ycenter .25
         zoom .75
     i "No! I don't trust you."
@@ -2989,7 +3058,8 @@ label mansion2:
     i "Yeah."
     s "Why?"
     i "Does that really need explaining?"
-    s "Fine, we can investigate together."
+    i "You're a jerk and secretive and sketchy!"
+    s "Fine, if you insist then you can investigate with me."
     s "But keep the talking to a minimum."
     i "Fine by me. Wanna go to the garage?"
     s "Sure, I guess."
@@ -3008,7 +3078,6 @@ label mansion2:
     bi "I'd never consider someone like Stella a friend in my normal life but..."
     bi "As much as I wanted to sleep back then, we had a good talk."
     bi "Maybe we don't see eye to eye on things, but I got some perspective."
-    bi "Maybe we're not friends but... we were getting there, in one way or another."
     bi "...This game is cruel."
     bi "I formed connections to not feel alone, only to have them yanked away."
     bi "And for what?"
@@ -3018,26 +3087,32 @@ label mansion2:
     hide scary with dissolve
     $mood = "ind"
     b "No."
+    call popwowb
     b "No, I can't let those thoughts win."
     b "Gotta distract myself from them somehow. The investigation is the perfect excuse."
     b "Have to make it to tomorrow even if I don't know what lies ahead."
-    b "It's go time."
 label mansPreInv:
-    play music "audio/inthefaceofdeath.mp3"
+    pause 1
+    play music "audio/inthefaceofdeath.mp3" fadein 1.0
     pause .5
     show investstart with dissolve
     pause 1
     hide investstart with dissolve
-    bi "I should definitely check the bathroom at some point but besides that... I'm not really sure where to go."
+    bi "I should definitely check the bathroom at some point, but besides that... I'm not really sure where to go."
     bi "Also, who left the party that could have killed Stella?"
+    call pophuhb
     bi "Only three people."
     bi "They're the only ones who left the dining room or kitchen."
     bi "Jenny, Sam, and Shahar."
     bi "I have to keep that in mind while investigating."
+    b "It's go time."
     call screen hallwayInv with dissolve
+
+
 label trial2a:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3" fadein 1.0
     scene black with fade
+    $mood = "ind"
     bi "Everyone gathered in the dining room."
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
@@ -3045,23 +3120,24 @@ label trial2a:
     show lauren ind with dissolve
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
-        xcenter .5
         linear 0.15 xcenter .75
-    show catherine ind with dissolve:
+
+    show catherine ind with moveinleft:
         xcenter .25
-    c "What makes you say that?"
-    #b "Uh... is it okay to have Sesame around again?"
-    show catherine happy:
-        xcenter .25
-    #c "Yeah! Now that I'm not busy cooking I can hold onto him while we talk."
+
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .32
+        ycenter .25
     c "Huh? What should make this murder easier to solve?"
+    hide pophuh
     l "Well, there's not a tunnel for this mansion to go through that caused Stella to get stabbed."
     l "So someone had to be physically there to do it."
+    $mood = "shock"
     l "Also, it's pretty obvious what the murder weapon was."
-    show catherine ind:
-        xcenter .25
     c "Is it?"
-    l "Yeah, it was the skewers from the dinner party."
+    l "Yeah, it had to have been the skewers from the dinner party."
     c "Oh no, did the dinner party get Stella killed?"
     b "I wouldn't view it that way, the skewers would have been in the house regardless of us having a party or not."
     b "But what makes you so sure it was the skewers?"
@@ -3078,7 +3154,7 @@ label trial2a:
         "catherine",  "Catherine: Would they really have been able to stab her to death with skewers?", 0,
         1, stabwound, "trial2b")
 label trial2b:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3" fadein 1.0
     camera at parallax
     scene bg mansiondining at bg with fade
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
@@ -3094,8 +3170,14 @@ label trial2b:
     b "It'd probably look more like a line of varying width."
     b "Also, why would the killer try to do that?"
     l "I guess..."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .42
+        ycenter .25
     l "But how did they use the knife then?"
     l "I'm still pretty sure it was in the dining room the whole time."
+    hide pophuh
     b "..."
     bi "I looked around."
     bi "Seems no one had a good answer for that."
@@ -3131,34 +3213,45 @@ label trial2c:
         "In the middle of the party.":
             bi "That's it!"
 
-        "Right before we found the body.":
+        "The exact moment before we found the body.":
             bi "No, I have other evidence that shows the body had been dead for a while when we found it."
             jump trial2c
     hide scary with dissolve
+    show sid ind:
+        xcenter .25
     b "In the middle of the party?"
     s "Yeah."
     s "She was around for the start of the party, so obviously she didn't die before that."
-    s "And she definitely died a while ago."
+    s "And she definitely dead for a bit before we found her."
     i "How do you know? You're not a coroner or anything like that."
-    s "Maybe not, but there's evidence that shows the body's been dead for a bit."
+    s "Maybe not, but there's evidence that shows the body's been dead for a little while."
+    show sid mad:
+        xcenter .25
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .25
+        ycenter .3
     i "I don't believe you!"
+    hide popmad
     s "Sigh. Fine, you don't have to believe me."
+    s "But if someone else can prove my point, you'll have to believe me, right?"
+    i "Hmph, fine!"
     s "Bert, I don't think Sid and I will ever see eye to eye. Can you explain it to him?"
     b "Uh... let's see, evidence that shows Stella didn't die recently..."
     call screen mansionEvidenceTrial(-1, stabwound2, "trial2d") with dissolve
 label trial2d:
-    play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
+    $mood = "ind"
     show sid ind:
-        xcenter .25
+        xcenter .5
     with fade
     i "The blood dried?"
-    b "Yeah, when we looked at the wound some of the blood had dried."
-    #show sid ind:
-    #    xcenter .5
-    #    linear 0.15 xcenter .25
+    b "Yeah, when we looked at the wound, some of the blood had dried."
+    show sid ind:
+        xcenter .5
+        linear 0.3 xcenter .25
     show drac ind with moveinright:
         xcenter .75
     d "Blood normally dries after about an hour or so of exposure."
@@ -3169,7 +3262,7 @@ label trial2d:
     hide drac ind with moveoutright
     show sam ind with moveinright:
         xcenter .75
-    s "It also makes it pretty clear who the killer should be."
+    s "It also makes it pretty clear who the killer must be."
     i "Huh?"
     s "I was thinking about this when Lauren was speaking."
     s "Our assumption is the knife wasn't used to commit the murder."
@@ -3180,11 +3273,16 @@ label trial2d:
     s "Yes, but I only left after the meatloaf had been served, when the knife was in the dining room."
     i "O-oh, that's true."
     bi "In that case, the person Sam is talking about must be..."
-    scene black with dissolve
+    scene black
+    hide screen status_screen
+    $showchibint()
+    with dissolve
     call screen chooseCharMansion("jenny", "trial2e", "Who left the party the same time as Stella, and had been in the kitchen?") with dissolve
 label trial2e:
-    play music "audio/rush.mp3"
     scene black with fade
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
+    $mood = "sad"
     bi "...is it really Jenny?"
     bi "I... I thought we were becoming closer but..."
     bi "I guess I hadn't really kept much of an eye on her after we initially explored the mansion together."
@@ -3205,7 +3303,7 @@ label trial2e:
     s "You did leave around when Stella did to \"go grab batteries\""
     s "And you could've taken the knife with you. Unless Catherine can attest to the knife being in the kitchen the whole time."
     hide sam with moveoutright
-    show catherine ind with dissolve:
+    show catherine ind with moveinright:
         xcenter .75
     c "No, I was focusing on prepping dinner."
     play sfx "audio/poptear.mp3" volume .5
@@ -3217,6 +3315,7 @@ label trial2e:
     c "So anyone who came to the kitchen when I wasn't using the knife could have taken it out without me noticing."
     c "Did you really do it bestie?"
     hide poptear
+    $mood = "shock"
     j "C-catherine..."
     j "I swear I... I didn't."
     bi "Jenny was starting to tear up."
@@ -3227,6 +3326,7 @@ label trial2e:
     show shahar ind with moveinright:
         xcenter .75
     $mood = "ind"
+    call pophuhb
     h "Aye, I don't really follow what yer all discussin', but, I got a riddle for ye."
     hide jenny with moveoutleft
     show sam ind with moveinleft:
@@ -3293,7 +3393,13 @@ label trial2f:
     show drac ind with moveinright:
         xcenter .75
     d "Hmm."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .33
+        ycenter .25
+        zoom .75
     d "Something doesn't make sense."
+    hide popwow
     d "Sam, I'm disappointed, I thought you were more rational than this."
     play sfx "audio/popmad.mp3" volume .5
     show popmad:
@@ -3309,16 +3415,18 @@ label trial2f:
         startMansionTrial("sam", "Sam: The knife was clearly returned to the kitchen shortly after the murder, what part of that do you disagree with?", 0,
         "sam",  "Sam: There was {color=#f00}no reason for the murderer to wait upstairs after the murder{/color}.", -1,
         "sam", "Sam: And clearly the murderer {color=#f00}didn't leave the murder weapon in the body{/color}.", -1,
-        "sam",  "Sam: So, what, do you think {color=#55f}the knife went straight to the dining room instead of the kitchen?{/color}", 1,
+        "sam",  "Sam: So, what, do you think {color=#0BF}the knife went straight to the dining room instead of the kitchen?{/color}", 1,
         2, stabwound2, "trial2g")
 label trial2g:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene bg mansiondining at bg
     camera at parallax
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sam ind
     with fade
+    call popwowb
+    b "You might actually be wrong about that."
     b "Sam, we inspected the wound during the investigation."
     b "It looks like something was used to plug the wound after Stella was stabbed..."
     b "What if it was..."
@@ -3330,11 +3438,7 @@ label trial2g:
     c "Oh, I think I can take it from here, Bert!"
     bi "...man, I hate being interrupted."
     c "I watched this detective show that was super popular a few years ago."
-    c "I think it's called, like... Warlock or something?"
-    c "I can't remember the name, maybe because it's copyrighted."
-    b "Huh?"
-    c "Oh, never mind."
-    c "Anyway, there's an episode where a serial killer builds blades into the belts of his victims, who were royal guards."
+    c "There's an episode where a serial killer builds blades into the belts of his victims, who were royal guards."
     c "Their victims would only die after taking off their belts, so they would die in isolation and it seemed like a ghost killed them."
     c "Can you guess why?"
     b "...Catherine, maybe it's best if we try to solve the murder in front of us instead of a contrived fictional one."
@@ -3380,6 +3484,8 @@ label trial2g:
     s "Only now? Why didn't we do this while we were investigating?"
     d "Well, during the investigation I thought it was obvious the knife wasn't the murder weapon."
     d "It was only when your theory was proposed that I began to contend with the idea."
+    $mood = "shock"
+    show drac oh
     d "Anyway, my proposed test is to try inserting the kitchen knife into Stella's stab wound."
     d "How well it fits should be very informative."
     hide sam with moveoutright
@@ -3389,6 +3495,7 @@ label trial2g:
     j "Shouldn't we be respecting the body?"
     d "You're not really respecting my body if you think I shouldn't maximize my chances of surviving this game."
     d "Besides, shouldn't you be in favor of this? This could be exonerating evidence for you."
+    $mood = "ind"
     j "That is true..."
     j "But I'm not going with you. I don't want to see that happen to poor Stella."
     hide jenny with moveoutright
@@ -3401,7 +3508,7 @@ label trial2g:
         xcenter .75
     c "Yeah! They're so entertaining."
     b "..."
-    d "Anyways, I don't need anyone to follow me."
+    d "I don't need anyone to follow me."
     d "I'm happy to do the test on my own."
     hide catherine with moveoutright
     show sam ind with moveinright:
@@ -3427,7 +3534,7 @@ label trial2g:
     h "I'll go, mateys."
     b "Shahar?"
     h "A stab wound isn't more gross than some of the scurvy ye see on the sea."
-    d "Works for me. Let's not dilly-dally further."
+    d "Works for me. Let's not dilly-dally any further."
     scene black with dissolve
     bi "Dracula grabbed the knife and headed upstairs with Shahar."
     bi "The rest of us sat in silence for a few minutes waiting."
@@ -3442,17 +3549,26 @@ label trial2g:
         xcenter .75
     with fade
     b "So? What happened?"
+    $mood = "shock"
     d "The knife didn't fit in the wound perfectly. That is, there was a tiny amount of wiggle room."
     d "It's quite curious. Unless the killer intentionally jiggled the knife after making the initial cut,"
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .32
+        ycenter .25
+        zoom .75
+
     d "my guess is the murder weapon is something a bit bigger than the kitchen knife."
     d "And I don't see a reason for the killer to jiggle the knife."
+    hide popwow
     s "Aye, I can verify everything the geezer's saying."
     s "He did jiggle the cutlass around a bit after shivving the lady."
     d "To clarify, I did not \"shiv\" Stella. I merely reinserted the knife in the existing wound."
-    d "I will also say, there was little resistance in reinserting the knife."
+    d "I will also say, there was very little resistance in reinserting the knife."
     d "I think this is further evidence that the murder weapon was left in the body for an extended period of time."
     d "Had it been removed, I might expect the cavity formed by the wound to start healing, creating resistance during my test."
     d "But there was a minimal amount."
+    $mood = "sad"
     b "Shahar wouldn't be able to verify that, right? Since he didn't put the knife back in."
     d "No, I'm merely asking you to trust me on this one."
     d "Are there any further questions or objections to my rebuttal of Sam's theory?"
@@ -3462,7 +3578,8 @@ label trial2g:
     show jenny ind with moveinright:
         xcenter .75
     j "Proceed how exactly?"
-    j "While I'm grateful Sam's theory was debunked, we don't exactly have any new ones."
+    j "I'm so glad Dracula was able to prove my innocence."
+    j "But I'm not sure what other lead we have at the moment?"
     hide drac ind with moveoutleft
     show sid ind with moveinleft:
         xcenter .25
@@ -3471,18 +3588,26 @@ label trial2g:
     show sam ind with moveinright:
         xcenter .75
     s "Here we go with another Sid idea..."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .25
+        ycenter .3
+
     i "Hey, screw you, your idea was wrong beforehand."
     b "Sid, ignore Sam. Tell us your idea."
+    hide popmad
     b "Discussing something is better than discussing nothing, Sam."
     s "Hmph."
     i "Dracula said the stab wound was slightly bigger than the kitchen knife."
     i "So really, we just need to identify an object that's slightly bigger than the kitchen knife, right?"
     i "There can't be that many of those in the house."
+    show scary with dissolve:
+        alpha .5
+    bi "Something slightly larger than the knife?"
     bi "Hm... what fits that description?"
     $ sheath = 7
     call screen mansionEvidenceTrial(-1, sheath, "trial2h") with dissolve
 label trial2h:
-    play music "audio/rush.mp3"
     scene bg mansiondining  at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
@@ -3515,6 +3640,7 @@ label trial2h:
     d "Sure, but my point is that maybe Sid's not too far off."
     hide sam
     hide drac
+    with dissolve
     show catherine happy
     c "Oh, I get it!"
     hide catherine
@@ -3531,13 +3657,13 @@ label trial2h:
     $showchibint()
     $renpy.hide_screen("status_screen")
     python:
-        startMansionTrial("catherine", "Catherine: They clearly {color=#55f}inverted the sheath{/color} and the inside must be pointy enough to stab with!", 1,
-        "shahar",  "Shahar: They used {color=#55f}something to make the sheath sharper{/color} before stabbing Stella!", 1,
-        "lauren", "Lauren: The killer {color=#55f}used the sheath as a mold{/color} to make a sharp object.", 1,
+        startMansionTrial("catherine", "Catherine: They clearly {color=#0BF}inverted the sheath{/color} and the inside must be pointy enough to stab with!", 1,
+        "shahar",  "Shahar: They used {color=#0BF}something to make the sheath sharper{/color} before stabbing Stella!", 1,
+        "lauren", "Lauren: The killer {color=#0BF}used the sheath as a mold{/color} to make a sharp object.", 1,
         "sam",  "Sam: I found the sheath during the party in the kitchen, and then it stayed here in the dining room. {color=#f00}If you believe me, then the sheath couldn't have gone near Stella's body{/color}.", -1,
         2, -1, "trial2i")
 label trial2i:
-    play music "audio/rush.mp3"
+    play music "audio/coming_together.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
@@ -3546,6 +3672,7 @@ label trial2i:
     with fade
     $mood = "shock"
     b "Wait, everyone quiet down."
+    call pophuhb
     b "Lauren, say that again?"
     l "The killer used the sheath as a mold."
     b "Hmm... it's a bit out there, I'll admit."
@@ -3553,9 +3680,8 @@ label trial2i:
     b "Plus, if the sheath was used as a mold for a weapon itself, the weapon could leave the area without the sheath leaving."
     b "So unlike Catherine and Stella's theories, Lauren's isn't invalidated by Sam's account of where the sheath was during the party."
     show lauren ind:
-        xcenter .5
         linear 0.15 xcenter .25
-    show frog happy with dissolve:
+    show frog happy with moveinbottom:
         xcenter .75
     f "So... Lauren is right? We figured it out!"
     $mood = "sad"
@@ -3597,6 +3723,7 @@ label trial2i:
     show drac ind with moveinleft:
         xcenter .25
     d "No need. There's a simple solution, really."
+    call pophuhb
     b "Hm?"
     d "Yes. One that can answer both of Jenny's questions."
     d "What the mold was filled it, and why we didn't find the makeshift knife during the investigation."
@@ -3608,7 +3735,6 @@ label trial2i:
     $water = 2
     call screen mansionEvidenceTrial(-1, water, "trial2j") with dissolve
 label trial2j:
-    play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
@@ -3625,7 +3751,7 @@ label trial2j:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show shahar ind with dissolve:
+    show shahar ind with moveinleft:
         xcenter .25
     h "Water? You sure it wasn't a splash of vodka? That'd be more in character fer the lass."
     hide popwow
@@ -3676,15 +3802,17 @@ label trial2k:
         xcenter .25
     c "Ooh, ice is pretty sharp!"
     c "I once read a news story about a guy who got speared in the head because he walked under an icicle right as it detached from a roof!"
+    $mood = "sad"
     b "Um... yes, thanks for the support Catherine."
     bi "...How does she have all this esoteric knowledge about random deaths?"
     bi "Also, will I get to finish this explanation without being interrupted again?"
+    $mood = "ind"
     b "Anyway, the point is, Dracula's theory is that the killer used the sheath to make an ice knife."
     b "Since ice melts at room temperature, we weren't able to find the ice knife."
     b "Well, I guess we did find it, but in the form of water that had been absorbed by Stella's clothing."
     b "This also explains why the wound wasn't that bloody, without the killer needing to come back and remove the knife."
     d "Yes, it is a rather clever and elegant idea, ignoring the fact that it is a murder."
-    d "We had been using the murder weapon's location as a means of passing innocense."
+    d "We had been using the murder weapon's location as a means of passing innocence."
     d "But if the murder weapon never had to move after Stella was murdered, all of those alibis need to be reexamined."
     hide catherine with moveoutleft
     show sid ind with moveinleft:
@@ -3703,7 +3831,9 @@ label trial2k:
     i "...None, I guess."
     d "As well."
     d "Unless there are other objections, I think we can move forward with this theory."
-    d "Especially because it has a clear suspect associated with it."
+    d "Especially because..."
+    $mood = "shock"
+    d "It has a clear suspect associated with it."
     show scary with dissolve:
         alpha .5
     bi "Oh... That is true..."
@@ -3711,13 +3841,14 @@ label trial2k:
     bi "Plus, they would have been able to pull the ice knife murder easier than everyone else here."
     bi "That person is..."
     scene black with dissolve
-    call screen chooseCharMansion("sam", "trial2l", "Who used the ice knife?") with dissolve
+    hide screen status_screen
+    $showchibint()
+    call screen chooseCharMansion("sam", "trial2l", "Who does this evidence incriminate?") with dissolve
 label trial2l:
-    play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
-    show sam ind
+    show sam angry
     with fade
     s "Me?"
     play sfx "audio/popmad.mp3" volume .5
@@ -3754,8 +3885,13 @@ label trial2l:
     h "Ah. Yer blamin' me, are ye ya landlubber."
     s "Not blaming you. Just saying, you also went to the freezer."
     s "And when did you go to the freezer?"
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .25
+        ycenter .25
     h "After Stella went a-plunderin'."
     s "And Bert, when do you suspect I would have killed Stella?"
+    hide popmad
     b "When you left to grab the stepstool from the garage."
     s "Right, and I was just in the kitchen, but I was in the dining room for a while before that."
     s "So if the ice knife was used in the murder, I must have grabbed it after Shahar went to the freezer."
@@ -3769,9 +3905,15 @@ label trial2l:
     bi "Damn, that's a good point."
     bi "I really thought we figured everything out."
     bi "We had such a convincing theory, but I guess there wasn't anywhere for Sam to hide the knife."
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .33
+        ycenter .25
     h "So what now. Are we lynchin' Sam?"
     s "What? Did you not pay attention?"
     h "I'm not exactly the brightest matey on the poop deck."
+    hide pophuh
     s "Ugh."
     bi "..."
     bi "Wait."
@@ -3781,7 +3923,7 @@ label trial2l:
     s "Oh? Care to tell us where I hid the knife in a nearly empty freezer?"
     show scary with dissolve:
         alpha .5
-    bi "Yeah... the knife had to have been hidden..."
+    bi "Yeah... the knife could have been hidden..."
 label trial2m:
     menu:
         bi "The knife was hidden..."
@@ -3801,13 +3943,16 @@ label trial2m:
             bi "The ice would melt in the fridge."
             jump trial2m
     hide scary with dissolve
+    stop music fadeout 1.0
     b "In the cake."
     b "You could've easily pushed the ice knife into the cake to hide it."
     h "Ay lad, wouldn't there have been an obvious hole in the cake?"
+    call popwowb
     b "Well, when you opened the freezer the hole could have been in the back."
     b "And before the cake was brought out to serve, Sam had already cut a slice."
     b "The edge of the slice could have been aligned with the hole the knife was hiding in."
     b "After the slice was cut, there wouldn't be evidence of a hole in the cake."
+    bi "Piecing it together makes me sad, in a way."
     s "Hiding a murder weapon in food? That's idiotic."
     b "Not to mention, the slice was cut rather cleanly, like you had used a real knife."
     b "When I tried using the sheath, the cut was much less flat."
@@ -3827,7 +3972,8 @@ label trial2m:
     s "Not like any of us have made any progress on figuring out who the Game Master is or how to get out."
     s "Might as well just all die swiftly by voting the wrong person."
     hide popwow
-    bi "I think in a weird way, this is Sam's way of admitting to stabbing Stella."
+    bi "I think in a weird way..."
+    bi "This is Sam's way of admitting to stabbing Stella."
     bi "There's no more arguments to be had, only anger."
     hide shahar with moveoutleft
     show sid ind with moveinleft:
@@ -3837,7 +3983,9 @@ label trial2m:
         xcenter .25
         ycenter .25
     i "I knew something was fishy with Sam! You're a jerk {i}and{/i} a murderer!"
+    s "Hmph. Yeah, you were right this time."
     i "You're really cruel-hearted, you know that?"
+    play music "audio/coming_together.mp3"
     i "You couldn't just settle for stabbing her! You tortured her for fun, then killed her!"
     bi "...Huh?"
     hide popmad
@@ -3851,11 +3999,11 @@ label trial2m:
     s "Umm, no, not really?"
     bi "Sam's just as confused as I am..."
     hide pophuh
+    bi "Torturing Stella before killing her?"
     bi "What is Sid talking about?"
     $burns = 3
     call screen mansionEvidenceTrial(-1, burns, "trial2n") with dissolve
 label trial2n:
-    play music "audio/rush.mp3"
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
@@ -3898,10 +4046,10 @@ label trial2n:
     j "For all we know they have nothing to do with the murder."
     hide lauren with moveoutleft
     show sid ind with moveinleft:
-        xcenter .25
+        xcenter .5
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
-        xcenter .35
+        xcenter .42
         ycenter .25
         zoom .75
     i "Yeah! We already know Sam's the murderer! No one else is mean enough to do it!"
@@ -3916,27 +4064,34 @@ label trial2n:
     b "That's assuming her hands were burned before she was stabbed, which we don't know."
     i "But do you know her hands were burned after she was stabbed?"
     b "I don't, but someone else should..."
-    scene black with dissolve
+    hide screen status_screen
+    $showchibint()
+    scene black
+    with dissolve
     call screen chooseCharMansion("sam", "trial2o", "Who would know if Stella was stabbed or burned first?") with dissolve
 label trial2o:
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
     with fade
+    $mood = "ind"
     bi "..."
     bi "It comes down to this."
-    bi "Are we going to cooperate?"
-    show sam ind with dissolve
-    bi "Or will Sam lie and indirectly save someone else in the process..."
+    bi "Is Sam going to cooperate?"
+    show sam angry with dissolve
+    bi "Or lie and indirectly save someone else in the process..."
     b "Sam."
     s "What do you want now?"
     b "We need to ask you to cooperate with us fully."
+    call popwowb
     b "That means owning up to stabbing Stella."
     s "What reason do I have to do that? Even if I did it, I wouldn't admit to it."
     b "We have no reason to believe anyone but you was with Stella as she died."
     b "So unless you help us identify someone else who could have done it..."
+    $mood = "sad"
     b "We're going to have to choose you as the murderer."
     b "But if you can tell us what happened honestly, and that includes evidence it wasn't you..."
+    $mood = "ind"
     b "It could get you off the hook. And find the real murderer, saving us all."
     show sam ind:
         xcenter .5
@@ -3945,18 +4100,20 @@ label trial2o:
         xcenter .25
     i "Wait! I don't buy it."
     bi "What now..."
-    i "The Game Master must have chosen Sam to be the murderer, otherwise nothing makes sense."
+    i "There's one more thing we forgot to bring up!"
     $location = 8
     camera at paralloff
     $showchibint()
     $renpy.hide_screen("status_screen")
     python:
-        startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for Sam to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think they did.{color=#f00}", -1,
+        startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for Sam to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think so.{color=#f00}", -1,
         "sid", "Sid: Kaiser made it sound like it was pretty clear he was chosen as murderer, so there's {color=#f00}no way Sam was confused about being the murderer.{/color}", -1,
         "sid", "Sid: The only other possibility is that two people were chosen, but that {color=#f00} can't happen in this game.{/color}", -1,
-        "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#55f}Sam must have been chosen as murderer{/color}.", 1,
+        "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#0BF}Sam must have been chosen as murderer{/color}.", 1,
         1, location, "trial2p")
 label trial2p:
+    play music "audio/coming_together.mp3" fadein 1.0
+
     scene bg mansiondining at bg with dissolve
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
@@ -3966,15 +4123,20 @@ label trial2p:
     show sid ind:
         xcenter .25
     with dissolve
+    $mood = "ind"
     b "Wait, remember the discussion we had on the first day here?"
     b "We said that the murderer was likely to have been in this mansion before."
     b "We never figured {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
-    b "So it's possible Sam wasn't chosen as the murderer by the Game Master, but has been here before."
-    b "In which case, it would be easy for someone who had been here before to believe they were the murderer this time."
-    b "But nothing rules out multiple people having been here before."
-    b "Someone else could have actually been assigned to be the murderer."
-    b "Also, I guess the Game Master never clarified who we should vote for if the designated murderer isn't actually the murderer."
-    b "So even if Sam was chosen as the murderer, we might still want to vote for someone else."
+    b "Which means it's possible..."
+    call popwowb
+    b "Sam wasn't chosen as the murderer by the Game Master, but has been here before."
+    b "For all we know, multiple people could been here before."
+    b "Which would mean someone other than Sam could have actually been assigned to be the murderer."
+    show scary with dissolve:
+        alpha .5
+    bi "Also, I guess the Game Master never clarified who we should vote for if the designated murderer isn't actually the murderer."
+    bi "So even if Sam was chosen as the murderer, we might still want to vote for someone else."
+    hide scary with dissolve
     i "This all seems so complicated... isn't there that saying about the simplest explanation usually being the best one?"
     i "Sam killing Stella just makes so much sense."
     b "It doesn't explain the burns on Stella's hands though."
@@ -3983,7 +4145,7 @@ label trial2p:
     show popmad:
         xcenter .25
         ycenter .25
-    i "...Fine, but Sam better do a good job or I'm going to vote Sam off anyway!"
+    i "...Fine, but it better be convincing or I'm going to vote Sam anyway!"
     hide sid with moveoutright
     show sam ind:
         xcenter .75
@@ -3991,6 +4153,7 @@ label trial2p:
     bi "Ok, Sid's cooperating now, but will Sam confess and tell us what happened?"
     hide popmad
     s "..."
+    stop music fadeout 1.0
     s "Okay, I'll talk."
     s "This... this damn game."
     $mood = "shock"
@@ -3998,14 +4161,21 @@ label trial2p:
     s "The guy who lived here, Mr. Sydell, he was one of the people I sold drugs to."
     bi "Sam knows Mr. Sydell!"
     s "I... I didn't want to murder Stella."
-    s "But I thought I had to."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .42
+        ycenter .25
+        zoom .75
+    s "But I thought I had to!"
     s "We don't know what happens if days go by without a murder."
+    hide popwow
     s "Do we starve to death because we run out of food?"
     s "Does the murderer get killed by the chip in their head for not complying?"
     s "No offense, but... you're all strangers to me. And now we think you're all criminals."
     s "I can't in good faith put your lives above mine."
     s "And even if I could..."
     s "What if {i}everyone{/i} gets killed if the murderer doesn't comply and kill someone?"
+    s "What if I was the chosen killer, and my hestence led to {i}everyone{/i} dying?"
     bi "..."
     $mood = "sad"
     bi "I... I never thought about it from that perspective."
@@ -4015,26 +4185,36 @@ label trial2p:
         linear 0.15 xcenter .75
     show lauren ind with dissolve:
         xcenter .25
-    l "Sam I... think all of understand just how messed up this whole situation is."
+    play music "audio/coming_together.mp3"
+    l "Sam... I think all of understand just how messed up this whole situation is."
+    $mood = "ind"
     l "You or whoever murdered Stella aren't the enemy. The Game Master is the enemy. I think we can agree with that."
+    s "... Thanks Lauren."
     hide sam with moveoutright
     show shahar ind with moveinright:
         xcenter .75
     h "Nay."
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .3
     h "Ye blew a defenseless woman down."
     h "Not to protect yerself from a cutlass, not fer revenge."
     h "Just a poor defenseless lassie."
+    hide popmad
     h "Even if Sam didn't deal the killing blow, I can't fergive a murderer so becalmedly, I'm sorry lads and lassies."
     l "Shahar, maybe we can talk this through?"
     hide shahar with moveoutright
     show sam ind with moveinright:
         xcenter .75
     s "No, Shahar's right."
+    $mood = "sad"
     s "I... hate what I've become."
     s "I wish it was someone else's turn to murder me instead."
     b "Look, Sam, what happened happened."
     b "We... I miss Stella, as much as she annoyed me, but we have to look past that now."
     b "Our lives are on the line. We can't save Stella now, but we can save the rest of us."
+    $mood = "ind"
     b "But you need to tell us what happened in the bathroom."
     s "..."
     s "Okay."
@@ -4044,10 +4224,11 @@ label trial2p:
         xcenter .75
         linear 0.3 xcenter .5
     s "I went in there, with the knife made out of ice, just like you figured out..."
-    s "She saw me and greeted me kindly."
-    s "I guess she didn't think it was weird I came up there."
-    s "But then she then turned back and was messing with the sink."
+    s "She saw me, and greeted me drunkenly."
+    s "Then she then turned back and was messing with the sink."
+    $mood = "sad"
     s "I took that opportunity, pulled the ice knife out, and stabbed her in the back as hard as I could."
+    s "Once I swung down, I tried not to look directly at the wound."
     bi "Several people were starting to look away uncomfortably."
     bi "We had asked Sam to do it, we had seen the corpse but..."
     bi "...hearing a murder described so casually wasn't easy."
@@ -4055,21 +4236,25 @@ label trial2p:
     s "But she let out a scream when she made contact with it."
     s "I think because of the pain of collapsing onto it so quickly."
     s "Then her body went limp."
-    s "I checked her pulse and her heart had stopped."
-    s "I thought I got lucky with where I aimed the knife."
+    s "I checked her pulse a second later and her heart had stopped."
+    s "I think I got lucky with where I aimed the knife."
     s "And yeah, I left the knife in her body so it would melt."
+    $mood = "ind"
     b "Hm..."
+    show scary with dissolve:
+        alpha .5
     bi "Something seems... off about Sam's story."
     bi "Could one stab wound in the back really kill someone so easily and quickly?"
     bi "I guess we can figure that out later."
     bi "For now..."
+    hide scary with dissolve
     b "I think I know precisely what caused the burn wounds."
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
-        xcenter .4
+        xcenter .42
         ycenter .25
         zoom .75
-    s "Oh?"
+    s "What?"
     b "I had a suspicion even before hearing Sam's story."
     b "But what Sam said makes me even more sure."
     b "Stella's hands were burned by..."
@@ -4083,8 +4268,9 @@ label trial2q:
         xcenter .5
     with fade
     $mood = "ind"
+    b "That has to be it!"
     b "Sam, you said Stella braced herself on the sink, right?"
-    s "Yeah."
+    s "Y-yeah, she fell onto the sink, and must have grabbed the handles."
     b "If we look at the shape of the burn wounds, they're very rectangular."
     b "Just like the sink handles."
     b "Before hearing Sam's story, from the shape of the sink handles and the position of Stella's corpse..."
@@ -4092,10 +4278,18 @@ label trial2q:
     b "But Sam's story makes me even more sure, because Stella apparently braced herself using the sink."
     b "So the short version of events is, Sam stabs Stella, causes her to fall onto the sink."
     b "She grabs the sink handles trying to brace herself, and then the sink handles somehow burn her."
-    b "Sam, if we can figure out what burned her and if it was lethal, that means you didn't murder her."
+    b "Sam..."
+    call popwowb
+    b "If we can figure out what burned her and if it was lethal, that means you didn't murder her."
     s "..."
+    $mood = "shock"
     bi "Why's Sam so quiet? This is a moment of hope for us..."
     s "Thanks for trying Bert, but..."
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter .43
+        ycenter .275
+        zoom .75
     s "I don't think the sink handles can be what burned her."
     s "So it seems like I'm not off the hook..."
     b "Care to explain?"
@@ -4109,18 +4303,21 @@ label trial2q:
     $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("sam", "Sam: Stella {color=#f00}was messing with the sink handles when I got there.{color=#f00}", -1,
-        "sam", "Sam: If the sink handles are what burned her, {color=#55f}she should have been in pain before I stabbed her.{color=#55f}", 1,
+        "sam", "Sam: If the sink handles are what burned her, {color=#0BF}she should have been in pain before I stabbed her.{color=#0BF}", 1,
         "sam", "Sam: So the handles would have {color=#f00}had to heat up in the few seconds after I stabbed her.{color=#f00}", -1,
         "sam", "Sam: No one else came upstairs while this was happening, so {color=#f00}nothing could have heated them up in that time.{/color}", -1,
         3, [wires, generator], "trial2r")
 label trial2r:
     scene bg mansiondining at bg
+    play music "audio/coming_together.mp3" fadein 1.0
+
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
     camera at parallax
     show sam ind:
         xcenter .5
     with fade
+    $mood = "ind"
     b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
     b "There was a generator upstairs, anad when I looked under the sink I saw some wires fed in through a hole in the wall."
     b "It was hard to tell where the wires connected to, but it was probably the sink handles."
@@ -4129,7 +4326,11 @@ label trial2r:
     s "That still doesn't explain how they were only heated up when Stella fell onto them."
     b "I think there's someone who could maybe explain that."
     bi "But... it's not me."
-    scene black with dissolve
+    hide screen status_screen
+    $showchibint()
+    scene black
+    with dissolve
+
     call screen chooseCharMansion("dracula", "trial2s", "Who could explain how Stella only got burnt after being stabbed?") with dissolve
 label trial2s:
     scene bg mansiondining at bg
@@ -4142,21 +4343,24 @@ label trial2s:
     d "Yes?"
     b "What do you know about electricity and the human body?"
     d "...What are you insinuating?"
-    b "I know you probably know enough to explain how Stella got burnt."
+    b "I think you probably know enough to explain how Stella got burnt."
     b "Since you claim to have conducted \"experiments\" about this kind of thing."
-    d "And who told you that?"
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .5
+        ycenter .3
+    d "My, my, and just who told you that?"
     b "Let's just say you should mind your volume level at parties."
     d "Hmph, so you were eavesdropping then?"
+    hide popmad
     bi "I wasn't, but I promised Freddy I wouldn't say it was him so..."
-    b "I happened to overhear it."
-    d "A likely story."
+    b "I just happened to overhear it while I was walking around earlier."
+    show drac oh
+    d "A ribbeting-er, riveting excuse."
+    d "..."
     d "Fine, I'll entertain this line of thought. But no one's allowed to inquire further about what Bert mentioned."
     b "So much for everyone being an open book about their crimes, huh?"
     d "..."
-    d "I don't particularly care for you right now Bert."
-    d "But for the sake of escaping, I will pretend this conversation didn't happen until we have solved this mystery."
-    b "Care to explain why you didn't speak up earlier?"
-    d "As Jenny said, we all have reasons to avoid bringing up our past."
     d "I was hoping you all would solve this organically, without my help, so I didn't reveal more than I needed to."
     d "If that did not happen, I would have spoken up."
     bi "I don't believe him."
@@ -4164,10 +4368,17 @@ label trial2s:
     b "Fine by me."
     d "Alright, no interruptions please."
     bi "He said that in a way that made it seem like it was directed at the group, but it was definitely at me."
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .43
+        ycenter .25
+        zoom .75
     d "Electrical current can only travel in closed circuits."
+    hide popwow
     d "For example, if you take a battery and attach a wire to one end only, current won't flow through the wire."
     d "But when you attach the other end of that wire to the other end of the battery, current flows."
     d "Think of the sink handles as ends of a battery, since they were connected to the generator."
+    $mood = "shock"
     d "And Stella like a wire, with her hands being the two endpoints."
     d "The circuit isn't completed when Stella has one hand on a sink handle, so current won't flow through her from the generator."
     d "But if she grabbed both sink handles to brace herself, she would receive some amount of current."
@@ -4176,9 +4387,16 @@ label trial2s:
         linear 0.3 xcenter .75
     show sid ind with dissolve:
         xcenter .25
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .31
+        ycenter .25
+    $mood = "ind"
     i "Um... I have a question."
     d "Yes?"
     i "I've helped my dad replace car batteries before."
+    hide pophuh
     i "He's grabbed both terminals of a car battery before on accident but he wasn't hurt."
     d "Well, there's two factors at play that determines how bad an electrical shock is."
     d "The first is amount of voltage coming from the source of electricity."
@@ -4198,8 +4416,9 @@ label trial2s:
     d "..."
     d "I will overlook that comment."
     d "The point is..."
+    call popwowb
     d "It makes sense Stella could have only been lethally shocked, or even shocked at all, by touching both handles."
-    b "Great, so that answers that."
+    b "So that means it really is possible!"
     b "Dracula, there's one more thing that would be good to know..."
     show scary with dissolve:
         alpha .5
@@ -4209,7 +4428,7 @@ label trial2t:
         bi "What should I ask Dracula?"
 
         "Who killed Stella?":
-            bi "Unless it was him or Sam, how would he know?"
+            bi "Unless he did it, I don't think we have it figured out yet."
             jump trial2t
 
         "What killed Stella?":
@@ -4229,19 +4448,23 @@ label trial2t:
     d "But it was pretty likely the shock."
     d "From what I saw, a stab wound in the back like that wouldn't have killed Stella immediately."
     d "Even if Sam stabbed a vital organ, Stella would remain conscious for probably at least 15 seconds."
+    $mood = "shock"
     d "In contrast, electrocution can kill someone nearly instantly."
     d "The fact that Stella was both stabbed and shocked, and didn't get up once stabbed..."
     d "...suggests the shock killed her before she could act while conscious."
+    bi "I have a weird sense of relief hearing that, knowing the cause of death is more decisive."
     hide shahar with moveoutleft
     show jenny ind with moveinleft:
         xcenter .25
+    $mood = "ind"
     j "I have a question."
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
-        xcenter .35
+        xcenter .32
         ycenter .25
         zoom .75
     j "How do we know Dracula and Sam aren't conspiring?"
+    hide pophuh
     j "They spent a lot of time since we got to the mansion talking to each other in private."
     d "Hmph, and what would I have to gain from protecting Sam if I didn't believe there was another murderer?"
     j "I dunno. Maybe you're the Game Master and you know you won't die regardless."
@@ -4267,12 +4490,14 @@ label trial2t:
     j "So if you trust him, I trust him."
     bi "Jenny trusts me."
     bi "I can't let her down."
-    b "Okay, for now our main priority is to figure out who set up the wiring."
+    b "Okay, now all we need to do is figure out who set up the wiring."
     hide sam with moveoutright
     show lauren ind with moveinright:
         xcenter .75
     l "Well that's straightforward, right?"
     l "It's probably Jenny."
+    $mood = "shock"
+    call popwowb
     b "Huh?"
     j "Huh? Me again?..."
     l "We found the generator in Jenny's room."
@@ -4290,6 +4515,7 @@ label trial2u:
     show lauren ind:
         xcenter .75
     with dissolve
+    $mood = "ind"
     b "If the generator was in that room when Stella died..."
     b "The wires would have needed to go from the generator to the bathroom."
     l "Well yeah, but the murderer could have just removed the wires later."
@@ -4298,8 +4524,13 @@ label trial2u:
     b "But if you look at the wall of Jenny's bedroom..."
     b "There's no holes in the wall. So there's no way to feed the wires into the bathroom from there."
     l "Hm... that makes sense. Sorry Jenny, looks like I fell for the bait of someone framing you."
+    play sfx "audio/poprain.mp3" volume .5
+    show poprain with dissolve:
+        xcenter .25
+        ycenter .1
     j "It's... okay. I guess I'm used to it now."
-    bi "She didn't sound very okay, but that was a topic for later."
+    bi "She didn't sound very okay, but we can get Jenny therapy after all this."
+    hide poprain with dissolve
     l "I'm confused though. If the generator wasn't in Jenny's room, where was it?"
     b "Well, when you consider that the sink is on the left wall when you enter the bathroom, we can figure that out easily."
     call screen pickSpot3 with dissolve #pick closet
@@ -4316,19 +4547,18 @@ label trial2v:
     l "The one in the second floor hallway?"
     b "Yeah, that's the only other room that shares that wall with the bathroom."
     j "Wait, isn't that closet locked?"
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter .32
+        ycenter .25
     j "How could the killer have gotten in?"
     b "I'm not sure. Maybe they found the key before the rest of us and didn't tell anyone."
+    hide pophuh
     b "Maybe they were the first to try opening the closet and locked it from the inside."
     b "But that's the only place that could have a hole in the wall matching the bathroom's."
     b "We've seen every other room and found no holes, so by process of elimination that must be it."
     j "Hm... yeah, I can't think of any other solution for where it could have been."
-    #show jenny happy:
-    #    xcenter .25
-    #j "Unless the murderer is a 2D character who can fit between walls!"
-    #b "Jenny, none of us are 2D characters... we're all real, 3D humans."
-    #j "I know, I know, just making a joke to ease the mood."
-    #show jenny ind:
-    #    xcenter .25
     j "But I don't see how it's useful to know the generator was in the closet..."
     j "It's not like anyone's admitted to having access to the closet."
     show scary with dissolve:
@@ -4362,26 +4592,33 @@ label trial2w:
     show lauren ind:
         xcenter .75
         linear 0.15 xcenter .8
-    show sid ind with dissolve
+    show sid ind with moveinbottom
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter .43
+        ycenter .25
+        zoom .75
     i "Aha!"
     i "It was Sam all along!"
+    hide popwow
     i "Sam would be the only person who could move the generator."
     hide jenny with moveoutleft
     hide lauren with moveoutright
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sam ind with dissolve:
+    show sam ind with moveinleft:
         xcenter .25
     s "No, I swear it wasn't me."
     s "I knew nothing about the generator before a few minutes ago..."
     play sfx "audio/popwow.mp3" volume .5
+    show sid mad
     show popwow:
         xcenter .65
         ycenter .25
         zoom .75
     i "Liar! The murderer would say that too!"
-    bi "Yet again, I'm going to have to calm Sid down..."
+    bi "I'm going to have to calm Sid down again..."
     hide popwow
     $rope = 6
     camera at paralloff
@@ -4389,7 +4626,7 @@ label trial2w:
     $renpy.hide_screen("status_screen")
     python:
         startMansionTrial("sid", "Sid: {color=#f00}Sam was the last person to go upstairs{/color} before we found the body.", -1,
-        "sid",  "Sid: So if the generator moved after Stella died and before we went up, {color=#55f}Sam is the only one who could have done it.{/color}", 1,
+        "sid",  "Sid: So if the generator moved after Stella died and before we went up, {color=#0BF}Sam is the only one who could have done it.{/color}", 1,
         "sid", "Sid: Sam's in good shape too, so {color=#f00}moving the generator from the closet to Jenny's room wouldn't be difficult.{/color}", -1,
         "sid",  "Sid: C'mon, admit it, {color=#f00}Sam could move the generator easily, everything makes sense.{/color}", -1,
         3, rope, "trial2x")
@@ -4412,7 +4649,7 @@ label trial2x:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show frog sad with dissolve:
+    show frog sad with moveinbottom:
         xcenter .75
     f "M-me? But I'm just a frog..."
     show lauren ind with moveinright:
@@ -4420,10 +4657,11 @@ label trial2x:
     l "Hey, leave Freddy out of this."
     i "I-I'm just saying..."
     b "No, I don't think it's Freddy."
+    hide lauren
+    hide frog
+    with moveoutright
     b "Because the murderer had to lift the generator up the stairs."
     b "No offense Freddy, but I don't think you could've done that."
-    l "Hey, are you saying I helped him?"
-    b "What? No, where'd you get that idea?"
     i "I... I don't get it Bert."
     i "Earlier you said the murderer couldn't move the generator from the closet to the bedroom without the rope."
     i "But now you're saying the murderer was able to move it up the stairs."
@@ -4433,7 +4671,8 @@ label trial2x:
     b "No, I think just the circumstances of when Stella died are the key here."
     b "Remember, we know the generator moved after Stella died."
     b "And we don't think it's Sam because Sam wouldn't need a rope to move the generator."
-    b "With that in mind, it can only be..."
+    b "With that in mind, we know who must be the murderer."
+    b "It can only be..."
     show scary with dissolve:
         alpha .5
     call screen chooseCharMansion("catherine", "trial2y", "Who moved the generator?") with dissolve
@@ -4441,11 +4680,11 @@ label trial2y:
     scene bg mansiondining at bg
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
-    show catherine ind
+    show catherine happy
     with fade
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
-        xcenter .4
+        xcenter .42
         ycenter .25
         zoom .75
     c "Me? C'mon Bert, don't be silly."
@@ -4453,11 +4692,13 @@ label trial2y:
     c "Stella's dead, now's not the time for jokes!"
     hide pophuh
     b "I'm not joking. Maybe you couldn't have directly moved the generator after Stella died..."
+    call popwowb
+    show catherine ind
     b "But Sesame could have."
-    c "..."
     b "It adds up. Sesame was upstairs along with Sam when the murder happened."
+    call popwowb
     b "After Sam left, Sesame was the only one up there."
-    b "You would have been able to move the generator upstairs, but you needed Sesame to move it for you during the party."
+    b "You would have been able to move the generator upstairs, but you needed Sesame to move it for you during the party!"
     b "Sesame couldn't move the generator without some assistance since, well, he's a cat."
     b "But the rope would give Sesame something to pull the generator with."
     b "For most cats and their owners this wouldn't be possible, but as Freddy knows, Sesame is a very talented and well-trained cat."
@@ -4471,14 +4712,24 @@ label trial2y:
     c "Fufufu."
     b "Huh?"
     show catherine happy
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter .5
+        ycenter .5
     c "That's a funny theory Bert. You should try writing a mystery novel if you get out of here!"
     c "But you still haven't explained one thing."
+    hide pophearts
+    $mood = "shock"
     c "Where could I have gotten the wires from?"
     c "How do you know someone didn't put the wires there later to make it look like the generator killed her?"
     c "Without knowing that, I'd still believe it's Sam's stab wound that killed her."
+    show scary with dissolve:
+        alpha .5
     bi "Why didn't she bring this up earlier?"
+    $mood = "ind"
     bi "No, I know why. She's on the defensive. She's grasping for straws to find a way out."
     bi "Luckily, the answer is pretty obvious."
+    hide scary with dissolve
     b "The wires... you got them from..."
     call screen pickSpot4 with dissolve #pick kitchen
 label trial2z:
@@ -4490,6 +4741,7 @@ label trial2z:
     b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
     b "I thought it was strange at the time, but it makes sense if you know the murderer needed to get wires from somewhere."
     b "Why not steal them from appliances lying around the house?"
+    call popwowb
     b "It also gave the murderer a reason to send Jenny out of the party, setting her up as a potential culprit."
     b "And you, Catherine, spent the last few hours yesterday in the kitchen, and got up early today and went to the kitchen."
     b "If anyone would have had an easy time stealing those wires, it would be you."
@@ -4498,12 +4750,17 @@ label trial2z:
     show catherine ind:
         xcenter .5
         linear 0.3 xcenter .25
-    show sid ind with dissolve:
+    show sid mad with moveinright:
         xcenter .75
     i "No! You mean lady!"
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .3
     i "You... you killed Stella, and then made me yell at Sam."
     i "I'll never forgive you. I'm going to prove you did it!"
-    bi "Will he? Hm, it's nice to have someone else do the work for once."
+    bi "Will he?"
+    hide popmad
     i "Let's go check the rope! If Sesame used it, there must be bite marks or something on the end!"
     c "Wh... wha?"
     b "Hm, that's actually a really good idea Sid."
@@ -4519,13 +4776,24 @@ label trial2z:
     b "But you didn't, you've only ever said he could use it as a scratching toy."
     b "Which makes sense, he's a cat, not a dog. That's probably more his thing."
     c "..."
-    hide sid ind with moveoutright
+    hide sid with moveoutright
     show catherine ind:
         xcenter .25
         linear 0.3 xcenter .5
-    show doom with dissolve
     c "Yeah, you got me."
-    b "Huh?"
+
+    show screen killuser
+    play sound "audio/ch1guilty.mp3" volume .75
+    $renpy.movie_cutscene("ch2guilty.webm")
+    #$ renpy.pause(3, hard=True)
+    hide screen killuser
+    #hide movie "ch2guilty.webm" with dissolve
+    play music "audio/ominous.mp3" fadein 1.0
+    scene bg mansiondining at bg with fade
+    $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
+    $statusnt("Dining Room", "bert", ch=2, sun=4)
+    show catherine ind with dissolve
+    show doom with dissolve
     c "I... I lost. I won't draw it out anymore."
     show catherine happy
     play sfx "audio/pophearts.mp3" volume .5
@@ -4538,6 +4806,7 @@ label trial2z:
     c "Silly me as usual!"
     hide pophearts
     c "Should've spent more time thinking about that and less time thinking about recipes."
+    call pophuhb
     b "You're admitting it? You really killed Stella?"
     c "Mhm, you heard me right."
     c "Oh well, I guess I had this coming. All those houses I burgled, I almost got caught a few times."
@@ -4552,23 +4821,30 @@ label trial2z:
     $mood = "sad"
     c "C'mon, you really think working in a shelter pays a girl enough to live?"
     c "They barely feed the cats enough to live as is!"
-    hide sid with moveoutright
     show catherine ind:
         xcenter .5
         linear .3 xcenter .25
     show shahar mad with dissolve:
         xcenter .75
-    h "Ye wench! Ye've slain my second mate!"
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter .75
+        ycenter .3
+    $mood = "shock"
+    h "Ye purple haired wench! Ye've slain my second mate!"
     c "Yeah... sorry Shahar. Not much I could do about that one."
+    hide popmad
     h "Sorry? Ye think a pitiful apology like that will get you off me pirate hook?"
     h "Ye could've not killed her!"
     c "Well uh... the Game Master kind of forced my hand."
     h "Ye could've killed someone else!"
     b "Not a great alternative..."
     bi "..."
+    $mood = "ind"
     b "Wait."
     b "Catherine, the Game Master isn't killing you yet."
     b "I know these are... well, your last moments but..."
+    show shahar ind
     b "Tell us as much as you can."
     c "...?"
     show catherine happy:
@@ -4580,6 +4856,7 @@ label trial2z:
     bi "...Why isn't the Game Master just killing her?"
     bi "Eh, that doesn't matter. Gotta use this opportunity while we can."
     b "Ok, let's go quickly, we don't know how much time we have."
+    $mood = "ind"
     hide shahar with moveoutright
     show catherine happy:
         xcenter .25
@@ -4590,13 +4867,13 @@ label cathGivesInfo:
         set menuset
         "The Game Master forced your hand?":
             b "What do you mean the Game Master forced your hand?"
-            c "The instructions I got telling me to kill someone said there was a deadline."
+            c "The instructions told me to kill someone and said there was a deadline."
             c "They didn't say what the deadline was, but if the deadline arrived everyone would die."
             c "So... I had to kill someone and hope I got lucky to try to save everyone."
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show shahar ind with dissolve:
+            show shahar ind with moveinright:
                 xcenter .75
             play sfx "audio/poptear.mp3" volume .5
             show poptear:
@@ -4615,14 +4892,14 @@ label cathGivesInfo:
                 jump cathGivesInfo
 
         "How did you open the closet?":
-            c "Oh, when I was given instructions by the Game Master, they gave me a key to the closet."
+            c "Oh, along with the instructions, they gave me a key to the closet."
             b "A key?"
             b "Hmm... I wonder if Kaiser had access to the train computer for the same reason."
             b "Before I thought maybe it was because he had been on the train before."
             show catherine happy:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show drac ind with dissolve:
+            show drac ind with moveinright:
                 xcenter .75
             d "If I may interject, I have a supposition."
             d "What if the Game Master gives every murderer a location-based advantage?"
@@ -4640,7 +4917,7 @@ label cathGivesInfo:
         "Why Stella?":
             c "Um... honestly, I just set the generator up and waited for it to get someone."
             b "..."
-            b "...Did you have any idea who the Game Master was at least?"
+            b "... Did you have any idea who the Game Master was at least?"
             c "Nope!"
             show catherine happy:
                 xcenter .5
@@ -4652,7 +4929,7 @@ label cathGivesInfo:
                 xcenter .25
             c "I mean... I get it's easy to be angry at me, I had to kill somebody."
             show poptear:
-                xcenter .35
+                xcenter .32
                 ycenter .275
                 zoom .75
             c "And it's \"easier\" if it's someone random."
@@ -4675,9 +4952,9 @@ label cathGivesInfo:
         "Did you commit a crime here?":
             c "Oh yeah, I burgled this mansion before while the owner was out."
             b "You did know Mr. Sydell?"
-            c "Eh, never met the guy. I just overheard from an acquaintance that he was in court that day."
+            c "No, I never met the guy. A shady businessman I knew that Sydell was in court that day."
             c "I waited around that day until his family left for other reasons and made my move."
-            b "So... does that mean you lied to me earlier when I asked?"
+            b "So... does that mean you lied to me earlier when I asked if you know who he was?"
             c "Yup! But c'mon, that's just one of many lies I told you, you won't hold that against me, right?"
             b "..."
             c "Well, I guess it's fine if you do, the Game Master's gonna fry my brain or something regardless."
@@ -4686,14 +4963,16 @@ label cathGivesInfo:
                 jump cathGivesInfo
     c "Wait, I just remembered. Before you ask anything else, I have a request."
     $mood = "shock"
+    ses "Mrep"
     c "Bert, can you take care of Sesame? If he doesn't also get brain-zapped, that is."
     b "Me?"
+    call popwowb
     c "Yeah! You're the one who figured out I was the murderer, it's almost like you killed me."
     c "To the victor goes the spoils, right?"
     show catherine happy:
         xcenter .5
         linear 0.15 xcenter .25
-    show shahar ind with dissolve:
+    show shahar ind with moveinright:
         xcenter .75
     h "Aye lassie, yer finally speaking me language!"
     hide shahar with moveoutright
@@ -4705,7 +4984,7 @@ label cathGivesInfo:
     $mood = "sad"
     c "I'm kind of mad at you for figuring it out."
     c "So if you take care of Sesame you'll have to remember how you got me killed!"
-    c "Aren't I so evil? Hehe."
+    c "Yippeeee!"
     b "I... can't tell how serious you're being, but I'll take good care of him."
     ses "Mew!"
     hide catherine happy
@@ -4713,11 +4992,10 @@ label cathGivesInfo:
     with dissolve
     $cat = True
     bi "Sesame's... surprisingly light to carry."
-    bi "If he survives this round, it'll probably take a while to get used to his paws digging into me..."
+    bi "If he survives this round, it'll probably take a while to get used to his paws digging into my back..."
     b "So uh, one last thing Catherine."
     b "How did you receive the \"instructions?\""
-    c "Well, when I woke up in the mansion it wasn't the first time."
-    c "I actually woke up in-{nw}"
+    c "Well, when I woke up -{nw}"
     stop music
     show braindeath
     pause .25
@@ -4728,24 +5006,26 @@ label cathGivesInfo:
     b "..."
     b "She's dead."
     b "The Game Master wasn't Stella..."
-    show sam ind with dissolve
+    show sam ind with moveinleft:
+        xcenter .25
     s "..."
     s "It should be me who's dead now..."
     b "Sam, that's not-{p=0.5}{nw}"
     scene black
     pause 1.0
     $showchibint()
-    $renpy.hide_screen("status_screen")
+    hide screen status_screen
     $mood = "sad"
     bi "Honestly, I was a little relieved."
-    bi "I thought I had gotten to know Stella at least a little bit."
-    bi "If we suddenly found out she was behind all this..."
+    bi "I thought I had gotten to know Stella and Catherine at least a little bit."
+    bi "If we suddenly found out either of them were behind all this..."
     bi "My heart would tear a little more than it already has through all these deaths."
     bi "But just as before, with no warning, we were put to sleep."
     bi "No time to mourn, no time to discuss."
     bi "Our chances to find the Game Master are running thin..."
     play music "audio/ominous.mp3" fadein 3.0
-    show endch2 with Dissolve(3.0)
-    pause
-    stop music fadeout 3.0
-    hide endch2 with Dissolve (3.0)
+    pause 1.0
+############################################## end of ch1 screen
+    call screen ch2results
+    pause 1.0
+    jump hospitalGo

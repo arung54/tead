@@ -49,6 +49,53 @@ label popmadb:
         zoom .6
     return
 
+#######################################################
+#######################################################
+#######################################################
+
+label popwowo:
+    play sfx "audio/popwow.mp3" volume .5
+    show popwow:
+        xcenter popx
+        ycenter .25
+        zoom .75
+    return
+
+label poptearo:
+    play sfx "audio/poptear.mp3" volume .5
+    show poptear:
+        xcenter popx
+        ycenter .275
+        zoom .75
+    return
+
+#No poprain
+label popheartso:
+    play sfx "audio/pophearts.mp3" volume .5
+    show pophearts:
+        xcenter popx
+        ycenter .5
+    return
+
+label popmado:
+    play sfx "audio/popmad.mp3" volume .5
+    show popmad:
+        xcenter popx
+        ycenter .3
+    return
+
+label pophuho:
+    play sfx "audio/pophuh.mp3" volume .5
+    show pophuh:
+        zoom .75
+        xcenter popx
+        ycenter .25
+    return
+
+#######################################################
+#######################################################
+#######################################################
+
 
 label poptest:
     b "sdrtwesstgs1"

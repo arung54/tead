@@ -884,4 +884,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump postFT2
+jump trial2r
