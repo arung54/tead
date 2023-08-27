@@ -196,7 +196,7 @@ screen securityInv():
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSamSecurity")]
 
 label hospInvSamSecurity:
-    scene bg hospsecurity
+    scene bg hospsecurity at bg
     $ statusnt("Security", "lauren", ch = 3, sun = 1)
     show sam with dissolve
     lf "Notice anything Sam?"
@@ -206,7 +206,7 @@ label hospInvSamSecurity:
     call screen securityInv
 
 label securityComputer:
-    scene bg hospsecurity
+    scene bg hospsecurity at bg
     $ statusnt("Security", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[1]:
         li "Hm, looks like a computer the guards can use to control things on this floor."
@@ -312,7 +312,7 @@ screen closetInv():
         action [Hide("closetInv", transition = Dissolve(1.0)), Jump("hospInvSamCloset")]
 
 label hospInvSamCloset:
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
     show sam with dissolve
     lf "Notice anything Sam?"
@@ -322,7 +322,7 @@ label hospInvSamCloset:
     call screen closetInv
 
 label baseballBat:
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[4]:
         lf "Oh, this must be the baseball bat Bert mentioned."
@@ -359,7 +359,7 @@ label baseballBat:
     call screen closetInv
 
 label stepstool:
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[5]:
         li "A stepstool..."
@@ -381,7 +381,7 @@ label stepstool:
     call screen closetInv
 
 label cleaningSupplies:
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[6]:
         li "Let's see, what all is there on this shelf."
@@ -412,7 +412,7 @@ label cleaningSupplies:
     call screen closetInv
 
 label closetRules:
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[7]:
         li "The closet has rules too?"
@@ -440,7 +440,7 @@ label closetRules:
     call screen closetInv
 
 label closetLightSwitch:
-    scene bg hospcloset
+    scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
     blank "Flick."
     li "Hm? The light didn't turn on."
@@ -505,7 +505,7 @@ screen guardroomInv():
         action [Hide("guardroomInv", transition = Dissolve(1.0)), Jump("hospInvSamGuard")]
 
 label hospInvSamGuard:
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
     show sam with dissolve
     lf "Notice anything Sam?"
@@ -515,7 +515,7 @@ label hospInvSamGuard:
     call screen guardroomInv
 
 label firstaidkit:
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[2]:
         li "A first aid kit."
@@ -554,7 +554,7 @@ label firstaidkit:
     call screen guardroomInv
 
 label hosprules:
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[3]:
         li "The rules of the hospital..."
@@ -585,7 +585,7 @@ label hosprules:
     call screen guardroomInv
 
 label hospcouches:
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
     li "After being stuck in the cafeteria for days..."
     li "There's nothing I'd love more than to relax on a soft couch."
@@ -594,7 +594,7 @@ label hospcouches:
     call screen guardroomInv
 
 label vendingmachine:
-    scene bg hospfancy
+    scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
     blank "Flick."
     li "I wish I could tell what soda is what..."
@@ -656,7 +656,7 @@ screen hallwayTLInv():
         action [Hide("hallwayTLInv", transition = Dissolve(1.0)), Jump("hospInvSamTL")]
 
 label hospInvSamTL:
-    scene bg hosphalltopleft
+    scene bg hosphalltopleft at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     show sam with dissolve
     lf "Notice anything Sam?"
@@ -666,7 +666,7 @@ label hospInvSamTL:
     call screen hallwayTLInv
 
 label cellorder:
-    scene bg hosphalltopleft
+    scene bg hosphalltopleft at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[11]:
         li "I sure hope wherever we go next has more comfortable cells."
@@ -740,7 +740,7 @@ screen hallwayTRInv():
         action [Hide("hallwayTRInv", transition = Dissolve(1.0)), Jump("hospInvSamTR")]
 
 label hospInvSamTR:
-    scene bg shahardead
+    scene bg shahardead at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     show sam with dissolve:
         xcenter .25
@@ -751,7 +751,7 @@ label hospInvSamTR:
     call screen hallwayTLInv
 
 label shaharbody:
-    scene bg shahardead
+    scene bg shahardead at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[8]:
         li "Ugh."
@@ -779,7 +779,7 @@ label shaharbody:
     call screen hallwayTRInv
 
 label glassshards:
-    scene bg shahardead
+    scene bg shahardead at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[9]:
         li "Huh?"
@@ -808,7 +808,7 @@ label glassshards:
     call screen hallwayTRInv
 
 label pipe:
-    scene bg shahardead
+    scene bg shahardead at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
     if not hosp_evidence[10]:
         li "Y'know, I never really noticed these pipes on the ceiling."
@@ -903,7 +903,7 @@ screen hospKitchenInv():
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvBert")]
 
 label hospfridge:
-    scene bg hospkitchen
+    scene bg hospkitchen at bg
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     li "I wish we had time to cook a meal."
     li "I'm so hungry..."
@@ -915,7 +915,7 @@ label hospfridge:
     call screen hospKitchenInv
 
 label hospstove:
-    scene bg hospkitchen
+    scene bg hospkitchen at bg
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     li "For what seems like an old mental hospital, this oven is pretty fancy."
     li "...Yet another thing that could harm Freddy if no one was watching him."
@@ -925,7 +925,7 @@ label hospstove:
     call screen hospKitchenInv
 
 label hospcabinets:
-    scene bg hospkitchen
+    scene bg hospkitchen at bg
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     li "Let me see, is there anything in the cabinets..."
     li "Well, there's the bare essentials you'd find a kitchen."
@@ -947,7 +947,7 @@ label hospcabinets:
     call screen hospKitchenInv
 
 label hospInvSamKitchen:
-    scene bg hospkitchen
+    scene bg hospkitchen at bg
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     show sam with dissolve
     lf "Notice anything Sam?"
@@ -957,7 +957,7 @@ label hospInvSamKitchen:
     call screen hospKitchenInv with dissolve
 
 label hospInvJenny:
-    scene bg hospkitchen with Dissolve(0.0)
+    scene bg hospkitchen at bg with Dissolve(0.0)
     scene bg hospkitchenwindow
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
@@ -977,7 +977,7 @@ label hospInvJenny:
     call screen hospKitchenInv with dissolve
 
 label hospInvDracula:
-    scene bg hospkitchen with Dissolve(0.0)
+    scene bg hospkitchen at bg with Dissolve(0.0)
     scene bg hospkitchenwindow
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
@@ -1014,7 +1014,7 @@ label hospInvDracula:
     call screen hospKitchenInv with dissolve
 
 label hospInvBert:
-    scene bg hospkitchen with Dissolve(0.0)
+    scene bg hospkitchen at bg with Dissolve(0.0)
     scene bg hospkitchenwindow
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
@@ -1038,7 +1038,7 @@ label hospInvBert:
     call screen hospKitchenInv with dissolve
 
 label hospInvFreddy:
-    scene bg hospkitchen with Dissolve(0.0)
+    scene bg hospkitchen at bg with Dissolve(0.0)
     scene bg hospkitchenwindow
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
@@ -1090,7 +1090,7 @@ label hospInvFreddy:
     call screen hospKitchenInv with dissolve
 
 label hospInvSid:
-    scene bg hospkitchen with Dissolve(0.0)
+    scene bg hospkitchen at bg with Dissolve(0.0)
     scene bg hospkitchenwindow
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)

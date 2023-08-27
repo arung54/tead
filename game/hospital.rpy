@@ -373,10 +373,8 @@ label hospitalGo:
             #blank "They may do this however they please, using the kitchen connected to this cafeteria."
             #blank "There is a window that can be used to transfer meals and dirty dishes."
             bi "That rule seems easy enough... don't go into anyone else's cell, and follow rule number two."
-            show drac shock
+            show drac oh
             with dissolve
-            bi "..."
-            bi "As if this game wasn't enough of a pain in the ass."
             bi "Is the Game Master upset we had a party? Wants to keep us in check?"
             b "Interesting."
             b "I'm assuming when this place was a mental hospital, they didn't randomly appoint patients as guards."

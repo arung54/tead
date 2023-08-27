@@ -32,17 +32,17 @@ screen mansMapInv():
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
             unhovered Hide("mapPreview")
-        hotspot(497, 310, 218, 158):
-            action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
-            unhovered Hide("mapPreview")
+        #hotspot(497, 310, 218, 158):
+        #    action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
+        #    hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
+        #    unhovered Hide("mapPreview")
         hotspot(234, 544, 225, 140):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
+            hovered ShowTransient("mapPreview", img="mansionmapoverlay7.png")
             unhovered Hide("mapPreview")
         hotspot(463, 543, 251, 141):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("masterBedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
+            hovered ShowTransient("mapPreview", img="mansionmapoverlay8.png")
             unhovered Hide("mapPreview")
         hotspot(393, 310, 101, 158):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bathroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
@@ -192,7 +192,7 @@ screen kitchenInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 label mansAppliances:
-    scene bg mansionkitchen
+    scene bg mansionkitchen at bg
     $mans_extra[0] = True
     $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
     bi "Hmm... the microwave and oven's digital clocks aren't working like Jenny said."
@@ -204,7 +204,7 @@ label mansAppliances:
     call screen kitchenInv
 
 label mansCupboards:
-    scene bg mansionkitchen
+    scene bg mansionkitchen at bg
     $mans_extra[1] = True
     $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
     bi "Let me try looking through the cupboards and drawers."
@@ -217,7 +217,7 @@ label mansCupboards:
     call screen kitchenInv
 
 label mansFridge:
-    scene bg mansionkitchen
+    scene bg mansionkitchen at bg
     $mans_extra[2] = True
     $ statusnt("Kitchen", "bert", ch = 2, sun = 3)
     bi "...I wonder if there's any leftovers in here."
@@ -289,7 +289,7 @@ screen diningInv():
         action [Hide("diningInv"), Jump("mansLandF")]
 
 label mansSheath:
-    scene bg mansiondining knife
+    scene bg mansiondining knife at bg
     $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
     bi "The knife we used to cut the meatloaf."
     bi "I don't think Stella was stabbed with it."
@@ -313,7 +313,7 @@ label mansSheath:
     call screen diningInv
 
 label mansDracula:
-    scene bg mansiondining knife
+    scene bg mansiondining knife at bg
     $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
     show drac ind with dissolve
     d "Ah Bert. Are you here to discuss my ploy from earlier?"
@@ -351,7 +351,7 @@ label mansDracula:
     call screen diningInv
 
 label mansLandF:
-    scene bg mansiondining knife
+    scene bg mansiondining knife at bg
     $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
     show lauren ind:
         xcenter .25
@@ -387,7 +387,7 @@ label mansLandF:
     call screen diningInv
 
 label mansSydell:
-    scene bg mansiondining knife
+    scene bg mansiondining knife at bg
     $mans_extra[3] = True
     $ statusnt("Dining Room", "bert", ch = 2, sun = 3)
     bi "Mr. Sydell's portrait..."
@@ -448,7 +448,7 @@ screen garageInv():
 
 
 label mansSam:
-    scene bg mansiongarage2
+    scene bg mansiongarage2 at bg
     $ statusnt("Garage", "bert", ch = 2, sun = 3)
     show sam with dissolve
     b "Sam, you find anything yet?"
@@ -467,7 +467,7 @@ label mansSam:
     call screen garageInv
 
 label mansGarage:
-    scene bg mansiongarage2
+    scene bg mansiongarage2 at bg
     $mans_extra[4] = True
     $ statusnt("Garage", "bert", ch = 2, sun = 3)
     show sid ind with dissolve
@@ -505,7 +505,7 @@ label mansGarage:
     call screen garageInv
 
 label mansGarageDoor:
-    scene bg mansiongarage2
+    scene bg mansiongarage2 at bg
     $ statusnt("Garage", "bert", ch = 2, sun = 3)
     if mans_extra[5]:
         b "Hm... maybe the murderer managed to open the garage door, went to a store, and bought a knife!"
@@ -552,11 +552,11 @@ screen bedroomInv():
     default tt = Tooltip("")
 
     imagemap:
-        ground "bg mansionbedroom1.png"
+        ground "bg mansionbedroom2.png"
         if mans_extra[10]:
-            hotspot(186, 410, 181, 222) action [Hide("bedroomInv"), Jump("mansGoAway")] mouse 'q' hovered tt.Action("Nightstand and Flower")
+            hotspot(917, 480, 183, 131) action [Hide("bedroomInv"), Jump("mansGoAway")] mouse 'q' hovered tt.Action("Nightstand and Flower")
         else:
-            hotspot(186, 410, 181, 222) action [Hide("bedroomInv"), Jump("mansGoAway")] mouse 'ex' hovered tt.Action("Nightstand and Flower")
+            hotspot(917, 480, 183, 131) action [Hide("bedroomInv"), Jump("mansGoAway")] mouse 'ex' hovered tt.Action("Nightstand and Flower")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -582,7 +582,7 @@ screen bedroomInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 label mansGoAway:
-    scene bg mansionbedroom
+    scene bg mansionbedroom2 at bg
     $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
     if mans_extra[10]:
         bi "Most of the bedrooms seem to have nothing noteworthy in them."
@@ -593,19 +593,15 @@ label mansGoAway:
     bi "Hm... let me check this nightstand."
     bi "...Nope, nothing in here."
     bi "Nothing hidden in the vase either."
-    if not mans_evidence[5]:
-        bi "I guess to be thorough, I should check the other bedrooms?"
-        scene black with dissolve
-        scene bg mansionbedroom with dissolve
-        $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
-        bi "..."
-        bi "Nope, nothing in this bedroom either."
-        bi "That just leave's Jenny's room..."
-        scene black with dissolve
-        scene bg mansionbedroom1gen with dissolve
-        $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
-        bi "...Huh?"
-        call screen bedroomJennInv
+    jump mansGoAway
+    #if not mans_evidence[5]:
+    #    scene black with dissolve
+    #    "Bert checked the other third small bedroom."
+    #    bi "...Nothing here."
+    #    bi "That just leave's Jenny's room..."
+    #    scene bg mansionbedroom1gen at bg with dissolve
+    #    $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
+    #    bi "...Huh?"
 
 screen bedroomJennInv():
     default tt = Tooltip("")
@@ -635,7 +631,7 @@ screen bedroomJennInv():
         action [Show("mans_evidence", transition=Dissolve(0.3))]
 
 label mansGenerator:
-    scene bg mansionbedroom1gen
+    scene bg mansionbedroom1gen at bg
     $ statusnt("Bedroom", "bert", ch = 2, sun = 3)
     if not mans_evidence[5]:
         bi "Huh, what's the generator doing in here?"
@@ -717,7 +713,7 @@ screen masterBedroomInv():
         action [Hide("masterBedroomInv"), Jump("mansCath")]
 
 label mansCath:
-    scene bg mansionmasterbedroom
+    scene bg mansionmasterbedroom at bg
     $ statusnt("Master Bedroom", "bert", ch = 2, sun = 3)
     show catherine happy with dissolve
     c "Hey Bert!"
@@ -745,7 +741,7 @@ label mansCath:
     call screen masterBedroomInv
 
 label mansFlower:
-    scene bg mansionmasterbedroom
+    scene bg mansionmasterbedroom at bg
     $ statusnt("Master Bedroom", "bert", ch = 2, sun = 3)
     bi "Is there anything in this vase?"
     bi "It'd be a convenient place to hide a long skinny \"stabby stick\"."
@@ -758,7 +754,7 @@ label mansFlower:
     call screen masterBedroomInv
 
 label mansNightstand:
-    scene bg mansionmasterbedroom
+    scene bg mansionmasterbedroom at bg
     $ statusnt("Master Bedroom", "bert", ch = 2, sun = 3)
     bi "Huh, I wonder if anything's in the nightstand's drawer."
     bi "..."
@@ -772,7 +768,7 @@ label mansNightstand:
     call screen masterBedroomInv
 
 label mansDrawers:
-    scene bg mansionmasterbedroom
+    scene bg mansionmasterbedroom at bg
     $ statusnt("Master Bedroom", "bert", ch = 2, sun = 3)
     bi "Huh, I wonder if anything's hidden in the bathroom here?"
     bi "..."
@@ -786,7 +782,7 @@ label mansDrawers:
     call screen masterBedroomInv
 
 label mansCatherine:
-    scene bg mansionmasterbedroom
+    scene bg mansionmasterbedroom at bg
     $ statusnt("Master Bedroom", "bert", ch = 2, sun = 3)
     show catherine ind with dissolve
     c "Hey Bert! I'm looking around the master bedroom but it doesn't seem like anything's here."
@@ -869,7 +865,7 @@ screen bathroomInv():
         action [Hide("kitchenInv"), Jump("mansJenny")]
 
 label mansSink:
-    scene bg mansionbr
+    scene bg mansionbr at bg
     $ statusnt("Bathroom", "bert", ch = 2, sun = 3)
     show stella dead:
         zoom 1.0
@@ -902,7 +898,7 @@ label mansSink:
     call screen bathroomInv
 
 label mansHands:
-    scene bg mansionbr
+    scene bg mansionbr at bg
     $ statusnt("Bathroom", "bert", ch = 2, sun = 3)
     show stella dead:
         zoom 1.0
@@ -947,7 +943,7 @@ label mansHands:
 label mansShahar:
     if not mans_evidence[3]:
         jump mansHands
-    scene bg mansionbr
+    scene bg mansionbr at bg
     $ statusnt("Bathroom", "bert", ch = 2, sun = 3)
     show stella dead:
         zoom 1.0
@@ -963,7 +959,7 @@ label mansShahar:
     call screen bathroomInv
 
 label mansTub:
-    scene bg mansionbr
+    scene bg mansionbr at bg
     $ statusnt("Bathroom", "bert", ch = 2, sun = 3)
     show stella dead:
         zoom 1.0
@@ -975,7 +971,7 @@ label mansTub:
     call screen bathroomInv
 
 label mansStella:
-    scene bg mansionbr
+    scene bg mansionbr at bg
     $ statusnt("Bathroom", "bert", ch = 2, sun = 3)
     show stella dead:
         zoom 1.0
@@ -1012,6 +1008,7 @@ label mansStella:
         j "Not where the blood has seeped into her suit, just outside that area."
         b "Uh... okay..."
         b "..."
+        call pophuhb
         b "Huh."
         b "It's... pretty damp."
         j "Right. But her suit's not stained where you just felt it!"
@@ -1040,7 +1037,7 @@ label mansStella:
     call screen bathroomInv
 
 label mansJenny:
-    scene bg mansionbr
+    scene bg mansionbr at bg
     $ statusnt("Bathroom", "bert", ch = 2, sun = 3)
     show stella dead:
         zoom 1.0

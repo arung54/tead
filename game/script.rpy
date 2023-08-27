@@ -824,7 +824,7 @@ label start:
 
 
         train_extra = [False, False, False, False, False, False]
-        mans_evidence = [True] * 9
+        mans_evidence = [False] * 9
         hosp_evidence = [False] * 13
         bank_evidence = [True] + [False] * 11
         pent_evidence = [False] * 8
@@ -884,4 +884,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump trial2z
+jump mansPreInv

@@ -3098,6 +3098,7 @@ label mansPreInv:
     show investstart with dissolve
     pause 1
     hide investstart with dissolve
+    $mood = "ind"
     bi "I should definitely check the bathroom at some point, but besides that... I'm not really sure where to go."
     bi "Also, who left the party that could have killed Stella?"
     call pophuhb
