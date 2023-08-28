@@ -537,6 +537,20 @@ screen status_screen(location, chibi, chapter, sun):
     add chapter xpos 1095 xanchor 0 ypos 65 yanchor 0
     text "{b}"+location+"{/b}" xpos 1055 xanchor 0 ypos 5 yanchor 0
 
+############
+#Persistent#
+############
+default persistent.fte_bert = 0
+default persistent.fte_cath = 0
+default persistent.fte_drac = 0
+default persistent.fte_frog = 0
+default persistent.fte_jenn = 0
+default persistent.fte_kais = 0
+default persistent.fte_laur = 0
+default persistent.fte_sam = 0
+default persistent.fte_shah = 0
+default persistent.fte_sid = 0
+default persistent.fte_stel = 0
 
 init python:
     def statusnt(name, person, ch, sun):

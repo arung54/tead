@@ -1,7 +1,7 @@
 screen hospMapInv():
     modal True
     imagemap:
-        ground "map3uiGUARD.png"
+        ground "ch3investmap.png"
         hotspot(460, 273, 108, 78):
             action [Hide("securityInv"), Hide("guardroomInv"), Hide("closetInv"), Hide("hospKitchenInv"), Hide("hallwayTLInv"), Hide("hallwayTRInv"), Show("securityInv", transition=Dissolve(0.3)), Hide("hospMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="hospmapoverlay8.png")

@@ -1,9 +1,7 @@
 screen mansMapInv():
     modal True
-    #TODO: Gate rooms for FT4
-    #TODO: Create secret sesame FTE
     imagemap:
-        ground "map2ui.png"
+        ground "ch2investmap.png"
         hotspot(762, 310, 155, 174):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("kitchenInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay3.png")
@@ -32,7 +30,6 @@ screen mansMapInv():
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
             unhovered Hide("mapPreview")
-        #hotspot(497, 310, 218, 158):
         #    action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
         #    hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
         #    unhovered Hide("mapPreview")

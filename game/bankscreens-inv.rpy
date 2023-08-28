@@ -2,7 +2,7 @@ screen bankMapInv():
     modal True
     if not bank_evidence[8]:
         imagemap:
-            ground "map4ui2.png"
+            ground "ch4investmap1.png"
             hotspot(361, 329, 131, 133):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("breakInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
                 hovered ShowTransient("mapPreview", img="bankmapoverlay1.png")
@@ -13,7 +13,7 @@ screen bankMapInv():
                 unhovered Hide("mapPreview")
     else:
         imagemap:
-            ground "map4ui.png"
+            ground "ch4investmap2.png"
             hotspot(307, 477, 184, 215):
                 action [Hide("lobbyInv"), Hide("breakInv"), Hide("hall1Inv"), Hide("hall2inv"), Hide("safeInv"), Hide("officeInv"), Hide("lockerInv"), Show("lobbyInv", transition=Dissolve(0.3)), Hide("bankMapInv"), Hide("mapPreview")]
                 hovered ShowTransient("mapPreview", img="bankmapoverlay4.png")

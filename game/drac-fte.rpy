@@ -16,8 +16,9 @@ label dracAsk1:
     $ statusnt("Caboose", "dan", ch = 1, sun = 1)
     show drac happy with dissolve
     d "Hello Dan, would you like to speak?"
+    ni "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
+        "Spend time with Dracula":
             d "Very well. Not as if I have other plans."
             jump dracHang
         "Maybe later":
@@ -26,63 +27,96 @@ label dracAsk1:
 
 #Mansion 1
 label dracAsk2:
+    scene bg mansionmasterbedroom
+    $ statusnt("Master Bedroom", "bert", ch = 2, sun = 4)
+    show drac ind with dissolve
+    d "This bedroom is nice, but I prefer the coffin in my estate."
+    bi "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
-            j "Sure!"
+        "Spend time with Dracula":
+            d "Well, I suppose I could use some stimulation."
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen masterBedroom
 
 #Mansion 2
 label dracAsk3:
+    scene bg mansionmasterbedroom
+    $ statusnt("Master Bedroom", "bert", ch = 2, sun = 1)
+    show drac ind with dissolve
+    d "Shouldn't a mansion have slaves? Preferably ones with good blood."
+    bi "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
-            j "Sure!"
+        "Spend time with Dracula":
+            d "I suppose conversation instead of blood will have to do."
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen masterBedroom
 
 #Mansion 3
 label dracAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show drac ind with dissolve
+    d "Given the circumstances, this is a good dinner party, but it's lacking Baroque music..."
+    bi "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
-            j "Sure!"
+        "Spend time with Dracula":
+            d "Even a string quartet would be a huge improvement."
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen dining
 
 #Hospital 1
 label dracAsk5:
+    scene bg hospkitchenwindow at bg
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show drac ind at inwindow behind hospwindowoverlay
+    d "Bert, how do you survive eating food like what you cooked?"
+    bi "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
-            j "Sure!"
+        "Spend time with Dracula":
+            d "Sure, we can talk, anything besides eating more of that soup."
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen hospKitchen
 
 #Hospital 2
 label dracAsk6:
+    scene bg hospkitchenwindow2 at bg
+    show hospwindowoverlay2
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show drac ind at inwindow behind hospwindowoverlay
+    d "Bert, after smelling Sid's cooking, I forgive you for yesterday's meal."
+    bi "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
-            j "Sure!"
+        "Spend time with Dracula":
+            d "Sure, I've finished investigating this side anyway."
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen patientcommons
 
 #Hospital 3
 label dracAsk7:
+    scene bg hospkitchenwindow2 at bg
+    show hospwindowoverlay2
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 2)
+    show drac ind at inwindow behind hospwindowoverlay
+    d "That salad was good but unsatisfying... I crave flesh."
+    bi "Should I talk to Dracula?"
     menu:
-        "Spend time with Dracula?":
-            j "Sure!"
+        "Spend time with Dracula":
+            d "Are you volunteering your flesh, Bert?"
             jump dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen midCar
+            call screen patientcommons
 
 label dracHang:
     #Dan FTE 1

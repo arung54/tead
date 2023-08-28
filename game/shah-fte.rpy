@@ -28,69 +28,94 @@ label shahAsk1:
 
 #Mansion 1
 label shahAsk2:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 4)
+    show shahar ind with dissolve
+    h "*Burp*... aye matey, there might be such a thing as too much rum..."
+    bi "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
-            h "Arr laddy, you've made a good choice!"
-            ni "...have I?"
+        "Spend time with Shahar":
+            h "*Braaaap*"
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen kitchen
 
 #Mansion 2
 label shahAsk3:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 1)
+    show shahar ind with dissolve
+    h "Not e'ry looting can be successful lad. Have to accept failure sometime."
+    bi "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
-            h "Arr laddy, you've made a good choice!"
-            ni "...have I?"
+        "Spend time with Shahar":
+            h "Aye lad, here for more pirate wisdom?"
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen dining
 
 #Mansion 3
 label shahAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show shahar ind with dissolve
+    h "Ahoy me hearty! A party means booze, and that means Shahar is happy!"
+    bi "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
-            h "Arr laddy, you've made a good choice!"
-            ni "...have I?"
+        "Spend time with Shahar":
+            h "Yer not my usual party company, but ye'll have to do, lad."
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen dining
 
 #Hospital 1
 label shahAsk5:
+    scene bg hospkitchenwindow at bg
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show shahar mad at inwindow behind hospwindowoverlay
+    h "Aye matey, that meal did something to my stomach it did."
+    bi "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
-            h "Arr laddy, you've made a good choice!"
-            ni "...have I?"
+        "Spend time with Shahar":
+            h "Aye, anything to distract me from the onset of scurvy."
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen hospKitchen
 
 #Hospital 2
 label shahAsk6:
+    scene bg hospcommons
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show shahar ind with dissolve
+    h "Me head aches, matey... I just wish it cease."
+    bi "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
-            h "Arr laddy, you've made a good choice!"
-            ni "...have I?"
+        "Spend time with Shahar":
+            h "Happy to talk, but not too loudly lad."
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen patientcommons
 
 #Hospital 3
 label shahAsk7:
+    scene bg hospcommons
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 2)
+    show shahar ind with dissolve
+    h "Burrito... what an interesting-sounding grub."
+    bi "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
-            h "Arr laddy, you've made a good choice!"
-            ni "...have I?"
+        "Spend time with Shahar":
+            h "Aye matey, tell me more about these strange grubs of yers."
             jump shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen midCar
+            call screen patientcommons
 
 label shahHang:
     #Dan FTE 1

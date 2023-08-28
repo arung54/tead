@@ -1,7 +1,12 @@
 screen bankMap():
     modal True
     imagemap:
-        ground "map4ui.png"
+        if ftecounter == 8:
+            ground "ftemap8.png"
+        if ftecounter == 9:
+            ground "ftemap9.png"
+        if ftecounter == 10:
+            ground "ftemap10.png"
         hotspot(307, 477, 184, 215):
             action [Hide("lobby"), Hide("break"), Hide("hall"), Hide("safe"), Hide("office"), Hide("locker"), Show("lobby", transition=Dissolve(0.3)), Hide("bankMap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="bankmapoverlay4.png")

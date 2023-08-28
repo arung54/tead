@@ -410,21 +410,21 @@ screen navigation():
         imagebutton:
             idle "ibmenucards.png"
             hover "ibmenucards2.png"
-            ycenter .5 xcenter .5 focus_mask True action [ShowMenu("Characters"), Hide("main_menu")]
+            ycenter .5 xcenter .5 focus_mask True action [ShowMenu("CharactersPersistent"), Hide("main_menu")]
         imagebutton:
             idle "ibmenuabout.png"
             hover "ibmenuabout2.png"
             focus_mask True action ShowMenu("about")#, Hide("main_menu")]
-        #imagebutton:
-        #    idle "ibmenuload.png"
-        #    hover "ibmenuload2.png"
-        #    focus_mask True action ShowMenu("load_no_nav")
         imagebutton:
-            idle "ibmenucontrols.png"
-            hover "ibmenucontrols2.png"
-            focus_mask True action ShowMenu("preferences")
+           idle "ibmenuload.png"
+           hover "ibmenuload2.png"
+           focus_mask True action ShowMenu("load_no_nav")
+        # imagebutton:
+        #     idle "ibmenucontrols.png"
+        #     hover "ibmenucontrols2.png"
+        #     focus_mask True action ShowMenu("preferences")
         textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
-        #textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
+        textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
 
         #################### below is NOT main menu, just in game menu
     else:
@@ -853,6 +853,24 @@ screen Characters():
             idle "goback.png"
             hover "goback.png"
             focus_mask True action [Hide("Characters"), SetVariable("pers", "NONE"), Hide("freeTimeCounter"), Function(hideCards), ShowMenu("preferences")]
+
+screen CharactersPersistent():
+    tag menu
+    modal True
+    use freeTimeCounterPersistent
+
+    if main_menu:
+        imagebutton:
+            xcenter .08 ycenter .1
+            idle "goback.png"
+            hover "goback.png"
+            focus_mask True action [Hide("Characters"), SetVariable("pers", "NONE"), Hide("freeTimeCounterPersistent"), Function(hideCards), Return()]
+    else:
+        imagebutton:
+            xcenter .08 ycenter .1
+            idle "goback.png"
+            hover "goback.png"
+            focus_mask True action [Hide("Characters"), SetVariable("pers", "NONE"), Hide("freeTimeCounterPersistent"), Function(hideCards), ShowMenu("preferences")]
 
 style characters_label is gui_label
 style characters_label_text is gui_label_text

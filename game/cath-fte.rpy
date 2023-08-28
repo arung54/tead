@@ -1,17 +1,18 @@
 
 label cathAsk0:
     scene bg trainback
+    $ statusnt("Caboose", "dan", ch = 1, sun = 1)
     show catherine happy with dissolve
     c "Achoo! Whew, sure is dusty back here."
     ni "I should go talk to Bert."
     call screen backCar with dissolve
 
-
 label cathAsk1:
     scene bg trainback
+    $ statusnt("Caboose", "dan", ch = 1, sun = 1)
     show catherine happy with dissolve
     c "Hey Dan!"
-    blank "Should I talk to Catherine?"
+    ni "Should I talk to Catherine?"
     menu:
         "Spend time with Catherine":
             c "Cool!"
@@ -19,6 +20,48 @@ label cathAsk1:
         "Maybe later":
             hide catherine with dissolve
             call screen backCar with dissolve
+
+label cathAsk2:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 4)
+    show catherine nocat happy with dissolve
+    c "Hey Bert, want to give me company while I look around the kitchen?"
+    bi "Should I talk to Catherine?"
+    menu:
+        "Spend time with Catherine":
+            c "Yay, company!"
+            jump cathHang
+        "Maybe later":
+            hide catherine with dissolve
+            call screen kitchen with dissolve
+
+label cathAsk3:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 1)
+    show catherine happy with dissolve
+    c "Did I already add a spoonful of salt?"
+    bi "Should I talk to Catherine?"
+    menu:
+        "Spend time with Catherine":
+            c "Ah, Bert, you can tell me if it's too salty!"
+            jump cathHang
+        "Maybe later":
+            hide catherine with dissolve
+            call screen kitchen with dissolve
+
+label cathAsk4:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 2)
+    show catherine happy with dissolve
+    c "Phew, all this cooking is making me sweat!"
+    bi "Should I talk to Catherine?"
+    menu:
+        "Spend time with Catherine":
+            c "If you can't handle the heat, don't get in the kitchen!"
+            jump cathHang
+        "Maybe later":
+            hide catherine with dissolve
+            call screen kitchen with dissolve
 
 label cathHang:
     if fte_cath == -1:

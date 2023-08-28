@@ -1,9 +1,8 @@
 screen hospMap():
     modal True
-    #TODO: Create secret sesame FTE
     if ftecounter == 5:
         imagemap:
-            ground "map3uiGUARD.png"
+            ground "ftemap5.png"
             hotspot(460, 273, 108, 78):
                 action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("security", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
                 hovered ShowTransient("mapPreview", img="hospmapoverlay8.png")
@@ -30,7 +29,10 @@ screen hospMap():
                 unhovered Hide("mapPreview")
     else:
         imagemap:
-            ground "map3uiPRISONER.png"
+            if ftecounter == 6:
+                ground "ftemap6.png"
+            if ftecounter == 7:
+                ground "ftemap7.png"
             hotspot(203, 568, 365, 47):
                 action [Hide("security"), Hide("guardroom"), Hide("closet"), Hide("hospKitchen"), Hide("hallwayTL"), Hide("hallwayTR"), Hide("hallwayBL"), Hide("hallwayBR"), Hide("patientcommons"), Show("hallwayBL", transition=Dissolve(0.3)), Hide("hospMap"), Hide("mapPreview")]
                 hovered ShowTransient("mapPreview", img="hospmapoverlay3.png")
@@ -300,7 +302,7 @@ screen hospKitchen():
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("samAsk5")]
 
 screen patientcommons():
-    add "bg hospkitchen.png"
+    add "bg hospcommons.png"
     add "status.png"
     add Text("{b}Cafeteria{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch3.png" xpos 1095 ypos 65 xanchor 0 yanchor 0

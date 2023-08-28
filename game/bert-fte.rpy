@@ -4,7 +4,7 @@ label bertAsk0:
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show bert happy with dissolve
     b "Sandwiches aren't bad, but I really miss food from home..."
-    blank "Should I talk to Bert?"
+    ni "Should I talk to Bert?"
     menu:
         "Spend time with Bert":
             b "Sure, I guess hanging out will get my mind off how hungry I am."
@@ -19,7 +19,7 @@ label bertAsk1:
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show bert happy with dissolve
     b "Hey Dan! Want to chat some more?"
-    blank "Should I talk to Bert?"
+    ni "Should I talk to Bert?"
     menu:
         "Spend time with Bert":
             b "Cool! I'll try not to talk about food this time."
@@ -84,7 +84,7 @@ label bertHang:
         scene black with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
-    if fte_bert == -0:
+    if fte_bert == 0:
         n "Hey Bert, we talked about the food we'd eat when we get out."
         n "But do you really think we're going to get out?"
         show bert ind

@@ -2006,7 +2006,7 @@ label postFT2:
    #FREE TIME FTE ARUN 4
    #############
     play music "audio/cobwebs.mp3" fadein 2.0
-    call screen midCar with fade
+    call screen hallway with fade
 
 
 label postFT3:

@@ -4144,9 +4144,9 @@ label laurAsk:
 
         "How did you open the safe?":
             l "Well, just like everyone else I've been getting an advantage."
-            l "Mine was... I was told that someone here has a birthday on July 17th."
+            l "Mine was... I was told that someone here has a birthday on the 30th."
             l "With that information I was able to open the safe."
-            b "You knew your birthday and the 17th... don't you need a third digit?"
+            b "You knew your birthday and the 30th... don't you need a third number?"
             l "Oh, yeah, Freddy told me his birthday."
             b "What? But Jenny told him not to!"
             l "Well, he technically followed her instructions."
@@ -4157,7 +4157,7 @@ label laurAsk:
             l "And we're all hungry, tired, missing our friends and family..."
             l "He could have easily forgotten, decided to lie about it because he likes me..."
             b "Yeah, I guess it was never a foolproof plan."
-            l "Admittedly, I don't know how July 17th was chosen, but..."
+            l "Admittedly, I don't know how the 30th was chosen, but..."
             l "If it was randomly, I got lucky that it wasn't Freddy's birthday."
             l "Then I'd be stuck at two dates."
             show lauren ind:

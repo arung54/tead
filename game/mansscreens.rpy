@@ -1,8 +1,12 @@
 screen mansionmap():
     modal True
-    #TODO: Create secret sesame FTE
     imagemap:
-        ground "map2ui.png"
+        if ftecounter == 2:
+            ground "ftemap2.png"
+        if ftecounter == 3:
+            ground "ftemap3.png"
+        if ftecounter == 4:
+            ground "ftemap4.png"
         hotspot(762, 310, 155, 174):
             action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("kitchen", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay3.png")
