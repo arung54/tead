@@ -328,5 +328,6 @@ label dracHang:
        bi "I enjoyed some time with drac, if only because of his pirate speak."
 
     $fte_drac += 1
+    $persistent.fte_drac = max(persistent.fte_drac, fte_drac)
     hide drac with dissolve
     jump postFTEHandler

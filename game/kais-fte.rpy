@@ -78,5 +78,6 @@ label kaisHang:
             scene black with fade
 
     $fte_kais += 1
+    $ persistent.fte_kais = max(persistent.fte_kais, fte_kais+1)
     hide kaiser with dissolve
     jump postFTEHandler

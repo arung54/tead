@@ -281,5 +281,6 @@ label stelHang:
         #bi "I enjoyed some time with sam, if only because of his pirate speak."
 
     $fte_stel += 1
+    $persistent.fte_stel = max(persistent.fte_stel, fte_stel)
     hide stella
     jump postFTEHandler

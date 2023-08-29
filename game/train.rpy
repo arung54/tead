@@ -4148,4 +4148,5 @@ label trial1r:
     call screen ch1results with dissolve
     stop music fadeout .5
     pause 1.0
+    $ persistent.ch1completed = True
     jump mansionGo

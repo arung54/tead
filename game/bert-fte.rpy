@@ -143,5 +143,6 @@ label bertHang:
         ni "I guess I understand Bert better now. Not sure if we're closer, though."
 
     $fte_bert += 1
+    $ persistent.fte_bert = max(persistent.fte_bert, fte_bert + 1)
     hide bert with dissolve
     jump postFTEHandler

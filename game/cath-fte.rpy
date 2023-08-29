@@ -254,5 +254,6 @@ label cathHang:
         bi "Behind her goofy exterior, there's a strong-willed fighter in her."
 
     $fte_cath += 1
+    $persistent.fte_cath = max(persistent.fte_cath, fte_cath)
     hide catherine with dissolve
     jump postFTEHandler

@@ -362,5 +362,6 @@ label samHang:
        bi "But that's not necessarily a bad thing."
 
     $fte_sam += 1
+    $persistent.fte_sam = max(persistent.fte_sam, fte_sam)
     hide sam with dissolve
     jump postFTEHandler

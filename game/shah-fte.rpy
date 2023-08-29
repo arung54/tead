@@ -309,5 +309,6 @@ label shahHang:
         bi "I enjoyed some time with Shahar, if only because of his pirate speak."
 
     $fte_shah += 1
+    $persistent.fte_shah = max(persistent.fte_shah, fte_shah)
     hide shahar with dissolve
     jump postFTEHandler

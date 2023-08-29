@@ -371,5 +371,6 @@ label jennHang:
         #bi "I enjoyed some time with Jenny, if only because of his pirate speak."
 
     $fte_jenn += 1
+    $ persistent.fte_jenn = max(persistent.fte_jenn, fte_jenn)
     hide jenny with dissolve
     jump postFTEHandler

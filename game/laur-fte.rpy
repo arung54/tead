@@ -333,5 +333,6 @@ label laurHang:
         bi "I enjoyed some time with Lauren, now that we were able to speak casually."
 
     $fte_laur += 1
+    $persistent.fte_laur = max(persistent.fte_laur, fte_laur)
     hide lauren with dissolve
     jump postFTEHandler

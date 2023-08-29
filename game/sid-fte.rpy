@@ -337,5 +337,6 @@ label sidHang:
         bi "In a place where it's easy to give up hope, it's nice to have someone like Sid to remind us to be ambitious."
 
     $fte_sid += 1
-    hide sid ind with dissolve
+    $persistent.fte_sid = max(persistent.fte_sid, fte_sid)
+    hide sid with dissolve
     jump postFTEHandler
