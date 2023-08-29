@@ -91,7 +91,7 @@ label dracAsk6:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
-    show drac ind at inwindow behind hospwindowoverlay
+    show drac ind at inwindow behind hospwindowoverlay2
     d "Bert, after smelling Sid's cooking, I forgive you for yesterday's meal."
     bi "Should I talk to Dracula?"
     menu:

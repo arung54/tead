@@ -158,6 +158,20 @@ label jennAsk10:
             hide jenny with dissolve
     call screen hall with dissolve
 
+label showJennyIndFTE:
+    if ftecounter == 5:
+        show jenny ind at inwindow behind hospwindowoverlay
+    else:
+        show jenny ind
+    return
+
+label showJennyHappyFTE:
+    if ftecounter == 5:
+        show jenny happy at inwindow behind hospwindowoverlay
+    else:
+        show jenny happy
+    return
+
 label jennHang:
     if fte_jenn >= 3:
         b "Hm, on second thought, I've talked to Jenny plenty... I should talk to someone else."
@@ -222,7 +236,7 @@ label jennHang:
 
     #Bert FTE 1
     if fte_jenn == 0:
-        show jenny happy
+        call showJennyHappyFTE
         j "Bert! How are you doing?"
         b "Um... I mean, I guess as good as I can be doing in a situation like this."
         j "Ha! Good one."
@@ -276,7 +290,7 @@ label jennHang:
         bi "Does that mean she'll be a useful ally? Or someone to look out for? Hm..."
 
     if fte_jenn == 1:
-        show jenny happy
+        call showJennyHappyFTE
         j "Hey Bert! I feel like I talk about myself a lot when we hang out..."
         j "I want to ask you something instead!"
         b "Oh. Sure, go for it!"
@@ -291,11 +305,11 @@ label jennHang:
         j "Well the contradiction is that you can't kill your grandfather and be born later."
         j "But if you killed him in a different universe, then there'd be no contradiction."
         b "Oh... I guess that's true."
-        show jenny ind
+        call showJennyIndFTE
         j "Hm... there's a lot of killing in this paradox."
         j "Kind of suspicious to ask..."
         b "What? No, it's just one of the most famous ones!"
-        show jenny happy
+        call showJennyHappyFTE
         j "Just kidding Bert! I don't think you're suspicious."
         j "If anything you're one of the most trustworthy guys here!"
         b "Oh... it was a joke."
@@ -303,11 +317,11 @@ label jennHang:
         b "Um... okay, what's your favorite paradox?"
         j "It's kind of a boring answer, but the Banach-Tarski paradox is so cool!"
         b "Oh... yeah, that one is cool, haha."
-        show jenny ind
+        call showJennyIndFTE
         j "...You don't know what it is, do you?"
         b "No, that wasn't a very convincing lie, was it."
         j "Not really, no."
-        show jenny happy
+        call showJennyHappyFTE
         j "It's okay Bert! Most people probably don't know about it."
         b "But... you said it's a boring answer."
         b "I assume it must be pretty well-known."
@@ -320,7 +334,7 @@ label jennHang:
         j "It would be cool if it worked in real life, but obviously it can't."
         bi "I could feel my eyes glazing over..."
         j "Ah, it's so refreshing to be able to talk about this stuff."
-        show jenny ind
+        call showJennyIndFTE
         j "I miss this from the outside, having stimulating conversations with my peers."
         bi "I wouldn't say I'm her peer, seems like she's way more knowledgeable here than I am..."
         j "Ooh, but you've at least heard of Hilbert's hotel, right?"
@@ -331,13 +345,13 @@ label jennHang:
         bi "I didn't understand much, but I could tell it let her escape this place for a bit, so I was happy to listen."
 
     if fte_jenn == 2:
-        show jenny happy
+        call showJennyHappyFTE
         j "Bert!"
         j "I wanted to tell you something."
         j "It's not about math this time, I swear!"
         b "Oh... yeah, I mean, always happy to talk."
         j "I just wanted to say... thanks for letting me talk to you about math and poker and stuff."
-        show jenny ind
+        call showJennyIndFTE
         j "Even at college, it's rare that I get to talk about this stuff."
         j "I have a bit of a... difficult home life situation."
         j "Most of my free time goes towards trying to help my parents out with whatever I can."
@@ -346,7 +360,7 @@ label jennHang:
         j "Much less people on campus who are willing to talk about math instead of other things."
         j "And then, well, a lot of the people who were willing to listen to me were guys, who, well..."
         j "Were more interested in hitting on me than listening to me."
-        show jenny happy
+        call showJennyHappyFTE
         j "So even though you pretended you knew what the Banach-Tarski paradox was..."
         j "The fact that you wanted me to feel like I wasn't boring you was really nice!"
         b "I mean... I don't feel like I really did much besides show you human decency."
@@ -354,7 +368,7 @@ label jennHang:
         j "But, even if that's all you did, it's something I don't get a lot of in my normal life."
         j "So thanks Bert."
         b "No need to thank me, haha..."
-        show jenny ind
+        call showJennyIndFTE
         j "..."
         b "..."
         j "So, um..."

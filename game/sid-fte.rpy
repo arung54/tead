@@ -89,7 +89,7 @@ label sidAsk6:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
-    show sid ind at inwindow behind hospwindowoverlay
+    show sid ind at inwindow behind hospwindowoverlay2
     i "I usually never make food... I hope it's edible."
     bi "Should I talk to Sid?"
     menu:
@@ -143,6 +143,40 @@ label sidAsk10:
         "Maybe later":
             hide sid with dissolve
     call screen lobby with dissolve
+
+label showSidIndFTE:
+    if ftecounter == 5:
+        show sid ind at inwindow behind hospwindowoverlay
+    elif ftecounter == 6:
+        show sid ind at inwindow behind hospwindowoverlay2
+    else:
+        show sid ind
+    return
+
+label showSidMadFTE:
+    if ftecounter == 5:
+        show sid mad at inwindow behind hospwindowoverlay
+    elif ftecounter == 6:
+        show sid mad at inwindow behind hospwindowoverlay2
+    else:
+        show sid mad
+    return
+
+label showSidHappyFTE:
+    if ftecounter == 5:
+        show sid happy at inwindow behind hospwindowoverlay
+    elif ftecounter == 6:
+        show sid happy at inwindow behind hospwindowoverlay2
+    else:
+        show sid happy
+
+label showSidSmileFTE:
+    if ftecounter == 5:
+        show sid smile at inwindow behind hospwindowoverlay
+    elif ftecounter == 6:
+        show sid smile at inwindow behind hospwindowoverlay2
+    else:
+        show sid smile
 
 label sidHang:
     if fte_sid >= 3:
@@ -201,7 +235,6 @@ label sidHang:
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
     if fte_sid == 0:
-        show sid ind
         i "It’s so strange not being with my family."
         b "It seems like you’re very close to them."
         i "Yeah. This is the first time I’ve ever been away from them."
@@ -228,7 +261,7 @@ label sidHang:
         i "But... I don't just want the best for me."
         i "I want the best for {i}us{/i}."
         i "For me, and for my family."
-        show sid mad
+        call showSidMadFTE
         i "The Game Master has no idea who he's up against!"
         i "I'm not just fighting for me, I'm fighting for my family!"
         i "I’m going to give it my all to get out of here, and then keep giving it my all!"
@@ -266,7 +299,7 @@ label sidHang:
         b "Oh, that's a different type of derivative."
         i "Oh..."
         b "...But, I bet a lot of those bankers did well in pre-calculus too!"
-        show sid smile
+        call showSidSmileFTE
         i "Oh, yeah, that's right!"
         i "I'm going to become a smart nerdy rich banker!"
         i "Next time you see me, I’ll be like Albert Einstein!"
@@ -308,14 +341,14 @@ label sidHang:
         b "Huh?"
         b "I mean... I'm not really sure how to answer that."
         b "Money is power, I don't know if there's much more to it."
-        show sid mad
+        call showSidMadFTE
         i "Grr... this is why I hate adults."
         i "At school, the kids who are cooler or punch harder are the rulers."
         i "But even if you're not one of those two..."
         i "A ragtag misfit like me can survive."
-        show sid ind
+        call showSidIndFTE
         i "...Not that I'm a kid."
-        show sid mad
+        call showSidMadFTE
         i "But adults are so different..."
         i "I thought they'd be more mature, but they're worse than kids."
         i "They're willing to exploit each other and ruin lives for their own greed!"
@@ -326,9 +359,9 @@ label sidHang:
         b "But if someone's mean to you as a kid, you won't forget for the rest of your life."
         b "Humans are just... wired to focus on negative things, I guess."
         i "Hm..."
-        show sid ind
+        call showSidIndFTE
         i "You may be right... but I still think all adults are punks."
-        show sid happy
+        call showSidHappyFTE
         i "But that doesn't matter, because I'm going to grow up and be the biggest punk of them all!"
         i "My family will walk around like they're cool kids on a schoolyard!"
         i "And it'll all be because of the ass I kick when I get out of here!"

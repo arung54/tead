@@ -159,6 +159,13 @@ label laurAsk10:
             hide lauren with dissolve
     call screen lobby with dissolve
 
+label showLaurenHappyFTE:
+    if ftecounter == 5:
+        show lauren happy at inwindow behind hospwindowoverlay
+    else:
+        show lauren happy
+    return
+
 label laurHang:
     if fte_laur >= 3:
         b "Hm, on second thought, I've talked to Lauren plenty... I should talk to someone else."
@@ -307,7 +314,7 @@ label laurHang:
         o "Or at least, stubborn enough to give the illusion of being strong."
         o "And it defines a lot of who I am. My main hobby came out of needing to feel safe."
         o "So really, I don't mind talking about it."
-        show lauren happy
+        call showLaurenHappyFTE
         o "But it would be nice if we could talk about something fun for once."
         b "Sure, any ideas?"
         o "Hmm... tell me about your hobbies? Since you know about mine."

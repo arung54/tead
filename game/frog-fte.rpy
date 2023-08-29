@@ -160,6 +160,27 @@ label frogAsk10:
             hide frog with dissolve
     call screen hall with dissolve
 
+label showFrogIndFTE:
+    if ftecounter == 5:
+        show frog ind at inwindow behind hospwindowoverlay
+    else:
+        show frog ind
+    return
+
+label showFrogSadFTE:
+    if ftecounter == 5:
+        show frog sad at inwindow behind hospwindowoverlay
+    else:
+        show frog sad
+    return
+
+label showFrogHappyFTE:
+    if ftecounter == 5:
+        show frog happy at inwindow behind hospwindowoverlay
+    else:
+        show frog happy
+    return
+
 label frogHang:
     if fte_frog >= 3:
         b "Hm, on second thought, I've talked to Froggy plenty... I should talk to someone else."
@@ -221,13 +242,13 @@ label frogHang:
     if fte_frog == 0:
         f "Hey Bert! Do you like frogs?"
         b "Um... not really, sorry Freddy."
-        show frog sad
+        call showFrogSadFTE
         f "Oh... ok..."
         bi "...Wow, I am really bad with kids, huh?"
         bi "If Freddy was a girl I was dating I'd respond differently."
         bi "Okay, take two."
         b "...Just kidding! Who doesn't love frogs?"
-        show frog happy
+        call showFrogHappyFTE
         play sfx "audio/pophearts.mp3" volume .25
         show pophearts:
             xcenter .5
@@ -313,12 +334,12 @@ label frogHang:
         f "Hey Bert... how come you talk to me so much?"
         b "What do you mean Freddy? It's fun to talk to you."
         f "Well, a lot of the others don't talk to me."
-        show frog sad
+        call showFrogSadFTE
         f "Is it because they hate me?"
         b "Um, I don't think anyone here hates you."
         b "How to explain it..."
         b "Okay, you like poison dart frogs, right?"
-        show frog happy
+        call showFrogHappyFTE
         play sfx "audio/pophearts.mp3" volume .25
         show pophearts:
             xcenter .5
