@@ -29,7 +29,7 @@ label stelAsk2:
     scene bg mansionkitchen
     $ statusnt("Kitchen", "bert", ch = 2, sun = 4)
     show stella drunk with dissolve
-    t "*hic* Hey cutie, wanna chat"?
+    t "*hic* Hey cutie, wanna chat?"
     bi "Should I talk to Stella?"
     menu:
         "Spend time with Stella":
