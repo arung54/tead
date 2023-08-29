@@ -65,7 +65,7 @@ label hospitalGo:
     zr "I know just the guy..."
     stop music fadeout 3.0
     $ftecounter = 5
-    scene black with dissolve
+    scene black
     camera at parallax
     blank "In the present..."#febmusic
     $mood = "sad"
@@ -163,7 +163,7 @@ label hospitalGo:
     scene black with dissolve
     scene bg hospcommons at bg
     $showchibint("dracula", "lauren", "sid")
-    $statusnt("Cafeteria", "bert", ch=3, sun=0)
+    $statusnt("Cafeteria", "bert", ch=3, sun=3)
     with dissolve
     bi "The hallway opened up into what looked like a middle school cafeteria."
     bi "There, I saw a few of the others gathered."
@@ -769,10 +769,7 @@ label hospitalGo:
     show sid mad
     i "Maybe whatever happened to him three years ago is the reason for this game!"
     bi "A noise interrupted."
-    $mood = "shock"
     play sfx "audio/ding.mp3"
-    $statusnt("Cafeteria", "bert", ch=3, sun=3)
-
     intercom "It is now twilight. Please feel free to return to your rooms."
     intercom "You may still roam freely, but remember that you must return to your cell before night begins."
     hide sam
@@ -782,7 +779,6 @@ label hospitalGo:
         xcenter .25
     with dissolve
     show sid ind
-    $mood = "ind"
     j "I think we should all go sleep."
     i "Wait, we were making so much progress!"
     j "Yeah, but I don't really want to find out what being \"punished\" means."
@@ -832,11 +828,9 @@ label hospitalGo:
     hide pophearts
     b "Good night Freddy. We'll see you in the morning!"
     f "G-good night..."
-    scene black
+    scene black with fade
     $statusnt("Bert's Cell", "bert", ch=3, sun=4)
     $showchibint()
-    with fade
-    stop music fadeout 1.0
     bi "We all made our way back to our rooms." #febreview
     bi "I had trouble sleeping."
     call poptearb
@@ -857,8 +851,6 @@ label hospitalb:
     play sfx "audio/ding.mp3"
     intercom "Twilight has begun. You must leave your room before daytime."
     $mood = "sad"
-    play music "audio/unity.mp3" fadein 1.0
-
     bi "I knew if I stayed in bed, I might not make it out of the room in 30 minutes."
     bi "So I begrudgingly got up and tried opening the door behind me, like I had last night."
     bi "..."
@@ -872,6 +864,7 @@ label hospitalb:
     b "Thanks Sesame."
     scene black with dissolve #febreview
     bi "I stepped outside into the hallway."
+    play music "audio/unity.mp3" fadein 1.0
     scene bg hosphalltopright at bg with dissolve
     $showchibint("jenny") #copy paste
     $statusnt("Guard Hallway", "bert", ch=3, sun=1)
@@ -998,11 +991,10 @@ label hospitalb:
     show jenny happy
     play sfx "audio/pophearts.mp3" volume .5
     show pophearts:
-        xcenter .75
+        xcenter .5
         ycenter .5
     j "No worries Bert, I cooked for us once, I don't mind doing it again."
     bi "I trust Jenny, but we did just talk about poisoning people's food..."
-    hide pophearts
     j "I think this door is to the kitchen, you should get out the other two doors in here."
     b "Sounds good. Thanks Jenny, I'll let you know what I find."
     hide jenny with dissolve
@@ -1146,7 +1138,7 @@ label testwindow:
     $showchibint("jenny")#copy paste  #febmusic 1 normal music
     $statusnt("Kitchen", "bert", ch=3, sun=1)
     show jenny happy with dissolve
-    play music "audio/unity.mp3" fadein 1.0
+    play music "audio/rush.mp3" fadein 1.0
     bi "As I entered the kitchen, I looked through the window to the cafeteria, just to make sure..."
     $showchibint("jenny", "window", "dracula", "sid", "shahar", "lauren", "freddy", "sam")
     with dissolve
@@ -1235,7 +1227,7 @@ label testwindow:
     b "I uh... didn't see any baseballs or anything like that in here."
     f "Oh. Maybe we can find one!"
     play sfx "audio/popwow.mp3" volume .5
-    show popwow at inwindow behind hospwindowoverlay:
+    show popwow at indwindow behind hospwindowoverlay:
         xcenter .69
         ycenter .25
         zoom .75
@@ -1791,7 +1783,7 @@ label postFT5:
     j "Hey Bert! Guess what I found?"
     b "A way out?"
     show jenny ind
-    $popx = .44
+    $xpop = .44
     call poptearo
     j "Oh... no, you're gonna be disappointed if you expected that."
     b "I was joking."
@@ -1976,7 +1968,7 @@ label chess3:
     b "Sounds good, I can take the lead this time."
     b "I can't cook much but you shouldn't have to do all the work..."
     $popx = .5
-    call popheartso
+    call pophearts0
     j "Thanks Bert!"
     scene bg hospkitchen at bg with fade
     $statusnt("Kitchen", "bert", ch=3, sun=3)
@@ -2243,8 +2235,6 @@ label chess3:
 label postFT6:
     scene bg hospcommons at bg
     $showchibint("lauren", "freddy", "jenny", "shahar", "sam", "window", "sid", "dracula")
-    play music "audio/rush.mp3" fadein 2.0
-
     with dissolve
     bi "After chatting a bit, Sid talked to us through the window."
     scene bg hospkitchenwindow2 at bg
@@ -4696,4 +4686,4 @@ label dracAsk:
             call screen ch3results with dissolve
             stop music fadeout .5
             pause 1.0
-            jump bankGo
+            jump hospitalGo
