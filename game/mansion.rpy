@@ -1,5 +1,14 @@
 label mansionGo:
     $ftecounter = 2
+    $fte_sam = 0
+    $fte_stel = 0
+    $fte_drac = 0
+    $fte_frog = 0
+    $fte_jenn = 0
+    $fte_laur = 0
+    $fte_sid = 0
+    $fte_shah = 0
+    $fte_cath = 0
     $dan = False
     $noside = True
     camera at paralloff
