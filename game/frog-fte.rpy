@@ -20,10 +20,10 @@ label frogAsk1:
     menu:
         "Spend time with Froggy":
             f "O-okay mister..."
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar with dissolve
+    call screen midCar with dissolve
 
 #Mansion 1
 label frogAsk2:
@@ -35,10 +35,10 @@ label frogAsk2:
     menu:
         "Spend time with Froggy":
             f "Okay, but I want to keep petting Sesame!"
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen bedroomFL with dissolve
+    call screen bedroomFL with dissolve
 
 #Mansion 2
 label frogAsk3:
@@ -50,10 +50,10 @@ label frogAsk3:
     menu:
         "Spend time with Froggy":
             f "Okay, but we gotta keep an eye on Sesame!"
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen bedroomFL with dissolve
+    call screen bedroomFL with dissolve
 
 #Mansion 3
 label frogAsk4:
@@ -65,10 +65,10 @@ label frogAsk4:
     menu:
         "Spend time with Froggy":
             f "Okay, maybe my tummy will rumble less if we talk!"
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen dining with dissolve
+    call screen dining with dissolve
 
 #Hospital 1
 label frogAsk5:
@@ -81,10 +81,10 @@ label frogAsk5:
     menu:
         "Spend time with Froggy":
             f "Okay, I don't want to eat my veggies anyway."
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen hospKitchen
+    call screen hospKitchen
 
 #Hospital 2
 label frogAsk6:
@@ -96,10 +96,10 @@ label frogAsk6:
     menu:
         "Spend time with Froggy":
             f "Sheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesh!"
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen patientcommons with dissolve
+    call screen patientcommons with dissolve
 
 #Hospital 3
 label frogAsk7:
@@ -111,10 +111,10 @@ label frogAsk7:
     menu:
         "Spend time with Froggy":
             f "Adults sure love letters..."
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen patientcommons with dissolve
+    call screen patientcommons with dissolve
 
 #Bank 1
 label frogAsk8:
@@ -126,10 +126,10 @@ label frogAsk8:
     menu:
         "Spend time with Froggy":
             f "If only the frog I drew was real..."
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen office with dissolve
+    call screen office with dissolve
 #Bank 2
 label frogAsk9:
     scene bg banklobby1
@@ -140,10 +140,10 @@ label frogAsk9:
     menu:
         "Spend time with Froggy":
             f "Ribbbbbbbit. That was frog for \"Sure, let's talk!\""
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 #Bank 3
 label frogAsk10:
@@ -155,12 +155,16 @@ label frogAsk10:
     menu:
         "Spend time with Froggy":
             f "But if we talk, Jenny's going to catch me! ...Okay, fine..."
-            jump frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen hall with dissolve
+    call screen hall with dissolve
 
 label frogHang:
+    if fte_frog >= 3:
+        b "Hm, on second thought, I've talked to Froggy plenty... I should talk to someone else."
+        hide frog with dissolve
+        return
     #Dan FTE 1
     if fte_frog == -1:
         n "So um..."

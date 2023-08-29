@@ -19,7 +19,7 @@ label cathAsk1:
             jump cathHang
         "Maybe later":
             hide catherine with dissolve
-            call screen backCar with dissolve
+    call screen backCar with dissolve
 
 label cathAsk2:
     scene bg mansionkitchen
@@ -33,7 +33,7 @@ label cathAsk2:
             jump cathHang
         "Maybe later":
             hide catherine with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 label cathAsk3:
     scene bg mansionkitchen
@@ -47,7 +47,7 @@ label cathAsk3:
             jump cathHang
         "Maybe later":
             hide catherine with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 label cathAsk4:
     scene bg mansionkitchen
@@ -61,9 +61,13 @@ label cathAsk4:
             jump cathHang
         "Maybe later":
             hide catherine with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 label cathHang:
+    if fte_cath >= 3:
+        b "Hm, on second thought, I've talked to Catherine plenty... I should talk to someone else."
+        hide catherine with dissolve
+        return
     if fte_cath == -1:
         c "Hey Dan."
         ses "Mrow!"

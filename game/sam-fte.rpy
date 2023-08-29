@@ -19,10 +19,10 @@ label samAsk1:
     menu:
         "Spend time with Sam?":
             s "Sure, I guess I can talk."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen frontCar with dissolve
+    call screen frontCar with dissolve
 
 #Mansion 1
 label samAsk2:
@@ -34,10 +34,10 @@ label samAsk2:
     menu:
         "Spend time with Sam":
             s "Sure."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen masterBedroom with dissolve
+    call screen masterBedroom with dissolve
 
 #Mansion 2
 label samAsk3:
@@ -49,10 +49,10 @@ label samAsk3:
     menu:
         "Spend time with Sam":
             s "Sure, let's talk while I look around more."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 #Mansion 3
 label samAsk4:
@@ -64,10 +64,10 @@ label samAsk4:
     menu:
         "Spend time with Sam":
             s "Sure, but not for too long."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen dining with dissolve
+    call screen dining with dissolve
 
 #Hospital 1
 label samAsk5:
@@ -113,10 +113,10 @@ label samAsk8:
     menu:
         "Spend time with Sam":
             s "Sure, I can wait a bit."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen locker with dissolve
+    call screen locker with dissolve
 #Bank 2
 label samAsk9:
     scene bg banklobby1
@@ -127,10 +127,10 @@ label samAsk9:
     menu:
         "Spend time with Sam":
             s "Sure, I need a distraction from this revelation..."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 #Bank 3
 label samAsk10:
@@ -142,12 +142,16 @@ label samAsk10:
     menu:
         "Spend time with Sam":
             s "Sure, though I might be distracted by what we just learned."
-            jump samHang
+            call samHang
         "Maybe later":
             hide sam with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 label samHang:
+    if fte_sam >= 3:
+        b "Hm, on second thought, I've talked to Sam plenty... I should talk to someone else."
+        hide sam with dissolve
+        return
     #Dan FTE 1
     if fte_sam == -1:
         s "Really?"

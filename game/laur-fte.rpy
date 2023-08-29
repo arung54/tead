@@ -19,10 +19,10 @@ label laurAsk1:
     menu:
         "Spend time with Lauren?":
             o "Sure, not like anything else is happening."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar with dissolve
+    call screen midCar with dissolve
 
 #Mansion 1
 label laurAsk2:
@@ -34,10 +34,10 @@ label laurAsk2:
     menu:
         "Spend time with Lauren":
             l "Sure, Freddy's pretty occupied anyway."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen bedroomFL with dissolve
+    call screen bedroomFL with dissolve
 
 #Mansion 2
 label laurAsk3:
@@ -49,10 +49,10 @@ label laurAsk3:
     menu:
         "Spend time with Lauren":
             l "Sure, but let's not be late to the party."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen bedroomFL with dissolve
+    call screen bedroomFL with dissolve
 
 #Mansion 3
 label laurAsk4:
@@ -64,10 +64,10 @@ label laurAsk4:
     menu:
         "Spend time with Lauren":
             l "Okay, but I gotta keep an eye on Freddy while we talk."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen dining with dissolve
+    call screen dining with dissolve
 
 #Hospital 1
 label laurAsk5:
@@ -80,10 +80,10 @@ label laurAsk5:
     menu:
         "Spend time with Lauren":
             l "Sure, it'd be good to catch up."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen hospKitchen
+    call screen hospKitchen
 
 #Hospital 2
 label laurAsk6:
@@ -95,10 +95,10 @@ label laurAsk6:
     menu:
         "Spend time with Lauren":
             l "Sure."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen patientcommons with dissolve
+    call screen patientcommons with dissolve
 
 #Hospital 3
 label laurAsk7:
@@ -110,10 +110,10 @@ label laurAsk7:
     menu:
         "Spend time with Lauren":
             l "Sure, I need a distraction."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen patientcommons with dissolve
+    call screen patientcommons with dissolve
 
 #Bank 1
 label laurAsk8:
@@ -125,10 +125,10 @@ label laurAsk8:
     menu:
         "Spend time with Lauren":
             l "Sure, I'm just watching Freddy for now."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen office with dissolve
+    call screen office with dissolve
 #Bank 2
 label laurAsk9:
     scene bg banklobby1
@@ -139,10 +139,10 @@ label laurAsk9:
     menu:
         "Spend time with Lauren":
             l "Maybe that's just the sugar speaking..."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 #Bank 3
 label laurAsk10:
@@ -154,12 +154,17 @@ label laurAsk10:
     menu:
         "Spend time with Lauren":
             l "Sure."
-            jump laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 label laurHang:
+    if fte_laur >= 3:
+        b "Hm, on second thought, I've talked to Lauren plenty... I should talk to someone else."
+        hide lauren with dissolve
+        return
+
     #Dan FTE 1
     if fte_laur == -1:
         n "So uh... what's up?"

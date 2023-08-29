@@ -18,10 +18,10 @@ label sidAsk1:
     menu:
         "Spend time with Sid":
             i "Let's do it."
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid ind with dissolve
-            call screen midCar with dissolve
+    call screen midCar with dissolve
 
 #Mansion 1
 label sidAsk2:
@@ -33,10 +33,10 @@ label sidAsk2:
     menu:
         "Spend time with Sid":
             i "Yeah! Let's chat! I'm so well-rested and energetic!"
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen masterBedroom
+    call screen masterBedroom
 
 #Mansion 2
 label sidAsk3:
@@ -48,10 +48,10 @@ label sidAsk3:
     menu:
         "Spend time with Sid":
             i "Okay, but we better not be late to the meal!"
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen masterBedroom
+    call screen masterBedroom
 
 #Mansion 3
 label sidAsk4:
@@ -63,10 +63,10 @@ label sidAsk4:
     menu:
         "Spend time with Sid":
             i "Okay, but don't get mad if my tummy rumbles!"
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen dining
+    call screen dining
 
 #Hospital 1
 label sidAsk5:
@@ -79,10 +79,10 @@ label sidAsk5:
     menu:
         "Spend time with Sid":
             i "I don't know if I want to talk to you after that meal... but fine."
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen hospKitchen
+    call screen hospKitchen
 
 #Hospital 2
 label sidAsk6:
@@ -95,10 +95,10 @@ label sidAsk6:
     menu:
         "Spend time with Sid":
             i "Sure, I'll talk while chopping veggies."
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen patientcommons
+    call screen patientcommons
 
 #Bank 1
 label sidAsk8:
@@ -110,10 +110,10 @@ label sidAsk8:
     menu:
         "Spend time with Sid":
             i "Okay, but only if you tell me your birthday! ...Or not, it's fine."
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen hall with dissolve
+    call screen hall with dissolve
 #Bank 2
 label sidAsk9:
     scene bg banklobby1
@@ -124,10 +124,10 @@ label sidAsk9:
     menu:
         "Spend time with Sid":
             i "Yeah, let's talk about our birthdays! ...Or something else."
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 #Bank 3
 label sidAsk10:
@@ -139,12 +139,17 @@ label sidAsk10:
     menu:
         "Spend time with Sid":
             i "I wonder if I can get Freddy to give me money once we're out of here..."
-            jump sidHang
+            call sidHang
         "Maybe later":
             hide sid with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 label sidHang:
+    if fte_sid >= 3:
+        b "Hm, on second thought, I've talked to Sid plenty... I should talk to someone else."
+        hide sid with dissolve
+        return
+
     if fte_sid == -1:
         n "What's up Sid?"
         i "Hmm... well..."

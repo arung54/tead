@@ -19,10 +19,10 @@ label stelAsk1:
     menu:
         "Spend time with Stella?":
             t "Sure, you're cute enough."
-            jump stelHang
+            call stelHang
         "Maybe later":
             hide stella ind with dissolve
-            call screen midCar with dissolve
+    call screen midCar with dissolve
 
 #Mansion 1
 label stelAsk2:
@@ -34,10 +34,10 @@ label stelAsk2:
     menu:
         "Spend time with Stella":
             t "Yeah, come here handsome."
-            jump stelHang
+            call stelHang
         "Maybe later":
             hide stella with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 #Mansion 2
 label stelAsk3:
@@ -49,10 +49,10 @@ label stelAsk3:
     menu:
         "Spend time with Stella":
             t "Ooh, my day just got better!"
-            jump stelHang
+            call stelHang
         "Maybe later":
             hide stella with dissolve
-            call screen dining with dissolve
+    call screen dining with dissolve
 
 #Mansion 3
 label stelAsk4:
@@ -64,12 +64,17 @@ label stelAsk4:
     menu:
         "Spend time with Stella":
             t "*hic* You know what they say, drunk conversation is the best chaser!"
-            jump stelHang
+            call stelHang
         "Maybe later":
             hide stella with dissolve
-            call screen dining with dissolve
+    call screen dining with dissolve
 
 label stelHang:
+    if fte_stel >= 3:
+        b "Hm, on second thought, I've talked to Stella plenty... I should talk to someone else."
+        hide stella with dissolve
+        return
+
     #Dan FTE 1
     if fte_stel == -1:
         show stella ind

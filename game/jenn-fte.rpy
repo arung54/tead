@@ -19,10 +19,10 @@ label jennAsk1:
     menu:
         "Spend time with Jenny":
             j "Sure!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar with dissolve
+    call screen midCar with dissolve
 
 #Mansion 1
 label jennAsk2:
@@ -34,10 +34,10 @@ label jennAsk2:
     menu:
         "Spend time with Jenny":
             j "Sure, let's chat!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen hallway with dissolve
+    call screen hallway with dissolve
 
 #Mansion 2
 label jennAsk3:
@@ -49,10 +49,10 @@ label jennAsk3:
     menu:
         "Spend time with Jenny":
             j "Sure, I'd love some company!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 #Mansion 3
 label jennAsk4:
@@ -64,10 +64,10 @@ label jennAsk4:
     menu:
         "Spend time with Jenny":
             j "Okay, but we gotta finish talking before the first course is ready!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen kitchen with dissolve
+    call screen kitchen with dissolve
 
 #Hospital 1
 label jennAsk5:
@@ -79,10 +79,10 @@ label jennAsk5:
     menu:
         "Spend time with Jenny":
             j "Normally I sing while doing dishes, but talking is nice too!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen hospKitchen with dissolve
+    call screen hospKitchen with dissolve
 
 #Hospital 2
 label jennAsk6:
@@ -94,10 +94,10 @@ label jennAsk6:
     menu:
         "Spend time with Jenny":
             j "Sure!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen patientcommons with dissolve
+    call screen patientcommons with dissolve
 
 #Hospital 3
 label jennAsk7:
@@ -109,10 +109,10 @@ label jennAsk7:
     menu:
         "Spend time with Jenny":
             j "Yeah! More friendship!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen patientcommons with dissolve
+    call screen patientcommons with dissolve
 
 #Bank 1
 label jennAsk8:
@@ -124,10 +124,10 @@ label jennAsk8:
     menu:
         "Spend time with Jenny":
             j "Well, I guess I still have energy to talk!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 #Bank 2
 label jennAsk9:
     scene bg banklobby1
@@ -138,10 +138,10 @@ label jennAsk9:
     menu:
         "Spend time with Jenny":
             j "Okay, but gotta keep an eye on Freddy!"
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen lobby with dissolve
+    call screen lobby with dissolve
 
 #Bank 3
 label jennAsk10:
@@ -153,12 +153,16 @@ label jennAsk10:
     menu:
         "Spend time with Jenny":
             j "Yeah, I need to catch my breath anyway..."
-            jump jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen hall with dissolve
+    call screen hall with dissolve
 
 label jennHang:
+    if fte_jenn >= 3:
+        b "Hm, on second thought, I've talked to Jenny plenty... I should talk to someone else."
+        hide jenny with dissolve
+        return
     #Dan FTE 1
     if fte_jenn == -1:
         j "Hey Dan! What's up?"

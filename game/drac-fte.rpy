@@ -20,10 +20,10 @@ label dracAsk1:
     menu:
         "Spend time with Dracula":
             d "Very well. Not as if I have other plans."
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen backCar with dissolve
+    call screen backCar with dissolve
 
 #Mansion 1
 label dracAsk2:
@@ -35,10 +35,10 @@ label dracAsk2:
     menu:
         "Spend time with Dracula":
             d "Well, I suppose I could use some stimulation."
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen masterBedroom
+    call screen masterBedroom
 
 #Mansion 2
 label dracAsk3:
@@ -50,10 +50,10 @@ label dracAsk3:
     menu:
         "Spend time with Dracula":
             d "I suppose conversation instead of blood will have to do."
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen masterBedroom
+    call screen masterBedroom
 
 #Mansion 3
 label dracAsk4:
@@ -65,10 +65,10 @@ label dracAsk4:
     menu:
         "Spend time with Dracula":
             d "Even a string quartet would be a huge improvement."
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen dining
+    call screen dining
 
 #Hospital 1
 label dracAsk5:
@@ -81,10 +81,10 @@ label dracAsk5:
     menu:
         "Spend time with Dracula":
             d "Sure, we can talk, anything besides eating more of that soup."
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen hospKitchen
+    call screen hospKitchen
 
 #Hospital 2
 label dracAsk6:
@@ -97,10 +97,10 @@ label dracAsk6:
     menu:
         "Spend time with Dracula":
             d "Sure, I've finished investigating this side anyway."
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen patientcommons
+    call screen patientcommons
 
 #Hospital 3
 label dracAsk7:
@@ -113,12 +113,16 @@ label dracAsk7:
     menu:
         "Spend time with Dracula":
             d "Are you volunteering your flesh, Bert?"
-            jump dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
-            call screen patientcommons
+    call screen patientcommons
 
 label dracHang:
+    if fte_drac >= 3:
+        b "Hm, on second thought, I've talked to Dracula plenty... I should talk to someone else."
+        hide drac with dissolve
+        return
     #Dan FTE 1
     if fte_drac == -1:
         n "So um... your name's not actually Dracula right?"

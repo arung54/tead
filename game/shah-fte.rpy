@@ -21,10 +21,10 @@ label shahAsk1:
         "Spend time with Shahar?":
             h "Arr laddy, you've made a good choice!"
             ni "...have I?"
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen frontCar with dissolve
+    call screen frontCar with dissolve
 
 #Mansion 1
 label shahAsk2:
@@ -36,10 +36,10 @@ label shahAsk2:
     menu:
         "Spend time with Shahar":
             h "*Braaaap*"
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen kitchen
+    call screen kitchen
 
 #Mansion 2
 label shahAsk3:
@@ -51,10 +51,10 @@ label shahAsk3:
     menu:
         "Spend time with Shahar":
             h "Aye lad, here for more pirate wisdom?"
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen dining
+    call screen dining
 
 #Mansion 3
 label shahAsk4:
@@ -66,10 +66,10 @@ label shahAsk4:
     menu:
         "Spend time with Shahar":
             h "Yer not my usual party company, but ye'll have to do, lad."
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen dining
+    call screen dining
 
 #Hospital 1
 label shahAsk5:
@@ -82,10 +82,10 @@ label shahAsk5:
     menu:
         "Spend time with Shahar":
             h "Aye, anything to distract me from the onset of scurvy."
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen hospKitchen
+    call screen hospKitchen
 
 #Hospital 2
 label shahAsk6:
@@ -97,10 +97,10 @@ label shahAsk6:
     menu:
         "Spend time with Shahar":
             h "Happy to talk, but not too loudly lad."
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen patientcommons
+    call screen patientcommons
 
 #Hospital 3
 label shahAsk7:
@@ -112,12 +112,16 @@ label shahAsk7:
     menu:
         "Spend time with Shahar":
             h "Aye matey, tell me more about these strange grubs of yers."
-            jump shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
-            call screen patientcommons
+    call screen patientcommons
 
 label shahHang:
+    if fte_shah >= 3:
+        b "Hm, on second thought, I've talked to Shahar plenty... I should talk to someone else."
+        hide shahar with dissolve
+        return
     #Dan FTE 1
     if fte_shah == -1:
         h "Y'arr, Dan, what can I do for ye?"
