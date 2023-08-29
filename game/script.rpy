@@ -551,7 +551,6 @@ default persistent.fte_sam = 0
 default persistent.fte_shah = 0
 default persistent.fte_sid = 0
 default persistent.fte_stel = 0
-default persistent.ch1completed = False
 
 init python:
     def statusnt(name, person, ch, sun):

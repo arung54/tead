@@ -1252,7 +1252,7 @@ label pent34:
     b "And why haven't I found anything else here to link me to this location?"
     b "If I really am the chosen killer here, shouldn't it feel more... obvious?"
 
-    show frog2 ind
+    show frog2 ind:
         xcenter .5
     show jenny ind:
         linear .2 xcenter .25
@@ -1965,14 +1965,14 @@ label pentjenny:
     hide ch5evkaiser
     show ch5evstella:
         ycenter .6
-     with dissolve
+    with dissolve
     b "Unable to fulfill shipments, InSyde got hit with lawsuits from Stella's team."
     b "While Stella didn't personally work the cases, her team was merciless."
     b "She hired one of the best lawyers she could find to dig up dirt and ruin Sydell."
     hide ch5evstella
     show ch5evshahar:
         ycenter .6
-     with dissolve
+    with dissolve
     b "That lawyer was Shahar."
     b "The man we knew was once a great lawyer..."
     b "Cantoire wanted InSyde in the dirt, and used cheap tricks to do it."
@@ -1983,11 +1983,11 @@ label pentjenny:
     hide ch5evshahar
     show ch5evdracula:
         ycenter .6
-     with dissolve
+    with dissolve
     b "They hired Ivan to lobotomize Shahar."
     b "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
     b "Ivan himself was remorseful, but it didn't change what he did."
-    hdie ch5evdracula
+    hide ch5evdracula with dissolve
     b "And it was just to protect the fact that some kid was rigging a case for them."
     show ch5evsid with dissolve:
         ycenter .6

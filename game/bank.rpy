@@ -1298,7 +1298,7 @@ label bank5:
     f "About my family?"
     b "Yeah! Your parents, maybe."
     $popx = .71
-    $call poptearo
+    call poptearo
     bi "Jenny rolled her eyes at me... I don't think I'm very good at talking to kids."
     show jenny happy
     j "Whoa! You told Bert all about your family, but not me?"
@@ -1493,7 +1493,7 @@ label bank5:
     $mood = "sad"
     j "That's scary... how do we know if he's even a kid under there?"
     j "What if he's a robot, or a really smart monkey?"
-    $call poptearb
+    call poptearb
     b "."
     $mood = "ind"
     j "But you are right, it's a good plan..."
@@ -1589,13 +1589,9 @@ label bank5:
         xcenter .25
         linear .3 xcenter .5
     l "Jenny seems pretty shaken by this."
-<<<<<<< HEAD
+
     l "I can't blame her, but... maybe she should keep an eye on her."
     b "There's a lot to take in."
-=======
-    l "I can't blame her, but... maybe we should keep an eye on her."
-    b "There's a lot to take."
->>>>>>> f6f4b2a5b7f2f49517a925aef3a388752744219d
     b "Two more people dead, Gerald's file, the vault..."
     l "Speaking of the vault, I guess that means Freddy really is rich."
     l "And that means the bank records are most likely real."
@@ -1906,7 +1902,7 @@ label bank7:
     bi "I approached the hallway door, and..."
     b "HEY!"
     b "..."
-    $call poptearb
+    call poptearb
     b "Shoot, I was hoping someone would come..."
     b "Maybe one more try..."
     b "HEY!"
@@ -2315,7 +2311,7 @@ label bank8:
     bi "I forced my eyes to open and get myself out of my half-asleep state..."
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy")
-    stop music with fadeout 1.0
+    stop music fadeout 1.0
     show bg banklobby1 at bg #music change
     with dissolve
     bi "That noise... was the door opening."
@@ -3148,7 +3144,7 @@ label trial4l:
     l "Square one would be if we thought Sam committed suicide."
     l "But based on the argument Bert just made, that can't be what happened, right?"
     j "Well, I'm not convinced about that either..."
-    $call pophuhb
+    call pophuhb
     $mood = "shock"
     j "What if Sam is the murderer, but staged it to look like it wasn't a suicide?"
     b "Huh?"
@@ -3206,7 +3202,7 @@ label trial4m:
     b "If someone's lying, they probably are the murderer..."
     b "So Sam didn't commit suicide."
     b "So if we want to figure out if Jenny's right..."
-    $call popwowb
+    call popwowb
     b "We have to assume Sam put it there and figure out why."
     j "Hm... I have some ideas about that, actually."
     python:
@@ -3538,7 +3534,7 @@ label trial4r:
     show sid ind
     show jenny ind:
         xcenter .25
-     with moveinleft
+    with moveinleft
     j "Hm... it's kind of inconvenient."
     j "None of us really saw each other, except me seeing Sid."
     $popx = .3
@@ -3619,7 +3615,7 @@ label trial4ti:
             b "The safe door, sure, but as far as I know there's no way to lock the safe itself."
             i "Yeah, surely you would noticed the lights!"
             i "After all, who could resist the possibility of taking all that schmoney!"
-            $call poptearb
+            call poptearb
             bi "...Most of us, but that's besides the point."
             l "Wait, the lights?"
             b "Yeah, they changed color from red to green, presumably because the safe opened."
@@ -3847,7 +3843,7 @@ label trial4u:
     i "No, I don't hate Sam!"
     i "We didn't get along, but..."
     call popwowo
-    i "I swear I didn't do it!
+    i "I swear I didn't do it!"
     show scary with dissolve:
         alpha .5
     bi "..."
@@ -4023,7 +4019,7 @@ label trial4y:
     l "The five of us have been together the longest..."
     l "It will hurt so much to be betrayed by one of you."
     l "At least right now I have some plausible deniability for both Jenny and Sid..."
-    call jenny happy
+    show jenny happy
     j "Aww, it's okay Lauren."
     j "The feeling's mutual, now that I know you did it!"
     l "Hmph. I guess you have to say that, even if..., no, even though you did it."
@@ -4297,12 +4293,8 @@ label laurAsk:
 
         "How did you open the safe?":
             l "Well, just like everyone else I've been getting an advantage."
-<<<<<<< HEAD
             $mood = "shock"
-            l "Mine was... I was told that someone here has a birthday on July 17th."
-=======
-            l "Mine was... I was told that someone here has a birthday on the 30th."
->>>>>>> f6f4b2a5b7f2f49517a925aef3a388752744219d
+            l "Mine was... I was told that someone here has a birthday on 30th."
             l "With that information I was able to open the safe."
             b "You knew your birthday and the 30th... don't you need a third number?"
             l "Oh, yeah, Freddy told me his birthday."
