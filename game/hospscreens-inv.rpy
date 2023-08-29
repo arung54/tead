@@ -198,11 +198,11 @@ screen securityInv():
 label hospInvSamSecurity:
     scene bg hospsecurity at bg
     $ statusnt("Security", "lauren", ch = 3, sun = 1)
-    show sam with dissolve
+    show samrg ind with dissolve
     lf "Notice anything Sam?"
     s "...Not really..."
     li "Talkative as always."
-    hide sam with dissolve
+    hide samrg with dissolve
     call screen securityInv
 
 label securityComputer:
@@ -220,13 +220,13 @@ label securityComputer:
         li "Weird, you'd think they might want some in the cells."
         li "Okay, what else..."
         li "Huh, what does this program do? It has a list of all the rooms in this floor."
-        blank "Click."
+        "Click."
         lf "What was that noise?"
-        show sam with dissolve
+        show samrg ind with dissolve
         s "...The lights in the room next to us turned off..."
         lf "Okay, so you can control the lights on the floor from here."
         s "...Yeah..."
-        hide sam with dissolve
+        hide samrg with dissolve
         li "What else... there's a function called Hot Water Cycling."
         li "Let me click the info button."
         li "It says hot water cycles through the pipes here weekly to clean them out."
@@ -245,7 +245,7 @@ label securityComputer:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Computer was added to evidence."
+        "Computer was added to evidence."
         li "Well, this room doesn't have much besides this computer."
         li "I should go look elsewhere."
         call hospDone from _call_hospDone
@@ -314,11 +314,11 @@ screen closetInv():
 label hospInvSamCloset:
     scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
-    show sam with dissolve
+    show samrg ind with dissolve
     lf "Notice anything Sam?"
     s "...Not really..."
     li "Talkative as always."
-    hide sam with dissolve
+    hide samrg with dissolve
     call screen closetInv
 
 label baseballBat:
@@ -329,7 +329,7 @@ label baseballBat:
         if hosp_evidence[7]:
             li "According to the closet rules, it has to be returned to this position, but..."
         lf "It could've been taken out for a bit, right?"
-        show sam with dissolve
+        show samrg ind with dissolve
         s "..."
         li "Sam took the baseball bat, spun it around and looked at it for a bit."
         li "Then, Sam held it by the top, and tapped it against the ground."
@@ -341,7 +341,7 @@ label baseballBat:
         s "...And there's no signs of wear and tear on the outside..."
         lf "Oh. Uh, thanks Sam."
         s "...Yeah..."
-        hide sam with dissolve
+        hide samrg with dissolve
         li "That was... helpful."
         li "I want to ask how Sam knows this but..."
         li "Well, there's more important things to worry about right now."
@@ -349,7 +349,7 @@ label baseballBat:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Baseball Bat was added to evidence."
+        "Baseball Bat was added to evidence."
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
@@ -371,7 +371,7 @@ label stepstool:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Stepstool was added to evidence."
+        "Stepstool was added to evidence."
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
@@ -392,7 +392,7 @@ label cleaningSupplies:
         li "A lot of them also say to avoid mixing them, not just consuming them."
         lf "I'm kind of relieved a murder happened today..."
         lf "If Freddy had to be a guard, I don't know if he'd know not to... well..."
-        show sam with dissolve
+        show samrg ind with dissolve
         s "...Kill himself by drinking those?..."
         lf "...Yes."
         li "Okay, it didn't need to be said like that..."
@@ -401,7 +401,7 @@ label cleaningSupplies:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Cleaning Supplies was added to evidence."
+        "Cleaning Supplies was added to evidence."
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
@@ -428,7 +428,7 @@ label closetRules:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Closet Rules was added to evidence."
+        "Closet Rules was added to evidence."
         if False not in hosp_evidence[4:7]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
@@ -442,7 +442,7 @@ label closetRules:
 label closetLightSwitch:
     scene bg hospcloset at bg
     $ statusnt("Closet", "lauren", ch = 3, sun = 1)
-    blank "Flick."
+    "Flick."
     li "Hm? The light didn't turn on."
     if hosp_evidence[1]:
         li "Oh, it might be because the computer in the security room controls the lights."
@@ -542,7 +542,7 @@ label firstaidkit:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Bottle of Medical Glue was added to evidence."
+        "Bottle of Medical Glue was added to evidence."
         if False not in hosp_evidence[2:3]:
             li "I think that's everything important in here."
             li "There's a lot in this room, but not much that seems out of place..."
@@ -574,7 +574,7 @@ label hosprules:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Rules of the Hospital was added to evidence."
+        "Rules of the Hospital was added to evidence."
         if False not in hosp_evidence[2:3]:
             li "I think that's everything important in here."
             li "There's a lot in this room, but not much that seems out of place..."
@@ -596,7 +596,7 @@ label hospcouches:
 label vendingmachine:
     scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
-    blank "Flick."
+    "Flick."
     li "I wish I could tell what soda is what..."
     li "Well, I wish I could have one."
     li "Seems like you need money to get a vending machine."
@@ -658,11 +658,11 @@ screen hallwayTLInv():
 label hospInvSamTL:
     scene bg hosphalltopleft at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
-    show sam with dissolve
+    show samrg ind with dissolve
     lf "Notice anything Sam?"
     s "...Not really..."
     li "Talkative as always."
-    hide sam with dissolve
+    hide samrg with dissolve
     call screen hallwayTLInv
 
 label cellorder:
@@ -678,16 +678,16 @@ label cellorder:
         li "I guess Shahar was on the end too. No one went out of their way to check in on him this morning."
         li "Though I don't remember where everyone else was, to be honest."
         lf "...What was the order of the cells again?"
-        show sam with dissolve
+        show samrg ind with dissolve
         s "...You, me, Dracula, Freddy..."
         s "...And then in the other hall, Jenny, Bert, Sid, and Shahar."
         lf "Oh, yeah. Thanks Sam."
-        hide sam with dissolve
+        hide samrg with dissolve
         $hosp_evidence[11] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Order of the Cells was added to evidence."
+        "Order of the Cells was added to evidence."
         call hospDone from _call_hospDone_7
     else:
         li "Let's see, the cell order is..."
@@ -742,12 +742,12 @@ screen hallwayTRInv():
 label hospInvSamTR:
     scene bg shahardead at bg
     $ statusnt("Guards' Hallway", "lauren", ch = 3, sun = 1)
-    show sam with dissolve:
+    show samrg ind with dissolve:
         xcenter .25
     lf "Notice anything Sam?"
     s "...Not really..."
     li "...Nothing? Shahar's body doesn't throw you off?"
-    hide sam with dissolve
+    hide samrg with dissolve
     call screen hallwayTLInv
 
 label shaharbody:
@@ -767,7 +767,7 @@ label shaharbody:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "State of the Body was added to evidence."
+        "State of the Body was added to evidence."
         if False not in hosp_evidence[8:10]:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
@@ -794,7 +794,7 @@ label glassshards:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Glass Shards was added to evidence."
+        "Glass Shards was added to evidence."
         if False not in hosp_evidence[8:10]:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
@@ -819,7 +819,7 @@ label pipe:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Pipe in the Hallway was added to evidence."
+        "Pipe in the Hallway was added to evidence."
         if False not in hosp_evidence[8:10]:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
@@ -935,12 +935,12 @@ label hospcabinets:
     li "Also, if someone walked out of the kitchen with a knife, we might have seem them."
     li "Seems a bit risky..."
     li "Not to mention well..."
-    show sam with dissolve
+    show samrg ind with dissolve
     li "Even if they did try to stab him, it might not have killed him."
     s "...Why are you looking at me like that..."
     lf "Huh? Oh, nothing, just got lost in thought."
     s "...Kay..."
-    hide sam with dissolve
+    hide samrg with dissolve
     li "Anyway, I don't think it's worth worrying about the knife in here."
     li "Well, unless we find some other reason to believe a knife is important..."
     $hosp_extra[5] = True
@@ -949,7 +949,7 @@ label hospcabinets:
 label hospInvSamKitchen:
     scene bg hospkitchen at bg
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
-    show sam with dissolve
+    show samrg ind with dissolve
     lf "Notice anything Sam?"
     s "...Food..."
     li "I guess, ask stupid questions, get stupid answers."
@@ -962,18 +962,18 @@ label hospInvJenny:
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
-    show jenny ind at inwindow behind hospwindowoverlay with dissolve
+    show jennyrg ind at inwindow behind hospwindowoverlay with dissolve
     lf "Jenny, anything you think we should look at?"
     j "Ooh, is the chess set still in the guard's room?"
     lf "...Chess set?"
     j "Yeah, Bert and I played a game two days ago."
     li "...Or, you could help investigate."
     lf "Yeah, I'll take a look and let you know if it's still there."
-    show jenny happy at inwindow behind hospwindowoverlay
+    show jennyrg happy at inwindow behind hospwindowoverlay
     j "Really? Thanks Lauren!"
     li "I am {i}not{/i} going to look for a chess set."
     li "Not like Shahar died by choking on a bishop."
-    hide jenny with dissolve
+    hide jennyrg with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospInvDracula:
@@ -982,7 +982,7 @@ label hospInvDracula:
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
-    show drac ind at inwindow behind hospwindowoverlay with dissolve
+    show dracrg ind at inwindow behind hospwindowoverlay with dissolve
     d "Greetings Lauren. How goes the investigation?"
     if len([x for x in hosp_evidence if x]) > 5:
         lf "Pretty good, I think I'm at least halfway done?"
@@ -1010,7 +1010,7 @@ label hospInvDracula:
     li "I can't stand talking to this guy."
     lf "I'm gonna go keep investigating."
     d "Yes, good plan."
-    hide drac with dissolve
+    hide dracrg with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospInvBert:
@@ -1019,7 +1019,7 @@ label hospInvBert:
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
-    show bert ind at inwindow behind hospwindowoverlay with dissolve
+    show bertrg ind at inwindow behind hospwindowoverlay with dissolve
     b "Hey Lauren. How's the investigation going?"
     lf "It's going. I'm not as used to this as you are."
     lf "Usually I just take care of Freddy and keep him away from the body while you do this..."
@@ -1034,7 +1034,7 @@ label hospInvBert:
     b "Oh. True."
     li "What I'd give to trade places with him right now..."
     li "I'm sure he'd be happy to do that too..."
-    hide bert with dissolve
+    hide bertrg with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospInvFreddy:
@@ -1043,7 +1043,7 @@ label hospInvFreddy:
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
-    show frog sad at inwindow behind hospwindowoverlay with dissolve
+    show frogrg sad at inwindow behind hospwindowoverlay with dissolve
     f "Lauren... why are you over there?"
     f "When are you gonna come back and play with me?"
     lf "Soon Freddy. I have some imoprtant work to do..."
@@ -1086,7 +1086,7 @@ label hospInvFreddy:
     f "It's okay... I trust you Lauren."
     f "But you're taking me to a zoo when this is done!"
     lf "Deal."
-    hide frog with dissolve
+    hide frogrg with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospInvSid:
@@ -1095,7 +1095,7 @@ label hospInvSid:
     show hospwindowoverlay
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
-    show sid ind at inwindow behind hospwindowoverlay with dissolve
+    show sidrg ind at inwindow behind hospwindowoverlay with dissolve
     if not hosp_evidence[12]:
         i "Oh, *cough* hey Lauren..."
         lf "Hey Sid, everything okay?"
@@ -1116,20 +1116,20 @@ label hospInvSid:
         lf "That's weird... get better soon Sid."
         lf "I'll try to get this investigation moving so we can take care of you as soon as possible."
         i "*cough* Thanks Lauren."
-        hide sid with dissolve
+        hide sidrg with dissolve
         li "Hm... it's a bit weird that Sid suddenly started coughing overnight."
         lf "I wonder..."
         $hosp_evidence[12] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Sid's Account was added to evidence."
+        "Sid's Account was added to evidence."
         call hospDone from _call_hospDone_11
     else:
         li "I wonder why Sid suddenly started coughing only today?"
         i "*cough* Hey Lauren..."
         li "Hang in there Sid, we'll get out of here soon."
-        hide sid with dissolve
+        hide sidrg with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospDone:

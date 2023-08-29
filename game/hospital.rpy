@@ -2723,6 +2723,7 @@ label laurentime:
     $ statusnt("Hallway", "lauren", ch=3, sun=1)
     $showchibint("sam")
     with dissolve
+    play music "audio/rush.mp3" fadein 1.0
     lf "Sam..."
     lf "Get up, you can't stay in there forever."
     s "..."
@@ -2730,7 +2731,6 @@ label laurentime:
     li "I gave Sam as disappointed but caring a look as I could."
     li "Unlike the patient hallway, you could make eye contact with someone in bed from the guard hallway."
     li "They say you can't take care of other people if you don't take care of yourself first."
-    call popwowb
     li "Well, they haven't met the me that's playing this game."
     lf "Sam, let's go. We have to make food."
     s "Sigh..."
@@ -2753,9 +2753,9 @@ label laurentime:
     lf "Well, and Shahar."
     lf "He has the mind of a child, so I guess he counts."
     hide scary with dissolve
-    show sam ind with dissolve
+    show samrg ind with dissolve
     $popx = .45
-    call poptearo
+    #call poptearo
     s "Let's go..."
     scene scary with dissolve
     scene bg hospfancy at bg
@@ -2764,7 +2764,7 @@ label laurentime:
     lf "Wow, this room is so much nicer than the cafeteria."
     lf "Ooh, a vending machine."
     lf "None of the previous guards mentioned this..."
-    show sam ind with moveinright:
+    show samrg ind with moveinright:
         xcenter .66
     s "..."
     lf "Sam's... not one for many words."
@@ -2798,13 +2798,12 @@ label laurentime:
     li "Right, I should check in with people on the other side..."
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
-    show jenny ind at inwindow behind hospwindowoverlay
+    show jennyrg ind at inwindow behind hospwindowoverlay
     $showchibint("sam", "window", "jenny", "dracula", "sid", "freddy", "bert")
     with dissolve
     lf "What's up?"
     j "Not much. Sid woke up with a pretty rough cough this morning."
     li "Wait."
-    call pophuhb
     li "...There's only five of them?"
     lf "Where's Shahar?"
     j "We thought you would know..."
@@ -2817,6 +2816,7 @@ label laurentime:
     li "Without thinking I ran."
     scene scary with dissolve
     li "I'm not sure why I ran."
+    $mood = "sigh"
     li "It's not like me running was going to affect anything."
     li "I felt like those idiots who speed towards a red light."
     scene bg hosphalltopright2 at bg with dissolve
@@ -2825,9 +2825,10 @@ label laurentime:
     li "I slowly approached Shahar's cell."
     li "I don't know why I thought I would see anything different when I got there."
     li "Maybe he had a cup of something and spilled it."
+    $mood = "ind"
     li "My brain was reaching for every other explanation."
     li "But sure enough..."
-
+    $rg = False
     play music "audio/sadsong.mp3" fadein 2.0
     camera at paralloff
     $ showchibint()
@@ -2838,13 +2839,14 @@ label laurentime:
     hide screen killuser
 
     camera at parallax
+    $rg = True
     scene bg shahardead at bg with dissolve
     $showchibint("sam")
     $mood = "sigh"
     lf "No."
     lf "No no no no no no no no no no no no no no no..."
     lf "Why did no one but me think to check?!"
-    show sam ind:
+    show samrg ind:
         xcenter .75
     with moveinright
     s "Shahar... he's dead..."
@@ -2852,9 +2854,9 @@ label laurentime:
     s "...Doesn't have to play this game anymore..."
     li "God, Sam's emo attitude is so annoying."
     li "No shit he's dead."
+    $mood = "ind"
     lf "Really not helping right now, Sam."
     li "Keep it together Lauren."
-    call poptearb
     li "Oh God, with the smell of blood I might vomit."
     li "Hold it in, hold it in, hold it in..."
     li "I need to get away from here."
@@ -2863,40 +2865,34 @@ label laurentime:
     scene scary with dissolve
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
-    show sam ind:
+    show samrg ind:
         xcenter .75
-    show jenny ind at inwindow behind hospwindowoverlay:
+    show jennyrg ind at inwindow behind hospwindowoverlay:
         xcenter .5
-    show bert ind at inwindow behind hospwindowoverlay:
+    show bertrg ind at inwindow behind hospwindowoverlay:
         xcenter .25
     $showchibint("sam", "window", "jenny", "dracula", "sid", "freddy", "bert")
     with dissolve
     j "Did you find him?"
     lf "...He's dead."
-    play sfx "audio/popwow.mp3" volume .5
-    show popwow at inwindow behind hospwindowoverlay:
-        xcenter .375
-        ycenter .25
-        zoom .75
-    show bert sad at inwindow behind hospwindowoverlay:
+    show bertrg sad at inwindow behind hospwindowoverlay:
         xcenter .25
     bt "...Dead?"
     lf "Yeah. He's leaning against one of the bars in his cell."
     lf "He's bleeding on his forehead where it looks like he hit the bar."
-    hide popwow
     bt "How could he have died? We saw him go into his cell yesterday."
     bt "He should have been safe in there..."
     bt "I... I can't believe it. He died before he could-"
     bt "Uh, never mind."
     li "Huh? Does Bert know something we don't?"
     bt "I'm gonna go check something."
-    hide bert with moveoutleft
+    hide bertrg with moveoutleft
     $showchibint("sam", "window", "jenny", "dracula", "sid", "freddy")
     with dissolve
     lf "What could he possibly want to go check..."
     li "And where was this urgency when we thought Shahar might be dead?"
     li "Just a few seconds later, Bert returned."
-    show bert ind at inwindow behind hospwindowoverlay:
+    show bertrg ind at inwindow behind hospwindowoverlay:
         xcenter .25
     $showchibint("sam", "window", "jenny", "dracula", "sid", "freddy", "bert")
     with dissolve
@@ -2914,7 +2910,6 @@ label laurentime:
     lf "And uh... I guess we won't be cooking anything for now."
     j "No food?!"
     li "Jenny... now's not the time."
-    call poptearb
     lf "Well, guess it's time to investigate."
     j "Sure. We'll also investigate as much as we can here."
     bt "Though I doubt it'll be a lot..."
@@ -2937,10 +2932,12 @@ label hospPreInv:
     li "We haven't even really had a chance to explore this side, and now we have to investigate it."
     li "I say \"we\" but to be honest, I'm not sure how much Sam will help."
     li "It's all on me. My life, and the life of everyone else here..."
-    call popwowb
     li "Alright Lauren, you can do this."
     call screen hospKitchenInv with dissolve
 label trial3a:
+    stop music fadeout 1.0
+    hide screen status_screen
+    $showchibint()
     $laur = False
     $rg = False
     $noside = True
@@ -2962,8 +2959,10 @@ label trial3a:
     bi "But now..."
     $noside = False
     scene bg hospcommons at bg
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     bi "It's all on Lauren."
     bi "And I guess Sam. But mostly Lauren."
     bi "If she misses a crucial piece of evidence..."
@@ -2978,9 +2977,9 @@ label trial3a:
     show hospwindowoverlay2
     $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
-    show lauren ind at inwindow behind hospwindowoverlay:
+    show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .33
-    show sam ind at inwindow behind hospwindowoverlay:
+    show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .67
     with dissolve
     l "I think we found everything."
