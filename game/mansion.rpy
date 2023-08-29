@@ -1395,7 +1395,9 @@ label mansion1:
     c "Alcohol can kill cats in small doses, and I expect Shahar and Stella might have left an open bottle around."
     bi "With that dark comment, she went to the kitchen."
     hide catherine with moveoutright
-    $showchibint("freddy")
+    hide freddy with moveoutleft
+    $showchibint()
+    with dissolve
     $mood = "ind"
     bi "Seems like there's still some time before we're going to sleep."
     bi "Guess I should find someone to talk to."

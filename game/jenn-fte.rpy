@@ -26,92 +26,137 @@ label jennAsk1:
 
 #Mansion 1
 label jennAsk2:
+    scene bg mansionhall
+    $ statusnt("Hallway", "bert", ch = 2, sun = 4)
+    show jenny happy with dissolve
+    j "Bert! The bedrooms here are so spacious!"
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Sure, let's chat!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen hallway with dissolve
 
 #Mansion 2
 label jennAsk3:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 1)
+    show jenny happy with dissolve
+    j "Bert! Turns out having a fancy kitchen makes cooking super easy!"
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Sure, I'd love some company!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen kitchen with dissolve
 
 #Mansion 3
 label jennAsk4:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 2)
+    show jenny happy with dissolve
+    j "Bert! Thanks for being so patient while we finish up!"
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Okay, but we gotta finish talking before the first course is ready!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen kitchen with dissolve
 
 #Hospital 1
 label jennAsk5:
+    scene bg hospkitchen
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show jenny happy with dissolve
+    j "Oh hey Bert, I don't need help with cleaning, but we can talk!"
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Normally I sing while doing dishes, but talking is nice too!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen hospKitchen with dissolve
 
 #Hospital 2
 label jennAsk6:
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show jenny happy with dissolve
+    j "I eat a lot of salad at home, so this meal might be kind of nice!"
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
             j "Sure!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen patientcommons with dissolve
 
 #Hospital 3
 label jennAsk7:
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show jenny happy with dissolve
+    j "That was a nice conversation... I feel like we're a team now!"
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Yeah! More friendship!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen patientcommons with dissolve
 
 #Bank 1
 label jennAsk8:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 1)
+    show jenny ind with dissolve
+    j "Phew, I'm tired."
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Well, I guess I still have energy to talk!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 #Bank 2
 label jennAsk9:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 1)
+    show jenny ind with dissolve
+    j "It's weird playing with Freddy knowing who his dad is..."
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Okay, but gotta keep an eye on Freddy!"
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 
 #Bank 3
 label jennAsk10:
+    scene bg bankvault
+    $ statusnt("Bank Hallway", "bert", ch = 4, sun = 2)
+    show jenny ind with dissolve
+    j "*Pant*... for a kid, Freddy has a lot of energy."
+    bi "Should I talk to Jenny?"
     menu:
         "Spend time with Jenny":
-            j "Sure!"
+            j "Yeah, I need to catch my breath anyway..."
             jump jennHang
         "Maybe later":
             hide jenny with dissolve
-            call screen midCar
+            call screen hall with dissolve
 
 label jennHang:
     #Dan FTE 1

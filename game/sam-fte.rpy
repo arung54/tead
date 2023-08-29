@@ -26,92 +26,126 @@ label samAsk1:
 
 #Mansion 1
 label samAsk2:
+    scene bg mansionmasterbedroom
+    $ statusnt("Master Bedroom", "bert", ch = 2, sun = 4)
+    show sam ind with dissolve
+    s "A party would be nice, even if it's not like college parties."
+    bi "Should I talk to Sam?"
     menu:
-        "Spend time with Sam?":
-            j "Sure!"
+        "Spend time with Sam":
+            s "Sure."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen masterBedroom with dissolve
 
 #Mansion 2
 label samAsk3:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 1)
+    show sam ind with dissolve
+    s "Hm, there's not a lot as far as baking supplies go..."
+    bi "Should I talk to Sam?"
     menu:
-        "Spend time with Sam?":
-            j "Sure!"
+        "Spend time with Sam":
+            s "Sure, let's talk while I look around more."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen kitchen with dissolve
 
 #Mansion 3
 label samAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show sam ind with dissolve
+    s "Hey Bert."
+    bi "Should I talk to Sam?"
     menu:
-        "Spend time with Sam?":
-            j "Sure!"
+        "Spend time with Sam":
+            s "Sure, but not for too long."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen dining with dissolve
 
 #Hospital 1
 label samAsk5:
-    menu:
-        "Spend time with Sam?":
-            j "Sure!"
-            jump samHang
-        "Maybe later":
-            hide sam with dissolve
-            call screen midCar
+    scene bg hospkitchenwindow at bg
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show sam sad at inwindow behind hospwindowoverlay
+    s "..."
+    bi "Sam's probably not in the mood to talk right now..."
+    bi "I should ask someone else."
+    hide sam with dissolve
+    call screen hospKitchen with dissolve
 
 #Hospital 2
 label samAsk6:
-    menu:
-        "Spend time with Sam?":
-            j "Sure!"
-            jump samHang
-        "Maybe later":
-            hide sam with dissolve
-            call screen midCar
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show sam sad with dissolve
+    s "..."
+    bi "Sam's probably not in the mood to talk right now..."
+    bi "I should ask someone else."
+    hide sam with dissolve
+    call screen patientcommons with dissolve
 
 #Hospital 3
 label samAsk7:
-    menu:
-        "Spend time with Sam?":
-            j "Sure!"
-            jump samHang
-        "Maybe later":
-            hide sam with dissolve
-            call screen midCar
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 2)
+    show sam sad with dissolve
+    s "...Hey Bert..."
+    bi "Sam's doing better, but still probably not in the mood to talk right now..."
+    bi "I should ask someone else."
+    hide sam with dissolve
+    call screen patientcommons with dissolve
 
 #Bank 1
 label samAsk8:
+    scene bg banklocker
+    $ statusnt("Locker Room", "bert", ch = 4, sun = 2)
+    show sam ind with dissolve
+    s "Oh Bert. I was about to take a shower."
+    bi "Should I talk to Sam?"
     menu:
-        "Spend time with Sam?":
-            j "Sure!"
+        "Spend time with Sam":
+            s "Sure, I can wait a bit."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen locker with dissolve
 #Bank 2
 label samAsk9:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 1)
+    show sam ind with dissolve
+    s "JO... never thought I'd hear that name here."
+    bi "Should I talk to Sam?"
     menu:
-        "Spend time with Sam?":
-            j "Sure!"
+        "Spend time with Sam":
+            s "Sure, I need a distraction from this revelation..."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 
 #Bank 3
 label samAsk10:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 2)
+    show sam ind with dissolve
+    s "Freddy is JO's son... does he know what his dad does?"
+    bi "Should I talk to Sam?"
     menu:
-        "Spend time with Sam?":
-            j "Sure!"
+        "Spend time with Sam":
+            s "Sure, though I might be distracted by what we just learned."
             jump samHang
         "Maybe later":
             hide sam with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 
 label samHang:
     #Dan FTE 1

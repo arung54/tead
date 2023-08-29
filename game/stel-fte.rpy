@@ -26,33 +26,48 @@ label stelAsk1:
 
 #Mansion 1
 label stelAsk2:
+    scene bg mansionkitchen
+    $ statusnt("Kitchen", "bert", ch = 2, sun = 4)
+    show stella drunk with dissolve
+    t "*hic* Hey cutie, wanna chat"?
+    bi "Should I talk to Stella?"
     menu:
-        "Spend time with Stella?":
-            j "Sure!"
+        "Spend time with Stella":
+            t "Yeah, come here handsome."
             jump stelHang
         "Maybe later":
             hide stella with dissolve
-            call screen midCar
+            call screen kitchen with dissolve
 
 #Mansion 2
 label stelAsk3:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 1)
+    show stella drunk with dissolve
+    t "*Yawn*. Post-drinking naps are the best..."
+    bi "Should I talk to Stella?"
     menu:
-        "Spend time with Stella?":
-            j "Sure!"
+        "Spend time with Stella":
+            t "Ooh, my day just got better!"
             jump stelHang
         "Maybe later":
             hide stella with dissolve
-            call screen midCar
+            call screen dining with dissolve
 
 #Mansion 3
 label stelAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show stella drunk with dissolve
+    t "Party? This is at best a tea time. I need to drink more."
+    bi "Should I talk to Stella?"
     menu:
-        "Spend time with Stella?":
-            j "Sure!"
+        "Spend time with Stella":
+            t "*hic* You know what they say, drunk conversation is the best chaser!"
             jump stelHang
         "Maybe later":
             hide stella with dissolve
-            call screen midCar
+            call screen dining with dissolve
 
 label stelHang:
     #Dan FTE 1

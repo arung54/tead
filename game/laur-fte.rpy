@@ -26,92 +26,138 @@ label laurAsk1:
 
 #Mansion 1
 label laurAsk2:
+    scene bg mansionbedroom2
+    $ statusnt("Bedroom", "bert", ch = 2, sun = 4)
+    show lauren ind with dissolve
+    l "Having Sesame to help Freddy let out his energy is nice."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure, Freddy's pretty occupied anyway."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen bedroomFL with dissolve
 
 #Mansion 2
 label laurAsk3:
+    scene bg mansionbedroom2
+    $ statusnt("Bedroom", "bert", ch = 2, sun = 1)
+    show lauren ind with dissolve
+    l "I hope no one drinks too much around Freddy..."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure, but let's not be late to the party."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen bedroomFL with dissolve
 
 #Mansion 3
 label laurAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show lauren ind with dissolve
+    l "Shahar and Stella better not say anything inappropriate to Freddy..."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Okay, but I gotta keep an eye on Freddy while we talk."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen dining with dissolve
 
 #Hospital 1
 label laurAsk5:
+    scene bg hospkitchenwindow at bg
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show laurensad at inwindow behind hospwindowoverlay
+    l "Thanks for cooking. Doing it for this many people can't be easy."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure, it'd be good to catch up."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen hospKitchen
 
 #Hospital 2
 label laurAsk6:
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show lauren ind with dissolve
+    l "I hope Dracula's not giving Sid a hard time..."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen patientcommons with dissolve
 
 #Hospital 3
 label laurAsk7:
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 2)
+    show lauren ind with dissolve
+    l "I hope Sam recovers soon..."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure, I need a distraction."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen patientcommons with dissolve
 
 #Bank 1
 label laurAsk8:
+    scene bg bankoffice
+    $ statusnt("Director's Office", "bert", ch = 4, sun = 2)
+    show lauren ind with dissolve
+    l "I miss having the creativity of a kid..."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure, I'm just watching Freddy for now."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen office with dissolve
 #Bank 2
 label laurAsk9:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 1)
+    show lauren ind with dissolve
+    l "No offense, but anything is better than hospital food..."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Maybe that's just the sugar speaking..."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 
 #Bank 3
 label laurAsk10:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 2)
+    show lauren ind with dissolve
+    l "Freddy's rich... I never would have guessed it."
+    bi "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
-            j "Sure!"
+        "Spend time with Lauren":
+            l "Sure."
             jump laurHang
         "Maybe later":
             hide lauren with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 
 label laurHang:
     #Dan FTE 1

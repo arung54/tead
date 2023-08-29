@@ -16,8 +16,9 @@ label frogAsk1:
     $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show frog sad with dissolve
     f "I wish there was another kid here..."
+    ni "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
+        "Spend time with Froggy":
             f "O-okay mister..."
             jump frogHang
         "Maybe later":
@@ -26,92 +27,138 @@ label frogAsk1:
 
 #Mansion 1
 label frogAsk2:
+    scene bg mansionbedroom2
+    $ statusnt("Bedroom", "bert", ch = 2, sun = 4)
+    show frog ind with dissolve
+    f "I wonder if Sesame understands frog noises..."
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Okay, but I want to keep petting Sesame!"
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen bedroomFL with dissolve
 
 #Mansion 2
 label frogAsk3:
+    scene bg mansionbedroom2
+    $ statusnt("Bedroom", "bert", ch = 2, sun = 1)
+    show frog ind with dissolve
+    f "Cats jump almost as well as frogs do!"
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Okay, but we gotta keep an eye on Sesame!"
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen bedroomFL with dissolve
 
 #Mansion 3
 label frogAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show frog ind with dissolve
+    f "I miss Sesame... but I am hungry."
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Okay, maybe my tummy will rumble less if we talk!"
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen dining with dissolve
 
 #Hospital 1
 label frogAsk5:
+    scene bg hospkitchenwindow at bg
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show frog sad at inwindow behind hospwindowoverlay
+    f "I hate vegetables..."
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Okay, I don't want to eat my veggies anyway."
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen hospKitchen
 
 #Hospital 2
 label frogAsk6:
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show frog ind with dissolve
+    f "Oh hey Bert, I'm practicing my sheeshes."
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Sheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesh!"
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen patientcommons with dissolve
 
 #Hospital 3
 label frogAsk7:
+    scene bg hospcommons
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 2)
+    show frog ind with dissolve
+    f "Wait, isn't the MBA the sports thingy?"
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Adults sure love letters..."
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen patientcommons with dissolve
 
 #Bank 1
 label frogAsk8:
+    scene bg bankoffice
+    $ statusnt("Director's Office", "bert", ch = 4, sun = 2)
+    show frog ind with dissolve
+    f "Bert, I'm drawing a frog!"
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "If only the frog I drew was real..."
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen office with dissolve
 #Bank 2
 label frogAsk9:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 1)
+    show frog ind with dissolve
+    f "Ribbit. Ribbit. That was frog for \"Hey Bert!\""
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "Ribbbbbbbit. That was frog for \"Sure, let's talk!\""
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen lobby with dissolve
 
 #Bank 3
 label frogAsk10:
+    scene bg bankvault
+    $ statusnt("Bank Hallway", "bert", ch = 4, sun = 2)
+    show frog ind with dissolve
+    f "Whee, Jenny can't catch me, I'm too fast!"
+    bi "Should I talk to Froggy?"
     menu:
-        "Spend time with Froggy?":
-            j "Sure!"
+        "Spend time with Froggy":
+            f "But if we talk, Jenny's going to catch me! ...Okay, fine..."
             jump frogHang
         "Maybe later":
             hide frog with dissolve
-            call screen midCar
+            call screen hall with dissolve
 
 label frogHang:
     #Dan FTE 1

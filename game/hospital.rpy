@@ -2210,7 +2210,7 @@ label chess3:
     d "Bert, you said you saw no recognizable names in there, right?"
     d "If not I will not pursue that line of investigation further."
     bi "Right, have to keep Shahar a secret."
-    bi "Better to prevent him from continuting to search..."
+    bi "Better to prevent him from continuing to search..."
     b "No, I didn't see anything noticable."
     d "Alright, that settles it then."
     d "I will remain here from the time being until lunch is ready, I see Sid has started."

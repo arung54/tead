@@ -224,12 +224,12 @@ screen office():
             xpos 20
             ypos 20
             idle "freddychibi.png" at chibizoom
-            action [Hide("hall", transition = Dissolve(1.0)), Jump("frogAsk8")]
+            action [Hide("office", transition = Dissolve(1.0)), Jump("frogAsk8")]
         imagebutton:
             xpos 20
             ypos 70
             idle "laurenchibi.png" at chibizoom
-            action [Hide("hall", transition = Dissolve(1.0)), Jump("laurAsk8")]
+            action [Hide("office", transition = Dissolve(1.0)), Jump("laurAsk8")]
 
 screen locker():
     add "bg banklocker.png"

@@ -23,6 +23,127 @@ label sidAsk1:
             hide sid ind with dissolve
             call screen midCar with dissolve
 
+#Mansion 1
+label sidAsk2:
+    scene bg mansionmasterbedroom
+    $ statusnt("Master Bedroom", "bert", ch = 2, sun = 4)
+    show sid happy with dissolve
+    i "Wow! That bed was so comfy! Can I take it home?!"
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Yeah! Let's chat! I'm so well-rested and energetic!"
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen masterBedroom
+
+#Mansion 2
+label sidAsk3:
+    scene bg mansionmasterbedroom
+    $ statusnt("Master Bedroom", "bert", ch = 2, sun = 1)
+    show sid happy with dissolve
+    i "First a fancy bed, then a fancy meal... I'm in heaven!"
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Okay, but we better not be late to the meal!"
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen masterBedroom
+
+#Mansion 3
+label sidAsk4:
+    scene bg mansiondining
+    $ statusnt("Dining Room", "bert", ch = 2, sun = 2)
+    show sid happy with dissolve
+    i "Normally I'm so hungry... I'm gonna eat so much today!"
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Okay, but don't get mad if my tummy rumbles!"
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen dining
+
+#Hospital 1
+label sidAsk5:
+    scene bg hospkitchenwindow at bg
+    show hospwindowoverlay
+    $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
+    show sid ind at inwindow behind hospwindowoverlay
+    i "Aw man... I miss the fancy food... it's like I'm back at home now."
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "I don't know if I want to talk to you after that meal... but fine."
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen hospKitchen
+
+#Hospital 2
+label sidAsk6:
+    scene bg hospkitchenwindow2 at bg
+    show hospwindowoverlay2
+    $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
+    show sid ind at inwindow behind hospwindowoverlay
+    i "I usually never make food... I hope it's edible."
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Sure, I'll talk while chopping veggies."
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen patientcommons
+
+#Bank 1
+label sidAsk8:
+    scene bg bankvault
+    $ statusnt("Bank Hallway", "bert", ch = 4, sun = 2)
+    show sid ind with dissolve
+    i "Hm... there's gotta be a way to figure out this safe."
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Okay, but only if you tell me your birthday! ...Or not, it's fine."
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen hall with dissolve
+#Bank 2
+label sidAsk9:
+    scene bg banklobby1
+    $ statusnt("Bank Lobby", "bert", ch = 4, sun = 1)
+    show sid ind with dissolve
+    i "20/961... is it really that low?"
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Yeah, let's talk about our birthdays! ...Or something else."
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen lobby with dissolve
+
+#Bank 3
+label sidAsk10:
+    scene bg banklobby1
+    $ statusnt("Bank Hallway", "bert", ch = 4, sun = 2)
+    show sid ind with dissolve
+    i "Freddy's so lucky to have rich parents..."
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "I wonder if I can get Freddy to give me money once we're out of here..."
+            jump sidHang
+        "Maybe later":
+            hide sid with dissolve
+            call screen lobby with dissolve
+
 label sidHang:
     if fte_sid == -1:
         n "What's up Sid?"

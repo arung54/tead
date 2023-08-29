@@ -271,33 +271,38 @@ screen hospKitchen():
             idle "jennychibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("jennAsk5")]
         imagebutton:
-            xpos 70
-            ypos 20
+            xpos 20
+            ypos 70
+            idle "windowchibi.png" at chibizoom
+            action []
+        imagebutton:
+            xpos 20
+            ypos 120
             idle "draculachibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("dracAsk5")]
         imagebutton:
-            xpos 70
-            ypos 70
+            xpos 20
+            ypos 170
             idle "sidchibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("sidAsk5")]
         imagebutton:
-            xpos 70
-            ypos 120
+            xpos 20
+            ypos 220
             idle "shaharchibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("shahAsk5")]
         imagebutton:
-            xpos 70
-            ypos 170
+            xpos 20
+            ypos 270
             idle "laurenchibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("laurAsk5")]
         imagebutton:
-            xpos 70
-            ypos 220
+            xpos 20
+            ypos 320
             idle "freddychibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("frogAsk5")]
         imagebutton:
-            xpos 70
-            ypos 270
+            xpos 20
+            ypos 370
             idle "samchibi.png" at chibizoom
             action [Hide("hospKitchen", transition = Dissolve(1.0)), Jump("samAsk5")]
 
@@ -329,16 +334,6 @@ screen patientcommons():
             action [Show("skipFT", transition=Dissolve(0.3))]
     if ftecounter == 6:
         imagebutton:
-            xpos 70
-            ypos 70
-            idle "draculachibi.png" at chibizoom
-            action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("dracAsk6")]
-        imagebutton:
-            xpos 70
-            ypos 20
-            idle "sidchibi.png" at chibizoom
-            action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("sidAsk6")]
-        imagebutton:
             xpos 20
             ypos 20
             idle "laurenchibi.png" at chibizoom
@@ -363,12 +358,23 @@ screen patientcommons():
             ypos 220
             idle "samchibi.png" at chibizoom
             action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("samAsk6")]
-    if ftecounter == 7:
         imagebutton:
-            xpos 70
-            ypos 20
+            xpos 20
+            ypos 270
+            idle "windowchibi.png" at chibizoom
+            action []
+        imagebutton:
+            xpos 20
+            ypos 320
             idle "draculachibi.png" at chibizoom
-            action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("dracAsk7")]
+            action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("dracAsk6")]
+        imagebutton:
+            xpos 20
+            ypos 370
+            idle "sidchibi.png" at chibizoom
+            action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("sidAsk6")]
+
+    if ftecounter == 7:
         imagebutton:
             xpos 20
             ypos 20
@@ -394,3 +400,13 @@ screen patientcommons():
             ypos 220
             idle "samchibi.png" at chibizoom
             action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("samAsk7")]
+        imagebutton:
+            xpos 20
+            ypos 270
+            idle "windowchibi.png" at chibizoom
+            action []
+        imagebutton:
+            xpos 20
+            ypos 320
+            idle "draculachibi.png" at chibizoom
+            action [Hide("patientcommons", transition = Dissolve(1.0)), Jump("dracAsk6")]

@@ -1499,7 +1499,7 @@ label bank5:
         xcenter .25
         linear .3 xcenter .5
     l "Jenny seems pretty shaken by this."
-    l "I can't blame her, but... maybe she should keep an eye on her."
+    l "I can't blame her, but... maybe we should keep an eye on her."
     b "There's a lot to take."
     b "Two more people dead, Gerald's file, the vault..."
     l "Speaking of the vault, I guess that means Freddy really is rich."
