@@ -2500,6 +2500,10 @@ label postFT6:
     hide freetime with dissolve
     play music "audio/cobwebs.mp3" fadein 2.0 #fte free time arun freetime
     $ftecounter = 7
+
+    call screen patientcommons with fade
+
+
 label postFT7:
     $ statusnt("Cafeteria", "bert", ch=3, sun=2)
     scene bg hospcommons at bg
@@ -2668,6 +2672,7 @@ label postFT7:
     bi "No one really had much to say to that..."
     bi "Everyone got up and walked towards their cells."
     scene bg hosproom1 at bg with fade
+    stop music fadeout 1.0
     $cat = False
     show sesame with dissolve:
         ycenter .62
