@@ -4441,8 +4441,9 @@ label laurAsk:
             show lauren ind:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show sid ind with moveinleft:
+            show sid ind:
                 xcenter .75
+            with moveinright
             i "So um, since you opened the safe..."
             i "Was there money inside?"
             i "And if so... can I have it? Since, well, you know..."
@@ -4464,7 +4465,7 @@ label laurAsk:
                 xcenter .75
             i "Never there?..."
             i "So I've been trying to crack this safe for days for nothing..."
-            hide sid with moveoutleft
+            hide sid with moveoutright
             show lauren ind:
                 xcenter .25
                 linear 0.15 xcenter .5
@@ -4476,15 +4477,17 @@ label laurAsk:
         "Why Sam?" if len(menuset) >= 2:
             l "Well, it has to do with the \"secret of the game.\""
             b "Oh... I guess you're still the only one who knows it."
-            l "Don't worry, it's... not really {i}the{/i}secret, just {i}a{/i} secret."
+            l "Don't worry, it's... not really {i}the {/i}secret, just {i}a{/i} secret."
             l "The secret said..."
             l "{i}The Game Master's name starts with an S{/i}."
             bi "Before I fully processed that..."
             show lauren ind:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show sid mad with moveinleft:
+            show sid mad:
                 xcenter .75
+            with moveinright
+            $mood = "shock"
             i "What did you say?!"
             i "You're accusing me!"
             l "Sid, relax, if I thought it was you I'd have shot you instead."
@@ -4506,6 +4509,7 @@ label laurAsk:
             hide lauren
             show doom
             hide braindeath with dissolve
+            b "..."
             show sid ind with moveinright:
                 xcenter .75
             show jenny scared with moveinleft:
