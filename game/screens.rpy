@@ -49,20 +49,20 @@ screen simple_menu():
                 textbutton "{i}Save:  {/i}":
                     text_color "#5D5D5D" text_hover_color "#5D5D5D"
                 textbutton "1":
-                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(1, page = "quick")
                 textbutton "2":
-                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(2, page = "quick")
                 textbutton "3":
-                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileSave(3, page = "quick")
 
                 textbutton "{i}  Load:  {/i}":
                     text_color "#5D5D5D" text_hover_color "#5D5D5D"
                 textbutton "1":
-                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(1)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(1, page = "quick")
                 textbutton "2":
-                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(2)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(2, page = "quick")
                 textbutton "3":
-                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(3)
+                    text_color "#929292" text_hover_color "#EDEDED" action FileLoad(3, page = "quick")
             hbox:
                 textbutton "{i}Volume  {/i}":
                     text_color "#5D5D5D" text_hover_color "#5D5D5D"
@@ -418,7 +418,7 @@ screen navigation():
         imagebutton:
            idle "ibmenuload.png"
            hover "ibmenuload2.png"
-           focus_mask True action ShowMenu("load_no_nav")
+           focus_mask True action [ShowMenu("load_no_nav"), Hide("main_menu")]
         # imagebutton:
         #     idle "ibmenucontrols.png"
         #     hover "ibmenucontrols2.png"
@@ -448,6 +448,20 @@ screen navigation():
             #if renpy.variant("pc"):
             #    textbutton _("Quit") action Quit(confirm=not main_menu) text_hover_color "#929292"
 
+screen navigation_no_nav():
+    use killmenu
+    vbox:
+        xalign 0
+        yoffset 300
+        xoffset 60
+        if _in_replay:
+            textbutton _("End Replay") action EndReplay(confirm=True)
+
+        elif not main_menu:
+            textbutton _("Main Menu") action MainMenu() text_hover_color "#929292"
+
+        #if renpy.variant("pc"):
+        #    textbutton _("Quit") action Quit(confirm=not main_menu) text_hover_color "#929292"
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -717,6 +731,8 @@ screen game_menu_no_nav(title, scroll=None, yinitial=0.0):
 
                     transclude
 
+    use navigation_no_nav
+
     textbutton _("Back"):
         style "return_button"
         text_hover_color "#929292"
@@ -984,7 +1000,7 @@ screen file_slots_no_nav(title):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
-    use game_menu_no_nav(title):
+    use game_menu(title):
         fixed:
             ## This ensures the input will get the enter event before any of the
             ## buttons do.

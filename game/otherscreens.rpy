@@ -684,11 +684,11 @@ screen ch1results:
         textbutton "{i}Save:  {/i}":
             text_color "#EDEDED" text_hover_color "#EDEDED"
         textbutton "1":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1, page = "quick")
         textbutton "2":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2, page = "quick")
         textbutton "3":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3, page = "quick")
     #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
     textbutton _("Continue ->") action[Hide("ch1results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve
 
@@ -700,11 +700,11 @@ screen ch2results:
         textbutton "{i}Save:  {/i}":
             text_color "#EDEDED" text_hover_color "#EDEDED"
         textbutton "1":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1, page = "quick")
         textbutton "2":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2, page = "quick")
         textbutton "3":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3, page = "quick")
     #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
     textbutton _("Continue ->") action[Hide("ch2results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve
 
@@ -716,11 +716,11 @@ screen ch3results:
         textbutton "{i}Save:  {/i}":
             text_color "#EDEDED" text_hover_color "#EDEDED"
         textbutton "1":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1, page = "quick")
         textbutton "2":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2, page = "quick")
         textbutton "3":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3, page = "quick")
     #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
     textbutton _("Continue ->") action[Hide("ch3results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve
 
@@ -732,10 +732,10 @@ screen ch4results:
         textbutton "{i}Save:  {/i}":
             text_color "#EDEDED" text_hover_color "#EDEDED"
         textbutton "1":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(1, page = "quick")
         textbutton "2":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(2, page = "quick")
         textbutton "3":
-            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3)
+            text_color "#929292" text_hover_color "#EDEDED" action FileSave(3, page = "quick")
     #textbutton _("Main Menu") action[Hide("ch1results"), MainMenu()] text_hover_color "#929292" ypos .875 xpos .45 at show_hide_dissolve
     textbutton _("Continue ->") action[Hide("ch4results"), Return()] text_hover_color "#929292" ypos .875 xpos .65 at show_hide_dissolve

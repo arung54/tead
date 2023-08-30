@@ -4395,6 +4395,7 @@ label laurAsk:
             l "Well, if Sam is the Game Master, then nothing I can tell you matters anyway."
             b "Yeah, good point."
             b "Alright, I have other stuff I want to ask you, no use spending more time on this, I guess."
+            jump laurAsk
 
         "How did you open the safe?":
             l "Well, just like everyone else I've been getting an advantage."
@@ -4451,6 +4452,7 @@ label laurAsk:
             bi "Sid slinked into the corner."
             bi "It's like the mention of money made him forget he was accused of murder just a few minutes ago."
             bi "Maybe it's for the better if he doesn't interrupt again..."
+            jump laurAsk
 
         "Why Sam?" if len(menuset) >= 2:
             l "Well, it has to do with the \"secret of the game.\""
