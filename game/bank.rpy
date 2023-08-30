@@ -3999,6 +3999,7 @@ label trial4u:
     b "In particular, I think the murderer had to go to..."
     call screen pickSpot9 with dissolve
 label trial4v:
+    $popx= .4
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
@@ -4146,7 +4147,7 @@ label trial4y:
     i "Okay, um..."
     i "We're 100 percent sure it wasn't me, right?"
     l "I mean, I'm not, but..."
-    l "I'll give you 90%."
+    l "I'll give you 90 percent."
     show sid mad
     i "Hey, that's not enough!"
     b "Sid, please..."
@@ -4185,6 +4186,12 @@ label trial4y:
     l "Never mind."
     call pophuhb
     b "Wait, explain to me why you think this resolves the contradictions I pointed out earlier?"
+
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
 python:
     startBankTrial("jenny", "Jenny: Sid and I both heard you yell at different times, but Sid {color=#f00}lied about when he heard you yell{/color}.", -1,
     "jenny", "Jenny: Sid and I {color=#f00}heard the same yell{/color}, but he was pretending to be asleep.", -1,
@@ -4192,10 +4199,12 @@ python:
     "lauren",  "Lauren: The {color=#f00}safe door was closed{/color}, so we didn't see each other.", -1,
     3, [9, 12], "trial4z")
 label trial4z:
+    camera at parallax
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     show jenny ind:
         xcenter .25
     show sid ind
@@ -4267,6 +4276,13 @@ label trial4aa:
     $mood = "shock"
     l "But there's something you haven't considered."
     l "Why would I lie about passing Sid? If you believe that then you must have some reason why I did it..."
+
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
+
     python:
         startBankTrial("lauren", "Lauren: Lying about not seeing Sid {color=#f00}only makes me more suspicious{/color}. The murderer would try to avoid suspicion.", -1,
         "lauren", "Lauren: I had {color=#f00}no way to know Sid would lie in his alibi{/color}. So I had no reason to come up with a lie that looked suspicious if Sid told the truth.", -1,
@@ -4274,10 +4290,12 @@ label trial4aa:
         "lauren",  "Lauren: Also, why wouldn't I point out Sid lied earlier if I knew he went in the safe? {color=#f00}It would make Sid seem like the murderer{/color}.", -1,
         2, 11, "trial4ab")
 label trial4ab:
+    camera at parallax
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     show jenny ind:
         xcenter .25
     show sid ind
@@ -4297,7 +4315,8 @@ label trial4ab:
     show lauren ind:
         linear .3 xcenter .5
     with moveoutleft
-
+    stop music
+    $mood = "ind"
     b "It was a pretty clever murder, all things considered."
     b "You shot Sam, presumably a long time before you entered the lobby."
     b "You placed the corpse in the break room, wearing the uniform."
@@ -4353,7 +4372,7 @@ label trial4ab:
     bi "Jenny and Lauren followed us into the hallway, and to the staff kitchen."
     show bg bankbreak at bg with dissolve
     $ statusnt("Staff Kitchen", "bert", ch=4, sun=4)
-    $ showchibint("lauren", "sid", "Jenny")
+    $ showchibint("lauren", "sid", "jenny")
     show lauren ind with dissolve
     $mood = "ind"
     l "So... what do you want to know?"
@@ -4481,6 +4500,7 @@ label laurAsk:
             l "I... even if I thought it was you..."
             l "I couldn't bring myself to kill another kid."
             i "Well, we better find out that Sam is the Game Master, or else-{p=0.5}{nw}"
+            stop music
             show braindeath
             pause .25
             hide lauren
