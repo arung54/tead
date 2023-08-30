@@ -74,11 +74,11 @@ screen pickSpotpent:
             action [Function(shatterNoise), Show("shattered", lab = "pent346")]
     #add "wherewasmurderweapon"
 
-screen pickSpotpent:
+screen pickGameMaster:
     #add "bg reflecting"
     imagemap:
         ground "lineup2"
         hotspot(655, 47, 392, 671):
-            action [Function(shatterNoise), Show("shattered", lab = "pentsid")]
+            action [Function(shatterNoise), Show("shattered", lab = "pentsidArun")]
         hotspot(273, 57, 301, 662):
-            action [Function(shatterNoise), Show("shattered", lab = "pentjenny")]
+            action [Function(shatterNoise), Show("shattered", lab = "pentjennyArun")]

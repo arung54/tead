@@ -899,4 +899,4 @@ camera at parallax
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump trial4ab
+call screen pickGameMaster

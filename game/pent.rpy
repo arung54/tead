@@ -763,10 +763,10 @@ label pent26:
     b "He was being sued into the ground, and was scared for his life after Catherine's robbery."
     b "Back in the mansion Stella said something that stuck with me."
     j "Well? What was it?"
-
-label pent27:
     show scary with dissolve:
         alpha .5
+
+label pent27:
     menu:
         bi "Stella told us that..."
 
@@ -778,7 +778,7 @@ label pent27:
             hide scary with dissolve
             bi "I remember it clearly now!"
 
-        "She knew it was Sydell's masion right away.":
+        "She knew it was Sydell's mansion right away.":
             bi "She did say that... but that's not relevant at the moment."
             #hide scary with dissolve
             jump pent27
@@ -1061,7 +1061,7 @@ label postFT11:
     j "By the time he was hiding here, he was losing money and in some business troubles, remember?"
     i "Yeah, true."
     $mood = "ind"
-    b "Well speaking of business, Jennny did find this folder labeled \"InSyde Electronics\"."
+    b "Well speaking of business, Jenny did find this folder labeled \"InSyde Electronics\"."
     b "Stella told us that that was the name of Sydell's company, so maybe there's something useful in here."
     j "I took a peek inside and it looked useful, so I set it aside for us to read through."
     b "Let's see..."
@@ -1141,7 +1141,7 @@ label pent33:
     j "If this was about a home break-in, I guess it wouldn't say that."
     hide sydellfile
     with dissolve
-    b "Right, it would just be addressed to him, or a family memeber."
+    b "Right, it would just be addressed to him, or a family member."
     show jenny happy
     $popx = .3
     call popheartso
@@ -1149,7 +1149,7 @@ label pent33:
     i "But wait, if it's not about Catherine robbing him, is this even useful?"
     i "Who cares about some random insurance claim against his company?"
     b "..."
-    j "Sid, you're pretty nonchalant about his considering it could be about you!"
+    j "Sid, you're pretty nonchalant about this considering it could be about you!"
     show sid mad
     i "Hey! I didn't steal from him!"
     i "I hacked him, and planted information."
@@ -1252,7 +1252,7 @@ label pent34:
     b "Which one of them is the Game Master, and how can I prove it?"
     b "And why haven't I found anything else here to link me to this location?"
     b "If I really am the chosen killer here, shouldn't it feel more... obvious?"
-
+    hide scary with dissolve
     show frog2 ind:
         xcenter .5
     show jenny ind:
@@ -1311,7 +1311,7 @@ label pent34:
     j "He has a pulse."
     j "But he's starting to sweat like crazy..."
     i "Just a second ago it felt like we were figuring things out."
-    i "And now the Freddy's gunna die!?"
+    i "And now Freddy's gunna die!?"
     j "Sid! Don't say that!"
     j "We're going to help him."
     $mood = "sad"
@@ -1413,9 +1413,9 @@ label pent34:
     b "There's a reason we've gathered so much information."
     b "It's so we can figure things like this out!"
     b "We know more about these pills than we might think."
-label pent345:
     show scary with dissolve:
         alpha .5
+label pent345:
     menu:
         b "The birds on these pills are..."
 
@@ -1551,7 +1551,7 @@ label pent345:
     j "..........Freddy..."
     j "It could be Freddy..."
     j "As crazy as it sounds, Freddy could be the chosen killer."
-    j "There's a chance you're just using the fact that he's unconcious for your own gain."
+    j "There's a chance you're just using the fact that he's unconscious for your own gain."
     b "...Jenny, you know I wouldn't do that."
     j "I want to believe it's you, Bert, but we don't have proof it's not Freddy."
     i "Yeah. We need more proof."
@@ -1838,7 +1838,7 @@ label pentpicker:
     b "For Freddy's sake, we have to act now."
     b "So."
     b "The Game Master is..."
-    call screen pickSpotpent with dissolve
+    call screen pickGameMaster with dissolve
 label pentsid:
     scene bg pentkitchenbroke at bg
     $ statusnt("Dining Room", "bert", ch=5, sun=1)
@@ -2069,7 +2069,7 @@ label pentjenny:
     b "He somehow ended up in jail - by Stella's team, the cops, or his own confession."
     b "But it wasn't enough."
     b "If there's one thing I've learned through all of this, it was never enough."
-    hide ch5evdan with dissolveß
+    hide ch5evdan with dissolve
     $mood = "sad"
     b "For you, Jenny."
     b "You watched it all from the sidelines."
@@ -2132,12 +2132,364 @@ label jennydie:
     pause 3.0
     jump postdeath
 
-label postdeath:
-    "Jenny ironically died in the same intersection that her mother did."
-    "After which, Bert and Sid no longer feared the chip in their head knocking them out or killing them."
-    "They knocked down the front door of the apartment, and found help down in the apartment lobby."
-    "Freddy was rushed to the hospital and made a full recovery."
-    "Bert and Sid were taken to the police for questioning, and a full investigation began."
-    "Ultimately, neither were tried with any crimes."
-    "The bodies of Dan, Kaiser, Stella, Catherine, Shahar, Ivan, Sam, Lauren, and Jenny were recovered."
-    "As well as the bodies of those assisting Jenny, who were killed via brain chip at the time of her death."
+label pentsidArun:
+    scene bg pentkitchenbroke at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
+    $ showchibint("freddy", "jenny", "sid")
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
+    show sid happy:
+        xcenter .5
+    with dissolve
+    b "Sid."
+    b "We talked about the last name hint, but it's been weighing on me."
+    b "All the rules the Game Master left have been accurate so far, and I think that one is too."
+    b "Anyone could be lying about their last name, but both your names definitely starts with an S."
+    $popx = .47
+    call popwowo
+    i "Bert, I -"
+    b "It's time."
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
+        linear 1.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 120.0, 690.0)*RotateMatrix(0.0, 0.0, 0.0)
+    stop music
+    scene black with dissolve
+    play sound "audio/shatter.mp3" volume .75
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
+    hide screen status_screen
+    hide screen showchibis
+    camera at paralloff
+    show bg pentfall at bg
+    show sidfallanim at bg
+    show glassfallanim at bg
+    with dissolve
+    show screen killuser
+    pause 6
+    hide screen killuser
+    scene black with dissolve
+    "..."
+    "..........."
+    j "I didn't think you had it in you."
+    scene bg pentkitchenbroke at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
+    $ showchibint("freddy", "jenny")
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
+    show jenny ind with dissolve
+    j "People like Dan, Dracula, or Stella... I felt no remorse seeing them die."
+    j "But you... I was going to feel bad if you died."
+    j "I was thinking... we were becoming friends."
+    j "But given what just happened..."
+    show jenny happy
+    j "I think I can end this game with no regrets."
+    b "Jenny? End this game..."
+    $mood = "shock"
+    b "{i}You're{/i} the Game Master?"
+    j "Slow today, are we?"
+    j "Yes, it's me."
+    j "And before you even think about it - if you try to push me out that window, you'll die first."
+    $mood = "sad"
+    j "The remote control for the brain chips is on my body."
+    bi "Crap... I'm powerless over her."
+    bi "Why did I shove Sid? Why did I think that the \"secret\" of the game wasn't a trick?"
+    b "...So, what happens now?"
+    j "Well, I'm going to kill you."
+    j "And unfortunately, I'm going to have kill Freddy."
+    j "I was hoping to get Gerald himself, but he went into hiding before I could get him."
+    bi "I need a new plan... there has to be some way to win."
+    b "Jenny, you don't have to kill us! If you turn yourself in, the police might go easy on you!"
+    j "Oh Bert, the plan was never for me to leave this game alive."
+    j "I'm responsible for nine deaths, soon to be eleven."
+    j "If I killed some of you for lesser crimes, it's only fair I face the same punishment."
+    b "But... why play then? You could have just killed us at all the start."
+    show jenny ind
+    j "...Both my parents, who I've spent all my free time over the last few years caring for, are dead."
+    j "They were my whole life's purpose. Without them my life has no meaning at all. It's only fitting for me to join them."
+    b "But still, you could have just killed us all instead of risking some of us escaping..."
+    j "That's boring."
+    j "I lied to you about some things Bert, but there's one thing I was truthful about."
+    j "I was a stellar poker player. I loved the thrill of playing games with high stakes."
+    j "Besides my parents, it was the only thing that made me feel happy, feel complete."
+    j "So I figured... why not play the most thrilling game of all, a death game?"
+    j "That's how I wanted to go out."
+    b "I... I don't believe that."
+    b "I don't believe anyone could feel that way."
+    j "Oh, fuck off Bert."
+    j "You and the rest of these cretins get to ruin lives and then go about your day as if nothing happened."
+    j "So I'm not sorry if you finally have to face the consequences of your actions."
+    j "Because people like me have to live with those consequences every day of our lives."
+    b "...You had to live with the consequences..."
+    b "...Did you know the woman I killed?"
+    show bg reflecting
+    show jenny ind
+    with dissolve
+    j "Oh, I knew her very well."
+    j "She was my mother."
+    b "!"
+    show ch5evbert with dissolve:
+        ycenter .6
+    $mood = "sad"
+    j "That day, my father was already struggling."
+    j "So to hear that my senile mother had died because some random kid ran into her..."
+    j "It broke him."
+    hide ch5evbert with dissolve
+    b "..."
+    b "Jenny, I'm sorry... I don't know what to say."
+    j "Oh, you haven't even understood the beginning of it."
+    j "I know you love the truth Bert, so let me tell it to you."
+    j "From the beginning, person by person, crime by crime."
+    j "Why their endings were deserved."
+    bi "It killed me that she was correct."
+    bi "Even though I knew it was over, I still wanted to know."
+    j "It started when I was just a girl."
+    j "My dad was working all the time, which made our family's relationship strained."
+    j "I loved my parents, but I knew they weren't happy, and that made me unhappy around them."
+    j "Most of the kids at school didn't talk to me because I was always acting sad."
+    j "But one girl... Clara."
+    j "She talked to me out of the blue one day."
+    j "Went above and beyond to befriend me, despite me hiding in my shell."
+    j "She quickly became a sign of hope in my life."
+    j "One of the few things that made me feel happy."
+    j "Until one day, I got the news..."
+    j "She died."
+    show ch5evlauren with dissolve:
+        ycenter .6
+    j "And some girl named Lauren killed her."
+    j "It broke me. Clara was the nicest girl in the world, and she was dead."
+    j "And the girl who killed her got to keep living her live."
+    j "How was that fair?"
+    j "It was then that I understood the problem with the world."
+    j "The people who cause suffering don't have to live with that suffering."
+    hide ch5evlauren with dissolve
+    j "..."
+    j "Maybe it wasn't too late for me."
+    j "I lost Clara, but I had parents who loved me, even if our family wasn't perfect."
+    j "And I knew my dad loved his job."
+    j "His company, InSyde Electronics. His life's work."
+    b "!"
+    j "Yeah, that's right. Sydell is my dad."
+    j "The secret of the game? My real name is Jenny Sydell."
+    j "Seeing how the success of his company made him happy, I figured..."
+    j "Even if mommy and me don't get it, as long as it makes him happy, I'm happy."
+    show ch5evkaiser with dissolve:
+        ycenter .6
+    j "But then the train heist happened."
+    j "Kaiser and his accomplices stole products that InSyde was shipping to fulfill a purchase order."
+    j "InSyde Electronics suffered massive losses."
+    j "But more importantly, it damaged relationships with partners whose orders went unfulfilled."
+    j "One company had a product launch planned that they had to postpone due to insufficient supplies."
+    j "The result was a multi-million dollar loss in stock value."
+    j "That company was a subsidiary of..."
+    hide ch5evkaiser
+    show ch5evstella:
+        ycenter .6
+    with dissolve
+    j "Cantoire Holdings."
+    j "Unable to fulfill shipments, InSyde got hit with lawsuits from Cantoire."
+    j "While Stella didn't personally work the cases, her team was merciless."
+    j "She hired one of the best lawyers she could find to dig up dirt and ruin InSyde, and thus ruin my dad."
+    hide ch5evstella
+    show ch5evshahar:
+        ycenter .6
+    with dissolve
+    j "That lawyer was Shahar."
+    j "The \"pirate\" we knew was once a great lawyer..."
+    j "Cantoire wanted InSyde in the dirt, and used cheap tricks to do it."
+    j "The train heist wasn't Mr. Sydell's fault, but the lawyers didn't care - they needed to make an example out of InSyde."
+    j "They blackmailed a kid to hack Sydell's computers and plant information."
+    hide ch5evshahar
+    show ch5evsid with dissolve:
+        ycenter .6
+    j "Which, as we know now, is the kid you pushed out a window."
+    j "Of course, Stella's team was full of monsters."
+    j "And Shahar, well, he had more morals than the Cantoire legal team did."
+    j "Perhaps weary Shahar would confess, or just as an extra precaution..."
+    hide ch5evsid with dissolve
+    show ch5evdracula:
+        ycenter .6
+    with dissolve
+    j "They hired Ivan to lobotomize Shahar."
+    j "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
+    j "My father's last hope for recovering his life's work was to speak to Shahar."
+    j "And that hope was taken away by Ivan."
+    j "When I blackmailed him into making the brain chips... he was remorseful."
+    j "I'll give him credit for that."
+    j "But it didn't change what he did."
+    hide ch5evdracula with dissolve
+    j "With the lawsuit, InSyde was finished."
+    j "His business in shambles, my dad turned to drugs."
+    show ch5evsam with dissolve:
+        ycenter .6
+    j "As you know, that's where Sam came in."
+    j "Sam sold him experimental drugs to make a quick profit, and Sydell didn't care."
+    j "By Sam's own admission, the drugs were not safe, and probably ruined dad's mental state."
+    hide ch5evsam with dissolve
+    j "People can recover from drug addiction, though."
+    j "But it got worse."
+    show ch5evfreddy:
+        ycenter .6
+    with dissolve
+    j "This is where Gerald Ogden comes in."
+    j "As Sam mentioned, Gerald Ogden is the kingpin of a drug empire."
+    j "My dad's drug addiction led to me protesting against Ogden being found innocent in an unrelated case."
+    j "He decided to make an example out of me and the other protesters."
+    show ch5evcatherine with dissolve:
+        ycenter .6
+    j "He told Catherine about a day when the house would be empty, so she could rob it."
+    j "Catherine was just making some easy money, but Gerald was using her to send a message."
+    j "\"You try to oppose me, I'll attack you in your home.\""
+    j "Losing material possessions, whatever, almost all of them were replaceable."
+    j "But the peace of mind? Knowing that he, or his wife and child, could be attacked by gangsters at any moment?"
+    j "Between that and the drugs, dad became paranoid."
+    j "He thought he was going to die soon. So he decided to take things into his own hands."
+    hide ch5evfreddy
+    hide ch5evcatherine
+    with dissolve
+    j "He figured if he was going to die, he'd try to kill the person who he felt was responsible for all this before he did."
+    show ch5evdan with dissolve:
+        ycenter .6
+    j "He ordered Dan to kill Stella in a fit of madness."
+    j "As you guessed, this backfired."
+    j "Stella's team caught him, and got him to kill dad himself."
+    j "And worst of all, Dan took the pathetic way out."
+    j "Fearing Stella's team, he turned himself in to the police, so that he could be protected by them."
+    j "He got off with a short sentence, because he killed my dad under duress from Stella's people."
+    j "And so, just like everyone else in this game, he got to walk away without any consequences."
+    hide ch5evdan with dissolve
+    j "So Bert, still think \"sorry\" is going to cut it?"
+    j "Knowing how eleven people each irreparably ruined my life and got to walk away..."
+    j "You think I'll decide not to activate that chip in your brain?"
+    b "Jenny, I-"
+    j "No Bert. This will be the last thing I see."
+    j "Your face, cold and emotionless, just like the rest of theirs."
+    j "Maybe, seeing that will finally give me some peace before I move on."
+    j "And if not, at least I'll know justice was finally served."
+    j "Goodbye Bert."
+    b "Jenny, no!{p=0.5}{nw}"
+    scene black
+    show braindeath
+    pause .25
+    show doom
+    pause 1.0
+    scene black with dissolve
+    pause 1.0
+    menu:
+        "See the other ending?"
+        "Yes":
+            call screen pickGameMaster with dissolve
+        "No":
+            $ MainMenu(confirm=False)()
+
+label pentjennyArun:
+    show bg reflecting
+    show jenny ind with dissolve
+    #show jenny in void agian
+    $mood = "ind"
+    b "Jenny."
+    b "It's true that we were close."
+    b "I'll never know if that was real or not."
+    call popwowb
+    b "Because you're the Game Master, and you die here."
+    j "Bert, are you being serious?"
+    b "There's no way I could be the Game Master."
+    $popx = .47
+    call popwowo
+    b "You slipped up, Jenny."
+    b "Just a few minutes ago, you said..."
+    scene bg pentkitchenbroke at bg
+    show frogsit5 at bg:
+        #zoom .85
+        xcenter -.05
+        ycenter .675
+    show jenny scared:
+        xcenter .3
+    show sid happy:
+        xcenter .7
+    show sepia:
+        alpha .5
+    with dissolve
+    b "I did find a connection to the location."
+    b "This... is the scene of my crime."
+    $mood = "sad"
+    j "You ran a woman over in this apartment?"
+    b "No, it happened on the road, down there."
+    scene bg reflecting
+    show jenny ind
+    with dissolve
+    b "I thought it was just a joke about a car crash in the apartment."
+    b "That silly, lighthearted personality I've grown to love throughout this game."
+    $mood = "sad"
+    b "But despite how often I think about the woman I killed, and the accident..."
+    $mood = "ind"
+    call popwowb
+    b "I could never bring myself to share any details about her."
+    b "There's no way you could have known it was a woman in the accident."
+    b "I figured maybe it was a lucky guess, or part of the joke, so I had you and Sid give some words."
+    b "But even with this second chance... you made the same slip up."
+    j "I..."
+    b "Jenny Flowers... no, Jenny Sydell."
+    b "You're the Game Master."
+    b "And your end is deserved."
+    #bert pushes jenny out the window.
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
+        linear 1.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 120.0, 690.0)*RotateMatrix(0.0, 0.0, 0.0)
+    stop music
+    scene black with dissolve
+    play sound "audio/shatter.mp3" volume .75
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
+    camera at paralloff
+    show bg pentfall at bg
+    show jennyfallanim at bg
+    show glassfallanim at bg
+    pause 3.0
+    scene black with dissolve
+    bi "A few seconds passed, and then we heard a click."
+    bi "The apartment's front door unlocked."
+    bi "Presumably because Jenny, the Game Master, had died."
+    bi "We rushed Freddy to the hospital. It was close, but they told us he'd recover."
+    bi "In the coming days we'd have to answer to the police."
+    bi "For killing Jenny, for putting Freddy's life at risk, and the disappearance of the others who were dead."
+    bi "But for now, anything was better than being stuck in that game."
+    bi "..."
+    bi "Still, despite \"winning,\" I wasn't at ease about the whole situation."
+    bi "There was too much I didn't know."
+    bi "How was I connected to Sydell? And not just me, what about Lauren and Freddy?"
+    bi "Why did Jenny make us play a death game instead of killing us all?"
+    bi "In order to survive, I had made a habit of seeking the truth."
+    bi "I should just be thankful to be alive. Instead, that habit had stuck with me."
+    bi "The missing answers may haunt me to my grave."
+    pause 2.0
+    if fte_jenn >= 3:
+        show jenny happy
+        show sepia:
+            alpha .5
+        with Dissolve(2.0)
+        j "The fact that you wanted me to feel like I wasn't boring you was really nice!"
+        b "I mean... I don't feel like I really did much besides show you human decency."
+        j "Well, maybe you didn't."
+        j "But, even if that's all you did, it's something I don't get a lot of in my normal life."
+        scene black with Dissolve(2.0)
+        pause 2.0
+    menu:
+        "See the other ending?"
+        "Yes":
+            call screen pickGameMaster with dissolve
+        "No":
+            $ MainMenu(confirm=False)()
+
+    label postdeath:
+        "Jenny ironically died in the same intersection that her mother did."
+        "After which, Bert and Sid no longer feared the chip in their head knocking them out or killing them."
+        "They knocked down the front door of the apartment, and found help down in the apartment lobby."
+        "Freddy was rushed to the hospital and made a full recovery."
+        "Bert and Sid were taken to the police for questioning, and a full investigation began."
+        "Ultimately, neither were tried with any crimes."
+        "The bodies of Dan, Kaiser, Stella, Catherine, Shahar, Ivan, Sam, Lauren, and Jenny were recovered."
+        "As well as the bodies of those assisting Jenny, who were killed via brain chip at the time of her death."
