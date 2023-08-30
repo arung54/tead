@@ -228,7 +228,7 @@ screen breakInv():
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
 label bankCorpse:
-    scene bg bankbreak2
+    scene bg bankbreak2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_extra[0]:
         bi "Sam's corpse..."
@@ -267,7 +267,7 @@ label bankCorpse:
     call screen breakInv
 
 label bankDoor:
-    scene bg bankbreak2
+    scene bg bankbreak2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[1]:
         bi "The door to the break room."
@@ -293,7 +293,7 @@ label bankDoor:
     call screen breakInv
 
 label bankGun:
-    scene bg bankbreak2
+    scene bg bankbreak2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[2]:
         bi "The gun that presumably Sam used to commit suicide."
@@ -334,7 +334,7 @@ label bankGun:
     call screen breakInv
 
 label bankBelt:
-    scene bg bankbreak2
+    scene bg bankbreak2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[3]:
         bi "An elastic belt tied to the ___."
@@ -361,7 +361,7 @@ label bankBelt:
     call screen breakInv
 
 label bankStuck:
-    scene bg bankbreak2
+    scene bg bankbreak2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     bi "This is the first time we might have found the body before the killer had a chance to manipulate the scene."
     bi "I should make sure I look at everything before leaving."
@@ -397,7 +397,7 @@ screen hall1Inv():
 
 
 label bankSid:
-    scene bg bankhall1b
+    scene bg bankhall1b at bg
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     $ showchibint("sid")
     with dissolve
@@ -552,7 +552,7 @@ screen lobbyInv():
         action [Hide("lobbyInv", transition = Dissolve(1.0)), Jump("bankSid2")]
 
 label bankShells:
-    scene bg banklobby2
+    scene bg banklobby2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[4]:
         b "There are six bullet shells on the floor by the door to the hallway."
@@ -595,7 +595,7 @@ label bankShells:
     call screen lobbyInv
 
 label bankInvFreddy:
-    scene bg banklobby2
+    scene bg banklobby2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     with dissolve
     show frog sad with dissolve
@@ -679,7 +679,7 @@ label bankInvFreddy:
     call screen lobbyInv
 
 label bankInvLauren:
-    scene bg banklobby2
+    scene bg banklobby2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     with dissolve
     show lauren ind with dissolve
@@ -739,9 +739,8 @@ label bankInvLauren:
     call screen lobbyInv
 
 label bankInvJenny:
-    scene bg banklobby2
+    scene bg banklobby2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
-    with dissolve
     show jenny happy with dissolve
     if bank_evidence[7]:
         j "Heya Bert!"
@@ -812,9 +811,8 @@ label bankInvJenny:
     call screen lobbyInv
 
 label bankSid2:
-    scene bg banklobby2
+    scene bg banklobby2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
-    with dissolve
     show sid ind with dissolve
     b "Hey Sid."
     i "Hey Bert."
@@ -868,9 +866,8 @@ screen hall2Inv():
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
 label bankCouch:
-    scene bg bankhall3
+    scene bg bankhall3 at bg
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    with dissolve
     bi "That's the couch Sid was sleeping on."
     bi "Maybe it's the fact that I only slept for a little bit and then had to investigate..."
     bi "But it does look really comfortable to sleep on."
@@ -882,9 +879,8 @@ label bankCouch:
     call screen hall2Inv
 
 label bankLights:
-    scene bg bankhall3
+    scene bg bankhall3 at bg
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    with dissolve
     bi "The lights on the wall..."
     bi "They were red before I tried to sleep."
     bi "Now they're green."
@@ -948,9 +944,8 @@ screen officeInv():
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
 label bankShelves:
-    scene bg bankoffice
-    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    with dissolve
+    scene bg bankoffice at bg
+    $ statusnt("Director's Office", "bert", ch=4, sun=4)
     bi "It's a nice set of shelves for displaying objects."
     bi "But unless the bank director's photo of a random skyscraper is crucial to this case..."
     bi "I don't think there's anything important here."
@@ -958,9 +953,8 @@ label bankShelves:
     call screen officeInv
 
 label bankDesk:
-    scene bg bankoffice
-    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    with dissolve
+    scene bg bankoffice at bg
+    $ statusnt("Director's Office", "bert", ch=4, sun=4)
     bi "Sam spent a lot of time searching in this room, including the desk."
     bi "So it's probably not worth looking at every single file again."
     bi "But I should at least make sure there's nothing hidden here..."
@@ -970,9 +964,8 @@ label bankDesk:
     call screen officeInv
 
 label bankCabinet:
-    scene bg bankoffice
-    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    with dissolve
+    scene bg bankoffice at bg
+    $ statusnt("Director's Office", "bert", ch=4, sun=4)
     bi "There's a good chance we didn't find every piece of info in these filing cabinets..."
     bi "And there's also a good chance if I spent a week looking through them I still would miss something."
     bi "Who even needs a filing cabinet this big when Koogle Drive exists?"
@@ -982,9 +975,8 @@ label bankCabinet:
     call screen officeInv
 
 label bankPhotos:
-    scene bg bankoffice
-    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
-    with dissolve
+    scene bg bankoffice at bg
+    $ statusnt("Director's Office", "bert", ch=4, sun=4)
     bi "Offices always have photos on the wall."
     bi "They're kind of cool to look at the first time but after that..."
     bi "It's still a bank, it's always going to be at least a little bit dreary."
@@ -1027,13 +1019,13 @@ screen lockerInv():
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
 label bankBathrooms:
-    scene bg banklocker
+    scene bg banklocker at bg
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
     with dissolve
     bi "I guess I need to search the bathrooms..."
     scene black with dissolve
     bi "I checked them out, but couldn't find anything."
-    scene bg banklocker
+    scene bg banklocker at bg
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
     with dissolve
     bi "Makes sense that there's nothing in there."
@@ -1048,7 +1040,7 @@ label bankBathrooms:
     call screen lockerInv
 
 label bankLockers:
-    scene bg banklocker
+    scene bg banklocker at bg
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
     with dissolve
     if bank_evidence[11]:
@@ -1078,7 +1070,7 @@ label bankLockers:
 
 label safeFirst:
     $ bank_extra[9] = True
-    scene bg bankvault2
+    scene bg bankvault2 at bg
     $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     with dissolve
     bi "Well... the safe is open."
@@ -1135,7 +1127,7 @@ screen safeInv():
         action [Show("bank_evidence", transition=Dissolve(0.3))]
 
 label bankSafeCabinet:
-    scene bg banksafe1
+    scene bg banksafe1 at bg
     $ statusnt("Safe", "bert", ch=4, sun=4)
     with dissolve
     bi "Another filing cabinet."
@@ -1158,9 +1150,8 @@ label bankSafeCabinet:
     call screen safeInv
 
 label bankBox:
-    scene bg banksafe1
+    scene bg banksafe1 at bg
     $ statusnt("Safe", "bert", ch=4, sun=4)
-    with dissolve
     if bank_evidence[10]:
         bi "A box holding ammo."
         bi "The bullets come in sets of six."
@@ -1202,7 +1193,7 @@ label bankBox:
     call screen safeInv
 
 label bankSign:
-    scene bg banksafe1
+    scene bg banksafe1 at bg
     $ statusnt("Safe", "bert", ch=4, sun=4)
     with dissolve
     if bank_evidence[9]:

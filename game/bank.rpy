@@ -2755,7 +2755,14 @@ label trial4d:
     $mood = "shock"
     bi "Oh."
     bi "The person she's talking about is..."
-    call screen chooseCharBank("bert", trial4e, "Who could have shot Sam after the break room door closed?") with dissolve
+
+
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+
+    call screen chooseCharBank("bert", "trial4e", "Who could have shot Sam after the break room door closed?") with dissolve
 label trial4e:
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
@@ -2771,6 +2778,12 @@ label trial4e:
     l "Sorry Bert, I trust you a lot more than I trusted Kaiser and Dracula. And to a lesser extent, Catherine."
     l "You've been trying so hard to save the rest of us."
     l "But... hear me out, it just... makes a lot of sense."
+
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
     python:
         startBankTrial("lauren", "Lauren: I think Bert shot Sam in the break room.", 0,
         "lauren", "Lauren: Since {color=#f00}no one else had seen Sam recently{/color}, Bert was able to make up a story about the events leading up to \"finding\" Sam's body.", -1,
@@ -2778,6 +2791,16 @@ label trial4e:
         "lauren",  "Lauren: Not necessarily, because {color=#f00}we were all far away from the break room{/color}, so it would have sounded much more quiet to us.", -1,
         1, 5, "trial4f")
 label trial4f:
+    camera at parallax
+    scene bg banklobby at bg
+    show jenny ind:
+        xcenter .25
+    show lauren ind:
+        xcenter .75
+    with dissolve
+    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
+    $ showchibint("freddy", "jenny", "lauren", "sid")
+    play music "audio/coming_together.mp3" fadein 1.0
     bi "I wanted to be mad, to think Lauren was insane."
     bi "To go through all the emotions that Sid went through in the train."
     bi "But..."
@@ -2882,6 +2905,12 @@ label trial4f:
     b "Because I didn't do it."
     b "And the evidence should be able to prove it."
     l "Alright, whatever you say Bert..."
+
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
     python:
         startBankTrial("lauren", "Lauren: Sam {color=#f00}ran out of bullets{/color} and ran away to the break room.", -1,
         "lauren", "Lauren: You chased after Sam, who had {color=#f00}run into the break room{/color}. There was some sort of confrontation where you got control of the gun.", -1,
@@ -2889,12 +2918,14 @@ label trial4f:
         "lauren",  "Lauren: That way, the room {color=#f00}looked like a suicide{/color} when the rest of us arrived.", -1,
         2, 2, "trial4g")
 label trial4g:
+    camera at parallax
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
     show lauren ind
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     l "I'm confused..."
     l "You're objecting to Sam being shot in the head once?"
     b "Sort of."
@@ -2965,8 +2996,9 @@ label trial4i:
     show lauren ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind:
         xcenter .25
+    with moveinleft
     j "There were zero!"
     b "...Yes, I was about to say that."
     hide lauren with moveoutright
@@ -3036,7 +3068,7 @@ label trial4j:
     hide sid with moveoutright
     b "...I guess we're following him, then."
     scene black with dissolve
-    scene bg banklobby at bg
+    scene bg banksafe1 at bg
     $ statusnt("Bank Safe", "bert", ch=4, sun=4)
     $ showchibint("jenny", "sid")
     with dissolve
@@ -3050,7 +3082,7 @@ label trial4j:
     i "Roarghhhhhhhhhhhhhhh..."
     i "RAAAAAAAAAAAAAAAAAAAAAA..."
     i "*pant*"
-    $popx = .47
+    $popx = .45
     call poptearo
     i "It's not budging..."
     show sid ind:
@@ -3120,6 +3152,7 @@ label trial4k:
             bi "I spent a bit of time in the break room after I found Sam."
             bi "So from Freddy's point of view, I was gone for a while."
             jump trial4k
+    hide scary with dissolve
     b "Lauren, put yourself in my shoes as the murderer."
     i "So you are the murderer?"
     b "...The {i}hypothetical{/i} murderer."
@@ -3163,10 +3196,10 @@ label trial4l:
     bi "I've at least won over Sid..."
     b "Yes, exactly."
     b "If I wanted to stage a suicide, there's no reason to hide bullets."
-    hide sid with moveoutleft
-    show jenny ind with moveinleft:
-        xcenter .25
-    $popx = .3
+    hide sid with moveoutright
+    show jenny ind with moveinright:
+        xcenter .75
+    $popx = .7
     call poptearo
     j "Bert has a good point..."
     j "Not to mention, he was the one who was pushing so hard to find another explanation for Sam's death."
@@ -3248,6 +3281,12 @@ label trial4m:
     call popwowb
     b "We have to assume Sam put it there and figure out why."
     j "Hm... I have some ideas about that, actually."
+
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
     python:
         startBankTrial("jenny", "Jenny: It's a bit dark, but another method to commit suicide would be, well... {color=#f00}hanging with a rope{/color}.", -1,
         "jenny", "Jenny: There's obviously {color=#f00}no rope to be found{/color}, but the belt could be a makeshift rope.", -1,
@@ -3255,9 +3294,11 @@ label trial4m:
         "jenny", "Jenny: Sam got rid of the part of the belt attached to them, but left the other half in the break room, {color=#f00}and it fell down later{/color}.", -1,
         3, 3, "trial4n")
 label trial4n:
+    camera at parallax
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
+    play music "audio/coming_together.mp3" fadein 1.0
     with dissolve
     show jenny ind:
         xcenter .25
@@ -3346,8 +3387,9 @@ label trial4p:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show jenny ind with moveinright:
+    show jenny ind:
         xcenter .75
+    with moveinright
     j "Ha!"
     i "Huh?"
     i "Oh..."
@@ -3425,16 +3467,24 @@ label trial4p:
     b "Other contradictions?"
     $mood = "ind"
     j "Yeah, I didn't bring it up earlier, but..."
+
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
     python:
         startBankTrial("jenny", "Jenny: If Sam didn't commit suicide, that means {color=#f00}you saw someone else fled the lobby{/color}.", -1,
         "jenny", "Jenny: Everyone else wasn't in the break room when Bert found Sam, {color=#f00}so the killer wasn't in the break room when the body was found{/color}.", -1,
         "jenny", "Jenny: But if the killer didn't run in there, {color=#f00}you wouldn't have seen the break room door close{/color}.", -1,
-        "jenny", "Jenny: Not to mention, the gun you saw the killer holding {color=#55f}is the same one we found in the break room{/color}.", -1,
+        "jenny", "Jenny: Not to mention, the gun you saw the killer holding {color=#0BF}is the same one we found in the break room{/color}.", 1,
         2, 3, "trial4q")
 label trial4q:
+
+    camera at parallax
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
+    play music "audio/coming_together.mp3" fadein 1.0
     with dissolve
     show jenny ind:
         xcenter .25
@@ -3552,7 +3602,7 @@ label trial4r:
     with moveoutright
     show jenny ind:
         xcenter .25
-        linear 0.3 xcenter .15
+        linear 0.3 xcenter .5
     j "Okay, so where was I..."
     j "I finished taking a shower, walked out of the locker room into the hall, saw the green lights."
     j "Oh, and the safe door was open."
@@ -3609,12 +3659,14 @@ label trial4t:
         set alibiset
         b "That pair is..."
         "Jenny and Lauren":
+            hide scary with dissolve
             b "Jenny and Lauren."
             j "Us?"
             j "But... I was just telling the truth."
             l "I don't understand... what about our stories doesn't add up?"
             jump trial4ti
         "Jenny and Sid":
+            hide scary with dissolve
             b "Jenny and Sid."
             j "Huh?"
             show sid mad
@@ -3624,6 +3676,7 @@ label trial4t:
             b "Well, what doesn't make sense is..."
             jump trial4tii
         "Lauren and Sid":
+            hide scary with dissolve
             b "Lauren and Sid."
             i "Huh?"
             show sid mad
@@ -3846,12 +3899,21 @@ label trial4tiii:
 label posttrial4t:
     b "I think from the three of you, one of you is very likely lying about their alibi."
     b "That person is..."
+
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+
+
     call screen chooseCharBank("sid", "trial4u", "Who is most likely lying about their alibi?") with dissolve
 label trial4u:
+
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     show jenny ind:
         xcenter .25
     show sid ind
