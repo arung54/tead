@@ -781,7 +781,6 @@ define zb = Character("Questionb", who_color= "000099", callback=fillvoice, imag
 define zs = Character("Questions", who_color= "f3946a", callback=samvoice, image="notbert")
 define zc = Character("Questionc", who_color= "b66baa", callback=fillvoice, image="notbert")
 define zt = Character("Questiont", who_color= "d4af37", callback=stellavoice, image="notbert")
-
 define zd = Character("Questiond", who_color= "ff9483", callback=dracvoice, image="notbert")
 define zf = Character("Questionf", who_color= "76d352", callback=frogvoice, image="notbert")
 define zi = Character("Questioni", who_color= "4f90b0", callback=fillvoice, image="notbert")
@@ -899,4 +898,4 @@ transform bg:
 camera at parallax
 $dan = False
 stop music #"audio/haunted.mp3" fadeout 1.0
-jump trial3a
+jump trial1m

@@ -2965,7 +2965,6 @@ label trial3a:
     b "They're back. Lauren and Sam."
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
-    $ statusnt("Kitchen", "lauren", ch = 3, sun = 1)
     with dissolve
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .33
@@ -3024,6 +3023,9 @@ label trial3a:
     b "Okay, first things first, we should try to figure out how Shahar died."
     j "Well, isn't that obvious?"
     j "I mean, if you consider the state of the body, there's really only one explanation..."
+    hide screen status_screen
+    $showchibint()
+    camera at paralloff
     python:
         startHospitalTrial("jenny", "Jenny: According to Lauren, {color=#f00}Shahar's body had no injuries besides the one on his head{/color}.", -1,
         "jenny",  "Jenny: So {color=#f00}Shahar must have died from whatever caused that injury{/color}.", -1,
@@ -3031,7 +3033,10 @@ label trial3a:
         "jenny", "Jenny: They did it by {color=#f00}striking Shahar hard in the forehead through the bars{/color} with some sort of object.", -1,
         3, 8, "trial3b")
 label trial3b:
+    camera at parallax
+    play music "audio/coming_together.mp3" fadein 1.0
     scene bg hospcommons at bg
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     show jenny ind
     with dissolve
@@ -3040,7 +3045,7 @@ label trial3b:
     call pophuho
     j "But he has no other injuries... why would he be bleeding on his forehead if he wasn't struck there by someone?"
     b "I agree he has no other injuries, but think about the way his body is positioned."
-    scene bg shaharhead at bg with dissolve
+    scene bg shahardead at bg with dissolve
     b "He's kneeling, and leaning forward."
     b "If someone hit him from the front, and that was the killing blow..."
     b "It's more likely he would have fell over backwards."
@@ -3056,27 +3061,37 @@ label trial3b:
         linear 0.15 xcenter .25
     with dissolve
     show sid ind with moveinright:
-        xcenter .75
+        xcenter .8
     i "Wait, but *cough* Lauren didn't see the back side of him, right?"
     i "Just because there are no other {i}visible{/i} injuries *cough* doesn't mean there aren't some we can't see."
     i "Shahar could have a *cough* injury on the back of him."
     j "Oh, that's a good point!"
     j "In which case, it's obvious what happened!"
+    $mood = "sad"
     bi "Anytime someone says it's obvious, it usually means I'm going to have to prove them wrong..."
+
+    hide screen status_screen
+    $showchibint()
+    camera at paralloff
+
     python:
         startHospitalTrial("jenny", "Jenny: The injury on Shahar's forehead was {color=#f00}caused by him slamming his head into the bars{/color}.", -1,
         "jenny",  "Jenny: Which means, he must have been {color=#f00}hit from behind{/color} into the bars.", -1,
         "jenny",  "Jenny: If he was hit into the bars, {color=#f00}that would explain why his injury is exactly where he's leaning on the bar{/color}.", -1,
-        "sid", "Sid: *cough* It makes sense, but {color=#55f}I don't think there was anything they could use to hit him{/color}.", 1,
+        "sid", "Sid: *cough* It makes sense, but {color=#0BF}I don't think there was anything they could use to hit him{/color}.", 1,
         1, 3, "trial3c")
 label trial3c:
     scene bg hospcommons at bg
+    camera at parallax
+    play music "audio/coming_together.mp3" fadein 1.0
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     show jenny ind:
         xcenter .25
     show sid ind:
         xcenter .75
     with dissolve
+    $mood = "ind"
     b "Jenny, if you look at the rules of the hospital..."
     b "It's pretty clear Shahar wasn't hit from behind into the bars."
     j "Really? It's not clear to me..."
@@ -3124,7 +3139,7 @@ label trial3c2:
     hide jenny
     hide sid
     show drac ind
-    $popx = .45
+    $popx = .42
     call popwowo
     d "Enough."
     d "This meaningless speculation is going nowhere."
@@ -3138,7 +3153,7 @@ label trial3c2:
     with dissolve
     show drac ind with moveinleft:
         xcenter .25
-
+    $mood = "shock"
     d "Either Lauren or Sam."
     s "...Idiot..."
     d "Call me what you wish, but..."
@@ -3148,17 +3163,24 @@ label trial3c2:
     d "You all cannot be sure what time he returned to his cell."
     d "But if I recall, you all returned to your cells at roughly the same time last night."
     d "The cells doors are, well... not doors. You can hear and see through them easily."
-    $popx = .3
+    $popx = .33
     call popwowo
     d "It would have been very difficult for a patient to reach Shahar's cell during twilight..."
     d "At least, without being noticed by Jenny or Bert."
     l "That's true, but isn't the same true of me and Sam?"
     d "No, because there was some time today everyone was in the cafeteria..."
     d "Except for you, Sam, or Shahar."
+    $mood = "ind"
     d "Furthermore, none of us could have seen movement on the guard side from the cafeteria."
     d "It would be the perfect window of opportunity to kill Shahar."
     l "It's true that Sam and I had a window to kill Shahar..."
     l "But I can prove I didn't do it!"
+
+    hide screen status_screen
+    $showchibint()
+    camera at paralloff
+
+
     python:
         startHospitalTrial("lauren", "Lauren: Sam and I were together {color=#f00}the entire time since Sam left the cell this morning.{/color}.", -1,
         "lauren",  "Lauren: Sam woke up before the intercom, so {color=#f00}I couldn't have secretly killed Shahar before meeting Sam{/color}.", -1,
@@ -3168,12 +3190,15 @@ label trial3c2:
 label trial3d:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
+    camera at parallax
+    play music "audio/coming_together.mp3" fadein 1.0
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
+    $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     show drac ind:
         xcenter .25
     show lauren ind at inwindow behind hospwindowoverlay2
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .75
-    $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     b "Wait, according to Sam's account, Sam stared out the cell door the entire morning."
     b "From before the intercom went off, until Lauren arrived at Sam's cell."
@@ -3232,8 +3257,14 @@ label trial3d:
     bi "If it's going to get us closer to the truth, I'll have to figure out what he's talking about."
     $mood = "ind"
     bi "Let's see, who would have been a witness to Dracula assaulting Shahar yesterday..."
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
     call screen chooseCharHospital("sid", "trial3e", "Who would have seen Dracula murder Shahar, or seen evidence of it?") with dissolve
 label trial3e:
+    camera at parallax
+    hide scary
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show drac ind:
@@ -3241,6 +3272,7 @@ label trial3e:
     show lauren ind at inwindow behind hospwindowoverlay2
     show sid mad:
         xcenter .75
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     b "...Sid, if Dracula killed Shahar during twilight yesterday..."
@@ -3270,7 +3302,7 @@ label trial3e:
     i "And you just said *cough*  Dracula couldn't do it..."
     i "*cough* Seems like you're accusing me..."
     i "I'm gonna die, and you're all gonna *cough* die!"
-    show lauren at inwindow behind hospwindowoverlay2:
+    show lauren:
         xcenter .5
         linear 0.15 xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2 with dissolve:
@@ -3323,13 +3355,13 @@ label trial3f:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     b "Lauren, where were all the glass shards when you found them?"
@@ -3361,14 +3393,16 @@ label trial3g:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
+
     with dissolve
     b "If the murderer cleaned up the shards inside the cell..."
     b "Why are there still shards outside the cell?"
@@ -3381,21 +3415,29 @@ label trial3g:
     l "Well, there's one possible killer who wouldn't have cleaned up the shards."
     j "What?"
     l "Just think about it for a second..."
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+
     call screen chooseCharHospital("shahar", "trial3h", "Who wouldn't have cleaned up the shards outside the cell?") with dissolve
 label trial3h:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
-        xcenter .75
+        xcenter .8
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
+
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     $mood = "sad"
+    stop music fadeout 2.0
     b "You think... Shahar did it?"
     b "He... he..."
     bi "I couldn't bring myself to say it."
@@ -3420,6 +3462,8 @@ label trial3h:
     b "...Yeah, I think Shahar had a reason."
     call popwowb
     $mood = "ind"
+    play music "audio/coming_together.mp3" fadein 1.0
+
     b "Guys, I've hiding some information from the rest of you."
     b "Remember how I said the computer has some patient records?"
     b "When I first checked it out, I lied when I said I didn't recognize any of the names."
@@ -3427,19 +3471,21 @@ label trial3h:
     call popwowb
     b "\"Patient thinks he is a pirate\"."
     l "Why didn't you tell us?"
+    $mood = "sad"
     b "I... I thought given what we learned about Catherine and the mansion..."
     b "People might wrongly accuse him of being the Game Master."
     b "It might get him killed and waste an opportunity to get out of here."
     i "But how did you know he wasn't the Game Master?"
     b "I didn't."
     b "But I thought there was no way the Game Master would leave such an obvious clue."
-    $mood = "sad"
     b "And I felt bad for him. If he really thinks he's a pirate and it's not all an act..."
     l "That's... understandable."
     l "Regardless, it explains why Shahar may have taken such extreme actions."
     l "I can't imagine any of us would feel very good if we knew our life was a lie."
     l "It also explains the locked room murder aspect of Shahar's death."
     tut "Not all players may be familiar with the term locked room murder."
+    show scary with dissolve:
+        alpha .5
     menu:
         tut "Would you like an explanation?"
         "Yes.":
@@ -3447,7 +3493,9 @@ label trial3h:
         "Yes.":
             jump trial3hb
 label trial3hb:
+    hide scary with dissolve
     j "Locked room murder? What's that?"
+    $mood = "ind"
     b "Good question Jenny!"
     b "A locked room murder is a type of crime that is especially difficult to solve."
     b "It's a murder where seemingly the killer could not have committed the crime and left the scene."
@@ -3491,13 +3539,13 @@ label trial3i:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     b "The glass shards. You said they looked like they came from the vending machine."
@@ -3521,39 +3569,50 @@ label trial3i:
     i "*cough*"
     i "*cough cough cough*"
     l "Sid, is your cough getting worse?"
+    $popx = .75
+    call poptearo
     i "No, it's actually gotten better from this morning..."
     i "It was definitely the worst right when I woke up."
     bi "..."
     b "This could be a clue."
     l "A clue?"
     l "How could Sid having a cough be a clue?"
-    b "...Sid's cough might be what saves us all."
-    b "I want to figure out what's causing it..."
+    b "I have a hunch..."
+    b "And I want to figure out what's causing it!"
+    hide screen status_screen
+    $showchibint()
+    camera at paralloff
+
     $twopieces = [False, False]
     python:
-        startHospitalTrial("lauren", "Lauren: Why would the cause of his cough be relevant? I bet {color=#55f}it's just some virus{/color}. ", 1,
-        "jenny",  "Jenny: Ooh, I had asthma as a kid. {color=#55f}Maybe Sid was just having an asthma attack{/color}?", 1,
+        startHospitalTrial("lauren", "Lauren: Why would the cause of his cough be relevant? I bet {color=#0BF}it's just some virus{/color}. ", 1,
+        "jenny",  "Jenny: Ooh, I had asthma as a kid. {color=#0BF}Maybe Sid was just having an asthma attack{/color}?", 1,
         "sid",  "Sid: I don't think I have asthma *cough* and {color=#f00}I don't think you can suddenly get asthma{/color}.", -1,
         "dracula", "Dracula: This is a waste of time... {color=#f00}Sid's cough clearly has no connection with Shahar's death{/color}.", -1,
         3, [11, 12], "trial3j")
 label trial3j:
 label trial3k:
+    camera at parallax
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show jenny ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show sid happy:
-        xcenter .75
+        xcenter .8
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
+
     if currEvidence == 11:
         $twopieces[0] = True
         b "If you look at the order of the cells..."
         b "Sid's cell is neighboring Shahar's, and it's the only one neighboring Shahar."
+        $mood = "shock"
         call popwowb
         b "It's possible whatever the cause of Sid's cough is was something tied to Shahar's death."
         b "And Sid was caught in the crossfire."
@@ -3583,7 +3642,7 @@ label trial3k:
         d "Hm, I'm not fully convinced. This could just be a coincidence."
         d "Without more evidence connecting the two events, I still think they're unrelated."
         b "Well, that's the not the only thing..."
-        b "There's one more reason I think Sid's cough could be related to Shahar's death..."
+        b "There's one more reason that lines up to think Sid's cough could be related to Shahar's death..."
         if twopieces[0]:
             $other = 12
         else:
@@ -3605,6 +3664,7 @@ label trial3l:
         "The bottle while it was intact.":
             bi "I don't see how an intact bottle would have affected Sid..."
             bi "Much less made him start coughing."
+            jump trial3l
         "The bottle shards.":
             bi "The shards were only found in front of Shahar's cell..."
             bi "I don't know how they'd affect Sid or make him start coughing."
@@ -3671,8 +3731,8 @@ label trial3m:
     b "That would explain why Shahar died, Sid is sick, I was barely affected, and Jenny wasn't affected at all!."
     hide sid ind with moveoutright
     show drac ind with moveinright:
-        xcenter .75
-    $popx = .7
+        xcenter .8
+    $popx = .75
     call poptearo
     $mood = "sad"
     d "This isn't a very scientific theory."
@@ -3706,7 +3766,7 @@ label trial3n:
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     b "The cleaning supplies?"
@@ -3753,7 +3813,8 @@ label trial3o:
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     l "If you look at the glass shards..."
@@ -3798,7 +3859,7 @@ label trial3o:
     bi "Huh. Sam is... back to being kind of feisty now."
     bi "Well, as feisty as one can be while talking quietly and slowly."
     bi "And not in an angsty way."
-    show lauren at inwindow behind hospwindowoverlay2 with moveinright:
+    show lauren ind at inwindow behind hospwindowoverlay2 with moveinright:
         xcenter .4
     l "I checked the bottles of cleaning supplies in the closet."
     $mood = "shock"
@@ -3809,6 +3870,7 @@ label trial3o:
     b "It's probably reasonable to assume all the bottles were full when we came."
     b "Based on the ethanol and hydrogen peroxide bottles being full."
     b "So it's likely someone removed some at some point."
+    call popwowb
     b "Lauren, that's a huge breakthrough!"
     j "Are we sure no one used them to do any cleaning?"
     $mood = "ind"
@@ -3845,34 +3907,47 @@ label trial3o:
     i "Did you not like my *cough* cooking or something?"
     i "My simple upbringing is no reason to try to *cough* get me killed!"
     d "Quiet, urchin. Let me finish speaking, then you can respond."
+    show sid mad:
+        linear .2 xcenter .2
     bi "Urchin?"
     i "Urchin?!?!"
     d "I said, let me finish speaking."
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
+
+
     python:
         startHospitalTrial("dracula", "Dracula: {color=#f00}Sid was the last person to walk past the guard side of Shahar's cell{/color} before he died.", -1,
-        "dracula",  "Dracula: If someone else set up the bottles, {color=#55f}Sid must have seen the bottles last night{/color}.", 1,
+        "dracula",  "Dracula: If someone else set up the bottles, {color=#0BF}Sid must have seen the bottles last night{/color}.", 1,
         "dracula",  "Dracula: After all, {color=#f00}there's nowhere to hide the bottles{/color} in the hallway.", -1,
         "dracula", "Dracula: {color=#f00}If the bottles weren't there before Sid went to sleep, only Sid could have placed the bottles{/color}.", -1,
         2, 10, "trial3p")
 label trial3p:
+    camera at parallax
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid mad:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     $mood = "ind"
     i "Yeah, old man, you're wrong!"
     i "..."
     show sid ind:
-        xcenter .25
-    $popx = .3
+        xcenter .2
+    $popx = .25
     call poptearo
     i "Wait, I don't *cough* get it."
     b "The claim is that there was nowhere to hide the bottles."
@@ -3908,6 +3983,7 @@ label trial3p:
     bi "The rest of the pieces fall into place on their own."
     hide scary with dissolve
     b "Tell me Dracula."
+    call pophuhb
     b "Why is it too simplistic?"
     show ev3 pipes with dissolve:
         xcenter .5
@@ -3919,32 +3995,42 @@ label trial3p:
     i "Why does that matter?"
     d "Sigh... I get that to some of you I seem dismissive but you must understand..."
     d "If you think about this even for a second, the issue is obvious."
+
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
     python:
-        startHospitalTrial( "dracula",  "Dracula: You would {color=#55f}need some way to hold the bottle in place{/color} on top of the pipe, otherwise it would fall off too easily.", 1,
+        startHospitalTrial( "dracula",  "Dracula: You would {color=#0BF}need some way to hold the bottle in place{/color} on top of the pipe, otherwise it would fall off too easily.", 1,
         "dracula", "Dracula: When you place a flat-bottom object on a cylinder, {color=#f00}if it's not perfectly balanced, it falls off{/color}. That's just basic physics.", -1,
         "dracula",  "Dracula: Even if it's perfectly balanced, if the pipe moved slightly, the vibrations would {color=#f00}knock the bottle off the circular pipe{/color}.", -1,
         "dracula", "Dracula: Given that we've been drinking water and taking showers, {color=#f00}water must regularly be moving through the pipes{/color}.", -1,
-        1, -1, "trial3q")
+        0, -1, "trial3q")
 label trial3q:
+    camera at parallax
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
+
     b "Dracula is right..."
     b "The killer would need some way to hold the bottle in place on top of the pipe, to make sure it didn't fall off immediately."
     b "There's no other way to keep the bottle up there for more than a few seconds."
     i "So... the bottles weren't hidden on the pipe?"
     show sid mad:
-        xcenter .25
-    $popx = .25
+        xcenter .2
+    $popx = .2
     call popmado
     $mood = "sad"
     i "Screw you Bert! How many times *cough* are you going to accuse me of being the killer!"
@@ -3953,13 +4039,13 @@ label trial3q:
     l "Every time you've been angry at him, when he finished talking you weren't angry anymore."
     i "..."
     show sid ind:
-        xcenter .25
+        xcenter .2
     $mood = "ind"
     i "Sorry, it's just... a lot of pressure being accused constantly by people like Dracula."
     d "\"People like Dracula?\""
     play sfx "audio/poprain.mp3" volume .5
     show poprain with dissolve:
-        xcenter .25
+        xcenter .2
         ycenter .1
     i "First my parents, then Dan, and now Shahar's cell being next to mine..."
     i "I feel like I'm a bad luck charm."
@@ -3973,13 +4059,13 @@ label trial3r:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     b "The \"medical glue\" in the first aid kit."
@@ -4058,6 +4144,13 @@ label trial3s:
     d "It means, \"on the contrary.\""
     d "I think it's pretty clear that the bottles couldn't have come free from the pipe last night..."
     d "In other words, your theory is still full of holes, Bert."
+
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
+
     python:
         startHospitalTrial( "dracula",  "Dracula: Medical glue {color=#f00}is meant to seal wounds{/color} while they heal, so it needs to last a few days. But the bottle fell off in at most two days.", -1,
         "dracula", "Dracula: There's {color=#f00}no way to remotely dislodge the bottle{/color} while it's on top of the pipe.", -1,
@@ -4065,18 +4158,23 @@ label trial3s:
         "dracula",  "Dracula: So someone had to be on the guard side to dislodge the bottle, but {color=#f00}no one was allowed to be in the hallway at the time the bottle fell{/color}.", -1,
         1, 1, "trial3t")
 label trial3t:
+    camera at parallax
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
+    $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
+
     show sid ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     b "There's one way to remotely dislodge the bottle, if it was held in place using medical glue..."
     call popwowb
     b "Using the computer in the security room!"
@@ -4132,11 +4230,11 @@ label trial3v:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show drac ind:
-        xcenter .75
+        xcenter .8
     with dissolve
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren")
     with dissolve
@@ -4154,6 +4252,7 @@ label trial3v:
     b "..."
     show scary with dissolve:
         alpha 0.5
+    stop music fadeout 1.0
     bi "We waited for a bit in silence."
     $mood = "sad"
     bi "My heart was pounding."
@@ -4180,7 +4279,9 @@ label trial3v:
     l "Regardless, we're back to square one."
     $mood = "ind"
     b "..."
+    play music "audio/coming_together.mp3"
     call popwowb
+
     b "No, this is perfect, actually."
     b "Lauren, you said you would have to jump a bit, right?"
     b "Exactly how far away were you from reaching the top of the pipe?"
@@ -4189,8 +4290,16 @@ label trial3v:
     b "But someone else could have."
     b "And with that, I think we've found the killer."
     b "The killer is..."
+
+
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+
     call screen chooseCharHospital("dracula", "trial3w", "Who could have placed the bottle?") with dissolve
 label trial3w:
+    hide scary
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
@@ -4201,6 +4310,7 @@ label trial3w:
         xcenter .6
     show drac oh:
         xcenter .75
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
     call popwowb
@@ -4242,6 +4352,11 @@ label trial3w:
     hide scary with dissolve
     b "Oh sorry. Yes, the hole in my theory?"
     d "Please listen without spacing out this time, I beseech you..."
+    show scary
+    hide screen status_screen
+    $showchibint()
+    with dissolve
+    camera at paralloff
     python:
         startHospitalTrial( "dracula",  "Dracula: The {color=#f00}root beer bottles that were in front of Shahar's body{/color}.", -1,
         "dracula", "Dracula: When I tried to use the vending machine, {color=#f00}it required change to dispense any drinks{/color}", -1,
@@ -4249,18 +4364,21 @@ label trial3w:
         "dracula",  "Dracula: So the only way to get a bottle from the machine would be to break into it. But there's {color=#f00}no signs of the vending machine being broken into{/color}.", -1,
         0, 9, "trial3x")
 label trial3x:
+    camera at parallax
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
+    $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
+    play music "audio/coming_together.mp3" fadein 1.0
     b "One annoying thing about this game that we learned..."
     b "The killer always seems to get some sort of location-based advantage."
     b "Kaiser could somehow operate the train computer in ways the rest of us could not."
@@ -4274,7 +4392,7 @@ label trial3x:
     b "I would have before. But you let something loose."
     b "You said root beer bottles were found in front of Shahar's body."
     show drac oh
-    $popx = .7
+    $popx = .73
     call popwowo
     d "Were they not?"
     l "I never said they were root beer bottles."
@@ -4289,7 +4407,7 @@ label trial3x:
     d "Okay, but root beer is brown."
     d "I must have had a slip of the tongue and just said root beer because I remembered the brown drink."
     b "But cola is brown."
-    $popx = .75
+    $popx = .8
     call popmado
     d "I'm growing tired of this."
     d "So what if cola is brown? Root beer was in the vending machine."
@@ -4297,11 +4415,12 @@ label trial3x:
     $popx = .7
     call popwowo
     $mood = "shock"
+    stop music
     d "By the dreadful taste!"
     b "..."
     d "..."
     show drac oh:
-        xcenter .75
+        xcenter .8
     d "Oh."
     d "...It appears I have erred."
     i "Um... can someone explain what just happened?"
@@ -4326,13 +4445,13 @@ label trial3x:
     scene bg hospkitchenwindow2 at bg
     show hospwindowoverlay2
     show sid ind:
-        xcenter .25
+        xcenter .2
     show lauren ind at inwindow behind hospwindowoverlay2:
         xcenter .4
     show sam ind at inwindow behind hospwindowoverlay2:
         xcenter .6
     show drac ind:
-        xcenter .75
+        xcenter .8
     $popx = .5
     call popwowo
     $mood = "shock"
@@ -4346,7 +4465,7 @@ label trial3x:
     d "I think I got lucky and he walked towards his cell door when he heard the bottle break."
     d "That or he was trying to identify the cause of the odor the gas has."
     d "Or perhaps that was unlucky. After all, him dying by the bottle brought more attention to it..."
-    $popx = .7
+    $popx = .75
     call poptearo
     d "Oh well. If I get one bit of respite before I die, it's that I don't have to keep up that fake Romanian accent."
     d "Do me one last favor, let's not waste time with you guys telling me how bad I am for killing someone."
@@ -4356,7 +4475,7 @@ label trial3x:
     i "What?"
     show sid mad:
         xcenter .25
-    $popx = .25
+    $popx = .2
     call popmado
     i "Hey! You can't just kill him and act all cool!"
     i "He was a person with hopes and dreams! He was our friend!"
@@ -4384,10 +4503,10 @@ label trial3x:
     l "We need to listen now."
     i "..."
     show sid ind:
-        xcenter .25
+        xcenter .2
     i "Okay. But if he doesn't say anything useful I'm gonna bite his nose off!"
     $mood = "shock"
-    play sfx "audio/whirr.mp3"
+    play sfx "<from 0 to 1>audio/whirr.mp3"
     pause 1.0
     l "What was that noise?"
     hide lauren with dissolve
@@ -4420,6 +4539,7 @@ label trial3x:
     bi "So yeah, I guess I'll listen to what he has to say." #febreview
     scene black with dissolve
     scene bg hospfancy at bg
+    $ statusnt("Guard Lounge", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "lauren", "sam")
     show lauren happy:
         xcenter .75
@@ -4564,8 +4684,9 @@ label dracAsk:
             show drac ind:
                 xcenter .5
                 linear 0.15 xcenter .25
-            show sid mad with moveinright:
+            show sid mad:
                 xcenter .75
+            with moveinright
             i "He did what?"
             i "Grr. Never mind, I'm glad he's dead!"
             dr "You shouldn't be glad he's dead."
@@ -4633,7 +4754,9 @@ label dracAsk:
             jump dracAsk
 
         "How do you know how the chips work?" if len(menuset) >= 3:
+            hide scary with dissolve
             dr "Simple."
+
             show drac oh
             dr "I installed them."
             $mood = "shock"
@@ -4654,12 +4777,14 @@ label dracAsk:
             b "Wait, if you were the one who installed the chips..."
             b "How did you end up with one in your head?"
             dr "It's... compli-{p=0.5}{nw}"
+            stop music
             show braindeath
             call popwowb
             pause .25
             hide drac
             show doom
             hide braindeath with dissolve
+
             bi "..."
             bi "Numb."
             $mood = "sad"
@@ -4690,4 +4815,4 @@ label dracAsk:
             call screen ch3results with dissolve
             stop music fadeout .5
             pause 1.0
-            jump hospitalGo
+            jump bankGo
