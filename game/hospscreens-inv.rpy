@@ -107,11 +107,11 @@ screen hosp_evidence():
     fixed xmaximum 580:
         if currEvidence == 0:
             image "ev3 guards.png" xcenter 800 yalign 0.1
-            text "Sam claims to have woken up before the intercom went off and stared out the door on the guard side of his door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
+            text "{size=-2}Sam claims to have woken up before the intercom went off and stared out the door on the guard side of his door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
             image "ev3 computer.png" xcenter 800 yalign 0.1
-            text "The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Scheduled cycling of hot water through the plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
+            text "{size=-2}The computer in the security room has several features: \n1) A camera viewing the cafeteria\n2) Controlling the lights\n3) Scheduled cycling of hot water through the plumbing\n4) Changing the temperature throughout the building" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 2:
             image "ev3 glue.png" xcenter 800 yalign 0.1
@@ -119,7 +119,7 @@ screen hosp_evidence():
 
         if currEvidence == 3:
             image "ev3 rules.png" xcenter 800 yalign 0.1
-            text "The rules of the hospital state \n1) Two guards are appointed every day\n2) During the day, we cannot be in our cells\n3) At night, we must be in our cells\n4) No one may enter another person's cell\n5) Guards cannot be on the patients' side of the floor and vice-versa\n6) Guards are responsible for feeding patients" xcenter 800 yanchor 0.0 ypos 330
+            text "{size=-2}The rules of the hospital state: 1) Two guards are appointed every day, 2) During the day, we cannot be in our cells, 3) At night, we must be in our cells, 4) No one may enter another person's cell, 5) Guards/patients must stay on their side, 6) Guards are responsible for feeding patients." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
             image "ev3 stool.png" xcenter 800 yalign 0.1

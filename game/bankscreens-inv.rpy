@@ -157,7 +157,7 @@ screen bank_evidence():
 
         if currEvidence == 6:
             image "ev4 lauren.png" xcenter 800 yalign 0.1
-            text "Lauren was searching in the office, left, and was trying to find people. The safe was closed when she passed by, and she didn't see anyone in the locker room. She walked towards the lobby, passing the couch, and ended up finding me and Jenny because she heard us talking in the break room." xcenter 800 yanchor 0.0 ypos 330
+            text "{size=-2}Lauren was searching in the office, left, and was trying to find people. The safe was closed when she passed by, and she didn't see anyone in the locker room. She walked towards the lobby, passing the couch, and ended up finding me and Jenny because she heard us talking in the break room." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
             image "ev4 jenny.png" xcenter 800 yalign 0.1
