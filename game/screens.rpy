@@ -554,7 +554,7 @@ screen main_menu():
     imagebutton:
        idle "ibmenuload.png"
        hover "ibmenuload2.png"
-       focus_mask True action ShowMenu("load", use_nav=True)
+       focus_mask True action ShowMenu("load", use_nav=False)
     # imagebutton:
     #     idle "ibmenucontrols.png"
     #     hover "ibmenucontrols2.png"

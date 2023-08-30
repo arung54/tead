@@ -802,20 +802,6 @@ define blank = Character("blank", what_italic=True, callback=fillvoice) #blank t
 
 ########## julian trying shit area
 
-transform parallax:
-    perspective True
-    subpixel True
-    zpos -18
-    function moving_camera
-
-transform paralloff:
-    perspective True
-    subpixel True
-    zpos 0
-    function fixed_camera
-
-camera at parallax
-
 init python:
     def moving_camera(trans, st, at):
         if persistent.parallax:
@@ -837,11 +823,6 @@ init python:
             trans.xoffset = 0
             trans.yoffset = 0
         return 0
-
-transform bg:
-    truecenter()
-    zzoom True
-    zpos -200
 
 label start:
 
@@ -891,6 +872,25 @@ label start:
         lightscount = 0
         windowcount = 0
         mistakes = 0
+
+transform bg:
+    truecenter()
+    zzoom True
+    zpos -200
+
+transform parallax:
+    perspective True
+    subpixel True
+    zpos -18
+    function moving_camera
+
+transform paralloff:
+    perspective True
+    subpixel True
+    zpos 0
+    function fixed_camera
+
+camera at parallax
 
 
 ###########

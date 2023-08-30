@@ -654,7 +654,7 @@ label pent25:
     hide jenny
     hide sid
     with dissolve
-    $mood = shock
+    $mood = "shock"
     b "This looks like a phone number."
     b "It's scribbled down in the same handwriting on a scrap of paper..."
     b 'And the word "spaghetti", for whatever reason.'
@@ -756,7 +756,7 @@ label pent26:
     i "A hitman..."
     b "Sid, you're a genius."
     i "Huh?"
-    b "If Sid was a hitman, everything would start to make sense."
+    b "If Dan was a hitman, everything would start to make sense."
     j "What do you mean? What would make sense?"
     $mood = "ind"
     b "Sydell wanted Stella gone, right?"
