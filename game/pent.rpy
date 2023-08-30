@@ -2172,6 +2172,7 @@ label pentsidArun:
     scene black with dissolve
     "..."
     "..........."
+    play music "audio/ominous.mp3"
     j "I didn't think you had it in you."
     scene bg pentkitchenbroke at bg
     $ statusnt("Dining Room", "bert", ch=5, sun=1)
@@ -2232,7 +2233,7 @@ label pentsidArun:
     j "She was my mother."
     b "!"
     show ch5evbert with dissolve:
-        ycenter .6
+        ycenter .5
     $mood = "sad"
     j "That day, my father was already struggling."
     j "So to hear that my senile mother had died because some random kid ran into her..."

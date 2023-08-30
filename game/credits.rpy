@@ -1,0 +1,30 @@
+
+image creditscroll:
+    contains:
+        "credittext.png"
+        xcenter .7
+        ycenter 2.0
+        linear 40 ycenter -2.0
+        repeat
+
+label credits:
+    $noside = True
+    camera at paralloff
+    scene black
+    with dissolve
+    show frog happy with dissolve:
+        xcenter .3
+    f "Hiii guys!"
+    show creditscroll
+    $popx = .3
+    call popheartso
+    f "It's me, freddy!"
+    f "And woah! Look at that!"
+    f "There's some text over there."
+    f "I'm not great at reading so I'm not gunna worry about it."
+    f "But if you want to read it, go ahead!"
+    f "Anyway, that's all from me!"
+    f "I'm gunna watch some frog videos on my tablet."
+    f "Oh yeah - one more thing!"
+    f "Thanks for playing TEAD!"
+    hide frog with moveoutleft
