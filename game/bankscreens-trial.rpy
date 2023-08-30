@@ -310,7 +310,7 @@ screen pickSpot8:
 
 screen pickSpot9:
     imagemap:
-        ground "map2ui.png"
+        ground "map4ui.png"
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
         hotspot(1037, 513, 97, 180):
