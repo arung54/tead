@@ -800,6 +800,49 @@ define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what
 define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
 define blank = Character("blank", what_italic=True, callback=fillvoice) #blank text, always italics /// used to " ", changed to the word blank for image use
 
+########## julian trying shit area
+
+transform parallax:
+    perspective True
+    subpixel True
+    zpos -18
+    function moving_camera
+
+transform paralloff:
+    perspective True
+    subpixel True
+    zpos 0
+    function fixed_camera
+
+camera at parallax
+
+init python:
+    def moving_camera(trans, st, at):
+        if persistent.parallax:
+            x, y = renpy.display.draw.get_mouse_pos()
+            trans.xoffset = (x - config.screen_width / 2) *.02    # make this = 0 to turn off parallax
+            trans.yoffset = (y - config.screen_height / 2) *.02   # make this = 0 to turn off parallax
+        else:
+            trans.xoffset = 0
+            trans.yoffset = 0
+        return 0
+
+init python:
+    def fixed_camera(trans, st, at):
+        if persistent.parallax:
+            x, y = renpy.display.draw.get_mouse_pos()
+            trans.xoffset = (x - config.screen_width / 2) *.0    # make this = 0 to turn off parallax
+            trans.yoffset = (y - config.screen_height / 2) *.0   # make this = 0 to turn off parallax
+        else:
+            trans.xoffset = 0
+            trans.yoffset = 0
+        return 0
+
+transform bg:
+    truecenter()
+    zzoom True
+    zpos -200
+
 label start:
 
 ##################
@@ -849,48 +892,6 @@ label start:
         windowcount = 0
         mistakes = 0
 
-########## julian trying shit area
-
-transform parallax:
-    perspective True
-    subpixel True
-    zpos -18
-    function moving_camera
-
-transform paralloff:
-    perspective True
-    subpixel True
-    zpos 0
-    function fixed_camera
-
-camera at parallax
-
-python:
-    def moving_camera(trans, st, at):
-        if persistent.parallax:
-            x, y = renpy.display.draw.get_mouse_pos()
-            trans.xoffset = (x - config.screen_width / 2) *.02    # make this = 0 to turn off parallax
-            trans.yoffset = (y - config.screen_height / 2) *.02   # make this = 0 to turn off parallax
-        else:
-            trans.xoffset = 0
-            trans.yoffset = 0
-        return 0
-
-python:
-    def fixed_camera(trans, st, at):
-        if persistent.parallax:
-            x, y = renpy.display.draw.get_mouse_pos()
-            trans.xoffset = (x - config.screen_width / 2) *.0    # make this = 0 to turn off parallax
-            trans.yoffset = (y - config.screen_height / 2) *.0   # make this = 0 to turn off parallax
-        else:
-            trans.xoffset = 0
-            trans.yoffset = 0
-        return 0
-
-transform bg:
-    truecenter()
-    zzoom True
-    zpos -200
 
 ###########
 #Start

@@ -394,44 +394,13 @@ screen test():
         ypos .5
         textbutton _("Test") action ShowMenu("save")
 
-screen navigation():
-    use killmenu
-    if main_menu:
-        add "menufg.png"
-        #$main_menu = True
-        #imagebutton:
-        #    idle "menuweblink.png"
-        #    hover "menuweblink2.png"
-        #    xcenter .925 ycenter .125 action OpenURL("https://teadthegame.itch.io/tead")
-        imagebutton:
-            idle "ibmenustart.png"
-            hover "ibmenustart2.png"
-            focus_mask True action Start()
-        imagebutton:
-            idle "ibmenucards.png"
-            hover "ibmenucards2.png"
-            ycenter .5 xcenter .5 focus_mask True action [ShowMenu("CharactersPersistent"), Hide("main_menu")]
-        imagebutton:
-            idle "ibmenuabout.png"
-            hover "ibmenuabout2.png"
-            focus_mask True action ShowMenu("about")#, Hide("main_menu")]
-        imagebutton:
-           idle "ibmenuload.png"
-           hover "ibmenuload2.png"
-           focus_mask True action [ShowMenu("load_no_nav"), Hide("main_menu")]
-        # imagebutton:
-        #     idle "ibmenucontrols.png"
-        #     hover "ibmenucontrols2.png"
-        #     focus_mask True action ShowMenu("preferences")
-        textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
-        textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
+screen navigation(use_nav=True):
 
-        #################### below is NOT main menu, just in game menu
-    else:
-        vbox:
-            xalign 0
-            yoffset 300
-            xoffset 60
+    vbox:
+        xalign 0
+        yoffset 300
+        xoffset 60
+        if use_nav:
             textbutton _("Settings") text_hover_color "#929292" action ShowMenu("preferences")
             textbutton _("History") action ShowMenu("history") text_hover_color "#929292"
             textbutton _("Characters") action [ShowMenu("Characters")] text_hover_color "#929292"
@@ -444,21 +413,20 @@ screen navigation():
 
             elif not main_menu:
                 textbutton _("Main Menu") action MainMenu() text_hover_color "#929292"
+        else:
+            textbutton _("") text_hover_color "#929292" action ShowMenu("preferences")
+            textbutton _("") action ShowMenu("history") text_hover_color "#929292"
+            textbutton _("") action [ShowMenu("Characters")] text_hover_color "#929292"
+            textbutton _("") action ShowMenu("save") text_hover_color "#929292"
 
-            #if renpy.variant("pc"):
-            #    textbutton _("Quit") action Quit(confirm=not main_menu) text_hover_color "#929292"
+            textbutton _("") action ShowMenu("load") text_hover_color "#929292"
+            textbutton _("") action ShowMenu("about") text_hover_color "#929292"
+            if _in_replay:
+                textbutton _("") action EndReplay(confirm=True)
 
-screen navigation_no_nav():
-    use killmenu
-    vbox:
-        xalign 0
-        yoffset 300
-        xoffset 60
-        if _in_replay:
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            elif not main_menu:
+                textbutton _("") action MainMenu() text_hover_color "#929292"
 
-        elif not main_menu:
-            textbutton _("Main Menu") action MainMenu() text_hover_color "#929292"
 
         #if renpy.variant("pc"):
         #    textbutton _("Quit") action Quit(confirm=not main_menu) text_hover_color "#929292"
@@ -563,7 +531,36 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+
+    use killmenu
+    add "menufg.png"
+    #$main_menu = True
+    #imagebutton:
+    #    idle "menuweblink.png"
+    #    hover "menuweblink2.png"
+    #    xcenter .925 ycenter .125 action OpenURL("https://teadthegame.itch.io/tead")
+    imagebutton:
+        idle "ibmenustart.png"
+        hover "ibmenustart2.png"
+        focus_mask True action Start()
+    imagebutton:
+        idle "ibmenucards.png"
+        hover "ibmenucards2.png"
+        ycenter .5 xcenter .5 focus_mask True action [ShowMenu("CharactersPersistent"), Hide("main_menu")]
+    imagebutton:
+        idle "ibmenuabout.png"
+        hover "ibmenuabout2.png"
+        focus_mask True action ShowMenu("about")#, Hide("main_menu")]
+    imagebutton:
+       idle "ibmenuload.png"
+       hover "ibmenuload2.png"
+       focus_mask True action ShowMenu("load", use_nav=True)
+    # imagebutton:
+    #     idle "ibmenucontrols.png"
+    #     hover "ibmenucontrols2.png"
+    #     focus_mask True action ShowMenu("preferences")
+    textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
+    textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
 
     if gui.show_name:
 
@@ -613,7 +610,7 @@ style main_menu_version:
 ## this screen is intended to be used with one or more children, which are
 ## transcluded (placed) inside it.
 
-screen game_menu(title, scroll=None, yinitial=0.0):
+screen game_menu(title, scroll=None, yinitial=0.0, use_nav=True):
 
     style_prefix "game_menu"
 
@@ -665,73 +662,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
-
-    textbutton _("Back"):
-        style "return_button"
-        text_hover_color "#929292"
-        xcenter .07
-        action Return()
-
-    label title
-
-    if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
-
-
-screen game_menu_no_nav(title, scroll=None, yinitial=0.0):
-
-    style_prefix "game_menu"
-
-    add "menured.png"
-    add "vinegar.png"
-    add "menubgscroll2"
-    frame:
-        style "game_menu_outer_frame"
-
-        hbox:
-
-            ## Reserve space for the navigation section.
-            frame:
-                style "game_menu_navigation_frame"
-
-            frame:
-                style "game_menu_content_frame"
-
-                if scroll == "viewport":
-
-                    viewport:
-                        yinitial yinitial
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
-                        vbox:
-                            transclude
-
-                elif scroll == "vpgrid":
-
-                    vpgrid:
-                        cols 1
-                        yinitial yinitial
-
-                        scrollbars "vertical"
-                        mousewheel True
-                        draggable True
-                        pagekeys True
-
-                        side_yfill True
-
-                        transclude
-
-                else:
-
-                    transclude
-
-    use navigation_no_nav
+    use navigation(use_nav=use_nav)
 
     textbutton _("Back"):
         style "return_button"
@@ -911,96 +842,17 @@ screen save():
     use file_slots(_("Save")) #removed save
 
 
-screen load():
+screen load(use_nav=True):
 
     tag menu
 
-    use file_slots(_("Load"))
+    use file_slots(_("Load"), use_nav=use_nav)
 
-
-screen load_no_nav():
-
-    tag menu
-
-    use file_slots_no_nav(_("Load"))
-
-
-screen file_slots(title):
+screen file_slots(title, use_nav=True):
 
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
-    use game_menu(title):
-        fixed:
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
-            order_reverse True
-            button:
-                style "page_label"
-
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
-
-                input:
-                    style "page_label_text"
-                    value page_name_value
-
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
-
-                xalign 0.5
-                yalign 0.5
-
-                spacing gui.slot_spacing
-
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
-
-                    $ slot = i + 1
-
-                    button:
-                        action FileAction(slot)
-
-                        has vbox
-
-                        add FileScreenshot(slot) xalign 0.5
-
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
-
-                        text FileSaveName(slot):
-                            style "slot_name_text"
-
-                        key "save_delete" action FileDelete(slot)
-
-            ## Buttons to access other pages.
-            hbox:
-                style_prefix "page"
-
-                xalign 0.5
-                yalign 1.0
-
-                spacing gui.page_spacing
-
-                textbutton _("<") action FilePagePrevious()
-
-                if config.has_autosave:
-                    textbutton _("{#auto_page}A") action FilePage("auto")
-
-                if config.has_quicksave:
-                    textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                ## range(1, 10) gives the numbers from 1 to 9.
-                for page in range(1, 10):
-                    textbutton "[page]" action FilePage(page)
-
-                textbutton _(">") action FilePageNext()
-
-screen file_slots_no_nav(title):
-
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
-
-    use game_menu(title):
+    use game_menu(title, use_nav=use_nav):
         fixed:
             ## This ensures the input will get the enter event before any of the
             ## buttons do.
