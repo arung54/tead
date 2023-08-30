@@ -144,6 +144,20 @@ label sidAsk10:
             hide sid with dissolve
     call screen lobby with dissolve
 
+label sidAsk11:
+    scene bg pentkitchen2
+    $ statusnt("Dining Room", "bert", ch = 5, sun = 1)
+    show sid ind with dissolve
+    i "I found a rope! But it's not long enough to reach the ground..."
+    bi "Should I talk to Sid?"
+    menu:
+        "Spend time with Sid":
+            i "Sure, but we gotta keep searching."
+            call sidHang
+        "Maybe later":
+            hide sid with dissolve
+    call screen pentDining with dissolve
+
 label showSidIndFTE:
     if ftecounter == 5:
         show sid ind at inwindow behind hospwindowoverlay

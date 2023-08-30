@@ -158,6 +158,20 @@ label jennAsk10:
             hide jenny with dissolve
     call screen hall with dissolve
 
+label jennAsk11:
+    scene bg pentkitchen2
+    $ statusnt("Dining Room", "bert", ch = 5, sun = 1)
+    show jenny ind with dissolve
+    j "I have a fear of heights... the thought of falling is scary."
+    bi "Should I talk to Jenny?"
+    menu:
+        "Spend time with Jenny":
+            j "Okay, let's chat away from the window please!"
+            call jennHang
+        "Maybe later":
+            hide jenny with dissolve
+    call screen pentDining with dissolve
+
 label showJennyIndFTE:
     if ftecounter == 5:
         show jenny ind at inwindow behind hospwindowoverlay

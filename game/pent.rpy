@@ -1,4 +1,5 @@
 label pentGo:
+    $ftecounter = 11
     #$ftecounter = 2
     #$noside = True
     #camera at paralloff
@@ -1031,8 +1032,10 @@ label pent31:
     $ showchibint("freddy", "jenny", "sid")
     b "While we have this time, maybe I should chat with someone to calm the nerves."
     b "It's a scary situation, but we need camaraderie."
-
-
+    if fte_jenn >= 3 and fte_frog >= 3 and fte_sid >= 3:
+        scene black with dissolve
+        bi "I spent some time chatting with the others while searching."
+        jump postFT11
     play sfx "audio/beep.mp3"
     show freetime with dissolve:
         ycenter .4
@@ -1040,10 +1043,8 @@ label pent31:
     pause 2
     hide freetime with dissolve
     play music "audio/cobwebs.mp3" fadein 2.0
-    #$ftecounter = 5    #needs right value
-    #call screen hospKitchen with fade  #arun freetime fte free time event
-
-
+    call screen pentDining with fade
+label postFT11:
     show jenny ind:
         xcenter .3
     show sid ind:

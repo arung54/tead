@@ -160,6 +160,20 @@ label frogAsk10:
             hide frog with dissolve
     call screen hall with dissolve
 
+label frogAsk11:
+    scene bg pentkitchen2
+    $ statusnt("Dining Room", "bert", ch = 5, sun = 1)
+    show frog ind with dissolve
+    f "I found a penny in the couch!"
+    bi "Should I talk to Froggy?"
+    menu:
+        "Spend time with Froggy":
+            f "Just ninety-nine more and I can buy some candy!"
+            call frogHang
+        "Maybe later":
+            hide frog with dissolve
+    call screen pentDining with dissolve
+
 label showFrogIndFTE:
     if ftecounter == 5:
         show frog ind at inwindow behind hospwindowoverlay
