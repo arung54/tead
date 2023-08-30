@@ -17,20 +17,20 @@ label bankGo:
     "In the past..."
     zd "Is this truly what it's come to?"
     zd "Surely there must be better ways to get revenge."
-    zm "Just bring the supplies, I'll bring the bodies."
-    zm "Each person gets a chip, 12 total."
+    z "Just bring the supplies, I'll bring the bodies."
+    z "Each person gets a chip, 12 total."
     zd "And I'm the only one for this job?"
-    zm "Yes, it must be you, doctor."
+    z "Yes, it must be you, doctor."
     zd "If that is final, then... I have the supplies, I'm prepared to begin whenever."
-    zm "I see... very well."
-    zm "Before we begin, I must ask."
-    zm "Do you feel guilty?"
+    z "I see... very well."
+    z "Before we begin, I must ask."
+    z "Do you feel guilty?"
     zd "Guilty... yes, a bit. But I have no regrets."
-    zm "I see..."
-    zm "Well then, let's not waste anymore time here."
-    zm "You have plenty of hard work ahead of you..."
+    z "I see..."
+    z "Well then, let's not waste anymore time here."
+    z "You have plenty of hard work ahead of you..."
     zd "Hm? Your hand?"
-    zm "Come with me."
+    z "Come with me."
 
     stop music fadeout 3.0
 
@@ -59,7 +59,7 @@ label bankGo:
     bi "Hmm?"
     play music "audio/rush.mp3" fadein 1.0
 
-    show bg banklobby with dissolve
+    show bg banklobby at bg with dissolve
     $ statusnt("???", "bert", ch=4, sun=2)
     $ showchibint("lauren", "freddy", "jenny", "sid", "sam")
     show sid ind with dissolve
@@ -83,8 +83,9 @@ label bankGo:
     b "Is everyone okay?"
     show sam ind:
         linear .3 xcenter .75
-    show lauren ind with moveinleft:
+    show lauren ind:
         xcenter .25
+    with moveinleft
     $popx = .72
     call poptearo
     l "Okay as I could be, I guess."
@@ -120,7 +121,7 @@ label bankGo:
     i "When that BASTARD did this to us..."
     i "Treating us like damn lab rats, it's disgusting!"
     b "You're right, but think about it from his point of view."
-    $popx = .3
+    $popx = .32
     call pophuho
     show sid ind
     i "H-huh?"
@@ -141,13 +142,13 @@ label bankGo:
     hide jenny ind
     hide sid happy
     with dissolve
-    show sam with dissolve
+    show sam ind with dissolve
     s "In any case..."
     s "I think we should start to explore."
     s "There's no point in waiting around and wasting time."
     s "We need to know what we're dealing with here."
     b "Agreed."
-    $ statusntnt("Lobby", "bert", ch=4, sun=2)
+    $ statusnt("Lobby", "bert", ch=4, sun=2)
 
     b "This room seems like... a lobby? For some type of business."
     s "There looks like a floor-plan on the wall over there, behind the counter."
@@ -181,7 +182,7 @@ label bankGo:
     b "But-"
     i "See ya!"
     hide sid happy with moveoutright
-    $ showchibi("lauren", "freddy", "jenny", "sam")
+    $ showchibint("lauren", "freddy", "jenny","sam")
     bi "Sigh."
     bi "We should probably go after him."
     show jenny happy:
@@ -200,7 +201,7 @@ label bankGo:
     $mood = "sad"
     call poptearb
     b "Or not..."
-    show sam with moveinleft
+    show sam ind with moveinleft
     s "We'll need to come back to explore this room more in a bit."
     b "Agreed. We can circle back here at the end."
     $mood = "ind"
@@ -340,7 +341,7 @@ label bankGo:
     hide lauren ind
     hide frog ind
     with dissolve
-    show sam with dissolve
+    show sam ind with dissolve
     s "I'll come with you."
     b "Okay, gre- hey wait, what?"
     s "What's wrong?"
@@ -366,6 +367,7 @@ label bank2:
     $ statusnt("Bank Hallway", "bert", ch=4, sun=2)
     $ showchibint("sid", "sam")
     with dissolve
+    play music "audio/unity.mp3" fadein 1.0
     b "Sid?..."
     b "Woah... this vault is massive."
     b "That door looks like a foot thick of solid steel."
@@ -423,7 +425,6 @@ label bank2:
     i "The three of us could crack this bad boy open right now!"
     show sam ind
     $popx = .3
-    call poptearo
     s "It's not that simple..."
     s "How can I trust you to give me your correct birthdate?"
     s "How can you trust me to give you mine?"
@@ -444,7 +445,6 @@ label bank2:
     b "It seems like the perfect setup to kill Sid, huh..."
     i "Hey! I-I knew all that..."
     $popx = .7
-    call poptearo
     i "Maybe..."
     s "To top it all off, we don't even know if it's true."
     b "Yeah, it could just be a trick, an empty promise to get us to kill each other."
@@ -516,8 +516,10 @@ label bank3:
     scene bg bankoffice at bg
     $ statusnt("???", "bert", ch=4, sun=2)
     $ showchibint("sam")
+
     show sam ind
     with dissolve
+    play music "audio/rush.mp3" fadein 1.0
     b "So according to the map in the lobby, this should be... the director's office."
     $ statusnt("Director's Office", "bert", ch=4, sun=2)
     s "What's a bank director anyway?"
@@ -548,8 +550,9 @@ label bank3:
     show sam ind:
         xcenter .5
         linear .3 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind:
         xcenter .25
+    with moveinleft
     $ showchibint("sam", "jenny")
     j "Hey, I caught up with you guys."
     j "Anything fun I missed?"
@@ -578,7 +581,7 @@ label bank3:
     s "Do you want to dig through the cabinet with me?"
     $mood = "ind"
     j "..."
-    $popx = .3
+    $popx = .25
     call popheartso
     j "You know what, I think I trust Sam!"
     s "Yeah, figured as much."
@@ -614,10 +617,12 @@ label bank3:
     show jenny ind with dissolve:
         xcenter .75
     j "Bert! Look at this."
+    show bankuniform with dissolve
     bi "She held up a worksuit."
     b "Huh? What is that?"
     j "It looks like there's one in each locker."
     j "They must be the security guards' uniforms."
+    hide bankuniform with dissolve
     b "They definitely don't look like something you'd want a customer to see."
     $mood = "sad"
     j "Yeah, way too tacky."
@@ -632,7 +637,7 @@ label bank3:
     j "My skirt doesn't have any pockets."
     b "Me? I guess I could, but are you sure you can trust me?"
     show jenny happy
-    $popx = .5
+    $popx = .75
     call popheartso
     j "More than anyone else here."
     j "Here you go!"
@@ -649,7 +654,7 @@ label bank3:
     b "What's wrong?"
     j "Well, having food and a shower is great, but..."
     j "So far that hasn't been our issue."
-    $popx = .46
+    $popx = .7
     call poptearo
     j "Our issue has been not knowing who the Game Master is, or who's planning a murder."
     j "All these amenities to me are just... a false sense of security."
@@ -668,7 +673,7 @@ label bank3:
     b "Let's head back to the lobby for now, it's the last room we need to really explore."
     b "We'll have more time to shower and eat and stuff in a bit."
     j "A-OK!"
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
     $ showchibint("jenny")
     with dissolve
@@ -722,9 +727,10 @@ label bank4:
     scene black with dissolve
     bi "After a while, everyone returned to the lobby."
     bi "We brought some food from the kitchen and recapped what we found."
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=3)
     $ showchibint("freddy", "lauren", "jenny", "sam", "sid")
+    play music "audio/rush.mp3" fadein 1.0
     with dissolve
     b "So the big rooms are this lobby, the kitchen, a director's office, and a locker room."
     b "The keys for the lockers are missing, but they're all open anyway."
@@ -750,7 +756,7 @@ label bank4:
     l "It seems pretty unlikely someone plots a whole murder without us noticing."
     b "There are so few of us."
     b "We can even all sleep in the same room now, since this place is pretty big."
-    $popx = .3
+    $popx = .33
     call pophuho
     i "Huh? Do I have to? There's a cozy looking sofa out in the hallway."
     l "Where?"
@@ -832,6 +838,7 @@ label bank4:
     show sam angry
     $mood = "shock"
     call pophuhb
+    stop music
     s "Come to the director's office with me."
     s "Alone."
     b "Huh?"
@@ -854,10 +861,11 @@ label bank4:
     bi "Sam could've killed me then."
     bi "I should go there."
     scene black with dissolve
-    scene bg bankoffice with dissolve
+    scene bg bankoffice at bg with dissolve
     $ statusnt("Director's Office", "bert", ch=4, sun=4)
     $ showchibint("sam")
     show sam ind
+    play music "audio/unity.mp3" fadein 1.0
     $mood = "sad"
     s "You're alone, right?"
     b "Umm, yeah."
@@ -1001,17 +1009,17 @@ label bank4:
     s "Yeah, he's got a goofy mustache and really unique facial hair color..."
     j "No, no, not that... th-this doesn't make any sense."
     b "What's wrong Jenny?"
-    $mood = shock
+    $mood = "shock"
     j "The man in this picture... it's unmistakable."
     j "Gerald Ogden? No..."
     j "He's the man that I was... I was arrested for protesting."
     bi "Jenny's story back at the mansion came streaming back to me."
-    scene bg mansionbedroom2
+    scene bg mansionbedroom2 at bg
     $showchibint("jenny")
     $ statusnt("Bedroom 2", "bert", ch=2, sun=3)
     show jenny ind
     show sepia:
-        alpha .3
+        alpha .5
     with fade
     j "From day one it was so clear he was guilty."
     j "And I mean, guilty guilty."
@@ -1024,14 +1032,14 @@ label bank4:
     j "And ya know, I've always been a bit of a loudmouth..."
     j "I may or may not have... screamed some choice words at the judge and jury."
 
-    scene bg bankoffice with dissolve
+    scene bg bankoffice at bg with dissolve
     $ statusnt("Director's Office", "bert", ch=4, sun=4)
     $ showchibint("jenny", "sam")
     show sam:
         xcenter .75
     show jenny scared:
         xcenter .25
-    with fade
+    with dissolve
     call popwowo
     j "This can't be right! His name isn't Gerald Ogden..."
     j "At least, it wasn't back then... his name was Jereldino Ogarian."
@@ -1216,6 +1224,8 @@ label bank4:
     show jenny happy:
         xcenter .75
     with dissolve
+    play music "audio/rush.mp3" fadein 1.0
+
     j "Goooooooooooooooood morning Bert!"
     b "Hey Jenny, Freddy. Good morning."
     $mood = "shock"
@@ -1257,6 +1267,7 @@ label bank45:
     $ showchibint("freddy", "lauren", "jenny", "sam", "sid")
     show jenny ind
     with dissolve
+    play music "audio/rush.mp3" fadein 1.0
     j "Alright, you ready to talk to Freddy with me?"
     b "Yeah, let's go to the break room."
     b "A little privacy, and some more snacks."
@@ -1305,7 +1316,7 @@ label bank5:
     j "I'm so jealous..."
     show frog happy
     $popx = .25
-    call popheartsS
+    call popheartso
     f "Don't worry Jenny! I'll tell you about them too!"
     $mood = "ind"
     bi "She's a pro at this..."
@@ -1416,7 +1427,7 @@ label bank5:
     l "In a year..."
     l "That's... an insane amount of money."
     i "This changes everything!"
-    $popx = .275
+    $popx = .3
     call popwowo
     i "I say we kill the runt and use his bones to pry open the vault!"
     b "Calm down, we're going to figure this all out."
@@ -1510,7 +1521,7 @@ label bank5:
     f "Yes! I love it."
     l "Jenny and I were thinking..."
     show lauren ind
-    $popx = .275
+    $popx = .3
     call poptearo
     l "Ehhh, nevermind. Forget it!"
     f "What! I want to know!"
@@ -1524,6 +1535,7 @@ label bank5:
     bi "Curiousity really is something."
     l "Okay, okay, fine."
     l "I was wondering..."
+    stop music
     l "What you looked like under your mask!"
     l "You said the face portion is removable, right?"
     f "Y-yes..."
@@ -1546,6 +1558,8 @@ label bank5:
     f "Okay, let me unbutton this..."
     f "And then..."
     f "3... 2... 1..."
+    play music "audio/unity.mp3" fadein 1.0
+
     hide frog ind
     show frog2 ind
     with dissolve
@@ -1651,11 +1665,14 @@ label bank5:
 
     #FTE 3 goes here arun free time event
 label bank7:
+    $cat = True
     scene black
     bi "After spending some time chatting, I went back to the lobby."
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=3)
     $ showchibint("lauren", "freddy", "jenny", "sid", "sam")
+    play music "audio/unity.mp3" fadein 1.0
+
     show sam ind
     with dissolve
     s "I think everyone's here."
@@ -1705,7 +1722,7 @@ label bank7:
     hide jenny ind
     hide lauren ind
     with moveoutright
-    $ showchibi("freddy", "sid", "sam")
+    $ showchibint("freddy", "sid", "sam")
     show sam:
         xcenter .75
     show sid ind:
@@ -1720,7 +1737,7 @@ label bank7:
     s "I can come back to help you watch Freddy once I've explored a bit more."
     b "Thanks Sam."
     hide sam with moveoutright
-    $ showchibi("freddy", "sid")
+    $ showchibint("freddy", "sid")
     show sid ind:
         xcenter .25
         linear .3 xcenter .5
@@ -1741,7 +1758,7 @@ label bank7:
     b "Sid, you probably shouldn't-{p=0.5}{nw}"
     i "Seeya!"
     hide sid with moveoutright
-    $ showchibi("freddy")
+    $ showchibint("freddy")
     bi "...And he's gone."
     show frog2 ind
     bi "I'm tired..."
@@ -1942,11 +1959,13 @@ label bank7:
     scene black with dissolve
     bi "I ran off before she could respond."
     bi "After searching for a minute, I found Sam."
-    scene bg bankhall2 at bg
+    scene bg bankoffice at bg
     $ statusnt("Director's Office", "bert", ch=4, sun=3)
     $ showchibint("sam")
     show sam ind
     with dissolve
+    play music "audio/rush.mp3" fadein 1.0
+
     $popx = .47
     call pophuho
     s "So, did you find anything?"
@@ -2237,7 +2256,7 @@ label bank7:
     $ showchibint("sid", "sam", "freddy", "jenny")
     with dissolve
     hide sid with moveoutleft
-    hide sam with moveoutright
+    hide sam ind with moveoutright
     show jenny happy with moveinright:
         xcenter .75
     show frog ind with moveinleft:
@@ -2262,12 +2281,15 @@ label bank8:
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "sam")
+    show frogsit2 at bg:
+        xcenter .44
+        ycenter .48
     with dissolve
-    show sam with dissolve
+    show sam ind with dissolve
     s "Okay, Freddy is in bed, you're okay watching over him?"
     b "Yeah, I'm fine. Maybe it'll be good to have some thinking time after today..."
     s "Got it. Good luck."
-    s "I'm going to get some food from the kitchen"
+    s "I'm going to get some food from the kitchen."
     hide sam with dissolve
     $ showchibint("freddy")
     with dissolve
@@ -2283,7 +2305,8 @@ label bank8:
     bi "And it's not like anything will happen tonight, right?"
     bi "Yeah, I could figure this out tomorrow..."
     bi "For now, time to go to b-{p=0.5}{nw}"
-    scene black
+    scene black with dissolve
+    stop music
     bi "Without even realizing it, I fell asleep."
     bi "..."
     bi "..."
@@ -2297,7 +2320,8 @@ label bank8:
     $mood = "shock"
     blank "BANG" #TODO: Add sfx
     bi "That..."
-    bi "That lady just walked out from nowhere into the middle of the..."
+    bi "That lady just walked out from nowhere into the middle of the street..."
+    bi "... in front of my car..."
     bi "Wait..."
     bi "No, I was dreaming..."
     $mood = "sad"
@@ -2323,6 +2347,8 @@ label bank8:
     $ showchibint("freddy", "myster")
     with dissolve
     $mood = "shock"
+    play music "audio/ominous.mp3" fadein 1.0
+
     bi "Someone wearing a guard uniform?"
     bi "And holding what seemed to be a gun."
     bi "Wait."
@@ -2330,6 +2356,17 @@ label bank8:
     bi "Shit."
     bi "Without thinking, I ran towards Freddy."
     bi "As soon as I did, the inevitable happened."
+    play sfx "<from 0 to 0.2>audio/gunshot.mp3" volume .5
+    pause .1
+    play sfx "<from 0 to 0.2>audio/gunshot.mp3" volume .5
+    pause .1
+    play sfx "<from 0 to 0.2>audio/gunshot.mp3" volume .5
+    pause .1
+    play sfx "<from 0 to 0.2>audio/gunshot.mp3" volume .5
+    pause .1
+    play sfx "<from 0 to 0.2>audio/gunshot.mp3" volume .5
+    pause .1
+    play sfx "<from 0 to 0.2>audio/gunshot.mp3" volume .5
     blank "BANG BANG BANG BANG BANG BANG." #TODO: Add sfx
     scene black
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
@@ -2353,6 +2390,8 @@ label bank8:
     with dissolve
     bi "As I went into the hallway, I saw the door to the kitchen closing."
     show bg bankhall1 at bg with dissolve
+    $ showchibint()
+    $ statusnt("Bank Hallway", "bert", ch=4, sun=4)
     $mood = "ind"
     blank "Click."
     bi "It was quiet enough that I heard the door slowly click into place."
@@ -2446,7 +2485,7 @@ label bank8:
     bi "Not that I hadn't done it three times already, but..."
     bi "You never get used to it."
     j "Here goes..."
-    show bg bankbreak3 with dissolve
+    show bg bankbreak3 at bg with dissolve
     j "It's... it's Sam..."
     bi "Anyone's face under that mask would have been terrible to see, but..."
     bi "Somehow seeing Sam's face hit me with a second feeling of defeat."
@@ -2507,6 +2546,7 @@ label bank8:
     bi "Even if we're 99 percent confident it was a suicide, for that part it isn't enough."
     $mood = "ind"
     call popwowb
+    stop music fadeout 1.0
     b "No, I think we should investigate."
     b "Remember when we were sure Sam killed Stella?"
     b "If we accepted the most obvious possibility as the truth, we'd be dead."
@@ -2521,11 +2561,13 @@ label hospPreInv2:
     pause 1
     hide investstart with dissolve
     l "Oh, but I'm going to go the lobby and make sure Freddy's okay..."
-    l "Hearing gunshots must have been super traumatic for him."
+    l "Hearing gunshots must have been super scary for him."
     b "Yeah, go ahead."
     b "We'll get started here."
     l "Good luck, guys. Let me know if you find anything."
     hide lauren with moveoutright
+    $ showchibint("jenny")
+
     show jenny ind:
         xcenter .25
         linear 0.15 xcenter .5
@@ -2535,6 +2577,7 @@ label hospPreInv2:
     b "Can you go with Lauren? We should make sure no one is alone for too long..."
     j "Oh. Sure! I'm not the best at this anyway..."
     hide jenny with moveoutright
+    $ showchibint()
     bi "..."
     bi "...There's five of us left."
     bi "I know I'm innocent, and I doubt Freddy is the Game Master."
@@ -2673,7 +2716,7 @@ label trial4c2:
     b "I don't think it's possible the gun was fired after the door closed, because..."
     call screen bankEvidenceTrial(-1, 0, "trial4d") with dissolve
 label trial4d:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -2714,7 +2757,7 @@ label trial4d:
     bi "The person she's talking about is..."
     call screen chooseCharBank("bert", trial4e, "Who could have shot Sam after the break room door closed?") with dissolve
 label trial4e:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -2846,7 +2889,7 @@ label trial4f:
         "lauren",  "Lauren: That way, the room {color=#f00}looked like a suicide{/color} when the rest of us arrived.", -1,
         2, 2, "trial4g")
 label trial4g:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -2940,7 +2983,7 @@ label trial4i:
     bi "The reason I would load six bullets at once is..."
     call screen bankEvidenceTrial(-1, 10, "trial4j") with dissolve
 label trial4j:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -3172,7 +3215,7 @@ label trial4l:
     bi "What I'm talking about is..."
     call screen bankEvidenceTrial(-1, 3, "trial4m") with dissolve
 label trial4m:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -3212,7 +3255,7 @@ label trial4m:
         "jenny", "Jenny: Sam got rid of the part of the belt attached to them, but left the other half in the break room, {color=#f00}and it fell down later{/color}.", -1,
         3, 3, "trial4n")
 label trial4n:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -3238,7 +3281,7 @@ label trial4n:
     b "Looking back at how things happened, I think I know what the other end of the belt was attached to..."
     call screen pickSpot8 with dissolve
 label trial4o:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -3255,7 +3298,7 @@ label trial4o:
     b "That point being..."
     call screen bankEvidenceTrial(-1, 0, "trial4p") with dissolve
 label trial4p:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -3389,7 +3432,7 @@ label trial4p:
         "jenny", "Jenny: Not to mention, the gun you saw the killer holding {color=#55f}is the same one we found in the break room{/color}.", -1,
         2, 3, "trial4q")
 label trial4q:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -3805,7 +3848,7 @@ label posttrial4t:
     b "That person is..."
     call screen chooseCharBank("sid", "trial4u", "Who is most likely lying about their alibi?") with dissolve
 label trial4u:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -4087,7 +4130,7 @@ python:
     "lauren",  "Lauren: The {color=#f00}safe door was closed{/color}, so we didn't see each other.", -1,
     3, [9, 12], "trial4z")
 label trial4z:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -4143,7 +4186,7 @@ label trial4z:
     b "No, that's not possible."
     call screen bankEvidenceTrial(-1, 9, "trial4aa") with dissolve
 label trial4aa:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
@@ -4169,7 +4212,7 @@ label trial4aa:
         "lauren",  "Lauren: Also, why wouldn't I point out Sid lied earlier if I knew he went in the safe? {color=#f00}It would make Sid seem like the murderer{/color}.", -1,
         2, 11, "trial4ab")
 label trial4ab:
-    scene bg banklobby
+    scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     $ showchibint("freddy", "jenny", "lauren", "sid")
     with dissolve
