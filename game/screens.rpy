@@ -560,7 +560,10 @@ screen main_menu():
     #     hover "ibmenucontrols2.png"
     #     focus_mask True action ShowMenu("preferences")
     textbutton "{i}Exit{/i}" text_hover_color "#929292" action Quit(confirm=not main_menu) xcenter .92 ycenter .95
-    textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .82 ycenter .95
+    textbutton "{i}Settings{/i}" text_hover_color "#929292" action [ShowMenu("preferences"), Hide("main_menu")] xcenter .83 ycenter .95
+
+    if persistent.completedgame:
+        add "star.png" xcenter .74 ycenter .947 zoom .1
 
     if gui.show_name:
 
@@ -750,13 +753,11 @@ screen about():
     vbox:
         ycenter .5
         xcenter .4
-        text _("                  Alpha Version 0.2\n")
-        text _("                  Graphics, Writing: Julian Pagliaccio\n")
-        text _("                  Music, Coding, Writing: Arun Ganesh\n")
-        text _("                  Music: Andrew Kim\n")
-        text _("                  Music: Haunted Houses and CobWebs by HoliznaCC0,")
-        text _("                  Unity and Anachronist by Kevin MacLeod. ")
-        text _("                  All music credits and links found on our Itch.io page. ")
+        text _("                  Release Version 1.0\n")
+        text _("                  Created by: Arun Ganesh and Julian Pagliaccio\n")
+        text _("                  Music: Andrew Kim, HoliznaCC0, Kevin MacLeod\n")
+        text _("                  All music credits and links found on our Itch.io page.\n ")
+        #text _("                  All music credits and links found on our Itch.io page. ")
         if gui.about:
             text "[gui.about!t]\n"
         text _("                  Ren'Py engine")

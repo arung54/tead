@@ -28,3 +28,22 @@ label credits:
     f "Oh yeah - one more thing!"
     f "Thanks for playing TEAD!"
     hide frog with moveoutleft
+    scene black with dissolve
+    camera at parallax
+
+label teadcomplete:
+    camera at paralloff
+    show tead with dissolve
+    show screen killuser
+    pause 2
+    show teadcomplete with dissolve:
+        ycenter .92
+        xcenter .5
+    pause 4
+    hide screen killuser
+    pause 10
+    hide screen killuser
+
+    $ persistent.completedgame = True
+
+    return
