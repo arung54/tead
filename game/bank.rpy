@@ -4534,8 +4534,9 @@ label laurAsk:
             b "No one's going to try to kill you right now."
             bi "We might have to kill Sid..."
             j "Oh no oh no oh no..."
-            b "I need a minute to thi-{p=0.5}{/nw}"
+            b "I need a minute to think."
             scene black
+            stop music
             hide screen status_screen
             $showchibint()
             pause 1.0
@@ -4548,7 +4549,7 @@ label laurAsk:
             bi "I was almost ready to surrender."
             bi "I could only wonder, if I woke up, would I have the energy to survive?"
             bi "Or would one simple mistake mean the end?"
-            play music "audio/ominous.mp3" fadein 1.0
+            play music "audio/haunted.mp3" fadein 1.0
             pause 1.0
         ############################################## end of ch1 screen
             call screen ch4results
