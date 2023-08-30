@@ -2,46 +2,46 @@ screen mansMapInv():
     modal True
     imagemap:
         ground "ch2investmap.png"
-        hotspot(762, 310, 155, 174):
+        hotspot(760, 353, 157, 158):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("kitchenInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay3.png")
             unhovered Hide("mapPreview")
-        hotspot(920, 311, 329, 175):
+        hotspot(918, 353, 332, 158):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("diningInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay1.png")
             unhovered Hide("mapPreview")
-        hotspot(1090, 489, 160, 195):
+        hotspot(1087, 510, 163, 180):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("garageInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay2.png")
             unhovered Hide("mapPreview")
-        hotspot(153, 471, 561, 69):
+        hotspot(151, 496, 562, 65):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("hallwayInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay4.png")
             unhovered Hide("mapPreview")
-        hotspot(153, 539, 77, 145):
+        hotspot(154, 554, 78, 136):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("hallwayInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay4.png")
             unhovered Hide("mapPreview")
-        hotspot(152, 310, 156, 157):
+        hotspot(152, 353, 157, 143):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
             unhovered Hide("mapPreview")
-        hotspot(307, 310, 83, 83):
+        hotspot(306, 354, 84, 75):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomJennInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
             unhovered Hide("mapPreview")
         #    action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
         #    hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
         #    unhovered Hide("mapPreview")
-        hotspot(234, 544, 225, 140):
+        hotspot(230, 562, 231, 128):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay7.png")
             unhovered Hide("mapPreview")
-        hotspot(463, 543, 251, 141):
+        hotspot(460, 561, 253, 128):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("masterBedroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay8.png")
             unhovered Hide("mapPreview")
-        hotspot(393, 310, 101, 158):
+        hotspot(393, 355, 101, 141):
             action [Hide("kitchenInv"), Hide("diningInv"), Hide("garageInv"), Hide("hallwayInv"), Hide("bedroomInv"), Hide("bedroomJennInv"), Hide("masterBedroomInv"), Hide("bathroomInv"), Show("bathroomInv", transition=Dissolve(0.3)), Hide("mansMapInv"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay5.png")
             unhovered Hide("mapPreview")

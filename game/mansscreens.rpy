@@ -7,54 +7,54 @@ screen mansionmap():
             ground "ftemap3.png"
         if ftecounter == 4:
             ground "ftemap4.png"
-        hotspot(762, 310, 155, 174):
+        hotspot(760, 353, 157, 158):
             action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("kitchen", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay3.png")
             unhovered Hide("mapPreview")
-        hotspot(920, 311, 329, 175):
+        hotspot(918, 353, 332, 158):
             action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("dining", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="mansionmapoverlay1.png")
             unhovered Hide("mapPreview")
-        hotspot(1090, 489, 160, 195):
-            if ftecounter != 4:
+        if ftecounter != 4:
+            hotspot(1087, 510, 163, 180):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("garage", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay2.png")
-            unhovered Hide("mapPreview")
-        hotspot(153, 471, 561, 69):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay2.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(151, 496, 562, 65):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("hallway", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay4.png")
-            unhovered Hide("mapPreview")
-        hotspot(153, 539, 77, 145):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay4.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(154, 554, 78, 136):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("hallway", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay4.png")
-            unhovered Hide("mapPreview")
-        hotspot(152, 310, 156, 157):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay4.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(152, 353, 157, 143):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
-            unhovered Hide("mapPreview")
-        hotspot(307, 310, 83, 83):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(306, 354, 84, 75):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroom", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
-            unhovered Hide("mapPreview")
-        hotspot(234, 544, 225, 140):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay6.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(230, 562, 231, 128):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bedroomFL", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay7.png")
-            unhovered Hide("mapPreview")
-        hotspot(463, 543, 251, 141):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay7.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(460, 561, 253, 128):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("masterBedroom", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay8.png")
-            unhovered Hide("mapPreview")
-        hotspot(393, 310, 101, 158):
-            if ftecounter != 4:
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay8.png")
+                unhovered Hide("mapPreview")
+        if ftecounter != 4:
+            hotspot(393, 355, 101, 141):
                 action [Hide("kitchen"), Hide("dining"), Hide("garage"), Hide("hallway"), Hide("bedroom"), Hide("bedroomFL"), Hide("masterBedroom"), Hide("bathroom"), Show("bathroom", transition=Dissolve(0.3)), Hide("mansionmap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="mansionmapoverlay5.png")
-            unhovered Hide("mapPreview")
+                hovered ShowTransient("mapPreview", img="mansionmapoverlay5.png")
+                unhovered Hide("mapPreview")
 
     imagemap:
         idle "trainMapoverlayleft.png"
