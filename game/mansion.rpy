@@ -326,7 +326,7 @@ label Mansionuno:
         xcenter .65
         ycenter .25
         zoom .75
-    t "Rubish!"
+    t "Rubbish!"
     show stella happy:
         xcenter .75
     t "You see the room we're in? This is a palace made for a queen like me."
