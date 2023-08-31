@@ -107,7 +107,7 @@ label Mansionuno:
     show frog sad with dissolve
     $showchibint("freddy")
     f "Hmmsmdnnnn...."
-    bi "...I can't be negative right now how I should think about it."
+    bi "...I can't be negative right now."
     bi "There were ten people I did help save."
     bi "If we didn't investigate and uncover Kaiser's secrets, we..."#JJJ
     $mood = "ind"
