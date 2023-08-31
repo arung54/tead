@@ -16,6 +16,7 @@ label jennAsk1:
     $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show jenny happy with dissolve
     j "Hey Dan!"
+    ni "Should I spend time with Jenny?"
     menu:
         "Spend time with Jenny":
             j "Sure!"
@@ -188,7 +189,7 @@ label showJennyHappyFTE:
 
 label jennHang:
     if fte_jenn >= 3:
-        b "Hm, on second thought, I've talked to Jenny plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Jenny plenty... I should talk to someone else."
         hide jenny with dissolve
         return
     #Dan FTE 1
@@ -243,7 +244,9 @@ label jennHang:
         n "So uh... did you ever solve that math problem?"
         j "What? Oh no, I started working on it, but then I thought about fashion for a bit, then it was time to eat."
         n "..."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "For someone who likes math, she's pretty ditzy..."
         ni "But she seems like a useful person to have around, at least."
 
@@ -298,7 +301,9 @@ label jennHang:
         j "But, pen and paper would make it easier to write down what I've figured out."
         j "That's a good idea Bert! I should go look for some."
         j "Seeya!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "I wouldn't have guessed it when I met her, but..."
         bi "Turns out Jenny's a huge nerd. Probably ten times smarter than I am."
         bi "Does that mean she'll be a useful ally? Or someone to look out for? Hm..."
@@ -354,7 +359,9 @@ label jennHang:
         j "Ooh, but you've at least heard of Hilbert's hotel, right?"
         b "Gabbo Hotel?"
         j "No, Hilbert's!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Jenny gave me what was basically a lecture about infinity and paradoxes..."
         bi "I didn't understand much, but I could tell it let her escape this place for a bit, so I was happy to listen."
 
@@ -389,7 +396,9 @@ label jennHang:
         j "Do you happen to know anything about stochastic calculus, Bert?"
         b "I don't, but I'm sure you can teach me a lot about it."
         j "Okay, so imagine a guy taking a walk on a line, but he randomly decides which way to walk every minute..."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Jenny gave me a... well, lecture about random walks and something called Brownian motion."
         bi "I didn't understand most of it, but that wasn't important."
         bi "What was important was Jenny getting a break from this game, but also from the troubles of her normal life."

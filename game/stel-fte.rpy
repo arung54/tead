@@ -16,8 +16,9 @@ label stelAsk1:
     $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show stella happy with dissolve
     t "Hello."
+    ni "Should I talk to Stella?"
     menu:
-        "Spend time with Stella?":
+        "Spend time with Stella":
             t "Sure, you're cute enough."
             call stelHang
         "Maybe later":
@@ -71,7 +72,7 @@ label stelAsk4:
 
 label stelHang:
     if fte_stel >= 3:
-        b "Hm, on second thought, I've talked to Stella plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Stella plenty... I should talk to someone else."
         hide stella with dissolve
         return
 
@@ -119,7 +120,9 @@ label stelHang:
         t "Au revoir, Dan!"
         n "Au revwah, Stella?"
         t "Hm, close enough."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         n "..."
         ni "After a very confusing conversation with Stella, we returned to mingling with the others."
 
@@ -171,7 +174,9 @@ label stelHang:
         t "Huh? Oh no!"
         t "I'm just saying I'll win you over one way or another!"
         t "I just need to figure out how..."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Well, I guess I got closer to Stella..."
         bi "...Does this place have HR I can report to?"
 
@@ -221,7 +226,9 @@ label stelHang:
         b "You know, ice berakers usually aren't supposed to have right answers..."
         t "Really? Hm..."
         t "Okay, let me think some more, I'll come back to you with another icebreaker then."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Well, I understand Stella a bit better now."
         bi "But I don't think she's any closer to understanding non-billionaires..."
 
@@ -272,7 +279,9 @@ label stelHang:
         show stella happy
         t "Okay, I'll take that."
         t "I told you I'd win you over Bert!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Stella and I had a back-and-forth where we didn't talk about money and partying."
         bi "It was nice to actually get to know her a bit."
 

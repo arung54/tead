@@ -197,7 +197,7 @@ label showFrogHappyFTE:
 
 label frogHang:
     if fte_frog >= 3:
-        b "Hm, on second thought, I've talked to Froggy plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Froggy plenty... I should talk to someone else."
         hide frog with dissolve
         return
     #Dan FTE 1
@@ -247,7 +247,9 @@ label frogHang:
         f "Though my parents don't want me to learn much about that right now."
         f "They say when I'm older I can."
         f "Some frogs swallow their tadpoles until they become frogs!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "Freddy went on for what felt like hours."
         ni "I didn't learn a lot about Freddy, but I think I learned a lot about frogs?"
         ni "Nothing that'll help us get out, unless the Game Master is a frog..."
@@ -292,7 +294,9 @@ label frogHang:
         f "I wanna take a nap... but we should about frogs again some time!"
         b "Oh, yeah, I'd love to learn more from an expert like you!"
         f "Yay! Bye Bert!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "...Freddy has a not-so-great past hidden in that costume of his."
         bi "But I appreciate that he can be cheery even in a scary place like this."
         bi "Talking to him is a kind of refreshing break from some of the adults here..."
@@ -338,7 +342,9 @@ label frogHang:
         f "But that's a good idea, I'm going to ask my mom for poison dart frogs when I get home!"
         f "I want to keep a ton as a pet!"
         bi "...I'm sorry Freddy's mom, for whatever chaos I caused."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "I tried a few more examples, but wasn't able to convince Freddy."
         bi "Well, I guess that's why it's fun to be an uncle."
         bi "You give the kid advice and if they don't follow it, you don't have to deal with it."
@@ -393,7 +399,9 @@ label frogHang:
         hide frog with moveoutleft
         bi "Freddy started walking off, chanting about how everyone's dumb..."
         bi "I'm going to have a lot of explaining to do to the others...."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "I feel like Freddy's starting to trust me."
         bi "If only I could use that trust to explain things to him properly..."
 

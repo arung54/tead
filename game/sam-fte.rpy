@@ -16,8 +16,9 @@ label samAsk1:
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show sam ind with dissolve
     s "Hey."
+    ni "Should I time with Sam?"
     menu:
-        "Spend time with Sam?":
+        "Spend time with Sam":
             s "Sure, I guess I can talk."
             call samHang
         "Maybe later":
@@ -74,7 +75,7 @@ label samAsk5:
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
-    show sam sad at inwindow behind hospwindowoverlay
+    show sam ind at inwindow behind hospwindowoverlay
     s "..."
     bi "Sam's probably not in the mood to talk right now..."
     bi "I should ask someone else."
@@ -85,7 +86,7 @@ label samAsk5:
 label samAsk6:
     scene bg hospcommons
     $ statusnt("Cafeteria", "bert", ch = 3, sun = 1)
-    show sam sad with dissolve
+    show sam ind with dissolve
     s "..."
     bi "Sam's probably not in the mood to talk right now..."
     bi "I should ask someone else."
@@ -96,7 +97,7 @@ label samAsk6:
 label samAsk7:
     scene bg hospcommons
     $ statusnt("Cafeteria", "bert", ch = 3, sun = 2)
-    show sam sad with dissolve
+    show sam ind with dissolve
     s "...Hey Bert..."
     bi "Sam's doing better, but still probably not in the mood to talk right now..."
     bi "I should ask someone else."
@@ -149,7 +150,7 @@ label samAsk10:
 
 label samHang:
     if fte_sam >= 3:
-        b "Hm, on second thought, I've talked to Sam plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Sam plenty... I should talk to someone else."
         hide sam with dissolve
         return
     #Dan FTE 1
@@ -192,14 +193,20 @@ label samHang:
         menu:
             n "{i}What's Joke Guy's line?{/i}"
 
-            "WHAT?! You gotta be kitten me!":
+            "A kitten pun.":
+                hide scary with dissolve
+                n "WHAT?! You gotta be kitten me!"
                 n "...How's that?"
                 s "Hmm, you'll get there."
 
-            "Wow! You said you were a frog, but you've been lion the whole time!":
+            "A lion pun.":
+                hide scary with dissolve
+                n "Wow! You said you were a frog, but you've been lion the whole time!"
                 n "...How's that?"
                 s "Hmm, not bad."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "After a surprisingly pleasant conversation with Sam, we both went separate ways."
 
 
@@ -250,7 +257,9 @@ label samHang:
        s "I mean, that's just politics."
        s "One of the few fields where your prior income matters a lot."
        b "Still, it's admirable, even if some might disagree with how you're earning money..."
-       scene black with fade
+       hide screen status_screen
+       scene black
+       with fade
        bi "We chatted a bit more about career ambitions."
        bi "It's nice to learn a bit about what motivates Sam."
 
@@ -303,7 +312,9 @@ label samHang:
         b "I guess that makes sense..."
         b "Well, hopefully this whole death game thing doesn't get in the way of your graduating."
         s "Ha, hope so too..."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "We chatted a bit more about college."
         bi "I don't see eye-to-eye with Sam about everything, but I at least understand them better."
 
@@ -356,7 +367,9 @@ label samHang:
        s "And uh... don't mention this to anyone else."
        s "I trust you not to treat me too differently, but the others..."
        b "Yeah, of course."
-       scene black with fade
+       hide screen status_screen
+       scene black
+       with fade
        bi "With the heavy tone of the conversation, we couldn't find much else to talk about."
        bi "Sam and I have very different outlooks on life, I've learned."
        bi "But that's not necessarily a bad thing."

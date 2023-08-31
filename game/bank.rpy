@@ -1,4 +1,5 @@
 label bankGo:
+    $ftecounter = 8
     $noside = True
     camera at paralloff
     scene black
@@ -40,7 +41,6 @@ label bankGo:
     scene black
     blank "In the present..."
     camera at parallax
-    $ftecounter = 8
     scene black
     $mood = "sad"
     bi "Two more people dead..."
@@ -720,10 +720,10 @@ label bank3:
     pause 2
     hide freetime with dissolve
     play music "audio/cobwebs.mp3" fadein 2.0
+    hide screen showchibis
+    call screen lobby with dissolve
 
-    ### FTE free time event arun goes here
-
-label bank4:
+label postFT8:
     scene black with dissolve
     bi "After a while, everyone returned to the lobby."
     bi "We brought some food from the kitchen and recapped what we found."
@@ -1259,9 +1259,10 @@ label bank4:
     pause 2
     hide freetime with dissolve
     play music "audio/cobwebs.mp3" fadein 2.0
-
-    #FTE 2 GOES HERE free time event fte arun
-label bank45:
+    hide screen showchibis
+    $ftecounter = 9
+    call screen lobby with dissolve
+label postFT9:
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=2)
     $ showchibint("freddy", "lauren", "jenny", "sam", "sid")
@@ -1661,10 +1662,11 @@ label bank5:
         linear 4 ycenter .5
     pause 2
     hide freetime with dissolve
+    hide screen showchibis
     play music "audio/cobwebs.mp3" fadein 2.0
-
-    #FTE 3 goes here arun free time event
-label bank7:
+    $ftecounter = 10
+    call screen lobby with dissolve
+label postFT10:
     $cat = True
     scene black
     bi "After spending some time chatting, I went back to the lobby."
@@ -1763,7 +1765,7 @@ label bank7:
     show frog2 ind
     bi "I'm tired..."
     bi "It's been a while since we had anything of substance to eat."
-    bi "If that tomato soup I made in the hospital even counts as food..."
+    bi "If that onion soup I made in the hospital even counts as food..."
     f "Bert I wanna play!"
     b "Aren't you tired?"
     show frog2 smile
@@ -1879,7 +1881,8 @@ label bank7:
     bi "We don't actually know the full extent of their relationship."
     bi "Maybe this is the missing link I've been ignoring!"
     bi "Sam might have useful information about Mr. Sydell, even if it's small."
-    bi "Sam's also been trying really hard to be be helpful..."
+    bi "In the hospital it was hard to talk to them about it, but..."
+    bi "Now Sam's trying really hard to be be helpful... maybe there's something to learn."
     call popwowb
     bi "Maybe this is the breakthrough we need!"
     bi "I'll talk to Sam ASAP, and we'll all get out of here alive."
@@ -2029,7 +2032,7 @@ label bank7:
     call poptearo
     s "To be real, it almost never seemed like the guy was doing well."
     s "It seemed like things were starting to go wrong for the guy, I don't know."
-    b "Maybe the lawsuit vs. Catoire Holdings?"
+    b "Maybe the lawsuit vs. Cantoire Holdings?"
     s "Yeah, maybe."
     s "I guess it'd be pretty hard to be happy while getting sued to oblivion."
     b "Yeah, no kidding."
@@ -2078,7 +2081,7 @@ label bank7:
     s "Like I said, it felt like things were just going worse and worse for Sydell while I knew him."
     $mood = "ind"
     b "I see..."
-    s "Then, he dissapeared as a customer pretty soon after the custody call."
+    s "Then, he disappeared as a customer pretty soon after the custody call."
     s "I didn't think much of it, not like we were friends, ya know."
     b "Something feels more and more clear to me."
     b "It doesn't seem like Sydell was in the right state of mind to put together this game."
@@ -2593,7 +2596,7 @@ label hospPreInv2:
     bi "Next, I should search thoroughly..."
     call screen breakInv
 label trial4a:
-    scene black
+    scene black with dissolve
     $mood = "ind"
     bi "I returned to the lobby where everyone was already gathered."
     scene bg banklobby at bg
@@ -2663,7 +2666,7 @@ label trial4b:
     b "There's lots of ways that could be explained..."
     b "Maybe there's another one hidden somewhere we didn't know about, who knows."
     call pophuhb
-    b "But there's somethign else I want to focus on..."
+    b "But there's something else I want to focus on..."
     b "If Sam committed suicide, how did it happen?"
     j "How?"
     j "You mean... like, with the gun to the head?"
@@ -3400,7 +3403,7 @@ label trial4p:
     j "Because if it breaks when you open the door even slightly, then..."
     j "That means whoever tied it would be trapped in here unless they broke the belt."
     j "On the other hand, would a belt have broken when Bert pulled on the door?"
-    j "Maybe there's just elastic enough to resist breaking..."
+    j "Maybe there's just enough stretchiness to resist breaking..."
     call poptearb
     i "Man, let's stop talking and start trying!"
     bi "Sid slowly started pushing on the door."
@@ -3473,10 +3476,10 @@ label trial4p:
     with dissolve
     camera at paralloff
     python:
-        startBankTrial("jenny", "Jenny: If Sam didn't commit suicide, that means {color=#f00}you saw someone else fled the lobby{/color}.", -1,
+        startBankTrial("jenny", "Jenny: If Sam didn't commit suicide, that means {color=#f00}you saw someone else flee the lobby{/color}.", -1,
         "jenny", "Jenny: Everyone else wasn't in the break room when Bert found Sam, {color=#f00}so the killer wasn't in the break room when the body was found{/color}.", -1,
         "jenny", "Jenny: But if the killer didn't run in there, {color=#f00}you wouldn't have seen the break room door close{/color}.", -1,
-        "jenny", "Jenny: Not to mention, the gun you saw the killer holding {color=#0BF}is the same one we found in the break room{/color}.", 1,
+        "jenny", "Jenny: Not to mention, the gun you saw the killer holding {color=#f00}is the same one we found in the break room{/color}.", -1,
         2, 3, "trial4q")
 label trial4q:
 
@@ -3583,7 +3586,6 @@ label trial4r:
     b "Plus, based on our discussion so far, we think the killer set up the belt and lobbed the gun into the break room."
     b "Then they turned the corner to the east of the building before I could see them."
     b "Which is, conveniently, where..."
-    b "Well, the only candidates are one of you three."
     show sid ind:
         xcenter .75
         linear 0.15 xcenter .5
@@ -4079,7 +4081,7 @@ label trial4x:
     i "How is this evidence in my favor?"
     b "Well, I think the murderer had to have been by the break room before I finished investigating it."
     b "Because of this..."
-    call screen bankEvidenceTrial(-1, [1, 11], "trial4y") with dissolve
+    call screen bankEvidenceTrial(-1, 3, "trial4y") with dissolve
 label trial4y:
     scene bg banklobby at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
@@ -4122,7 +4124,7 @@ label trial4y:
     l "Once we rule out Sid, then I have to believe Jenny did it."
     call poptearo
     l "And... I'm not ready for that."
-    l "The five of us have been together the longest..."
+    l "The five of us have been together and helped each other so much at this point..."
     l "It will hurt so much to be betrayed by one of you."
     l "At least right now I have some plausible deniability for both Jenny and Sid..."
     show jenny happy

@@ -350,7 +350,7 @@ label baseballBat:
         pause 1
         hide newevidencefound with dissolve
         "Baseball Bat was added to evidence."
-        if False not in hosp_evidence[4:7]:
+        if False not in hosp_evidence[4:8]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
         call hospDone from _call_hospDone_1
@@ -372,7 +372,7 @@ label stepstool:
         pause 1
         hide newevidencefound with dissolve
         "Stepstool was added to evidence."
-        if False not in hosp_evidence[4:7]:
+        if False not in hosp_evidence[4:8]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
         call hospDone from _call_hospDone_2
@@ -396,13 +396,13 @@ label cleaningSupplies:
         s "...Kill himself by drinking those?..."
         lf "...Yes."
         li "Okay, it didn't need to be said like that..."
-        hide sam with dissolve
+        hide samrg with dissolve
         $hosp_evidence[6] = True
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
         "Cleaning Supplies was added to evidence."
-        if False not in hosp_evidence[4:7]:
+        if False not in hosp_evidence[4:8]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
         call hospDone from _call_hospDone_3
@@ -429,7 +429,7 @@ label closetRules:
         pause 1
         hide newevidencefound with dissolve
         "Closet Rules was added to evidence."
-        if False not in hosp_evidence[4:7]:
+        if False not in hosp_evidence[4:8]:
             li "I think that's everything interesting in here."
             li "Unless I want to waste time looking at the light switch, but no one would do that, right?"
         call hospDone from _call_hospDone_4
@@ -507,11 +507,11 @@ screen guardroomInv():
 label hospInvSamGuard:
     scene bg hospfancy at bg
     $ statusnt("Guards' Commons", "lauren", ch = 3, sun = 1)
-    show sam with dissolve
+    show samrg ind with dissolve
     lf "Notice anything Sam?"
     s "...Not really..."
     li "Talkative as always."
-    hide sam with dissolve
+    hide samrg with dissolve
     call screen guardroomInv
 
 label firstaidkit:
@@ -533,7 +533,7 @@ label firstaidkit:
         li "Directions: Squeeze the wound shut, then apply glue."
         li "Continue to squeeze wound until glue dries."
         li "Peel glue off in two to three days."
-        li "Glue has low melting point. Avoid hot areas while glue remains on wound."
+        li "Glue has low melting point. Avoid exposing glue to heat while glue remains on wound."
         li "If the glue needs to be removed early, take a towel and dip it in near-boiling water."
         li "Then, apply the towel to the glue. It will melt and the towel will absorb it."
         li "Wash towel afterwards in hot water to remove glue."
@@ -543,7 +543,7 @@ label firstaidkit:
         pause 1
         hide newevidencefound with dissolve
         "Bottle of Medical Glue was added to evidence."
-        if False not in hosp_evidence[2:3]:
+        if False not in hosp_evidence[2:4]:
             li "I think that's everything important in here."
             li "There's a lot in this room, but not much that seems out of place..."
         call hospDone from _call_hospDone_5
@@ -575,7 +575,7 @@ label hosprules:
         pause 1
         hide newevidencefound with dissolve
         "Rules of the Hospital was added to evidence."
-        if False not in hosp_evidence[2:3]:
+        if False not in hosp_evidence[2:4]:
             li "I think that's everything important in here."
             li "There's a lot in this room, but not much that seems out of place..."
         call hospDone from _call_hospDone_6
@@ -748,7 +748,7 @@ label hospInvSamTR:
     s "...Not really..."
     li "...Nothing? Shahar's body doesn't throw you off?"
     hide samrg with dissolve
-    call screen hallwayTLInv
+    call screen hallwayTRInv
 
 label shaharbody:
     scene bg shahardead at bg
@@ -768,7 +768,7 @@ label shaharbody:
         pause 1
         hide newevidencefound with dissolve
         "State of the Body was added to evidence."
-        if False not in hosp_evidence[8:10]:
+        if False not in hosp_evidence[8:11]:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
             li "But whatever, I'm happy to get away from the corpse."
@@ -795,7 +795,7 @@ label glassshards:
         pause 1
         hide newevidencefound with dissolve
         "Glass Shards was added to evidence."
-        if False not in hosp_evidence[8:10]:
+        if False not in hosp_evidence[8:11]:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
             li "But whatever, I'm happy to get away from the corpse."
@@ -820,7 +820,7 @@ label pipe:
         pause 1
         hide newevidencefound with dissolve
         "Pipe in the Hallway was added to evidence."
-        if False not in hosp_evidence[8:10]:
+        if False not in hosp_evidence[8:11]:
             li "I think that's everything..."
             li "It's not a lot though. I'm really confused as to what happened."
             li "But whatever, I'm happy to get away from the corpse."
@@ -877,28 +877,33 @@ screen hospKitchenInv():
         idle "samchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSamKitchen")]
     imagebutton:
-        xpos 70
-        ypos 20
+        xpos 20
+        ypos 70
+        idle "windowchibi.png" at chibizoom
+        action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSamKitchen")]
+    imagebutton:
+        xpos 20
+        ypos 120
         idle "jennychibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvJenny")]
     imagebutton:
-        xpos 70
-        ypos 70
+        xpos 20
+        ypos 170
         idle "draculachibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvDracula")]
     imagebutton:
-        xpos 70
-        ypos 120
+        xpos 20
+        ypos 220
         idle "sidchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvSid")]
     imagebutton:
-        xpos 70
-        ypos 170
+        xpos 20
+        ypos 270
         idle "freddychibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvFreddy")]
     imagebutton:
-        xpos 70
-        ypos 220
+        xpos 20
+        ypos 320
         idle "bertchibi.png" at chibizoom
         action [Hide("hospKitchenInv", transition = Dissolve(1.0)), Jump("hospInvBert")]
 
@@ -932,7 +937,7 @@ label hospcabinets:
     li "Salt, pepper, ladles.."
     li "Oh, and a knife."
     li "But... I don't think Shahar was stabbed."
-    li "Also, if someone walked out of the kitchen with a knife, we might have seem them."
+    li "Also, if someone walked out of the kitchen with a knife, we might have seen them."
     li "Seems a bit risky..."
     li "Not to mention well..."
     show samrg ind with dissolve
@@ -953,7 +958,7 @@ label hospInvSamKitchen:
     lf "Notice anything Sam?"
     s "...Food..."
     li "I guess, ask stupid questions, get stupid answers."
-    hide sam with dissolve
+    hide samrg with dissolve
     call screen hospKitchenInv with dissolve
 
 label hospInvJenny:
@@ -1028,7 +1033,7 @@ label hospInvBert:
     b "Uh. I guess keeping Freddy away from the body."
     lf "Um... did he go to check Shahar's cell?"
     b "No, he's just been chilling here with the rest of us."
-    lf "...Can you make sure he doesn't go towards Shahar's cell."
+    lf "...Can you make sure he doesn't go towards Shahar's cell?"
     b "Uh, sure, though it might be hard while we're looking around."
     lf "There's four of you, surely one of you can handle it."
     b "Oh. True."

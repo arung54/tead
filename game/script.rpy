@@ -770,6 +770,7 @@ define d = Character("Dracula", who_color= "ff9483", callback=dracvoice, image="
 define dr = Character("Ivan Nepomniachtchi", who_color= "ff9483", callback=dracvoice, image="notbert")
 define f = Character("Freddy Ogden", who_color= "76d352", image="notbert", callback=frogvoice)
 define j = Character("Jenny Flowers", who_color= "e50548", callback=jennyvoice, image="notbert")
+define js = Character("Jenny Sydell", who_color= "e50548", callback=jennyvoice, image="notbert")
 define l = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="notbert")
 define o = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="notbert")
 define i = Character("Sid Straits", who_color= "4f90b0", callback=fillvoice, image="notbert")
@@ -851,12 +852,12 @@ label start:
         phase = 0
         statement = -1
         agree = 0
-        #train_evidence1 = [False, False, False]
-        #train_evidence2 = [False, False, False]                #made all of these true from false LOL
-        #train_evidence3 = [False, False, False, False]
-        train_evidence1 = [True, True, True]
-        train_evidence2 = [True, True, True]                #made all of these true from false LOL
-        train_evidence3 = [True, True, True, True]
+        train_evidence1 = [False, False, False]
+        train_evidence2 = [False, False, False]                #made all of these true from false LOL
+        train_evidence3 = [False, False, False, False]
+        # train_evidence1 = [True, True, True]
+        # train_evidence2 = [True, True, True]
+        # train_evidence3 = [True, True, True, True]
 
 
 
@@ -897,7 +898,8 @@ camera at parallax
 #Start
 ###########
 camera at parallax
-$dan = False
+$dan = True
 stop music #"audio/haunted.mp3" fadeout 1.0
 # jump teadcomplete
-jump pentpicker
+pause 2.0
+jump go

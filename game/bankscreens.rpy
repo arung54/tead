@@ -115,13 +115,13 @@ screen lobby():
         imagebutton:
             xpos 20
             ypos 70
-            idle "jennychibi.png" at chibizoom
-            action [Hide("lobby", transition = Dissolve(1.0)), Jump("jennAsk9")]
+            idle "laurenchibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("laurAsk9")]
         imagebutton:
             xpos 20
             ypos 120
-            idle "laurenchibi.png" at chibizoom
-            action [Hide("lobby", transition = Dissolve(1.0)), Jump("laurAsk9")]
+            idle "jennychibi.png" at chibizoom
+            action [Hide("lobby", transition = Dissolve(1.0)), Jump("jennAsk9")]
         imagebutton:
             xpos 20
             ypos 170

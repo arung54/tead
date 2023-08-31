@@ -856,8 +856,9 @@ label go: #Add silhouttes here?
         xcenter .75
     with dissolve
     ni "Next was... Stella Cantoire?"
-    ni "I've seen her on TV before, what's she doing here?"
+    ni "I know her..."
     ni "One of the richest people in the world, and head of the Cantoire Holdings Group."
+    ni "What's she doing here?"
     ni "Her outfit made it seem like she would be very serious, but the way her eyes flicked around..."
     ni "She was definitely checking some of the men in the room out."
     ni "I was mildly offended when she made eye contact with me and then quickly looked away."
@@ -1066,7 +1067,9 @@ label go: #Add silhouttes here?
     tut "To talk to a character, click on their icon in the top left."
     tut "Ask everyone at least one question to progress the story. You can ask more if you're interested."
     $ meetings = [1] * 11
+    hide screen showchibis
     call screen intros
+    with dissolve
 
 label postMeetings:
     scene bg startmeet

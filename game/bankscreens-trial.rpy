@@ -118,7 +118,7 @@ screen bankEvidenceTrial(s, e, l):
         if currEvidence == 3:
             image "ev4 belt.png" xcenter 800 yalign 0.1
             if bank_extra[11]:
-                text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is. A whole elastic belt is long enough to reach from the table leg to the doorknob. When it's tied at both ends, it pulls on the door, but not with enough force to prevent you from opening it. Also, if the door is yanked when the belt is tied at both ends, the belt snaps." xcenter 800 yanchor 0.0 ypos 330
+                text "{size=-5}Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is. A whole elastic belt is long enough to reach from the table leg to the doorknob. When it's tied at both ends, it pulls on the door, but not with enough force to prevent you from opening it. Also, if the door is yanked when the belt is tied at both ends, the belt snaps." xcenter 800 yanchor 0.0 ypos 330
             else:
                 text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
 

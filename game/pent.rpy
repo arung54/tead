@@ -1045,6 +1045,9 @@ label pent31:
     play music "audio/cobwebs.mp3" fadein 2.0
     call screen pentDining with fade
 label postFT11:
+    scene bg pentkitchen90 at bg
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
+    $ showchibint("freddy", "jenny", "sid")
     show jenny ind:
         xcenter .3
     show sid ind:
@@ -2280,102 +2283,103 @@ label pentsidArun:
     b "!"
     j "Yeah, that's right. Sydell is my dad."
     j "The secret of the game? My real name is Jenny Sydell."
-    j "Seeing how the success of his company made him happy, I figured..."
-    j "Even if mommy and me don't get it, as long as it makes him happy, I'm happy."
+    js "Seeing how the success of his company made him happy, I figured..."
+    js "Even if mommy and me don't get it, as long as it makes him happy, I'm happy."
     show ch5evkaiser with dissolve:
         ycenter .5
-    j "But then the train heist happened."
-    j "Kaiser and his accomplices stole products that InSyde was shipping to fulfill a purchase order."
-    j "InSyde Electronics suffered massive losses."
-    j "But more importantly, it damaged relationships with partners whose orders went unfulfilled."
-    j "One partner had a product launch planned that they had to postpone due to insufficient supplies."
-    j "The result was a multi-million dollar loss in stock value."
-    j "That company was a subsidiary of..."
+    js "But then the train heist happened."
+    js "Kaiser and his accomplices stole products that InSyde was shipping to fulfill a purchase order."
+    js "InSyde Electronics suffered massive losses."
+    js "But more importantly, it damaged relationships with partners whose orders went unfulfilled."
+    js "One partner had a product launch planned that they had to postpone due to insufficient supplies."
+    js "The result was a multi-million dollar loss in stock value."
+    js "That company was a subsidiary of..."
     hide ch5evkaiser
     show ch5evstella:
         ycenter .5
     with dissolve
-    j "Cantoire Holdings."
-    j "Unable to fulfill shipments, InSyde got hit with lawsuits from Cantoire."
-    j "While Stella didn't personally work the cases, her team was merciless."
-    j "She hired one of the best lawyers she could find to dig up dirt and ruin InSyde, and thus ruin my dad."
+    js "Cantoire Holdings."
+    js "Unable to fulfill shipments, InSyde got hit with lawsuits from Cantoire."
+    js "While Stella didn't personally work the cases, her team was merciless."
+    js "She hired one of the best lawyers she could find to dig up dirt and ruin InSyde, and thus ruin my dad."
     hide ch5evstella
     show ch5evshahar:
         ycenter .5
     with dissolve
-    j "That lawyer was Shahar."
-    j "The \"pirate\" we knew was once a great lawyer..."
-    j "Cantoire wanted InSyde in the dirt, and used cheap tricks to do it."
-    j "The train heist wasn't Mr. Sydell's fault, but the lawyers didn't care - they needed to make an example out of InSyde."
-    j "They blackmailed a kid to hack Sydell's computers and plant information."
+    js "That lawyer was Shahar."
+    js "The \"pirate\" we knew was once a great lawyer..."
+    js "Cantoire wanted InSyde in the dirt, and used cheap tricks to do it."
+    js "The train heist wasn't Mr. Sydell's fault, but the lawyers didn't care - they needed to make an example out of InSyde."
+    js "They blackmailed a kid to hack Sydell's computers and plant information."
     hide ch5evshahar
     show ch5evsid with dissolve:
         ycenter .5
-    j "Which, as we know now, is the kid you pushed out a window."
-    j "Of course, Stella's team was full of monsters."
-    j "And Shahar, well, he had more morals than the Cantoire legal team did."
-    j "Perhaps weary Shahar would confess, or just as an extra precaution..."
+    js "Which, as we know now, is the kid you pushed out a window."
+    js "Of course, Stella's team was full of monsters."
+    js "And Shahar, well, he had more morals than the Cantoire legal team did."
+    js "Perhaps weary Shahar would confess, or just as an extra precaution..."
     hide ch5evsid with dissolve
     show ch5evdracula:
         ycenter .5
     with dissolve
-    j "They hired Ivan to lobotomize Shahar."
-    j "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
-    j "My father's last hope for recovering his life's work was to speak to Shahar."
-    j "And that hope was taken away by Ivan."
-    j "When he was coerced into making the brain chips... he was remorseful."
-    j "I'll give him credit for that."
-    j "But it didn't change what he did."
+    js "They hired Ivan to lobotomize Shahar."
+    js "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
+    js "My father's last hope for recovering his life's work was to speak to Shahar."
+    js "And that hope was taken away by Ivan."
+    js "When he was coerced into making the brain chips... he was remorseful."
+    js "I'll give him credit for that."
+    js "But it didn't change what he did."
     hide ch5evdracula with dissolve
-    j "With the lawsuit, InSyde was finished."
-    j "His business in shambles, my dad turned to drugs."
+    js "With the lawsuit, InSyde was finished."
+    js "His business in shambles, my dad turned to hard drugs."
     show ch5evsam with dissolve:
         ycenter .5
-    j "As you know, that's where Sam came in."
-    j "Sam sold him experimental drugs to make a quick profit, and Sydell didn't care."
-    j "By Sam's own admission, the drugs were not safe, and probably ruined dad's mental state."
+    js "As you know, that's where Sam came in."
+    js "Before the lawsuit, my dad was getting weaker drugs from Sam."
+    js "But after the lawsuit..."
+    js "Sam sold him experimental drugs to make a quick profit, and Sydell didn't care."
+    js "By Sam's own admission, the drugs were not safe, and probably ruined dad's mental state."
     hide ch5evsam with dissolve
-    j "People can recover from drug addiction, though."
-    j "But it got worse."
+    js "People can recover from drug addiction, though."
+    js "But it got worse."
     show ch5evfreddy:
         ycenter .5
     with dissolve
-    j "This is where Gerald Ogden comes in."
-    j "As Sam mentioned, Gerald Ogden is the kingpin of a drug empire."
-    j "My dad's drug addiction led to me protesting against Ogden being found innocent in an unrelated case."
-    j "He decided to make an example out of me and the other protesters."
+    js "This is where Gerald Ogden comes in."
+    js "As Sam mentioned, Gerald Ogden is the kingpin of a drug empire."
+    js "My dad's drug addiction led to me protesting against Ogden being found innocent in an unrelated case."
+    js "Since my arrest for protesting his trial was in the news, he decided to make an example out of me."
     show ch5evcatherine with dissolve:
         ycenter .5
-    j "He told Catherine about a day when the house would be empty, so she could rob it."
-    j "Catherine was just making some easy money, but Gerald was using her to send a message."
-    j "\"You try to oppose me, I'll attack you in your home.\""
-    j "Losing material possessions, whatever, almost all of them were replaceable."
-    j "But the peace of mind? Knowing that he, or his wife and child, could be attacked by gangsters at any moment?"
-    j "Between that and the drugs, dad became paranoid."
-    j "He thought he was going to die soon. So he decided to take things into his own hands."
+    js "He told Catherine about a day when the house would be empty, so she could rob it."
+    js "Catherine was just making some easy money, but Gerald was using her to send a message."
+    js "\"You try to oppose me, I'll attack you in your home.\""
+    js "Losing material possessions, whatever, almost all of them were replaceable."
+    js "But the peace of mind? Knowing that he, or his wife and child, could be attacked by gangsters at any moment?"
+    js "Between that and the drugs, dad became paranoid."
+    js "He thought he was going to die soon. So he decided to take things into his own hands."
     hide ch5evfreddy
     hide ch5evcatherine
     with dissolve
-    j "He figured if he was going to die, he'd try to kill the person who he felt was responsible for all this before he did."
+    js "He figured if he was going to die, he'd try to kill the person who he felt was responsible for all this before he did."
     show ch5evdan with dissolve:
         ycenter .5
-    j "He ordered Dan to kill Stella in a fit of madness."
-    j "As you guessed, this backfired."
-    j "Stella's team caught him, and got him to kill dad himself."
-    j "And worst of all, Dan took the pathetic way out."
-    j "Fearing Stella's team, he turned himself in to the police, so that he could be protected by them."
-    j "He got off with a short sentence, because he killed my dad under duress from Stella's people."
-    j "And so, just like everyone else in this game, he got to walk away without any consequences."
+    js "He ordered Dan to kill Stella in a fit of madness."
+    js "As you guessed, this backfired."
+    js "Stella's team caught him, and got him to kill dad himself."
+    js "And worst of all, Dan took the pathetic way out."
+    js "Fearing Stella's team, he turned himself in to the police, so that he could be protected by them."
+    js "And so, just like everyone else in this game, he got to walk away without any consequences."
     hide ch5evdan with dissolve
-    j "So Bert, still think \"sorry\" is going to cut it?"
-    j "Knowing how eleven people each irreparably ruined my life and got to walk away..."
-    j "You think I'll decide not to activate that chip in your brain?"
+    js "So Bert, still think \"sorry\" is going to cut it?"
+    js "Knowing how eleven people each irreparably ruined my life and got to walk away..."
+    js "You think I'll decide not to activate that chip in your brain?"
     b "Jenny, I-"
-    j "No Bert. This will be the last thing I see."
-    j "Your face, cold and emotionless, just like the rest of theirs."
-    j "Maybe, seeing that will finally give me some peace before I move on."
-    j "And if not, at least I'll know justice was finally served."
-    j "Goodbye Bert."
+    js "No Bert. This will be the last thing I see."
+    js "Your face, cold and emotionless, just like the rest of theirs."
+    js "Maybe, seeing that will finally give me some peace before I move on."
+    js "And if not, at least I'll know justice was finally served."
+    js "Goodbye Bert."
     b "Jenny, no!{p=0.5}{nw}"
     scene black
     hide screen status_screen
@@ -2386,9 +2390,7 @@ label pentsidArun:
     pause 1.0
     scene black with dissolve
     pause 1.0
-    bi "..."
-    bi "...No, it can't be Sid."
-    bi "Which means, it has to be..."
+    blank "Let's try that again..."
 
 label pentjennyArun:
     show bg reflecting

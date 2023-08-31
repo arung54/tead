@@ -16,8 +16,9 @@ label kaisAsk1:
     $ statusnt("Front Car", "dan", ch = 1, sun = 1)
     show kaiser ind with dissolve
     k "..."
+    ni "Should I spend time with Kaiser?"
     menu:
-        "Spend time with Kaiser?":
+        "Spend time with Kaiser":
             k "Oh? Did you have something to say, Dan?"
             jump kaisHang
         "Maybe later":
@@ -75,7 +76,9 @@ label kaisHang:
             hide kaiser ind with dissolve
             ni "\"{i}It's been a pleasure?{/i}\" Is that a dash of personality I hear?!"
             ni "Maybe we did bond, a little bit."
-            scene black with fade
+            hide screen status_screen
+            scene black
+            with fade
 
     $fte_kais += 1
     $ persistent.fte_kais = max(persistent.fte_kais, fte_kais+1)

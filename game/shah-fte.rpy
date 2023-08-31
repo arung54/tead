@@ -16,9 +16,9 @@ label shahAsk1:
     show shahar ind with dissolve
     h "Land ho!"
     h "Wait, no, that's just a mirage..."
-    blank "Should I talk to Shahar?"
+    ni "Should I talk to Shahar?"
     menu:
-        "Spend time with Shahar?":
+        "Spend time with Shahar":
             h "Arr laddy, you've made a good choice!"
             ni "...have I?"
             call shahHang
@@ -76,12 +76,12 @@ label shahAsk5:
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
-    show shahar mad at inwindow behind hospwindowoverlay
-    h "Aye matey, that meal did something to my stomach it did."
+    show shahar ind at inwindow behind hospwindowoverlay
+    h "Aye matey, that meal really brought me back it did."
     bi "Should I talk to Shahar?"
     menu:
         "Spend time with Shahar":
-            h "Aye, anything to distract me from the onset of scurvy."
+            h "I feel even more like I'm back with me old crew."
             call shahHang
         "Maybe later":
             hide shahar with dissolve
@@ -119,7 +119,7 @@ label shahAsk7:
 
 label shahHang:
     if fte_shah >= 3:
-        b "Hm, on second thought, I've talked to Shahar plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Shahar plenty... I should talk to someone else."
         hide shahar with dissolve
         return
     #Dan FTE 1
@@ -168,7 +168,9 @@ label shahHang:
         n "That's all I'm saying."
         h "There's no playing when ye live a deadly life like I."
         h "...Unless there's rum to be had, then there's plenty of playing."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "Without a word I stormed off."
         ni "I understand Shahar better now at least."
         ni "Understand he's a lunatic, that is."
@@ -178,7 +180,7 @@ label shahHang:
         h "Ahoy laddy! What can I do fer ye?"
         b "Hey Shahar. I guess I wanted to know more about you and your life."
         h "Aye, anything in particular?"
-        b "What's it like living on a ship"
+        b "What's it like living on a ship?"
         h "Tumultuous lad. The ocean, she's not very careful."
         h "But I love her for that. Tough love, ye savvy?"
         h "Meals are hit or miss. Civvies, they eat every day, three meals a day."
@@ -213,7 +215,9 @@ label shahHang:
         h "Why don't we go try to find some rum right now and spar!"
         b "Uh... I think I'll pass."
         h "C'mon lad, ye gotta train if ye don't want to be shark bait!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         b "After what seemed like hours, I managed to talk him out of fighting me drunk."
         b "I can't claim I understand Shahar better, but I think I at least like him more now."
 
@@ -260,7 +264,9 @@ label shahHang:
         h "Lad, everything I'm telling you, it's what I truly remember and believe."
         b "Got it. I'll trust you then. Thanks for telling me about it."
         h "Aye. Appreciate the sentiment, mate."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         b "I got to know Shahar better, but I think it just made more sorry for him."
 
     #Bert FTE 3
@@ -301,7 +307,9 @@ label shahHang:
         h "In return, if we get out, ye can be my first mate!"
         b "Gonna be honest, I don't think I'm meant for life on the sea."
         b "But the offer is appreciated."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "I felt like I finally understood Shahar, at least a little bit."
         bi "I hoped I could keep my promise to help him recover his memories."
 

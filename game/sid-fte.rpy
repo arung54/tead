@@ -183,6 +183,7 @@ label showSidHappyFTE:
         show sid happy at inwindow behind hospwindowoverlay2
     else:
         show sid happy
+    return
 
 label showSidSmileFTE:
     if ftecounter == 5:
@@ -191,10 +192,11 @@ label showSidSmileFTE:
         show sid smile at inwindow behind hospwindowoverlay2
     else:
         show sid smile
+    return
 
 label sidHang:
     if fte_sid >= 3:
-        b "Hm, on second thought, I've talked to Sid plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Sid plenty... I should talk to someone else."
         hide sid with dissolve
         return
 
@@ -245,7 +247,9 @@ label sidHang:
         hide sid ind with moveoutright
         ni "I don't have many friends here, and that's okay."
         ni "I'm glad I can be a positive influence on Sid."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
     if fte_sid == 0:
@@ -279,7 +283,9 @@ label sidHang:
         i "The Game Master has no idea who he's up against!"
         i "I'm not just fighting for me, I'm fighting for my family!"
         i "I’m going to give it my all to get out of here, and then keep giving it my all!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Sid ran off in a hurry."
         bi "He sure is ambitious."
         bi "There's definitely more to him than the \"little punk\" personality he puts on."
@@ -296,7 +302,6 @@ label sidHang:
         i "All that nerdy stuff! You’re a nerd, right?"
         bi "I’ll try to take that as a compliment..."
         b "Sure, let’s do it."
-        scene black with dissolve
         blank "They spent a long time learning about pre-calculus."
         i "I think I’m starting to get it."
         i "To derive the expression, I slash the exponents and then steal the last term."
@@ -319,7 +324,9 @@ label sidHang:
         i "Next time you see me, I’ll be like Albert Einstein!"
         hide sid with moveoutleft
         bi "...He ran off, but I'm not exactly sure where to."
-        scene blank with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Thinking about my conversation with Sid some more..."
         bi "I'm worried I might cause him to gamble on the stock market in a few years."
         bi "It's a good thing there's no internet here..."
@@ -379,7 +386,9 @@ label sidHang:
         i "But that doesn't matter, because I'm going to grow up and be the biggest punk of them all!"
         i "My family will walk around like they're cool kids on a schoolyard!"
         i "And it'll all be because of the ass I kick when I get out of here!"
-        scene blank with dissolve
+        hide screen status_screen
+        scene black
+        with fade
         bi "We chatted some more about Sid's plans for world domination."
         bi "In a place where it's easy to give up hope, it's nice to have someone like Sid to remind us to be ambitious."
 

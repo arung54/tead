@@ -120,7 +120,7 @@ label dracAsk7:
 
 label dracHang:
     if fte_drac >= 3:
-        b "Hm, on second thought, I've talked to Dracula plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Dracula plenty... I should talk to someone else."
         hide drac with dissolve
         return
     #Dan FTE 1
@@ -163,7 +163,9 @@ label dracHang:
         d "Let's brainstorm escape plans. That seems to be the most prudent use of time."
         n "Sheesh, was just trying to get to know you better."
         d "If we both make it out alive, we will have plenty of time for that."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "Guess Dracula and I just need to agree to coexist peacefully..."
         ni "Or maybe just not talk to each other."
 
@@ -187,7 +189,7 @@ label dracHang:
        d "Well, it's easy to beat inflation if you invest in the proper assets."
        d "There are low-risk assets that can beat inflation year-after-year."
        d "The bitter reality is inflation is a tax for being too poor to have savings."
-       d "Plus, I save 10% of my income as everyone should, since I've lived for centuries..."
+       d "Plus, I save 10\% of my income as everyone should, and since I've lived for centuries..."
        d "It's as if I spent decades saving all my income with no living expenses."
        d "Even with a modest six-figure job, that easily makes me a millionaire."
        b "...{i}Modest{/i} six-figure job?"
@@ -217,7 +219,9 @@ label dracHang:
        d "It's a new experience for me."
        b "I see... I'll think about it and get back to you."
        d "Very well. Good chat Bert."
-       scene black with fade
+       hide screen status_screen
+       scene black
+       with fade
        bi "Dracula didn't seem to think that conversation was a waste, and was surprisingly open."
        bi "Maybe he feels like he can confide in me now?."
 
@@ -274,7 +278,9 @@ label dracHang:
        d "I had promised someone I would speak with them earlier, I should attend to that."
        b "Oh, who?"
        d "That's none of your business, I'm afraid. Goodbye Bert."
-       scene black with fade
+       hide screen status_screen
+       scene black
+       with fade
        bi "Was that Dracula breaking character?"
        bi "I'm not sure, but I might be making progress..."
 
@@ -318,6 +324,9 @@ label dracHang:
        d "A fabrication, even a red herring."
        d "With that, I bid you adieu Bert. I appreciated the conversational stimulation while it lasted."
        hide drac with dissolve
+       hide screen status_screen
+       scene black
+       with fade
        b "..."
        bi "Well, ultimately I failed at my goal."
        bi "But I guess, if I were going to pretend to be a vampire..."

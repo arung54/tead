@@ -179,7 +179,7 @@ screen mansionTrial(pers1, statement1, ag1, pers2, statement2, ag2, pers3, state
         idle "evidenceicon.png" at evizoom
         xpos 0.398
         yalign 0.0225
-        action [Show("mansion_evidence", transition=Dissolve(0.3))]
+        action [Show("mans_evidence", transition=Dissolve(0.3))]
     if agree == 1:
         if corrS == statement and corrE == -1:
             imagebutton:

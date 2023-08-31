@@ -27,7 +27,9 @@ label credits:
     f "I'm gunna watch some frog videos on my tablet."
     f "Oh yeah - one more thing!"
     f "Thanks for playing TEAD!"
-    hide frog with moveoutleft
+    hide creditscroll
+    hide frog
+    with dissolve
     scene black with dissolve
     camera at parallax
 
@@ -46,4 +48,4 @@ label teadcomplete:
 
     $ persistent.completedgame = True
 
-    return
+    $ MainMenu(confirm=False)()

@@ -930,7 +930,7 @@ label passwording:
             if not password:
                 $ password = "ERROR"
             play sfx "<from 0 to 1>audio/beep.mp3" volume .5
-            ni "I don't think the password is '[password]'..."
+            ni "The password wasn't '[password]'..."
         menu:
             ni "Maybe I should try again..."
             "It can't hurt...":
@@ -1368,8 +1368,8 @@ label testft:
     tut "If you are not interested in talking to anyone, you can use the skip icon in the top-right to skip the free time event."
     tut "For the first free time segment, move to the front car and talk to Bert."
     tut "For this segment only, the skip function will be disabled."
-
-    call screen midCar with fade
+    hide screen showchibis
+    call screen midCar with dissolve
     # show stella ind with dissolve
     # t "Oh? So you've got nobody better to chat with?"
     # bt "Well, we should get to know each other."
@@ -1406,6 +1406,7 @@ label postFT0:
     hide freetime with dissolve
     tut "For this and all future free time segments, you will have the luxury of talking to anyone, or skipping."
     $ftecounter = 1
+    hide screen showchibis
     call screen midCar with dissolve
 label postFT1:
     scene black with fade
@@ -1852,7 +1853,7 @@ label midcar5:
     show sepia:
         alpha .5
     with dissolve
-    scr "Their endings are deserved."
+    scr "Their ends are deserved."
     hide start2
     hide sepia
     with dissolve
@@ -1869,8 +1870,12 @@ label midcar5:
     ni "Everything's... dark."
     n "S... Sid?"
 label midcar6:
-    scene black with fade
+    hide screen showchibis
+    hide screen status_screen
+    scene black
+    with fade
     $ statusnt("???", "bert", ch = 1, sun = 4)
+    with dissolve
     $dan = False
     $mood = "sad"
     $noside = True
@@ -1989,7 +1994,7 @@ label midcar6:
         xcenter .25
     t "The rest of us should go to the front car, together."
     b "Agreed."
-    scene black with fade
+    show black with dissolve
     $noside = True
     blank "The four of them - Bert, Stella, Dracula, and Jenny - made their way to the front car."
     $noside = False
@@ -2052,7 +2057,7 @@ label midcar6:
     d "He's right, there's no way they slept through that noise."
     d "As well, it sounded like it came from the back car."
     b "We have to check on them."
-    scene black with fade
+    scene black with dissolve
     stop music fadeout 1.0
     $noside = True
     blank "The eight of them ran to the bar car as fast as they could."
@@ -2284,7 +2289,7 @@ label midcar6:
 
 label preinvest:
     stop music fadeout 1.0
-    scene black with fade
+    scene black with dissolve
     blank "Bert made his way to the bar car."
     scene bg notrainmid at bg
     $ showchibint("catherine", "freddy", "jenny", "stella", "dracula")
@@ -2317,7 +2322,9 @@ label preinvest:
     tut "You can use the Evidence Folder button in the top right to review evidence you've collected,"
     tut "and once you've collected all the evidence in a room, you'll be alerted."
     #tut "If you need to review this information, it is available via the menu."
-    call screen midCarInv with dissolve
+    hide screen showchibis
+    call screen midCarInv
+    with dissolve
 
 ################################################################################
 ################################################################################      JULIAN TRIAL STARTING!!! WOOT WOOT LEGO

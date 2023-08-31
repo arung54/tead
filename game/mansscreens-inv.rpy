@@ -528,7 +528,7 @@ screen hallwayInv():
 
     add "bg mansionhall.png"
     add "status.png"
-    add Text("{b}Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
+    add Text("{b}Upstairs Hallway{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0
     add "sun3.png" xpos 1165 ypos 55 xanchor 0 yanchor 0
     add "bertchibi2.png" xpos 1225 ypos 55 xanchor 0 yanchor 0
@@ -676,9 +676,9 @@ screen masterBedroomInv():
         else:
             hotspot(916, 467, 173, 150) action [Hide("masterBedroomInv"), Jump("mansNightstand")] mouse 'ex' hovered tt.Action("Nightstand")
         if mans_extra[9]:
-            hotspot(972, 409, 45, 88) action [Hide("masterBedroomInv"), Jump("mansDrawers")] mouse 'q' hovered tt.Action("Master Bathroom")
+            hotspot(303, 163, 276, 298) action [Hide("masterBedroomInv"), Jump("mansDrawers")] mouse 'q' hovered tt.Action("Master Bathroom")
         else:
-            hotspot(972, 409, 45, 88) action [Hide("masterBedroomInv"), Jump("mansDrawers")] mouse 'ex' hovered tt.Action("Master Bathroom")
+            hotspot(303, 163, 276, 298) action [Hide("masterBedroomInv"), Jump("mansDrawers")] mouse 'ex' hovered tt.Action("Master Bathroom")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -853,13 +853,13 @@ screen bathroomInv():
         xpos 20
         ypos 20
         idle "shaharchibi.png" at chibizoom
-        action [Hide("kitchenInv"), Jump("mansShahar")]
+        action [Hide("bathroomInv"), Jump("mansShahar")]
 
     imagebutton:
         xpos 20
         ypos 70
         idle "jennychibi.png" at chibizoom
-        action [Hide("kitchenInv"), Jump("mansJenny")]
+        action [Hide("bathroomInv"), Jump("mansJenny")]
 
 label mansSink:
     scene bg mansionbr at bg
@@ -1046,7 +1046,7 @@ label mansJenny:
         bi "Maybe I should see what she's looking at?"
     else:
         j "Bert... do you suspect me?"
-        j "You trust me after all the things I pointed out right."
+        j "You trust me after all the things I pointed out right?"
         b "Jenny I..."
         b "You, Sam, and Shahar were the only ones to leave the party."
         b "I want to trust you but..."

@@ -1,36 +1,34 @@
 
 screen pentMap():
+    modal True
     imagemap:
-        if ftecounter == 11:
-            ground "ftemap11.png"
-        if ftecounter == 12:
-            ground "ftemap12.png"
+        ground "ftemap11.png"
         hotspot(249, 356, 381, 300):
             action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentDining", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
             hovered ShowTransient("mapPreview", img="pentmapoverlay4.png")
             unhovered Hide("mapPreview")
-        hotspot(629, 356, 288, 177):
-            action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentBedroom", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="pentmapoverlay1.png")
-            unhovered Hide("mapPreview")
-        hotspot(818, 510, 46, 40):
-            action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentBedroom", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="pentmapoverlay1.png")
-            unhovered Hide("mapPreview")
-        hotspot(914, 357, 267, 176):
-            action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentStudy", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="pentmapoverlay3.png")
-            unhovered Hide("mapPreview")
-        hotspot(786, 569, 169, 86):
-            action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentCellar", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="pentmapoverlay2.png")
-            unhovered Hide("mapPreview")
-        hotspot(819, 550, 45, 49):
-            action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentCellar", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
-            hovered ShowTransient("mapPreview", img="pentmapoverlay2.png")
-            unhovered Hide("mapPreview")
+        # hotspot(629, 356, 288, 177):
+        #     action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentBedroom", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
+        #     hovered ShowTransient("mapPreview", img="pentmapoverlay1.png")
+        #     unhovered Hide("mapPreview")
+        # hotspot(818, 510, 46, 40):
+        #     action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentBedroom", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
+        #     hovered ShowTransient("mapPreview", img="pentmapoverlay1.png")
+        #     unhovered Hide("mapPreview")
+        # hotspot(914, 357, 267, 176):
+        #     action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentStudy", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
+        #     hovered ShowTransient("mapPreview", img="pentmapoverlay3.png")
+        #     unhovered Hide("mapPreview")
+        # hotspot(786, 569, 169, 86):
+        #     action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentCellar", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
+        #     hovered ShowTransient("mapPreview", img="pentmapoverlay2.png")
+        #     unhovered Hide("mapPreview")
+        # hotspot(819, 550, 45, 49):
+        #     action [Hide("pentDining"), Hide("pentBedroom"), Hide("pentStudy"), Hide("pentCellar"), Show("pentCellar", transition=Dissolve(0.3)), Hide("pentMap"), Hide("mapPreview")]
+        #     hovered ShowTransient("mapPreview", img="pentmapoverlay2.png")
+        #     unhovered Hide("mapPreview")
     imagemap:
-        idle "trainmapoverlayleft.png"
+        ground "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("pentMap", transition=Dissolve(0.3)), Hide("mapPreview")]
 
 screen pentDining():

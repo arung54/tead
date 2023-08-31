@@ -145,7 +145,10 @@ screen bank_evidence():
 
         if currEvidence == 3:
             image "ev4 belt.png" xcenter 800 yalign 0.1
-            text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
+            if bank_extra[11]:
+                text "{size=-5}Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is. A whole elastic belt is long enough to reach from the table leg to the doorknob. When it's tied at both ends, it pulls on the door, but not with enough force to prevent you from opening it. Also, if the door is yanked when the belt is tied at both ends, the belt snaps." xcenter 800 yanchor 0.0 ypos 330
+            else:
+                text "Part of an elastic belt was found attached to a table leg in the break room. We don't know where the rest of the belt is." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
             image "ev4 shells.png" xcenter 800 yalign 0.1
@@ -165,7 +168,10 @@ screen bank_evidence():
 
         if currEvidence == 8:
             image "ev4 sid.png" xcenter 800 yalign 0.1
-            text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
+            if bank_extra[12]:
+                text "Sid pretended to sleep on the couch when he heard me yell. He went into the safe for a few minutes after he thought Jenny wouldn't see him, found it was mostly empty, then came to the break room afterwards." xcenter 800 yanchor 0.0 ypos 330
+            else:
+                text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev4 sign.png" xcenter 800 yalign 0.1
@@ -216,7 +222,7 @@ screen breakInv():
         xalign 1.0
         yalign 0.175
         idle "mapicon.png" at iconzoom
-        if bank_extra[0] and False not in bank_evidence[1:3]:
+        if bank_extra[0] and False not in bank_evidence[1:4]:
             action [Show("bankMapInv", transition=Dissolve(0.3))]
         else:
             action [Hide("breakInv"), Jump("bankStuck")]
@@ -259,7 +265,7 @@ label bankCorpse:
         bi "..."
         bi "Yeah, I've looked over this body three or four times now."
         bi "Maybe this is just a murder where the body doesn't have the answers."
-        if False not in bank_evidence[1:3] and not bank_extra[0]:
+        if False not in bank_evidence[1:4] and not bank_extra[0]:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
@@ -285,7 +291,7 @@ label bankDoor:
         pause 1
         hide newevidencefound with dissolve
         blank "Break Room Door was added to evidence."
-        if False not in bank_evidence[1:3] and not bank_extra[0]:
+        if False not in bank_evidence[1:4] and not bank_extra[0]:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
@@ -326,7 +332,7 @@ label bankGun:
         pause 1
         hide newevidencefound with dissolve
         blank "Gun and Shell was added to evidence."
-        if False not in bank_evidence[1:3] and not bank_extra[0]:
+        if False not in bank_evidence[1:4] and not bank_extra[0]:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
@@ -337,13 +343,13 @@ label bankBelt:
     scene bg bankbreak2 at bg
     $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
     if bank_evidence[3]:
-        bi "An elastic belt tied to the ___."
+        bi "An elastic belt tied to the table leg."
         bi "It probably came from a guard uniform."
         bi "But it's torn and this is just one piece... where is the rest?"
     else:
         bi "What is this?"
         bi "It looks like a belt of some sort."
-        bi "It's been tied pretty firmly around the ___."
+        bi "It's been tied pretty firmly around the table leg."
         bi "Hm... but the end of it has been torn off."
         bi "Where'd the other end go?"
         bi "I briefly looked around the room, but I couldn't find the rest of the belt."
@@ -353,7 +359,7 @@ label bankBelt:
         pause 1
         hide newevidencefound with dissolve
         blank "Torn Elastic Belt was added to evidence."
-        if False not in bank_evidence[1:3] and not bank_extra[0]:
+        if False not in bank_evidence[1:4] and not bank_extra[0]:
             bi "Okay, unless some low-quality office snacks were the murder weapon..."
             bi "Pretty sure that's everything important in this room."
             bi "Let's go find the others and start asking them some questions..."
@@ -587,7 +593,7 @@ label bankShells:
         pause 1
         hide newevidencefound with dissolve
         blank "Shells in the Lobby was added to evidence."
-        if False not in bank_evidence[4:7]:
+        if False not in bank_evidence[4:8]:
             bi "Okay, I've interrogated everyone."
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
@@ -651,8 +657,9 @@ label bankInvFreddy:
         show frog sad:
             xcenter .5
             linear 0.15 xcenter .25
-        show lauren ind with moveinright:
+        show lauren ind:
             xcenter .75
+        with moveinright
         l "Freddy, are you okay?"
         l "Is Bert being mean to you?"
         b "Oh, I just was asking Freddy to help the adults out!"
@@ -671,7 +678,7 @@ label bankInvFreddy:
         pause 1
         hide newevidencefound with dissolve
         blank "Freddy's Account was added to evidence."
-        if False not in bank_evidence[4:7]:
+        if False not in bank_evidence[4:8]:
             bi "Okay, I've interrogated everyone."
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
@@ -731,7 +738,7 @@ label bankInvLauren:
         l "No problem. I'm going to go back to making sure Freddy's ok..."
         hide lauren with dissolve
         bi "Hm... something strikes me as odd about what Lauren told me, but I can't quite tell what..."
-        if False not in bank_evidence[4:7]:
+        if False not in bank_evidence[4:8]:
             bi "Okay, I've interrogated everyone."
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
@@ -803,7 +810,7 @@ label bankInvJenny:
         hide jenny with dissolve
         bi "It's convenient that Jenny claims Sid was asleep when she passed him..."
         bi "Is she trying to make an alibi for herself using a sleeping witness?"
-        if False not in bank_evidence[4:7]:
+        if False not in bank_evidence[4:8]:
             bi "Okay, I've interrogated everyone."
             bi "I was in this room before the uniformed person ran in here..."
             bi "So besides the shells, I don't think there's too much of importance here."
@@ -988,13 +995,13 @@ screen lockerInv():
     imagemap:
         ground "bg banklocker.png"
         if bank_evidence[11]:
-            hotspot(767, 220, 512, 282) action [Hide("officeInv"), Jump("bankLockers")] mouse 'q' hovered tt.Action("Lockers")
+            hotspot(767, 220, 512, 282) action [Hide("lockerInv"), Jump("bankLockers")] mouse 'q' hovered tt.Action("Lockers")
         else:
-            hotspot(767, 220, 512, 282) action [Hide("officeInv"), Jump("bankLockers")] mouse 'ex' hovered tt.Action("Lockers")
+            hotspot(767, 220, 512, 282) action [Hide("lockerInv"), Jump("bankLockers")] mouse 'ex' hovered tt.Action("Lockers")
         if bank_extra[8]:
-            hotspot(182, 277, 252, 193) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'q' hovered tt.Action("Bathrooms")
+            hotspot(182, 277, 252, 193) action [Hide("lockerInv"), Jump("bankBathrooms")] mouse 'q' hovered tt.Action("Bathrooms")
         else:
-            hotspot(182, 277, 252, 193) action [Hide("officeInv"), Jump("bankBathrooms")] mouse 'ex' hovered tt.Action("Bathrooms")
+            hotspot(182, 277, 252, 193) action [Hide("lockerInv"), Jump("bankBathrooms")] mouse 'ex' hovered tt.Action("Bathrooms")
     if tt.value != "":
         frame:
             xalign 0.5
@@ -1129,7 +1136,6 @@ screen safeInv():
 label bankSafeCabinet:
     scene bg banksafe1 at bg
     $ statusnt("Safe", "bert", ch=4, sun=4)
-    with dissolve
     bi "Another filing cabinet."
     bi "Hopefully this one isn't full of papers that I have to read through."
     bi "If only Shahar was here... lawyers are good at reading through pages of boring text, right?"
@@ -1141,7 +1147,7 @@ label bankSafeCabinet:
     bi "Maybe there was money in here and someone took it?"
     bi "But then where is the money now? Unless it was like, ten dollars, it would be hard to hide."
     bi "I guess unless I find another clue related to this cabinet, best not to worry about it for now."
-    if not bank_extra[10] and False not in bank_extra[9:10]:
+    if not bank_extra[10] and False not in bank_evidence[9:11]:
         bi "Well, I wasn't wrong about the safe not having much to search."
         bi "Though, I'm wishing I found pretty much anything else in here..."
         bi "Evidence, a secret of the game..."
@@ -1184,7 +1190,7 @@ label bankBox:
         pause 1
         hide newevidencefound with dissolve
         blank "Ammunition was added to evidence."
-        if bank_extra[10] and False not in bank_extra[9:10]:
+        if bank_extra[10] and False not in bank_evidence[9:11]:
             bi "Well, I wasn't wrong about the safe not having much to search."
             bi "Though, I'm wishing I found pretty much anything else in here..."
             bi "Evidence, a secret of the game..."
@@ -1195,7 +1201,6 @@ label bankBox:
 label bankSign:
     scene bg banksafe1 at bg
     $ statusnt("Safe", "bert", ch=4, sun=4)
-    with dissolve
     if bank_evidence[9]:
         bi "The sign on the safe says you can't unlock it from the inside."
         bi "Jenny and I tested that and that's true."
@@ -1289,7 +1294,7 @@ label bankSign:
         pause 1
         hide newevidencefound with dissolve
         blank "The Safe Door was added to evidence."
-        if bank_extra[10] and False not in bank_extra[9:10]:
+        if bank_extra[10] and False not in bank_evidence[9:11]:
             bi "Well, I wasn't wrong about the safe not having much to search."
             bi "Though, I'm wishing I found pretty much anything else in here..."
             bi "Evidence, a secret of the game..."

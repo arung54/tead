@@ -81,7 +81,9 @@ label bertHang:
         n "No, I've moved on from that group. Just Dan is fine."
         b "Got it! Anyway, thanks for talking to me!"
         b "It'll only help us work together in the future!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
     if fte_bert == 0:
@@ -128,7 +130,7 @@ label bertHang:
         b "So all you're doing is dragging me down with you."
         $mood = "ind"
         n "...That's fair, I guess."
-        n "Earlier, you hesitated to say \"killed\."
+        n "Earlier, you hesitated to say \"killed.\""
         b "...You're not very good at pivoting topics, are you?"
         n "Like I said, not good at conversation."
         b "Yeah, I don't like the word killed."
@@ -139,7 +141,9 @@ label bertHang:
         n "..."
         n "I guess we should meet up with the others now."
         b "Sure."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "I guess I understand Bert better now. Not sure if we're closer, though."
 
     $fte_bert += 1

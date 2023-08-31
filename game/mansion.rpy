@@ -77,7 +77,7 @@ label mansionGo:
     zb "This isn't amateur hour, Danny boy."
     zb "You really think you, a nobody, could waltz in here to kill one of the most influential people on the planet?"
     zb "Punks like you show up looking to do her in at least once a week."
-    n "I don't any skin in the game, I was just hired to do this job."
+    n "I don't have any skin in the game, I was just hired to do this job."
     zb "Hired by that uh, what's his name? It was on the documents we got, whatever."
     zb "Seems like this is your first hit job, showing up here like this."
     n "..."
@@ -1010,7 +1010,7 @@ label mansiondos:
     $ statusnt("Upstairs Hallway", "bert", ch=2, sun=3)
     show jenny ind with dissolve
     j "Alright! So three basic bedrooms, and one master bedroom."
-    j "That leaves 2 more doors up here."
+    j "That leaves two more doors up here."
     j "First up is this closet door..."
     b "Let's see what's inside."
     bi "I tried to open the closet door. It was locked."
@@ -1055,7 +1055,7 @@ label mansion1:
         ycenter .5
     bi "I'm hopeful we can get everyone on the same page and keep everyone alive."
     bi "Especially with news of this party we're going to throw."
-    bi "Maybe It'll give us a chance to chat with people and learn more about our situation."
+    bi "Maybe it'll give us a chance to chat with people and learn more about our situation."
     hide pophearts
     show bg mansionbr at bg with fade
     bi "...Well, I'm done admiring a bathroom."
@@ -1404,7 +1404,7 @@ label mansion1:
     c "Alcohol can kill cats in small doses, and I expect Shahar and Stella might have left an open bottle around."
     bi "With that dark comment, she went to the kitchen."
     hide catherine with moveoutright
-    hide freddy with moveoutleft
+    hide frog with moveoutleft
     $showchibint()
     with dissolve
     $mood = "ind"
@@ -1418,7 +1418,8 @@ label mansion1:
     hide freetime with dissolve
     play music "audio/cobwebs.mp3" fadein 2.0
     tut "Since you are now playing as Bert, the number of times you've talked to each participant has been reset."
-    call screen dining with fade
+    hide screen showchibis
+    call screen dining with dissolve
 
 
 ### FREETIME 3 HERE ARUN FTE FREE TIME
@@ -2017,7 +2018,8 @@ label postFT2:
    #FREE TIME FTE ARUN 4
    #############
     play music "audio/cobwebs.mp3" fadein 2.0
-    call screen hallway with fade
+    hide screen showchibis
+    call screen hallway with dissolve
 
 
 label postFT3:
@@ -2130,8 +2132,9 @@ label postFT3:
     show frog ind:
         xcenter .5
         linear 0.15 xcenter .25
-    show lauren happy with moveinright:
+    show lauren happy:
         xcenter .75
+    with moveinright
     l "And I'm back."
     l "How are you two doing?"
     b "Oh, good, we were just making small talk."
@@ -2269,7 +2272,8 @@ label postFT3:
     hide freetime with dissolve
     play music "audio/cobwebs.mp3" fadein 2.0
     bi "I don't want to miss the food getting served, so I probably should stay in the dining room and kitchen."
-    call screen dining with fade
+    hide screen showchibis
+    call screen dining with dissolve
 
 
 
@@ -2404,8 +2408,9 @@ label postFT4:
     show lauren happy:
         xcenter .5
         linear 0.3 xcenter .75
-    show frog happy with moveinleft:
+    show frog happy:
         xcenter .25
+    with moveinleft
     l "Hey Freddy, how's the food?"
     f "It's so good! So many different types of cheese."
     f "I don't think I know all of their names, some are a bit long."
@@ -2511,7 +2516,7 @@ label postFT4:
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
         zoom .42
-        xcenter .85
+        xcenter .6
         ycenter .25
     h "Ahoy lad, is Stella gone?"
     b "Uh, yeah, were you not going to join her?"
@@ -2576,7 +2581,7 @@ label postFT4:
     j "The entree should be out soon."
     b "Ooh, what is the entree?"
     $mood = "happy"
-    j "Catherine and I made a Meatloaf and french onion soup!"
+    j "Catherine and I made a meatloaf and french onion soup!"
     b "A... a giant slab of meat?"
     b "I'm so in love."
     show jenny ind
@@ -2802,8 +2807,9 @@ label postFT4:
     i "Bert... help..."
     show sid ind:
         linear .15 xcenter .25
-    show lauren ind with moveinright:
+    show lauren ind:
         xcenter .75
+    with moveinright
     l "Sid, you okay?"
     play sfx "audio/poprain.mp3" volume .5
     show poprain with dissolve:
@@ -2888,7 +2894,7 @@ label mansion2:
     show stella dead at bg:
         zoom 1.0
         xcenter .37
-        ycenter .8
+        ycenter .9
     $ statusnt("Bathroom", "bert", ch=2, sun=3)
     $ showchibint("lauren", "sid")
     with Dissolve(2.0)
@@ -3118,6 +3124,7 @@ label mansPreInv:
     bi "Jenny, Sam, and Shahar."
     bi "I have to keep that in mind while investigating."
     b "It's go time."
+    hide screen showchibis
     call screen hallwayInv with dissolve
 
 
@@ -3133,10 +3140,9 @@ label trial2a:
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
         linear 0.15 xcenter .75
-
-    show catherine ind with moveinleft:
+    show catherine ind:
         xcenter .25
-
+    with moveinleft
     play sfx "audio/pophuh.mp3" volume .5
     show pophuh:
         zoom .75
@@ -3264,8 +3270,9 @@ label trial2d:
     show sid ind:
         xcenter .5
         linear 0.3 xcenter .25
-    show drac ind with moveinright:
+    show drac ind:
         xcenter .75
+    with moveinright
     d "Blood normally dries after about an hour or so of exposure."
     d "But it varies due to other factors."
     i "How do you know?"
@@ -3312,7 +3319,7 @@ label trial2e:
     j "Me?"
     s "Is there another Jenny here I could be talking about?"
     j "Why me? I swear I didn't do it."
-    s "You did leave around when Stella did to \"go grab batteries\""
+    s "You did leave around when Stella did to \"go grab batteries.\""
     s "And you could've taken the knife with you. Unless Catherine can attest to the knife being in the kitchen the whole time."
     hide sam with moveoutright
     show catherine ind with moveinright:
@@ -4120,7 +4127,7 @@ label trial2o:
     python:
         startMansionTrial("sid", "Sid: If the Game Master didn't choose Sam as a murderer, there's no reason for Sam to kill Stella. Unless Sam had a grudge against Stella, {color=#f00}but I don't think so.{color=#f00}", -1,
         "sid", "Sid: Kaiser made it sound like it was pretty clear he was chosen as murderer, so there's {color=#f00}no way Sam was confused about being the murderer.{/color}", -1,
-        "sid", "Sid: The only other possibility is that two people were chosen, but that {color=#f00} can't happen in this game.{/color}", -1,
+        "sid", "Sid: The only other possibility is that two people were chosen, but that {color=#f00}can't happen in this game.{/color}", -1,
         "sid", "Sid: So the fact that Sam tried to kill Stella means {color=#0BF}Sam must have been chosen as murderer{/color}.", 1,
         1, location, "trial2p")
 label trial2p:
@@ -4138,7 +4145,7 @@ label trial2p:
     $mood = "ind"
     b "Wait, remember the discussion we had on the first day here?"
     b "We said that the murderer was likely to have been in this mansion before."
-    b "We never figured {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
+    b "We never figured out {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
     b "Which means it's possible..."
     call popwowb
     b "Sam wasn't chosen as the murderer by the Game Master, but has been here before."
@@ -4368,7 +4375,8 @@ label trial2s:
     bi "I wasn't, but I promised Freddy I wouldn't say it was him so..."
     b "I just happened to overhear it while I was walking around earlier."
     show drac oh
-    d "A ribbeting-er, riveting excuse."
+    d "A ribbiting-er, riveting excuse."
+    bi "Oh. He must know."
     d "..."
     d "Fine, I'll entertain this line of thought. But no one's allowed to inquire further about what Bert mentioned."
     b "So much for everyone being an open book about their crimes, huh?"
@@ -4661,8 +4669,9 @@ label trial2x:
     i "That means it must be Freddy!"
     show sid ind:
         linear 0.15 xcenter .25
-    show frog sad with moveinbottom:
+    show frog sad:
         xcenter .75
+    with moveinbottom
     f "M-me? But I'm just a frog..."
     show lauren ind with moveinright:
         xcenter .6
@@ -4973,8 +4982,8 @@ label cathGivesInfo:
             $mood = "shock"
             c "Oh yeah, I burgled this mansion before while the owner was out."
             b "You did know Mr. Sydell?"
-            c "No, I never met the guy. A shady businessman I knew that Sydell was in court that day."
-            c "I waited around that day until his family left for other reasons and made my move."
+            c "No, I never met the guy. A shady businessman I knew told me that Sydell and his family would be gone that day."
+            c "I waited around that day until his family left and made my move."
             b "So... does that mean you lied to me earlier when I asked if you know who he was?"
             c "Yup! But c'mon, that's just one of many lies I told you, you won't hold that against me, right?"
             $mood = "ind"

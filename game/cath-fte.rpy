@@ -24,7 +24,7 @@ label cathAsk1:
 label cathAsk2:
     scene bg mansionkitchen
     $ statusnt("Kitchen", "bert", ch = 2, sun = 4)
-    show catherine nocat happy with dissolve
+    show catherine2 happy with dissolve
     c "Hey Bert, want to give me company while I look around the kitchen?"
     bi "Should I talk to Catherine?"
     menu:
@@ -38,7 +38,7 @@ label cathAsk2:
 label cathAsk3:
     scene bg mansionkitchen
     $ statusnt("Kitchen", "bert", ch = 2, sun = 1)
-    show catherine happy with dissolve
+    show catherine2 happy with dissolve
     c "Did I already add a spoonful of salt?"
     bi "Should I talk to Catherine?"
     menu:
@@ -52,7 +52,7 @@ label cathAsk3:
 label cathAsk4:
     scene bg mansionkitchen
     $ statusnt("Kitchen", "bert", ch = 2, sun = 2)
-    show catherine happy with dissolve
+    show catherine2 happy with dissolve
     c "Phew, all this cooking is making me sweat!"
     bi "Should I talk to Catherine?"
     menu:
@@ -65,7 +65,7 @@ label cathAsk4:
 
 label cathHang:
     if fte_cath >= 3:
-        b "Hm, on second thought, I've talked to Catherine plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Catherine plenty... I should talk to someone else."
         hide catherine with dissolve
         return
     if fte_cath == -1:
@@ -101,17 +101,19 @@ label cathHang:
         c "Maybe sometime I'll go through the whole thing with you."
         c "Anyway, this has been nice. I'm glad you chose to talk with us."
         n "M-me too."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "After a somewhat pleasant conversation, we returned to mingling with the others."
 
     if fte_cath == 0:
-        show catherine nocat happy
+        show catherine2 happy
         b "Hey Catherine, I was wondering..."
         b "Does Sesame get to ride around on your shoulder so freely outside of here?"
         c "Hm, I mean, normally if I went outside with him I would keep him in a carrier."
         c "And usually I'd only do that if I were taking him to the vet or on a trip with me."
         c "The outside world is dangerous for cats like him, hehe."
-        show catherine nocat
+        show catherine2
         c "It's been kind of rough for him since the game started, to be honest."
         c "He's super well-behaved and not lashing out, but..."
         c "Cats get super stressed out changes in environment."
@@ -122,7 +124,7 @@ label cathHang:
         c "Oh, he's stressed, I've just been uh, doing a good job hiding it from everyone."
         b "Hiding it?"
         c "Um... maybe let's talk about something more pleasant."
-        show catherine nocat happy
+        show catherine2 happy
         c "Are you interested in getting a cat Bert?"
         c "I work at a shelter so I could totally hook you up once we get out of here!"
         b "Oh, I mean, I like cats but I don't know if I'm ready for the lifestyle change."
@@ -137,23 +139,25 @@ label cathHang:
         c "Five years now!"
         c "That's part of why Sesame is so mellow, he's a medium-aged cat."
         c "At around two years old they start to chill out."
-        show catherine nocat
+        show catherine2
         c "One of the saddest parts of working at the shelter is the older cats."
         c "A lot of people only want to adopt kittens."
         c "But even the older cats at the shelter can have nice long lives ahead of them."
         c "And they're a lot lower energy, which means they're easier to take care of."
         c "It's hard seeing a cat stay there for weeks while others get adopted in a day..."
         b "That is sad..."
-        show catherine nocat happy
+        show catherine2 happy
         c "Which is why you're going to adopt a cat, right Bert?"
         b "Um... okay, I'm still leaning no, but I'll think about it."
         c "Nice! One point for Catherine!"
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Catherine and I chatted some more about cats."
         bi "I have to admit, she was starting to sell me on the idea of adopting one..."
 
     if fte_cath == 1:
-        show catherine nocat happy
+        show catherine2 happy
         c "Bert! Have you decided what kind of cat you're going to adopt?"
         b "Um... I haven't decided I'm going to adopt one yet."
         c "Nonsense! Everyone should have a cat."
@@ -170,14 +174,14 @@ label cathHang:
         c "So naturally, I have the most opportunities to get the points!"
         c "I have a twenty something year head-start on the rest of you, so don't feel bad about it."
         b "Isn't that... I dunno, kind of unfair?"
-        show catherine nocat
+        show catherine2
         c "What do you mean unfair?! It's not like I give myself points when I don't deserve them."
         c "{i}That{/i} would be unfair. Like having your high school's teacher as ref for the football game."
         b "But I mean, you got a head-start..."
         b "If someone got a head-start in a 100-meter dash, that would be unfair."
         c "Hm..."
         c "You raise a good point..."
-        show catherine nocat happy
+        show catherine2 happy
         c "Speaking of good points, that's another point for you Bert! You're at two now!"
         b "Thanks, at this rate, it'll only take me 1000 years to catch up to you..."
         c "Okay, I suppose the committee can look into more opportunities for points for people who aren't me."
@@ -193,27 +197,29 @@ label cathHang:
         c "Opt out?"
         b "Yeah, like, just not participate in the point system."
         b "Seems like I can't get that many points anyway."
-        show catherine nocat
+        show catherine2
         c "But... why wouldn't you want points?"
         c "That's no fun..."
         c "..."
-        show catherine nocat happy
+        show catherine2 happy
         c "Hm... okay Bert, the committee has decided opting out is a super-winning move, which gets you..."
         c "One billion points! More than anyone's ever heard of!"
         bi "Seems I found a way to win this game after all..."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Catherine and I participated in various activities to earn points."
         bi "If only I could cash these in for hints about this game..."
 
     if fte_cath == 2:
-        show catherine nocat happy
+        show catherine2 happy
         c "Bert! Come for more points, have you?"
         b "No, I think I have enough points for now."
         c "This is true... I finally understand the perspective of a low-point-haver now..."
         b "Well, I also wanted to ask you..."
         b "How did you meet Sesame?"
         c "Ah, great question!"
-        show catherine nocat
+        show catherine2
         c "Unfortunately, it has a bittersweet answer..."
         c "One night, while sleeping, I thought I heard something moving in my apartment."
         c "I got up and I saw a black cat, Sesame, in the middle of my living room."
@@ -242,13 +248,15 @@ label cathHang:
         c "Coming that close to someone was willing to use animals like tools..."
         c "It made me want to protect as many animals as I could."
         b "That's... pretty noble."
-        show catherine nocat happy
+        show catherine2 happy
         c "Hehe, glad you think so."
         c "Maybe even... worthy of a million points, right?"
         b "Pfff. Yeah, a trillion even."
         c "Trillion?! I'll have to double check with the committee on that one..."
         c "...But based on the members, I think they'll approve."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "I kept chatting with Catherine about her shelter work."
         bi "Knowing about her and Sesame's past changed my opinion of her."
         bi "Behind her goofy exterior, there's a strong-willed fighter in her."

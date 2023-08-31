@@ -133,7 +133,10 @@ screen kitchen():
             action [Hide("kitchen", transition = Dissolve(1.0)), Jump("jennAsk4")]
 
 screen dining():
-    add "bg mansiondining.png"
+    if ftecounter == 2:
+        add "bg nmansiondining.png"
+    else:
+        add "bg mansiondining.png"
     add "status.png"
     add Text("{b}Dining Room{/b}") xpos 1055 ypos 5 xanchor 0 yanchor 0
     add "ch2.png" xpos 1095 ypos 65 xanchor 0 yanchor 0

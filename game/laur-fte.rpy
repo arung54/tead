@@ -16,8 +16,9 @@ label laurAsk1:
     $ statusnt("Bar Car", "dan", ch = 1, sun = 1)
     show lauren ind with dissolve
     o "What's up Dan, wanted to chat?"
+    ni "Should I talk to Lauren?"
     menu:
-        "Spend time with Lauren?":
+        "Spend time with Lauren":
             o "Sure, not like anything else is happening."
             call laurHang
         "Maybe later":
@@ -74,7 +75,7 @@ label laurAsk5:
     scene bg hospkitchenwindow at bg
     show hospwindowoverlay
     $ statusnt("Kitchen", "bert", ch = 3, sun = 1)
-    show laurensad at inwindow behind hospwindowoverlay
+    show lauren ind at inwindow behind hospwindowoverlay
     l "Thanks for cooking. Doing it for this many people can't be easy."
     bi "Should I talk to Lauren?"
     menu:
@@ -168,7 +169,7 @@ label showLaurenHappyFTE:
 
 label laurHang:
     if fte_laur >= 3:
-        b "Hm, on second thought, I've talked to Lauren plenty... I should talk to someone else."
+        bi "Hm, on second thought, I've talked to Lauren plenty... I should talk to someone else."
         hide lauren with dissolve
         return
 
@@ -208,7 +209,9 @@ label laurHang:
         n "Uh, I think I'll regroup with the others now."
         o "Uh huh."
         ni "I left with no particular destination, just to give her space."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         ni "I know more about Lauren now, but I can't say that conversation was a net positive."
         ni "Maybe I'll try again later."
 
@@ -251,7 +254,9 @@ label laurHang:
         b "What does that mean?"
         o "I probably said more than I meant to. Sorry, another thing I don't really want to talk about with people I don't know well."
         b "That's totally fine, thanks for opening up as much as you did."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "On that note, we went to meet up with the others. I can feel Lauren and I slowly growing closer."
 
     #Bert FTE 2
@@ -295,7 +300,9 @@ label laurHang:
         b "Yeah, I can respect that."
         b "Least I can do after you opened up like that."
         o "Thanks, I honestly appreciate it a lot."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "Lauren told me a bit more about the club, then we returned to the others."
         bi "I think I understand Lauren much better now."
 
@@ -330,7 +337,9 @@ label laurHang:
         o "That's super cool!"
         o "And it seems like you also turned something born out of dark necessities into a positive hobby."
         o "So I guess that's one thing we have in common."
-        scene black with fade
+        hide screen status_screen
+        scene black
+        with fade
         bi "We talked for a bit about other hobbies we had."
         bi "I think I finally learned to talk to Lauren casually, we're much closer now."
 
