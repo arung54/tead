@@ -734,7 +734,7 @@ label traincloset:
     blank "Nothing was inside."
     bi "What?!"
     $mood = "shock"
-    call popwowb
+    call popwowb from _call_popwowb_116
     bi "I thought this closet was locked shut?"
     $mood = "ind"
     if not train_evidence3[2]:

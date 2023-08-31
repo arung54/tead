@@ -18,7 +18,7 @@ label sidAsk1:
     menu:
         "Spend time with Sid":
             i "Let's do it."
-            call sidHang from _call_sidHang
+            call sidHang
         "Maybe later":
             hide sid ind with dissolve
     call screen midCar with dissolve
@@ -33,7 +33,7 @@ label sidAsk2:
     menu:
         "Spend time with Sid":
             i "Yeah! Let's chat! I'm so well-rested and energetic!"
-            call sidHang from _call_sidHang_1
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen masterBedroom
@@ -48,7 +48,7 @@ label sidAsk3:
     menu:
         "Spend time with Sid":
             i "Okay, but we better not be late to the meal!"
-            call sidHang from _call_sidHang_2
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen masterBedroom
@@ -63,7 +63,7 @@ label sidAsk4:
     menu:
         "Spend time with Sid":
             i "Okay, but don't get mad if my tummy rumbles!"
-            call sidHang from _call_sidHang_3
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen dining
@@ -79,7 +79,7 @@ label sidAsk5:
     menu:
         "Spend time with Sid":
             i "I don't know if I want to talk to you after that meal... but fine."
-            call sidHang from _call_sidHang_4
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen hospKitchen
@@ -95,7 +95,7 @@ label sidAsk6:
     menu:
         "Spend time with Sid":
             i "Sure, I'll talk while chopping veggies."
-            call sidHang from _call_sidHang_5
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen patientcommons
@@ -110,7 +110,7 @@ label sidAsk8:
     menu:
         "Spend time with Sid":
             i "Okay, but only if you tell me your birthday! ...Or not, it's fine."
-            call sidHang from _call_sidHang_6
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen hall with dissolve
@@ -124,7 +124,7 @@ label sidAsk9:
     menu:
         "Spend time with Sid":
             i "Yeah, let's talk about our birthdays! ...Or something else."
-            call sidHang from _call_sidHang_7
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen lobby with dissolve
@@ -139,7 +139,7 @@ label sidAsk10:
     menu:
         "Spend time with Sid":
             i "I wonder if I can get Freddy to give me money once we're out of here..."
-            call sidHang from _call_sidHang_8
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen lobby with dissolve
@@ -153,7 +153,7 @@ label sidAsk11:
     menu:
         "Spend time with Sid":
             i "Sure, but we gotta keep searching."
-            call sidHang from _call_sidHang_9
+            call sidHang
         "Maybe later":
             hide sid with dissolve
     call screen pentDining with dissolve
@@ -279,7 +279,7 @@ label sidHang:
         i "But... I don't just want the best for me."
         i "I want the best for {i}us{/i}."
         i "For me, and for my family."
-        call showSidMadFTE from _call_showSidMadFTE
+        call showSidMadFTE
         i "The Game Master has no idea who he's up against!"
         i "I'm not just fighting for me, I'm fighting for my family!"
         i "I’m going to give it my all to get out of here, and then keep giving it my all!"
@@ -318,7 +318,7 @@ label sidHang:
         b "Oh, that's a different type of derivative."
         i "Oh..."
         b "...But, I bet a lot of those bankers did well in pre-calculus too!"
-        call showSidSmileFTE from _call_showSidSmileFTE
+        call showSidSmileFTE
         i "Oh, yeah, that's right!"
         i "I'm going to become a smart nerdy rich banker!"
         i "Next time you see me, I’ll be like Albert Einstein!"
@@ -362,14 +362,14 @@ label sidHang:
         b "Huh?"
         b "I mean... I'm not really sure how to answer that."
         b "Money is power, I don't know if there's much more to it."
-        call showSidMadFTE from _call_showSidMadFTE_1
+        call showSidMadFTE
         i "Grr... this is why I hate adults."
         i "At school, the kids who are cooler or punch harder are the rulers."
         i "But even if you're not one of those two..."
         i "A ragtag misfit like me can survive."
-        call showSidIndFTE from _call_showSidIndFTE
+        call showSidIndFTE
         i "...Not that I'm a kid."
-        call showSidMadFTE from _call_showSidMadFTE_2
+        call showSidMadFTE
         i "But adults are so different..."
         i "I thought they'd be more mature, but they're worse than kids."
         i "They're willing to exploit each other and ruin lives for their own greed!"
@@ -380,9 +380,9 @@ label sidHang:
         b "But if someone's mean to you as a kid, you won't forget for the rest of your life."
         b "Humans are just... wired to focus on negative things, I guess."
         i "Hm..."
-        call showSidIndFTE from _call_showSidIndFTE_1
+        call showSidIndFTE
         i "You may be right... but I still think all adults are punks."
-        call showSidHappyFTE from _call_showSidHappyFTE
+        call showSidHappyFTE
         i "But that doesn't matter, because I'm going to grow up and be the biggest punk of them all!"
         i "My family will walk around like they're cool kids on a schoolyard!"
         i "And it'll all be because of the ass I kick when I get out of here!"

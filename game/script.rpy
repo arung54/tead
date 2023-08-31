@@ -85,6 +85,9 @@ define catherinesep = Character("catherinesep")
 ############################################################################# LIVE2D DEFINES ##################
 init python:
     config.keymap['game_menu'].remove('mouseup_3')
+    config.skipping = False
+    _skipping = False
+    config.rollback_enabled = False
 
 init python:
     # Define function to open the menu
@@ -413,7 +416,7 @@ init python:
         mood = "happy"
         cat = False
 init python:
-    config.developer = True
+    config.developer = False
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False

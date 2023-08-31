@@ -20,7 +20,7 @@ label jennAsk1:
     menu:
         "Spend time with Jenny":
             j "Sure!"
-            call jennHang from _call_jennHang
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen midCar with dissolve
@@ -35,7 +35,7 @@ label jennAsk2:
     menu:
         "Spend time with Jenny":
             j "Sure, let's chat!"
-            call jennHang from _call_jennHang_1
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen hallway with dissolve
@@ -50,7 +50,7 @@ label jennAsk3:
     menu:
         "Spend time with Jenny":
             j "Sure, I'd love some company!"
-            call jennHang from _call_jennHang_2
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen kitchen with dissolve
@@ -65,7 +65,7 @@ label jennAsk4:
     menu:
         "Spend time with Jenny":
             j "Okay, but we gotta finish talking before the first course is ready!"
-            call jennHang from _call_jennHang_3
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen kitchen with dissolve
@@ -80,7 +80,7 @@ label jennAsk5:
     menu:
         "Spend time with Jenny":
             j "Normally I sing while doing dishes, but talking is nice too!"
-            call jennHang from _call_jennHang_4
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen hospKitchen with dissolve
@@ -95,7 +95,7 @@ label jennAsk6:
     menu:
         "Spend time with Jenny":
             j "Sure!"
-            call jennHang from _call_jennHang_5
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen patientcommons with dissolve
@@ -110,7 +110,7 @@ label jennAsk7:
     menu:
         "Spend time with Jenny":
             j "Yeah! More friendship!"
-            call jennHang from _call_jennHang_6
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen patientcommons with dissolve
@@ -125,7 +125,7 @@ label jennAsk8:
     menu:
         "Spend time with Jenny":
             j "Well, I guess I still have energy to talk!"
-            call jennHang from _call_jennHang_7
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen lobby with dissolve
@@ -139,7 +139,7 @@ label jennAsk9:
     menu:
         "Spend time with Jenny":
             j "Okay, but gotta keep an eye on Freddy!"
-            call jennHang from _call_jennHang_8
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen lobby with dissolve
@@ -154,7 +154,7 @@ label jennAsk10:
     menu:
         "Spend time with Jenny":
             j "Yeah, I need to catch my breath anyway..."
-            call jennHang from _call_jennHang_9
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen hall with dissolve
@@ -168,7 +168,7 @@ label jennAsk11:
     menu:
         "Spend time with Jenny":
             j "Okay, let's chat away from the window please!"
-            call jennHang from _call_jennHang_10
+            call jennHang
         "Maybe later":
             hide jenny with dissolve
     call screen pentDining with dissolve
@@ -253,7 +253,7 @@ label jennHang:
 
     #Bert FTE 1
     if fte_jenn == 0:
-        call showJennyHappyFTE from _call_showJennyHappyFTE
+        call showJennyHappyFTE
         j "Bert! How are you doing?"
         b "Um... I mean, I guess as good as I can be doing in a situation like this."
         j "Ha! Good one."
@@ -309,7 +309,7 @@ label jennHang:
         bi "Does that mean she'll be a useful ally? Or someone to look out for? Hm..."
 
     if fte_jenn == 1:
-        call showJennyHappyFTE from _call_showJennyHappyFTE_1
+        call showJennyHappyFTE
         j "Hey Bert! I feel like I talk about myself a lot when we hang out..."
         j "I want to ask you something instead!"
         b "Oh. Sure, go for it!"
@@ -324,11 +324,11 @@ label jennHang:
         j "Well the contradiction is that you can't kill your grandfather and be born later."
         j "But if you killed him in a different universe, then there'd be no contradiction."
         b "Oh... I guess that's true."
-        call showJennyIndFTE from _call_showJennyIndFTE
+        call showJennyIndFTE
         j "Hm... there's a lot of killing in this paradox."
         j "Kind of suspicious to ask..."
         b "What? No, it's just one of the most famous ones!"
-        call showJennyHappyFTE from _call_showJennyHappyFTE_2
+        call showJennyHappyFTE
         j "Just kidding Bert! I don't think you're suspicious."
         j "If anything you're one of the most trustworthy guys here!"
         b "Oh... it was a joke."
@@ -336,11 +336,11 @@ label jennHang:
         b "Um... okay, what's your favorite paradox?"
         j "It's kind of a boring answer, but the Banach-Tarski paradox is so cool!"
         b "Oh... yeah, that one is cool, haha."
-        call showJennyIndFTE from _call_showJennyIndFTE_1
+        call showJennyIndFTE
         j "...You don't know what it is, do you?"
         b "No, that wasn't a very convincing lie, was it."
         j "Not really, no."
-        call showJennyHappyFTE from _call_showJennyHappyFTE_3
+        call showJennyHappyFTE
         j "It's okay Bert! Most people probably don't know about it."
         b "But... you said it's a boring answer."
         b "I assume it must be pretty well-known."
@@ -353,7 +353,7 @@ label jennHang:
         j "It would be cool if it worked in real life, but obviously it can't."
         bi "I could feel my eyes glazing over..."
         j "Ah, it's so refreshing to be able to talk about this stuff."
-        call showJennyIndFTE from _call_showJennyIndFTE_2
+        call showJennyIndFTE
         j "I miss this from the outside, having stimulating conversations with my peers."
         bi "I wouldn't say I'm her peer, seems like she's way more knowledgeable here than I am..."
         j "Ooh, but you've at least heard of Hilbert's hotel, right?"
@@ -366,13 +366,13 @@ label jennHang:
         bi "I didn't understand much, but I could tell it let her escape this place for a bit, so I was happy to listen."
 
     if fte_jenn == 2:
-        call showJennyHappyFTE from _call_showJennyHappyFTE_4
+        call showJennyHappyFTE
         j "Bert!"
         j "I wanted to tell you something."
         j "It's not about math this time, I swear!"
         b "Oh... yeah, I mean, always happy to talk."
         j "I just wanted to say... thanks for letting me talk to you about math and poker and stuff."
-        call showJennyIndFTE from _call_showJennyIndFTE_3
+        call showJennyIndFTE
         j "Even at college, it's rare that I get to talk about this stuff."
         j "I have a bit of a... difficult home life situation."
         j "Most of my free time goes towards trying to help my parents out with whatever I can."
@@ -381,7 +381,7 @@ label jennHang:
         j "Much less people on campus who are willing to talk about math instead of other things."
         j "And then, well, a lot of the people who were willing to listen to me were guys, who, well..."
         j "Were more interested in hitting on me than listening to me."
-        call showJennyHappyFTE from _call_showJennyHappyFTE_5
+        call showJennyHappyFTE
         j "So even though you pretended you knew what the Banach-Tarski paradox was..."
         j "The fact that you wanted me to feel like I wasn't boring you was really nice!"
         b "I mean... I don't feel like I really did much besides show you human decency."
@@ -389,7 +389,7 @@ label jennHang:
         j "But, even if that's all you did, it's something I don't get a lot of in my normal life."
         j "So thanks Bert."
         b "No need to thank me, haha..."
-        call showJennyIndFTE from _call_showJennyIndFTE_4
+        call showJennyIndFTE
         j "..."
         b "..."
         j "So, um..."

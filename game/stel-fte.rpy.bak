@@ -20,7 +20,7 @@ label stelAsk1:
     menu:
         "Spend time with Stella":
             t "Sure, you're cute enough."
-            call stelHang from _call_stelHang
+            call stelHang
         "Maybe later":
             hide stella ind with dissolve
     call screen midCar with dissolve
@@ -35,7 +35,7 @@ label stelAsk2:
     menu:
         "Spend time with Stella":
             t "Yeah, come here handsome."
-            call stelHang from _call_stelHang_1
+            call stelHang
         "Maybe later":
             hide stella with dissolve
     call screen kitchen with dissolve
@@ -50,7 +50,7 @@ label stelAsk3:
     menu:
         "Spend time with Stella":
             t "Ooh, my day just got better!"
-            call stelHang from _call_stelHang_2
+            call stelHang
         "Maybe later":
             hide stella with dissolve
     call screen dining with dissolve
@@ -65,7 +65,7 @@ label stelAsk4:
     menu:
         "Spend time with Stella":
             t "*hic* You know what they say, drunk conversation is the best chaser!"
-            call stelHang from _call_stelHang_3
+            call stelHang
         "Maybe later":
             hide stella with dissolve
     call screen dining with dissolve

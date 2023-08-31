@@ -445,7 +445,7 @@ label meetDracula:
     show drac ind with dissolve
     d "Hello. I'm Dracula."
     $mood = "shock"
-    call pophuhb from _call_pophuhb_25
+    call pophuhb
     n "...Like the vampire?"
     d "Yes."
     ni "...I don't know if I believe him."
@@ -509,7 +509,7 @@ label meetLauren:
             o "The sports I like are not so easy to go pro in, otherwise I would be doing that."
             n "Oh, what kinds of sports?"
             o "I'd... rather not get into that."
-            call pophuhb from _call_pophuhb_26
+            call pophuhb
             ni "?"
             jump laurenQuestions
 
@@ -660,7 +660,7 @@ label go: #Add silhouttes here?
     ni "Why am I being woken so early?"
     warden "Dan Scagnelli. You're being released."
     n "..."
-    call pophuhb from _call_pophuhb_27
+    call pophuhb
     n "What!?"
     warden "Your sentence ends today."
     ni "I... I have almost a whole decade left though?"
@@ -711,7 +711,7 @@ label go: #Add silhouttes here?
 #    show shadowyfigure scary:
 #        linear .3 xcenter .5
     $mood = "shock"
-    call popwowb from _call_popwowb_31
+    call popwowb
     ni "Wh-what's going on?"
     z "Dan... do you feel guilty?"
     n "Guilty?"
@@ -1144,7 +1144,7 @@ label postMeetings:
     $ showchibint("bert", "sam", "stella", "sid", "jenny", "catherine", "kaiser", "dracula", "lauren", "freddy", "shahar")
     with fade
     ni "..."
-    call pophuhb from _call_pophuhb_28
+    call pophuhb
     ni "What the hell is all this..."
     scr "A chip has been planted in each of your heads, capable of killing you instantly."
     scr "This chip will be used to resolve the outcome of the vote."
@@ -1154,7 +1154,7 @@ label postMeetings:
     scr "The chip will also be used to keep you unconscious as you are transported between locations."
     scr "As proof of this, you will soon be transported to the first location, to play the first round of the game."
     stop music fadeout 1.0
-    call popwowb from _call_popwowb_32
+    call popwowb
     $mood = "mad"
     ni "...what?"
     ni "How would we even know who to kill?"

@@ -1005,7 +1005,7 @@ label mansStella:
         j "Not where the blood has seeped into her suit, just outside that area."
         b "Uh... okay..."
         b "..."
-        call pophuhb
+        call pophuhb from _call_pophuhb_56
         b "Huh."
         b "It's... pretty damp."
         j "Right. But her suit's not stained where you just felt it!"

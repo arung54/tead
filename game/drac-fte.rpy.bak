@@ -20,7 +20,7 @@ label dracAsk1:
     menu:
         "Spend time with Dracula":
             d "Very well. Not as if I have other plans."
-            call dracHang from _call_dracHang
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen backCar with dissolve
@@ -35,7 +35,7 @@ label dracAsk2:
     menu:
         "Spend time with Dracula":
             d "Well, I suppose I could use some stimulation."
-            call dracHang from _call_dracHang_1
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen masterBedroom
@@ -50,7 +50,7 @@ label dracAsk3:
     menu:
         "Spend time with Dracula":
             d "I suppose conversation instead of blood will have to do."
-            call dracHang from _call_dracHang_2
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen masterBedroom
@@ -65,7 +65,7 @@ label dracAsk4:
     menu:
         "Spend time with Dracula":
             d "Even a string quartet would be a huge improvement."
-            call dracHang from _call_dracHang_3
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen dining
@@ -81,7 +81,7 @@ label dracAsk5:
     menu:
         "Spend time with Dracula":
             d "Sure, we can talk, anything besides eating more of that soup."
-            call dracHang from _call_dracHang_4
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen hospKitchen
@@ -97,7 +97,7 @@ label dracAsk6:
     menu:
         "Spend time with Dracula":
             d "Sure, I've finished investigating this side anyway."
-            call dracHang from _call_dracHang_5
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen patientcommons
@@ -113,7 +113,7 @@ label dracAsk7:
     menu:
         "Spend time with Dracula":
             d "Are you volunteering your flesh, Bert?"
-            call dracHang from _call_dracHang_6
+            call dracHang
         "Maybe later":
             hide drac with dissolve
     call screen patientcommons

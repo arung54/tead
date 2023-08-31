@@ -377,7 +377,7 @@ label Mansionuno:
         ycenter .5
     t "That being said, are you sure you aren't just trying to get on Bert's good side?"
     $mood = "shock"
-    call pophuhb from _call_pophuhb_44
+    call pophuhb
     bi "Suddenly, all eyes were either on me or Jenny."
     b "What?"
     hide pophearts
@@ -419,7 +419,7 @@ label Mansionuno:
     d "Well, one more thing."
     d "It seems that despite not being in a fast-moving train, escape is unlikely."
     d "All the windows in this room have been boarded with a metal sheet..."
-    call poptearb from _call_poptearb_49
+    call poptearb
     d "Even if they were not there, I have a feeling the chips in our brains would likely kill us if we escaped."
     d "And, given what happened to Kaiser, it would seem the chips are going to be hard to subvert."
     bi "It's true. I can't imagine we can just run from this situation."
@@ -474,7 +474,7 @@ label Mansionuno:
     j "There is that ominous portrait, though."
     bi "She pointed above the fireplace."
     bi "A middle-aged, ordinary-looking man dressed up quite nicely."
-    call pophuhb from _call_pophuhb_45
+    call pophuhb
     b "Wait... who is that?"
     j "No clue."
     b "It must be someone relevant, right?"
@@ -504,12 +504,12 @@ label mansiondos:
     $mood = "sad"
     b "Well uh..."
     bi "I'm pretty curious how she'll react to the whole, \"we're all criminals\" news."
-    call poptearb from _call_poptearb_50
+    call poptearb
     b "we've concluded everyone here's some type of uh, criminal, basically."
     b "Some people suggested we all admit to our past crimes, but that wasn't very well received."
     l "Ah, okay."
     l "Well, good news, the kitchen is rather well-stocked."
-    call pophuhb from _call_pophuhb_46
+    call pophuhb
     $mood = "shock"
     bi "....."
     bi "...is she not at all fazed by the fact that we're all criminals?"
@@ -563,7 +563,7 @@ label mansiondos:
     j "I'm... not old enough to drink yet."
     t "Who's gonna arrest you? The Game Master who's already broken twenty different laws?"
     $mood = "shock"
-    call poptearb from _call_poptearb_51
+    call poptearb
     t "Plus it'd be good for you and Bert to get to know each other with your inhibitions down."
     b "Alright, I think we've seen everything we need to see here."
     $mood = "ind"
@@ -599,7 +599,7 @@ label mansiondos:
     c "He's having fun with it already!"
     b "Wow, maybe Sesame can scratch his way out of here for us!"
     c "What? Don't be silly. That's completely unreasonable."
-    call poptearb from _call_poptearb_52
+    call poptearb
     bi "."
     c "There's also some simple tools and supplies in here."
     c "We've got a drill, a hammer and nails, a screwdriver and screws, a stepstool, and some batteries."
@@ -730,7 +730,7 @@ label mansiondos:
     j "Wahoo!"
     hide jenny with moveoutleft
     $mood = "sad"
-    call poptearb from _call_poptearb_53
+    call poptearb
     b "-barge in..."
     scene bg mansionmasterbedroom at bg with fade
     $ statusnt("Master Bedroom", "bert", ch=2, sun=2)
@@ -768,7 +768,7 @@ label mansiondos:
     d "We were discussing private affairs."
     d "You have secrets you're keeping about your crime, so surely you won't mind me keeping my own."
     s "Yeah, what the vampire said."
-    call poptearb from _call_poptearb_54
+    call poptearb
     b "Oh, yeah, of course..."
     $mood = "ind"
     d "And maybe you'd like to give us some privacy so we may continue speaking?"
@@ -840,7 +840,7 @@ label mansiondos:
         ycenter .25
         zoom .75
     j "Do the jokes everyone's making about us annoy you as much as they annoy me?"
-    call poptearb from _call_poptearb_55
+    call poptearb
     $mood = "sad"
     b "I don't get how people can be saying that kind of stuff while our lives are on the line."
     j "Okay, just wanted to make sure we were on the same page."
@@ -868,7 +868,7 @@ label mansiondos:
         "Yes.":
             hide scary with dissolve
             b "I agree, sharing our crimes could definitely be a detriment."
-            call popwowb from _call_popwowb_57
+            call popwowb
             b "But... maybe I could tell you mine?"
             j "Oh?"
             b "It might help move this all forward."
@@ -879,7 +879,7 @@ label mansiondos:
 
         "No.":
             hide scary with dissolve
-            call poptearb from _call_poptearb_56
+            call poptearb
             b "Yeah, you're right, we shouldn't talk about our pasts like that."
             bi "I shivered a bit at the thought of talking about it again."
             bi "It seems like Jenny saw me look a little shaken up."
@@ -909,7 +909,7 @@ label mansiondos:
     j "They had several eye witnesses for tons of different crimes."
     j "And then guess what happened?"
     hide popmad
-    call poptearb from _call_poptearb_57
+    call poptearb
     b "I'm... kinda scared to know."
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
@@ -968,7 +968,7 @@ label mansiondos:
     b "They didn't make it."
     show scary with dissolve:
         alpha .5
-    call poptearb from _call_poptearb_58
+    call poptearb
     bi "It's impossible not to relive that moment back in my brain 100 times now after saying it."
     bi "The impact, the fear, her scream..."
     bi "I can even picture the dress, and her purse hitting the windshield."
@@ -989,7 +989,7 @@ label mansiondos:
     b "Yeah, I'd appreciate that."
     b "..."
     j "..."
-    call poptearb from _call_poptearb_59
+    call poptearb
     b "Umm, there isn't much to explore in here..."
     play sfx "audio/popwow.mp3" volume .5
     show popwow:
@@ -1122,7 +1122,7 @@ label mansion1:
         xcenter .25
     l "Your libido isn't a valid reason to give you that room."
     $mood = "shock"
-    call poptearb from _call_poptearb_60
+    call poptearb
     t "Fine, the lovebirds should have it then?"
     $mood = "ind"
     b "You better not mean me and Jenny."
@@ -1491,7 +1491,7 @@ label postFT2:
     h "You can sleep when yer in Davy Jones' Locker! Aagagagagah!"
     t "If you really want to sleep, you can sneak into bed with one of duh girls upstairs..."
     t "Just don't squish the cat if you get in bed with Catherine."
-    call poptearb from _call_poptearb_61
+    call poptearb
     b "Why are you so obsessed with... me and romance right now."
     play sfx "audio/pophearts.mp3" volume .5
     show pophearts:
@@ -1521,7 +1521,7 @@ label postFT2:
     t "Well, I could probably retire now if I wanted."
     t "I have billions saved up already, my bloodline will be forever wealthy."
     $mood = "shock"
-    call popwowb from _call_popwowb_58
+    call popwowb
     b "Billions? With a B?"
     b "You're only a few years older than me..."
     t "Sorry kid, life is unfair. You should've figured that out when one percent of people own 40 percent of duh wealth."
@@ -1585,7 +1585,7 @@ label postFT2:
     hide popwow
     t "Don't know him that well, he was probably a footnote on a report I had to read or something."
     t "I hire lots of suits whose job it is to step on guys like him, I don't have time to keep up with all of them."
-    call popwowb from _call_popwowb_59
+    call popwowb
     t "But I think at at some point my company sunk his company into duh ground."
     t "I'm surprised he still had enough left over to keep paying duh taxes for a place like this."
     b "Your company bankrupted him and you couldn't even remember his name?"
@@ -1652,7 +1652,7 @@ label postFT2:
     t "Don't pirates drink a lot? This feels very uncharacteristic for one."
     h "Aye, I just... haven't been out to sea in a while."
     $mood = "ind"
-    call pophuhb from _call_pophuhb_47
+    call pophuhb
     b "Oh? Why's that?"
     h "I'd rather not talk about it laddy, you don't ask a man why he hasn't had a lover in a while."
     h "And the sea is my love."
@@ -1738,7 +1738,7 @@ label postFT2:
     t "Alright, let's steal something!"
     t "Woo!"
     hide stella with moveoutright
-    call poptearb from _call_poptearb_62
+    call poptearb
     blank "Thud."
     bi "...Stella took two steps and fell over."
     show stella drunk with moveinbottom:
@@ -1799,7 +1799,7 @@ label postFT2:
     $showchibint("sam")
     show sam ind with dissolve
     s "Didn't expect the noise out here to be you."
-    call poptearb from _call_poptearb_63
+    call poptearb
     b "Sorry, you probably heard Shahar yelling... they're not letting me sleep and are a bit hard to control."
     s "Think you can keep them quieter? Some of us are trying to sleep."
     b "Yeah, I'll try..."
@@ -1943,7 +1943,7 @@ label postFT2:
     d "Good morning, Bert."
     b "Morning."
     d "I must say, it was quite loud last night."
-    call poptearb from _call_poptearb_64
+    call poptearb
     b "Sorry, I can't really do much to control the drunkards."
     b "I did try to at least get them to sleep as early as I could..."
     d "I suppose it's not your fault if you tried."
@@ -1986,7 +1986,7 @@ label postFT2:
     #s "Eh, day drinking's not really my thing."
     j "Oh yeah, how was last night?"
     j "I heard some noise."
-    call poptearb from _call_poptearb_65
+    call poptearb
     b "They uh... tried to steal the sink knob from the bathroom."
     j "...Why?"
     b "Boredom, I guess?"
@@ -2057,7 +2057,7 @@ label postFT3:
     f "Oh, cool!"
     b "N-not that I wouldn't want to hang out with you normally."
     f "Huh?"
-    call poptearb from _call_poptearb_66
+    call poptearb
     b "Never mind."
     show frog happy
     f "Check out all these tricks Sesame can do!"
@@ -2086,7 +2086,7 @@ label postFT3:
     f "Uh... I really like frogs!"
     f "Is that a hobby?"
     f "I spend a lot of time just watching videos about then and learning new frog facts."
-    call pophuhb from _call_pophuhb_48
+    call pophuhb
     b "Are you in any clubs at school?"
     f "Clubs?"
     b "Yeah, like, things you do with other students for fun."
@@ -2207,7 +2207,7 @@ label postFT3:
         ycenter .275
         zoom .75
     j "You just want to be the first to get served, don't you."
-    call poptearb from _call_poptearb_67
+    call poptearb
     b "...maybe."
     b "Regardless, is everything going smoothly here?"
     hide poptear
@@ -2241,7 +2241,7 @@ label postFT3:
     s "Me, I'll be out in the living room soon."
     b "What did you make?"
     s "I made an ice cream cake, was about all I could manage with the ingredients we had."
-    call popwowb from _call_popwowb_60
+    call popwowb
     b "Still sounds pretty tasty!"
     s "Well, as much fun as baking is, drinking is a bit more fun."
     s "My cake's already in the freezer so I'm going to go out and mingle, I guess."
@@ -2288,7 +2288,7 @@ label postFT4:
         xcenter .75
     with dissolve
     $mood = "happy"
-    call popwowb from _call_popwowb_61
+    call popwowb
     c "First course is served! We have a charcuterie board with various crackers, cheeses, meats, and some fruit to start!"
     i "Huh... is this what fancy dinners are like?"
     c "Only part of it!"
@@ -2358,7 +2358,7 @@ label postFT4:
     b "Thanks, just needed something to do."
     s "Something to do? Ooo, in that case..."
     s "Maybe you wouldn't mind grabbing us a round of drinks from the kitchen?"
-    call poptearb from _call_poptearb_68
+    call poptearb
     b "...I get the message."
     d "Sorry Bert, nothing personal, but trust and time are limited commodities here."
     s "As are the drinks."
@@ -2394,7 +2394,7 @@ label postFT4:
     l "Every moment on the train we were fighting for our lives."
     l "We're still fighting for our lives here, but not as directly, if that makes sense."
     l "I think events like this party are overall helping our morale and make sure there's no more... action."
-    call poptearb from _call_poptearb_69
+    call poptearb
     b "That's true, but I worry we're giving up, or losing motivation to find a way out of this."
     l "Maybe it's motivation, maybe it's just that we're somewhere more relaxing."
     l "I wouldn't overthink it, not like Shahar and Stella are particularly helpful sober anyway."
@@ -2434,7 +2434,7 @@ label postFT4:
     b "The nibbles of pepper in the jack cheese."
     b "The slight saltiness of the cracker."
     l "...Are you sure you're okay?"
-    call popheartsb from _call_popheartsb
+    call popheartsb
     b "Sorry, I'm having a bit of a moment."
     b "It feels like ages since I've had real food."
     l "You know it's only been a few days since this whole game started, right?"
@@ -2444,7 +2444,7 @@ label postFT4:
     hide lauren
     hide frog
     with dissolve
-    call poptearb from _call_poptearb_70
+    call poptearb
     bi "...well, seems with my hunger pangs I've alienated everyone except Sid here."
     $showchibint("dracula", "freddy", "lauren", "sam", "shahar", "sid", "stella", "jenny")
     show jenny happy with moveinright
@@ -2540,7 +2540,7 @@ label postFT4:
     b "...Aren't you two drinking right now as well?"
     s "Yeah, you didn't get us one so I went to the kitchen and got us a round."
     b "I thought you wanted me to leave you alone, not actually get you a drink."
-    call poptearb from _call_poptearb_71
+    call poptearb
     s "Well yeah, but a drink would've been nice too."
     d "Regardless, I have basically infinite alcohol tolerance."
     d "Vampires' metabolism works differently than the relatively weak human metabolism."
@@ -2602,7 +2602,7 @@ label postFT4:
     h "Aye, Bert, I got this bottle of wine but I need help openin' it."
     h "I seem to have lost me corkscrew."
     h "Do you know if there's any screws I can use to uncork me a bottle?"
-    call poptearb from _call_poptearb_72
+    call poptearb
     bi "Are Catherine, Sid, and I the only ones who bothered checking the garage?"
     b "Screws?"
     h "Yes lad! All a corkscrew does is turn a screw into the cork and yank it out."
@@ -2626,7 +2626,7 @@ label postFT4:
     f "Shh! Don't let anyone see you hide back here with me!"
     b "I saw you poke your head out earlier, but I don't think anyone else did."
     $mood = "sad"
-    call poptearb from _call_poptearb_73
+    call poptearb
     f "My parents always said \"Children are best seen, not heard.\""
     f "But they lied about the seen part."
     f "At home my parents argued a lot and I would listen while hiding."
@@ -2642,7 +2642,7 @@ label postFT4:
     b "If you hear anything that might be useful, let me know."
     f "Well, I did hear one thing."
     f "I don't know how useful it is."
-    call pophuhb from _call_pophuhb_49
+    call pophuhb
     b "Oh?"
     f "Let's make sure no one is listening."
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar")
@@ -2818,13 +2818,13 @@ label postFT4:
     b "What's going on?"
     i "I don't know..."
     i "I might be... dying."
-    call popwowb from _call_popwowb_62
+    call popwowb
     b "Dying?!"
     i "Yeah... dying."
     i "Or..."
     b "Or what, Sid?!"
     i "Or I'm just really, really full."
-    call poptearb from _call_poptearb_74
+    call poptearb
     $mood = "sad"
     i "I ate so much bro..."
     i "I... I think I'm gonna vomit."
@@ -2909,7 +2909,7 @@ label mansion2:
     l "..."
     l "Another one so soon?"
     l "Was Dan not enough..."
-    call popwowb from _call_popwowb_63
+    call popwowb
     b "H-hold on, maybe she's still alive?"
     bi "I ran to Stella's side, trying to feel for a pulse."
     bi "I don't feel anything..."
@@ -3104,7 +3104,7 @@ label mansion2:
     hide scary with dissolve
     $mood = "ind"
     b "No."
-    call popwowb from _call_popwowb_64
+    call popwowb
     b "No, I can't let those thoughts win."
     b "Gotta distract myself from them somehow. The investigation is the perfect excuse."
     b "Have to make it to tomorrow even if I don't know what lies ahead."
@@ -3118,7 +3118,7 @@ label mansPreInv:
     $mood = "ind"
     bi "I should definitely check the bathroom at some point, but besides that... I'm not really sure where to go."
     bi "Also, who left the party that could have killed Stella?"
-    call pophuhb from _call_pophuhb_50
+    call pophuhb
     bi "Only three people."
     bi "They're the only ones who left the dining room or kitchen."
     bi "Jenny, Sam, and Shahar."
@@ -3345,7 +3345,7 @@ label trial2e:
     show shahar ind with moveinright:
         xcenter .75
     $mood = "ind"
-    call pophuhb from _call_pophuhb_51
+    call pophuhb
     h "Aye, I don't really follow what yer all discussin', but, I got a riddle for ye."
     hide jenny with moveoutleft
     show sam ind with moveinleft:
@@ -3444,7 +3444,7 @@ label trial2g:
     $statusnt("Dining Room", "bert", ch=2, sun=4)
     show sam ind
     with fade
-    call popwowb from _call_popwowb_65
+    call popwowb
     b "You might actually be wrong about that."
     b "Sam, we inspected the wound during the investigation."
     b "It looks like something was used to plug the wound after Stella was stabbed..."
@@ -3691,7 +3691,7 @@ label trial2i:
     with fade
     $mood = "shock"
     b "Wait, everyone quiet down."
-    call pophuhb from _call_pophuhb_52
+    call pophuhb
     b "Lauren, say that again?"
     l "The killer used the sheath as a mold."
     b "Hmm... it's a bit out there, I'll admit."
@@ -3742,7 +3742,7 @@ label trial2i:
     show drac ind with moveinleft:
         xcenter .25
     d "No need. There's a simple solution, really."
-    call pophuhb from _call_pophuhb_53
+    call pophuhb
     b "Hm?"
     d "Yes. One that can answer both of Jenny's questions."
     d "What the mold was filled it, and why we didn't find the makeshift knife during the investigation."
@@ -3966,7 +3966,7 @@ label trial2m:
     b "In the cake."
     b "You could've easily pushed the ice knife into the cake to hide it."
     h "Ay lad, wouldn't there have been an obvious hole in the cake?"
-    call popwowb from _call_popwowb_66
+    call popwowb
     b "Well, when you opened the freezer the hole could have been in the back."
     b "And before the cake was brought out to serve, Sam had already cut a slice."
     b "The edge of the slice could have been aligned with the hole the knife was hiding in."
@@ -4102,7 +4102,7 @@ label trial2o:
     b "Sam."
     s "What do you want now?"
     b "We need to ask you to cooperate with us fully."
-    call popwowb from _call_popwowb_67
+    call popwowb
     b "That means owning up to stabbing Stella."
     s "What reason do I have to do that? Even if I did it, I wouldn't admit to it."
     b "We have no reason to believe anyone but you was with Stella as she died."
@@ -4147,7 +4147,7 @@ label trial2p:
     b "We said that the murderer was likely to have been in this mansion before."
     b "We never figured out {i}how{/i} the murderer knew they were chosen, because Kaiser died before he could tell us more."
     b "Which means it's possible..."
-    call popwowb from _call_popwowb_68
+    call popwowb
     b "Sam wasn't chosen as the murderer by the Game Master, but has been here before."
     b "For all we know, multiple people could been here before."
     b "Which would mean someone other than Sam could have actually been assigned to be the murderer."
@@ -4298,7 +4298,7 @@ label trial2q:
     b "So the short version of events is, Sam stabs Stella, causes her to fall onto the sink."
     b "She grabs the sink handles trying to brace herself, and then the sink handles somehow burn her."
     b "Sam..."
-    call popwowb from _call_popwowb_69
+    call popwowb
     b "If we can figure out what burned her and if it was lethal, that means you didn't murder her."
     s "..."
     $mood = "shock"
@@ -4436,7 +4436,7 @@ label trial2s:
     d "..."
     d "I will overlook that comment."
     d "The point is..."
-    call popwowb from _call_popwowb_70
+    call popwowb
     d "It makes sense Stella could have only been lethally shocked, or even shocked at all, by touching both handles."
     b "So that means it really is possible!"
     b "Dracula, there's one more thing that would be good to know..."
@@ -4517,7 +4517,7 @@ label trial2t:
     l "Well that's straightforward, right?"
     l "It's probably Jenny."
     $mood = "shock"
-    call popwowb from _call_popwowb_71
+    call popwowb
     b "Huh?"
     j "Huh? Me again?..."
     l "We found the generator in Jenny's room."
@@ -4716,11 +4716,11 @@ label trial2y:
     c "Stella's dead, now's not the time for jokes!"
     hide pophuh
     b "I'm not joking. Maybe you couldn't have directly moved the generator after Stella died..."
-    call popwowb from _call_popwowb_72
+    call popwowb
     show catherine ind
     b "But Sesame could have."
     b "It adds up. Sesame was upstairs along with Sam when the murder happened."
-    call popwowb from _call_popwowb_73
+    call popwowb
     b "After Sam left, Sesame was the only one up there."
     b "You would have been able to move the generator upstairs, but you needed Sesame to move it for you during the party!"
     b "Sesame couldn't move the generator without some assistance since, well, he's a cat."
@@ -4767,7 +4767,7 @@ label trial2z:
     b "During the party, the microwave and oven clocks weren't working suddenly, but you guys were still able to cook..."
     b "I thought it was strange at the time, but it makes sense if you know the murderer needed to get wires from somewhere."
     b "Why not steal them from appliances lying around the house?"
-    call popwowb from _call_popwowb_74
+    call popwowb
     b "It also gave the murderer a reason to send Jenny out of the party, setting her up as a potential culprit."
     b "And you, Catherine, spent the last few hours yesterday in the kitchen, and got up early today and went to the kitchen."
     b "If anyone would have had an easy time stealing those wires, it would be you."
@@ -4833,7 +4833,7 @@ label trial2z:
     c "Silly me as usual!"
     hide pophearts
     c "Should've spent more time thinking about that and less time thinking about recipes."
-    call pophuhb from _call_pophuhb_54
+    call pophuhb
     b "You're admitting it? You really killed Stella?"
     c "Mhm, you heard me right."
     c "Oh well, I guess I had this coming. All those houses I burgled, I almost got caught a few times."
@@ -4993,12 +4993,12 @@ label cathGivesInfo:
             if len(menuset) < 4:
                 jump cathGivesInfo
     c "Wait, I just remembered. Before you ask anything else, I have a request."
-    call pophuhb from _call_pophuhb_55
+    call pophuhb
     $mood = "shock"
     ses "Mrep!"
     c "Bert, can you take care of Sesame? If he doesn't also get brain-zapped, that is."
     b "Me?"
-    call popwowb from _call_popwowb_75
+    call popwowb
     c "Yeah! You're the one who figured out I was the murderer, it's almost like you killed me."
     c "To the victor goes the spoils, right?"
     show catherine happy:

@@ -21,7 +21,7 @@ label shahAsk1:
         "Spend time with Shahar":
             h "Arr laddy, you've made a good choice!"
             ni "...have I?"
-            call shahHang from _call_shahHang
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen frontCar with dissolve
@@ -36,7 +36,7 @@ label shahAsk2:
     menu:
         "Spend time with Shahar":
             h "*Braaaap*"
-            call shahHang from _call_shahHang_1
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen kitchen
@@ -51,7 +51,7 @@ label shahAsk3:
     menu:
         "Spend time with Shahar":
             h "Aye lad, here for more pirate wisdom?"
-            call shahHang from _call_shahHang_2
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen dining
@@ -66,7 +66,7 @@ label shahAsk4:
     menu:
         "Spend time with Shahar":
             h "Yer not my usual party company, but ye'll have to do, lad."
-            call shahHang from _call_shahHang_3
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen dining
@@ -82,7 +82,7 @@ label shahAsk5:
     menu:
         "Spend time with Shahar":
             h "I feel even more like I'm back with me old crew."
-            call shahHang from _call_shahHang_4
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen hospKitchen
@@ -97,7 +97,7 @@ label shahAsk6:
     menu:
         "Spend time with Shahar":
             h "Happy to talk, but not too loudly lad."
-            call shahHang from _call_shahHang_5
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen patientcommons
@@ -112,7 +112,7 @@ label shahAsk7:
     menu:
         "Spend time with Shahar":
             h "Aye matey, tell me more about these strange grubs of yers."
-            call shahHang from _call_shahHang_6
+            call shahHang
         "Maybe later":
             hide shahar with dissolve
     call screen patientcommons

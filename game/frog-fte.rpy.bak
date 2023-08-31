@@ -20,7 +20,7 @@ label frogAsk1:
     menu:
         "Spend time with Froggy":
             f "O-okay mister..."
-            call frogHang from _call_frogHang
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen midCar with dissolve
@@ -35,7 +35,7 @@ label frogAsk2:
     menu:
         "Spend time with Froggy":
             f "Okay, but I want to keep petting Sesame!"
-            call frogHang from _call_frogHang_1
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen bedroomFL with dissolve
@@ -50,7 +50,7 @@ label frogAsk3:
     menu:
         "Spend time with Froggy":
             f "Okay, but we gotta keep an eye on Sesame!"
-            call frogHang from _call_frogHang_2
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen bedroomFL with dissolve
@@ -65,7 +65,7 @@ label frogAsk4:
     menu:
         "Spend time with Froggy":
             f "Okay, maybe my tummy will rumble less if we talk!"
-            call frogHang from _call_frogHang_3
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen dining with dissolve
@@ -81,7 +81,7 @@ label frogAsk5:
     menu:
         "Spend time with Froggy":
             f "Okay, I don't want to eat my veggies anyway."
-            call frogHang from _call_frogHang_4
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen hospKitchen
@@ -96,7 +96,7 @@ label frogAsk6:
     menu:
         "Spend time with Froggy":
             f "Sheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesh!"
-            call frogHang from _call_frogHang_5
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen patientcommons with dissolve
@@ -111,7 +111,7 @@ label frogAsk7:
     menu:
         "Spend time with Froggy":
             f "Adults sure love letters..."
-            call frogHang from _call_frogHang_6
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen patientcommons with dissolve
@@ -126,7 +126,7 @@ label frogAsk8:
     menu:
         "Spend time with Froggy":
             f "If only the frog I drew was real..."
-            call frogHang from _call_frogHang_7
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen office with dissolve
@@ -140,7 +140,7 @@ label frogAsk9:
     menu:
         "Spend time with Froggy":
             f "Ribbbbbbbit. That was frog for \"Sure, let's talk!\""
-            call frogHang from _call_frogHang_8
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen lobby with dissolve
@@ -155,7 +155,7 @@ label frogAsk10:
     menu:
         "Spend time with Froggy":
             f "But if we talk, Jenny's going to catch me! ...Okay, fine..."
-            call frogHang from _call_frogHang_9
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen hall with dissolve
@@ -169,7 +169,7 @@ label frogAsk11:
     menu:
         "Spend time with Froggy":
             f "Just ninety-nine more and I can buy some candy!"
-            call frogHang from _call_frogHang_10
+            call frogHang
         "Maybe later":
             hide frog with dissolve
     call screen pentDining with dissolve
@@ -258,13 +258,13 @@ label frogHang:
     if fte_frog == 0:
         f "Hey Bert! Do you like frogs?"
         b "Um... not really, sorry Freddy."
-        call showFrogSadFTE from _call_showFrogSadFTE
+        call showFrogSadFTE
         f "Oh... ok..."
         bi "...Wow, I am really bad with kids, huh?"
         bi "If Freddy was a girl I was dating I'd respond differently."
         bi "Okay, take two."
         b "...Just kidding! Who doesn't love frogs?"
-        call showFrogHappyFTE from _call_showFrogHappyFTE
+        call showFrogHappyFTE
         play sfx "audio/pophearts.mp3" volume .25
         show pophearts:
             xcenter .5
@@ -354,12 +354,12 @@ label frogHang:
         f "Hey Bert... how come you talk to me so much?"
         b "What do you mean Freddy? It's fun to talk to you."
         f "Well, a lot of the others don't talk to me."
-        call showFrogSadFTE from _call_showFrogSadFTE_1
+        call showFrogSadFTE
         f "Is it because they hate me?"
         b "Um, I don't think anyone here hates you."
         b "How to explain it..."
         b "Okay, you like poison dart frogs, right?"
-        call showFrogHappyFTE from _call_showFrogHappyFTE_1
+        call showFrogHappyFTE
         play sfx "audio/pophearts.mp3" volume .25
         show pophearts:
             xcenter .5

@@ -17,7 +17,7 @@ label credits:
     f "Hiii guys!"
     show creditscroll
     $popx = .3
-    call popheartso from _call_popheartso_9
+    call popheartso
     f "It's me, Freddy!"
     f "And woah! Look at that!"
     f "There's some text over there."

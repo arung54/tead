@@ -59,7 +59,7 @@ label trainGo:
     show windowview
     with fade
     n "Wow..."
-    call poptearb from _call_poptearb_83
+    call poptearb
     ni "There's... nothing out there."
     ni "Where are we? There are no landmarks anywhere."
     ni "It's like the middle of a desert."
@@ -588,7 +588,7 @@ label midcar2:
     c "I think it'd be best if we all just go take a look together."
     ses "mowwww!"
     $mood = "shock"
-    call poptearb from _call_poptearb_84
+    call poptearb
     n "Should we do anything about Stella? She's passed out behind the bar."
     h "A nap might do the lass some good."
     $mood = "ind"
@@ -725,7 +725,7 @@ label frontcar2:
     f "No driver?"
     f "What are we going to do?... I'm scared..."
     f "I miss my mom..."
-    call popwowb from _call_popwowb_105
+    call popwowb
     n "Well whining about it won't help, so quit being such a brat." #Arunj: Make Dan ruder
     show jenny ind with dissolve:
         xcenter .75
@@ -830,7 +830,7 @@ label frontcar2:
         xcenter .25
     d "I am quite unfamiliar with everything I'm seeing up here."
     d "Illumination trapped in such curious containers..."
-    call pophuhb from _call_pophuhb_61
+    call pophuhb
     ni "Is this guy really Dracula?"
     d "Perhaps we could talk through some things together?"
     hide bert sad
@@ -843,7 +843,7 @@ label frontcar2:
     n "She pressed it up here, and it played the \"closing doors\" message over the intercom in the bar car."
     bt "True! And these switches..."
     $mood = "shock"
-    call popwowb from _call_popwowb_106
+    call popwowb
     n "We probably shouldn't try them haphazardl-"
     bt "Let's try them!"
     blank "Bert flipped the first switch."
@@ -1038,7 +1038,7 @@ label midcar3:
     d "If I may add - Do not worry about my sleeping arrangements."
     d "There is no need."
     n "Why's that?"
-    call poptearb from _call_poptearb_85
+    call poptearb
     d "I simply do not sleep."
     n "..."
     bt "..."
@@ -1080,7 +1080,7 @@ label midcar3:
     s "And Dan?"
     s "Keep an eye on him back there..."
     s "I know neither of us are really kid people but, I don't want anything bad to happen to them." #Arunj: Edgier?
-    call poptearb from _call_poptearb_86
+    call poptearb
     n "Anything... bad?"
     s "Goodnight Dan."
     hide sam with dissolve
@@ -1142,7 +1142,7 @@ label midcar3:
     n "Yeah, none of us could figure out the password. We can't do anything without it."
     i "Well, I got to the file directory, but it wouldn't let me open anything up."
     $mood = "shock"
-    call popwowb from _call_popwowb_107
+    call popwowb
     n "What? You got to the file directory? How did you do that?"
     i "I work with computers a lot when I'm helping my dad with the shop."
     i "A lot of computers let you check for files using the \"DIR\" command." #Make this nerdier later
@@ -1711,7 +1711,7 @@ label midcar4:
     show scary:
         alpha 0
         linear .3 alpha .5
-    call poptearb from _call_poptearb_87
+    call poptearb
     ni "And morale."
     ni "Maybe I really do need to take this into my own hands..."
     ni "If we don't make any progress by midnight, I have some guesses..."
@@ -1804,7 +1804,7 @@ label midcar5:
     show sid ind with dissolve
     i "Well, goodnight Dan!" #Arun: Lights off
     n "Hey, Sid. Before you sleep."
-    call pophuhb from _call_pophuhb_62
+    call pophuhb
     n "How are you, well, feeling? About everything."
     i "Well, it's a little scary I suppose."
     i "We're all out of food, and some of the people on board are suspicious..."
@@ -2038,7 +2038,7 @@ label midcar6:
     b "Well that's good."
     b "... But..."
     $mood = "shock"
-    call popwowb from _call_popwowb_108
+    call popwowb
     b "Oh no."
     j "What's wrong?"
     b "Where's Sid? And Dan?"
@@ -2252,7 +2252,7 @@ label midcar6:
     j "Jeez..."
     b "Did he... yell? Or say anything?"
     b "Before he couldn't anymore."
-    call poptearb from _call_poptearb_88
+    call poptearb
     bi "This is incredibly uncomfortable..."
     i "Well... I thought I heard him say my name, with a faint breath."
     i "But it's hard to remember."
@@ -2299,7 +2299,7 @@ label preinvest:
     j "Okay, everyone should be back in the car they were in when the lights went off."
     b "Perfect."
     b "And thank you for helping me calm down Sid."
-    call poptearb from _call_poptearb_89
+    call poptearb
     j "Now to calm down Freddy... Shahar told him that \"Dan be as good as shark bait\" now."
     b "Oh jeez..."
     hide jenny ind with dissolve
@@ -2486,7 +2486,7 @@ label trial1b:
     show sid ind:
         xcenter .75
     with dissolve
-    call popwowb from _call_popwowb_109
+    call popwowb
     b "Hey! Catherine couldn't have left the bar car."
     b "She heard the scream!"
     t "Hmmm... and neither Sid, nor those in the front car heard the scream..."
@@ -2939,7 +2939,7 @@ label trial1h:
             jump trial1h
 
         "Something blocked the moonlight coming through the windows!":
-            call popwowb from _call_popwowb_110
+            call popwowb
             bi "That's it!"
 
         "We were temporarily blinded by the Game Master's brain chips!":
@@ -3081,7 +3081,7 @@ label trial1i:
     b "What did you say we're looking for again, Freddy?"
     f "The flag!"
     f "It's all the way on the back of the train."
-    call pophuhb from _call_pophuhb_63
+    call pophuhb
     b "I'm pushing my head all the way up against the glass and I can't see that far back."
     k "Me as well..."
     hide forest run
@@ -3159,7 +3159,7 @@ label trial1ib:
 
     h "Are ye sayin' the flag is invisible?"
     hide pophuh
-    call poptearb from _call_poptearb_90
+    call poptearb
     bi "..."
     hide drac ind with moveoutleft
     show catherine happy with moveinleft:
@@ -3222,7 +3222,7 @@ label trial1ib:
     t "To me, it seems easy enough."
     t "We'll have to kill them."
     k "Agreed."
-    call popwowb from _call_popwowb_111
+    call popwowb
     b "What!? We don't need another dead body on this train."
     k "What do you suggest then?"
     b "..."
@@ -3431,7 +3431,7 @@ label trial1m:
     bi "But if I lean up against the broken glass of the window just right..."
     show trainhinge with dissolve
     $mood = "shock"
-    call popwowb from _call_popwowb_112
+    call popwowb
     bi "!"
     bi "On second thought... This must have been where that object was hanging from..."
     bi "There really is a big hinge, right outside the back door."
@@ -3540,7 +3540,7 @@ label trial1n:
     show sam ind:
         xcenter .25
     with moveinleft
-    call poptearb from _call_poptearb_91
+    call poptearb
     s "Or they just asked for it while you were blackout drunk."
     t "Yes, or that!"
     s "If you don't remember who you gave it to -"
@@ -3717,7 +3717,7 @@ label trial1o:
         xcenter .75
     o "So, the person who accessed the computer is the murderer?"
     t "It seems quite that simple."
-    b "They need to have learned the train's route somehow for the scythe mechanism to work."
+    b "They need to have learned the train's route somehow for the sythe mechanism to work."
     t "Otherwise, they wouldn't be able to time the on hitting the tunnel so accurately."
     o "I see..."
     hide stella ind with moveoutleft
@@ -3763,7 +3763,7 @@ label trial1p:
             jump trial1p
 
     hide scary with dissolve
-    call popwowb from _call_popwowb_113
+    call popwowb
     b "They must have been... activating the PA system with the button!"
     d "Precisely."
     b "I nearly forgot about the scream."
@@ -3830,7 +3830,7 @@ label trial1p:
     bi "We're so close."
     bi "There's only one logical next step."
     bi "This could be it..."
-    call popwowb from _call_popwowb_114
+    call popwowb
     bi "Let's settle this!"
     hide scary with dissolve
     b "Okay! Sam, Shahar, Kaiser, and Lauren."
@@ -3896,7 +3896,7 @@ label trial1q:
     play music "audio/coming_together.mp3"
     k "Excuse me?"
     k "Are you insinuating that I killed Dan?"
-    call popwowb from _call_popwowb_115
+    call popwowb
     b "No, I'm proclaiming it. It had to have been you."
     b "We have all the evidence we need now."
     k "Excuse me, but how did you come to such a ridiculous conclusion?"

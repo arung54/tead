@@ -40,7 +40,7 @@ label bertHang:
         n "Why pineapple on pizza though?"
         hide pophearts
         b "Hmm... it adds a nice sweet yet acidic flavor that compliments the meat and cheese."
-        call poptearb from _call_poptearb_24
+        call poptearb
         n "Won't thinking about food in this much detail just make you hungrier?"
         b "I guess so?"
         b "But at the same time, if I'm thinking about food I'm not freaking out."

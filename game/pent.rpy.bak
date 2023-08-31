@@ -101,7 +101,7 @@ label pentGo:
     with dissolve
     bi "We also have the hint from the vault."
     bi '"The Secret of the Game", as it said.'
-    call popwowb from _call_popwowb_76
+    call popwowb
     bi "The Game Master's name starting with the letter 'S'."
     bi "At least getting knocked out gives me a moment to think about it."
     bi "I'm not sure if we can trust it, but we definitely can't ignore it."
@@ -127,7 +127,7 @@ label pentGo:
     bi "It's not unreasonable to think even an innocent person would lie about their name."
     bi "Especially given the circumstances."
     bi "Out of everyone, the most important liar would be Jenny, who's still alive."
-    call pophuhb from _call_pophuhb_57
+    call pophuhb
     bi "Is Jenny lying about her name?"
     bi "I have no way of knowing."
     hide lineupletters2
@@ -136,7 +136,7 @@ label pentGo:
     bi "I don't know what to think."
     bi "I want to find a way to save them all, but if one of them's the Game Master..."
     bi "Is it even possible to save everyone?"
-    call poptearb from _call_poptearb_75
+    call poptearb
     bi "Jenny? Freddy? Sid?"
     $mood = "ind"
     bi "...No matter what, I have to try."
@@ -171,7 +171,7 @@ label pentGo:
     bi "Of all places, why am I stuck in a wine cellar this time?"
     ses "Mrep."
     $mood = "ind"
-    call pophuhb from _call_pophuhb_58
+    call pophuhb
     bi "And more importantly, where is everyone else?"
     bi "It's weird that I'm waking up alone..."
     bi "I need to go find them."
@@ -251,7 +251,7 @@ label pentGo:
     b "Hey guys, wake up."
     f "mimimimimimimi....................."
     bi "..."
-    call popwowb from _call_popwowb_77
+    call popwowb
     b "HEY!!!"
     b "WAKE UP!!!"
     show jenny scared:
@@ -286,7 +286,7 @@ label pentGo:
     j "We're living the life now."
     show frog2 smile
     $popx = .7
-    call popheartso from _call_popheartso_16
+    call popheartso
     f "Yeah! Living the life!"
     bi "..."
     b "Anyway, we should all chat."
@@ -350,7 +350,7 @@ label pent2:
     i "Uh, I don't know!"
     i "I can't believe Lauren did Sam in like that."
     i "I can't trust anyone these days."
-    call popwowb from _call_popwowb_78
+    call popwowb
     b "Speaking of which, it should be pretty easy for us to narrow down our {i}roles{/i} now."
     i 'What do you mean our "roles"?'
     $mood = "sad"
@@ -368,7 +368,7 @@ label pent2:
     b "Right."
     show jenny happy
     $popx = .3
-    call popheartso from _call_popheartso_17
+    call popheartso
     j "Great logic guys!"
     j "So who's who?"
     j "Speak up now or forever hold your peace!"
@@ -434,14 +434,14 @@ label pent2:
         xcenter .3
     with dissolve
     $popx = .3
-    call popheartso from _call_popheartso_18
+    call popheartso
     j "Ahh, I could get used to this."
     b "We're not here to get used to this..."
     b "We should each look for anything that could connect us to this place."
     j "I'm pretty connected to being warm and cozy, so..."
     i "Looks like there's some booze too!"
     $mood = "sad"
-    call poptearb from _call_poptearb_76
+    call poptearb
     b "Please... work with me here."
     b "We also want to look for anything tied to Sydell, or anyone who died before us."
     $mood = "ind"
@@ -505,7 +505,7 @@ label pent23:
     j "Oh wow! Great memory, guys."
     j "Did someone move it here?"
     $popx = .67
-    call popwowo from _call_popwowo_28
+    call popwowo
     i "Nah, that one was way bigger."
     i 'I remember thinking "damn, is that the original?" and Stella called me stupid.'
     i "I doubt this is the original either."
@@ -530,7 +530,7 @@ label pent23:
     b '"this is not sustainable. But where else can I go?"'
     b '"They know where I live. I fear my days as well are numbered."'
     b '"Unless... I can turn the tables."'
-    call popwowb from _call_popwowb_79
+    call popwowb
     b "Huh?!"
     b "What the hell... this was written by whoever was living in this penthouse..."
     b "Or taking refuge, as they said."
@@ -547,7 +547,7 @@ label pent23:
     j "But not in a fun way."
     i "Yeah, why do I have feeling it didn't end well for this guy?"
     i 'The part about his "days being numbered" and then the next page being blank is...'
-    call poptearo from _call_poptearo_34
+    call poptearo
     i "A little spooky."
     b "Does anyone know the handwriting?"
     b "Or know whose this might be?"
@@ -593,7 +593,7 @@ label pent25:
     show sid ind with moveinright:
         xcenter .7
     i "About what?"
-    call popwowb from _call_popwowb_80
+    call popwowb
     b "That we should... assume this is Mr. Sydell's journal."
     b "Think about it - it seems like almost all of us have some connection to Sydell."
     b "Not to mention the decor, and the painting above the fireplace."
@@ -624,7 +624,7 @@ label pent25:
     i "So we're in Sydell's secret apartment?"
     b "That's my best guess so far..."
     $popx = .67
-    call pophuho from _call_pophuho_23
+    call pophuho
     i "I don't get it though - didn't Catherine just rob him?"
     i 'Why\'s he talking all like "my days as well are numbered"?'
     i "I dunno, I've been robbed before, and it's scary, but renting a place like this to hide seems like... overkill."
@@ -646,7 +646,7 @@ label pent25:
     hide scary with dissolve
     b "One step forward, one step back..."
     $popx = .33
-    call popwowo from _call_popwowo_29
+    call popwowo
     j "Bert, take a look at this!"
     b "Hm? What's is it?"
     j "There's a little slip of paper tucked in a different page."
@@ -666,7 +666,7 @@ label pent25:
     b "I feel like I should know someone by that name..."
     i "You know someone named Spaghetti?"
     b "Kinda... someone that was trapped with us."
-    call popwowb from _call_popwowb_81
+    call popwowb
     b "That's it!"
     show scary with dissolve:
         alpha .5
@@ -728,7 +728,7 @@ label pent26:
     b "Given Dan's mannerisms, attitude, and the details we knew about his history..."
     b "I'm not shocked to see he was tied up in all this."
     $popx = .3
-    call popmado from _call_popmado_13
+    call popmado
     j "Bert!"
     bi "Jenny gave me a look, I don't think she wanted me badmouthing Dan in front of Sid."
     hide poprain with dissolve
@@ -746,12 +746,12 @@ label pent26:
     i "I still do, regardless of his involvement here."
     bi "Every once in a while, Sid proves to me that he really is maturing..."
     $popx = .67
-    call pophuho from _call_pophuho_24
+    call pophuho
     b "Still... why is his phone number in a place like this?"
     b "It seems like Sydell was in a position to call in a favor."
     j "That would make sense, if he was scared of Catherine and the lawyers after him."
     j "Maybe Sydell needed a bodygaurd, or-"
-    call popwowo from _call_popwowo_30
+    call popwowo
     $mood = "shock"
     i "A hitman..."
     b "Sid, you're a genius."
@@ -826,7 +826,7 @@ label pent28:
     b "Has been dead this whole time?"
     b "For years, even?"
     $popmood = .33
-    call poptearo from _call_poptearo_35
+    call poptearo
     j "Wait..."
     show jenny scared:
         linear .2 xcenter .25
@@ -864,7 +864,7 @@ label pent29:
     bi "She's pretty quickly back in high spirits..."
     j "It looks like we're... really high up?"
     $popx = .67
-    call popwowo from _call_popwowo_31
+    call popwowo
     i "Holy shit, those are windows!"
     bi "He's right..."
     bi "This is the first time since the train we've seen windows that aren't boarded up."
@@ -874,7 +874,7 @@ label pent29:
         xcenter .48
         ycenter .53
     "Sid ran over to the windows."
-    call popwowb from _call_popwowb_82
+    call popwowb
     $mood = "shock"
     b "Hold on!"
     i "We can break through the glass and jump for it!"
@@ -934,7 +934,7 @@ label pent29:
     "{i}WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK WHACK!{/i}"
     b "..."
     $mood = "ind"
-    call poptearb from _call_poptearb_77
+    call poptearb
     b "...I think it's fine."
     b "It doesn't seem like the window is going to break."
     j "If he falls out the window, I'm blaming you."
@@ -943,7 +943,7 @@ label pent29:
         xcenter .7
     i "I think the windows are safety glass or something fancy."
     $popx = .67
-    call poptearo from _call_poptearo_36
+    call poptearo
     i "They're really hard, my hand hurts now..."
     b "Help Jenny and I look around for a bit."
     b "If we can't find anything useful, I'll help make something to break through the glass."
@@ -983,7 +983,7 @@ label pent30:
 label pent31:
     b "I think..."
     b "The windows aren't covered for a reason."
-    call pophuho from _call_pophuho_25
+    call pophuho
     i "Huh?"
     b "Think about it."
     b "On the train, the windows were the easiest way to kill someone."
@@ -1013,12 +1013,12 @@ label pent31:
     f "What should I do to help!"
     b "Ummm..."
     $popx = .3
-    call popheartso from _call_popheartso_19
+    call popheartso
     b "You can have the most important job."
     f "Really!!!"
     b "Yup! We need someone to look between all the couch cushions!"
     show frog2 smile
-    call popheartso from _call_popheartso_20
+    call popheartso
     f "Oh boy!"
     bi "Maybe that will distract him for a bit."
     b "Make sure you don't miss anything, Freddy!"
@@ -1058,7 +1058,7 @@ label postFT11:
     j "Despite a lot of places to hide stuff in here, it doesn't seem like there's a lot hidden."
     i "I can't believe we're tearing apart a rich guy's penthouse and there's no money laying around."
     $mood = "sad"
-    call poptearb from _call_poptearb_78
+    call poptearb
     i "Leave me a little cash bro come on..."
     j "He {i}was{/i} rich."
     j "By the time he was hiding here, he was losing money and in some business troubles, remember?"
@@ -1069,7 +1069,7 @@ label postFT11:
     j "I took a peek inside and it looked useful, so I set it aside for us to read through."
     b "Let's see..."
     b "W2... receipts... shipping documents..."
-    call popwowb from _call_popwowb_83
+    call popwowb
     $mood = "shock"
     b "Woah!"
     i "What is it?!"
@@ -1147,7 +1147,7 @@ label pent33:
     b "Right, it would just be addressed to him, or a family member."
     show jenny happy
     $popx = .3
-    call popheartso from _call_popheartso_21
+    call popheartso
     j "Good catch Bert!"
     i "But wait, if it's not about Catherine robbing him, is this even useful?"
     i "Who cares about some random insurance claim against his company?"
@@ -1163,7 +1163,7 @@ label pent33:
     b "Ignoring that last comment, Sid is right."
     b "He never robbed InSyde, or Sydell himself, so this isn't about him."
     $popx = .65
-    call popwowo from _call_popwowo_32
+    call popwowo
     i "YEAH!"
     b "But he's wrong about this being useless."
     b "There's one more piece of information we can use to tie this to us."
@@ -1178,7 +1178,7 @@ label pent33:
     i "....."
     j "........"
     $popx = .35
-    call popwowo from _call_popwowo_33
+    call popwowo
     i "I got it!"
     j "It's the date, August 6th!"
     i "That's what I was going to say!"
@@ -1267,7 +1267,7 @@ label pent34:
     f "Some candy!"
     j "Huh?"
     $mood = "shock"
-    call popwowb from _call_popwowb_84
+    call popwowb
     show jenny scared
     b "Freddy! Gimme those!"
     show frog2 sad
@@ -1279,14 +1279,14 @@ label pent34:
     b "The pills are small and colorful, and this type of bag doesn't make it look like candy."
     hide pillbag with dissolve
     $popx = .28
-    call pophuho from _call_pophuho_26
+    call pophuho
     j "Freddy! Where did you find these?"
     f "It was tucked away between the couch cushions."
     bi "I can't believe that distraction actually lead to finding something."
     f "So can I have them or not?"
     b "Absolutely not. These aren't for kids."
     $popx = .47
-    call poptearo from _call_poptearo_37
+    call poptearo
     f "What about just one?"
     j "Freddy, they could make you really sick."
     f "Uh oh, really?"
@@ -1295,7 +1295,7 @@ label pent34:
     f "Errrrmmmmmmmm..."
     play music "audio/unity.mp3" fadein 1.0
     f "I may have already eaten one..."
-    call popwowb from _call_popwowb_85
+    call popwowb
     b "What?!"
     f "Well they look so yummy!"
     f "But they don't really have much flavor."
@@ -1330,7 +1330,7 @@ label pent34:
     show sid mad
     i "You told him to look between the couch cushions."
     $popx = .7
-    call popwowo from _call_popwowo_34
+    call popwowo
     i "Did you do this on purpose?!"
     b "I...."
     i "Are you the chosen killer this round, and this is how you're doing it?!"
@@ -1341,7 +1341,7 @@ label pent34:
     j "Sid! We don't know what happened!"
     b "I d-didn't!"
     b "I had no idea those pills were there!"
-    call popwowo from _call_popwowo_35
+    call popwowo
     i "Yeah, my ass!"
     b "It's true!"
     b "We all came out into the living room together, remember?"
@@ -1356,7 +1356,7 @@ label pent34:
     i "And if you move a muscle..."
     bi "Sid looked me dead in the eyes."
     $popx = .75
-    call popmado from _call_popmado_14
+    call popmado
     i "I'll kill you."
     scene black with dissolve
     stop music fadeout 1.0
@@ -1384,7 +1384,7 @@ label pent34:
     j "We got Freddy to throw up a little, and he has a cold towel."
     j "We don't know how long ago he ate the pill though."
     i "So it could still be in his bloodstream."
-    call poptearb from _call_poptearb_79
+    call poptearb
     b "Guys..."
     i "I don't want to hear a peep out of you."
     j "Sid, we have to listen to his side of the story."
@@ -1400,7 +1400,7 @@ label pent34:
     b "If Freddy does die, I'm the one who killed him."
     i "You..."
     play music "audio/inthefaceofdeath.mp3"
-    call popwowb from _call_popwowb_86
+    call popwowb
     b "And that's why I'm going to do everything I can to fix it!"
     show sid ind
     i "Hm?"
@@ -1441,7 +1441,7 @@ label pent345:
 
     i "What the hell are you talking about?"
     b "These pills..."
-    call popwowb from _call_popwowb_87
+    call popwowb
     b "They're some of the drugs Sam sold to Sydell."
     i "How can we know that?"
     b "You were there Sid - think back!"
@@ -1481,7 +1481,7 @@ label pent345:
     b "You guys did a great job helping Freddy."
     b "But if he doesn't get to a hospital soon, he could die anyway."
     $popx = .67
-    call poptearo from _call_poptearo_38
+    call poptearo
     i "D-do you really think so?"
     b "I do."
     b "And I'm not going to let him die."
@@ -1496,7 +1496,7 @@ label pent345:
     hide scary with dissolve
 
     b "Now that we've had time to collect our thoughts, I have something to tell you both."
-    call popwowb from _call_popwowb_88
+    call popwowb
     b "The truth is, I woke up in the wine cellar with this flashlight."
     show theflashlight with dissolve
     b "I don't know why it a flashlight, but..."
@@ -1510,7 +1510,7 @@ label pent345:
     j "The same way Kaiser, Catherine, Ivan, and Lauren were."
     i "They were also given an advantage when it was their turn."
     $popx = .33
-    call poptearo from _call_poptearo_39
+    call poptearo
     j "Bert... why are you telling us that?"
     j "I..."
     j "How can I trust you if I know you're the chosen killer?"
@@ -1518,7 +1518,7 @@ label pent345:
     b "That's exactly why you can trust me!"
     i "Huh?"
     b "The chosen killer can't be the Game Master."
-    call popwowb from _call_popwowb_89
+    call popwowb
     b "This flashlight proves - to both of you - that I'm not the Game Master!"
     i "Holy..."
     j "So, you're the chosen killer, but..."
@@ -1536,7 +1536,7 @@ label pent345:
     i "Hold on..."
     i "I know we gotta move quick, but I'm not convinced yet."
     $mood = "shock"
-    call pophuhb from _call_pophuhb_59
+    call pophuhb
     b "What?"
     i "What if you are the Game Master, and you're just cheating in the last round?"
     b "Well, I'm the chosen killer."
@@ -1545,12 +1545,12 @@ label pent345:
     i "I need more proof you're the chosen killer, and not just the Game Master lying."
     b "Well someone has to be the chosen killer, right?"
     j "Based on everything that's happened so far, yeah."
-    call pophuhb from _call_pophuhb_60
+    call pophuhb
     b "Was it either of you chosen? Were you given some hint or item?"
     j "..."
     i "..."
     b "Then that should sett-"
-    call poptearo from _call_poptearo_40
+    call poptearo
     j "..........Freddy..."
     j "It could be Freddy..."
     j "As crazy as it sounds, Freddy could be the chosen killer."
@@ -1573,7 +1573,7 @@ label pent345:
     b "Sid..."
     i "I want to trust you, I do."
     $popx = .67
-    call popwowo from _call_popwowo_36
+    call popwowo
     i "But I trusted Lauren, too."
     i "I just need... a little more proof that you weren't trying to kill Freddy."
     j "...Bert."
@@ -1615,7 +1615,7 @@ label pent346:
     bi "What a beautiful view, right into the heart of the city."
     bi "The thing is..."
     $mood = "sad"
-    call popwowb from _call_popwowb_90
+    call popwowb
     bi "I know exactly where I am."
     bi "This is the most bittersweet moment of my life."
     bi "I... I do have a tie to this location."
@@ -1654,7 +1654,7 @@ label pent35:
     bi "Everything's clicking for me now..."
     bi "The flashlight itself isn't the important part."
     $mood = "shock"
-    call popwowb from _call_popwowb_91
+    call popwowb
     bi "It's the back, this solid metal tip."
     bi "These points are made to crack safety glass..."
     bi "I've seen them used in cars before."
@@ -1679,7 +1679,7 @@ label pent35:
         xcenter .7
     with dissolve
     $popx = .67
-    call popwowo from _call_popwowo_37
+    call popwowo
     i "Bert?! What the hell?!"
     j "Are you okay?!"
     i "How did the window break? I couldn't even leave a scratch..."
@@ -1690,7 +1690,7 @@ label pent35:
     b "Normally, windows like this are incredibly hard to shatter, but  with this, it's easy."
     b "That advantage let's me break the window, and then..."
     bi "Well..."
-    call pophuho from _call_pophuho_27
+    call pophuho
     i "Is that your connection to this location? Being able to break the glass?"
     b "No, that was just my advantage."
     b "I did find a connection to the location."
@@ -1720,18 +1720,18 @@ label pent35:
     i "Let's get back to it then."
     j "Bert, you made it sound like you had a plan to figure out who the Game Master is."
     b "I do."
-    call popwowb from _call_popwowb_92
+    call popwowb
     b "And it's one of you two!"
     i "..."
     j "..."
     j "Not it..."
     show sid mad
     show jenny scared
-    call popwowo from _call_popwowo_38
+    call popwowo
     i "HEY! THAT'S NOT HOW IT WORKS!"
     i "Bert said he has a plan, so we need to help him!"
     $popx = .33
-    call popwowo from _call_popwowo_39
+    call popwowo
     j "Yeah! And Sid, if you don't cooperate, we'll know you're the Game Master!"
     i "I'm not the Game Master! You must be!"
     j "We'll see about that, Sid."
@@ -1743,7 +1743,7 @@ label pent35:
     b "And if either of you push back now, it's proof that you want him to die."
     b "So we're going to settle everything, right here and now."
     b "We're going to end this game - "
-    call popwowb from _call_popwowb_93
+    call popwowb
     b "WIN this game."
     j "How can we do that?"
     b "We've collected data about Sydell's past from this location."
@@ -1751,7 +1751,7 @@ label pent35:
     $mood = "ind"
     b "And... about the three of us."
     b "Now all I have to do is piece the story together."
-    call popwowb from _call_popwowb_94
+    call popwowb
     b "And I'll know - once and for all - who the Game Master is."
 
     j "..."
@@ -1778,12 +1778,12 @@ label pent35:
         linear .2 xcenter .5
     i "Okay, yeah."
     $popx = .47
-    call popwowo from _call_popwowo_40
+    call popwowo
     i "I'm Sid Straits!"
     i "I'm 17 and was finishing high school before all this."
     i "I was a little bit of a trouble maker, but not a slacker!"
     i "I was helping my parents run the store, and learning about computers on the side."
-    call poptearo from _call_poptearo_41
+    call poptearo
     show sid happy
     i "We were pretty poor."
     i "For extra money, I did a little hacking..."
@@ -1808,7 +1808,7 @@ label pent35:
     b "Now Jenny."
     show jenny ind with dissolve
     j "Well, from the top I guess."
-    call popwowo from _call_popwowo_41
+    call popwowo
     j "I'm Jenny Flowers, 20 year old college student."
     j "I come from a pretty normal middle-class family."
     j "It feels like so long ago..."
@@ -1816,7 +1816,7 @@ label pent35:
     j "I've always been politically active, just doing what I can, and got arrested protesting about Freddy's father."
     j "It didn't lead to much at the time, but it's my connection to Freddy for this game."
     j "I... stand by what I did."
-    call poptearo from _call_poptearo_42
+    call poptearo
     j "Freddy's a good kid, but his father is a horrible man."
     show jenny ind
     j "As for connections I made during the game..."
@@ -1833,7 +1833,7 @@ label pentpicker:
     b "......"
     play music "audio/rush.mp3" fadein 1.0
     b "I know what happened."
-    call popwowb from _call_popwowb_95
+    call popwowb
     b "And... I know who the Game Master is."
     b "Between all the murders, investigations, clues we found here, and your stories..."
     b "There's only one thing that doesn't add up."
@@ -1862,7 +1862,7 @@ label pentsid:
     b "All the rules the Game Master left have been accurate so far, and I think that one is too."
     b "Anyone could be lying about their last name, but both your names definitely starts with an S."
     $popx = .47
-    call popwowo from _call_popwowo_42
+    call popwowo
     i "Bert, I -"
     b "It's time."
     camera:
@@ -1895,12 +1895,12 @@ label pentjenny:
     b "Jenny."
     b "It's true that we were close."
     b "I'll never know if that was real or not."
-    call popwowb from _call_popwowb_96
+    call popwowb
     b "Because you're the Game Master, and you die here."
     j "Bert, are you being serious?"
     b "There's no way I could be the Game Master."
     $popx = .47
-    call popwowo from _call_popwowo_43
+    call popwowo
     b "You slipped up, Jenny."
     b "Just a few minutes ago, you said..."
 
@@ -1934,7 +1934,7 @@ label pentjenny:
     $mood = "sad"
     b "But despite how often I think about the woman I killed, and the accident..."
     $mood = "ind"
-    call popwowb from _call_popwowb_97
+    call popwowb
     b "I could never bring myself to share any details about her."
     b "There's no way you could have known it was a woman in the accident."
     b "I figured maybe it was a lucky guess, or part of the joke, so I had you and Sid give some words."
@@ -1961,7 +1961,7 @@ label pentjenny:
     b "It was the start of all of this, and..."
     b "Why everything that happened to your father sent you over the edge."
     j "My father?"
-    call popwowb from _call_popwowb_98
+    call popwowb
     b "Mr. Sydell, your father, and the owner of InSyde Electronics."
     j "..."
     show ch5evkaiser with dissolve:
@@ -2026,7 +2026,7 @@ label pentjenny:
     show ch5evfreddy:
         ycenter .6
     with dissolve
-    call popwowb from _call_popwowb_99
+    call popwowb
     b "This... is where Freddy comes in."
     b "To be precise, Freddy's father, Mr. Ogden."
     b "He was a shady businessman, and you did hate him, Jenny."
@@ -2056,7 +2056,7 @@ label pentjenny:
     show ch5evjenny:
         ycenter .6
     with dissolve
-    call popwowb from _call_popwowb_100
+    call popwowb
     b "That had to have made her... your mother."
     b "You know my accident inolved a woman because... it was your mother."
     b "I didn't realize it until now, but that must be where this fake last name comes from."
@@ -2092,7 +2092,7 @@ label pentjenny:
     b "That's why you found Ivan and made him implant all these chips in our brains."
     b "You set up this whole thing, and you're the reason everyone else is dead now."
     b "You're the Game Master."
-    call popwowb from _call_popwowb_101
+    call popwowb
     b "And it's been you this whole time, Jenny."
     b "There was almost nothing to connect you to Sydell."
     b "But you yourself gave me the last piece of information I needed"
@@ -2107,7 +2107,7 @@ label pentjenny:
     show sid ind with moveinleft:
         xcenter .3
     $popx = .34
-    call popwowo from _call_popwowo_44
+    call popwowo
     i "It's Freddy, his head is burning hot, and his breathing has gotten weird!"
     i "I'm worried he's, he's..."
     i "We need to do something, now!"
@@ -2155,7 +2155,7 @@ label pentsidArun:
     b "All the rules the Game Master left have been accurate so far, and I think that one is too."
     b "Anyone could be lying about their last name, but both your names definitely starts with an S."
     $popx = .47
-    call popwowo from _call_popwowo_45
+    call popwowo
     i "Bert, I -"
     b "It's time."
     camera:
@@ -2400,12 +2400,12 @@ label pentjennyArun:
     b "Jenny."
     b "It's true that we were close."
     b "I'll never know if that was real or not."
-    call popwowb from _call_popwowb_102
+    call popwowb
     b "Because you're the Game Master, and you die here."
     j "Bert, are you being serious?"
     b "There's no way I could be the Game Master."
     $popx = .47
-    call popwowo from _call_popwowo_46
+    call popwowo
     b "You slipped up, Jenny."
     b "Just a few minutes ago, you said..."
     scene bg pentkitchenbroke at bg
@@ -2433,7 +2433,7 @@ label pentjennyArun:
     $mood = "sad"
     b "But despite how often I think about the woman I killed, and the accident..."
     $mood = "ind"
-    call popwowb from _call_popwowb_103
+    call popwowb
     b "I could never bring myself to share any details about her."
     b "There's no way you could have known it was a woman in the accident."
     b "I figured maybe it was a lucky guess, or part of the joke, so I had you and Sid give some words."

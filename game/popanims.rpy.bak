@@ -100,27 +100,27 @@ label pophuho:
 label poptest:
     b "sdrtwesstgs1"
     b "sdrtwesstgs2"
-    call popwhuhb from _call_popwhuhb
+    call popwhuhb
     b "sdrtwesstgs3"
     b "sdrtwesstgs4"
-    call popwowb from _call_popwowb_104
+    call popwowb
     b "sdrtwesstgs5"
     b "sdrtwesstgs6"
-    call poptearb from _call_poptearb_80
+    call poptearb
     b "sdrtwesstgs7"
     b "sdrtwesstgs8"
-    call poptearb from _call_poptearb_81
+    call poptearb
     b "sdrtwesstgs7"
     b "sdrtwesstgs8"
-    call poptearb from _call_poptearb_82
+    call poptearb
     b "sdrtwesstgs7"
     b "sdrtwesstgs8"
-    call poprainb from _call_poprainb
+    call poprainb
     b "sdrtwesstgs"
     b "sdrtwesstgs"
-    call popheartsb from _call_popheartsb_1
+    call popheartsb
     b "sdrtwesstgs"
     b "sdrtwesstgs"
-    call popmadb from _call_popmadb
+    call popmadb
     b "sdrtwesstgs"
     b "sdrtwesstgs"

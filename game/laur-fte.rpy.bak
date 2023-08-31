@@ -20,7 +20,7 @@ label laurAsk1:
     menu:
         "Spend time with Lauren":
             o "Sure, not like anything else is happening."
-            call laurHang from _call_laurHang
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen midCar with dissolve
@@ -35,7 +35,7 @@ label laurAsk2:
     menu:
         "Spend time with Lauren":
             l "Sure, Freddy's pretty occupied anyway."
-            call laurHang from _call_laurHang_1
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen bedroomFL with dissolve
@@ -50,7 +50,7 @@ label laurAsk3:
     menu:
         "Spend time with Lauren":
             l "Sure, but let's not be late to the party."
-            call laurHang from _call_laurHang_2
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen bedroomFL with dissolve
@@ -65,7 +65,7 @@ label laurAsk4:
     menu:
         "Spend time with Lauren":
             l "Okay, but I gotta keep an eye on Freddy while we talk."
-            call laurHang from _call_laurHang_3
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen dining with dissolve
@@ -81,7 +81,7 @@ label laurAsk5:
     menu:
         "Spend time with Lauren":
             l "Sure, it'd be good to catch up."
-            call laurHang from _call_laurHang_4
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen hospKitchen
@@ -96,7 +96,7 @@ label laurAsk6:
     menu:
         "Spend time with Lauren":
             l "Sure."
-            call laurHang from _call_laurHang_5
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen patientcommons with dissolve
@@ -111,7 +111,7 @@ label laurAsk7:
     menu:
         "Spend time with Lauren":
             l "Sure, I need a distraction."
-            call laurHang from _call_laurHang_6
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen patientcommons with dissolve
@@ -126,7 +126,7 @@ label laurAsk8:
     menu:
         "Spend time with Lauren":
             l "Sure, I'm just watching Freddy for now."
-            call laurHang from _call_laurHang_7
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen office with dissolve
@@ -140,7 +140,7 @@ label laurAsk9:
     menu:
         "Spend time with Lauren":
             l "Maybe that's just the sugar speaking..."
-            call laurHang from _call_laurHang_8
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen lobby with dissolve
@@ -155,7 +155,7 @@ label laurAsk10:
     menu:
         "Spend time with Lauren":
             l "Sure."
-            call laurHang from _call_laurHang_9
+            call laurHang
         "Maybe later":
             hide lauren with dissolve
     call screen lobby with dissolve
@@ -321,7 +321,7 @@ label laurHang:
         o "Or at least, stubborn enough to give the illusion of being strong."
         o "And it defines a lot of who I am. My main hobby came out of needing to feel safe."
         o "So really, I don't mind talking about it."
-        call showLaurenHappyFTE from _call_showLaurenHappyFTE
+        call showLaurenHappyFTE
         o "But it would be nice if we could talk about something fun for once."
         b "Sure, any ideas?"
         o "Hmm... tell me about your hobbies? Since you know about mine."

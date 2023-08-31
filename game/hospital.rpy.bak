@@ -109,7 +109,7 @@ label hospitalGo:
     bi "If I had to guess, he was motioning to the doors of the cell."
     bi "...The cell?"
     $ statusnt("Cell", "bert", ch=3, sun=0)
-    call pophuhb from _call_pophuhb_29
+    call pophuhb
     bi "Are we in a prison?"
     bi "There are bars on both sides, both in front of me and behind me..."
     bi "I don't think a prison would be like that."
@@ -183,7 +183,7 @@ label hospitalGo:
     bi "Sam was looking at a series of... photo composites on on wall."
     bi "On another wall was a sign."
     bi "It read \"Rules of the Latimer Mental Hospital\" at the top."
-    call pophuhb from _call_pophuhb_30
+    call pophuhb
     $mood = "shock"
     bi "...Mental hospital?"
     bi "I guess... in a demented sense, a mental hospital is like a prison."
@@ -235,7 +235,7 @@ label hospitalGo:
                 xcenter .75
             with dissolve
             i "Hey Bert."
-            call pophuhb from _call_pophuhb_31
+            call pophuhb
             b "Hey Sid... what's happening here?"
             i "It seems like every year they put up a photo of everyone who got discharged that year."
             bi "Each photo composite had about 10 people in it."
@@ -246,7 +246,7 @@ label hospitalGo:
             i "It's like... a reminder to patients that that they could do it, and so you can you."
             b "Have you taken a close look at the photos yet?"
             b "Maybe we know someone in the photos?"
-            call poptearb from _call_poptearb_25
+            call poptearb
             i "I haven't looked in a lot of detail, but I haven't recognized anyone, no..."
             b "Hmm okay, guess I'll take a closer look myself."
             bi "..."
@@ -298,7 +298,7 @@ label hospitalGo:
             b "Like what?"
             i "I mean... I dunno, but it can't hurt to ask, right?"
             i "Maybe if we find a theme behind what we all did three years ago we can figure out why the composite's missing."
-            call poptearb from _call_poptearb_26
+            call poptearb
             bi "Sid seems really set on this..."
             b "Okay, guess we'll discuss this once everyone's here..."
             i "Yeah, I think we should..."
@@ -325,7 +325,7 @@ label hospitalGo:
             b "Hey Dracula. You read the rules already?"
             d "Yes. I thought it might be leftover from when this was place wasn't being used for a killing game."
             $mood = "shock"
-            call popwowb from _call_popwowb_33
+            call popwowb
             d "But no, it seems like the rules are for us."
             b "What makes you say that?"
             d "Read them yourself, then you can arrive at the same conclusion."
@@ -380,7 +380,7 @@ label hospitalGo:
             b "Interesting."
             b "I'm assuming when this place was a mental hospital, they didn't randomly appoint patients as guards."
             d "I'd say that's a reasonable conclusion."
-            call poptearb from _call_poptearb_27
+            call poptearb
             bi "...Is that his version of sass?"
             d "Bert, I have a question for you."
             $mood = "shock"
@@ -412,7 +412,7 @@ label hospitalGo:
             d "Once the body's found, how do you propose that you would deny being the murderer?"
             b "Um... natural causes?"
             d "Natural causes."
-            call poptearb from _call_poptearb_28
+            call poptearb
             b "...It was a joke."
             d "I don't get it."
             b "But yeah, you're right, it'd be obvious it was me because we were the only two guards."
@@ -484,7 +484,7 @@ label hospitalGo:
     j "Well, Sam is pretty torn up about trying to kill Stella."
     j "And Shahar says he's been having a headache since we got here."
     j "You mind talking to Shahar?"
-    call pophuhb from _call_pophuhb_32
+    call pophuhb
     b "Huh? Why me..."
     j "Well, you did spend a lot of time with him in the mansion, like it or not."
     j "And I think we need to keep everyone... well, as happy as they can be, you know."
@@ -551,7 +551,7 @@ label hospitalGo:
             $mood = "ind"
             b "..."
             b "Fine, I'll leave you alone."
-            call popwowb from _call_popwowb_34
+            call popwowb
             b "But all our lives are on the line here, not just yours."
             b "We're still relying on you to help us escape."
             b "If you're going to feel bad about what happened to Stella, don't let that happen to the rest of us."
@@ -759,7 +759,7 @@ label hospitalGo:
     bi "Right, Sam mentioned that she sold him drugs when we were in the mansion."
     s "...I lost contact with him about three years ago..."
     b "Lost contact?"
-    call poptearb from _call_poptearb_29
+    call poptearb
     s "He just never reached out to me again..."
     s "And well, not like I personally knew the guy..." #sam flashback
     s "He didn't even know my name, of course."
@@ -840,7 +840,7 @@ label hospitalGo:
     $showchibint()
     bi "We all made our way back to our rooms." #febreview
     bi "I had trouble sleeping."
-    call poptearb from _call_poptearb_30
+    call poptearb
     bi "Mostly because Sesame didn't like the cold floor and instead insisted on laying on me."
     bi "Turns out, she wasn't declawed."
     bi "Which is good, declawing cats is pretty inhumane."
@@ -862,7 +862,7 @@ label hospitalb:
     bi "So I begrudgingly got up and tried opening the door behind me, like I had last night."
     bi "..."
     bi "And, it wouldn't move."
-    call pophuhb from _call_pophuhb_33
+    call pophuhb
     bi "Was I stuck? Am I getting indirectly murdered already?"
     ses "Mew!"
     $mood = "ind"
@@ -952,7 +952,7 @@ label hospitalb:
     b "C'mon..."
     show jenny ind
     j "Did you pay for the drink?"
-    call pophuhb from _call_pophuhb_34
+    call pophuhb
     b "Pay? With what? Not like we have money..."
     j "You could break the vending machine open if you really want to."
     b "That sounds dangerous..."
@@ -1013,7 +1013,7 @@ label hospitalb:
     scene bg hospsecurity at bg with dissolve
     $mood = "shock" #febmusic scary
     b "..."
-    call pophuhb from _call_pophuhb_35
+    call pophuhb
     b "What is this?"
     b "A computer system? This gives me bad flashbacks to the train..."
     bi "I don't know why I talked out loud when it was just me and Sesame."
@@ -1040,7 +1040,7 @@ label hospitalb:
     b "It would be nice if we could roam freely..."
     b "Right now it's just me and Jenny..."
     $mood = "sad"
-    call poptearb from _call_poptearb_31
+    call poptearb
     b "..."
     b "She wouldn't kill me now, right?"
     b "Should I look out for her?"
@@ -1084,7 +1084,7 @@ label hospitalb:
     b "Date of admission, date of discharge, insurance information, prescriptions."
     b "And a bunch more details Shahar's profile here lacks."
     show bg hospsecurity with dissolve
-    call pophuhb from _call_pophuhb_36
+    call pophuhb
     b "Was Shahar's profile inserted to freak me out? Was he actually a patient here?"
     b "Did someone wipe his information before we got here? Maybe the Game Master thought we'd learn too much?"
     b "Maybe Shahar is the Game Master and he's using this as a bluff?"
@@ -1096,7 +1096,7 @@ label hospitalb:
     b "This might have to do with his headache."
     b "Well, assuming he's not lying..."
     b "Should I tell the others though?"
-    call poptearb from _call_poptearb_32
+    call poptearb
     b "On the one hand, if I'm withholding information that makes me look bad."
     b "If this ties Shahar to the location, based on the past two locations doesn't that make him more likely to be the murderer?"
     b "On the other hand, this is Shahar's personal life."
@@ -1131,7 +1131,7 @@ label hospitalb:
     b "All fairly standard stuff. I guess a mental hospital has less biohazards than a medical hospital."
     b "Below that, there's a stepstool. Maybe for maintenance workers?"
     b "And... a baseball bat."
-    call poptearb from _call_poptearb_33
+    call poptearb
     b "That's not ominous at all..."
     b "Should I hide it? It's such an obvious choice for a murder weapon."
     b "No, there's a rule that says it needs to be returned here."
@@ -1260,13 +1260,13 @@ label testwindow:
     $mood = "sad"
     b "Did everyone make it out of their cells in time?"
     l "Yeah, we had to do some... convincing to get Sam out of bed."
-    call poptearb from _call_poptearb_34
+    call poptearb
     b "Is Sam doing any better?"
     l "Not really. Mostly just sitting in the same seat."
     b "That's... a little concerning, to put it   lightly."
     l "Yeah. Don't worry about it for now, not much you can do on that end."
     l "By the way, where's Jenny? Isn't she prepping a meal right now?"
-    call popwowb from _call_popwowb_35
+    call popwowb
     $mood = "shock"
     bi "Shoot!"
     b "Uh... yeah, I gotta go take care of that."
@@ -1439,7 +1439,7 @@ label postcupcake:
     h "Ah, this reminds me of the soup me matey Jackson would prep on the ship."
     bi "Jackson's an... interesting name for a pirate."
     h "The smell's almost the exact same!"
-    call pophuhb from _call_pophuhb_37
+    call pophuhb
     b "Do they stock tomatoes on pirate ships?"
     b "Seems like they would spoil at sea, I thought pirates mostly ate dry food."
     h "I don't know lad, I ne'er went into the ship's kitchen."
@@ -1506,7 +1506,7 @@ label postcupcake:
     d "I am looking forward to this tomato soup."
     j "Really?"
     $mood = "sad"
-    call poptearb from _call_poptearb_35
+    call poptearb
     d "Yes, it reminds me of blood."
     d "A bit more orange than blood is, but still."
     d "It gives me some nostalgia for before this game."
@@ -1533,7 +1533,7 @@ label postcupcake:
     j "Sweet! I'm gonna go to the supply closet and choose a cleaner, if you need me."
     j "Seeya Bert!"
     hide jenny with dissolve
-    call pophuhb from _call_pophuhb_38
+    call pophuhb
     bi "That's... moderately suspicious."
     bi "The kitchen's not that dirty, and it's not like we'll be here that long..."
     bi "Oh well, I have a slightly more important thing... er, person to worry about."
@@ -1574,7 +1574,7 @@ label postcupcake:
     stop music
     l "Take it from someone who... who actaully murdered someone."
     bi "..."
-    call popwowb from _call_popwowb_36
+    call popwowb
     bi "What?"
     bi "This is news..."
     hide popmad
@@ -1613,7 +1613,7 @@ label postcupcake:
         linear 0.15 xcenter .5
     $mood = "sad"
     bi "..."
-    call poptearb from _call_poptearb_36
+    call poptearb
     bi "I don't know what to say."
     l "You don't have to say anything."
     b "Huh?"
@@ -1663,7 +1663,7 @@ label postFT5:
     show jenny ind with dissolve
     play music "audio/unity.mp3" fadein 1.0
     $popx = .5
-    call popheartso from _call_popheartso_10
+    call popheartso
     j "And, all done with cleaning!"
     j "I'm gonna go relax in the lounge, Bert."
     b "You don't want to talk to the others?"
@@ -1685,7 +1685,7 @@ label postFT5:
     b "I think we should keep it a secret though. It's something that might make you look suspicious."
     bi "Well... more suspicious than the pirate getup already does."
     h "Suspicious? Lad, what would ye landlubbers suspect me for? Being a pirate? I am one!"
-    call pophuhb from _call_pophuhb_39
+    call pophuhb
     b "Shahar, did you figure out if you've ever been here before?"
     h "Ye lad, I was in the cafeteria yesterday. What's yer point?"
     b "No, that's not what I meant..."
@@ -1792,7 +1792,7 @@ label postFT5:
     b "A way out?"
     show jenny ind
     $xpop = .44
-    call poptearo from _call_poptearo_22
+    call poptearo
     j "Oh... no, you're gonna be disappointed if you expected that."
     b "I was joking."
     j "Oh."
@@ -1848,7 +1848,7 @@ label postFT5:
             j "That was an unusual move Bert, did you think it through?"
             bi "She moved a bishop in response."
             $mood = "sad"
-            call poptearb from _call_poptearb_37
+            call poptearb
             bi "Oh..."
             bi "She had pinned my knight since the pawn wasn't in the way..."
             bi "And if I try to protect it she can threaten it with a pawn next turn..."
@@ -1896,7 +1896,7 @@ label chess2:
             "Go for mate":
                 bi "I made a bold sacrifice to open up her king."
                 $mood = "happy"
-                call popwowb from _call_popwowb_37
+                call popwowb
                 bi "Yes, it's going exactly as I planned."
                 bi "Just one move and I win!"
                 b "Aha!"
@@ -1976,7 +1976,7 @@ label chess3:
     b "Sounds good, I can take the lead this time."
     b "I can't cook much but you shouldn't have to do all the work..."
     $popx = .5
-    call popheartso from _call_popheartso_11
+    call popheartso
     j "Thanks Bert!"
     scene bg hospkitchen at bg with fade
     $statusnt("Kitchen", "bert", ch=3, sun=3)
@@ -2020,7 +2020,7 @@ label chess3:
     j "Do you like it, Sid?"
     i "Uh... yeah, I like not being hungry I guess."
     $mood = "sad"
-    call poptearb from _call_poptearb_38
+    call poptearb
     show jenny ind:
         xcenter .25
     i "Seeya."
@@ -2060,7 +2060,7 @@ label chess3:
     j "Well, looks like that's it for our guard shift, Bert."
     show jenny happy
     $popx = .5
-    call popheartso from _call_popheartso_12
+    call popheartso
     j "I'd like to think we did a pretty good job!"
     b "Collectively maybe. I uh... may have indirectly led to one or two people starving to death."
     j "Oh, don't worry about it."
@@ -2158,7 +2158,7 @@ label chess3:
     l "Maybe he's exploring?"
     b "Explore? Me and Jenny checked everything..."
     $popx = .7
-    call poptearo from _call_poptearo_23
+    call poptearo
     $mood = "sad"
     l "Dracula might not trust what you said..."
     l "Or even if he does, he's the type who wants to double-check it."
@@ -2202,7 +2202,7 @@ label chess3:
     d "What do you mean? I was on this side of the floor."
     b "No, I got that..."
     $mood = 'sad'
-    call poptearb from _call_poptearb_39
+    call poptearb
     bi "How dumb does he think I am?"
     $mood = "ind"
     b "Sid said he didn't see you this morning on this way here."
@@ -2258,7 +2258,7 @@ label postFT6:
     d "I wasn't shaming him for being poor. There is nothing wrong with that."
     d "Just making an observation."
     $popx = .25
-    call popmado from _call_popmado_7
+    call popmado
     l "Make less observations like that then."
     d "We need to trust each other fully to narrow down who the Game Master is, yes?"
     d "I don't trust Sid based on this seeming contradiction."
@@ -2324,7 +2324,7 @@ label postFT6:
     bi "Looking at the cafeteria, twenty or thirty people could easily fit here."
     bi "The kitchen probably had enough food and cookware to make a meal for that many people too."
     bi "Why did we only have access to eight cells?"
-    call pophuhb from _call_pophuhb_40
+    call pophuhb
     bi "...Just how powerful is this Game Master?"
     bi "They must have heavily modified this building just for this game..."
     bi "Man, after that feast in the mansion..."
@@ -2337,7 +2337,7 @@ label postFT6:
     b "Oh... I mean, I guess I'd like to see my family too of course..."
     f "No silly, you should get nachos instead!"
     $popx = .5
-    call popheartso from _call_popheartso_13
+    call popheartso
     f "Nachos are way better than pasta!"
     b "Is that the first thing you'd do if you got out of here Freddy?"
     f "Hmm, probably not, there are bigger things than food."
@@ -2365,7 +2365,7 @@ label postFT6:
     l "Something only I might want to do?"
     l "Bert, if that's the prompt, your answer was cheating."
     $mood = "sad"
-    call poptearb from _call_poptearb_40
+    call poptearb
     l "Everyone wants to eat good food when they get out I'm sure."
     b "Yeah, but only I want to eat specifically at the Pagliacci Pastaria!"
     l "Sigh..."
@@ -2397,7 +2397,7 @@ label postFT6:
         xcenter .75
     l "I guess... I wasn't sure until now."
     $popx = .3
-    call pophuho from _call_pophuho_20
+    call pophuho
     j "Why now?"
     l "Uh... I learned life is too short?"
     l "I don't know, this game has done all sorts of stuff to my head."
@@ -2413,7 +2413,7 @@ label postFT6:
     l "What about you Jenny. What do you wanna do when you get out?"
     show jenny ind:
         xcenter .25
-    call poptearo from _call_poptearo_24
+    call poptearo
     $mood = "ind"
     j "I dunno, I haven't really thought about it."
     j "I've mentioned this before I think, but my parents aren't really around often."
@@ -2431,7 +2431,7 @@ label postFT6:
     h "The squiffy feeling from the ship rockin' port and starboard."
     h "Pirate cuisine. Sea biscuits, grog...."
     $popx = .7
-    call popwowo from _call_popwowo_16
+    call popwowo
     h "And me favorite, dried beans."
     b "Dried beans? There's way better ways to eat beans..."
     b "Burritos, chili, bean salad, seven layer dip..."
@@ -2563,7 +2563,7 @@ label postFT7:
     show jenny ind:
         xcenter .25
     $popx = .3
-    call poptearo from _call_poptearo_25
+    call poptearo
     j "Bummer, so you didn't learn anything?"
     i "Well, I learned something."
     $mood = "shock"
@@ -2594,7 +2594,7 @@ label postFT7:
     i "It was to inject some fake emails into a private email server."
     i "The email server belonged to... InSyde Electronics."
     b "Inside Electronics?"
-    call popwowb from _call_popwowb_38
+    call popwowb
     i "Spelled with a Y. I-n-s-y-d-e."
     i "S-y-d-e... like Sydell."
     i "He owned the company."
@@ -3012,7 +3012,7 @@ label trial3a:
     l "And then we spent the rest of the time until now together."
     b "Sam?"
     $mood = "sad"
-    call poptearb from _call_poptearb_41
+    call poptearb
     s "...Lauren just told you."
     b "Yeah, but tell me things from your perspective."
     s "...Fine."
@@ -3052,7 +3052,7 @@ label trial3b:
     with dissolve
     b "No, I don't think Shahar was struck in the forehead."
     $popx = .45
-    call pophuho from _call_pophuho_21
+    call pophuho
     j "But he has no other injuries... why would he be bleeding on his forehead if he wasn't struck there by someone?"
     b "I agree he has no other injuries, but think about the way his body is positioned."
     scene bg shahardead at bg with dissolve
@@ -3137,7 +3137,7 @@ label trial3c2:
     j "Maybe they just hit him really hard from the patients' side across his cell!"
     b "...They hit him once hard enough to send him all the way across his cell?"
     $popx = .3
-    call poptearo from _call_poptearo_26
+    call poptearo
     j "Oh... yeah, they would have had to enter his cell and get punished..."
     i "*Cough* we don't know what the punishment is though!"
     j "Yeah! Maybe the punishment is just having to eating the end slice of a loaf of bread!"
@@ -3150,7 +3150,7 @@ label trial3c2:
     hide sid
     show drac ind
     $popx = .42
-    call popwowo from _call_popwowo_17
+    call popwowo
     d "Enough."
     d "This meaningless speculation is going nowhere."
     d "Obviously the killer is..."
@@ -3174,7 +3174,7 @@ label trial3c2:
     d "But if I recall, you all returned to your cells at roughly the same time last night."
     d "The cells doors are, well... not doors. You can hear and see through them easily."
     $popx = .33
-    call popwowo from _call_popwowo_18
+    call popwowo
     d "It would have been very difficult for a patient to reach Shahar's cell during twilight..."
     d "At least, without being noticed by Jenny or Bert."
     l "That's true, but isn't the same true of me and Sam?"
@@ -3229,7 +3229,7 @@ label trial3d:
     b "And then return, all in the time it took Lauren to walk roughly ten feet over to Sam's cell."
     d "...Alright, I suppose this case is not as clear-cut as I assumed."
     d "Apologies for the diversion."
-    call popwowb from _call_popwowb_39
+    call popwowb
     b "No, this was an important talk."
     b "We established that Lauren and Sam couldn't have done it."
     play sfx "audio/pophuh.mp3" volume .5
@@ -3307,7 +3307,7 @@ label trial3e:
         xcenter .75
     $mood = "shock"
     i "So... are you accusing *cough* me?"
-    call poptearb from _call_poptearb_42
+    call poptearb
     b "What?"
     i "Well Lauren said it had to either be Dracula or I..."
     i "And you just said *cough*  Dracula couldn't do it..."
@@ -3346,7 +3346,7 @@ label trial3e:
     i "..."
     b "..."
     $popx = .7
-    call poptearo from _call_poptearo_27
+    call poptearo
     i "...Okay, I got *cough* nothing."
     d "I don't understand... how else would a bottle be used in the murder besides as a weapon?"
     l "Maybe it was just randomly there?"
@@ -3453,7 +3453,7 @@ label trial3h:
     b "You think... Shahar did it?"
     b "He... he..."
     bi "I couldn't bring myself to say it."
-    call poptearb from _call_poptearb_43
+    call poptearb
     bi "The words \"killed himself.\""
     l "I mean... it would explain why the shards outside the cell couldn't be cleaned."
     l "Shahar wasn't allowed to leave his cell on the guard side."
@@ -3472,7 +3472,7 @@ label trial3h:
     l "People can make... irrational decisions when they're pushed to the edge."
     bi "...I don't want to, but... I have to tell them."
     b "...Yeah, I think Shahar had a reason."
-    call popwowb from _call_popwowb_40
+    call popwowb
     $mood = "ind"
     play music "audio/coming_together.mp3" fadein 1.0
 
@@ -3480,7 +3480,7 @@ label trial3h:
     b "Remember how I said the computer has some patient records?"
     b "When I first checked it out, I lied when I said I didn't recognize any of the names."
     b "Shahar's name was in there. And the only thing on his record was..."
-    call popwowb from _call_popwowb_41
+    call popwowb
     b "\"Patient thinks he is a pirate\"."
     l "Why didn't you tell us?"
     $mood = "sad"
@@ -3514,7 +3514,7 @@ label trial3hb:
     b "There are four basic types of locked room murde-"
     show jenny happy
     $popx = .25
-    call popheartso from _call_popheartso_14
+    call popheartso
     j "Okay, I don't think I care anymore."
     i "This explanation *cough* would be very boring if you were already a mystery fan."
     i "And even if you aren't, it's kind of *cough* obvious what it means."
@@ -3542,7 +3542,7 @@ label trial3hb:
     b "No. Shahar didn't kill himself."
     bi "My voice was shaking as I said it out loud for the first time."
     b "Lauren... even if your theory is correct."
-    call popwowb from _call_popwowb_42
+    call popwowb
     b "Something you told us about the evidence doesn't add up with Shahar being the culprit."
     l "What?"
     b "Yeah, just remember what you told us about..."
@@ -3568,7 +3568,7 @@ label trial3i:
     l "Maybe he just beat his head in, or used something hidden in his cell, or..."
     b "Then why are the glass shards there?"
     l "Maybe... a guard dropped it there on accident?"
-    call pophuhb from _call_pophuhb_41
+    call pophuhb
     b "Did anyone here drop a bottle there on accident?"
     b "...Who didn't clean it up, and then never told us about it?"
     b "..."
@@ -3582,7 +3582,7 @@ label trial3i:
     i "*cough cough cough*"
     l "Sid, is your cough getting worse?"
     $popx = .75
-    call poptearo from _call_poptearo_28
+    call poptearo
     i "No, it's actually gotten better from this morning..."
     i "It was definitely the worst right when I woke up."
     bi "..."
@@ -3625,7 +3625,7 @@ label trial3k:
         b "If you look at the order of the cells..."
         b "Sid's cell is neighboring Shahar's, and it's the only one neighboring Shahar."
         $mood = "shock"
-        call popwowb from _call_popwowb_43
+        call popwowb
         b "It's possible whatever the cause of Sid's cough is was something tied to Shahar's death."
         b "And Sid was caught in the crossfire."
         j "You think Sid is coughing because a bullet meant for Shahar hit Sid?"
@@ -3688,7 +3688,7 @@ label trial3l:
             bi "How is the bottle related?"
             jump trial3l
     $popx = .5
-    call popwowo from _call_popwowo_19
+    call popwowo
     b "The only thing that makes sense is the bottle had something in it that killed Shahar."
     b "All the pieces of the bottle we found were in front of Shahar's cell."
     b "And based on our earlier discussion, the bottle itself didn't kill Shahar."
@@ -3702,7 +3702,7 @@ label trial3l:
     i "*cough* Not to mention, wasn't the bottle empty when it broke?"
     b "Why do you say that?"
     $popx = .7
-    call pophuho from _call_pophuho_22
+    call pophuho
     i "If the bottle had something inside *cough* wouldn't Lauren or Sam have found evidence of it?"
     b "Evidence?"
     i "Like... *cough* the floor would've been wet, or stained, or it would have smelled bad."
@@ -3745,7 +3745,7 @@ label trial3m:
     show drac ind with moveinright:
         xcenter .8
     $popx = .75
-    call poptearo from _call_poptearo_29
+    call poptearo
     $mood = "sad"
     d "This isn't a very scientific theory."
     d "Why would the contents of the bottle suddenly vaporize when they left the bottle?"
@@ -3757,7 +3757,7 @@ label trial3m:
     d "Since otherwise Sid would have found the shards..."
     d "Or the murderer would have come back and clean them up."
     b "...That's a good point."
-    call poptearb from _call_poptearb_44
+    call poptearb
     bi "Damn, we were so close too."
     bi "I thought we had a good theory for how Shahar died, but..."
     l "Maybe if we can figure out what was in the bottle, it would help us figure out how it vaporized."
@@ -3804,7 +3804,7 @@ label trial3n:
     d "Yes, that could be a lethal concentration if you were close to them mixing."
     b "Lauren, you're a genius!"
     $popx = .7
-    call popwowo from _call_popwowo_20
+    call popwowo
     $mood = "ind"
     d "This still doesn't address the main issue."
     d "If they were mixed in the bottle, they would form a gas while they were in the bottle."
@@ -3840,7 +3840,7 @@ label trial3o:
     b "Two bottles actually broke, not one."
     show jenny happy
     $mood = "sad"
-    call poptearb from _call_poptearb_45
+    call poptearb
     j "That or the killer found a bottle that has two necks for some reason!"
     l "...I don't think that's very likely."
     show jenny ind
@@ -3875,14 +3875,14 @@ label trial3o:
         xcenter .4
     l "I checked the bottles of cleaning supplies in the closet."
     $mood = "shock"
-    call popwowb from _call_popwowb_44
+    call popwowb
     l "Sure enough, the ethanol and hydrogen peroxide bottles are both full."
     l "But the ammonia and bleach bottles are missing some."
     l "I can't really check how much they're missing, but..."
     b "It's probably reasonable to assume all the bottles were full when we came."
     b "Based on the ethanol and hydrogen peroxide bottles being full."
     b "So it's likely someone removed some at some point."
-    call popwowb from _call_popwowb_45
+    call popwowb
     b "Lauren, that's a huge breakthrough!"
     j "Are we sure no one used them to do any cleaning?"
     $mood = "ind"
@@ -3895,7 +3895,7 @@ label trial3o:
     s "...It makes them look suspicious..."
     s "...Since no one mentioned using them before..."
     $popx = .3
-    call popwowo from _call_popwowo_21
+    call popwowo
     j "Okay, so we figured out how Shahar died!"
     j "...Now what?"
     b "Huh?"
@@ -3913,7 +3913,7 @@ label trial3o:
     show sid mad with moveinleft:
         xcenter .25
     $popx = .25
-    call popmado from _call_popmado_8
+    call popmado
     i "What? I told you *cough* it wasn't me?"
     i "What's the deal with trying to *cough* pin it on me?"
     i "Did you not like my *cough* cooking or something?"
@@ -3960,7 +3960,7 @@ label trial3p:
     show sid ind:
         xcenter .2
     $popx = .25
-    call poptearo from _call_poptearo_30
+    call poptearo
     i "Wait, I don't *cough* get it."
     b "The claim is that there was nowhere to hide the bottles."
     b "If that were true, then yes, Sid would be the only possible culprit."
@@ -3973,7 +3973,7 @@ label trial3p:
     show ev3 pipes with dissolve:
         xcenter .5
         ycenter .5
-    call popwowb from _call_popwowb_46
+    call popwowb
     b "On top of the pipes."
     b "If the bottles sat directly on top of the pipe, they'd be easy to miss."
     b "You'd have to look up at the ceiling, and even then you'd have to be not directly below the pipes."
@@ -3995,7 +3995,7 @@ label trial3p:
     bi "The rest of the pieces fall into place on their own."
     hide scary with dissolve
     b "Tell me Dracula."
-    call pophuhb from _call_pophuhb_42
+    call pophuhb
     b "Why is it too simplistic?"
     show ev3 pipes with dissolve:
         xcenter .5
@@ -4043,10 +4043,10 @@ label trial3q:
     show sid mad:
         xcenter .2
     $popx = .2
-    call popmado from _call_popmado_9
+    call popmado
     $mood = "sad"
     i "Screw you Bert! How many times *cough* are you going to accuse me of being the killer!"
-    call poptearb from _call_poptearb_46
+    call poptearb
     l "Sid... you need to let Bert finish explaining himself."
     l "Every time you've been angry at him, when he finished talking you weren't angry anymore."
     i "..."
@@ -4137,7 +4137,7 @@ label trial3s:
     j "I like that Sid! Dental hygeine is important!"
     b "...Okay, so again, what I was saying is it had to-{p=0.5}{nw}"
     d "Hm, yes, I guess the medical glue is the most likely way one would hide the bottles on the pipe."
-    call poptearb from _call_poptearb_47
+    call poptearb
     b "...{size=-8}He just said what I was going to say...{/size}"
     b "...{size=-8}Just because you're taller than me doesn't mean you get to speak over me...{/size}"
     d "Sorry Bert, were you saying something?"
@@ -4188,7 +4188,7 @@ label trial3t:
     with dissolve
     play music "audio/coming_together.mp3" fadein 1.0
     b "There's one way to remotely dislodge the bottle, if it was held in place using medical glue..."
-    call popwowb from _call_popwowb_47
+    call popwowb
     b "Using the computer in the security room!"
     d "Bert, did you not hear the last thing I said?"
     d "No one could be on the guard side last night, when you propose that the bottle fell."
@@ -4219,7 +4219,7 @@ label trial3u:
     hide scary with dissolve
     b "The hot water cycling."
     b "The medical glue is made to be easily removable by applying a towel dipped in boiling water to it."
-    call popwowb from _call_popwowb_48
+    call popwowb
     b "If you cycled hot water through the pipes, the glue, which would be attached to the pipes, could melt right off."
     d "But that still doesn't answer my concern."
     d "How would you activate such a feature without entering the guard side of the floor at night?"
@@ -4284,7 +4284,7 @@ label trial3v:
     l "Unless there's a ladder somewhere that we don't know about, well..."
     l "I don't think the bottle could have been hidden on top of the pipe."
     $popx = .3
-    call poptearo from _call_poptearo_31
+    call poptearo
     i "Are you sure? *cough* I thought we were about to nab the killer!"
     l "Well, not exactly."
     l "At best we were about to find out how they did it, but not who did it."
@@ -4292,7 +4292,7 @@ label trial3v:
     $mood = "ind"
     b "..."
     play music "audio/coming_together.mp3"
-    call popwowb from _call_popwowb_49
+    call popwowb
 
     b "No, this is perfect, actually."
     b "Lauren, you said you would have to jump a bit, right?"
@@ -4325,7 +4325,7 @@ label trial3w:
     $ statusnt("Cafeteria", "bert", ch=3, sun=1)
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren", "sam")
     with dissolve
-    call popwowb from _call_popwowb_50
+    call popwowb
     b "Dracula."
     b "The rest of us are about Lauren's height, or less."
     i "Who are you talking about when you say *cough* less?..."
@@ -4340,7 +4340,7 @@ label trial3w:
     b "Huh?"
     d "He was also falsely accused earlier, as I am now."
     $popx = .7
-    call popwowo from _call_popwowo_22
+    call popwowo
     d "However, I am not nearly as reactionary as he is."
     d "I have good reason to remain calm."
     $mood = "shock"
@@ -4356,7 +4356,7 @@ label trial3w:
     bi "But I can tell. He had been fighting so hard against this theory the moment we came up with it."
     bi "Far moreso than anyone else."
     bi "In the mansion, he played a more passive role."
-    call popwowb from _call_popwowb_51
+    call popwowb
     bi "But this time... he's been aggressively trying to blame others!"
     bi "So I don't think I'm going to get us all killed here..."
     bi "No... I'm going to save everyone."
@@ -4396,7 +4396,7 @@ label trial3x:
     b "Kaiser could somehow operate the train computer in ways the rest of us could not."
     b "Catherine had access to a closet the rest of us thought was locked."
     b "And the killer here..."
-    call popwowb from _call_popwowb_52
+    call popwowb
     b "Could have been given a few coins."
     b "A modest advantage compared to the others."
     b "Because of this, it's harder to know what the truth behind the murder is."
@@ -4405,7 +4405,7 @@ label trial3x:
     b "You said root beer bottles were found in front of Shahar's body."
     show drac oh
     $popx = .73
-    call popwowo from _call_popwowo_23
+    call popwowo
     d "Were they not?"
     l "I never said they were root beer bottles."
     l "In fact, I had no idea what they were... there wasn't a label or anything when we found them."
@@ -4419,12 +4419,12 @@ label trial3x:
     d "I must have had a slip of the tongue and just said root beer because I remembered the brown drink."
     b "But cola is brown."
     $popx = .8
-    call popmado from _call_popmado_10
+    call popmado
     d "I'm growing tired of this."
     d "So what if cola is brown? Root beer was in the vending machine."
     b "How could you tell it wasn't cola?"
     $popx = .7
-    call popwowo from _call_popwowo_24
+    call popwowo
     $mood = "shock"
     stop music
     d "By the dreadful taste!"
@@ -4439,7 +4439,7 @@ label trial3x:
     b "I don't think with a single glance you could tell the drink was cola."
     b "It could have been any of the many brown sodas out there."
     b "In fact, I thought it was cola when I first saw it."
-    call popwowb from _call_popwowb_53
+    call popwowb
     b "The only way to know... would be to taste it, as Dracula just inadvertently admitted that he did."
     b "But to taste it, you'd have to get the bottle out of the vending machine."
     b "Which is seemingly impossible to do without breaking into the vending machine..."
@@ -4464,7 +4464,7 @@ label trial3x:
     show drac ind:
         xcenter .8
     $popx = .5
-    call popwowo from _call_popwowo_25
+    call popwowo
     $mood = "shock"
     d "Yes, you're right. Though it's annoying the way you seem to be rubbing it in my face."
     bi "Huh?"
@@ -4477,7 +4477,7 @@ label trial3x:
     d "That or he was trying to identify the cause of the odor the gas has."
     d "Or perhaps that was unlucky. After all, him dying by the bottle brought more attention to it..."
     $popx = .75
-    call poptearo from _call_poptearo_32
+    call poptearo
     d "Oh well. If I get one bit of respite before I die, it's that I don't have to keep up that fake Romanian accent."
     d "Do me one last favor, let's not waste time with you guys telling me how bad I am for killing someone."
     d "That routine is getting old, and will waste precious time."
@@ -4487,7 +4487,7 @@ label trial3x:
     show sid mad:
         xcenter .25
     $popx = .2
-    call popmado from _call_popmado_11
+    call popmado
     i "Hey! You can't just kill him and act all cool!"
     i "He was a person with hopes and dreams! He was our friend!"
     show drac ind
@@ -4503,7 +4503,7 @@ label trial3x:
     d "As much as I don't care for you all, I greatly dislike the Game Master."
     d "So in this game, I would rather you all win."
     d "And I will NOT have children yelling at me reduce the chances of that happening."
-    call popmado from _call_popmado_12
+    call popmado
     i "Did you just call me a child?! Now I wish you'd die sooner!"
     l "Sid, enough."
     l "He's right. Before Catherine died we learned some useful information from her."
@@ -4558,7 +4558,7 @@ label trial3x:
         xcenter .25
     with dissolve
     $popx = .75
-    call popheartso from _call_popheartso_15
+    call popheartso
     f "Lauren! You're finally back!"
     l "Freddy! I missed you!"
     l "Did you sleep okay last night?"
@@ -4593,7 +4593,7 @@ label trial3x:
     dr "I was once a surgeon. I'd like to think a respected one."
     dr "One night, towards the end of a 24-hour shift, I botched a surgery for a rich patient."
     $popx = .45
-    call popwowo from _call_popwowo_26
+    call popwowo
     dr "I was sued, medical malpractice insurance didn't want to cover."
     dr "I lost my license."
     dr "I was unable to find legitimate work, so I turned to more seedy practices."
@@ -4604,7 +4604,7 @@ label trial3x:
     dr "Eventually, a legal team reached out to me."
     dr "They worked for one of the largest companies in the world..."
     $mood = "shock"
-    call popwowb from _call_popwowb_54
+    call popwowb
     dr "Cantoire Holdings."
     dr "I know what you're thinking. But no, Stella never met me."
     dr "Cantoire Holdings is... extremely large."
@@ -4687,7 +4687,7 @@ label dracAsk:
             dr "Sid mentioned a case earlier, where he planted fake emails on Sydell's servers."
             dr "Shahar was on the Cantoire Holdings legal team for that case."
             $mood = "shock"
-            call popwowb from _call_popwowb_55
+            call popwowb
             bi "!"
             dr "I only heard about it secondhand when I was given the job, but this is my understanding."
             dr "He wasn't the one who reached out to Sid, I believe, which is why Sid didn't know him."
@@ -4706,7 +4706,7 @@ label dracAsk:
             show sid ind:
                 xcenter .75
             $popx = .7
-            call poptearo from _call_poptearo_33
+            call poptearo
             i "Hmph. I hate when adults tell me how to feel."
             $mood = "ind"
             dr "Listen, Shahar was a fairly admirable lawyer."
@@ -4738,7 +4738,7 @@ label dracAsk:
             dr "Stella is also dead, Catherine inadvertently made a good choice in who to kill."
             dr "Clearly it's not me, and Sid is a child."
             $popx = .45
-            call popwowo from _call_popwowo_27
+            call popwowo
             dr "But I'm fairly sure that lawsuit is part of, if not the key reason for this game."
             dr "The only person related to that case who isn't ruled out is..."
             dr "Sydell."
@@ -4773,7 +4773,7 @@ label dracAsk:
             show drac oh
             dr "I installed them."
             $mood = "shock"
-            call pophuhb from _call_pophuhb_43
+            call pophuhb
             bi "?!"
             b "You... what?"
             b "You could have prevented this game?"
@@ -4792,7 +4792,7 @@ label dracAsk:
             dr "It's... compli-{p=0.5}{nw}"
             stop music
             show braindeath
-            call popwowb from _call_popwowb_56
+            call popwowb
             pause .25
             hide drac
             show doom
@@ -4820,7 +4820,7 @@ label dracAsk:
             bi "If this was serious business, they would let us mourn."
             bi "Give us time to recoup. Give us a chance."
             bi "I still wanted to live... to win."
-            call poptearb from _call_poptearb_48
+            call poptearb
             bi "But when my brain can be turned off with a flip of a switch..."
             bi "Winning seems impossible."
             play music "audio/haunted.mp3" fadein 1.0
