@@ -484,7 +484,7 @@ label pent23:
         xcenter .7
     i "Oh! You're right! It's the same one that was in the mansion!"
     scene bg mansiondining at bg
-    $ statusnt("Dining Room", "bert", ch=2, sun=1)
+    $ statusnt("Dining Room", "bert", ch=5, sun=1)
     $showchibint("freddy")
     show frog sad
     show sepia:
@@ -1825,7 +1825,7 @@ label pent35:
     j "I guess... that's it."
     hide jenny with dissolve
 label pentpicker:
-    show bg reflecting
+    show bg reflecting with dissolve
     b "..."
     b "......"
     play music "audio/rush.mp3" fadein 1.0
@@ -1838,6 +1838,10 @@ label pentpicker:
     b "For Freddy's sake, we have to act now."
     b "So."
     b "The Game Master is..."
+    "The decision you're about to make will change the ending of the game."
+    "If you want to see both endings, we recommend you save here before continuing."
+label pentpicker2:
+    show bg reflecting
     call screen pickGameMaster with dissolve
 label pentsid:
     scene bg pentkitchenbroke at bg
@@ -2182,7 +2186,7 @@ label pentsidArun:
         xcenter -.05
         ycenter .675
     show jenny ind with dissolve
-    j "People like Dan, Dracula, or Stella... I felt no remorse seeing them die."
+    j "People like Dan, Ivan, or Stella... I felt no remorse seeing them die."
     j "But you... I was going to feel bad if you died."
     j "I was thinking... we were becoming friends."
     j "But given what just happened..."
@@ -2191,11 +2195,15 @@ label pentsidArun:
     b "Jenny? End this game..."
     $mood = "shock"
     b "{i}You're{/i} the Game Master?"
+    $ showchibint()
+    hide frogsit5
+    show bg reflecting
+    with dissolve
     j "Slow today, are we?"
     j "Yes, it's me."
     j "And before you even think about it - if you try to push me out that window, you'll die first."
     $mood = "sad"
-    j "The remote control for the brain chips is on my body."
+    j "The remote control for the brain chips is on my clothing."
     bi "Crap... I'm powerless over her."
     bi "Why did I shove Sid? Why did I think that the \"secret\" of the game wasn't a trick?"
     b "...So, what happens now?"
@@ -2222,13 +2230,10 @@ label pentsidArun:
     b "I don't believe anyone could feel that way."
     j "Oh, fuck off Bert."
     j "You and the rest of these cretins get to ruin lives and then go about your day as if nothing happened."
-    j "So I'm not sorry if you finally have to face the consequences of your actions."
-    j "Because people like me have to live with those consequences every day of our lives."
+    j "So I'm not sorry if you don't understand the way I feel."
+    j "Because people like me have to live with those consequences of your actions every day of our lives."
     b "...You had to live with the consequences..."
     b "...Did you know the woman I killed?"
-    show bg reflecting
-    show jenny ind
-    with dissolve
     j "Oh, I knew her very well."
     j "She was my mother."
     b "!"
@@ -2246,7 +2251,7 @@ label pentsidArun:
     j "From the beginning, person by person, crime by crime."
     j "Why their endings were deserved."
     bi "It killed me that she was correct."
-    bi "Even though I knew it was over, I still wanted to know."
+    bi "Even though I knew it was over, I still at least wanted to solve the mystery before I died."
     j "It started when I was just a girl."
     j "My dad was working all the time, which made our family's relationship strained."
     j "I loved my parents, but I knew they weren't happy, and that made me unhappy around them."
@@ -2259,10 +2264,10 @@ label pentsidArun:
     j "Until one day, I got the news..."
     j "She died."
     show ch5evlauren with dissolve:
-        ycenter .6
+        ycenter .5
     j "And some girl named Lauren killed her."
     j "It broke me. Clara was the nicest girl in the world, and she was dead."
-    j "And the girl who killed her got to keep living her live."
+    j "And the girl who killed her got to keep living her life."
     j "How was that fair?"
     j "It was then that I understood the problem with the world."
     j "The people who cause suffering don't have to live with that suffering."
@@ -2278,17 +2283,17 @@ label pentsidArun:
     j "Seeing how the success of his company made him happy, I figured..."
     j "Even if mommy and me don't get it, as long as it makes him happy, I'm happy."
     show ch5evkaiser with dissolve:
-        ycenter .6
+        ycenter .5
     j "But then the train heist happened."
     j "Kaiser and his accomplices stole products that InSyde was shipping to fulfill a purchase order."
     j "InSyde Electronics suffered massive losses."
     j "But more importantly, it damaged relationships with partners whose orders went unfulfilled."
-    j "One company had a product launch planned that they had to postpone due to insufficient supplies."
+    j "One partner had a product launch planned that they had to postpone due to insufficient supplies."
     j "The result was a multi-million dollar loss in stock value."
     j "That company was a subsidiary of..."
     hide ch5evkaiser
     show ch5evstella:
-        ycenter .6
+        ycenter .5
     with dissolve
     j "Cantoire Holdings."
     j "Unable to fulfill shipments, InSyde got hit with lawsuits from Cantoire."
@@ -2296,7 +2301,7 @@ label pentsidArun:
     j "She hired one of the best lawyers she could find to dig up dirt and ruin InSyde, and thus ruin my dad."
     hide ch5evstella
     show ch5evshahar:
-        ycenter .6
+        ycenter .5
     with dissolve
     j "That lawyer was Shahar."
     j "The \"pirate\" we knew was once a great lawyer..."
@@ -2305,27 +2310,27 @@ label pentsidArun:
     j "They blackmailed a kid to hack Sydell's computers and plant information."
     hide ch5evshahar
     show ch5evsid with dissolve:
-        ycenter .6
+        ycenter .5
     j "Which, as we know now, is the kid you pushed out a window."
     j "Of course, Stella's team was full of monsters."
     j "And Shahar, well, he had more morals than the Cantoire legal team did."
     j "Perhaps weary Shahar would confess, or just as an extra precaution..."
     hide ch5evsid with dissolve
     show ch5evdracula:
-        ycenter .6
+        ycenter .5
     with dissolve
     j "They hired Ivan to lobotomize Shahar."
     j "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
     j "My father's last hope for recovering his life's work was to speak to Shahar."
     j "And that hope was taken away by Ivan."
-    j "When I blackmailed him into making the brain chips... he was remorseful."
+    j "When he was coerced into making the brain chips... he was remorseful."
     j "I'll give him credit for that."
     j "But it didn't change what he did."
     hide ch5evdracula with dissolve
     j "With the lawsuit, InSyde was finished."
     j "His business in shambles, my dad turned to drugs."
     show ch5evsam with dissolve:
-        ycenter .6
+        ycenter .5
     j "As you know, that's where Sam came in."
     j "Sam sold him experimental drugs to make a quick profit, and Sydell didn't care."
     j "By Sam's own admission, the drugs were not safe, and probably ruined dad's mental state."
@@ -2333,14 +2338,14 @@ label pentsidArun:
     j "People can recover from drug addiction, though."
     j "But it got worse."
     show ch5evfreddy:
-        ycenter .6
+        ycenter .5
     with dissolve
     j "This is where Gerald Ogden comes in."
     j "As Sam mentioned, Gerald Ogden is the kingpin of a drug empire."
     j "My dad's drug addiction led to me protesting against Ogden being found innocent in an unrelated case."
     j "He decided to make an example out of me and the other protesters."
     show ch5evcatherine with dissolve:
-        ycenter .6
+        ycenter .5
     j "He told Catherine about a day when the house would be empty, so she could rob it."
     j "Catherine was just making some easy money, but Gerald was using her to send a message."
     j "\"You try to oppose me, I'll attack you in your home.\""
@@ -2353,7 +2358,7 @@ label pentsidArun:
     with dissolve
     j "He figured if he was going to die, he'd try to kill the person who he felt was responsible for all this before he did."
     show ch5evdan with dissolve:
-        ycenter .6
+        ycenter .5
     j "He ordered Dan to kill Stella in a fit of madness."
     j "As you guessed, this backfired."
     j "Stella's team caught him, and got him to kill dad himself."
@@ -2373,18 +2378,17 @@ label pentsidArun:
     j "Goodbye Bert."
     b "Jenny, no!{p=0.5}{nw}"
     scene black
+    hide screen status_screen
+    hide screen showchibis
     show braindeath
     pause .25
     show doom
     pause 1.0
     scene black with dissolve
     pause 1.0
-    menu:
-        "See the other ending?"
-        "Yes":
-            call screen pickGameMaster with dissolve
-        "No":
-            $ MainMenu(confirm=False)()
+    bi "..."
+    bi "...No, it can't be Sid."
+    bi "Which means, it has to be..."
 
 label pentjennyArun:
     show bg reflecting
@@ -2432,11 +2436,14 @@ label pentjennyArun:
     b "There's no way you could have known it was a woman in the accident."
     b "I figured maybe it was a lucky guess, or part of the joke, so I had you and Sid give some words."
     b "But even with this second chance... you made the same slip up."
+    b "The secret of the game... is that the Game Master's last name is Sydell."
     j "I..."
     b "Jenny Flowers... no, Jenny Sydell."
     b "You're the Game Master."
     b "And your end is deserved."
     #bert pushes jenny out the window.
+    hide screen status_screen
+    hide screen showchibis
     camera:
         matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
         linear 1.5 matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 120.0, 690.0)*RotateMatrix(0.0, 0.0, 0.0)
@@ -2451,6 +2458,7 @@ label pentjennyArun:
     show glassfallanim at bg
     pause 3.0
     scene black with dissolve
+    pause 2.0
     bi "A few seconds passed, and then we heard a click."
     bi "The apartment's front door unlocked."
     bi "Presumably because Jenny, the Game Master, had died."
@@ -2478,12 +2486,7 @@ label pentjennyArun:
         j "But, even if that's all you did, it's something I don't get a lot of in my normal life."
         scene black with Dissolve(2.0)
         pause 2.0
-    menu:
-        "See the other ending?"
-        "Yes":
-            call screen pickGameMaster with dissolve
-        "No":
-            $ MainMenu(confirm=False)()
+    jump credits
 
     label postdeath:
         "Jenny ironically died in the same intersection that her mother did."
