@@ -2343,6 +2343,8 @@ label trial1a:
     show delistart with dissolve
     pause 1.0
     hide delistart with dissolve
+    $evidence_menu = 1
+    tut "During deliberations, you can access evidence from the menu."
     show stella ind with dissolve
     t "So what's the plan?"
     t "I think I agree with the pirate at this point, let's all just jump out a window."
@@ -4150,6 +4152,7 @@ label trial1r:
     bi "A more humane person would have given us some time."
     bi "To celebrate, to reflect, to mourn."
     bi "But instead, with no warning, I passed out."
+    $evidence_menu = 0
     play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
     call screen ch1results with dissolve

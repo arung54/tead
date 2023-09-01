@@ -30,14 +30,17 @@ screen hospMapInv():
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("hospMapInv", transition=Dissolve(0.3)), Hide("mapPreview")]
 
-screen hosp_evidence():
+screen hosp_evidence(in_menu = False):
     add "eviscroll"
     modal True
 
     imagemap:
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
-        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("hosp_evidence", transition=Dissolve(0.3))]
+        if in_menu:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("hosp_evidence", transition=Dissolve(0.3)), ShowMenu("preferences")]
+        else:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("hosp_evidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 18:
         if hosp_evidence[0]:
             textbutton "Guards' Accounts" style "button_text" action SetVariable("currEvidence", 0)
@@ -107,7 +110,7 @@ screen hosp_evidence():
     fixed xmaximum 580:
         if currEvidence == 0:
             image "ev3 guards.png" xcenter 800 yalign 0.1
-            text "{size=-2}Sam claims to have woken up before the intercom went off and stared out the door on the guard side of his door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
+            text "{size=-2}Sam claims to have woken up before the intercom went off and stared out the door on the guard side of their door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
             image "ev3 computer.png" xcenter 800 yalign 0.1
@@ -1051,7 +1054,7 @@ label hospInvFreddy:
     show frogrg sad at inwindow behind hospwindowoverlay with dissolve
     f "Lauren... why are you over there?"
     f "When are you gonna come back and play with me?"
-    lf "Soon Freddy. I have some imoprtant work to do..."
+    lf "Soon Freddy. I have some important work to do..."
     f "Important work?"
     lf "Uh, remember all those debates we've had since we got here?"
     lf "You know, before we fall asleep and wake up somewhere else."

@@ -404,6 +404,9 @@ screen navigation(use_nav=True):
             textbutton _("Settings") text_hover_color "#929292" action ShowMenu("preferences")
             textbutton _("History") action ShowMenu("history") text_hover_color "#929292"
             textbutton _("Characters") action [ShowMenu("Characters")] text_hover_color "#929292"
+            if evidence_menu != 0:
+                textbutton _("Evidence") action [ShowMenu("Evidence")] text_hover_color "#929292"
+
             textbutton _("Save") action ShowMenu("save") text_hover_color "#929292"
 
             textbutton _("Load") action ShowMenu("load") text_hover_color "#929292"
@@ -801,6 +804,19 @@ screen Characters():
             idle "goback.png"
             hover "goback.png"
             focus_mask True action [Hide("Characters"), SetVariable("pers", "NONE"), Hide("freeTimeCounter"), Function(hideCards), ShowMenu("preferences")]
+
+screen Evidence():
+    tag menu
+    modal True
+    if evidence_menu == 1:
+        use train_evidence(in_menu = True)
+    if evidence_menu == 2:
+        use mans_evidence(in_menu = True)
+    if evidence_menu == 3:
+        use hosp_evidence(in_menu = True)
+    if evidence_menu == 4:
+        use bank_evidence(in_menu = True)
+
 
 screen CharactersPersistent():
     tag menu

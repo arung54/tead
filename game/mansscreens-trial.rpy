@@ -225,7 +225,7 @@ screen pickSpot3:
         ground "map2ui.png"
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
-        hotspot(309, 394, 81, 74):
+        hotspot(308, 427, 84, 69):
             action [Function(shatterNoise), Show("shatteredMans", lab = "trial2v")]
 
 screen pickSpot4:
@@ -233,5 +233,5 @@ screen pickSpot4:
         ground "map2ui.png"
         hotspot(0, 0, 1279, 719):
             action [Function(errorNoise), Show("tryAgain", transition=Dissolve(0.2))]
-        hotspot(758, 306, 160, 179):
+        hotspot(760, 352, 158, 158):
             action [Function(shatterNoise), Show("shatteredMans", lab = "trial2z")]

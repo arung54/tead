@@ -50,14 +50,17 @@ screen mansMapInv():
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("mansMapInv", transition=Dissolve(0.3)), Hide("mapPreview")]
 
-screen mans_evidence():
+screen mans_evidence(in_menu = False):
     add "eviscroll"
     modal True
 
     imagemap:
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
-        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("mans_evidence", transition=Dissolve(0.3))]
+        if in_menu:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("mans_evidence", transition=Dissolve(0.3)), ShowMenu("preferences")]
+        else:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("mans_evidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if mans_evidence[0]:
             textbutton "Shape of the Wound" style "button_text" action SetVariable("currEvidence", 0)
@@ -307,7 +310,7 @@ label mansSheath:
     if False not in mans_evidence[7:9]:
         bi "Hmm... I think that's everything to find here."
         bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
-    call mansDone
+    call mansDone from _call_mansDone_5
     call screen diningInv
 
 label mansDracula:

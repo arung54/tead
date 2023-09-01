@@ -106,7 +106,7 @@ screen hospitalEvidenceTrial(s, e, l):
     fixed xmaximum 580:
         if currEvidence == 0:
             image "ev3 guards.png" xcenter 800 yalign 0.1
-            text "{size=-2}Sam claims to have woken up before the intercom went off and stared out the door on the guard side of his door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
+            text "{size=-2}Sam claims to have woken up before the intercom went off and stared out the door on the guard side of their door until morning. Sam didn't see or hear anything until Lauren showed up to get Sam out of the cell. Lauren claims she left her cell as soon as possible and waited outside Sam's cell." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 1:
             image "ev3 computer.png" xcenter 800 yalign 0.1

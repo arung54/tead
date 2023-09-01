@@ -29,14 +29,17 @@ style button_text:
 style blue_text:
     color "#00f"
 
-screen train_evidence():
+screen train_evidence(in_menu = False):
     add "eviscroll"
     modal True
 
     imagemap:
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
-        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("train_evidence", transition=Dissolve(0.3))]
+        if in_menu:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("train_evidence", transition=Dissolve(0.3)), ShowMenu("preferences")]
+        else:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("train_evidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 30:
         if train_evidence1[0]:
             textbutton "Login Screen" style "button_text" text_hover_color "#929292" action SetVariable("currEvidence", 0)

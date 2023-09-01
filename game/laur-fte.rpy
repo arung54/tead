@@ -187,7 +187,7 @@ label laurHang:
         o "My parents were well off, but pretty strict about only paying for necessary expenses."
         o "They also wanted to instill discipline in me."
         o "I liked kids more than most high schoolers, so it was more like a hobby."
-        o "Sometimes I even got lucky and found a gig where the kids just slept and I got paid do homework."
+        o "Sometimes I even got lucky and found a gig where the kids just slept and I got paid to do homework."
         n "Wait, back up, you liked kids more than other high schoolers?"
         o "Jesus, not in a weird way."
         o "They just have a sense of wonder and sympathy that other teenagers never did."
@@ -310,7 +310,7 @@ label laurHang:
     if fte_laur == 2:
         o "Hey Bert, gotta tell you, our conversations got real deep real fast."
         b "Yeah, sorry about that."
-        b "I know you that sort of stuff is hard to talk to strangers who might want to kill you."
+        b "I know that sort of stuff is hard to talk to strangers who might want to kill you."
         b "I appreciate your openness, totally get it if you wanna talk more casually."
         o "Well, I'm pretty sure you're not going to try to kill me at this point."
         o "Not to bring up sore spots, but you're one of the few people who opened up about their crime."

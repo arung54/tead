@@ -415,6 +415,7 @@ init python:
         laur = False
         mood = "happy"
         cat = False
+        evidence_menu = 0
 init python:
     config.developer = False
     config.debug_sound = False
@@ -846,6 +847,7 @@ label start:
         fte_shah = -1
         fte_cath = -1
         fte_kais = -1
+        evidence_menu = 0
         pers = ""
 
 ##################

@@ -3137,6 +3137,10 @@ label trial2a:
     $showchibint("catherine", "dracula", "freddy", "lauren", "jenny", "sam", "shahar", "sid")
     $statusnt("Dining Room", "bert", ch=2, sun=4)
     show lauren ind with dissolve
+    show delistart with dissolve
+    pause 1.0
+    hide delistart with dissolve
+    $evidence_menu = 2
     l "Well, this murder should be easier to figure out than the previous one."
     show lauren ind:
         linear 0.15 xcenter .75
@@ -3770,8 +3774,9 @@ label trial2j:
     show drac ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show shahar ind with moveinleft:
+    show shahar ind:
         xcenter .25
+    with moveinleft
     h "Water? You sure it wasn't a splash of vodka? That'd be more in character fer the lass."
     hide popwow
     d "No, the way the killer formed the weapon wouldn't work with alcohol due to its chemical properties."
@@ -4194,7 +4199,7 @@ label trial2p:
     s "I can't in good faith put your lives above mine."
     s "And even if I could..."
     s "What if {i}everyone{/i} gets killed if the murderer doesn't comply and kill someone?"
-    s "What if I was the chosen killer, and my hestence led to {i}everyone{/i} dying?"
+    s "What if I was the chosen killer, and my hesitance led to {i}everyone{/i} dying?"
     bi "..."
     $mood = "sad"
     bi "I... I never thought about it from that perspective."
@@ -4338,7 +4343,7 @@ label trial2r:
     with fade
     $mood = "ind"
     b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
-    b "There was a generator upstairs, anad when I looked under the sink I saw some wires fed in through a hole in the wall."
+    b "There was a generator upstairs, anal when I looked under the sink I saw some wires fed in through a hole in the wall."
     b "It was hard to tell where the wires connected to, but it was probably the sink handles."
     b "And they were probably connected to the generator."
     b "With enough electricity running through them, I'm sure they would get hot enough to burn Stella."
@@ -5056,6 +5061,7 @@ label cathGivesInfo:
     bi "But just as before, with no warning, we were put to sleep."
     bi "No time to mourn, no time to discuss."
     bi "Our chances to find the Game Master are running thin..."
+    $evidence_menu = 0
     play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
     call screen ch2results with dissolve

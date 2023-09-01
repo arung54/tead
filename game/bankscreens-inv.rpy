@@ -63,14 +63,17 @@ screen bankMapInv():
         idle "trainMapoverlayleft.png"
         hotspot(0, 0, 119, 719) action [Hide("bankMapInv", transition=Dissolve(0.3)), Hide("mapPreview")]
 
-screen bank_evidence():
+screen bank_evidence(in_menu = False):
     add "eviscroll"
     modal True
 
     imagemap:
         ground "evidenceui.png"
         #add "usethis.png" xcenter 800 yalign .9
-        hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("bank_evidence", transition=Dissolve(0.3))]
+        if in_menu:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("bank_evidence", transition=Dissolve(0.3)), ShowMenu("preferences")]
+        else:
+            hotspot(35, 29, 144, 75) action [SetVariable("currEvidence", -1), Hide("bank_evidence", transition=Dissolve(0.3))]
     vbox xalign 0.15 yalign 0.75 spacing 18:
         if bank_evidence[0]:
             textbutton "Bert's Account" style "button_text" action SetVariable("currEvidence", 0)
@@ -159,19 +162,31 @@ screen bank_evidence():
             text "Freddy woke up to the sound of gunshots. He saw me get down to the floor, then saw the uniformed person leave, and me chase after them." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
-            image "ev4 lauren.png" xcenter 800 yalign 0.1
-            text "{size=-2}Lauren was searching in the office, left, and was trying to find people. The safe was closed when she passed by, and she didn't see anyone in the locker room. She walked towards the lobby, passing the couch, and ended up finding me and Jenny because she heard us talking in the break room." xcenter 800 yanchor 0.0 ypos 330
+            imagebutton:
+                idle "ev4 lauren.png"
+                xcenter 800
+                yalign 0.1
+                action [Show("lauren_map", transition=Dissolve(0.3))]
+            text "{size=-2}Lauren was searching in the office, left, and was trying to find people. The safe was closed when she passed by, and she didn't see anyone in the locker room. She walked towards the lobby, passing the couch, and ended up finding me and Jenny because she heard us talking in the break room. {i}(Click picture to pull up the map.)" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 7:
-            image "ev4 jenny.png" xcenter 800 yalign 0.1
-            text "Jenny had just finished taking a shower in the locker room. She walked out and saw the lights had turned green and the safe was open, then heard me yelling. She walked directly to the break room, passing Sid sleeping on the couch on the way." xcenter 800 yanchor 0.0 ypos 330
+            imagebutton:
+                idle "ev4 jenny.png"
+                xcenter 800
+                yalign 0.1
+                action [Show("jenny_map", transition=Dissolve(0.3))]
+            text "{size=-2}Jenny had just finished taking a shower in the locker room. She walked out and saw the lights had turned green and the safe was open, then heard me yelling. She walked directly to the break room, passing Sid sleeping on the couch on the way. {i}(Click picture to pull up the map.)" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
-            image "ev4 sid.png" xcenter 800 yalign 0.1
+            imagebutton:
+                idle "ev4 sid.png"
+                xcenter 800
+                yalign 0.1
+                action [Show("sid_map", transition=Dissolve(0.3))]
             if bank_extra[12]:
-                text "Sid pretended to sleep on the couch when he heard me yell. He went into the safe for a few minutes after he thought Jenny wouldn't see him, found it was mostly empty, then came to the break room afterwards." xcenter 800 yanchor 0.0 ypos 330
+                text "Sid pretended to sleep on the couch when he heard me yell. He went into the safe for a few minutes after he thought Jenny wouldn't see him, found it was mostly empty, then came to the break room afterwards. {i}(Click picture to pull up the map.)" xcenter 800 yanchor 0.0 ypos 330
             else:
-                text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead." xcenter 800 yanchor 0.0 ypos 330
+                text "Sid woke up from sleeping on the couch. He saw the green lights, so he walked towards the safe door and saw it was open. However, he heard someone yell from this side of the bank and made his way towards us instead. {i}(Click picture to pull up the map.)" xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 9:
             image "ev4 sign.png" xcenter 800 yalign 0.1
@@ -184,6 +199,39 @@ screen bank_evidence():
         if currEvidence == 11:
             image "ev4 uniform.png" xcenter 800 yalign 0.1
             text "Originally, each locker had one uniform it. When I investigated the locker room after Sam's death, only one of those uniforms was missing." xcenter 800 yanchor 0.0 ypos 330
+
+screen lauren_map:
+    modal True
+    imagemap:
+        ground "map4uilauren.png"
+        hotspot(0, 0, 1279, 719):
+             action [Hide("lauren_map", transition=Dissolve(0.2))]
+    imagemap:
+        idle "trainMapoverlayleft.png"
+        hotspot(0, 0, 119, 719) action [Hide("lauren_map", transition=Dissolve(0.3)), Hide("mapPreview")]
+
+screen jenny_map:
+    modal True
+    imagemap:
+        ground "map4uijenny.png"
+        hotspot(0, 0, 1279, 719):
+             action [Hide("jenny_map", transition=Dissolve(0.2))]
+    imagemap:
+        idle "trainMapoverlayleft.png"
+        hotspot(0, 0, 119, 719) action [Hide("jenny_map", transition=Dissolve(0.3)), Hide("mapPreview")]
+
+screen sid_map:
+    modal True
+    imagemap:
+        if bank_extra[12]:
+            ground "map4uisid2.png"
+        else:
+            ground "map4uisid.png"
+        hotspot(0, 0, 1279, 719):
+            action [Hide("sid_map", transition=Dissolve(0.2))]
+    imagemap:
+        idle "trainMapoverlayleft.png"
+        hotspot(0, 0, 119, 719) action [Hide("sid_map", transition=Dissolve(0.3)), Hide("mapPreview")]
 
 screen breakInv():
     default tt = Tooltip("")

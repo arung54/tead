@@ -2607,6 +2607,10 @@ label trial4a:
 
     bi "They all stayed here for the entire investigation, so I caught them up to speed on everything I found."
     bi "Which wasn't much, unfortunately."
+    show delistart with dissolve
+    pause 1.0
+    hide delistart with dissolve
+    $evidence_menu = 4
     show jenny ind:
         xcenter .25
     show lauren ind:
@@ -3602,29 +3606,43 @@ label trial4r:
     hide sid
     hide lauren
     with moveoutright
-    show jenny ind:
-        xcenter .25
-        linear 0.3 xcenter .5
     j "Okay, so where was I..."
+    show map4uijenny:
+        xalign 0.75 yalign 0.4
+        zoom 0.5
+    with dissolve
     j "I finished taking a shower, walked out of the locker room into the hall, saw the green lights."
     j "Oh, and the safe door was open."
     j "I saw Sid napping on the couch."
     j "Then I heard Bert yell, and went to see what happened."
+    hide map4uijenny
     hide jenny with moveoutleft
-    show sid ind with moveinright
+    show sid ind with moveinright:
+        xcenter .25
+    show map4uisid:
+        xalign 0.75 yalign 0.4
+        zoom 0.5
+    with dissolve
     i "Um, I was sleeping on the couch, like Jenny said."
     i "When I woke up, I noticed the red light in the hallway had turned green."
     i "I went to go check out the safe, then I heard Bert yell before I could go in."
     i "So I ran from the safe, past the office, to the break room."
+    hide map4uisid with dissolve
     hide sid with moveoutleft
-    show lauren ind with moveinright
+    show lauren ind with moveinright:
+        xcenter .25
+    show map4uilauren:
+        xalign 0.75 yalign 0.4
+        zoom 0.5
+    with dissolve
     l "I was searching for clues in the director's office."
     l "I couldn't find anything, so I went to go look for other people."
     l "I walked to the locker room, didn't find anyone there."
     b "And the safe was closed when you walked from the office to the locker room?"
     l "Yep. After that I went to the break room and found you and Jenny."
+    hide map4uilauren with dissolve
     show lauren ind:
-        xcenter .5
+        xcenter .25
         linear 0.15 xcenter .75
     show sid ind
     show jenny ind:
@@ -4551,6 +4569,7 @@ label laurAsk:
             bi "I was almost ready to surrender."
             bi "I could only wonder, if I woke up, would I have the energy to survive?"
             bi "Or would one simple mistake mean the end?"
+            $evidence_menu = 0
             play music "audio/haunted.mp3" fadein 1.0
             pause 1.0
         ############################################## end of ch1 screen
