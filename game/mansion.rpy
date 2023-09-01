@@ -365,7 +365,7 @@ label Mansionuno:
         xcenter .25
     $mood = "ind"
     j "I do have some concerns about us all admitting to crimes..."
-    j "I know it will sound suspicious, but I think for some of us, this very personal."
+    j "I know it will sound suspicious, but I think for some of us, this is very personal."
     j "One of those things that you have to keep bottled up or ignore for your own sanity."
     bi "Y-yeah."
     j "Like the awkward moment from middle school that ruins you when you think of it."
@@ -463,7 +463,7 @@ label Mansionuno:
     j "Sure!"
     bi "I think after how she helped on train, I can trust her."
     bi "Was Stella actually on to something about Jenny and I? I'm not sure..."
-    j "Where should we start? This is quite the upgrade from that trian!"
+    j "Where should we start? This is quite the upgrade from that train!"
     $ showchibint("jenny", "shahar", "stella")
     bi "The others left as we started talking."
     b "Guess no one wants to look around here?"
@@ -716,7 +716,7 @@ label mansiondos:
     show jenny ind with moveinleft:
         xcenter .5
     j "Okay, so this is the upstairs, huh?"
-    b "Prety spacious."
+    b "Pretty spacious."
     j "It seems like there are 1, 2, 3, 4, 5, 6 doors up here!"
     j "Let's check them out from left to right!"
     b "I hear some murmuring coming from that room already..."
@@ -897,7 +897,7 @@ label mansiondos:
         j "Okay."
     j "A few years ago there was a pretty popular court case in trial near me."
     j "An infamous sleazeball businessman was caught for a whole ton of stuff."
-    j "He was pretty well known, had his hand in the a lot of our city's happenings."
+    j "He was pretty well known, had his hand in a lot of our city's happenings."
     j "Anyway, my friends and I would go hang around at town hall when it was in trial."
     j "We wanted to pressure the jury to rule guilty however we could, even if we were just watching."
     j "From day one it was so clear he was guilty."
@@ -1497,7 +1497,7 @@ label postFT2:
     show pophearts:
         xcenter .75
         ycenter .5
-    t "Romance is a cute for word it!"
+    t "Romance is a cute word for it!"
     b "I'm just saying, you talk a lot about me and my love-life, but never about you and yours."
     hide pophearts
     t "Do you want to hear about my love life?"
@@ -1857,7 +1857,7 @@ label postFT2:
     b "Shhh, stop screaming!"
     t "Plus, it wouldn't be very ladylike of me to bend down and try to look down there."
     t "Killjoy, you mind doing it?"
-    h "Why not Shahar?"
+    b "Why not Shahar?"
     $mood = "ind"
     t "I don't think his muscles will fit in the cabinet."
     bi "Hm... if I lie about it, maybe they'll give up."
@@ -2372,7 +2372,7 @@ label postFT4:
     b "Hey, how's it going?"
     l "It's okay. Freddy's pretty torn up about not having Sesame at the party."
     l "While it's very nice of Catherine and Jenny to cook for us, they were some of the people Freddy got along better with."
-    l "So, no offense, but it's pretty much is just me that he gets along with at the party right now."
+    l "So, no offense, but it's pretty much just me that he gets along with at the party right now."
     b "Huh? I thought we were getting along fine..."
     show lauren ind
     l "You asked him about his home life, right? He told me on the way down here."
@@ -2634,7 +2634,7 @@ label postFT4:
     bi "This kid really had a weird life, huh."
     f "There are some scary people here like my dad, so I thought I should just hide and listen."
     $mood = "ind"
-    b "You don't to tell me twice bud, parties aren't for everyone."
+    b "You don't need to tell me twice bud, parties aren't for everyone."
     #b "I know adults who lurk in the corner at parties because that's what most comfortable to them."
     f "Oh... thanks Bert. But uh, could I ask you not to tell anyone else I'm hiding back here?"
     b "Sure, but let's make a deal?"
@@ -2778,7 +2778,7 @@ label postFT4:
         alpha .5
     bi "...I'm sure I looked like a dork in front of Jenny, but oh well."
     bi "I spent a while eating my meat loaf. My eating speed was starting to slow down, for better or worse."
-    bi "It really was nice to have this time to relax with everyone, despite the various levels of of friendships."
+    bi "It really was nice to have this time to relax with everyone, despite the various levels of friendships."
     bi "As I sat and ate, Sam had come back with the stepstool and walked through to the kitchen."
     "After some more time had passed..."
     hide scary with dissolve
@@ -2794,7 +2794,7 @@ label postFT4:
     s "It's much blunter than a knife, but it should work fine for this."
     $mood = "ind"
     bi "Just like before, I cut myself way too big a slice."
-    bi "It seemed Sam had already cut one piece out, with rather clean cluts."
+    bi "It seemed Sam had already cut one piece out, with rather clean cuts."
     bi "In contrast, my cut looked more like I beat my slice of cake to death..."
     bi "Well, good thing the shape of my slice doesn't matter, it's all getting digested anyway!"
     s "Well, my work here's done. I'm gonna go party."
@@ -3580,8 +3580,8 @@ label trial2g:
     d "my guess is the murder weapon is something a bit bigger than the kitchen knife."
     d "And I don't see a reason for the killer to jiggle the knife."
     hide popwow
-    s "Aye, I can verify everything the geezer's saying."
-    s "He did jiggle the cutlass around a bit after shivving the lady."
+    h "Aye, I can verify everything the geezer's saying."
+    h "He did jiggle the cutlass around a bit after shivving the lady."
     d "To clarify, I did not \"shiv\" Stella. I merely reinserted the knife in the existing wound."
     d "I will also say, there was very little resistance in reinserting the knife."
     d "I think this is further evidence that the murder weapon was left in the body for an extended period of time."

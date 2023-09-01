@@ -195,7 +195,7 @@ label mansAppliances:
     bi "Hmm... the microwave and oven's digital clocks aren't working like Jenny said."
     bi "But Catherine was still able to cook."
     bi "So the kitchen didn't lose power... did someone mess with them?"
-    if False not in mans_extra[0:2]:
+    if False not in mans_extra[0:3]:
         bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
         bi "Maybe I should check elsewhere."
     call screen kitchenInv
@@ -208,7 +208,7 @@ label mansCupboards:
     bi "..."
     bi "Hmm... lots of silverware, fancy glasses, and utensils."
     bi "But no sharp objects, just like Sam said."
-    if False not in mans_extra[0:2]:
+    if False not in mans_extra[0:3]:
         bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
         bi "Maybe I should check elsewhere."
     call screen kitchenInv
@@ -224,7 +224,7 @@ label mansFridge:
     bi "I should check the freezer as well, while I'm here."
     bi "...Huh, it's pretty empty."
     bi "Just an ice cube tray. Guess the homeowner isn't a fan of frozen food."
-    if False not in mans_extra[0:2]:
+    if False not in mans_extra[0:3]:
         bi "I was able to double check what people said about the kitchen, but I didn't learn much new."
         bi "Maybe I should check elsewhere."
     call screen kitchenInv
@@ -307,6 +307,7 @@ label mansSheath:
     if False not in mans_evidence[7:9]:
         bi "Hmm... I think that's everything to find here."
         bi "Not that I found much, mostly the sheath and talking to Dracula about stuff I already knew..."
+    call mansDone
     call screen diningInv
 
 label mansDracula:
@@ -1015,7 +1016,7 @@ label mansStella:
         show newevidencefound with dissolve
         pause 1
         hide newevidencefound with dissolve
-        blank "Blood from the Wound was added to evidence."
+        blank "Damp Clothing was added to evidence."
         b "Wow Jenny, you figured out a lot."
         j "Hey, you helped us figure out Kaiser's death, we gotta all chip in!"
         bi "Jenny's been so helpful... a killer couldn't be this helpful, right?"
