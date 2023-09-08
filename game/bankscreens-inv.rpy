@@ -774,7 +774,7 @@ label bankInvLauren:
         l "I made my way over here, then heard you and Jenny talking in the break room."
         l "And well, you know what happened from there."
         b "Hm, okay. Let me recap to make sure I got this right."
-        l "You were in the office, walked to the locker room, didn't find anyone, then came here."
+        b "You were in the office, walked to the locker room, didn't find anyone, then came here."
         b "The safe was closed when you passed, and Sid wasn't on the couch when you looked."
         l "Yup, that's right."
         $ bank_evidence[6] = True
@@ -1076,7 +1076,6 @@ screen lockerInv():
 label bankBathrooms:
     scene bg banklocker at bg
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
-    with dissolve
     bi "I guess I need to search the bathrooms..."
     scene black with dissolve
     bi "I checked them out, but couldn't find anything."
@@ -1097,7 +1096,6 @@ label bankBathrooms:
 label bankLockers:
     scene bg banklocker at bg
     $ statusnt("Locker Room", "bert", ch=4, sun=4)
-    with dissolve
     if bank_evidence[11]:
         bi "When Jenny and I came here earlier, every locker had a uniform in it."
         bi "Now, one is missing, the one on Sam's body."

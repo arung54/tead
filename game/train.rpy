@@ -1544,7 +1544,7 @@ label midcar4:
     show drac ind:
         linear .3 xcenter .5
     d "What a silly coincidence, I put a whiskey shooter in my pocket earlier, but..."
-    d "It's just so happen to go missing earlier when Sid and I were alone together in the front car."
+    d "It just so happened to go missing earlier when Sid and I were alone together in the front car."
     $mood = "ind"
     d "Regardless..."
     d "I've been nothing but productive and friendly since we woke up here yesterday."
@@ -1619,12 +1619,12 @@ label midcar4:
         xcenter .25
     s "If we're airing out our past, I can go next."
     s "I don't have quite the same pedigree, but..."
-    s "I used to sell drugs, mostly to upper-class business people and spoiled rich kids."
+    s "I sell drugs, mostly to upper-class business people and spoiled rich kids."
     $mood = "sad"
     s "I'd like to say I don't regret it, but..."
     s "The drugs weren't always safe."
     bt "Not safe? What do you mean?"
-    s "A lot of the stuff I moved was untested and highly experimental."
+    s "Some of the stuff I used to move was untested and highly experimental."
     s "But those dumb suits didn't know that, so they bought it."
     n "Did it ever end up killing anyone?"
     s "Honestly? I don't even know."
@@ -2163,7 +2163,7 @@ label midcar6:
         alpha .95
     show dan ind with dissolve
     bi "Dan is... dead."
-    bi "We've only know him for a day and a half, but..."
+    bi "We've only known him for a day and a half, but..."
     bi "I can't believe he's actually dead."
     show dan dead with dissolve
     bi "Someone killed Dan."
@@ -3677,7 +3677,7 @@ label trial1o:
         xcenter .65
         ycenter .25
         zoom .75
-    j "QUICK! IF YOURE THE ONE WHO USED THE PASSWORD, SPEAK UP NOW!!!"
+    j "QUICK! IF YOU'RE THE ONE WHO USED THE PASSWORD, SPEAK UP NOW!!!"
     hide popwow
     blank "....................................................................................................................."
     show scary with dissolve:
@@ -3720,7 +3720,7 @@ label trial1o:
     o "So, the person who accessed the computer is the murderer?"
     t "It seems quite that simple."
     b "They need to have learned the train's route somehow for the scythe mechanism to work."
-    t "Otherwise, they wouldn't be able to time the on hitting the tunnel so accurately."
+    t "Otherwise, they wouldn't be able to time hitting the tunnel so accurately."
     o "I see..."
     hide stella ind with moveoutleft
     show lauren ind:

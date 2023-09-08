@@ -254,8 +254,8 @@ label Mansionuno:
     show sid ind with moveinleft: ###JJJ v this section below
         xcenter .25
     i "No way, that doesn't make any sense."
-    i "I mean, I'm only 16, I can't be a criminal."
-    c "Hmm, I'm not sure if you're exempt from the law for being 16, bud."
+    i "I mean, I'm only 17, I can't be a criminal."
+    c "Hmm, I'm not sure if you're exempt from the law for being 17, bud."
     i "Well I didn't do anything wrong, really."
     #$mood = "happy"
     i "Er, well, nothing {i}VERY{/i} wrong..."
@@ -412,7 +412,7 @@ label Mansionuno:
     s "..."
     d "..."
     bi "Looks like that's the end of that conversation."
-    hide sam
+    hide sam with dissolve
     show drac ind:
         xcenter .75
         linear 0.15 xcenter .5
@@ -621,7 +621,7 @@ label mansiondos:
     $ statusnt("Garage", "bert", ch=2, sun=2)
     c "Catherine's Garage Emporium Standard time! CGEST!"
     $mood = "sad"
-    bi "I heard Jenny giggle behind me. I'm jealous of their lightheardedness sometimes..."
+    bi "I heard Jenny giggle behind me. I'm jealous of their lightheartedness sometimes..."
     $mood = "ind"
     show catherine happy:
         xcenter .75
@@ -641,7 +641,7 @@ label mansiondos:
     c "I used to work as a sous-chef in a kitchen, I could whip us up some nice meals."
     $mood = "shock"
     c "Don't have to be vegetarian meals, wouldn't want the meat to go to waste."
-    b "Wow, thats awesome of you to offer!"
+    b "Wow, that's awesome of you to offer!"
 
     ###########
     ########### jenny party
@@ -751,7 +751,7 @@ label mansiondos:
     d "But being a vampire means that despite my age, I am quite nimble."
     d "Also may I remind you, I don't need to sleep."
     d "...but if I am to spend the night thinking, this room seems ideal to do so."
-    b "Before deciding where people will sleeps... or stay awake, do we know what the other living arrangements are?"
+    b "Before deciding where people will sleep... or stay awake, do we know what the other living arrangements are?"
     s "There are four bedrooms, including this master bedroom."
     b "So enough for eight of us to sleep on a bed, if people are willing to share."
     d "Unfortunately, besides this room, it seems the beds will only fit one adult."
@@ -959,10 +959,10 @@ label mansiondos:
         b "Okay. My turn."
         bi "Wow, my heart's racing."
     b "Mine's much less... exciting?"
-    b "I was 17, driving home after tutoring."
+    b "I was 20, driving home after tutoring."
     $mood = "sad"
     b "Someone was walking on the sidewalk and suddenly walked into the road, without looking..."
-    b "The next light up ahead green, so I was going pretty fast, and had barely any time to react."
+    b "The next light up ahead was green, so I was going pretty fast, and had barely any time to react."
     b "And... well, I couldn't stop in time."
     j "Oh no..."
     b "They didn't make it."
@@ -1029,6 +1029,7 @@ label mansiondos:
     b "Sounds good."
     bi "I headed to the bathroom by myself."
     scene black with dissolve
+    hide screen showchibis
     stop music fadeout 1.0
 label mansion1:
     scene bg mansionbr at bg with dissolve
@@ -1172,7 +1173,7 @@ label mansion1:
     hide stella
     hide shahar
     with dissolve
-    show catherine happy
+    show catherine happy with dissolve
     c "Oh, I had an idea about that!"
     $mood = "ind"
     c "Sid, you seemed really excited to be in a nice house."
@@ -1458,7 +1459,7 @@ label postFT2:
     $showchibint("dracula", "shahar", "sid", "stella")
     show drac ind with dissolve
     d "We are also off."
-    d "I trust that you three will not be too loud enough to bother me?"
+    d "I trust that you three will not be loud enough to bother me?"
     b "Uh..."
     d "I'll take that as a yes. And if not, Bert, you will be held personally responsible."
     b "What?"
@@ -1637,7 +1638,7 @@ label postFT2:
         xcenter .41
         ycenter .25
         zoom .75
-    t "Hey Pirate boy, whatcha doin over there?"
+    t "Hey pirate boy, whatcha doin over there?"
     hide popwow
     show stella drunk:
         linear .3 xcenter .75
@@ -2085,7 +2086,7 @@ label postFT3:
     b "Hey Freddy, what hobbies do you have?"
     f "Uh... I really like frogs!"
     f "Is that a hobby?"
-    f "I spend a lot of time just watching videos about then and learning new frog facts."
+    f "I spend a lot of time just watching videos about them and learning new frog facts."
     call pophuhb from _call_pophuhb_48
     b "Are you in any clubs at school?"
     f "Clubs?"
@@ -2593,8 +2594,8 @@ label postFT4:
     b "Catherine can't eat meatloaf though, right?"
     b "She's a vegetarian."
     j "She can't eat the meatloaf, but she had a pretty hearty portion of soup set aside."
-    j "We just need to heat it in the oven for a few minutes with the sauce on top."
-    j "Anyway, I'm off to go hand the clock off to her."
+    j "Anyway, we need to heat the meatloaf in the oven for a few minutes with the sauce on top."
+    j "I'm off to go hand the clock off to her."
     j "Seeya Bert!"
     hide jenny ind with dissolve
     $showchibint("dracula", "freddy", "lauren", "sam", "sid", "shahar")
@@ -3244,7 +3245,7 @@ label trial2c:
     b "In the middle of the party?"
     s "Yeah."
     s "She was around for the start of the party, so obviously she didn't die before that."
-    s "And she definitely dead for a bit before we found her."
+    s "And she definitely died for a bit before we found her."
     i "How do you know? You're not a coroner or anything like that."
     s "Maybe not, but there's evidence that shows the body's been dead for a little while."
     show sid mad:
@@ -4154,7 +4155,7 @@ label trial2p:
     b "Which means it's possible..."
     call popwowb from _call_popwowb_68
     b "Sam wasn't chosen as the murderer by the Game Master, but has been here before."
-    b "For all we know, multiple people could been here before."
+    b "For all we know, multiple people could have been here before."
     b "Which would mean someone other than Sam could have actually been assigned to be the murderer."
     show scary with dissolve:
         alpha .5
@@ -4210,7 +4211,7 @@ label trial2p:
     show lauren ind with dissolve:
         xcenter .25
     play music "audio/coming_together.mp3"
-    l "Sam... I think all of understand just how messed up this whole situation is."
+    l "Sam... I think all of us understand just how messed up this whole situation is."
     $mood = "ind"
     l "You or whoever murdered Stella aren't the enemy. The Game Master is the enemy. I think we can agree with that."
     s "... Thanks Lauren."
@@ -4343,7 +4344,7 @@ label trial2r:
     with fade
     $mood = "ind"
     b "It's admittedly a bit weird, but I don't think the handles were heated until Stella fell onto them."
-    b "There was a generator upstairs, anal when I looked under the sink I saw some wires fed in through a hole in the wall."
+    b "There was a generator upstairs, and when I looked under the sink I saw some wires fed in through a hole in the wall."
     b "It was hard to tell where the wires connected to, but it was probably the sink handles."
     b "And they were probably connected to the generator."
     b "With enough electricity running through them, I'm sure they would get hot enough to burn Stella."

@@ -381,7 +381,7 @@ label frogHang:
         f "No way, that's impossible! I love them so much!"
         b "Hm... but maybe they love them... half as much as you love poison dart frogs?"
         f "Well... okay, I could believe that!"
-        f "But what does this have to why people here hate me?"
+        f "But what does this have to do with why people here hate me?"
         b "Well, I don't think they hate you..."
         b "They just don't like you as much as they like talking to other people."
         b "Just like some people like frogs more than dogs, and others dogs more than frogs."

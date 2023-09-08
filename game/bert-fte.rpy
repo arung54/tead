@@ -68,7 +68,7 @@ label bertHang:
         ni "It won't do much good to be on bad terms with everyone, so maybe I'll try to play along."
         n "...though in my childhood I really liked deep dish pizza."
         b "Oh?"
-        n "Yeah. our local pizza place sold thin crust by the pizza and deep dish by the slice."
+        n "Yeah. Our local pizza place sold thin crust by the pizza and deep dish by the slice."
         n "I couldn't finish a whole pizza by myself and I liked weird toppings."
         n "So I'd get deep dish so I could eat it without sharing."
         b "Weird toppings?"

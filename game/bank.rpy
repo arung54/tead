@@ -1491,7 +1491,6 @@ label bank5:
     hide scary with dissolve
     $ showchibint("freddy", "jenny", "lauren", "sam", "sid")
     show jenny happy with moveinright
-    with dissolve
     j "Mission success!"
     j "I got the file, and we made it back alive!"
     bi "Usually that expression is an exaggeration, but given the circumstances..."
@@ -1605,7 +1604,7 @@ label bank5:
         linear .3 xcenter .5
     l "Jenny seems pretty shaken by this."
 
-    l "I can't blame her, but... maybe she should keep an eye on her."
+    l "I can't blame her, but... maybe we should keep an eye on her."
     b "There's a lot to take in."
     b "Two more people dead, Gerald's file, the vault..."
     l "Speaking of the vault, I guess that means Freddy really is rich."
@@ -1762,7 +1761,7 @@ label postFT10:
     hide sid with moveoutright
     $ showchibint("freddy")
     bi "...And he's gone."
-    show frog2 ind
+    show frog2 ind with dissolve
     bi "I'm tired..."
     bi "It's been a while since we had anything of substance to eat."
     bi "If that onion soup I made in the hospital even counts as food..."
@@ -2011,7 +2010,7 @@ label postFT10:
     s "Despite both our attempts to stay professional, I definitely overheard some stuff."
     b "Overheard?"
     s "Yeah, he'd pretty often meet me while on the phone with someone."
-    s "I hate being made wait, and I distincty remember it happening a few times."
+    s "I hate being made to wait, and I distincty remember it happening a few times."
     b "What kind of stuff did you overhear?"
     call poptearo from _call_poptearo_10
     s "Jeez, I mean, it was years ago."
@@ -2404,7 +2403,7 @@ label bank8:
     bi "Oh no."
     bi "At this point, it was like I wasn't even in control of my body."
     bi "I was a spectator, my body acting on its own instincts."
-    bi "I watched my hand grabbed the door handle and yanked it open."
+    bi "I watched my hand grab the door handle and yanked it open."
     bi "I watched my legs ran in."
     scene black with dissolve
     bi "As I ran in, I was getting ready to identify the uniformed person."
@@ -3012,7 +3011,7 @@ label trial4i:
     show sid ind:
         xcenter .75
     with moveinright
-    i "Um, I confused..."
+    i "Um, I'm confused..."
     $popx = .7
     call pophuho from _call_pophuho_11
     i "Why would you have reloaded six bullets?"
@@ -3047,7 +3046,7 @@ label trial4j:
     b "Speed reloader?"
     l "It's a device you use to reload guns quickly."
     l "Basically, you can attach all the bullets to a speed reloader beforehand."
-    l "Then, they're already aligned with the chamber, so you load them all it at once."
+    l "Then, they're already aligned with the chamber, so you load them all at once."
     l "Then you press a button on the speed reloader to release the bullets."
     l "But I guess here, the metal is keeping the bullets in formation instead."
     b "You've used one before?"
@@ -3095,8 +3094,9 @@ label trial4j:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind:
         xcenter .25
+    with moveinleft
     j "Um... Sid, you said you were a wrestler..."
     j "What weight class were you in?"
     i "...{size=-10}Light flyweight.{/size}"
@@ -3586,7 +3586,7 @@ label trial4r:
     i "Well, no, just..."
     i "How do we figure anything out if it isn't Sam?"
     b "Well, we can narrow it down a bit."
-    b "Freddy and I were in the lobby with the shooter, so we can't have been the shooters."
+    b "Freddy and I were in the lobby with the shooter, so we can't have been the shooter."
     b "Plus, based on our discussion so far, we think the killer set up the belt and lobbed the gun into the break room."
     b "Then they turned the corner to the east of the building before I could see them."
     b "Which is, conveniently, where..."
@@ -4439,7 +4439,7 @@ label laurAsk:
         "How did you open the safe?":
             l "Well, just like everyone else I've been getting an advantage."
             $mood = "shock"
-            l "Mine was... I was told that someone here has a birthday on 30th."
+            l "Mine was... I was told that someone here has a birthday on the 30th."
             l "With that information I was able to open the safe."
             b "You knew your birthday and the 30th... don't you need a third number?"
             l "Oh, yeah, Freddy told me his birthday."

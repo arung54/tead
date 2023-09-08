@@ -436,8 +436,9 @@ label trainKaiser:
     s "One of {i}us{/i} did this."
     show sam ind:
         linear .3 xcenter .75
-    show kaiser ind with moveinleft:
+    show kaiser ind:
         xcenter .25
+    with moveinleft
     k "For Dan's sake, and our own, we need to keep a calm head."
     $mood = "ind"
     b "Agree. The most important thing is finding the culprit."
@@ -461,7 +462,7 @@ label trainKaiser:
     b "There will be time to grieve, as long as we can figure out who was behind it."
     b "Did any of you notice anything that might be important?"
     o "Hmmm... Not really. Pretty much just what Jenny said."
-    o "It got darker all of a sudden while we were on the computers, but since the lights were still, it was easy to keep a cool head."
+    o "It got darker all of a sudden while we were on the computers, but since the lights were still on, it was easy to keep a cool head."
     b "Hmmm. Okay, thanks."
     hide lauren ind
     hide shahar mad

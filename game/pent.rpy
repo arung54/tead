@@ -50,6 +50,9 @@ label pentGo:
     show dan ind with dissolve
     bi "Dan..."
     hide dan ind with dissolve
+    show kaiser ind with dissolve
+    bi "Kaiser..."
+    hide kaiser ind with dissolve
     show stella ind with dissolve
     bi "Stella..."
     hide stella ind with dissolve
@@ -69,7 +72,7 @@ label pentGo:
     bi "And Lauren..."
     hide lauren ind with dissolve
     bi "All dead."
-    bi "I know we've all commit crimes in the past, but this just isn't right."
+    bi "I know we've all commited crimes in the past, but this just isn't right."
     bi "I didn't even know them that well, but I can't believe they're gone."
     bi "It's not directly my fault, but it's hard not to feel guilty..."
     bi "If I could just stop the Game Master."
@@ -750,7 +753,7 @@ label pent26:
     b "Still... why is his phone number in a place like this?"
     b "It seems like Sydell was in a position to call in a favor."
     j "That would make sense, if he was scared of Catherine and the lawyers after him."
-    j "Maybe Sydell needed a bodygaurd, or-"
+    j "Maybe Sydell needed a bodyguard, or-"
     call popwowo from _call_popwowo_30
     $mood = "shock"
     i "A hitman..."
@@ -1789,7 +1792,7 @@ label pent35:
     i "For extra money, I did a little hacking..."
     i "That's how I got caught up with Shahar."
     i "Not directly, I didn't know the guy, but there was some lawsuits and blackmail going on."
-    i "Stella as involved, and Dracul-er, Ivan, knew about some of it."
+    i "Stella was involved, and Dracul-er, Ivan, knew about some of it."
     i "I... wish I could undo it all, take it all back."
     i "I just wanted to make sure my family was making enough money."
     i "When this whole game started, I knew that's why I was involved, though I didn't know the details."
@@ -2346,7 +2349,7 @@ label pentsidArun:
         ycenter .5
     with dissolve
     js "This is where Gerald Ogden comes in."
-    js "As Sam mentioned, Gerald Ogden is the kingpin of a drug empire."
+    js "Gerald Ogden is the kingpin of a drug empire."
     js "My dad's drug addiction led to me protesting against Ogden being found innocent in an unrelated case."
     js "Since my arrest for protesting his trial was in the news, he decided to make an example out of me."
     show ch5evcatherine with dissolve:

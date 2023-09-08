@@ -223,7 +223,7 @@ label dracHang:
        scene black
        with fade
        bi "Dracula didn't seem to think that conversation was a waste, and was surprisingly open."
-       bi "Maybe he feels like he can confide in me now?."
+       bi "Maybe he feels like he can confide in me now?"
 
     #Bert FTE 2
     if fte_drac == 1:

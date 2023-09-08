@@ -216,7 +216,7 @@ label samHang:
        b "You're in college right now, right?"
        s "Did you ever miss class for weeks on end?"
        b "Hm... no, I missed a few days from being sick, but nothing like this."
-       b "This is also the first time I'm going to gone from work this long..."
+       b "This is also the first time I'm going to be gone from work this long..."
        b "Even vacations aren't much longer than a week."
        s "If we get out of here, it's going to be tough to explain to people..."
        s "\"Hey Professor, sorry for missing weeks of your class, I was busy playing a death game.\""
