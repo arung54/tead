@@ -121,7 +121,7 @@ screen hospitalEvidenceTrial(s, e, l):
             text "{size=-2}The rules of the hospital state: 1) Two guards are appointed every day, 2) During the day, we cannot be in our cells, 3) At night, we must be in our cells, 4) No one may enter another person's cell, 5) Guards/patients must stay on their side, 6) Guards are responsible for feeding patients." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 4:
-            image "ev3 stool.png" xcenter 800 yalign 0.1
+            image "ev3 bat.png" xcenter 800 yalign 0.1
             text "The baseball bat was still in the closet and looked like it was in mint condition." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 5:

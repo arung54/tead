@@ -243,7 +243,7 @@ label hospitalGo:
             i "It's kind of nice, in a way."
             b "Nice?"
             i "Having the photos of others who've made it out of here."
-            i "It's like... a reminder to patients that that they could do it, and so you can you."
+            i "It's like... a reminder to patients that that they could do it, so you can too."
             b "Have you taken a close look at the photos yet?"
             b "Maybe we know someone in the photos?"
             call poptearb from _call_poptearb_25
@@ -355,7 +355,7 @@ label hospitalGo:
             blank "You may not be {i}out of{/i} your cell during the nighttime period."
             blank "The 30 minute twilight periods should be used to leave your cell in the morning, and return to it at night."
             blank "An intercom will announce when each period begins."
-            blank "There be two more announcements 5 minutes before twilight if someone is in a soon-to-be-forbidden area."
+            blank "There be two more announcements when there are 5 minutes of twilight left if someone is in a soon-to-be-forbidden area."
             bi "Hmmm, okay."
             show ch3mapexample1 with dissolve
             bi "So this is what the floor looks like during the nighttime."
@@ -997,13 +997,12 @@ label hospitalb:
     b "If you say so..."
     show jenny happy
     play sfx "audio/pophearts.mp3" volume .5
-    #TODO: Debug this
     show pophearts:
-        xcenter .5
+        xcenter .75
         ycenter .5
     j "No worries Bert, I cooked for us once, I don't mind doing it again."
     bi "I trust Jenny, but we did just talk about poisoning people's food..."
-    j "I think this door is to the kitchen, you should get out the other two doors in here."
+    j "I think this door is to the kitchen, you should check out the other two doors in here."
     b "Sounds good. Thanks Jenny, I'll let you know what I find."
     hide jenny with dissolve
     bi "Alright, let's see what's behind door number one..."
@@ -1254,7 +1253,8 @@ label testwindow:
     hide frog with moveoutleft
     show lauren ind at inwindow behind hospwindowoverlay with dissolve:
         xcenter .25
-    l "Don't make him waste his time, you've done enough for Dracula already Bert."
+    l "Don't make him waste his time."
+    l "Bert, you've done enough for Dracula already."
     l "If you really wanna know, you can check when you're a guard Dracula."
     d "Hmph. Fine."
     b "By the way, I heard the 5 minute reminder get announced this morning..."
@@ -1772,7 +1772,7 @@ label postFT5:
         b "The Shahar I know is a pirate. And if you're not a pirate, I don't know what you are."
         $mood = "ind"
         h "Yer right matey. I remember nothing before me pirate days."
-        h "Thanks Bertas. Yer a real matey."
+        h "Thanks Bert. Yer a real matey."
         hide shahar with moveoutright
         bi "If only we knew what made Shahar this way..."
         bi "That might be an important clue. Maybe it would help him remember his past."
@@ -2263,7 +2263,7 @@ label postFT6:
     l "Make less observations like that then."
     d "We need to trust each other fully to narrow down who the Game Master is, yes?"
     d "I don't trust Sid based on this seeming contradiction."
-    l "And no one trusts that you're a vam{nw}"
+    l "And no one trusts that you're a vam-{nw}"
     i "No, no, Lauren, it's okay... Dracula's suspicion makes sense."
     i "I... think I should explain."
     i "Just so people don't suspect me of anything."
@@ -2607,7 +2607,7 @@ label postFT7:
     i "And well, I didn't know what to do."
     i "I was so young and knew nothing..."
     bi "Sid's eyes noticably teared up."
-    b "Sid, you can stop if you wa{nw}"
+    b "Sid, you can stop if you wa-{nw}"
     i "So I told my dad and he told the police we were getting blackmailed but..."
     i "I dunno, these lawyers were way more than we could imagine."
     i "I... I ruined my family."
@@ -4238,7 +4238,7 @@ label trial3u:
     i "*cough* Oh, I remember..."
     i "There was a *cough* option to schedule a hot water cycle for the future."
     i "The program also tells you when the last *cough* cycle was..."
-    i "Lauren or Sam, if go check the program right now, we can see if one happened last night..."
+    i "Lauren or Sam, if you go check the program right now, we can see if one happened last night..."
     s "...I'll go. I'm not doing much here..."
     hide sam with dissolve
     $showchibint("jenny", "dracula", "sid", "freddy", "window", "lauren")
@@ -4762,7 +4762,7 @@ label dracAsk:
             dr "But that is my best theory."
             dr "Maybe the bitter reality is, he will kill us one by one in this game."
             dr "The game is not winnable, it is just entertainment for him."
-            dr "We are but gladiators in his empire, our sole purpose fight each other to the death."
+            dr "We are but gladiators in his empire, our sole purpose to fight each other to the death."
             bi "..."
             b "No."
             b "I refuse to believe that..."

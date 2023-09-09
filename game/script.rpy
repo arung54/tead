@@ -764,6 +764,7 @@ define ni = Character("Dan Scagnellii", callback=fillvoice, what_italic=True, wh
 define np = Character("Dan Scagnelli", callback=mevoice, who_color = "FFFFFF", window_background=danbox, image="bert")
 define bi = Character("Bert Kimi", who_color= "78AB46", callback=bertvoice, what_italic = True, image="bert") #Bert Internal, name and text italics /// use {i}Bert Kim{/i} if text
 define li = Character("Lauren Palmeri", who_color= "fbe55c", callback=laurenvoice, what_italic = True, image="bert")
+
 define lf = Character("Lauren Palmer", who_color= "fbe55c", callback=laurenvoice, image="bert") #First person Lauren
 define bp = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, window_background=bertbox, image="notbert")
 define bt = Character("Bert Kim", who_color= "#78AB46", callback=bertvoice, image="notbert") #Third person Bert
@@ -805,6 +806,27 @@ define tut = Character("Tutorial", who_color= "ffffff", what_italic = True, what
 define intercom = Character("Intercom", what_italic=True, callback=fillvoice, image="notbert") #blank text, always italics
 define blank = Character("blank", what_italic=True, callback=fillvoice) #blank text, always italics /// used to " ", changed to the word blank for image use
 
+init python:
+    history_dict = dict()
+    history_dict["Dan Scagnellii"] = "{i}Dan Scagnelli"
+    history_dict["Bert Kimi"] = "{i}Bert Kim"
+    history_dict["Lauren Palmeri"] = "{i}Lauren Palmer"
+    history_dict["Ivan Nepomniachtchi"] = "Ivan Nepom- niachtchi"
+    history_dict["Question"] = "???"
+    history_dict["Questiong"] = "???"
+    history_dict["Questionb"] = "???"
+    history_dict["Questions"] = "???"
+    history_dict["Questionc"] = "???"
+    history_dict["Questiont"] = "???"
+    history_dict["Questiond"] = "???"
+    history_dict["Questionf"] = "???"
+    history_dict["Questioni"] = "???"
+    history_dict["Questionr"] = "???"
+    history_dict["Questionh"] = "???"
+    history_dict["Questionsy"] = "???"
+    history_dict["Questionsyc"] = "???"
+    history_dict["Questionsyci"] = "???"
+    history_dict["blank"] = ""
 ########## julian trying shit area
 
 init python:

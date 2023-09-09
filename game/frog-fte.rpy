@@ -291,7 +291,7 @@ label frogHang:
         f "Because I could touch them and they'd get poisoned!"
         f "Then they wouldn't make fun of me for looking like a frog."
         f "Phew, talking about frogs so much made me tired..."
-        f "I wanna take a nap... but we should about frogs again some time!"
+        f "I wanna take a nap... but we should talk about frogs again some time!"
         b "Oh, yeah, I'd love to learn more from an expert like you!"
         f "Yay! Bye Bert!"
         hide screen status_screen

@@ -1234,8 +1234,12 @@ screen history():
                     yfit True
 
                 if h.who:
+                    if h.who in history_dict:
+                        $ who_name = history_dict[h.who]
+                    else:
+                        $ who_name = h.who
 
-                    label h.who:
+                    label who_name:
                         style "history_name"
                         substitute False
 

@@ -1028,8 +1028,9 @@ label mansiondos:
     j "I'll go grab Lauren and Freddy so we can go to the meeting."
     b "Sounds good."
     bi "I headed to the bathroom by myself."
-    scene black with dissolve
+    scene black
     hide screen showchibis
+    with dissolve
     stop music fadeout 1.0
 label mansion1:
     scene bg mansionbr at bg with dissolve
@@ -4633,8 +4634,9 @@ label trial2w:
     show sid ind:
         xcenter .5
         linear 0.15 xcenter .75
-    show sam ind with moveinleft:
+    show sam ind:
         xcenter .25
+    with moveinleft
     s "No, I swear it wasn't me."
     s "I knew nothing about the generator before a few minutes ago..."
     play sfx "audio/popwow.mp3" volume .5
