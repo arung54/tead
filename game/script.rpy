@@ -417,8 +417,7 @@ init python:
         cat = False
         evidence_menu = 0
 init python:
-    _skipping = True
-    config.developer = True
+    config.developer = False
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False
@@ -930,4 +929,4 @@ $dan = True
 stop music #"audio/haunted.mp3" fadeout 1.0
 # jump teadcomplete
 pause 2.0
-jump go
+jump pentpicker

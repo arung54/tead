@@ -37,6 +37,8 @@ label credits:
 
 label teadcomplete:
     camera at paralloff
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
     show tead with dissolve
     show screen killuser
     pause 2

@@ -1844,8 +1844,8 @@ label pentpicker:
     b "For Freddy's sake, we have to act now."
     b "So."
     b "The Game Master is..."
-    "The decision you're about to make will change the ending of the game."
-    "If you want to see both endings, we recommend you save here before continuing."
+    tut "The decision you're about to make will change the ending of the game."
+    tut "If you want to see both endings, we recommend you save here before continuing."
 label pentpicker2:
     show bg reflecting
     call screen pickGameMaster with dissolve
@@ -1948,7 +1948,8 @@ label pentjenny:
     b "Crime by crime."
     b "And by the end, I'll prove that it's you."
     show ch5evlauren with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     b "Chronologically, the first crime to happen was Lauren's."
     b "There was bank robbery about six years ago, and she was among the people there."
     $mood = "sad"
@@ -1968,21 +1969,24 @@ label pentjenny:
     b "Mr. Sydell, your father, and the owner of InSyde Electronics."
     j "..."
     show ch5evkaiser with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     b "The one to start it all was Kaiser"
     b "We have proof that Kaiser's train heist damaged Mr. Sydell."
     b "InSyde Electronics suffered massive losses."
     b "But more importantly, it damaged relationships with partners - namely, Cantoire." #julian
     hide ch5evkaiser
     show ch5evstella:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     with dissolve
     b "Unable to fulfill shipments, InSyde got hit with lawsuits from Stella's team."
     b "While Stella didn't personally work the cases, her team was merciless."
     b "She hired one of the best lawyers she could find to dig up dirt and ruin Sydell."
     hide ch5evstella
     show ch5evshahar:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     with dissolve
     b "That lawyer was Shahar."
     b "The man we knew was once a great lawyer..."
@@ -1993,7 +1997,8 @@ label pentjenny:
     b "Perhaps weary Shahar would confess, or just as an extra precaution, they..."
     hide ch5evshahar
     show ch5evdracula:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     with dissolve
     b "They hired Ivan to lobotomize Shahar."
     b "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
@@ -2001,7 +2006,8 @@ label pentjenny:
     hide ch5evdracula with dissolve
     b "And it was just to protect the fact that some kid was rigging a case for them."
     show ch5evsid with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     b "Sid, the kid right over there."
     b "The self trained ethical hacker got forced to plant info."
     b "It ruined the case for Sydell, and he lost everything he had worked so hard for."
@@ -2010,7 +2016,8 @@ label pentjenny:
     j "..."
     b "His business in shambles, Sydell turned to drugs."
     show ch5evsam with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     b "That's where Sam came in."
     b "Sam sold Sydell experimental drugs, and Sydell didn't care."
     b "By Sam's own admission, the drugs were not safe, and probably ruined his mental state."
@@ -2019,7 +2026,8 @@ label pentjenny:
     b "It was almost rock bottom for Sydell."
     b "But there was more coming."
     show ch5evcatherine with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     b "Catherine robbed his mansion."
     b "Losing material possessions is always awful."
     b "But the peace of mind? His safety inside his own home?"
@@ -2027,7 +2035,8 @@ label pentjenny:
     b "Catherine didn't give a lot of details about the burglary, but I think I've connected some dots."
     hide ch5evcatherine
     show ch5evfreddy:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     with dissolve
     call popwowb from _call_popwowb_99
     b "This... is where Freddy comes in."
@@ -2043,7 +2052,8 @@ label pentjenny:
     b "He fled to this apartment as a last ditch effort for safety."
     b "It must have been unbearable."
     show ch5evbert with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     $mood = "sad"
     b "And... I only made it worse."
     b "This is where I come in."
@@ -2057,7 +2067,8 @@ label pentjenny:
     #show jenny
     hide ch5evbert
     show ch5evjenny:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     with dissolve
     call popwowb from _call_popwowb_100
     b "That had to have made her... your mother."
@@ -2070,7 +2081,8 @@ label pentjenny:
     b "And for Mr. Sydell, the rest was history."
     b "Losing literally everything, he turned to Dan, or as he knew him,"
     show ch5evdan with dissolve:
-        ycenter .6
+        ycenter .45
+        xcenter .225
     b "Spaghetti, the hitman."
     b "He ordered Dan to kill Stella in a fit of madness."
     b "As we know, this backfired."
@@ -2244,7 +2256,8 @@ label pentsidArun:
     j "She was my mother."
     b "!"
     show ch5evbert with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     $mood = "sad"
     j "That day, my father was already struggling."
     j "So to hear that my senile mother had died because some random kid ran into her..."
@@ -2270,7 +2283,8 @@ label pentsidArun:
     j "Until one day, I got the news..."
     j "She died."
     show ch5evlauren with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     j "And some girl named Lauren killed her."
     j "It broke me. Clara was the nicest girl in the world, and she was dead."
     j "And the girl who killed her got to keep living her life."
@@ -2289,7 +2303,8 @@ label pentsidArun:
     js "Seeing how the success of his company made him happy, I figured..."
     js "Even if mommy and me don't get it, as long as it makes him happy, I'm happy."
     show ch5evkaiser with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     js "But then the train heist happened."
     js "Kaiser and his accomplices stole products that InSyde was shipping to fulfill a purchase order."
     js "InSyde Electronics suffered massive losses."
@@ -2299,7 +2314,8 @@ label pentsidArun:
     js "That company was a subsidiary of..."
     hide ch5evkaiser
     show ch5evstella:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     with dissolve
     js "Cantoire Holdings."
     js "Unable to fulfill shipments, InSyde got hit with lawsuits from Cantoire."
@@ -2307,7 +2323,8 @@ label pentsidArun:
     js "She hired one of the best lawyers she could find to dig up dirt and ruin InSyde, and thus ruin my dad."
     hide ch5evstella
     show ch5evshahar:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     with dissolve
     js "That lawyer was Shahar."
     js "The \"pirate\" we knew was once a great lawyer..."
@@ -2316,14 +2333,16 @@ label pentsidArun:
     js "They blackmailed a kid to hack Sydell's computers and plant information."
     hide ch5evshahar
     show ch5evsid with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     js "Which, as we know now, is the kid you pushed out a window."
     js "Of course, Stella's team was full of monsters."
     js "And Shahar, well, he had more morals than the Cantoire legal team did."
     js "Perhaps weary Shahar would confess, or just as an extra precaution..."
     hide ch5evsid with dissolve
     show ch5evdracula:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     with dissolve
     js "They hired Ivan to lobotomize Shahar."
     js "Leaving the poor lawyer as a shell of himself, thinking he was a pirate."
@@ -2336,7 +2355,8 @@ label pentsidArun:
     js "With the lawsuit, InSyde was finished."
     js "His business in shambles, my dad turned to hard drugs."
     show ch5evsam with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     js "As you know, that's where Sam came in."
     js "Before the lawsuit, my dad was getting weaker drugs from Sam."
     js "But after the lawsuit..."
@@ -2346,14 +2366,16 @@ label pentsidArun:
     js "People can recover from drug addiction, though."
     js "But it got worse."
     show ch5evfreddy:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     with dissolve
     js "This is where Gerald Ogden comes in."
     js "Gerald Ogden is the kingpin of a drug empire."
     js "My dad's drug addiction led to me protesting against Ogden being found innocent in an unrelated case."
     js "Since my arrest for protesting his trial was in the news, he decided to make an example out of me."
     show ch5evcatherine with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     js "He told Catherine about a day when the house would be empty, so she could rob it."
     js "Catherine was just making some easy money, but Gerald was using her to send a message."
     js "\"You try to oppose me, I'll attack you in your home.\""
@@ -2366,7 +2388,8 @@ label pentsidArun:
     with dissolve
     js "He figured if he was going to die, he'd try to kill the person who he felt was responsible for all this before he did."
     show ch5evdan with dissolve:
-        ycenter .5
+        ycenter .45
+        xcenter .225
     js "He ordered Dan to kill Stella in a fit of madness."
     js "As you guessed, this backfired."
     js "Stella's team caught him, and got him to kill dad himself."
