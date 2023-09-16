@@ -417,7 +417,8 @@ init python:
         cat = False
         evidence_menu = 0
 init python:
-    config.developer = False
+    _skipping = True
+    config.developer = True
     config.debug_sound = False
     renpy.music.register_channel("sfx", mixer = "sfx", loop = False)
     config.menu_include_disabled = False

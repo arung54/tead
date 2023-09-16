@@ -319,4 +319,6 @@ label shahHang:
     $fte_shah += 1
     $persistent.fte_shah = max(persistent.fte_shah, fte_shah)
     hide shahar with dissolve
+    if persistent.fte_shah >= 3:
+        $achievement.grant('shah_fte')
     jump postFTEHandler

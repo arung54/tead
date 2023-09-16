@@ -315,7 +315,7 @@ label pentGo:
     j "Bert..."
     show frog2 smile
     j "Freddy, just stay in the room with us so we can keep an eye on you, okay?"
-    f "Yay! Thank's Jenny."
+    f "Yay! Thanks Jenny."
     hide frog2 with moveoutright
     show frogsit3 at bg:
         xcenter .96
@@ -386,8 +386,8 @@ label pent2:
     i "If I really was the Game Master, you shouldn't forgive me!"
     i "You should be tying me to the bedframe!"
     j "Oh? Sid..."
-    i "THAT'S NOT WHAT I meant!!!"
-    i "AND I'M NOT THE GAME MASTER ANYWAY"
+    i "THAT'S NOT WHAT I MEANT!!!"
+    i "AND I'M NOT THE GAME MASTER ANYWAY."
     j "Sure thing, Sid Straits with two S's."
     $mood = "sad"
     bi "This went a bit more smoothly in my head..."
@@ -1564,7 +1564,7 @@ label pent345:
     $mood = "sad"
     b "More proof?"
     j "Sid's right... there is another little detail missing."
-    j "You said you've never been here before, but all the other chosen killer's had some connection to that location."
+    j "You said you've never been here before, but all the other chosen killers had some connection to that location."
     i "Yeah!"
     i "You woke up and found a flashlight, so what?"
     i "Before I can trust you again, I need proof that you have a tie to this location."
@@ -1620,7 +1620,7 @@ label pent346:
     $mood = "sad"
     call popwowb from _call_popwowb_90
     bi "I know exactly where I am."
-    bi "This is the most bittersweet moment of my life."
+    bi "This is the most bitter moment of my life."
     bi "I... I do have a tie to this location."
     bi "Because this location..."
     show scary with dissolve:
@@ -2214,7 +2214,7 @@ label pentsidArun:
     bi "Why did I shove Sid? Why did I think that the \"secret\" of the game wasn't a trick?"
     b "...So, what happens now?"
     j "Well, I'm going to kill you."
-    j "And unfortunately, I'm going to have kill Freddy."
+    j "And unfortunately, I'm going to have to kill Freddy."
     j "I was hoping to get Gerald himself, but he went into hiding before I could get him."
     bi "I need a new plan... there has to be some way to win."
     b "Jenny, you don't have to kill us! If you turn yourself in, the police might go easy on you!"
@@ -2223,7 +2223,7 @@ label pentsidArun:
     j "If I killed some of you for lesser crimes, it's only fair I face the same punishment."
     b "But... why play then? You could have just killed us at all the start."
     show jenny ind
-    j "...Both my parents, who I've spent all my free time over the last few years caring for, are dead."
+    j "...Both my parents, who I've spent all my free time as a child caring for, are dead."
     j "They were my whole life's purpose. Without them my life has no meaning at all. It's only fitting for me to join them."
     b "But still, you could have just killed us all instead of risking some of us escaping..."
     j "That's boring."
@@ -2491,6 +2491,7 @@ label pentjennyArun:
         j "But, even if that's all you did, it's something I don't get a lot of in my normal life."
         scene black with Dissolve(2.0)
         pause 2.0
+    $ achievement.grant('ch5_complete')
     jump credits
 
     label postdeath:

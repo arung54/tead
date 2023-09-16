@@ -409,5 +409,7 @@ label jennHang:
 
     $fte_jenn += 1
     $ persistent.fte_jenn = max(persistent.fte_jenn, fte_jenn)
+    if persistent.fte_jenn >= 3:
+        $achievement.grant('jenn_fte')
     hide jenny with dissolve
     jump postFTEHandler

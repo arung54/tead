@@ -263,5 +263,7 @@ label cathHang:
 
     $fte_cath += 1
     $persistent.fte_cath = max(persistent.fte_cath, fte_cath)
+    if persistent.fte_cath >= 3:
+        $achievement.grant('cath_fte')
     hide catherine with dissolve
     jump postFTEHandler

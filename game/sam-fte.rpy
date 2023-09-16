@@ -376,5 +376,7 @@ label samHang:
 
     $fte_sam += 1
     $persistent.fte_sam = max(persistent.fte_sam, fte_sam)
+    if persistent.fte_sam >= 3:
+        $achievement.grant('sam_fte')
     hide sam with dissolve
     jump postFTEHandler

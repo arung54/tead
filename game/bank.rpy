@@ -226,7 +226,7 @@ label bankGo:
     b "Yeah, you're right."
     show scary with dissolve:
         alpha .5
-    bi "She really is right - this group is pretty trustwrothy."
+    bi "She really is right - this group is pretty trustworthy."
     bi "I've tried my best to cooperate with everyone this whole time, but..."
     bi "It seems like now it will actually be a bit easier."
     bi "The only issue is, that makes it even harder to pick out the Game Master..."
@@ -259,8 +259,9 @@ label bankGo:
     l "...the kitchen."
     show lauren ind:
         linear .3 xcenter .75
-    show jenny ind with moveinleft:
+    show jenny ind:
         xcenter .25
+    with moveinleft
     j "This room's about what I'd expect."
     j "A sink, coffee machine, and a fridge with some snacks."
     b "I could go for some coffee and snacks right about now..."
@@ -1143,7 +1144,7 @@ label postFT8:
     i "Honk shooooooooooo!"
     i "Honk shooooooooooo!"
     $mood = "ind"
-    bi "."
+    bi "..."
     bi "Okay, he's snoring."
     bi "He did mention that he wanted to sleep out on this couch, so whatever."
     bi "I'll try not to wake him up."
@@ -1180,7 +1181,7 @@ label postFT8:
     call pophuhb from _call_pophuhb_8
     bi "What secrets is the message on the vault talking about?"
     bi "After all these terrible deaths, I need answers..."
-    bi "...Alright"
+    bi "...Alright."
     bi "Time to get back to the lobby."
     scene black with dissolve
     scene bg banklobby at bg
@@ -1276,7 +1277,7 @@ label postFT9:
     $mood = "sad"
     call pophuhb from _call_pophuhb_10
     b "Are you sure you're up for it?"
-    b "We might found out Gerald is Freddy's dad..."
+    b "We might find out Gerald is Freddy's dad..."
     j "I'll be okay. He's just a little kid."
     show jenny happy
     j "Hey Freddyyyyyyyyyyyyyyyy?"
@@ -1384,7 +1385,7 @@ label bank5:
     j "I'll go grab it."
     b "Oh, you're right... okay."
     b "I have the key to the locker in my bag."
-    bi "I peaked into my backpack and realized my mistake."
+    bi "I peeked into my backpack and realized my mistake."
     b "Ummm... I don't know which key it was."
     b "But I know it was the bottom left locker on the wall."
     j "That's fine, I'll just try them until it works."
@@ -1505,7 +1506,7 @@ label bank5:
     j "That's scary... how do we know if he's even a kid under there?"
     j "What if he's a robot, or a really smart monkey?"
     call poptearb from _call_poptearb_14
-    b "."
+    b "..."
     $mood = "ind"
     j "But you are right, it's a good plan..."
     show jenny ind:
@@ -1529,10 +1530,10 @@ label bank5:
     f "Shouldn't what?!"
     $popx = .45
     call popwowo from _call_popwowo_8
-    f "please please please please pleaaaaaase tell me!"
+    f "Please please please please pleaaaaaase tell me!"
     j "No no no, we shouldn't ask..."
     f "B-but... please?"
-    bi "Curiousity really is something."
+    bi "Curiosity really is something."
     l "Okay, okay, fine."
     l "I was wondering..."
     stop music
@@ -1826,7 +1827,7 @@ label postFT10:
     bi "Alright. Freddy and Jenny."
     show bg bertmap3 with dissolve
     $mood = "sad"
-    bi "Freddy's dad's case kinda sorta lead to Jenny's arrest."
+    bi "Freddy's dad's case kinda sorta led to Jenny's arrest."
     bi "Jenny hates Freddy's dad, and maybe his dad knows about Jenny?"
     bi "Unfortunately, that's all we really know about them."
     $mood = "ind"
@@ -2010,7 +2011,7 @@ label postFT10:
     s "Despite both our attempts to stay professional, I definitely overheard some stuff."
     b "Overheard?"
     s "Yeah, he'd pretty often meet me while on the phone with someone."
-    s "I hate being made to wait, and I distincty remember it happening a few times."
+    s "I hate being made to wait, and I distinctly remember it happening a few times."
     b "What kind of stuff did you overhear?"
     call poptearo from _call_poptearo_10
     s "Jeez, I mean, it was years ago."
@@ -2189,7 +2190,7 @@ label postFT10:
     b "And I don't think Sam will either."
     bi "That was more of an order to Sam than trying to be supportive of Sid."
     s "Hmph."
-    b "Sid we just want some more information about that lawsuit."
+    b "Sid, we just want some more information about that lawsuit."
     b "I feel like we're at a point where any one little thing could reveal the Game Master..."
     s "Really?"
     s "I thought you-"
@@ -2225,7 +2226,7 @@ label postFT10:
     s "Hmm, and Sydell lost contact with me three years ago..."
     s "That's also roughly when Shahar was lobotomized."
     s "So if the lawsuit happened five years ago..."
-    s "Did Sydell's personality change was because of something different?"
+    s "Did Sydell's personality change because of something different?"
     s "And I guess, him disappearing from my life was also because of something different?"
     show sid mad:
         xcenter .25
@@ -2559,6 +2560,7 @@ label bank8:
 label hospPreInv2:
     play music "audio/inthefaceofdeath.mp3"
     pause .5
+    $ currEvidence = -1
     show investstart with dissolve
     pause 1
     hide investstart with dissolve
@@ -2794,7 +2796,7 @@ label trial4e:
         startBankTrial("lauren", "Lauren: I think Bert shot Sam in the break room.", 0,
         "lauren", "Lauren: Since {color=#f00}no one else had seen Sam recently{/color}, Bert was able to make up a story about the events leading up to \"finding\" Sam's body.", -1,
         "sid", "Sid: Wait, but then {color=#f00}we should have heard Bert shoot Sam!{/color}", -1,
-        "lauren",  "Lauren: Not necessarily, because {color=#f00}we were all far away from the break room{/color}, so it would have sounded much more quiet to us.", -1,
+        "lauren",  "Lauren: Not necessarily, because {color=#f00}we were all further away from the break room{/color}, so it would have sounded much more quiet to us.", -1,
         1, 5, "trial4f")
 label trial4f:
     camera at parallax
@@ -2902,7 +2904,7 @@ label trial4f:
     i "...Nothing to say, Bert?"
     i "That's awfully suspicious..."
     i "Thinking up a fake story?"
-    l "I have to agree with Sid, silence speaks volume here..."
+    l "I have to agree with Sid, silence speaks volumes here..."
     b "...Instead of speculating about what my motive would be after those events happened..."
     b "I want to hear how you think events played out in the break room again."
     l "Um... why?"
@@ -2918,11 +2920,11 @@ label trial4f:
     camera at paralloff
 
     python:
-        startBankTrial("lauren", "Lauren: Sam {color=#f00}ran out of bullets{/color} and ran away to the break room.", -1,
+        startBankTrial("lauren", "Lauren: Sam {color=#f00}needed to reload{/color} and ran away to the break room.", -1,
         "lauren", "Lauren: You chased after Sam, who had {color=#f00}run into the break room{/color}. There was some sort of confrontation where you got control of the gun.", -1,
         "lauren", "Lauren: Then {color=#f00}you managed to shoot Sam once in the head{/color} and killed them. Afterwards, you dropped the gun.", -1,
         "lauren",  "Lauren: That way, the room {color=#f00}looked like a suicide{/color} when the rest of us arrived.", -1,
-        2, 2, "trial4g")
+        2, [2, 10], "trial4g")
 label trial4g:
     camera at parallax
     scene bg banklobby at bg
@@ -2934,29 +2936,6 @@ label trial4g:
     play music "audio/coming_together.mp3" fadein 1.0
     l "I'm confused..."
     l "You're objecting to Sam being shot in the head once?"
-    b "Sort of."
-    show scary with dissolve:
-        alpha .5
-label trial4h:
-    menu:
-        b "More precisely, the problem is that..."
-
-        "Sam could have shot me during the supposed confrontation.":
-            bi "No, as Lauren mentioned, Sam ran out of bullets."
-            bi "At some point Sam needed to reload."
-            bi "If I confronted Sam during that point, it would have been a fistfight."
-            jump trial4h
-        "Sam wasn't shot just once.":
-            bi "If that's the case, why did we only find one shell in the break room?"
-            jump trial4h
-        "In Lauren's story, I couldn't have shot Sam exactly once.":
-            bi "I could have, I think a single bullet to the brain is pretty lethal."
-            bi "So I could have killed Sam with one shot."
-            bi "And if I overpowered Sam and could reload the gun, that one shot was definitely possible."
-            jump trial4h
-        "The evidence isn't consistent with Sam getting shot exactly once.":
-            bi "Yes, that's it!"
-    hide scary with dissolve
     b "It seems like Sam died to a single bullet, but..."
     call popwowb from _call_popwowb_14
     b "The evidence doesn't line up with a single bullet!"
@@ -2965,7 +2944,7 @@ label trial4h:
     l "Yeah, there was a single shell on the ground."
     l "It's pretty glaringly clear Sam was just shot once."
     b "Well, yes, the shell would suggest that."
-    b "But the gun seems to contradict that."
+    b "But the gun and ammunition seem to contradict that."
     l "The gun?"
     b "Yeah, think about it."
     b "The gun was empty when we found it."
@@ -3016,20 +2995,7 @@ label trial4i:
     call pophuho from _call_pophuho_11
     i "Why would you have reloaded six bullets?"
     i "Wouldn't it have been faster to just load one?"
-    i "It sounds like you and Sam fought... surely you didn't have time for six!"
-    bi "I guess I was the only person who saw this..."
-    bi "The reason I would load six bullets at once is..."
-    call screen bankEvidenceTrial(-1, 10, "trial4j") with dissolve
-label trial4j:
-    scene bg banklobby at bg
-    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
-    $ showchibint("freddy", "jenny", "lauren", "sid")
-    with dissolve
-    show jenny ind:
-        xcenter .25
-    show sid ind:
-        xcenter .75
-    with dissolve
+    i "It sounds like you and Sam fought... surely you didn't have time to load six!"
     b "I guess, it's not obvious if you haven't been in the safe yet."
     i "I haven't, I swear!"
     $mood = "sad"
@@ -3537,18 +3503,21 @@ label trial4q:
     b "Okay, fine."
     b "Let's assume that Sam was the one who tied the belt."
     b "Then one of us did something that we're not confessing to."
-    b "It's related to..."
-    call screen bankEvidenceTrial(-1, 3, "trial4r") with dissolve
 label trial4r:
-    scene bg banklobby at bg
-    $ statusnt("Bank Lobby", "bert", ch=4, sun=4)
-    $ showchibint("freddy", "jenny", "lauren", "sid")
-    with dissolve
-    show jenny ind:
-        xcenter .25
-    show lauren ind:
-        xcenter .75
-    with dissolve
+    menu:
+        b "Specifically..."
+
+        "Going to the locker room.":
+            bi "No, both Jenny and Lauren are confessing to that, and it wouldn't be related to a suicide."
+            jump trial4r
+        "Closing the break room door.":
+            bi "No, we've already concluded the belt did this."
+            jump trial4r
+        "Unlocking the safe.":
+            bi "No, Sam could have opened the safe before dying."
+            jump trial4r
+        "Hiding part of the belt.":
+            bi "Yes, that's it!"
     b "Half the belt is missing."
     b "If it was tied to the door when Sam died, then obviously Sam couldn't have removed it."
     b "Which means... one of us did."
@@ -3744,7 +3713,7 @@ label trial4ti:
             l "Damn, if Sam was still alive they could confirm."
             l "I asked Sam if there was a cherry soda in the hospital vending machine, and they thought I was dumb."
             l "But it's because I couldn't tell..."
-            l "I'd have no way of knowing who would be murderer in the bank when I was in the hospital!"
+            l "I'd have no way of knowing I would be murderer in the bank when I was in the hospital!"
             l "So it's not like I could have done that as a convenient excuse..."
             b "Um... I'm not really sure how we can confirm or deny this."
             if len(alibiset) < 3:
@@ -4015,7 +3984,7 @@ label trial4u:
     l "Pshh. Fine."
     l "So what makes Sid so innocent?"
     $mood = "ind"
-    b "Well, first, we need to think about where the killer went after the murder and why."
+    b "Well, first, we need to think about where the killer went after being seen in the lobby and why."
     b "In particular, I think the murderer had to go to..."
     call screen pickSpot9 with dissolve
 label trial4v:
@@ -4573,6 +4542,7 @@ label laurAsk:
             play music "audio/haunted.mp3" fadein 1.0
             pause 1.0
         ############################################## end of ch1 screen
+            $ achievement.grant('ch4_complete')
             call screen ch4results
             pause 1.0
             jump pentGo

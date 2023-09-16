@@ -466,7 +466,7 @@ label bankSid:
     bi "I mean, TED Talk."
     i "I'm gunna take a look..."
     hide sid with moveoutleft
-    show sid ind with moveinright
+    show sid ind with moveinleft
     i "Jeez, Sam really is dead..."
     i "It looks like it was... um..."
     i "Self-inflicted."

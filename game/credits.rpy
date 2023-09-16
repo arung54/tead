@@ -9,6 +9,8 @@ image creditscroll:
 
 label credits:
     $noside = True
+    camera:
+        matrixtransform ScaleMatrix(1.0, 1.0, 1.0)*OffsetMatrix(0.0, 0.0, 0.0)*RotateMatrix(0.0, 0.0, 0.0)
     camera at paralloff
     scene black
     with dissolve
@@ -38,6 +40,7 @@ label teadcomplete:
     show tead with dissolve
     show screen killuser
     pause 2
+    $ achievement.grant('tead_complete')
     show teadcomplete with dissolve:
         ycenter .92
         xcenter .5

@@ -3114,6 +3114,7 @@ label mansPreInv:
     pause 1
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
     pause .5
+    $ currEvidence = -1
     show investstart with dissolve
     pause 1
     hide investstart with dissolve
@@ -5067,6 +5068,7 @@ label cathGivesInfo:
     $evidence_menu = 0
     play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
+    $ achievement.grant('ch2_complete')
     call screen ch2results with dissolve
     stop music fadeout .5
     pause 1.0

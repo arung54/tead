@@ -350,5 +350,7 @@ label laurHang:
 
     $fte_laur += 1
     $persistent.fte_laur = max(persistent.fte_laur, fte_laur)
+    if persistent.fte_laur >= 3:
+        $achievement.grant('laur_fte')
     hide lauren with dissolve
     jump postFTEHandler

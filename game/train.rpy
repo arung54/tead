@@ -2312,6 +2312,7 @@ label preinvest:
     pause 1
     play music "audio/inthefaceofdeath.mp3" fadein 1.0
     pause .5
+    $ currEvidence = -1
     show investstart with dissolve
     pause 1
     hide investstart with dissolve
@@ -4155,8 +4156,13 @@ label trial1r:
     $evidence_menu = 0
     play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
+    $ persistent.ch1completed = True
+    $ achievement.grant('ch1_complete')
+    if persistent.fte_bert >= 1 and persistent.ch1completed:
+        $ achievement.grant('bert_fte')
+    if persistent.fte_kais >= 0 and persistent.ch1completed:
+        $ achievement.grant('kais_fte')
     call screen ch1results with dissolve
     stop music fadeout .5
     pause 1.0
-    $ persistent.ch1completed = True
     jump mansionGo

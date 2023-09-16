@@ -88,6 +88,7 @@ label ligma:
     show bert happy with dissolve
     bt "Hey Dan, you ever think about removing the A from your first name?"
     n "My name would be D-N? What does that even mean?"
+    $ achievement.grant('deez_nuts')
     bt "DEEZ NUTZ!"
     n "..."
     ni "Damn, he got me."
@@ -1079,7 +1080,7 @@ label postMeetings:
     with dissolve
     show sam ind with dissolve
     s "Okay, great, we all got to chat with each other."
-    s "now that that's done, I think we should look around and try-"
+    s "Now that that's done, I think we should look around and try-"
     s "?"
     hide sam with moveoutright
     stop music fadeout 1.0

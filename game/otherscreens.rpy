@@ -484,7 +484,7 @@ screen freeTimeCounterPersistent():
             add "redheart.png" xpos 277 ypos 674 xanchor 0.5 yanchor 0.5
         if persistent.fte_jenn > 2:
             add "redheart.png" xpos 312 ypos 674 xanchor 0.5 yanchor 0.5
-        if persistent.fte_kais > 0:
+        if persistent.fte_kais > -1:
             add "redheart.png" xpos 612 ypos 444 xanchor 0.5 yanchor 0.5
         if persistent.fte_laur > 0:
             add "redheart.png" xpos 612 ypos 490 xanchor 0.5 yanchor 0.5

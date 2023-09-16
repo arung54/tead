@@ -338,5 +338,7 @@ label dracHang:
 
     $fte_drac += 1
     $persistent.fte_drac = max(persistent.fte_drac, fte_drac)
+    if persistent.fte_drac >= 3:
+        $achievement.grant('drac_fte')
     hide drac with dissolve
     jump postFTEHandler
