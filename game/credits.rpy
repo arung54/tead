@@ -41,6 +41,7 @@ label teadcomplete:
     show screen killuser
     pause 2
     $ achievement.grant('tead_complete')
+    $ achievement.sync()
     show teadcomplete with dissolve:
         ycenter .92
         xcenter .5

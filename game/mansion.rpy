@@ -5069,6 +5069,7 @@ label cathGivesInfo:
     play music "audio/haunted.mp3" fadein 1.0
     pause 1.0
     $ achievement.grant('ch2_complete')
+    $ achievement.sync()
     call screen ch2results with dissolve
     stop music fadeout .5
     pause 1.0

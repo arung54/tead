@@ -84,5 +84,6 @@ label kaisHang:
     $ persistent.fte_kais = max(persistent.fte_kais, fte_kais+1)
     if persistent.fte_kais >= 0 and persistent.ch1completed:
         $ achievement.grant('kais_fte')
+        $ achievement.sync()
     hide kaiser with dissolve
     jump postFTEHandler

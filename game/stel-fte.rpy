@@ -291,5 +291,8 @@ label stelHang:
 
     $fte_stel += 1
     $persistent.fte_stel = max(persistent.fte_stel, fte_stel)
+    if persistent.fte_stel >= 3:
+        $achievement.grant('stel_fte')
+        $achievement.sync()
     hide stella
     jump postFTEHandler

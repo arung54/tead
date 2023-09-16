@@ -321,4 +321,5 @@ label shahHang:
     hide shahar with dissolve
     if persistent.fte_shah >= 3:
         $achievement.grant('shah_fte')
+        $achievement.sync()
     jump postFTEHandler

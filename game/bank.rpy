@@ -4543,6 +4543,7 @@ label laurAsk:
             pause 1.0
         ############################################## end of ch1 screen
             $ achievement.grant('ch4_complete')
+            $achievement.sync()
             call screen ch4results
             pause 1.0
             jump pentGo

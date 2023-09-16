@@ -150,5 +150,6 @@ label bertHang:
     $ persistent.fte_bert = max(persistent.fte_bert, fte_bert + 1)
     if persistent.fte_bert >= 1 and persistent.ch1completed:
         $achievement.grant('bert_fte')
+        $achievement.sync()
     hide bert with dissolve
     jump postFTEHandler

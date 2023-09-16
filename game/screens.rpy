@@ -406,6 +406,7 @@ screen navigation(use_nav=True):
             textbutton _("Characters") action [ShowMenu("Characters")] text_hover_color "#929292"
             if evidence_menu != 0:
                 textbutton _("Evidence") action [ShowMenu("Evidence")] text_hover_color "#929292"
+                textbutton _("Map") action [ShowMenu("Map")] text_hover_color "#929292"
 
             textbutton _("Save") action ShowMenu("save") text_hover_color "#929292"
 
@@ -817,6 +818,24 @@ screen Evidence():
     if evidence_menu == 4:
         use bank_evidence(in_menu = True)
 
+screen Map():
+    tag menu
+    modal True
+    imagemap:
+        if evidence_menu == 1:
+            ground "map1uimenu.png"
+        if evidence_menu == 2:
+            ground "map2uimenu.png"
+        if evidence_menu == 3:
+            ground "map3uimenu.png"
+        if evidence_menu == 4:
+            ground "map4uimenu.png"
+        hotspot(0, 0, 1279, 719):
+            action [Hide("Map", transition=Dissolve(0.3)), ShowMenu("preferences")]
+    imagemap:
+        idle "trainmapoverlayleft.png"
+        hotspot(0, 0, 119, 719):
+            action [Hide("Map", transition=Dissolve(0.3)), ShowMenu("preferences")]
 
 screen CharactersPersistent():
     tag menu

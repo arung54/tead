@@ -409,5 +409,6 @@ label frogHang:
     $ persistent.fte_frog = max(persistent.fte_frog, fte_frog)
     if persistent.fte_frog >= 3:
         $achievement.grant('frog_fte')
+        $achievement.sync()
     hide frog with dissolve
     jump postFTEHandler

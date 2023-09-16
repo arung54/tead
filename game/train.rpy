@@ -4162,6 +4162,7 @@ label trial1r:
         $ achievement.grant('bert_fte')
     if persistent.fte_kais >= 0 and persistent.ch1completed:
         $ achievement.grant('kais_fte')
+    $ achievement.sync()
     call screen ch1results with dissolve
     stop music fadeout .5
     pause 1.0

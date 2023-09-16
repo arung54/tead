@@ -89,6 +89,7 @@ label ligma:
     bt "Hey Dan, you ever think about removing the A from your first name?"
     n "My name would be D-N? What does that even mean?"
     $ achievement.grant('deez_nuts')
+    $achievement.sync()
     bt "DEEZ NUTZ!"
     n "..."
     ni "Damn, he got me."

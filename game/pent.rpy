@@ -2492,6 +2492,7 @@ label pentjennyArun:
         scene black with Dissolve(2.0)
         pause 2.0
     $ achievement.grant('ch5_complete')
+    $ achievement.sync()
     jump credits
 
     label postdeath:

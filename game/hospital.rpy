@@ -1968,6 +1968,7 @@ label chess3:
         show bg jennymonikablush at bg with dissolve
         j "I'm not a sadist or anything, so I don't want to force that on you."
         $ achievement.grant('chess_game')
+        $achievement.sync()
         j "Good game Bert! You did really well for someone with your experience level."
     scene bg hospfancy at bg
     show jenny happy
@@ -4841,6 +4842,7 @@ label dracAsk:
             play music "audio/haunted.mp3" fadein 1.0
             pause 1.0
             $ achievement.grant('ch3_complete')
+            $achievement.sync()
             call screen ch3results with dissolve
             stop music fadeout .5
             pause 1.0

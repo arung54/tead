@@ -396,5 +396,6 @@ label sidHang:
     $persistent.fte_sid = max(persistent.fte_sid, fte_sid)
     if persistent.fte_sid >= 3:
         $achievement.grant('sid_fte')
+        $achievement.sync()
     hide sid with dissolve
     jump postFTEHandler
