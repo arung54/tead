@@ -114,7 +114,7 @@ screen train_evidence(in_menu = False):
 
         if currEvidence == 5:
             image "catherineaccount1" xcenter 800 yalign 0.1
-            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. It was dark, and the scream scared her, so she didn't keep moving." xcenter 800 yanchor 0.0 ypos 330
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. It was dark, and the girl screaming scared her, so she didn't keep moving." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
             image "ringev" xcenter 800 yalign 0.1
@@ -122,7 +122,7 @@ screen train_evidence(in_menu = False):
 
         if currEvidence == 7:
             image "sidaccount1.png" xcenter 800 yalign 0.1
-            text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 330
+            text "Sid said he was sleeping in the bed, but was woken up by loud noises and Dan's scream." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
             image "closetev.png" xcenter 800 yalign 0.1
@@ -544,7 +544,7 @@ label traincatherine:
     b "Catherine, when the lights went out, did you keep walking to the back car?"
     b "I distinctly remember you on your way to say goodnight to Sid and Dan."
     c "No, I stayed in this car. In fact, I held onto the doorknob to the back car the whole time the lights were out."
-    c "I was scared of getting lost, and scared from the scream, so I clung to the doorknob and waited it out."
+    c "I was scared of getting lost, and scared from the girl screaming, so I clung to the doorknob and waited it out."
     b "So you would know if somebody went to the back car while the lights were out?"
     c "Nobody did, there's no way they could have."
     ses "Me-ow!"
@@ -713,7 +713,7 @@ label trainsid:
     b "I'm going to figure it out. But I need your help."
     b "Sid, what were you doing before... this happened?"
     i "I just told you! I was sleeping in the bed. Dan took it last night, so tonight was my turn."
-    i "Then I heard someone scream, the window break, and I woke up to... this."
+    i "Then I heard Dan scream, the window break, and I woke up to... this."
     hide sid with dissolve
     bi "Hmmm. It seems like Dan is the only one he really befriended here."
     bi "But it also seems kinda like he killed Dan."

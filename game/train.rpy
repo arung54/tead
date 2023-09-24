@@ -1963,7 +1963,7 @@ label midcar6:
     play sfx "<from 0 to 1>audio/jennyscream.mp3" fadein 0.50 fadeout 0.50 volume .5
     z "AHHHHHH!!!"
     bi "Oh no."
-    bi "Was that a... scream?"
+    bi "Was that a... girl screaming?"
     d "Who was that? Is everyone okay?"
     t "It came from the front car!"
     hide scary with dissolve
@@ -2345,7 +2345,7 @@ label trial1a:
     pause 1.0
     hide delistart with dissolve
     $evidence_menu = 1
-    tut "During deliberations, you can access evidence from the menu."
+    tut "During deliberations, you can access evidence and a map from the menu."
     show stella ind with dissolve
     t "So what's the plan?"
     t "I think I agree with the pirate at this point, let's all just jump out a window."
@@ -2469,7 +2469,7 @@ label trial1a:
     camera at paralloff
     python:
         startTrainTrial("stella", "Stella: It could be true, we all saw her heading to the back car in the first place{color=#0BF}{/color}.", 0,
-    "stella", "Stella: We have {color=#f00}no way of knowing{/color} if she actually went to the back car or not.", -1,
+    "stella", "Stella: There's {color=#f00}no reason to believe{/color} she stayed here.", -1,
     "sid", "Sid: I told you it {color=#0BF}wasn't me{/color}!", 1,
     "stella",  "Stella: It would also explain that perky attitude of hers... it's just a diversion.", 0,
     1, 5, "trial1b")
@@ -2492,8 +2492,12 @@ label trial1b:
     call popwowb from _call_popwowb_109
     b "Hey! Catherine couldn't have left the bar car."
     b "She heard the scream!"
-    t "Hmmm... and neither Sid, nor those in the front car heard the scream..."
-    t "So if she left the bar car, how could she have known?"
+    t "Hmmm... those in the front car didn't hear the scream..."
+    t "But couldn't she have heard it in the caboose?"
+    b "No, Sid heard a scream, but it was Dan's scream."
+    b "He didn't say he heard a girl scream, so it must not be audible from the caboose."
+    b "But Catherine knew it was a girl screaming in the bar car!"
+    t "So if she left the bar car, she couldn't have known it was a girl?"
     b "Exactly!"
     b "We can't prove exactly what she was doing, but it seems pretty clear she didn't leave this car."
     show scary with dissolve:
@@ -2662,18 +2666,21 @@ label trial1c:
     i "Well, "
     extend "I don't know, I guess..."
     i "I guess I can't prove it."
+    b "No, but you and Dan both mentioned it in the morning."
+    t "He did? I don't remember hearing this."
+    t "For all I know, you might be making it up."
+    b "I'm not! Somebody else heard this!"
     show scary:
         alpha .5
     hide stella ind
     hide sid ind
     with dissolve
-    bi "Hmmm... proof that Dan slept on the cot, and Sid slept on the bench."
-    bi "Who might have that?"
+    bi "In fact, not only did they hear it, they scolded Dan for taking the cot..."
     hide screen status_screen
     $showchibint()
     with dissolve
     play music "audio/invest1.wav"
-    call screen chooseChar("catherine", "trial1d", "Who might have proof that Dan slept on the cot, and Sid slept on the bench?") with dissolve
+    call screen chooseChar("catherine", "trial1d", "Who scolded Dan for sleeping on the cot?") with dissolve
 label trial1d:
     play music "audio/coming_together.mp3"
     scene bg notrainmid at bg
@@ -2791,7 +2798,8 @@ label trial1e:
     b "What? What do you mean?"
     d "Yes, this is the same conclusion I reached."
     b "How do you know?"
-    d "Well... it sounded strange. I immediately recognized that something was odd."
+    d "Well... it sounded strange. Like a loudspeaker, rather than a person."
+    d "I immediately recognized that something was odd."
     hide stella happy with moveoutleft
     show lauren ind with moveinleft:
         xcenter .25
@@ -2810,8 +2818,8 @@ label trial1e:
     hide lauren ind with moveoutleft
     show jenny ind with moveinleft:
         xcenter .25
-    j "Yeah, huh? What do you mean?"
-    d "Think back to yesterday, do you remember... yelling?"
+    j "Yeah, huh? What do you mean? I didn't scream today."
+    d "You didn't scream today, but think back to yesterday. Do you remember... yelling?"
     j "Ummm... I don't think so? Are you sure I did?"
     $mood = "ind"
     d "I suppose it'll be hard to convince you of something like that."
@@ -2846,7 +2854,8 @@ label trial1f:
 
     hide scary with dissolve
     b "Yeah, that's it! I remember Sesame biting Jenny, and she screamed."
-    d "Yes, she screamed bloody murder. And the scream we heard tonight? It was the same one."
+    d "Yes, she screamed bloody murder. And the scream we heard tonight?"
+    d "It sounded the same, except a bit \"lower quality,\" like it was played through a speaker."
     bi "I think he's right!"
     hide drac ind with moveoutright
     show catherine ind with moveinright:
@@ -3770,7 +3779,7 @@ label trial1p:
     b "They must have been... activating the PA system with the button!"
     d "Precisely."
     b "I nearly forgot about the scream."
-    b "It was just to distract us during the commotion, but their plan backfired."
+    b "They probably did it just to distract us during the commotion, but their plan backfired."
     o "Hmmm..."
     o "You act like you have it all figured out, Mr. Dracula."
     hide drac ind

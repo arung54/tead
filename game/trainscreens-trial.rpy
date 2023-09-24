@@ -244,7 +244,7 @@ screen trainEvidenceTrial(s, e, l):
 
         if currEvidence == 5:
             image "catherineaccount1" xcenter 800 yalign 0.1
-            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. It was dark, and the scream scared her, so she didn't keep moving." xcenter 800 yanchor 0.0 ypos 330
+            text "Catherine said her hand was on the door knob to the back car the whole time it was dark. It was dark, and the girl screaming scared her, so she didn't keep moving." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 6:
             image "ringev" xcenter 800 yalign 0.1
@@ -252,7 +252,7 @@ screen trainEvidenceTrial(s, e, l):
 
         if currEvidence == 7:
             image "sidaccount1.png" xcenter 800 yalign 0.1
-            text "Sid said he was sleeping in the bed, but was woken up by loud noises and a scream." xcenter 800 yanchor 0.0 ypos 330
+            text "Sid said he was sleeping in the bed, but was woken up by loud noises and Dan's scream." xcenter 800 yanchor 0.0 ypos 330
 
         if currEvidence == 8:
             image "closetev.png" xcenter 800 yalign 0.1
